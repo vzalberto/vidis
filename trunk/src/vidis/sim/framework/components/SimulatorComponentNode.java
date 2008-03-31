@@ -36,6 +36,11 @@ public abstract class SimulatorComponentNode implements SimulatorComponentInt {
 	private LinkedList<SimulatorComponentLink> links;
 	
 	/**
+	 * component id
+	 */
+	private int cid = this.hashCode();
+	
+	/**
 	 * empty constructor
 	 */
 	private SimulatorComponentNode() {
@@ -193,8 +198,12 @@ public abstract class SimulatorComponentNode implements SimulatorComponentInt {
 		return "Node#"+this.hashCode() + "{"+getLinks()+"}";
 	}
 	
+	public void setCID(int cid) {
+		this.cid = cid;
+	}
+	
 	public int getCID() {
-		return this.hashCode();
+		return this.cid;
 	}
 	
 	public String toXML_CID() {

@@ -35,6 +35,14 @@ public interface SimulatorComponentInt extends SimulatorEventProducerInt {
 	public int getCID();
 	
 	/**
+	 * set the component id; must not be done because it is generated
+	 * automatically; only used by the simulation where this id is a reference
+	 * to the correct object!
+	 * @param cid the unique component id
+	 */
+	public void setCID(int cid);
+	
+	/**
 	 * generate xml output structure
 	 * @return string of xml
 	 */

@@ -106,6 +106,11 @@ public abstract class SimulatorComponentLink implements SimulatorComponentInt {
 	 * to send a packet from one node to another
 	 */
 	private long delay;
+
+	/**
+	 * component id
+	 */
+	private int cid = this.hashCode();
 	
 	private SimulatorComponentLink() {
 		this.packets = new HashMap<Long, LinkedList<PacketHolder>>();
@@ -282,8 +287,12 @@ public abstract class SimulatorComponentLink implements SimulatorComponentInt {
 		return "Link#"+this.hashCode();
 	}
 	
+	public void setCID(int CID) {
+		this.cid = CID;
+	}
+	
 	public int getCID() {
-		return this.hashCode();
+		return this.cid;
 	}
 	
 	public String toXML_CID() {

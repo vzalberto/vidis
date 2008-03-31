@@ -36,6 +36,11 @@ public abstract class SimulatorComponentPacket implements SimulatorComponentInt 
 	private long time;
 	
 	/**
+	 * component id
+	 */
+	private int cid = this.hashCode();
+	
+	/**
 	 * default constructor
 	 */
 	private SimulatorComponentPacket() {
@@ -133,8 +138,12 @@ public abstract class SimulatorComponentPacket implements SimulatorComponentInt 
 		return time;
 	}
 	
+	public void setCID(int cid) {
+		this.cid = cid;
+	}
+	
 	public int getCID() {
-		return this.hashCode();
+		return this.cid;
 	}
 	
 	public String toXML_CID() {
