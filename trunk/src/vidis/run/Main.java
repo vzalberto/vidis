@@ -21,6 +21,20 @@ public class Main {
 		ComponentFactoryInt factory = new DemoFactory();
 		// tell the simulator to use this module
 		simulator.setModule(factory);
+		
+		// test import of xml data
+		try {
+			simulator.importSimFile(new File("./data/demo.sim"));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		// eof test import of xml data
+		System.exit(0);
+		
 		// start the simulator
 		System.err.println("before simulation 1");
 		simulator.startSimulation();
