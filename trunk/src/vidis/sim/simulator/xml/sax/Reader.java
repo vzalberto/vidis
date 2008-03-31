@@ -35,22 +35,33 @@ public class Reader implements ReaderInt, ContentHandler {
 	}
 
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		// TODO Auto-generated method stub
-		
+		Const.STD_ERR.print("start="+start + ", length=" + length + ", ch=");
+		for(int i=start; i<start+length; i++)
+			Const.STD_ERR.print(ch[i]);
+		Const.STD_ERR.println();
 	}
 
+	public void startDocument() throws SAXException {
+		Const.STD_ERR.println("BEGIN>>");
+	}
+	
 	public void endDocument() throws SAXException {
 		Const.STD_ERR.println("<<EOF");
 	}
-
-	public void endElement(String uri, String localName, String name) throws SAXException {
-		// TODO Auto-generated method stub
-		
+	public void startElement(String uri, String localName, String name, Attributes atts) throws SAXException {
+		Const.STD_ERR.println("start: uri=" + uri + ", localName=" + localName + ", name=" + name);
 	}
 
+	public void endElement(String uri, String localName, String name) throws SAXException {
+		Const.STD_ERR.println("end: uri=" + uri + ", localName=" + localName + ", name=" + name);
+	}
+
+	public void startPrefixMapping(String prefix, String uri) throws SAXException {
+		Const.STD_ERR.println("startPrefix: uri=" + uri + ", prefix=" + prefix);
+	}
+	
 	public void endPrefixMapping(String prefix) throws SAXException {
-		// TODO Auto-generated method stub
-		
+		Const.STD_ERR.println("endPrefix: prefix=" + prefix);
 	}
 
 	public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
@@ -71,18 +82,6 @@ public class Reader implements ReaderInt, ContentHandler {
 	public void skippedEntity(String name) throws SAXException {
 		// TODO Auto-generated method stub
 		
-	}
-
-	public void startDocument() throws SAXException {
-		Const.STD_ERR.println(">>");
-	}
-
-	public void startElement(String uri, String localName, String name, Attributes atts) throws SAXException {
-		Const.STD_ERR.println("element: uri=" + uri + ", localName=" + localName + ", name=" + name);
-	}
-
-	public void startPrefixMapping(String prefix, String uri) throws SAXException {
-		Const.STD_ERR.println("prefix: uri=" + uri + ", prefix=" + prefix);
 	}
 
 }
