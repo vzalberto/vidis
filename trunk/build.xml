@@ -268,6 +268,4 @@
 			<jvmarg value="-Djava.library.path=${jogl-libpath}" />
 		</java>
 	</target>
-
-	
 </project>

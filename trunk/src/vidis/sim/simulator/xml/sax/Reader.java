@@ -66,7 +66,6 @@ public class Reader implements ReaderInt, ContentHandler {
 
 	public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
 		// TODO Auto-generated method stub
-		
 	}
 
 	public void processingInstruction(String target, String data) throws SAXException {
