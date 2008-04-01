@@ -105,8 +105,6 @@ public class Reader implements ReaderInt, ContentHandler {
 			String expect2 = "configuration";
 			String expect3 = "instances";
 			String expect4 = "events";
-			String expect5 = "instance";
-			String expect6 = "event";
 			if(name.equalsIgnoreCase(expect1)) {
 				// ok, got valid id
 				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.ID);
@@ -125,16 +123,6 @@ public class Reader implements ReaderInt, ContentHandler {
 			} else if(name.equalsIgnoreCase(expect4)) {
 				// ok, got valid id
 				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.EVENTS);
-				getCurrentNode().addChild(child);
-				setCurrentNode(child);
-			} else if(name.equalsIgnoreCase(expect5)) {
-				// ok, got valid id
-				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.INSTANCE);
-				getCurrentNode().addChild(child);
-				setCurrentNode(child);
-			} else if(name.equalsIgnoreCase(expect6)) {
-				// ok, got valid id
-				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.EVENT);
 				getCurrentNode().addChild(child);
 				setCurrentNode(child);
 			} else {
@@ -174,6 +162,48 @@ public class Reader implements ReaderInt, ContentHandler {
 				setCurrentNode(child);
 			} else {
 				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected '"+expect+"', found '"+name+"'");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.EVENTS)) {
+			String expect = "event";
+			if(name.equalsIgnoreCase(expect)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.EVENT);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else {
+				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected '"+expect+"', found '"+name+"'");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.INSTANCES)) {
+			String expect = "instance";
+			if(name.equalsIgnoreCase(expect)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.INSTANCE);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else {
+				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected '"+expect+"', found '"+name+"'");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.INSTANCE)) {
+			String expect1 = "packet";
+			String expect2 = "link";
+			String expect3 = "node";
+			if(name.equalsIgnoreCase(expect1)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.PACKET);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else if(name.equalsIgnoreCase(expect2)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.LINK);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else if(name.equalsIgnoreCase(expect3)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.NODE);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else {
+				Const.STD_ERR.println("CRITICAL: xml document is malformed; not expected but found '"+name+"'");
 			}
 		} else {
 			Const.STD_ERR.println("WARN: not implemented <"+name+"> at node " + getCurrentNode());
@@ -261,6 +291,35 @@ public class Reader implements ReaderInt, ContentHandler {
 				setCurrentNode(getCurrentNode().getParent());
 			} else {
 				Const.STD_ERR.println("ERROR: expected </"+expect+"> but got </" + name + ">");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.EVENT)) {
+			String expect = "event";
+			if(name.equalsIgnoreCase(expect)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else {
+				Const.STD_ERR.println("ERROR: expected </"+expect+"> but got </" + name + ">");
+			}
+		}  else if(getCurrentNode().getType().equals(XMLTreeNodeType.INSTANCE)) {
+			String expect = "instance";
+			if(name.equalsIgnoreCase(expect)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else {
+				Const.STD_ERR.println("ERROR: expected </"+expect+"> but got </" + name + ">");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.PACKET)
+				|| getCurrentNode().getType().equals(XMLTreeNodeType.LINK)
+				|| getCurrentNode().getType().equals(XMLTreeNodeType.NODE)) {
+			String expect1 = "packet";
+			String expect2 = "link";
+			String expect3 = "node";
+			if(name.equalsIgnoreCase(expect1)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else if(name.equalsIgnoreCase(expect2)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else if(name.equalsIgnoreCase(expect3)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else {
+				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected found '"+name+"'");
 			}
 		} else {
 			Const.STD_ERR.println("WARN: not implemented </"+name+"> at node " + getCurrentNode());
