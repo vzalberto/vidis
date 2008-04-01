@@ -104,7 +104,7 @@ public class Reader implements ReaderInt, ContentHandler {
 			String expect1 = "id";
 			String expect2 = "configuration";
 			String expect3 = "instances";
-			String expect4 = "events";
+			String expect4 = "timenodes";
 			if(name.equalsIgnoreCase(expect1)) {
 				// ok, got valid id
 				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.ID);
@@ -122,7 +122,7 @@ public class Reader implements ReaderInt, ContentHandler {
 				setCurrentNode(child);
 			} else if(name.equalsIgnoreCase(expect4)) {
 				// ok, got valid id
-				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.EVENTS);
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.TIMENODES);
 				getCurrentNode().addChild(child);
 				setCurrentNode(child);
 			} else {
@@ -162,6 +162,32 @@ public class Reader implements ReaderInt, ContentHandler {
 				setCurrentNode(child);
 			} else {
 				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected '"+expect+"', found '"+name+"'");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.TIMENODES)) {
+			String expect = "timenode";
+			if(name.equalsIgnoreCase(expect)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.TIMENODE);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else {
+				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected '"+expect+"', found '"+name+"'");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.TIMENODE)) {
+			String expect1 = "id";
+			String expect2 = "events";
+			if(name.equalsIgnoreCase(expect1)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.ID);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else if(name.equalsIgnoreCase(expect2)) {
+				// mache neue simulation node
+				XMLTreeNode child = new XMLTreeNode(XMLTreeNodeType.EVENTS);
+				getCurrentNode().addChild(child);
+				setCurrentNode(child);
+			} else {
+				Const.STD_ERR.println("CRITICAL: xml document is malformed; expected '"+expect1+"', found '"+name+"'");
 			}
 		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.EVENTS)) {
 			String expect = "event";
@@ -280,6 +306,20 @@ public class Reader implements ReaderInt, ContentHandler {
 			}
 		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.INSTANCES)) {
 			String expect = "instances";
+			if(name.equalsIgnoreCase(expect)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else {
+				Const.STD_ERR.println("ERROR: expected </"+expect+"> but got </" + name + ">");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.TIMENODES)) {
+			String expect = "timenodes";
+			if(name.equalsIgnoreCase(expect)) {
+				setCurrentNode(getCurrentNode().getParent());
+			} else {
+				Const.STD_ERR.println("ERROR: expected </"+expect+"> but got </" + name + ">");
+			}
+		} else if(getCurrentNode().getType().equals(XMLTreeNodeType.TIMENODE)) {
+			String expect = "timenode";
 			if(name.equalsIgnoreCase(expect)) {
 				setCurrentNode(getCurrentNode().getParent());
 			} else {

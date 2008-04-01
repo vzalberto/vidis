@@ -56,7 +56,7 @@ public class Writer implements WriterInt {
 				for(long i=Collections.min(data.getEvents().keySet()); i<=Collections.max(data.getEvents().keySet()); i++) {
 					indent(out, indent++, "<timenode>");
 					{
-						indent(out, indent, "<index>"+i+"</index>");
+						indent(out, indent, "<id>"+i+"</id>");
 						if(data.getEvents().containsKey(i)) {
 							// output all events
 							if(data.getEvents().get(i).size() > 0) {
