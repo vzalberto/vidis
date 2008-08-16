@@ -1,0 +1,16 @@
+<module>
+	<id>variable test simulation</id>
+	<classpath>modules.vartest</classpath>
+	<!-- density between 0.0 and 1.0 -->
+	<nodeDensity>0.5</nodeDensity>
+	<objects>
+		<node>
+			<id>node01</id>
+			<class>VarTestNode</class>
+			<variables>
+				<name>first Test Node</name>
+				<namespace.namespace1.varname>Testvariable aus msim File</namespace.namespace1.varname>
+			</variables>
+		</node>
+	</objects>
+</module>

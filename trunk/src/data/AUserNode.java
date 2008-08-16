@@ -1,0 +1,89 @@
+package data;
+
+import java.util.List;
+
+import sim.exceptions.ObstructInitCallException;
+import data.mod.AUserComponent;
+import data.mod.IUserLink;
+import data.mod.IUserNode;
+import data.mod.IUserPacket;
+import data.sim.ISimNodeCon;
+import data.var.AVariable;
+import data.var.AVariable.COMMON_SCOPES;
+
+/**
+ * abstract user node represents a node by a user;
+ * 
+ * module writers should use this class to write their own node
+ * @author dominik
+ *
+ */
+public abstract class AUserNode extends AUserComponent implements IUserNode {
+
+    protected ISimNodeCon simulatorComponent;
+
+    public final void init(ISimNodeCon c) throws ObstructInitCallException {
+	if (simulatorComponent != null)
+	    throw new ObstructInitCallException();
+	simulatorComponent = c;
+    }
+
+    /**
+     * retrieve all the connected links to this node
+     * @return list of links
+     */
+    public final List<IUserLink> getConnectedLinks() {
+	return simulatorComponent.getConnectedLinks();
+    }
+
+    /**
+     * send a packet over a specified link
+     * @param p packet to send
+     * @param l link to use for sending
+     */
+    public final void send(IUserPacket p, IUserLink l) {
+	simulatorComponent.send(p, l, 0);
+    }
+
+    /**
+     * send a packet over a specified link and waiting for some
+     * amount of time to send which may interpreted as processing
+     * time
+     * @param p the packet to send
+     * @param l the link to use for send
+     * @param wait the amount of time to wait / process
+     */
+    public final void send(IUserPacket p, IUserLink l, long wait) {
+	simulatorComponent.send(p, l, wait);
+    }
+
+    public String toString() {
+	return simulatorComponent.toString();
+    }
+
+    public final void interrupt() {
+	try {
+	    simulatorComponent.interrupt();
+	} catch (NullPointerException e) {
+	    // nothing
+	}
+    }
+
+    public final void sleep(int steps) {
+	try {
+	    simulatorComponent.sleep(steps);
+	} catch (NullPointerException e) {
+	    // nothing
+	}
+    }
+
+    public final AVariable getVariable(String identifier) {
+	return simulatorComponent.getScopedVariable(COMMON_SCOPES.USER,
+						    identifier);
+    }
+
+    public final boolean hasVariable(String identifier) {
+	return simulatorComponent.hasScopedVariable(COMMON_SCOPES.USER,
+						    identifier);
+    }
+}
