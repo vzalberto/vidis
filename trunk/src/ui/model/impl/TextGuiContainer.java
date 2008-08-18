@@ -15,7 +15,6 @@ public class TextGuiContainer extends AGuiContainer {
 	
 	private void renderStrokeString(GL gl, int font, String string, double contwith) {
         GLUT glut = new GLUT();
-        gl.glEnable(GL.GL_BLEND);
         gl.glEnable(GL.GL_LINE_SMOOTH);
         gl.glColor3d(1, 0, 0);
         gl.glLineWidth(2.0f);

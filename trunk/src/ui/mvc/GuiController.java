@@ -20,6 +20,10 @@ public class GuiController extends AController {
 	public GuiController() {
 		logger.debug("Constructor()");
 		registerEvent( IVidisEvent.InitGui );
+		
+		registerEvent( IVidisEvent.MouseClickedEvent,
+				   IVidisEvent.MousePressedEvent,
+				   IVidisEvent.MouseReleasedEvent );
 	}
 	
 	@Override

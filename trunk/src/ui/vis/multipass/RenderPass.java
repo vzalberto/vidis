@@ -24,10 +24,10 @@ import vis.glutils.GLOption.ShadeModel;
 
 
 public enum RenderPass implements IPass {
-	PASS_0_TEX( Blending.NONE, false, ShadeModel.FLAT, DepthFunc.LEQUAL, true );
-//	PASS_n_TEX( Blending.ONE_ONE, false, ShadeModel.FLAT, DepthFunc.EQUAL, false ),
-//	PASS_diffuse( Blending.ZERO_SRC_COLOR, true, ShadeModel.SMOOTH, DepthFunc.EQUAL, false ),
-//	PASS_specular( Blending.ONE_ONE, true, ShadeModel.SMOOTH, DepthFunc.EQUAL, false );
+	PASS_0_TEX( Blending.NONE, false, ShadeModel.FLAT, DepthFunc.LEQUAL, true ),
+	PASS_n_TEX( Blending.ONE_ONE, false, ShadeModel.FLAT, DepthFunc.EQUAL, false ),
+	PASS_diffuse( Blending.ZERO_SRC_COLOR, true, ShadeModel.SMOOTH, DepthFunc.EQUAL, false ),
+	PASS_specular( Blending.ONE_ONE, true, ShadeModel.SMOOTH, DepthFunc.EQUAL, false );
 
 	
 	private Blending blending;

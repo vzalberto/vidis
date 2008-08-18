@@ -39,9 +39,9 @@ public class BasicGuiContainer extends AGuiContainer {
 	@Override
 	public void renderContainer(GL gl) {
 		GLUT glut = new GLUT();
-		gl.glPushMatrix();
-		renderStrokeString(gl, GLUT.STROKE_MONO_ROMAN, "BasicGuiContainer", getWidth());
-		gl.glPopMatrix();
+//		gl.glPushMatrix();
+//		renderStrokeString(gl, GLUT.STROKE_MONO_ROMAN, "BasicGuiContainer", getWidth());
+//		gl.glPopMatrix();
 		gl.glPushMatrix();
 		gl.glColor4d(color.getRed()/255d, color.getGreen()/255d, color.getBlue()/255d, 0.5);
 			if (opaque) {
@@ -53,23 +53,23 @@ public class BasicGuiContainer extends AGuiContainer {
 			gl.glEnd();
 			}
 			// debugging spheres
-			gl.glColor3d(0, 1, 0);
-			gl.glPushMatrix();
-				gl.glTranslated(0, 0, 0);
-				glut.glutWireSphere(0.2, 4, 4);
-			gl.glPopMatrix();
-			gl.glPushMatrix();
-				gl.glTranslated(getWidth(), 0, 0);
-				glut.glutWireSphere(0.2, 4, 4);
-			gl.glPopMatrix();
-			gl.glPushMatrix();
-				gl.glTranslated(getWidth(), getHeight(), 0);
-				glut.glutWireSphere(0.2, 4, 4);
-			gl.glPopMatrix();
-			gl.glPushMatrix();
-				gl.glTranslated(0, getHeight(), 0);
-				glut.glutWireSphere(0.2, 4, 4);
-			gl.glPopMatrix();
+//			gl.glColor3d(0, 1, 0);
+//			gl.glPushMatrix();
+//				gl.glTranslated(0, 0, 0);
+//				glut.glutWireSphere(0.2, 4, 4);
+//			gl.glPopMatrix();
+//			gl.glPushMatrix();
+//				gl.glTranslated(getWidth(), 0, 0);
+//				glut.glutWireSphere(0.2, 4, 4);
+//			gl.glPopMatrix();
+//			gl.glPushMatrix();
+//				gl.glTranslated(getWidth(), getHeight(), 0);
+//				glut.glutWireSphere(0.2, 4, 4);
+//			gl.glPopMatrix();
+//			gl.glPushMatrix();
+//				gl.glTranslated(0, getHeight(), 0);
+//				glut.glutWireSphere(0.2, 4, 4);
+//			gl.glPopMatrix();
 		gl.glPopMatrix();
 	}
 	

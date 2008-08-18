@@ -49,8 +49,9 @@ public class GuiCamera extends AEventHandler implements ICamera {
 		this.zoom = 1.0;
 	}
 	public void init(GL gl) {
-		gl.glClear(GL.GL_DEPTH_BUFFER_BIT);
-		gl.glEnable(GL.GL_BLEND);
+		gl.glClear( GL.GL_DEPTH_BUFFER_BIT );
+		gl.glEnable( GL.GL_BLEND );
+		gl.glBlendFunc( GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA );
 		gl.glViewport((int)target.getX(), (int)target.getY(), (int)target.getWidth(), (int)target.getHeight());
 	}
 	public void applyProjectionMatrix(GL gl) {
@@ -62,7 +63,7 @@ public class GuiCamera extends AEventHandler implements ICamera {
 	public void applyViewMatrix(GL gl) {
 //		gl.glTranslated(posx, -posy +zoom/2, zoom);
 		
-		// matrizen auslesen für click berechnung
+		// matrizen auslesen fï¿½r click berechnung
 		gl.glGetDoublev(GL.GL_MODELVIEW_MATRIX, model);
 		gl.glGetDoublev(GL.GL_PROJECTION_MATRIX, proj);
 		gl.glGetIntegerv(GL.GL_VIEWPORT, view);
