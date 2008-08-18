@@ -4,8 +4,6 @@ import javax.vecmath.Point2d;
 
 import org.apache.log4j.Logger;
 
-import vis.model.IEvent;
-
 public class GuiMouseEvent implements IVidisEvent {
 	private static Logger logger = Logger.getLogger(GuiMouseEvent.class);
 
@@ -13,7 +11,7 @@ public class GuiMouseEvent implements IVidisEvent {
 	
 	
 	public int getID() {
-		return IEvent.MouseEvent;
+		return IVidisEvent.GuiMouseEvent;
 	}
 
 	@Override

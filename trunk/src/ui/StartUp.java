@@ -1,7 +1,5 @@
 package ui;
 
-import org.apache.log4j.BasicConfigurator;
-
 import ui.events.IVidisEvent;
 import ui.mvc.VidisController;
 import ui.mvc.api.Dispatcher;

@@ -13,7 +13,6 @@ import ui.events.AEventHandler;
 import ui.events.IVidisEvent;
 import ui.events.StartEvent;
 import ui.events.StopEvent;
-import vis.WrongMatrixStackException;
 
 public class DefaultCamera extends AEventHandler implements ICamera {
 	private static Logger logger = Logger.getLogger( DefaultCamera.class );
@@ -53,14 +52,14 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 		gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
 		gl.glViewport((int)target.getX(), (int)target.getY(), (int)target.getWidth(), (int)target.getHeight());
 	}
-	public void applyProjectionMatrix(GL gl) throws WrongMatrixStackException {
+	public void applyProjectionMatrix(GL gl) {
 		GLU glu = new GLU();
 		glu.gluPerspective(30, (double) target.getWidth() / (double) target.getHeight(), 1.0, 90.0);
 		glu.gluLookAt(0, -5, -10, 0, 0, 0, 0, 1, 0);
 	}
 	public void applyViewMatrix(GL gl) {
 		gl.glTranslated(posx, -posy +zoom/2, zoom);
-		// matrizen auslesen für click berechnung
+		// matrizen auslesen fï¿½r click berechnung
 		gl.glGetDoublev(GL.GL_MODELVIEW_MATRIX, model);
 		gl.glGetDoublev(GL.GL_PROJECTION_MATRIX, proj);
 		gl.glGetIntegerv(GL.GL_VIEWPORT, view);

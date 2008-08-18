@@ -2,12 +2,13 @@ package ui.model.impl;
 
 import javax.media.opengl.GL;
 
+import ui.events.IVidisEvent;
+import ui.model.structure.ASimObject;
+
+
 import com.sun.opengl.util.GLUT;
 
 import data.var.IVariableContainer;
-
-import vis.model.IEvent;
-import vis.model.structure.ASimObject;
 
 public class Node extends ASimObject {
 
@@ -23,9 +24,9 @@ public class Node extends ASimObject {
 	}
 
 	@Override
-	protected void handleEvent(IEvent e) {
+	protected void handleEvent(IVidisEvent e) {
+		// TODO Auto-generated method stub
 		
-
 	}
 
 }

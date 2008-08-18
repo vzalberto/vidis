@@ -2,12 +2,9 @@ package ui.model.impl;
 
 import javax.media.opengl.GL;
 
-import com.sun.opengl.util.GLUT;
-
+import ui.events.IVidisEvent;
+import ui.model.structure.ASimObject;
 import data.var.IVariableContainer;
-
-import vis.model.IEvent;
-import vis.model.structure.ASimObject;
 
 public class Link extends ASimObject {
 
@@ -21,18 +18,17 @@ public class Link extends ASimObject {
 	public void render(GL gl) {
 		renderObject(gl);
 	}
-	
+
 	@Override
 	protected void renderObject(GL gl) {
-		GLUT glut = new GLUT();
-		// FIXME
-
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	protected void handleEvent(IEvent e) {
+	protected void handleEvent(IVidisEvent e) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
