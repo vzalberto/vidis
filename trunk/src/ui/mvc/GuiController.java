@@ -30,7 +30,7 @@ public class GuiController extends AController {
 			initialize();
 			break;
 		case IVidisEvent.MouseClickedEvent:
-			gui.fireEvent( event );
+			guiCamera.fireEvent( event );
 			break;
 
 		}

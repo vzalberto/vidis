@@ -4,7 +4,7 @@ import java.nio.DoubleBuffer;
 
 import javax.media.opengl.GL;
 
-import vis.model.structure.IVisObject;
+import ui.model.structure.IVisObject;
 
 import com.sun.opengl.util.BufferUtil;
 

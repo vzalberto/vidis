@@ -19,7 +19,7 @@ public class MouseReleasedEvent extends AMouseEvent {
 	public Point2d guiCoords; 
 	
 	public int getID() {
-		return IVidisEvent.MouseClickedEvent;
+		return IVidisEvent.MouseReleasedEvent;
 	}
 
 }

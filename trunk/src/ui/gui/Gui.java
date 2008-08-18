@@ -1,15 +1,19 @@
 package ui.gui;
 
 import javax.media.opengl.GL;
+import javax.vecmath.Point2d;
 
 import org.apache.log4j.Logger;
 
 import ui.events.AEventHandler;
+import ui.events.GuiMouseEvent;
 import ui.events.IVidisEvent;
+import ui.events.MouseClickedEvent;
 import ui.model.impl.BasicGuiContainer;
 import ui.model.impl.PercentMarginLayout;
 import ui.model.impl.TextGuiContainer;
 import ui.model.structure.IVisObject;
+import ui.mvc.api.Dispatcher;
 
 
 public class Gui extends AEventHandler {
@@ -37,7 +41,12 @@ public class Gui extends AEventHandler {
 		BasicGuiContainer container1 = new BasicGuiContainer();
 		container1.setLayout(new PercentMarginLayout(1,-0.9,-0.9,1,-0.1,-0.1));
 		
-		TextGuiContainer playButton = new TextGuiContainer();
+		TextGuiContainer playButton = new TextGuiContainer() {
+			@Override
+			protected void onClick(GuiMouseEvent e) {
+				Dispatcher.forwardEvent( IVidisEvent.SimulatorPlay );
+			}
+		};
 		playButton.setLayout(new PercentMarginLayout(-0.1,-0.1,-0.1,-0.1,-0.8,-0.8));
 		playButton.setText("Play");
 

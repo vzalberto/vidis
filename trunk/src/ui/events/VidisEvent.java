@@ -20,6 +20,11 @@ public class VidisEvent<D> implements IVidisEvent {
 
 	@Override
 	public String toString() {
-		return "VidisEvent<"+data.getClass().getSimpleName()+"> id=" +eventId;
+		if ( data != null ) {
+			return "VidisEvent<"+data.getClass().getSimpleName()+"> id=" +eventId;
+		}
+		else {
+			return "VIdisEvent id=" +eventId;
+		}
 	}
 }

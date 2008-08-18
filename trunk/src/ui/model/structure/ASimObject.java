@@ -3,13 +3,19 @@ package ui.model.structure;
 import javax.media.opengl.GL;
 import javax.vecmath.Tuple3d;
 
+import org.apache.log4j.Logger;
+
 import ui.events.AEventHandler;
+import ui.mvc.SceneController;
 
 import data.var.AVariable;
 import data.var.IVariableContainer;
 
 public abstract class ASimObject extends AEventHandler implements ISimObject {
 
+	private static Logger logger = Logger.getLogger( ASimObject.class );
+	
+	
 	private IVariableContainer obj; // FIXME
 	private IGuiContainer guiObj; // FIXME
 	
@@ -28,9 +34,7 @@ public abstract class ASimObject extends AEventHandler implements ISimObject {
 			gl.glTranslated(pos.x, pos.z, pos.y);
 		}
 		catch ( Exception e ) {
-			System.out.println("error getting pos variable of "+obj +"  ");
-			e.printStackTrace();
-			
+			logger.error("error getting pos variable of "+obj +"  ", e);
 		}
 		renderObject( gl );
 		gl.glPopMatrix();

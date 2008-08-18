@@ -1,5 +1,6 @@
 package ui.mvc;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class SceneController extends AController implements GLEventListener {
 	private static Logger glLogger = Logger.getLogger( "vis.opengl" );
 	
 	private List<ICamera> cameras = new LinkedList<ICamera>();
-	private List<IVisObject> objects = new LinkedList<IVisObject>();
+	private List<IVisObject> objects = Collections.synchronizedList( new LinkedList<IVisObject>() );
 	
 	private GLCanvas canvas;
 	
@@ -55,6 +56,7 @@ public class SceneController extends AController implements GLEventListener {
 		
 		registerEvent( IVidisEvent.ObjectRegister, 
 					   IVidisEvent.ObjectUnregister );
+		
 	}
 	
 	@Override
@@ -136,9 +138,11 @@ public class SceneController extends AController implements GLEventListener {
 	private void drawModel( GL gl, ICamera c ) {
 		if ( c instanceof GuiCamera) {
 			gl.glPushMatrix();
-			for ( IVisObject o : objects ) {
-				if ( o instanceof IGuiContainer ) {
-					o.render(gl);
+			synchronized ( objects ) {
+				for ( IVisObject o : objects ) {
+					if ( o instanceof IGuiContainer ) {
+						o.render(gl);
+					}
 				}
 			}
 			gl.glPopMatrix();
@@ -148,11 +152,13 @@ public class SceneController extends AController implements GLEventListener {
 				p.setup(gl);
 				// MODEL
 				gl.glPushMatrix();
+				synchronized ( objects ) {
 					for ( IVisObject o : objects ) {
 						if ( ! (o instanceof IGuiContainer) ) {
 							o.render(gl);
 						}
 					}
+				}
 				gl.glPopMatrix();
 			}
 		}

@@ -1,7 +1,8 @@
 package ui.model.impl;
 
-import vis.model.structure.IGuiContainer;
-import vis.model.structure.ILayout;
+import ui.model.structure.IGuiContainer;
+import ui.model.structure.ILayout;
+
 
 public class BasicMarginLayout implements ILayout {
 

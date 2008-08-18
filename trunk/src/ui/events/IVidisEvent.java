@@ -35,5 +35,9 @@ public interface IVidisEvent {
 	
 	public final int GuiResizeEvent = 2001;
 	public final int GuiMouseEvent = 2002;
+
+	public final int SimulatorPlay = 5001;
+	
+	
 	
 }

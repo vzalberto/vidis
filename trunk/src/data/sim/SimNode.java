@@ -9,12 +9,18 @@ import org.apache.log4j.Logger;
 
 import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
-import vis.Scene;
-import vis.model.impl.Node;
+import ui.events.IVidisEvent;
+import ui.events.ObjectEvent;
+import ui.events.VidisEvent;
+import ui.model.impl.Node;
+import ui.model.impl.Packet;
+import ui.model.structure.IVisObject;
+import ui.mvc.api.Dispatcher;
 import data.mod.IUserLink;
 import data.mod.IUserNode;
 import data.mod.IUserPacket;
 import data.var.AVariable;
+import data.var.IVariableContainer;
 import data.var.vars.DefaultVariable;
 
 /**
@@ -39,6 +45,8 @@ public class SimNode extends AComponent implements ISimNodeCon, Comparable<SimNo
      */
     private List<PacketQueueHolder> packetQueue;
 
+    private IVisObject visObject;
+    
     /**
      * public constructor
      * 
@@ -50,7 +58,9 @@ public class SimNode extends AComponent implements ISimNodeCon, Comparable<SimNo
 		init();
 		init(node);
 		
-		Scene.getInstance().addObject(new Node(this));
+		visObject = new Node( this );
+		ObjectEvent nextEvent = new ObjectEvent( IVidisEvent.ObjectRegister, visObject );
+		Dispatcher.forwardEvent( nextEvent );
     }
 
     /**

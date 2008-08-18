@@ -1,17 +1,18 @@
 package data.sim;
 
-import javax.media.opengl.GL;
 import javax.vecmath.Point3d;
-import javax.vecmath.Tuple3d;
 import javax.vecmath.Vector3d;
 
 import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
+import ui.events.IVidisEvent;
+import ui.events.ObjectEvent;
+import ui.events.VidisEvent;
+import ui.model.impl.Packet;
+import ui.model.structure.IVisObject;
+import ui.mvc.api.Dispatcher;
 import util.Logger;
 import util.Logger.LogLevel;
-import vis.Scene;
-import vis.model.impl.Node;
-import vis.model.impl.Packet;
 import data.mod.IUserLink;
 import data.mod.IUserNode;
 import data.mod.IUserPacket;
@@ -27,6 +28,9 @@ public class SimPacket extends AComponent implements ISimPacketCon {
     private SimNode from;
     private SimNode to;
 
+    private IVisObject visObject;
+    
+    
     public SimPacket(IUserPacket packet, SimLink link, SimNode source,
 	    SimNode target) {
 		super();
@@ -39,7 +43,11 @@ public class SimPacket extends AComponent implements ISimPacketCon {
 		// set 3d object; this (SimPacket) class should be fully initialized at this
 		// call!
 		// setObject3D(new Packet3D(this));
-		Scene.getInstance().addObject(new Packet(this));
+		
+		visObject = new Packet( this );
+		ObjectEvent nextEvent = new ObjectEvent( IVidisEvent.ObjectRegister, visObject );
+		Dispatcher.forwardEvent( nextEvent );
+
     }
 
     private void init() {

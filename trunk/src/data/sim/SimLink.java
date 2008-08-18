@@ -337,8 +337,8 @@ public class SimLink extends AComponent implements ISimLinkCon {
     public void calcMove() {
     	logger.debug("calcMove()");
 		// TODO safe checks
-		Tuple3d a = (Tuple3d) getNodeA().getVariable(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
-		Tuple3d b = (Tuple3d) getNodeB().getVariable(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
+		Tuple3d a = (Tuple3d) getNodeASim().getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
+		Tuple3d b = (Tuple3d) getNodeBSim().getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
 		Vector3d AB = new Vector3d(b);
 		AB.sub(a);
 		Vector3d moveSimStep = new Vector3d(AB);
