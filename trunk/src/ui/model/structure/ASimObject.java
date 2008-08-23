@@ -1,5 +1,7 @@
 package ui.model.structure;
 
+import java.util.Set;
+
 import javax.media.opengl.GL;
 import javax.vecmath.Tuple3d;
 
@@ -25,6 +27,10 @@ public abstract class ASimObject extends AEventHandler implements ISimObject {
 	
 	protected AVariable getVariableById( String id ) {
 		return obj.getVariableById( id );
+	}
+	
+	protected Set<String> getVariableIds() {
+		return obj.getVariableIds();
 	}
 	
 	public void render( GL gl ) {

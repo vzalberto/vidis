@@ -1,15 +1,24 @@
 package data.sim;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import javax.vecmath.Tuple3d;
 import javax.vecmath.Vector3d;
 
 import org.apache.log4j.Logger;
 
+import com.sun.org.apache.xpath.internal.operations.Variable;
+
 import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
+import ui.events.IVidisEvent;
+import ui.events.ObjectEvent;
+import ui.model.impl.Link;
+import ui.model.impl.Node;
+import ui.mvc.api.Dispatcher;
 import data.mod.IUserLink;
 import data.mod.IUserNode;
 import data.var.AVariable;
@@ -26,12 +35,18 @@ public class SimLink extends AComponent implements ISimLinkCon {
     private long delay;
     private List<PacketQueueHolder> queue;
 
+    private Link visObject;
+    
     public SimLink(IUserLink link, long delay) {
 		super();
 		init();
 		init(link);
 		// set fields
 		setDelay(delay);
+		
+		visObject = new Link( this );
+		ObjectEvent nextEvent = new ObjectEvent( IVidisEvent.ObjectRegister, visObject );
+		Dispatcher.forwardEvent( nextEvent );
     }
 
     private void init() {
@@ -359,5 +374,29 @@ public class SimLink extends AComponent implements ISimLinkCon {
     public String toString() {
 		return super.toString() + "{" + getNodeASim() + "-" + getNodeBSim()
 			+ "}";
+    }
+    
+    public final static String POINT_A = "virtual.pointA";
+    public final static String POINT_B = "virtual.pointB";
+    
+    @Override
+    public Set<String> getVariableIds() {
+    	Set<String> ret = new HashSet<String>( super.getVariableIds() );
+    	ret.add( POINT_A );
+    	ret.add( POINT_B );
+    	return ret;
+    }
+    
+    @Override
+    public AVariable getVariableById(String id) throws ClassCastException {
+    	if ( id.equals( POINT_A ) ) {
+    		return getNodeASim().getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION );
+    	}
+    	else if ( id.equals( POINT_B ) ) {
+    		return getNodeBSim().getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION );
+    	}
+    	else {
+    		return super.getVariableById(id);
+    	}
     }
 }

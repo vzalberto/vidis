@@ -51,8 +51,10 @@ public class GuiCamera extends AEventHandler implements ICamera {
 	public void init(GL gl) {
 		gl.glClear( GL.GL_DEPTH_BUFFER_BIT );
 		gl.glEnable( GL.GL_BLEND );
+		gl.glDisable( GL.GL_LIGHTING );
 		gl.glBlendFunc( GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA );
 		gl.glViewport((int)target.getX(), (int)target.getY(), (int)target.getWidth(), (int)target.getHeight());
+		
 	}
 	public void applyProjectionMatrix(GL gl) {
 		GLU glu = new GLU();

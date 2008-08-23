@@ -13,6 +13,7 @@ import ui.events.AEventHandler;
 import ui.events.IVidisEvent;
 import ui.events.StartEvent;
 import ui.events.StopEvent;
+import ui.vis.Light;
 
 public class DefaultCamera extends AEventHandler implements ICamera {
 	private static Logger logger = Logger.getLogger( DefaultCamera.class );
@@ -50,8 +51,13 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	public void init(GL gl) {
 		gl.glClearColor(0.4f, 0.4f, 0.4f, 1f);
 		gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-		
+		Light.initDirLight(gl);
+		Light.initPosLight(gl);
+		gl.glEnable( GL.GL_LIGHT0 );
+		gl.glEnable( GL.GL_LIGHT1 );
 		gl.glViewport((int)target.getX(), (int)target.getY(), (int)target.getWidth(), (int)target.getHeight());
+	
+		
 	}
 	public void applyProjectionMatrix(GL gl) {
 		GLU glu = new GLU();
