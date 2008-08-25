@@ -20,6 +20,7 @@ public class Axis implements IVisObject  {
 			gl.glVertex3f(1f, 0f, 0f);
 			gl.glVertex3f(0.9f, -0.1f, 0.0f);
 		gl.glEnd();
+		// y axis green
 		gl.glColor3f(0f, 1f, 0f);
 		gl.glBegin(GL.GL_LINES);
 			gl.glVertex3f(0f, 0f, 0f);
@@ -29,6 +30,7 @@ public class Axis implements IVisObject  {
 			gl.glVertex3f(0f, 1f, 0f);
 			gl.glVertex3f(-0.1f, 0.9f, 0.0f);
 		gl.glEnd();
+		// z axis blue
 		gl.glColor3f(0f, 0f, 1f);
 		gl.glBegin(GL.GL_LINES);
 			gl.glVertex3f(0f, 0f, 0f);

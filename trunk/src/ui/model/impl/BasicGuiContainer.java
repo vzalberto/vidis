@@ -45,12 +45,12 @@ public class BasicGuiContainer extends AGuiContainer {
 		gl.glPushMatrix();
 		gl.glColor4d(color.getRed()/255d, color.getGreen()/255d, color.getBlue()/255d, 0.5);
 			if (opaque) {
-			gl.glBegin(GL.GL_QUADS); 
-				gl.glVertex2d(0, 0);
-				gl.glVertex2d(0, getHeight());
-				gl.glVertex2d(getWidth(), getHeight());
-				gl.glVertex2d(getWidth(), 0);	
-			gl.glEnd();
+				gl.glBegin(GL.GL_QUADS); 
+					gl.glVertex2d(0, 0);
+					gl.glVertex2d(0, getHeight());
+					gl.glVertex2d(getWidth(), getHeight());
+					gl.glVertex2d(getWidth(), 0);	
+				gl.glEnd();
 			}
 			// debugging spheres
 //			gl.glColor3d(0, 1, 0);

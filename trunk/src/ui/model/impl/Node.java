@@ -11,14 +11,13 @@ import com.sun.opengl.util.GLUT;
 import data.var.IVariableContainer;
 
 public class Node extends ASimObject {
-
 	
 	public Node(IVariableContainer c) {
 		super(c);
 	}
 
 	@Override
-	protected void renderObject(GL gl) {
+	public void renderObject(GL gl) {
 		gl.glColor3d( 1, 0, 0 );
 		GLUT glut = new GLUT();
 		glut.glutSolidSphere(0.5, 20, 20);

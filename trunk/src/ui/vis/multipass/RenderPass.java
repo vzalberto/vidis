@@ -46,11 +46,13 @@ public enum RenderPass implements IPass {
 	
 	
 	public void setup(GL gl) {
+		/*
 		blending.execute(gl);
 		shadeModel.execute(gl);
 		if (lighting) gl.glEnable( GL.GL_LIGHTING ); else gl.glDisable(GL.GL_LIGHTING);
 		depthFunc.execute(gl);
 		if (depthMask) gl.glEnable( GL.GL_DEPTH_TEST ); else gl.glDisable( GL.GL_DEPTH_TEST );
+		*/
 	}
 
 }

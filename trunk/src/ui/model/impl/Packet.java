@@ -17,7 +17,7 @@ public class Packet extends ASimObject {
 	}
 
 	@Override
-	protected void renderObject(GL gl) {
+	public void renderObject(GL gl) {
 		gl.glColor3d( 1, 0, 1 );
 		GLUT glut = new GLUT();
 		glut.glutSolidCube(0.2f);

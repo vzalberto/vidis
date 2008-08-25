@@ -14,12 +14,12 @@ import ui.model.structure.IVisObject;
 public class Grid implements IVisObject {
 
 	private double x=-10;
-	private double y=-10;
+	private double z=-10;
 	private double deltax=0.5;
-	private double deltay=0.5;
-	private double zoff = 0.02;
+	private double deltaz=0.5;
+	private double yoff = 0.02;
 	private int anzx=40;
-	private int anzy=40;
+	private int anzz=40;
 	public Grid(){
 		
 	}
@@ -29,12 +29,12 @@ public class Grid implements IVisObject {
       	gl.glLineWidth(0.5f);
       	gl.glBegin(GL.GL_LINES);
       	for (double ix=x; ix <=x+anzx*deltax; ix+=deltax){
-      		gl.glVertex3d(ix, y, zoff);
-      		gl.glVertex3d(ix, y+anzy*deltay, zoff);
+      		gl.glVertex3d(ix, yoff, z);
+      		gl.glVertex3d(ix, yoff, z+anzz*deltaz);
       	}
-      	for (double iy=y;iy <=y+anzy*deltay; iy+=deltay){
-      		gl.glVertex3d(x, iy, zoff);
-      		gl.glVertex3d(x+anzx*deltax, iy, zoff);
+      	for (double iz=z;iz <=z+anzz*deltaz; iz+=deltaz){
+      		gl.glVertex3d(x, yoff, iz);
+      		gl.glVertex3d(x+anzx*deltax, yoff, iz);
       	}
       	gl.glEnd();
       	// draw Points
@@ -42,13 +42,13 @@ public class Grid implements IVisObject {
 		gl.glColor3f(0.7f, 0.7f, 0.7f);
 		gl.glBegin(GL.GL_POINTS);
       	for (double ix=x; ix <=x+anzx*deltax; ix+=deltax)
-      		for (double iy=y;iy <=y+anzy*deltay; iy+=deltay)
-      			gl.glVertex3d(ix, iy, zoff);
+      		for (double iz=z;iz <=z+anzz*deltaz; iz+=deltaz)
+      			gl.glVertex3d(ix, yoff, iz);
       	gl.glEnd();
       
       	
     }
 	public Vector3d getPos() {
-		return new Vector3d(this.x, this.y, 0);
+		return new Vector3d(this.x, 0, this.z);
 	}
 }

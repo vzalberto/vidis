@@ -25,6 +25,8 @@ public class CameraController extends AController{
 						IVidisEvent.ScrollUp,
 						IVidisEvent.ScrollLeft,
 						IVidisEvent.ScrollRight );
+		
+		registerEvent(	IVidisEvent.MouseClickedEvent );
 	}
 	
 	@Override
@@ -39,6 +41,9 @@ public class CameraController extends AController{
 		case IVidisEvent.ScrollUp:
 		case IVidisEvent.ScrollRight:
 			forwardEventToOtherHandler( defaultCamera, event );
+			break;
+		case IVidisEvent.MouseClickedEvent:
+			defaultCamera.fireEvent( event );
 			break;
 		}
 	}
