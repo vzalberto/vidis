@@ -10,11 +10,6 @@ import javax.media.opengl.GLCanvas;
 import javax.media.opengl.GLEventListener;
 
 import org.apache.log4j.Logger;
-import org.fenggui.Button;
-import org.fenggui.Display;
-import org.fenggui.Container.ContainerAppearance;
-import org.fenggui.render.Binding;
-import org.fenggui.render.jogl.JOGLBinding;
 
 import ui.events.CameraEvent;
 import ui.events.IVidisEvent;

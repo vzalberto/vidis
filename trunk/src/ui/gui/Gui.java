@@ -4,10 +4,6 @@ import javax.media.opengl.GL;
 import javax.vecmath.Point2d;
 
 import org.apache.log4j.Logger;
-import org.fenggui.Display;
-import org.fenggui.composites.Window;
-import org.fenggui.render.Binding;
-import org.fenggui.render.jogl.JOGLBinding;
 
 import ui.events.AEventHandler;
 import ui.events.GuiMouseEvent;
