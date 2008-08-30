@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import ui.events.CameraEvent;
 import ui.events.IVidisEvent;
 import ui.events.ObjectEvent;
+import ui.events.VidisEvent;
 import ui.gui.Gui;
 import ui.mvc.api.AController;
 import ui.mvc.api.Dispatcher;
@@ -24,6 +25,10 @@ public class GuiController extends AController {
 		registerEvent( IVidisEvent.MouseClickedEvent,
 				   IVidisEvent.MousePressedEvent,
 				   IVidisEvent.MouseReleasedEvent );
+		
+		registerEvent( IVidisEvent.FPS );
+		
+		
 	}
 	
 	@Override
@@ -36,7 +41,10 @@ public class GuiController extends AController {
 		case IVidisEvent.MouseClickedEvent:
 			guiCamera.fireEvent( event );
 			break;
-
+		case IVidisEvent.FPS:
+			String fps = ((VidisEvent)event).getData().toString();
+			gui.fps.setText( fps.substring(0, fps.length()>=4?4:fps.length()) );
+			break;
 		}
 	}
 	

@@ -42,7 +42,12 @@ public abstract class ASimObject extends AEventHandler implements ISimObject {
 		catch ( Exception e ) {
 			logger.error("error getting pos variable of "+obj +"  ", e);
 		}
-		renderObject( gl );
+		try {
+			renderObject(gl);
+		}
+		catch ( Exception e ) {
+			logger.error( null, e );
+		}
 		gl.glPopMatrix();
 	}
 	

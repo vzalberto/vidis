@@ -16,12 +16,23 @@ public class Packet extends ASimObject {
 		super(c);
 	}
 
+	private static int displayListId = -1;
+	
 	@Override
 	public void renderObject(GL gl) {
+		if ( displayListId == -1 ) {
+			displayListId = gl.glGenLists(1);
+			preRenderObject(gl);
+		}
 		gl.glColor3d( 1, 0, 1 );
+		gl.glCallList( displayListId );
+	}
+	
+	public void preRenderObject(GL gl) {
 		GLUT glut = new GLUT();
-		glut.glutSolidCube(0.2f);
-		
+		gl.glNewList(displayListId, GL.GL_COMPILE);
+			glut.glutSolidCube(0.2f);
+		gl.glEndList();
 	}
 
 	@Override

@@ -7,7 +7,6 @@ import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
 import ui.events.IVidisEvent;
 import ui.events.ObjectEvent;
-import ui.events.VidisEvent;
 import ui.model.impl.Packet;
 import ui.model.structure.IVisObject;
 import ui.mvc.api.Dispatcher;
@@ -21,6 +20,8 @@ import data.var.vars.DefaultVariable;
 
 public class SimPacket extends AComponent implements ISimPacketCon {
 
+	private static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger( SimPacket.class );
+	
     protected IUserPacket logic;
 
     // -------- sim fields ------- //
@@ -29,7 +30,6 @@ public class SimPacket extends AComponent implements ISimPacketCon {
     private SimNode to;
 
     private IVisObject visObject;
-    
     
     public SimPacket(IUserPacket packet, SimLink link, SimNode source,
 	    SimNode target) {
@@ -169,5 +169,13 @@ public class SimPacket extends AComponent implements ISimPacketCon {
     	} else {
     		return super.getVariableById(id);
     	}
+    }
+    
+    @Override
+    public void kill() {
+    	super.kill();
+    	logger.info("");
+    	ObjectEvent oe = new ObjectEvent( IVidisEvent.ObjectUnregister, this.visObject );
+    	Dispatcher.forwardEvent( oe );
     }
 }

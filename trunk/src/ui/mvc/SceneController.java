@@ -12,6 +12,7 @@ import javax.media.opengl.GLEventListener;
 import org.apache.log4j.Logger;
 
 import ui.events.CameraEvent;
+import ui.events.DummyEvent;
 import ui.events.IVidisEvent;
 import ui.events.ObjectEvent;
 import ui.events.VidisEvent;
@@ -20,6 +21,7 @@ import ui.model.structure.IGuiContainer;
 import ui.model.structure.IVisObject;
 import ui.mvc.api.AController;
 import ui.mvc.api.Dispatcher;
+import ui.vis.Light;
 import ui.vis.camera.GuiCamera;
 import ui.vis.camera.ICamera;
 import ui.vis.multipass.RenderPass;
@@ -43,6 +45,11 @@ public class SceneController extends AController implements GLEventListener {
 	 * Used to animate the scene
 	 */
 	private Animator animator;
+	
+	private int wantedFps = 25;
+	
+	private long startTime;
+	
 	
 	public SceneController() {
 		
@@ -112,6 +119,8 @@ public class SceneController extends AController implements GLEventListener {
 	public void display(GLAutoDrawable drawable) {
 		final GL gl = drawable.getGL();
 		
+		startTime = System.currentTimeMillis();
+		
 		//XXX update cameras somewhere else
 		for ( ICamera c : cameras ) {
 			c.update();
@@ -135,6 +144,13 @@ public class SceneController extends AController implements GLEventListener {
 			drawModel( gl, c);
 			
 		}
+		
+		long usedTime = System.currentTimeMillis() - startTime;
+		
+		double fps = 1000d / usedTime;
+		
+		Dispatcher.forwardEvent( new VidisEvent<Double>( IVidisEvent.FPS, fps ) );
+		
 	}
 
 	private void drawModel( GL gl, ICamera c ) {
@@ -185,6 +201,9 @@ public class SceneController extends AController implements GLEventListener {
 		final GL gl = drawable.getGL();
 		
 		// enable / disable some global stuff
+		Light.initDirLight(gl);
+		Light.initPosLight(gl);
+		
 		
 		animator = new Animator(drawable);
 		animator.start();

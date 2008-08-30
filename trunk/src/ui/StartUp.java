@@ -1,18 +1,24 @@
 package ui;
 
+
+import org.apache.log4j.Logger;
+
 import ui.events.IVidisEvent;
 import ui.mvc.VidisController;
 import ui.mvc.api.Dispatcher;
-import util.Log;
 
 
 
 public class StartUp {
+	private static Logger logger = Logger.getLogger( StartUp.class );
+	
 	public static void main(String[] args){
 //		BasicConfigurator.configure();
 		
-		Log.debug( "starting up" );
-		Log.debug( "java.library.path = " + System.getProperty( "java.library.path" ) );
+		logger.info( "starting up" );
+		logger.info( "java.library.path:" );
+		String[] l = System.getProperty( "java.library.path" ).split(":");
+		for (String s : l) logger.info( " * " + s );
 		
 		Dispatcher.registerController( new VidisController() );	
 		Dispatcher.forwardEvent( IVidisEvent.Init );

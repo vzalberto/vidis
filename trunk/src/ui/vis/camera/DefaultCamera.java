@@ -54,10 +54,9 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	public void init(GL gl) {
 		gl.glClearColor(0.4f, 0.4f, 0.4f, 1f);
 		gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
-		Light.initDirLight(gl);
-		Light.initPosLight(gl);
+		
 		gl.glEnable( GL.GL_DEPTH_TEST );
-		gl.glDisable( GL.GL_LIGHTING );
+		gl.glEnable( GL.GL_LIGHTING );
 		gl.glEnable( GL.GL_LIGHT0 );
 //		gl.glEnable( GL.GL_LIGHT1 );
 		gl.glViewport((int)target.getX(), (int)target.getY(), (int)target.getWidth(), (int)target.getHeight());
@@ -138,11 +137,11 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 			}
 			break;
 		case IVidisEvent.MouseClickedEvent:
-			logger.info( event );
-			logger.info( ((MouseClickedEvent)event).mouseEvent );
-			logger.info( ((MouseClickedEvent)event).mouseEvent.getPoint() );
-			Vector4d point = calc3DMousePoint( ((MouseClickedEvent)event).mouseEvent.getPoint() );
-			logger.info( "picking: " + point);
+//			logger.info( event );
+//			logger.info( ((MouseClickedEvent)event).mouseEvent );
+//			logger.info( ((MouseClickedEvent)event).mouseEvent.getPoint() );
+//			Vector4d point = calc3DMousePoint( ((MouseClickedEvent)event).mouseEvent.getPoint() );
+//			logger.info( "picking: " + point);
 			break;
 		}
 	}

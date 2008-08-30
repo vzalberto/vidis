@@ -40,6 +40,7 @@ public class Link extends ASimObject {
 	private Vector3d left = null;
 	private Vector3d right = null;
 	
+	private int displayListId = -1;
 	
 	// kappa
 	private static double kappa = 4d * ( Math.sqrt (2d ) - 1d ) / 3d;
@@ -56,7 +57,12 @@ public class Link extends ASimObject {
 	// need to override render to get rid of the automatic positioning
 	@Override
 	public void render(GL gl) {
-		renderObject(gl);
+		try {
+			renderObject(gl);
+		}
+		catch ( Exception e ) {
+			logger.warn( e.getMessage(), e );
+		}
 	}
 
 	private Point3d knownPointA = new Point3d();
@@ -69,58 +75,75 @@ public class Link extends ASimObject {
 		Tuple3d posB = (Tuple3d) getVariableById( SimLink.POINT_B ).getData();
 		
 		if ( ! knownPointA.equals( posA ) && ! knownPointB.equals( posB ) ) {
+			logger.error( "A:"+ knownPointA + " ?= " + posA );
+			logger.error( "B:"+ knownPointB + " ?= " + posB );
 			knownPointA = new Point3d( posA );
 			knownPointB = new Point3d( posB );
 			calculateControlPoints( knownPointA, knownPointB );
+			preRenderObject( gl );
 		}
 		
-		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 0 );
-		gl.glEnable( GL.GL_MAP1_VERTEX_3 );
+//		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 0 );
+//		gl.glEnable( GL.GL_MAP1_VERTEX_3 );
+//		
+//		gl.glPushMatrix();
+//		gl.glColor3d( 1, 1, 0);
+//		gl.glBegin( GL.GL_LINE_STRIP );
+//			for ( int i=0; i<30; i++ ) {
+//				gl.glEvalCoord1d(i/30.0);
+//			}
+//		gl.glEnd();
+//		
+//		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 9 );
+//		gl.glBegin( GL.GL_LINE_STRIP );
+//		for ( int i=0; i<30; i++ ) {
+//			gl.glEvalCoord1d(i/30.0);
+//		}
+//		gl.glEnd();
+//		
+//		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 18 );
+//		gl.glBegin( GL.GL_LINE_STRIP );
+//		for ( int i=0; i<30; i++ ) {
+//			gl.glEvalCoord1d(i/30.0);
+//		}
+//		gl.glEnd();
+//		
+//		gl.glPopMatrix();
+//		
+//		if ( right != null ) {
+//			gl.glColor3d( 0, 0, 1 );
+//		gl.glPushMatrix();
+//			// right 
+//			gl.glBegin( GL.GL_LINES );
+//				gl.glVertex3d( knownPointA.x, knownPointA.y, knownPointA.z );
+//				Point3d pointR = new Point3d( knownPointA ); pointR.add( right );
+//				gl.glVertex3d( pointR.x, pointR.y, pointR.z );
+//			gl.glEnd();
+//		gl.glPopMatrix();
 		
-		gl.glPushMatrix();
-		gl.glColor3d( 1, 1, 0);
-		gl.glBegin( GL.GL_LINE_STRIP );
-			for ( int i=0; i<30; i++ ) {
-				gl.glEvalCoord1d(i/30.0);
-			}
-		gl.glEnd();
 		
-		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 9 );
-		gl.glBegin( GL.GL_LINE_STRIP );
-		for ( int i=0; i<30; i++ ) {
-			gl.glEvalCoord1d(i/30.0);
+//		}
+		
+		gl.glCallList( displayListId );
+		
+	}
+	
+	private void preRenderObject( GL gl ) {
+		if ( displayListId == -1 ) {
+			displayListId = gl.glGenLists(1);
 		}
-		gl.glEnd();
-		
-		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 18 );
-		gl.glBegin( GL.GL_LINE_STRIP );
-		for ( int i=0; i<30; i++ ) {
-			gl.glEvalCoord1d(i/30.0);
-		}
-		gl.glEnd();
-		
-		gl.glPopMatrix();
-		
-		if ( right != null ) {
-			gl.glColor3d( 0, 0, 1 );
-		gl.glPushMatrix();
-			// right 
-			gl.glBegin( GL.GL_LINES );
-				gl.glVertex3d( knownPointA.x, knownPointA.y, knownPointA.z );
-				Point3d pointR = new Point3d( knownPointA ); pointR.add( right );
-				gl.glVertex3d( pointR.x, pointR.y, pointR.z );
-			gl.glEnd();
-		gl.glPopMatrix();
-		
-		gl.glEnable( GL.GL_MAP2_VERTEX_3 );
-		drawBuffer( gl, surfaceControlPointsLeftDown );
-		drawBuffer( gl, surfaceControlPointsLeftUp );
-		drawBuffer( gl, surfaceControlPointsRightDown );
-		drawBuffer( gl, surfaceControlPointsRightUp );
-		}
+		gl.glNewList( displayListId, GL.GL_COMPILE );
+			gl.glEnable( GL.GL_MAP2_VERTEX_3 );
+			drawBuffer( gl, surfaceControlPointsLeftDown );
+			drawBuffer( gl, surfaceControlPointsLeftUp );
+			drawBuffer( gl, surfaceControlPointsRightDown );
+			drawBuffer( gl, surfaceControlPointsRightUp );
+		gl.glEndList();
 	}
 	
 	private void drawBuffer( GL gl, DoubleBuffer buf ) {
+		gl.glEnable( GL.GL_AUTO_NORMAL );
+		
 		gl.glMap2d(GL.GL_MAP2_VERTEX_3,
 				0,	1,
 				3,	4, 
@@ -238,6 +261,7 @@ public class Link extends ASimObject {
 			
 			Point3d pointMup = new Point3d( pointM );
 			tmp.scale( radius, up );
+			pointMup.add( tmp );
 			
 			Point3d pointMright = new Point3d( pointM );
 			tmp.scale( radius, right );
@@ -245,7 +269,7 @@ public class Link extends ASimObject {
 			
 			Point3d pointMleft = new Point3d( pointM );
 			tmp.scale( radius, left );
-			pointMright.add( tmp );
+			pointMleft.add( tmp );
 			
 			Point3d pointMdownRight = new Point3d( pointMdown );
 			tmp.scale( l, right );

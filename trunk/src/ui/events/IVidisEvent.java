@@ -40,4 +40,8 @@ public interface IVidisEvent {
 	
 	
 	
+	public final int FPS 			= 10001;
+	
+	
+	
 }

@@ -22,6 +22,8 @@ public class Gui extends AEventHandler {
 	
 	private BasicGuiContainer mainContainer;
 	
+	public TextGuiContainer fps;
+	
 	public Gui() {
 		
 		
@@ -65,7 +67,7 @@ public class Gui extends AEventHandler {
 		container1.addChild(playButton);
 		mainContainer.addChild(container2);
 		container2.addChild(loadButton);
-		TextGuiContainer fps = new TextGuiContainer();
+		fps = new TextGuiContainer();
 		fps.setLayout(new PercentMarginLayout(1,1,-0.9,-0.9,-0.1,-0.1));
 		fps.setText("0fps");
 		mainContainer.addChild(fps);
