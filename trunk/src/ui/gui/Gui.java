@@ -1,14 +1,12 @@
 package ui.gui;
 
 import javax.media.opengl.GL;
-import javax.vecmath.Point2d;
 
 import org.apache.log4j.Logger;
 
 import ui.events.AEventHandler;
 import ui.events.GuiMouseEvent;
 import ui.events.IVidisEvent;
-import ui.events.MouseClickedEvent;
 import ui.model.impl.BasicGuiContainer;
 import ui.model.impl.PercentMarginLayout;
 import ui.model.impl.TextGuiContainer;
@@ -25,9 +23,6 @@ public class Gui extends AEventHandler {
 	public TextGuiContainer fps;
 	
 	public Gui() {
-		
-		
-		
 		logger.debug("Constructor()");
 		mainContainer = new BasicGuiContainer();
 		mainContainer.setOpaque( false );

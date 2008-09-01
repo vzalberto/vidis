@@ -43,7 +43,7 @@ public class Link extends ASimObject {
 	private int displayListId = -1;
 	
 	// kappa
-	private static double kappa = 4d * ( Math.sqrt (2d ) - 1d ) / 3d;
+	private static double kappa = 4d * ( Math.sqrt( 2d ) - 1d ) / 3d;
 	
 	private double radius = 0.1;
 	
@@ -68,9 +68,39 @@ public class Link extends ASimObject {
 	private Point3d knownPointA = new Point3d();
 	private Point3d knownPointB = new Point3d();
 	
+	public static void setupShader(GL gl) {
+		int v = gl.glCreateShader( GL.GL_VERTEX_SHADER );
+		String code = 
+			"attrib vec3 packet;" +
+			"void main() {" +
+			"vec3 newVertex;" +
+			"vec3 distVec = gl_Vertex - packet;" +
+			"float dist = length(distVec);" +
+			"if ( dist > 0.5 ) {" +
+			" newVertex = gl_Vertex;" +
+			"} else {" +
+			" newVertex = gl_Vertex;" +
+			"}" +
+			"gl_Position = newVertex;" + //FIXME
+			"}";
+		String[] source = new String[] { code };
+		gl.glShaderSource( v, 1, source, (int[])null, 0 );
+		gl.glCompileShader(v);
+
+		
+		int shaderprogram = gl.glCreateProgram();
+		gl.glAttachShader(shaderprogram, v);
+		gl.glLinkProgram(shaderprogram);
+		gl.glValidateProgram(shaderprogram);
+	
+
+		gl.glUseProgram(shaderprogram); 
+	}
+	
 	
 	@Override
 	public void renderObject(GL gl) {
+		
 		Tuple3d posA = (Tuple3d) getVariableById( SimLink.POINT_A ).getData();
 		Tuple3d posB = (Tuple3d) getVariableById( SimLink.POINT_B ).getData();
 		
@@ -82,6 +112,11 @@ public class Link extends ASimObject {
 			calculateControlPoints( knownPointA, knownPointB );
 			preRenderObject( gl );
 		}
+		gl.glEnable( GL.GL_BLEND );
+		gl.glBlendFunc( GL.GL_ONE, GL.GL_DST_ALPHA );
+		gl.glColor4d( 0, 0, 1, 0.7 );
+		gl.glCallList( displayListId );
+		gl.glDisable( GL.GL_BLEND );
 		
 //		gl.glMap1d( GL.GL_MAP1_VERTEX_3, 0, 1, 3, 3, linesControlPoints.array(), 0 );
 //		gl.glEnable( GL.GL_MAP1_VERTEX_3 );
@@ -124,7 +159,7 @@ public class Link extends ASimObject {
 		
 //		}
 		
-		gl.glCallList( displayListId );
+	
 		
 	}
 	
@@ -150,7 +185,6 @@ public class Link extends ASimObject {
 				0,	1,	
 				12,	3, 
 				buf);
-		
 		gl.glMapGrid2f( 4, 0.0f, 1.0f, 20, 0.0f, 1.0f);
 		gl.glPushMatrix();
 			gl.glEvalMesh2( GL.GL_FILL, 0, 4, 0, 20);

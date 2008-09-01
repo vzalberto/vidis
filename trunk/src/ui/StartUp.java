@@ -23,9 +23,5 @@ public class StartUp {
 		Dispatcher.registerController( new VidisController() );	
 		Dispatcher.forwardEvent( IVidisEvent.Init );
 		
-//		Simulator.createInstance();
-//		Simulator.getInstance().importSimFile( new File("data/modules/demo/demo.msim"));
-//		Simulator.getInstance().getPlayer().play();
-		
 	}
 }

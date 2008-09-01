@@ -12,11 +12,13 @@ import javax.media.opengl.GLEventListener;
 import org.apache.log4j.Logger;
 
 import ui.events.CameraEvent;
-import ui.events.DummyEvent;
 import ui.events.IVidisEvent;
 import ui.events.ObjectEvent;
 import ui.events.VidisEvent;
 import ui.input.InputListener;
+import ui.model.impl.Link;
+import ui.model.impl.Node;
+import ui.model.impl.Packet;
 import ui.model.structure.IGuiContainer;
 import ui.model.structure.IVisObject;
 import ui.mvc.api.AController;
@@ -24,7 +26,6 @@ import ui.mvc.api.Dispatcher;
 import ui.vis.Light;
 import ui.vis.camera.GuiCamera;
 import ui.vis.camera.ICamera;
-import ui.vis.multipass.RenderPass;
 import ui.vis.objects.Axis;
 import ui.vis.objects.Grid;
 
@@ -52,9 +53,6 @@ public class SceneController extends AController implements GLEventListener {
 	
 	
 	public SceneController() {
-		
-	
-		
 		logger.debug( "Constructor()" );
 		addChildController( new CameraController() );
 		addChildController( new GuiController() );
@@ -166,19 +164,68 @@ public class SceneController extends AController implements GLEventListener {
 			gl.glPopMatrix();
 		}
 		else {
-			for ( RenderPass p : RenderPass.values()) {
-				p.setup(gl);
-				// MODEL
+//			for ( RenderPass p : RenderPass.values()) {
+//				p.setup(gl);
+				// MODEL  with draw order:
+				// first draw the nodes
+			    // then the back side of the links
+				// then the packets
+				// and finally the front sides of the links
 				gl.glPushMatrix();
 				synchronized ( objects ) {
+					gl.glEnable( GL.GL_LIGHTING );
+					// nodes
+					gl.glDisable( GL.GL_LIGHT0 );
+					gl.glEnable( GL.GL_LIGHT1 );
+					gl.glDisable( GL.GL_LIGHT2 );
 					for ( IVisObject o : objects ) {
-						if ( ! (o instanceof IGuiContainer) ) {
+						if ( (o instanceof Node) ) {
+							o.render(gl);
+						}
+					}
+					// back side of links
+					gl.glEnable( GL.GL_LIGHT0 );
+					gl.glDisable( GL.GL_LIGHT1 );
+					gl.glDisable( GL.GL_LIGHT2 );
+					gl.glEnable( GL.GL_CULL_FACE );
+					gl.glCullFace( GL.GL_BACK );
+					for ( IVisObject o : objects ) {
+						if ( (o instanceof Link) ) {
+							o.render(gl);
+						}
+					}
+					gl.glDisable( GL.GL_CULL_FACE );
+					// packets
+					gl.glDisable( GL.GL_LIGHT0 );
+					gl.glDisable( GL.GL_LIGHT1 );
+					gl.glEnable( GL.GL_LIGHT2 );
+					for ( IVisObject o : objects ) {
+						if ( (o instanceof Packet) ) {
+							o.render(gl);
+						}
+					}
+					// front side of links
+					gl.glEnable( GL.GL_LIGHT0 );
+					gl.glDisable( GL.GL_LIGHT1 );
+					gl.glDisable( GL.GL_LIGHT2 );
+					gl.glEnable( GL.GL_CULL_FACE );
+					gl.glCullFace( GL.GL_FRONT );
+					for ( IVisObject o : objects ) {
+						if ( (o instanceof Link) ) {
+							o.render(gl);
+						}
+					}
+					gl.glDisable( GL.GL_CULL_FACE );
+					// rest
+					gl.glDisable( GL.GL_LIGHTING );
+					for ( IVisObject o : objects ) {
+						if ( !(o instanceof Node) && !(o instanceof Link) && !(o instanceof Packet) && !(o instanceof IGuiContainer) ) {
 							o.render(gl);
 						}
 					}
 				}
 				gl.glPopMatrix();
-			}
+//			}
 		}
 	}
 	
@@ -201,8 +248,9 @@ public class SceneController extends AController implements GLEventListener {
 		final GL gl = drawable.getGL();
 		
 		// enable / disable some global stuff
-		Light.initDirLight(gl);
-		Light.initPosLight(gl);
+		Light.initNodeLight(gl);
+		Light.initLinkLight(gl);
+		Light.initPacketLight(gl);
 		
 		
 		animator = new Animator(drawable);

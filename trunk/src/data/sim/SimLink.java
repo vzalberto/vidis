@@ -10,14 +10,12 @@ import javax.vecmath.Vector3d;
 
 import org.apache.log4j.Logger;
 
-import com.sun.org.apache.xpath.internal.operations.Variable;
-
+import sim.Simulator;
 import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
 import ui.events.IVidisEvent;
 import ui.events.ObjectEvent;
 import ui.model.impl.Link;
-import ui.model.impl.Node;
 import ui.mvc.api.Dispatcher;
 import data.mod.IUserLink;
 import data.mod.IUserNode;
@@ -44,9 +42,11 @@ public class SimLink extends AComponent implements ISimLinkCon {
 		// set fields
 		setDelay(delay);
 		
-		visObject = new Link( this );
-		ObjectEvent nextEvent = new ObjectEvent( IVidisEvent.ObjectRegister, visObject );
-		Dispatcher.forwardEvent( nextEvent );
+		if ( visObject == null ) {
+			visObject = new Link( this );
+		}
+		ObjectEvent oe = new ObjectEvent( IVidisEvent.ObjectRegister, visObject );
+		Dispatcher.forwardEvent( oe );
     }
 
     private void init() {
@@ -179,6 +179,7 @@ public class SimLink extends AComponent implements ISimLinkCon {
 			} else {
 			    // queue
 			    tmp.timeout--;
+			    tmp.lastStepTime = System.currentTimeMillis();
 			}
 		    }
 		}
@@ -189,6 +190,7 @@ public class SimLink extends AComponent implements ISimLinkCon {
 		    this.packet = packet;
 		    this.to = to;
 		    this.timeout = timeout;
+		    this.lastStepTime = System.currentTimeMillis();
 		    // this.startMillis = System.currentTimeMillis();
 		    // this.lastMillis = System.currentTimeMillis();
 		}
@@ -196,6 +198,7 @@ public class SimLink extends AComponent implements ISimLinkCon {
 		SimPacket packet;
 		SimNode to;
 		long timeout;
+		long lastStepTime;
 		// long startMillis;
 		// long lastMillis;
     }
@@ -243,76 +246,42 @@ public class SimLink extends AComponent implements ISimLinkCon {
     // private long lastAlphaRealTime, lastRealTimeDiff;
     // private long lastTime = 0;
     // private double lastAlpha, deltaAlpha;
+    
+    
     public double getAlphaForPacket(SimPacket packet) {
     	logger.debug("getAlphaForPacket("+packet+");");
 		PacketQueueHolder tmp = getPacketQueueHolderForPacket(packet);
-		if (tmp != null) {
-		    int dir = packet.getDirection();
-		    // long durationLastStep = Simulator.getInstance().getLastStepDuration();
-		    // long timeStart = tmp.startMillis;
-		    long stepsToTarget = tmp.timeout;
-		    long length = this.delay;
-	
-		    long stepsOnLink = length - stepsToTarget;
-	
-		    /*
-		     * double alpha=0; long now = Simulator.getInstance().getNow(); if
-		     * (lastTime == now) { // interpolate long nowReal =
-		     * System.currentTimeMillis()-lastAlphaRealTime; double smallAlpha =
-		     * (double) nowReal /(double) lastRealTimeDiff * deltaAlpha; if(dir < 0) {
-		     * smallAlpha = deltaAlpha-smallAlpha; //dark magic alpha calculation
-		     * alpha = lastAlpha + deltaAlpha - smallAlpha; } else{ alpha = lastAlpha +
-		     * smallAlpha; } } else { // calculate double delta = tmp.timeout; double
-		     * max = delay; alpha = delta/max; if(dir < 0) alpha = 1.0-alpha;
-		     * deltaAlpha = alpha-lastAlpha; lastAlpha = alpha; lastRealTimeDiff =
-		     * System.currentTimeMillis() - lastAlphaRealTime; lastAlphaRealTime =
-		     * System.currentTimeMillis(); }
-		     */
-	
-		    /*
-		     * // 1/alpha = timeOnLink/timeSpendOnLink long timeSpendOnLink =
-		     * System.currentTimeMillis() - timeStart; long timeOnLink =
-		     * durationLastStep * length; double alpha = ((double)timeSpendOnLink) /
-		     * ((double)timeOnLink);
-		     */
-	
-		    // grobe berechnung:
-		    // 1/alpha_g = length / stepsOnLink
-		    double alpha = ((double) stepsOnLink) / ((double) length);
-		    /*
-		     * // feine berechnung: double alpha_f_max = 1d / ((double) length); long
-		     * timeOnLink = System.currentTimeMillis() - timeStart;
-		     * 
-		     * long timeOnThisStep = timeOnLink - (stepsOnLink * durationLastStep); //
-		     * alpha_f_max/alpha_f = durationLastStep / timeOnThisStep double alpha_f =
-		     * alpha_f_max * timeOnThisStep / durationLastStep; if (alpha_f<0)
-		     * alpha_f = 0; if (alpha_f>alpha_f_max) alpha_f = alpha_f_max; double
-		     * alpha = alpha_g + alpha_f;
-		     */
-		    // long timeOnLink = stepsOnLink * durationLastStep;
-		    // //long timeSpentOnLink = (stepsOnLink - stepsToGo) * durationLastStep;
-		    // long timeSpentOnLink = System.currentTimeMillis() - timeStart;
-		    // // 1/alpha = timeOnLink/timeSpendOnLink
-		    // double alpha = (double)timeSpentOnLink / (double)timeOnLink;
-		    if (dir == 0)
-			logger.debug("figfut");
-		    // if (dir < 0)
-		    // alpha = 1.0 - alpha;
-		    // Logger.output(this, "alpha = "+alpha);
-		    if (alpha > 1)
-			alpha = 1;
-		    if (alpha < 0)
-			alpha = 0;
-		    return alpha;
-		    // estimated millis left
-		    // double millisUntilNow = (tmp.lastMillis - tmp.startMillis);
-		    // double stepsUntilNow = getDelay() - tmp.timeout;
-		    // double millisPerStep = millisUntilNow / stepsUntilNow;
-		    // double stepsLeft = tmp.timeout;
-		    // double millisLeft = millisPerStep * stepsLeft;
-		    // double millisTotal = millisUntilNow + millisLeft;
-		    // double alpha = millisUntilNow / millisTotal;
-		    // return alpha;
+		if ( tmp != null ) {
+			
+			long now = System.currentTimeMillis();
+			
+			long lastStepTime = tmp.lastStepTime;
+			
+			long timeOnThisStep = now - lastStepTime;
+			
+			long lastStepDuration = Simulator.getInstance().getLastStepDuration();
+			
+			// 100 -> lastStepDuration
+			// ? -> timeOnThisStep
+			
+			double alpha1 = (double) timeOnThisStep / (double) lastStepDuration;
+			
+			// 100 -> stepsAll
+			// ? -> stepsDone
+			
+			long stepsToDo = tmp.timeout;
+			long stepsAll = this.getDelay();
+			long stepsDone = stepsAll - stepsToDo;
+			
+//			long timeAll = stepsAll * lastStepDuration;
+			
+			double alpha0  = (double) stepsDone  / (double) stepsAll;
+			
+			double alpha1Scale = 1d / stepsAll;
+			
+			double alpha = alpha0 + alpha1Scale * alpha1;
+			
+			return alpha;
 		}
 		return -1;
     }
@@ -338,7 +307,7 @@ public class SimLink extends AComponent implements ISimLinkCon {
     }
 
     /**
-     * Bewegungsvector skaliert auf 1 Simulator Step
+     * Bewegungsvector von A nach B
      */
     private Vector3d move = null;
 
@@ -352,15 +321,14 @@ public class SimLink extends AComponent implements ISimLinkCon {
     public void calcMove() {
     	logger.debug("calcMove()");
 		// TODO safe checks
-		Tuple3d a = (Tuple3d) getNodeASim().getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
-		Tuple3d b = (Tuple3d) getNodeBSim().getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
-		Vector3d AB = new Vector3d(b);
-		AB.sub(a);
-		Vector3d moveSimStep = new Vector3d(AB);
-		moveSimStep.scale(1d / delay);
+		Tuple3d a = (Tuple3d) getNodeASim().getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION ).getData();
+		Tuple3d b = (Tuple3d) getNodeBSim().getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION ).getData();
+		Vector3d AB = new Vector3d( b );
+		AB.sub( a );
+		Vector3d moveSimStep = new Vector3d( AB );
+		//moveSimStep.scale( 1d / delay );
 		// grob zum testen
 		move = moveSimStep;
-    		
     }
 
     public SimNode getNodeASim() {
@@ -399,4 +367,5 @@ public class SimLink extends AComponent implements ISimLinkCon {
     		return super.getVariableById(id);
     	}
     }
+    
 }

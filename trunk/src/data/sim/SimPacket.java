@@ -3,6 +3,7 @@ package data.sim;
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
 
+import sim.Simulator;
 import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
 import ui.events.IVidisEvent;
@@ -119,47 +120,75 @@ public class SimPacket extends AComponent implements ISimPacketCon {
     	return through.getUserLogic();
     }
     
+    
+    
     private AVariable positionOverride() {
-    	// FIXME
-//		double alpha = getThrough().getAlphaForPacket(this);
-		double direction = getThrough().getDirectionForPacket(this);
-		SimNode nodeA = getThrough().getNodeASim();
-		SimNode nodeB = getThrough().getNodeBSim();
-		SimNode nodeFrom = null, nodeTo = null;
-		if(direction > 0) {
-			nodeFrom = nodeA;
-			nodeTo = nodeB;
-		} else {
-			nodeFrom = nodeB;
-			nodeTo = nodeA;
-		}
-		Point3d posFrom = (Point3d) nodeFrom.getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
-		Point3d posTo = (Point3d) nodeTo.getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION).getData();
-		// calculate pos
-		Point3d pos = null;
-		long stepsOnLink = getThrough().getStepsOnLinkForPacket(this);
-		Vector3d move = getThrough().getMove();
-		Vector3d moveScaled = new Vector3d(move);
-		moveScaled.scale(stepsOnLink);
-		Vector3d posv = new Vector3d(posFrom);
-		posv.add(moveScaled);
-		
-//		Vector3d way = new Vector3d();
-//		way.sub(posTo, posFrom);
-//		way.scale(alpha);
-		pos = new Point3d(posv);
-		
     	
-    	
-    	
-		// set var or register var
-		if(hasVariable(AVariable.COMMON_IDENTIFIERS.POSITION)) {
-			// update
-			((DefaultVariable)super.getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION)).update(pos);
-		} else {
-			registerVariable(new DefaultVariable(AVariable.COMMON_IDENTIFIERS.POSITION, pos));
-		}
-		return super.getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION);
+    	double alpha = getThrough().getAlphaForPacket( this );
+    	if ( alpha == -1 ) {
+//    		kill();
+    	}
+	    	// FIXME
+	//		double alpha = getThrough().getAlphaForPacket(this);
+			double direction = getThrough().getDirectionForPacket(this);
+			SimNode nodeA = getThrough().getNodeASim();
+			SimNode nodeB = getThrough().getNodeBSim();
+			SimNode nodeFrom = null, nodeTo = null;
+			if ( direction < 0 ) {
+				nodeFrom = nodeA;
+				nodeTo = nodeB;
+			} 
+			else {
+				nodeFrom = nodeB;
+				nodeTo = nodeA;
+			}
+			Point3d posFrom = (Point3d) nodeFrom.getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION ).getData();
+			Point3d posTo = (Point3d) nodeTo.getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION ).getData();
+			// calculate pos
+			Point3d pos = null;
+		//	long stepsOnLink = getThrough().getStepsOnLinkForPacket( this );
+			//Vector3d move = getThrough().getMove();
+			//Vector3d moveScaled = new Vector3d( move );
+			//moveScaled.scale( alpha );
+			Vector3d position = new Vector3d();
+			position.interpolate( posFrom, posTo, alpha );
+			
+			double alpham = 1 - alpha;
+			// height:
+			Vector3d up = new Vector3d( 0, 1, 0 );
+			Vector3d tmp = new Vector3d();
+			tmp.sub( posFrom, posTo );
+			double length = tmp.length();
+			tmp.interpolate( posFrom, posTo, 0.5 );
+			Point3d M = new Point3d( tmp );
+			tmp.scale( length / 2d, up );
+			M.add( tmp );
+			Point3d MxPosFrom = new Point3d();
+			Point3d MxPosTo = new Point3d();
+			MxPosFrom.interpolate( posFrom, M, alpha );
+			MxPosTo.interpolate( posTo, M, alpham );
+			position.interpolate( MxPosFrom, MxPosTo, alpha );
+			
+			
+	//		if ( direction > 0 ) {
+	//			position.negate();
+	//		}
+	//		Vector3d posv = new Vector3d( posFrom );
+	//		posv.add( moveScaled );
+			
+	//		Vector3d way = new Vector3d();
+	//		way.sub(posTo, posFrom);
+	//		way.scale(alpha);
+			pos = new Point3d( position );
+			
+			// set var or register var
+			if( hasVariable( AVariable.COMMON_IDENTIFIERS.POSITION ) ) {
+				// update
+				((DefaultVariable)super.getVariableById(AVariable.COMMON_IDENTIFIERS.POSITION)).update(pos);
+			} else {
+				registerVariable(new DefaultVariable(AVariable.COMMON_IDENTIFIERS.POSITION, pos));
+			}
+		return super.getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION );
     }
     
     @Override
@@ -173,9 +202,11 @@ public class SimPacket extends AComponent implements ISimPacketCon {
     
     @Override
     public void kill() {
+    	logger.debug( "kill()" );
     	super.kill();
     	logger.info("");
     	ObjectEvent oe = new ObjectEvent( IVidisEvent.ObjectUnregister, this.visObject );
     	Dispatcher.forwardEvent( oe );
+    	this.visObject = null;
     }
 }
