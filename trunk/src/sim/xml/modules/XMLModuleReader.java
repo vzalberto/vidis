@@ -46,28 +46,9 @@ public class XMLModuleReader implements CommonDomParser {
 				Node module = rootNodes.item(i);
 				if (module.hasChildNodes()) {
 					int moduleNodesFound = 0;
-					for (int j = 0; j < module.getChildNodes().getLength(); j++) {
-						Node moduleChild = module.getChildNodes().item(j);
-						if (moduleChild.getNodeName().equalsIgnoreCase("id")) {
-							moduleNodesFound = analyze_id(data,
-									moduleNodesFound, moduleChild);
-						} else if (moduleChild.getNodeName().equalsIgnoreCase("classpath")) {
-							moduleNodesFound = analyze_classpath(data,
-									moduleNodesFound, moduleChild);
-						} else if (moduleChild.getNodeName().equalsIgnoreCase("nodeDensity")) {
-							moduleNodesFound = analyze_nodeDensity(data,
-									moduleNodesFound, moduleChild);
-						} else if (moduleChild.getNodeName().equalsIgnoreCase("objects")) {
-							moduleNodesFound = analyze_objects(data,
-									moduleNodesFound, moduleChild);
-						} else if (moduleChild.getNodeName().equalsIgnoreCase("connections")) {
-							moduleNodesFound = analyze_connections(data,
-									moduleNodesFound, moduleChild);
-						}
-					}
-					if (!(moduleNodesFound == 4 || moduleNodesFound == 5)) {
-						throw new DocumentMalformedException("module malformed; expected 4 elements but got " + moduleNodesFound);
-					}
+					moduleNodesFound = analyze_module(data, module,
+							moduleNodesFound);
+					analyze_module_safecheck(moduleNodesFound);
 				} else {
 					throw new DocumentMalformedException("module malformed");
 				}
@@ -76,6 +57,37 @@ public class XMLModuleReader implements CommonDomParser {
 		} else {
 			return null;
 		}
+	}
+
+	private static void analyze_module_safecheck(int moduleNodesFound)
+			throws DocumentMalformedException {
+		if (!(moduleNodesFound == 4 || moduleNodesFound == 5)) {
+			throw new DocumentMalformedException("module malformed; expected 4 elements but got " + moduleNodesFound);
+		}
+	}
+
+	private static int analyze_module(DocumentData data, Node module,
+			int moduleNodesFound) throws DocumentMalformedException {
+		for (int j = 0; j < module.getChildNodes().getLength(); j++) {
+			Node moduleChild = module.getChildNodes().item(j);
+			if (moduleChild.getNodeName().equalsIgnoreCase("id")) {
+				moduleNodesFound = analyze_id(data,
+						moduleNodesFound, moduleChild);
+			} else if (moduleChild.getNodeName().equalsIgnoreCase("classpath")) {
+				moduleNodesFound = analyze_classpath(data,
+						moduleNodesFound, moduleChild);
+			} else if (moduleChild.getNodeName().equalsIgnoreCase("nodeDensity")) {
+				moduleNodesFound = analyze_nodeDensity(data,
+						moduleNodesFound, moduleChild);
+			} else if (moduleChild.getNodeName().equalsIgnoreCase("objects")) {
+				moduleNodesFound = analyze_objects(data,
+						moduleNodesFound, moduleChild);
+			} else if (moduleChild.getNodeName().equalsIgnoreCase("connections")) {
+				moduleNodesFound = analyze_connections(data,
+						moduleNodesFound, moduleChild);
+			}
+		}
+		return moduleNodesFound;
 	}
 
 	private static int analyze_objects(DocumentData data, int moduleNodesFound,
