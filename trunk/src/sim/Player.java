@@ -16,39 +16,44 @@ public class Player {
 				long steps = 0;
 				long sleepTime = 250;
 				while (!kill) {
-					try {
-						if (!stopped) {
-							if (!paused) {
-								try {
-									long simPre = System.currentTimeMillis();
-									Simulator.getInstance().simulateOneStep();
-									long simPost = System.currentTimeMillis();
-									long simulatedMillis = simPost - simPre;
-									long sleepMillis = sleepTime - simulatedMillis;
-									if (sleepMillis > 0)
-										Thread.sleep(sleepMillis);
-									// Logger.output(LogLevel.DEBUG, "Player", "simulatedMillis="
-									// + simulatedMillis);
-									steps++;
-								} catch (InterruptedException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								} catch (OutOfMemoryError e) {
-									JOptionPane.showMessageDialog(null , "OUT OF MEMORY ERROR: \n"+e.getMessage());
-									System.exit(99);
-								}
-							} else {
-								Thread.sleep(150);
+					steps = alive(steps, sleepTime);
+				}
+			}
+
+			private long alive(long steps, long sleepTime) {
+				try {
+					if (!stopped) {
+						if (!paused) {
+							try {
+								long simPre = System.currentTimeMillis();
+								Simulator.getInstance().simulateOneStep();
+								long simPost = System.currentTimeMillis();
+								long simulatedMillis = simPost - simPre;
+								long sleepMillis = sleepTime - simulatedMillis;
+								if (sleepMillis > 0)
+									Thread.sleep(sleepMillis);
+								// Logger.output(LogLevel.DEBUG, "Player", "simulatedMillis="
+								// + simulatedMillis);
+								steps++;
+							} catch (InterruptedException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							} catch (OutOfMemoryError e) {
+								JOptionPane.showMessageDialog(null , "OUT OF MEMORY ERROR: \n"+e.getMessage());
+								System.exit(99);
 							}
 						} else {
-							Simulator.getInstance().reset();
 							Thread.sleep(150);
 						}
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					} else {
+						Simulator.getInstance().reset();
+						Thread.sleep(150);
 					}
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
 				}
+				return steps;
 			}
 		};
 	}
