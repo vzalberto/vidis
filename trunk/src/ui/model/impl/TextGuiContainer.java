@@ -1,6 +1,8 @@
 package ui.model.impl;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.geom.Rectangle2D;
 
 import javax.media.opengl.GL;
 import javax.swing.JOptionPane;
@@ -9,6 +11,7 @@ import ui.events.GuiMouseEvent;
 import ui.model.structure.AGuiContainer;
 
 import com.sun.opengl.util.GLUT;
+import com.sun.opengl.util.j2d.TextRenderer;
 
 
 public class TextGuiContainer extends AGuiContainer {
@@ -16,6 +19,8 @@ public class TextGuiContainer extends AGuiContainer {
 	private String text;
 	private Color color = Color.black;
 	private Color textColor = Color.red;
+	
+	private static TextRenderer textRenderer = new TextRenderer( new Font("Times New Roman", Font.PLAIN, 130 ), true, true );
 	
 	private void renderStrokeString(GL gl, int font, String string, double contwith) {
         GLUT glut = new GLUT();
@@ -38,8 +43,16 @@ public class TextGuiContainer extends AGuiContainer {
 	
 	@Override
 	public void renderContainer(GL gl) {
-		renderStrokeString(gl, GLUT.STROKE_ROMAN, text, getWidth());
-		
+//		renderStrokeString(gl, GLUT.STROKE_ROMAN, text, getWidth());
+		Rectangle2D bounds = textRenderer.getBounds(text);
+		gl.glPushMatrix();
+		float scale = (float) getWidth() / (float) bounds.getWidth();
+		gl.glTranslated(0, 2, 0);
+		gl.glScaled( scale, -scale, 1 );
+		textRenderer.begin3DRendering();
+		textRenderer.draw3D( text, 0f, 0f, 0f, 1f );
+		textRenderer.end3DRendering();
+		gl.glPopMatrix();
 	}
 	
 	public void setText(String txt){
