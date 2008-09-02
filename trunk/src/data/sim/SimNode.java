@@ -11,16 +11,13 @@ import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
 import ui.events.IVidisEvent;
 import ui.events.ObjectEvent;
-import ui.events.VidisEvent;
 import ui.model.impl.Node;
-import ui.model.impl.Packet;
 import ui.model.structure.IVisObject;
 import ui.mvc.api.Dispatcher;
 import data.mod.IUserLink;
 import data.mod.IUserNode;
 import data.mod.IUserPacket;
 import data.var.AVariable;
-import data.var.IVariableContainer;
 import data.var.vars.DefaultVariable;
 
 /**
@@ -179,6 +176,7 @@ public class SimNode extends AComponent implements ISimNodeCon, Comparable<SimNo
 		    registerVariable(new DefaultVariable(AVariable.COMMON_IDENTIFIERS.PACKETSRECEIVED, 1l));
 		logic.receive(packet.getUserLogic());
 		// kill 3d instance
+		packet.kill();
     }
 
     /**
