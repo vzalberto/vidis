@@ -20,6 +20,9 @@ public class BasicGuiContainer extends AGuiContainer {
 	public BasicGuiContainer() {
 		color = ColorGenerator.generateRandomColor();
 	}
+	public void setColor( Color c ) {
+		this.color = c;
+	}
 	
 	void renderStrokeString(GL gl, int font, String string, double contwith) {
         GLUT glut = new GLUT();

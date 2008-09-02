@@ -1,5 +1,7 @@
 package ui.gui;
 
+import java.awt.Color;
+
 import javax.media.opengl.GL;
 
 import org.apache.log4j.Logger;
@@ -33,6 +35,7 @@ public class Gui extends AEventHandler {
 	private void initializeRightPanel() {
 		logger.debug("initializeRightPanel");
 		BasicGuiContainer rightPanel = new BasicGuiContainer();
+		rightPanel.setColor( Color.black );
 		rightPanel.setLayout(new PercentMarginLayout(-0.7,1,1,1,-1,-0.30));
 		mainContainer.addChild(rightPanel);
 	}

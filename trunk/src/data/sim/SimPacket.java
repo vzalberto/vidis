@@ -3,7 +3,6 @@ package data.sim;
 import javax.vecmath.Point3d;
 import javax.vecmath.Vector3d;
 
-import sim.Simulator;
 import sim.exceptions.ObstructInitCallException;
 import sim.exceptions.ObstructInitRuntimeCallException;
 import ui.events.IVidisEvent;
@@ -45,7 +44,7 @@ public class SimPacket extends AComponent implements ISimPacketCon {
 		// call!
 		// setObject3D(new Packet3D(this));
 		
-		visObject = new Packet( this );
+		visObject = new Packet( this, getThrough().getVisObject() );
 		ObjectEvent nextEvent = new ObjectEvent( IVidisEvent.ObjectRegister, visObject );
 		Dispatcher.forwardEvent( nextEvent );
 

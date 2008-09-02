@@ -1,5 +1,7 @@
 package ui.model.impl;
 
+import java.awt.Color;
+
 import javax.media.opengl.GL;
 import javax.swing.JOptionPane;
 
@@ -12,6 +14,8 @@ import com.sun.opengl.util.GLUT;
 public class TextGuiContainer extends AGuiContainer {
 
 	private String text;
+	private Color color = Color.black;
+	private Color textColor = Color.red;
 	
 	private void renderStrokeString(GL gl, int font, String string, double contwith) {
         GLUT glut = new GLUT();

@@ -1,19 +1,24 @@
 package ui.model.impl;
 
 import javax.media.opengl.GL;
+import javax.vecmath.Tuple3d;
+import javax.vecmath.Vector3d;
+import javax.vecmath.Vector3f;
 
 import ui.events.IVidisEvent;
 import ui.model.structure.ASimObject;
 
 import com.sun.opengl.util.GLUT;
 
+import data.var.AVariable;
 import data.var.IVariableContainer;
 
 
 public class Packet extends ASimObject {
 
-	public Packet( IVariableContainer c ) {
+	public Packet( IVariableContainer c, Link link ) {
 		super(c);
+		link.addPacket( this );
 	}
 
 	private static int displayListId = -1;
@@ -38,6 +43,16 @@ public class Packet extends ASimObject {
 	@Override
 	protected void handleEvent( IVidisEvent e ) {
 		
+	}
+
+	public Vector3d getPosition() {
+		try {
+			Tuple3d pos = (Tuple3d) getVariableById( AVariable.COMMON_IDENTIFIERS.POSITION ).getData();
+			return new Vector3d( pos );
+		}
+		catch ( Exception e ) {
+			return null;
+		}
 	}
 
 

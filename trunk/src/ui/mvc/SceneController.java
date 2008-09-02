@@ -189,11 +189,13 @@ public class SceneController extends AController implements GLEventListener {
 					gl.glDisable( GL.GL_LIGHT2 );
 					gl.glEnable( GL.GL_CULL_FACE );
 					gl.glCullFace( GL.GL_BACK );
+					Link.useShaderProgram(gl);
 					for ( IVisObject o : objects ) {
 						if ( (o instanceof Link) ) {
 							o.render(gl);
 						}
 					}
+					gl.glUseProgram( 0 );
 					gl.glDisable( GL.GL_CULL_FACE );
 					// packets
 					gl.glDisable( GL.GL_LIGHT0 );
@@ -210,11 +212,13 @@ public class SceneController extends AController implements GLEventListener {
 					gl.glDisable( GL.GL_LIGHT2 );
 					gl.glEnable( GL.GL_CULL_FACE );
 					gl.glCullFace( GL.GL_FRONT );
+					Link.useShaderProgram(gl);
 					for ( IVisObject o : objects ) {
 						if ( (o instanceof Link) ) {
 							o.render(gl);
 						}
 					}
+					gl.glUseProgram( 0 );
 					gl.glDisable( GL.GL_CULL_FACE );
 					// rest
 					gl.glDisable( GL.GL_LIGHTING );
@@ -252,6 +256,7 @@ public class SceneController extends AController implements GLEventListener {
 		Light.initLinkLight(gl);
 		Light.initPacketLight(gl);
 		
+		Link.setupShaderProgram(gl);
 		
 		animator = new Animator(drawable);
 		animator.start();

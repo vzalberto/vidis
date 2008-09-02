@@ -35,7 +35,11 @@ public class SimLink extends AComponent implements ISimLinkCon {
 
     private Link visObject;
     
-    public SimLink(IUserLink link, long delay) {
+    public Link getVisObject() {
+		return visObject;
+	}
+
+	public SimLink(IUserLink link, long delay) {
 		super();
 		init();
 		init(link);

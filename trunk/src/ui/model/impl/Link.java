@@ -1,6 +1,8 @@
 package ui.model.impl;
 
 import java.nio.DoubleBuffer;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.media.opengl.GL;
 import javax.vecmath.Point3d;
@@ -12,6 +14,9 @@ import org.apache.log4j.Logger;
 import ui.events.IVidisEvent;
 import ui.model.structure.ASimObject;
 import ui.vis.VecUtil;
+import ui.vis.shader.Program;
+import ui.vis.shader.ShaderException;
+import ui.vis.shader.VertexShader;
 import data.sim.SimLink;
 import data.var.IVariableContainer;
 
@@ -19,20 +24,22 @@ public class Link extends ASimObject {
 	
 	private static Logger logger = Logger.getLogger( Link.class );
 	
+	private Set<Packet> packets = new HashSet<Packet>();
+	
 	DoubleBuffer surfaceControlPointsRightDown = DoubleBuffer.allocate( 3 * 4 * 3 ); // 3 doubles per point, 4 * 3 points per surface, 4 surfaces
 	DoubleBuffer surfaceControlPointsLeftDown = DoubleBuffer.allocate( 3 * 4 * 3 );
 	DoubleBuffer surfaceControlPointsRightUp = DoubleBuffer.allocate( 3 * 4 * 3 );
 	DoubleBuffer surfaceControlPointsLeftUp = DoubleBuffer.allocate( 3 * 4 * 3 );
 	
-	DoubleBuffer linesControlPoints = DoubleBuffer.allocate( 3 * 3 * 5 ); // 3 doubles per point, 3 points per line, 5 lines
-	
-	
-	DoubleBuffer lineControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
-	
-	DoubleBuffer lineDownControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
-	DoubleBuffer lineUpControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
-	DoubleBuffer lineLeftControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
-	DoubleBuffer lineRightControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
+//	DoubleBuffer linesControlPoints = DoubleBuffer.allocate( 3 * 3 * 5 ); // 3 doubles per point, 3 points per line, 5 lines
+//	
+//	
+//	DoubleBuffer lineControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
+//	
+//	DoubleBuffer lineDownControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
+//	DoubleBuffer lineUpControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
+//	DoubleBuffer lineLeftControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
+//	DoubleBuffer lineRightControlPoints = DoubleBuffer.allocate( 3 * 3 ); // 3 doubles per point, 3 points
 	
 	private static Vector3d up = new Vector3d( 0, 1, 0 );
 	private static Vector3d down = new Vector3d( 0, -1, 0 );
@@ -41,7 +48,7 @@ public class Link extends ASimObject {
 	private Vector3d right = null;
 	
 	private int displayListId = -1;
-	
+
 	// kappa
 	private static double kappa = 4d * ( Math.sqrt( 2d ) - 1d ) / 3d;
 	
@@ -51,7 +58,7 @@ public class Link extends ASimObject {
 	
 	public Link(IVariableContainer c) {
 		super(c);
-		logger.error( "new link with the following vars: \n"+ getVariableIds());
+		logger.debug( "new link with the following vars: \n"+ getVariableIds());
 	}
 
 	// need to override render to get rid of the automatic positioning
@@ -68,45 +75,52 @@ public class Link extends ASimObject {
 	private Point3d knownPointA = new Point3d();
 	private Point3d knownPointB = new Point3d();
 	
-	public static void setupShader(GL gl) {
-		int v = gl.glCreateShader( GL.GL_VERTEX_SHADER );
-		String code = 
-			"attrib vec3 packet;" +
-			"void main() {" +
-			"vec3 newVertex;" +
-			"vec3 distVec = gl_Vertex - packet;" +
-			"float dist = length(distVec);" +
-			"if ( dist > 0.5 ) {" +
-			" newVertex = gl_Vertex;" +
-			"} else {" +
-			" newVertex = gl_Vertex;" +
-			"}" +
-			"gl_Position = newVertex;" + //FIXME
-			"}";
-		String[] source = new String[] { code };
-		gl.glShaderSource( v, 1, source, (int[])null, 0 );
-		gl.glCompileShader(v);
-
-		
-		int shaderprogram = gl.glCreateProgram();
-		gl.glAttachShader(shaderprogram, v);
-		gl.glLinkProgram(shaderprogram);
-		gl.glValidateProgram(shaderprogram);
 	
-
-		gl.glUseProgram(shaderprogram); 
+	private static Program linkProgram;
+	public static void setupShaderProgram(GL gl) {
+		try {
+			VertexShader vs = new VertexShader();
+			vs.create(gl);
+			vs.loadSource("bin/ui/vis/shader/src/link.vertex.glsl", gl);
+			vs.compile(gl);
+			
+			linkProgram = new Program();
+			linkProgram.create(gl);
+			linkProgram.addShader( vs );
+			linkProgram.link(gl);
+			
+			linkProgram.use(gl);
+		
+		}
+		catch ( ShaderException se ) {
+			logger.error( "setupShaderProgram", se );
+		}
+	}
+	
+	public static void useShaderProgram(GL gl) {
+		linkProgram.use(gl);
 	}
 	
 	
 	@Override
 	public void renderObject(GL gl) {
+		Set<Packet> todel = new HashSet<Packet>();
+		for ( Packet p : packets ) {
+			if ( p.getPosition() == null ) {
+				todel.add( p );
+			}
+		}
+		packets.removeAll( todel );
+		
+		for ( int i=0; i<packets.size(); i++ ) {
+			if ( i > 3 ) break; 
+			linkProgram.getVariableByName("packet" + (i + 1)).setValue( ((Packet)packets.toArray()[i]).getPosition(), gl );
+		}
 		
 		Tuple3d posA = (Tuple3d) getVariableById( SimLink.POINT_A ).getData();
 		Tuple3d posB = (Tuple3d) getVariableById( SimLink.POINT_B ).getData();
 		
 		if ( ! knownPointA.equals( posA ) && ! knownPointB.equals( posB ) ) {
-			logger.error( "A:"+ knownPointA + " ?= " + posA );
-			logger.error( "B:"+ knownPointB + " ?= " + posB );
 			knownPointA = new Point3d( posA );
 			knownPointB = new Point3d( posB );
 			calculateControlPoints( knownPointA, knownPointB );
@@ -212,7 +226,7 @@ public class Link extends ASimObject {
 			pointM.add( h );
 		// line
 			
-			fillLineBuffer(pointA, pointM, pointB, linesControlPoints, 0 );
+//			fillLineBuffer(pointA, pointM, pointB, linesControlPoints, 0 );
 			
 		// surface
 			// calculate control points
@@ -449,4 +463,8 @@ public class Link extends ASimObject {
 		
 	}
 
+	public void addPacket( Packet p ) {
+		packets.add( p );
+	}
+	
 }
