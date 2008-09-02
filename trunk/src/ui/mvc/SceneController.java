@@ -28,6 +28,7 @@ import ui.vis.camera.GuiCamera;
 import ui.vis.camera.ICamera;
 import ui.vis.objects.Axis;
 import ui.vis.objects.Grid;
+import ui.vis.shader.ShaderFactory;
 
 import com.sun.opengl.util.Animator;
 
@@ -195,7 +196,7 @@ public class SceneController extends AController implements GLEventListener {
 							o.render(gl);
 						}
 					}
-					gl.glUseProgram( 0 );
+					ShaderFactory.removeAllPrograms(gl);
 					gl.glDisable( GL.GL_CULL_FACE );
 					// packets
 					gl.glDisable( GL.GL_LIGHT0 );
@@ -218,7 +219,7 @@ public class SceneController extends AController implements GLEventListener {
 							o.render(gl);
 						}
 					}
-					gl.glUseProgram( 0 );
+					ShaderFactory.removeAllPrograms(gl);
 					gl.glDisable( GL.GL_CULL_FACE );
 					// rest
 					gl.glDisable( GL.GL_LIGHTING );

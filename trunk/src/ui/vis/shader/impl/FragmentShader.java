@@ -1,4 +1,4 @@
-package ui.vis.shader;
+package ui.vis.shader.impl;
 
 import javax.media.opengl.GL;
 

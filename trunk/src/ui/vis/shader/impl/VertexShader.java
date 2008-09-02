@@ -1,7 +1,4 @@
-package ui.vis.shader;
-
-import java.io.IOException;
-import java.nio.IntBuffer;
+package ui.vis.shader.impl;
 
 import javax.media.opengl.GL;
 

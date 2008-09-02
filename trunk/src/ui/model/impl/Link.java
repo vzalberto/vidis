@@ -1,6 +1,8 @@
 package ui.model.impl;
 
 import java.nio.DoubleBuffer;
+import java.util.Collections;
+import java.util.ConcurrentModificationException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,9 +16,10 @@ import org.apache.log4j.Logger;
 import ui.events.IVidisEvent;
 import ui.model.structure.ASimObject;
 import ui.vis.VecUtil;
-import ui.vis.shader.Program;
-import ui.vis.shader.ShaderException;
-import ui.vis.shader.VertexShader;
+import ui.vis.shader.IProgram;
+import ui.vis.shader.IShader;
+import ui.vis.shader.ShaderFactory;
+import ui.vis.shader.impl.ShaderException;
 import data.sim.SimLink;
 import data.var.IVariableContainer;
 
@@ -76,15 +79,15 @@ public class Link extends ASimObject {
 	private Point3d knownPointB = new Point3d();
 	
 	
-	private static Program linkProgram;
+	private static IProgram linkProgram;
 	public static void setupShaderProgram(GL gl) {
 		try {
-			VertexShader vs = new VertexShader();
+			IShader vs = ShaderFactory.getNewVertexShader();
 			vs.create(gl);
 			vs.loadSource("bin/ui/vis/shader/src/link.vertex.glsl", gl);
 			vs.compile(gl);
 			
-			linkProgram = new Program();
+			linkProgram = ShaderFactory.getNewProgram();
 			linkProgram.create(gl);
 			linkProgram.addShader( vs );
 			linkProgram.link(gl);
@@ -104,16 +107,20 @@ public class Link extends ASimObject {
 	
 	@Override
 	public void renderObject(GL gl) {
-		Set<Packet> todel = new HashSet<Packet>();
-		for ( Packet p : packets ) {
-			if ( p.getPosition() == null ) {
-				todel.add( p );
+		try {
+			Set<Packet> todel = Collections.synchronizedSet(new HashSet<Packet>());
+			for ( Packet p : packets ) {
+				if ( p.getPosition() == null ) {
+					todel.add( p );
+				}
 			}
+			packets.removeAll( todel );
+		}catch(ConcurrentModificationException e) {
+			// schluck du luder
 		}
-		packets.removeAll( todel );
 		
 		for ( int i=0; i<packets.size(); i++ ) {
-			if ( i > 3 ) break; 
+			if ( i > 3 ) break;
 			linkProgram.getVariableByName("packet" + (i + 1)).setValue( ((Packet)packets.toArray()[i]).getPosition(), gl );
 		}
 		

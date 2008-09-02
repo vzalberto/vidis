@@ -1,4 +1,4 @@
-package ui.vis.shader;
+package ui.vis.shader.impl;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,19 +11,27 @@ import java.util.StringTokenizer;
 
 import javax.media.opengl.GL;
 
+import ui.vis.shader.IShader;
+import ui.vis.shader.IShaderVariable;
 import ui.vis.shader.variable.DataType;
 import ui.vis.shader.variable.ShaderVariable;
 import ui.vis.shader.variable.VariableType;
 
-public abstract class Shader {
+public abstract class Shader implements IShader {
 	protected int shaderid;
 
-	protected List<ShaderVariable> vars = new ArrayList<ShaderVariable>();
+	protected List<IShaderVariable> vars = new ArrayList<IShaderVariable>();
 	
-	public List<ShaderVariable> getVariables() {
+	/* (non-Javadoc)
+	 * @see ui.vis.shader.impl.IShader#getVariables()
+	 */
+	public List<IShaderVariable> getVariables() {
 		return this.vars;
 	}
 	
+	/* (non-Javadoc)
+	 * @see ui.vis.shader.impl.IShader#compile(javax.media.opengl.GL)
+	 */
 	public void compile(GL gl) throws ShaderException {
 		// compile shader
 		gl.glCompileShader(this.shaderid);
@@ -71,6 +79,9 @@ public abstract class Shader {
 		}
 		return tmp;
 	}
+	/* (non-Javadoc)
+	 * @see ui.vis.shader.impl.IShader#loadSource(java.lang.String, javax.media.opengl.GL)
+	 */
 	public void loadSource(String filename, GL gl) throws ShaderException{
 		// load source
 		try {
@@ -84,10 +95,16 @@ public abstract class Shader {
 		}	
 	}
 
+	/* (non-Javadoc)
+	 * @see ui.vis.shader.impl.IShader#getShaderId()
+	 */
 	public int getShaderId() {
 		return this.shaderid;
 	}
 
+	/* (non-Javadoc)
+	 * @see ui.vis.shader.impl.IShader#getShaderInfoLog(javax.media.opengl.GL)
+	 */
 	public String getShaderInfoLog(GL gl) {
 		IntBuffer loglength = IntBuffer.allocate(1);
 		gl.glGetShaderiv(this.shaderid, GL.GL_INFO_LOG_LENGTH, loglength);
