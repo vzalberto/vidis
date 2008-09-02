@@ -54,6 +54,8 @@ public class SceneController extends AController implements GLEventListener {
 	
 	private long startTime;
 	
+	private int fps_log_max = 100;
+	private List<Double> fps_log = new LinkedList<Double>();
 	
 	public SceneController() {
 		logger.debug( "Constructor()" );
@@ -153,10 +155,26 @@ public class SceneController extends AController implements GLEventListener {
 		
 		long usedTime = System.currentTimeMillis() - startTime;
 		
-		double fps = 1000d / usedTime;
+		double fps = 0;
 		
-		Dispatcher.forwardEvent( new VidisEvent<Double>( IVidisEvent.FPS, fps ) );
-		
+		if(usedTime != 0) {
+			fps = 1000d / usedTime;
+			fps_log.add(fps);
+			if(fps_log_max < fps_log.size())
+				fps_log.remove(0);
+		}
+		Dispatcher.forwardEvent( new VidisEvent<Double>( IVidisEvent.FPS, median(fps_log) ) );
+	}
+	
+	private double median(List<Double> list) {
+		if(list.size() > 0) {
+			double sum = 0;
+			for(Double d : list) {
+				sum += d;
+			}
+			return sum / list.size();
+		}
+		return 0;
 	}
 
 	private void drawModel( GL gl, ICamera c ) {
