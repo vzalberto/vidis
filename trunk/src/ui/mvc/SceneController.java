@@ -54,7 +54,7 @@ public class SceneController extends AController implements GLEventListener {
 	
 	private long startTime;
 	
-	private int fps_log_max = 100;
+	private int fps_log_max = 30;
 	private List<Double> fps_log = new LinkedList<Double>();
 	
 	public SceneController() {
