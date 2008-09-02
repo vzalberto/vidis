@@ -119,13 +119,14 @@ public class SimPacket extends AComponent implements ISimPacketCon {
     	return through.getUserLogic();
     }
     
-    
+    private DefaultVariable noPos = new DefaultVariable( AVariable.COMMON_IDENTIFIERS.POSITION, new Vector3d( 100,100,100 ) );
     
     private AVariable positionOverride() {
     	
     	double alpha = getThrough().getAlphaForPacket( this );
     	if ( alpha == -1 ) {
-//    		kill();
+    		kill();
+    		return noPos;
     	}
 	    	// FIXME
 	//		double alpha = getThrough().getAlphaForPacket(this);

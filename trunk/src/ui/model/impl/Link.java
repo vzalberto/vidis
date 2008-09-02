@@ -2,7 +2,6 @@ package ui.model.impl;
 
 import java.nio.DoubleBuffer;
 import java.util.Collections;
-import java.util.ConcurrentModificationException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,7 +26,7 @@ public class Link extends ASimObject {
 	
 	private static Logger logger = Logger.getLogger( Link.class );
 	
-	private Set<Packet> packets = new HashSet<Packet>();
+	private Set<Packet> packets = Collections.synchronizedSet( new HashSet<Packet>() );
 	
 	DoubleBuffer surfaceControlPointsRightDown = DoubleBuffer.allocate( 3 * 4 * 3 ); // 3 doubles per point, 4 * 3 points per surface, 4 surfaces
 	DoubleBuffer surfaceControlPointsLeftDown = DoubleBuffer.allocate( 3 * 4 * 3 );
@@ -107,7 +106,7 @@ public class Link extends ASimObject {
 	
 	@Override
 	public void renderObject(GL gl) {
-		try {
+		synchronized (packets) {
 			Set<Packet> todel = Collections.synchronizedSet(new HashSet<Packet>());
 			for ( Packet p : packets ) {
 				if ( p.getPosition() == null ) {
@@ -115,8 +114,6 @@ public class Link extends ASimObject {
 				}
 			}
 			packets.removeAll( todel );
-		} catch(ConcurrentModificationException e) {
-			// schluck du luder
 		}
 		
 		for ( int i=0; i<packets.size(); i++ ) {

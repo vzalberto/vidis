@@ -1,5 +1,6 @@
 package ui.mvc;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -39,6 +40,7 @@ public class SceneController extends AController implements GLEventListener {
 	
 	private List<ICamera> cameras = new LinkedList<ICamera>();
 	private List<IVisObject> objects = Collections.synchronizedList( new LinkedList<IVisObject>() );
+	private List<IVisObject> toDel = Collections.synchronizedList( new ArrayList<IVisObject>() );
 	
 	private GLCanvas canvas;
 	
@@ -116,6 +118,11 @@ public class SceneController extends AController implements GLEventListener {
 	 * draws the whole scene
 	 */
 	public void display(GLAutoDrawable drawable) {
+		
+		// do the del thing
+		objects.removeAll( toDel );
+		toDel.clear();
+		
 		final GL gl = drawable.getGL();
 		
 		startTime = System.currentTimeMillis();
@@ -284,6 +291,6 @@ public class SceneController extends AController implements GLEventListener {
 		objects.add(o);
 	}
 	private void unregisterObject( IVisObject o ) {
-		objects.remove(o);
+		toDel.add(o);
 	}
 }

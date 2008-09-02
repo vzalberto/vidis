@@ -256,7 +256,6 @@ public class SimLink extends AComponent implements ISimLinkCon {
     	logger.debug("getAlphaForPacket("+packet+");");
 		PacketQueueHolder tmp = getPacketQueueHolderForPacket(packet);
 		if ( tmp != null ) {
-			
 			long now = System.currentTimeMillis();
 			
 			long lastStepTime = tmp.lastStepTime;
@@ -284,7 +283,7 @@ public class SimLink extends AComponent implements ISimLinkCon {
 			double alpha1Scale = 1d / stepsAll;
 			
 			double alpha = alpha0 + alpha1Scale * alpha1;
-			
+			if ( alpha > 1 ) alpha = 1;
 			return alpha;
 		}
 		return -1;
