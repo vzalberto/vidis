@@ -18,7 +18,6 @@ import ui.vis.shader.impl.Program;
 import ui.vis.shader.impl.ShaderException;
 import ui.vis.shader.impl.VertexShader;
 import ui.vis.shader.variable.DataType;
-import ui.vis.shader.variable.ShaderVariable;
 import ui.vis.shader.variable.VariableType;
 
 public class ShaderFactory {
@@ -160,6 +159,7 @@ public class ShaderFactory {
 		catch ( GLException e ) {
 			shadersupport = false;
 		}
+		logger.debug("Shader support enabled: " + shadersupport);
 	}
 	
 	public static IShader getNewFragmentShader() {

@@ -278,6 +278,8 @@ public class SceneController extends AController implements GLEventListener {
 		final GL gl = drawable.getGL();
 		
 		// enable / disable some global stuff
+		ShaderFactory.init(gl);
+		
 		Light.initNodeLight(gl);
 		Light.initLinkLight(gl);
 		Light.initPacketLight(gl);
