@@ -115,7 +115,7 @@ public class Link extends ASimObject {
 				}
 			}
 			packets.removeAll( todel );
-		}catch(ConcurrentModificationException e) {
+		} catch(ConcurrentModificationException e) {
 			// schluck du luder
 		}
 		
