@@ -37,7 +37,7 @@ public class SimulatorController extends AController {
 	private void initialize() {
 		Simulator.createInstance();
 		sim = Simulator.getInstance();
-		sim.importSimFile( new File( "/home/user1/workspace/vidis/data/modules/demo/demo.msim" ) );
+		sim.importSimFile( new File( "./data/modules/demo/demo.msim" ) );
 	}
 
 }
