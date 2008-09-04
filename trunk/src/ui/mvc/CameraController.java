@@ -40,6 +40,8 @@ public class CameraController extends AController{
 		case IVidisEvent.InitCamera:
 			initialize();
 			break;
+		case IVidisEvent.ZoomIn:
+		case IVidisEvent.ZoomOut:
 		case IVidisEvent.RotateLeft:
 		case IVidisEvent.RotateRight:
 		case IVidisEvent.SkewDown:

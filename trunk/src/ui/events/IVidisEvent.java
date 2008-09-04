@@ -34,6 +34,8 @@ public interface IVidisEvent {
 	public final int SkewDown = 1006;
 	public final int RotateLeft = 1007;
 	public final int RotateRight = 1008;
+	public final int ZoomIn = 1009;
+	public final int ZoomOut = 1010;
 	
 	
 	public final int GuiResizeEvent = 2001;

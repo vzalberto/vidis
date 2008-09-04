@@ -113,6 +113,18 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	public void handleEvent(IVidisEvent event) {
 		logger.debug("handleEvent( "+event+" )" );
 		switch ( event.getID() ) {
+		case IVidisEvent.ZoomIn:
+			if(event instanceof StartEvent)
+				this.zoomIn = true;
+			else if(event instanceof StopEvent)
+				this.zoomIn = false;
+			break;
+		case IVidisEvent.ZoomOut:
+			if(event instanceof StartEvent)
+				this.zoomOut = true;
+			else if(event instanceof StopEvent)
+				this.zoomOut = false;
+			break;
 		case IVidisEvent.SkewUp:
 			if(event instanceof StartEvent)
 				this.skewUp = true;
@@ -198,16 +210,16 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 		if ( zoomOut ) {
 			this.zoom+=step;
 		}
-		if(skewUp) {
+		if ( skewUp ) {
 			anglex += step;
 		}
-		if(skewDown) {
+		if ( skewDown ) {
 			anglex -= step;
 		}
-		if(rotateLeft) {
+		if ( rotateLeft ) {
 			angley += step;
 		}
-		if(rotateRight) {
+		if ( rotateRight ) {
 			angley -= step;
 		}
 	}

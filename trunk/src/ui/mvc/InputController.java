@@ -49,6 +49,9 @@ public class InputController extends AController {
 		keyMap.put( KeyEvent.VK_PAGE_DOWN, IVidisEvent.SkewDown);
 		keyMap.put( KeyEvent.VK_END, IVidisEvent.RotateRight);
 		keyMap.put( KeyEvent.VK_DELETE, IVidisEvent.RotateLeft);
+		keyMap.put(KeyEvent.VK_Q, IVidisEvent.ZoomIn);
+		keyMap.put(KeyEvent.VK_E, IVidisEvent.ZoomOut);
+		
 	}
 	
 	
