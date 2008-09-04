@@ -30,7 +30,10 @@ public interface IVidisEvent {
 	public final int ScrollLeft = 1002;
 	public final int ScrollDown = 1003;
 	public final int ScrollRight = 1004;
-	
+	public final int SkewUp = 1005;
+	public final int SkewDown = 1006;
+	public final int RotateLeft = 1007;
+	public final int RotateRight = 1008;
 	
 	
 	public final int GuiResizeEvent = 2001;

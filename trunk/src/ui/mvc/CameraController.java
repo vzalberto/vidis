@@ -24,7 +24,11 @@ public class CameraController extends AController{
 		registerEvent(	IVidisEvent.ScrollDown,
 						IVidisEvent.ScrollUp,
 						IVidisEvent.ScrollLeft,
-						IVidisEvent.ScrollRight );
+						IVidisEvent.ScrollRight,
+						IVidisEvent.SkewDown,
+						IVidisEvent.SkewUp,
+						IVidisEvent.RotateLeft,
+						IVidisEvent.RotateRight);
 		
 		registerEvent(	IVidisEvent.MouseClickedEvent );
 	}
@@ -36,6 +40,10 @@ public class CameraController extends AController{
 		case IVidisEvent.InitCamera:
 			initialize();
 			break;
+		case IVidisEvent.RotateLeft:
+		case IVidisEvent.RotateRight:
+		case IVidisEvent.SkewDown:
+		case IVidisEvent.SkewUp:
 		case IVidisEvent.ScrollDown:
 		case IVidisEvent.ScrollLeft:
 		case IVidisEvent.ScrollUp:

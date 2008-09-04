@@ -13,10 +13,8 @@ import org.apache.log4j.Logger;
 
 import ui.events.AEventHandler;
 import ui.events.IVidisEvent;
-import ui.events.MouseClickedEvent;
 import ui.events.StartEvent;
 import ui.events.StopEvent;
-import ui.vis.Light;
 
 public class DefaultCamera extends AEventHandler implements ICamera {
 	private static Logger logger = Logger.getLogger( DefaultCamera.class );
@@ -29,6 +27,9 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	private double step = 0.1; // Scrollspeed
 	/* Zoom */
 	private double zoom;
+	/* the angle which we look down */
+	private double anglex = 0;
+	private double angley = 0;
 	
 	/* Actions */
 	private boolean scrollLeft = false;
@@ -45,6 +46,11 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	private DoubleBuffer model = DoubleBuffer.allocate(16), proj = DoubleBuffer
 			.allocate(16);
 	private IntBuffer view = IntBuffer.allocate(4);
+
+	private boolean skewDown = false;
+	private boolean skewUp = false;
+	private boolean rotateLeft = false;
+	private boolean rotateRight = false;
 	
 	public DefaultCamera(){
 		this.posx = 0;
@@ -70,6 +76,9 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	}
 	public void applyViewMatrix(GL gl) {
 		gl.glTranslated(posx, zoom, -posz);
+		// rotieren
+		gl.glRotated(anglex, 1, 0, 0);
+		gl.glRotated(angley, 0, 1, 0);
 		// matrizen auslesen f�r click berechnung
 		gl.glGetDoublev(GL.GL_MODELVIEW_MATRIX, model);
 		gl.glGetDoublev(GL.GL_PROJECTION_MATRIX, proj);
@@ -104,6 +113,30 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	public void handleEvent(IVidisEvent event) {
 		logger.debug("handleEvent( "+event+" )" );
 		switch ( event.getID() ) {
+		case IVidisEvent.SkewUp:
+			if(event instanceof StartEvent)
+				this.skewUp = true;
+			else if(event instanceof StopEvent)
+				this.skewUp = false;
+			break;
+		case IVidisEvent.SkewDown:
+			if(event instanceof StartEvent)
+				this.skewDown = true;
+			else if(event instanceof StopEvent)
+				this.skewDown = false;
+			break;
+		case IVidisEvent.RotateLeft:
+			if(event instanceof StartEvent)
+				this.rotateLeft = true;
+			else if(event instanceof StopEvent)
+				this.rotateLeft = false;
+			break;
+		case IVidisEvent.RotateRight:
+			if(event instanceof StartEvent)
+				this.rotateRight = true;
+			else if(event instanceof StopEvent)
+				this.rotateRight = false;
+			break;
 		case IVidisEvent.ScrollDown:
 			if ( event instanceof StartEvent ) {
 				this.scrollDown = true;
@@ -164,6 +197,18 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 		}
 		if ( zoomOut ) {
 			this.zoom+=step;
+		}
+		if(skewUp) {
+			anglex += step;
+		}
+		if(skewDown) {
+			anglex -= step;
+		}
+		if(rotateLeft) {
+			angley += step;
+		}
+		if(rotateRight) {
+			angley -= step;
 		}
 	}
 	

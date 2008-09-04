@@ -45,6 +45,10 @@ public class InputController extends AController {
 		keyMap.put( KeyEvent.VK_A, IVidisEvent.ScrollLeft );
 		keyMap.put( KeyEvent.VK_S, IVidisEvent.ScrollDown );
 		keyMap.put( KeyEvent.VK_D, IVidisEvent.ScrollRight );
+		keyMap.put( KeyEvent.VK_PAGE_UP, IVidisEvent.SkewUp);
+		keyMap.put( KeyEvent.VK_PAGE_DOWN, IVidisEvent.SkewDown);
+		keyMap.put( KeyEvent.VK_END, IVidisEvent.RotateRight);
+		keyMap.put( KeyEvent.VK_DELETE, IVidisEvent.RotateLeft);
 	}
 	
 	
