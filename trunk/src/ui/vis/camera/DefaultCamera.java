@@ -76,10 +76,11 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	}
 	public void applyViewMatrix(GL gl) {
 		double realX, realZ;
-		// FIXME calculate the real camera position by the distance "zoom"
+		// FIXME calculate the real camera position by the distance "zoom" 
 		realX = posx;
+		realZ = zoom;
 		realZ = -posz;
-		gl.glTranslated(realX, 1.0, realZ);
+		gl.glTranslated(realX, zoom, realZ);
 		// rotieren
 		gl.glRotated(anglex, 1, 0, 0);
 		gl.glRotated(angley, 0, 1, 0);

@@ -12,6 +12,7 @@ import ui.events.IVidisEvent;
 import ui.model.impl.BasicGuiContainer;
 import ui.model.impl.PercentMarginLayout;
 import ui.model.impl.TextGuiContainer;
+import ui.model.impl.guielements.Basic3DScrollPane;
 import ui.model.structure.IVisObject;
 import ui.mvc.api.Dispatcher;
 
@@ -37,6 +38,7 @@ public class Gui extends AEventHandler {
 		BasicGuiContainer rightPanel = new BasicGuiContainer();
 		rightPanel.setColor( Color.black );
 		rightPanel.setLayout(new PercentMarginLayout(-0.7,1,1,1,-1,-0.30));
+		rightPanel.addChild(new Basic3DScrollPane());
 		mainContainer.addChild(rightPanel);
 	}
 	private void initializeControls(){
