@@ -43,7 +43,8 @@ public class GuiController extends AController {
 			break;
 		case IVidisEvent.FPS:
 			String fps = ((VidisEvent)event).getData().toString();
-			gui.fps.setText( String.format( "%4.1ffps", Double.parseDouble(fps) ) );
+			if(gui != null && gui.fps != null)
+				gui.fps.setText( String.format( "%4.1ffps", Double.parseDouble(fps) ) );
 			break;
 		}
 	}
