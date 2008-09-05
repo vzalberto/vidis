@@ -72,15 +72,16 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 	public void applyProjectionMatrix(GL gl) {
 		GLU glu = new GLU();
 		glu.gluPerspective( 30, (double) target.getWidth() / (double) target.getHeight(), 1.0, 90.0);
-		glu.gluLookAt( 0, 5, -10, 0, 0, 0, 0, 1, 0);
+		glu.gluLookAt( 0, 5*zoom, -10*zoom, 0, 0, 0, 0, 1*zoom, 0);
 	}
 	public void applyViewMatrix(GL gl) {
 		double realX, realZ;
 		// FIXME calculate the real camera position by the distance "zoom" 
 		realX = posx;
-		realZ = zoom;
+		//realY = zoom;
 		realZ = -posz;
-		gl.glTranslated(realX, zoom, realZ);
+		//gl.glOrtho(4*zoom, 4*zoom, 4*zoom, 4*zoom, realX, realZ);
+		gl.glTranslated(realX, 1.0, realZ);
 		// rotieren
 		gl.glRotated(anglex, 1, 0, 0);
 		gl.glRotated(angley, 0, 1, 0);
@@ -210,10 +211,10 @@ public class DefaultCamera extends AEventHandler implements ICamera {
 			this.posx+=step;
 		}
 		if ( zoomIn ) {
-			this.zoom-=step;
+			this.zoom-=step/10;
 		}
 		if ( zoomOut ) {
-			this.zoom+=step;
+			this.zoom+=step/10;
 		}
 		if ( skewUp ) {
 			anglex += step;
