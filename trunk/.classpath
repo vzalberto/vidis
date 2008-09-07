@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="lib/jogl-1.1.1/gluegen-rt.jar" sourcepath="lib/jogl-1.1.1/jogl-1.1.1-src.zip"/>
 	<classpathentry kind="lib" path="lib/jogl-1.1.1/jogl.jar" sourcepath="lib/jogl-1.1.1/jogl-1.1.1-src.zip"/>
 	<classpathentry kind="lib" path="lib/log4j/log4j-1.2.15.jar"/>
+	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
