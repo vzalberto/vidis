@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section
+	xmlns="http://docbook.org/ns/docbook">
+	<title>Modul</title>
+	<para>Interface defininieren, Klassendiagramm IUserNode, IUserLink, IUserPacket</para>	
+</section>

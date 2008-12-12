@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter version="5.0" 
+	xmlns="http://docbook.org/ns/docbook">
+	<title>Conclusions</title>
+	<para>
+		Dominik stellt sich folgendes vor:
+		[VORSCHLAG (BLENDTEXT)>
+		VIDIS ist ein einfaches und tolles Werkzeug für didaktische Lehrzwecke und erfüllt somit unsere Erwartungen.
+		
+		-: für größere Netzwerke geht die Grafik in die Knie
+		-: der Simulator könnte performanter sein weil
+			1] interne node/packet/link klassenstruktur  ist eigentlich überflüssig
+			2] man könnte alles über Adjazenzlisten beschreiben und so sehr viel performance gewinnen
+			3] sei artig und hör auf simon, wenn simon sagt
+		-: eclipse 64bit ist scheiße
+		-: performance optimizer ist teilweise scheiße (generiert display listen wo es gscheider wär endlich a ruah zu gebm)
+			-: (will niemand wissen)
+		-: java und openGL ist ein 2schneidiges schwert, das sehr schnell deine computer-gedärme in stücke reißt
+		
+		In Summe steht hier da ein funktionierendes Programm für die Vorlesung "Verteilte Systeme",
+		genau wie gewollt weil ja das Maxerl sehr geholfen hat.
+		>VORSCHLAG]
+	</para>	
+</chapter>

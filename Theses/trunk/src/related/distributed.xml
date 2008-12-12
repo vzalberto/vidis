@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section
+	xmlns="http://docbook.org/ns/docbook">
+	<title>Verwendete verteilte Algorithmen</title>
+	<para></para>
+	
+	<section>
+		<title>Vector Clock Algorithmus</title>
+		<para></para>
+		
+	</section>
+	
+	<section>
+		<title>Bully Election Algorithmus</title>
+		<para></para>
+		
+	</section>
+	
+	<section>
+		<title>Byzantinische Generäle</title>
+		<para></para>
+		
+	</section>
+	
+	<section>
+		<title>Echo Algorithmus</title>
+		<para></para>
+		
+	</section>
+	
+	<section>
+		<title>Flooding Algorithmus</title>
+		<para></para>
+		
+	</section>
+	
+</section>

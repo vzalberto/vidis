@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section version="5.0" 
+	xmlns="http://docbook.org/ns/docbook">
+	<title>Visualisierung</title>
+	<para></para>	
+	
+	<section>
+		<title>OpenGL Bindings</title>
+		<para></para>	
+		
+		<section>
+			<title>Java3D</title>
+			<para></para>	
+		
+		</section>	
+		
+		<section>
+			<title>JOGL</title>
+			<para></para>	
+		
+		
+		</section>	
+		
+		<section>
+			<title>LWJGL</title>
+			<para></para>	
+		
+		
+		</section>	
+		
+		<section>
+			<title>Fazit</title>
+			<para>und deshalb hama JOGL gnommen</para>	
+		
+		
+		</section>
+	</section>		
+</section>

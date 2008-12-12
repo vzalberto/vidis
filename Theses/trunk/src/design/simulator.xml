@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section
+	xmlns="http://docbook.org/ns/docbook">
+	<title>Simulator</title>
+	<para>Hier gehts um den Simulator.</para>
+	
+	<section>
+		<title>Funktionsweise</title>
+		<para>
+		</para>
+	</section>
+	<section>
+		<title>Player</title>
+		<para></para>
+	</section>
+	<section>
+		<title>Datenstruktur (intern)</title>
+		<para>z.B. könnte man hier erwähnen dass die interne Datenklasse Serializable ist</para>
+	</section>
+</section>
