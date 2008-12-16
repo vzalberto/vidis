@@ -12,7 +12,7 @@
 <xsl:param name="paper.type" select="A4"/>
 <xsl:param name="variablelist.as.blocks" select="1"/>
 <xsl:param name="bibliography.numbered" select="1"/>
-<xsl:param name="line-height" select="1.8"/>
+<xsl:param name="line-height" select="1.32"/>
 <xsl:param name="body.start.indent" select="'0pt'"/>
 <xsl:param name="body.end.indent" select="'0pt'"/>
 <xsl:param name="orderedlist.label.width" select="'1.8em'"/>
