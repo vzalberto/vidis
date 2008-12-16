@@ -1,6 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section version="5.0" 
-	xmlns="http://docbook.org/ns/docbook">
+<section xmlns="http://docbook.org/ns/docbook">
 	<title>Simulator</title>
-	<para></para>	
+	<para>
+		Im folgenden Abschnitt definieren und beschreiben wir den Simulator.
+	</para>
+	<section>
+		<title>Definitionen</title>
+		<para>
+			Folgende Definitionen werden im Simulator verwendet:
+			<itemizedlist>
+				<listitem>
+					<para>Simulationsschritt: ein abstrakter Zeitabschnitt</para>
+				</listitem>
+				<listitem>
+					<para>Komponente: eine Komponente</para>
+				</listitem>
+			</itemizedlist>
+		</para>
+	</section>
+	<section>
+		<title>blaa</title>
+		<para>
+			bla
+		</para>
+	</section>
+	<section>
+		<title>Arbeitsweise</title>
+		<para>
+			Der Simulator arbeitet abschnittsweise. Dabei führt er in jedem Abschnitt jede Komponente einmal aus. Jede Komponentenart hat dabei eine eigene Reihenfolge der Verarbeitung:
+			<itemizedlist>
+				<listitem>
+					<para>
+						Node:
+						<itemizedlist>
+							<listitem>
+								<para>Wenn Simulationsschritt #1: module.init();</para>
+							</listitem>
+							<listitem>
+								<para>processPacketQueue();</para>
+							</listitem>
+							<listitem>
+								<para>propagateVariableChanges();</para>
+							</listitem>
+							<listitem>
+								<para>Wenn nicht schlafend: module.execute();</para>
+							</listitem>
+						</itemizedlist>
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						Link:
+						<itemizedlist>
+							<listitem>
+								<para>processQueue();</para>
+							</listitem>
+							<listitem>
+								<para>propagateVariableChanges();</para>
+							</listitem>
+							<listitem>
+								<para>Wenn nicht schlafend: module.execute();</para>
+							</listitem>
+						</itemizedlist>
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						Paket:
+						<itemizedlist>
+							<listitem>
+								<para>propagateVariableChanges();</para>
+							</listitem>
+							<listitem>
+								<para>execute(); (leere final Methode)</para>
+							</listitem>
+						</itemizedlist>
+					</para>
+				</listitem>
+			</itemizedlist>
+		</para>
+	</section>
 </section>
