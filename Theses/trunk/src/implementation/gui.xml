@@ -2,5 +2,105 @@
 <section version="5.0" 
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Grafische Benutzeroberfläche</title>
-	<para></para>	
+	<para>Um dem Benutzer die Möglichkeit zu geben, mit der Simulation zu interagieren, wurde eine grafische Benutzeroberfläche entworfen und umgesetzt. Diese wird in den folgenden Kapiteln kurz vorgestellt und erklärt.</para>
+
+	<section>
+		<title>GUI Elemente</title>
+		<para>Im folgenden wird auf die sichtbaren Benutzeroberflächen-Elemente näher eingegangen.</para>
+		
+		<section>
+			<title>Menu</title>
+			<para>Am unteren linke Rand des Bildschirms befindet sich das Menu. Es stellt Funktionen wie Play, Pause, Stop, Laden, Layouten, Optionen und auch Laufzeitaktionen dar. #FIXME</para>
+			<para>Das Menu ist durch ein Composite Pattern realisiert. Jede Node fasst ein Steuerelement, eine Liste der Kinderelemente und das Vaterelement. Zudem verfügt sie noch über die Information ob die Kinder dargestellt werden sollen. Wird eine Node aufgeklappt, werden ihre Kinder über sie gerendert und alle sich darüber befindenden Node's weiter nach oben verschoben. Auf der Hauptebene dieser Struktur befinden sich 3 dauerhaft sichtbare Elemente:</para>
+	<itemizedlist>
+		<para>Die Menu Struktur ( von unten nach oben )</para>
+		<listitem>
+			<para>Die Player Kontrollen</para>
+			<figure>
+				<title>Bildschirmfoto von den Playerkontrollen</title>
+				<screenshot>
+					<mediaobject>
+						<imageobject>
+							<imagedata width="200" height="50" format="PNG" fileref="testfile.png" />
+						</imageobject>
+					</mediaobject>	
+				</screenshot>
+			</figure>
+			
+			<para>Die unterste Schicht besteht aus den 3 Buttons: "PLAY", "PAUSE" und "STOPP".</para>
+		</listitem>
+		<listitem>
+			<para>Das Systemmenu</para>
+			<figure>
+				<title>Bildschirmfoto vom Systemmenu</title>
+				<screenshot>
+					<mediaobject>
+						<imageobject>
+							<imagedata width="200" height="50" format="PNG" fileref="testfile.png" />
+						</imageobject>
+					</mediaobject>	
+				</screenshot>
+			</figure>
+			<para></para>
+			<itemizedlist>
+				<listitem>
+					<para>Optionen</para>
+					<para>Hier kann unter anderem in den Wireframe Modus gewechselt werden.</para>
+				</listitem>
+				<listitem>
+					<para>Layout</para>
+					<para>In diesem Untermenu kann man zwischen den vordefinierten Layouts wählen.</para>
+				</listitem>
+				<listitem>
+					<para>Laden</para>
+					<para>Dieses Untermenu stellt alle verfügbaren Module dar.</para>
+				</listitem>
+			</itemizedlist>
+		</listitem>
+		<listitem>
+			<para>Das Aktionsmenu</para>
+			<figure>
+				<title>Bildschirmfoto vom Aktionsmenu</title>
+				<screenshot>
+					<mediaobject>
+						<imageobject>
+							<imagedata width="200" height="50" format="PNG" fileref="testfile.png" />
+						</imageobject>
+					</mediaobject>	
+				</screenshot>
+			</figure>
+			<para>Für die aktuell selektierte Node werden hier Aktionen zur Verfügung gestellt. Dies äusßert sich durch einen Button. Voraussetzung dafür ist das der Modul-Entwickler in der Node Implementation Mehtoden vom Typ void mit @Display annotated hat.</para>
+			<para>Es wird zwischen 2 Arten von Methoden unterschieden:</para>
+			<itemizedlist>
+				<listitem>
+					<para>Methoden ohne Parameter</para>
+					<para>Methoden ohne Parameter werden durch einen einfachen Button dargestellt. Klickt man darauf wird direkt die vom Modul-Entwickler implementierte Methode ausgeführt.</para>
+				</listitem>
+				<listitem>
+					<para>Methoden mit Parameter</para>
+					<para>Diese Methode kann ohne vorherige Eingabe der Parameter nicht ausgeführt werden. Darum werden durch einen Klick auf diesen Button Felder für alle benötigten Parametern, sowie eine "ausführen" Button dargestellt.</para>
+				</listitem>
+			</itemizedlist>
+		</listitem>
+	</itemizedlist>
+
+		</section>
+
+		<section>
+			<title>Informations Panel</title>
+			<para>Das Informationspanel befindet sich auf der rechten Seite. Es zeigt den aktuellen Status von den ausgewählten Objekten an.</para>
+		</section>
+
+	</section>
+
+	<section>
+		<title>Maus Interaktion</title>
+		<para></para>
+	</section>
+
+	<section>
+		<title>Tastatur Interaktion</title>
+		<para></para>
+	</section>
+
 </section>
