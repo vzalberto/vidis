@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter version="5.0" 
-	xmlns="http://docbook.org/ns/docbook">
-	<title>Quellenverzeichnis</title>
-	<para></para>	
-</chapter>
+	<bibliography xmlns="http://docbook.org/ns/docbook">
+		<biblioentry id="book_redbook">
+			<title>OpenGL<trademark class="registered" /> Programming Guide</title>
+			<subtitle>The Official Guide to Learning OpenGL<trademark class="registered" />, Version 2</subtitle>
+			<edition>Fifth Edition</edition>
+			<biblioid class="isbn">0-321-33573-2</biblioid>
+			<authorgroup>
+				<author>
+					<firstname>Dave</firstname>
+					<surname>Shreiner</surname>
+				</author>
+				<author>
+					<firstname>Mason</firstname>
+					<surname>Woo</surname>
+				</author>
+				<author>
+					<firstname>Jackie</firstname>
+					<surname>Neider</surname>
+				</author>
+				<author>
+					<firstname>Tom</firstname>
+					<surname>Davis</surname>
+				</author>
+			</authorgroup>
+		</biblioentry>
+		<biblioentry id="book_orangebook">
+			<title>OpenGL<trademark class="registered" /> Shading Language</title>
+			<edition>Second Edition</edition>
+			<biblioid class="isbn">0321-33489-2</biblioid>
+			<biblioid class="isbn">978-321-33489-3</biblioid>
+			<author>
+				<firstname>Randy</firstname>
+				<othername>J.</othername>
+				<surname>Rost</surname>
+			</author>
+		</biblioentry>
+		<biblioentry>
+			<title>Distributed Systems</title>
+			<subtitle>Principles and Paradigms</subtitle>
+			<edition>Second Edition</edition>
+			<biblioid class="isbn">0-13-613553-6</biblioid>
+			<authorgroup>
+				<author>
+					<firstname>Andrew</firstname>
+					<othername>S.</othername>
+					<surname>Tanenbaum</surname>
+				</author>
+				<author>
+					<firstname>Maarten</firstname>
+					<othername>Van</othername>
+					<surname>Steen</surname>
+				</author>
+			</authorgroup>
+		</biblioentry>
+	</bibliography>	

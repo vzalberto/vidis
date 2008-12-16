@@ -10,38 +10,36 @@
 		
 		<section>
 			<title>Menu</title>
-			<para>Am unteren linke Rand des Bildschirms befindet sich das Menu. Es stellt Funktionen wie Play, Pause, Stop, Laden, Layouten, Optionen und auch Laufzeitaktionen dar. #FIXME</para>
-			<para>Das Menu ist durch ein Composite Pattern realisiert. Jede Node fasst ein Steuerelement, eine Liste der Kinderelemente und das Vaterelement. Zudem verfügt sie noch über die Information ob die Kinder dargestellt werden sollen. Wird eine Node aufgeklappt, werden ihre Kinder über sie gerendert und alle sich darüber befindenden Node's weiter nach oben verschoben. Auf der Hauptebene dieser Struktur befinden sich 3 dauerhaft sichtbare Elemente:</para>
-	<itemizedlist>
-		<para>Die Menu Struktur ( von unten nach oben )</para>
-		<listitem>
-			<para>Die Player Kontrollen</para>
-			<figure>
+			<para>Am unteren linken Rand des Bildschirms befindet sich das Menu. Mit diesem kann der Benutzer Einfluss auf die Simulation ausüben.</para>
+			<para>Das Menu ist durch ein Composite Pattern realisiert. Jede Node fasst ein Steuerelement, eine Liste der Kinderelemente und das Vaterelement. Zudem verfügt sie noch über die Information ob die Kinder dargestellt werden sollen. Wird eine Node aufgeklappt, werden ihre Kinder darüber gerendert und alle sich darüber befindenden Node's weiter nach oben verschoben. Auf der Hauptebene dieser Struktur befinden sich 3 dauerhaft sichtbare Elemente:</para>
+		<para>Im folgenden wird die Menu Struktur ( von unten nach oben ) erklärt:</para>
+		<section>
+			<title>Die Player Kontrollen</title>
+			<para>Die Player Kontrollen befinden sich ganz unten am Bildschirmrand. Sie sind immer sichtbar und werden nicht durch das Menu verschoben. Sie bestehen aus den 3 Buttons Play, Pause und Stopp (vgl. <xref linkend="screenshot_playbuttons" />).</para>
+			<figure id="screenshot_playbuttons">
 				<title>Bildschirmfoto von den Playerkontrollen</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata width="200" height="50" format="PNG" fileref="testfile.png" />
+							<imagedata align="center" width="200" height="50" format="JPG" fileref="sample.jpg" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
 			</figure>
-			
-			<para>Die unterste Schicht besteht aus den 3 Buttons: "PLAY", "PAUSE" und "STOPP".</para>
-		</listitem>
-		<listitem>
-			<para>Das Systemmenu</para>
-			<figure>
+		</section>
+		<section>
+			<title>Das Systemmenu</title>
+			<para>Im Systemmenu können Module geladen und Einstellungen vorgenommen werden (vgl. <xref linkend="screenshot_sysmenu" />).</para>
+			<figure id="screenshot_sysmenu">
 				<title>Bildschirmfoto vom Systemmenu</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata width="200" height="50" format="PNG" fileref="testfile.png" />
+							<imagedata align="center" width="200" height="50" format="JPG" fileref="sample.jpg" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
 			</figure>
-			<para></para>
 			<itemizedlist>
 				<listitem>
 					<para>Optionen</para>
@@ -56,15 +54,15 @@
 					<para>Dieses Untermenu stellt alle verfügbaren Module dar.</para>
 				</listitem>
 			</itemizedlist>
-		</listitem>
-		<listitem>
-			<para>Das Aktionsmenu</para>
+		</section>
+		<section>
+			<title>Das Aktionsmenu</title>
 			<figure>
 				<title>Bildschirmfoto vom Aktionsmenu</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata width="200" height="50" format="PNG" fileref="testfile.png" />
+							<imagedata align="center" width="200" height="50" format="JPG" fileref="sample.jpg" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
@@ -81,8 +79,7 @@
 					<para>Diese Methode kann ohne vorherige Eingabe der Parameter nicht ausgeführt werden. Darum werden durch einen Klick auf diesen Button Felder für alle benötigten Parametern, sowie eine "ausführen" Button dargestellt.</para>
 				</listitem>
 			</itemizedlist>
-		</listitem>
-	</itemizedlist>
+		</section>
 
 		</section>
 

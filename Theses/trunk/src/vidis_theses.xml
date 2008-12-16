@@ -9,7 +9,7 @@
 	<title>Visualisierungsframework für Konzepte
 		der Verteilten Systeme</title>
 
-	<info>
+	<bookinfo>
 		<authorgroup>
 			<author>
 				<personname>
@@ -24,13 +24,10 @@
 				</personname>
 			</author>
 		</authorgroup>
-	</info>
-
-	<preface>
-		<title>Abstrakt</title>
-		<para>this is a preface</para>
-	</preface>
-
+		<abstract>
+			<para>this is a abstract</para>
+		</abstract>
+	</bookinfo>
 	<preface>
 		<title>Danksagung</title>
 		<para>danke.</para>
