@@ -3,8 +3,18 @@
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Vision</title>
 	<para>In diesem Abschnitt wird das Ziel dieser Bakkalaureatsarbeit beschrieben.</para>
-	<para>VIDIS wurde als Visualisierungsframework geplant und entworfen.
-	Es soll die Möglichkeit bieten Prinzipien von Verteilten Systemen schnell, verständlich und
-	anschaulich zu präsentieren. Als Nebeneffekt sollte es verwendet werden können
-	um verschiedene Implementierungen und Arten von Algorithmen auf diversen Netzwerkstrukturen zu testen.</para>
+	<section>
+		<title>VIDIS für Visualisierungen</title>
+		<para>
+			VIDIS wurde als Visualisierungsframework geplant und entworfen.
+			Es soll die Möglichkeit bieten Prinzipien von Verteilten Systemen schnell, verständlich und
+			anschaulich zu präsentieren.
+		</para>
+	</section>
+	<section>
+		<title>VIDIS für Entwickler</title>
+		<para>
+			VIDIS kann dazu verwendet werden um verschiedene Implementierungen und Arten von Algorithmen auf diversen Netzwerkstrukturen zu testen.
+		</para>
+	</section>
 </section>

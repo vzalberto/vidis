@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section
 	xmlns="http://docbook.org/ns/docbook">
-	<title>SubdiVision</title>
-	<para>wär is für was zuständig</para>	
+	<title>Arbeitsteilung</title>
+	<para>
+		VIDIS wurde von Dominik Psenner und Christoph Caks in Zusammenarbeit mit Prof. Max Berger entworfen und implementiert. In diesem Abschnitt wird die Arbeitsteilung beschrieben. 
+	</para>
+	<section>
+		<title>Dominik Psenner</title>
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para>Simulator</para>
+				</listitem>
+				<listitem>
+					<para>TODO</para>
+				</listitem>
+			</itemizedlist>
+		</para>
+	</section>
+	<section>
+		<title>Christoph Caks</title>
+		<para>
+			<itemizedlist>
+				<listitem>
+					<para>Visualisierung</para>
+				</listitem>
+				<listitem>
+					<para>TODO</para>
+				</listitem>
+			</itemizedlist>
+		</para>
+	</section>
 </section>
