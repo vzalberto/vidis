@@ -2,5 +2,14 @@
 <section
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Darstellung</title>
-	<para></para>	
+	<para></para>
+	
+	<section>
+		<title>Graphische Benutzeroberfläche</title>
+		<para></para>
+	</section>	
+	<section>
+		<title>Visualisierung</title>
+		<para></para>
+	</section>
 </section>

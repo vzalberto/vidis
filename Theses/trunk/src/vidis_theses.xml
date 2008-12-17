@@ -25,7 +25,19 @@
 			</author>
 		</authorgroup>
 		<abstract>
-			<para>this is a abstract</para>
+			<para>
+				Lehrveranstaltungen über Verteilte Systeme beschäftigten sich vornehmlich mit verteilten Algorithmen. 
+				Diese werden meist als Pseudo-Code dargestellt und Studenten haben oft Probleme sich darunter etwas vorszustellen. 
+				Es soll eine Möglichkeit geschaffen werden diese Algorithmen anschaulich, optisch ansprechend und interaktiv aufzubereiten.
+			</para><para>
+				Ziel dieser Arbeit ist es ein Framework zu konzeptionieren, welches diese Darstellung ermöglicht.
+				Es muss eine API entworfen werden, die es ermöglicht, Verteilte Algorithmen zu implementieren.
+				Das Framework muss diese Verteilten Algorithmen auf einem Rechner simulieren können, optisch ansprechend darstellen und dem Benutzer eine Möglichkeit bieten, das simulierte System zu beeinflussen.
+				Außerdem sollen bereits einige verteilte Algorithmen implementiert werden.
+			</para><para>
+				Die Arbeit verschafft einen Überblick über das Design und die Implemntation dieses Frameworks.
+				Das Framework ist jetzt voll funktionsfähig und wird für Lehrveranstaltung der verteilten Systeme verwendet.
+			</para>
 		</abstract>
 	</bookinfo>
 	<preface>

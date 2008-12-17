@@ -85,7 +85,7 @@
 
 		<section>
 			<title>Informations Panel</title>
-			<para>Das Informationspanel befindet sich auf der rechten Seite. Es zeigt den aktuellen Status von den ausgewählten Objekten an.</para>
+			<para>Das Informationspanel befindet sich auf der rechten Seite. Es zeigt den aktuellen Status von den ausgewählten Objekten an. Für jede Methode (mit Rückgabewert), die vom Modul-Entwickler mit @Display annotiert wurde, ist hier eine Zeile mit Namen und Wert zu sehen.</para>
 		</section>
 
 	</section>
