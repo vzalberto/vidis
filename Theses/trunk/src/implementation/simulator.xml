@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xmlns="http://docbook.org/ns/docbook">
+<section xmlns="http://docbook.org/ns/docbook"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
 	<title>Simulator</title>
 	<para>
 		Im folgenden Abschnitt definieren und beschreiben wir den Simulator.
@@ -7,28 +8,85 @@
 	<section>
 		<title>Definitionen</title>
 		<para>
-			Folgende Definitionen werden im Simulator verwendet:
-			<itemizedlist>
-				<listitem>
-					<para>Simulationsschritt: ein abstrakter Zeitabschnitt</para>
-				</listitem>
-				<listitem>
-					<para>Komponente: eine Komponente</para>
-				</listitem>
-			</itemizedlist>
+			Folgende Definitionen werden im Simulator verwendet.
 		</para>
-	</section>
-	<section>
-		<title>blaa</title>
-		<para>
-			bla
-		</para>
+		<section>
+			<title>Komponente</title>
+			<para>
+				Wir bezeichnen eine Komponente als eine ausführbare, vom Benutzer implementierte Klasse.
+			</para>
+			<para>
+				Es wird unter folgenden Komponententypen unterschieden:
+			</para>
+			<section>
+				<title>Node</title>
+				<para>
+					Ein Node, oder auch "Knoten", ist in der Terminologie gleichzusetzen mit einem Peer aus einem Verteilten Systemen.
+				</para>
+				<para>
+					In einem Netzwerk aus Computern wäre ein Knoten einer dieser Rechner.
+				</para>
+				<para>
+					Ein Knoten kann sich über Links mit anderen Knoten verbinden und so mit diesen über Pakete kommunizieren.
+				</para>
+				<para>
+					Mehr Informationen zur Funktionalität eines Knoten findet man im Abschnitt <!-- xlink:to-->"Implementation > Modul > Node"<!-- /xlink:to -->.
+				</para>
+			</section>
+			<section>
+				<title>Link</title>
+				<para>
+					Ein Link, oder auch "Verbindung", ist in der Terminologie gleichzusetzen mit einer aktiven Verbindung zwischen zwei Peers aus einem Verteilten System.
+				</para>
+				<para>
+					Mehr Informationen zur Funktionalität eines Knoten findet man im Abschnitt <!-- xlink:to-->"Implementation > Modul > Link"<!-- /xlink:to -->.
+				</para>
+			</section>
+			<section>
+				<title>Packet</title>
+				<para>
+					Ein Packet, oder auch "Paket", ist in der Terminologie gleichzusetzen mit einem Datenpaket das über eine aktive Verbindung zwischen zwei Peers geschickt wird.
+				</para>
+				<para>
+					Mehr Informationen zur Funktionalität eines Knoten findet man im Abschnitt <!-- xlink:to-->"Implementation > Modul > Paket"<!-- /xlink:to -->.
+				</para>
+			</section>
+		</section>
+		<section>
+			<title>Modul</title>
+			<para>Ein Modul ist eine Menge aus Komponenten</para>
+		</section>
+		<section>
+			<title>Steps</title>
+			<para>
+				Ein "Step", oder auch "Schritt" ist die kleinste Zeiteinheit im Simulator.
+			</para>
+		</section>
 	</section>
 	<section>
 		<title>Arbeitsweise</title>
 		<para>
-			Der Simulator arbeitet abschnittsweise. Dabei führt er in jedem Abschnitt jede Komponente einmal aus. Jede Komponentenart hat dabei eine eigene Reihenfolge der Verarbeitung:
-			<itemizedlist>
+			Der Simulator arbeitet abschnittsweise. Ein Abschnitt stellt einen vollständigen Simulationsschritt dar.
+		</para>
+		<section>
+			<title>Grundlegende Arbeitsweise</title>
+			<para>
+				Zunächst werden falls nötig alle Variablen initialisiert.
+			</para>
+			<para>
+				Anschließend werden simulatorinterne Operationen ausgeführt.
+				Im Falle eines Links wäre dies der Transport eines Paketes.
+			</para>
+			<para>
+				Am Schluss werden nochmals alle Variablen auf Änderungen
+				überprüft. Gegebenenfalls wird die Visualisierungskomponente
+				über die Änderungen informiert.
+			</para>
+		</section>
+		<section>
+			<title>Detaillierte Beschreibung der Ablaufreihenfolge</title>
+			<para>
+				<itemizedlist>
 				<listitem>
 					<para>
 						Node:
@@ -78,6 +136,7 @@
 					</para>
 				</listitem>
 			</itemizedlist>
-		</para>
+			</para>
+		</section>
 	</section>
 </section>
