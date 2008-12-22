@@ -11,17 +11,31 @@
 		<section>
 			<title>Menu</title>
 			<para>Am unteren linken Rand des Bildschirms befindet sich das Menu. Mit diesem kann der Benutzer Einfluss auf die Simulation ausüben.</para>
-			<para>Das Menu ist durch ein Composite Pattern realisiert. Jede Node fasst ein Steuerelement, eine Liste der Kinderelemente und das Vaterelement. Zudem verfügt sie noch über die Information ob die Kinder dargestellt werden sollen. Wird eine Node aufgeklappt, werden ihre Kinder darüber gerendert und alle sich darüber befindenden Node's weiter nach oben verschoben. Auf der Hauptebene dieser Struktur befinden sich 3 dauerhaft sichtbare Elemente:</para>
-		<para>Im folgenden wird die Menu Struktur ( von unten nach oben ) erklärt:</para>
+			<para>
+				Das Menu ist durch ein Composite Pattern realisiert. 
+				Jede Node fasst ein Steuerelement, eine Liste der Kinderelemente und das Vaterelement. 
+				Zudem verfügt sie noch über die Information ob die Kinderelemente dargestellt, oder ausgeblendet werden sollen. 
+				Wird eine Node aufgeklappt, rutschen alle Geschwisterelemente nach oben und dazwischen werden ihre Kinder gerendert. 
+
+			</para>
+			<para>
+				Auf der Hauptebene dieser Struktur befinden sich 3 dauerhaft sichtbare Elemente:
+				Im folgenden werden diese Element (von unten nach oben) erklärt:
+			</para>
+
 		<section>
 			<title>Die Player Kontrollen</title>
-			<para>Die Player Kontrollen befinden sich ganz unten am Bildschirmrand. Sie sind immer sichtbar und werden nicht durch das Menu verschoben. Sie bestehen aus den 3 Buttons Play, Pause und Stopp (vgl. <xref linkend="screenshot_playbuttons" />).</para>
-			<figure id="screenshot_playbuttons">
+			<para>
+				Die Player Kontrollen befinden sich ganz unten am Bildschirmrand. 
+				Sie sind immer sichtbar und werden nicht durch das Menu verschoben. 
+				Sie bestehen aus den 3 Buttons Play, Pause und Reset (vgl. <xref linkend="fig_playbuttons" />).
+			</para>
+			<figure id="fig_playbuttons">
 				<title>Bildschirmfoto von den Playerkontrollen</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="200" height="50" format="JPG" fileref="sample.jpg" />
+							<imagedata align="center" width="150" format="PNG" fileref="screenshot_playercontrol.png" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
@@ -29,13 +43,15 @@
 		</section>
 		<section>
 			<title>Das Systemmenu</title>
-			<para>Im Systemmenu können Module geladen und Einstellungen vorgenommen werden (vgl. <xref linkend="screenshot_sysmenu" />).</para>
-			<figure id="screenshot_sysmenu">
+			<para>
+				Im Systemmenu können Module geladen und Einstellungen vorgenommen werden (vgl. <xref linkend="fig_sysmenu" />).
+			</para>
+			<figure id="fig_sysmenu">
 				<title>Bildschirmfoto vom Systemmenu</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="200" height="50" format="JPG" fileref="sample.jpg" />
+							<imagedata align="center" width="150" format="PNG" fileref="screenshot_sysmenu.png" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
@@ -57,17 +73,34 @@
 		</section>
 		<section>
 			<title>Das Aktionsmenu</title>
-			<figure>
+			<figure id="fig_aktionsmenu">
 				<title>Bildschirmfoto vom Aktionsmenu</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="200" height="50" format="JPG" fileref="sample.jpg" />
+							<imagedata align="center" width="150" format="PNG" fileref="screenshot_aktionmenu.png" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
 			</figure>
-			<para>Für die aktuell selektierte Node werden hier Aktionen zur Verfügung gestellt. Dies äusßert sich durch einen Button. Voraussetzung dafür ist das der Modul-Entwickler in der Node Implementation Mehtoden vom Typ void mit @Display annotated hat.</para>
+			<para>
+				Für die aktuell selektierte Node werden hier Aktionen zur Verfügung gestellt. Dies äußert sich durch einen Button pro möglicher Aktion.
+				Voraussetzung dafür ist das der Modul-Entwickler in der Node Implementation Methoden vom Typ <type>void</type> mit @Display annotiert hat (vgl. <xref linkend="example_useraction" />).
+			</para>
+			<example id="example_useraction">
+				<title>Auszug aus einer Modul-Node-Implementation</title>
+				<programlisting linenumbering="numbered">
+@Display( name="Erzeuge Event" )
+public void erzeugeEvent() {
+	createSomeEvent();
+}
+
+@Display( name="Autom.Events" ) 
+public void toggleAutoEvents {
+	autoEvents = !autoEvents;
+}
+				</programlisting>
+			</example>
 			<para>Es wird zwischen 2 Arten von Methoden unterschieden:</para>
 			<itemizedlist>
 				<listitem>

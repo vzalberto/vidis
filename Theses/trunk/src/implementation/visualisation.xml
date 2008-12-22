@@ -3,9 +3,9 @@
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Visualisierung</title>
 	<para></para>	
-	
+	<?dbfo keep-with-next="auto" ?>	
 	<section>
-		<title>OpenGL Bindings</title>
+		<title><trademark class="registered">OpenGL</trademark> Bindings</title>
 		<para></para>	
 		
 		<section>
@@ -34,5 +34,107 @@
 		
 		
 		</section>
-	</section>		
+	</section>
+	
+	<section>
+		<title>Problemstellungen</title>
+		<para></para>
+		<section>
+			<title>Picking</title>
+			<para>Unter Picking versteht man den Prozess, herauszufinden auf welches 3D Objekt ein Benutzer geklickt hat. Man unterscheidet zwischen verschiedenen Varianten wie ein solcher Agorithmus arbeitet:</para>
+			<section>
+				<title>Ray Picking</title>
+				<para>
+					Beim Ray Picking werden die 2D Koordinaten des Klicks zu einer Geraden im 3D Raum umgerechnet (vgl. <xref linkend="fig_raypicking" /> ray).
+					Dieser <quote>Strahl</quote> schneidet alle Objekte, die sich unter der Maus befinden.
+				</para>
+				<figure id="fig_raypicking">
+					<title>Ray Picking</title>
+					<mediaobject>
+						<imageobject>
+							<imagedata align="center" height="300" width="400" fileref="sample.jpg" />
+						</imageobject>
+					</mediaobject>
+				</figure>
+			</section>
+			<section>
+				<title>Farb Picking mit Back Buffer</title>
+				<para>
+					Die Idee hinter dieser Technik ist es, sich die Renderingpipeline der Grafikhardware zunutze zu machen. 
+					Jedes klickbare Objekt wird mit einer eindeutigen Id, in Form einer Farbe, versehen. 
+					Erfolgt nun ein Klick, wird in einen kleinen Viewport, der die Mausposition als Zentrum hat, die Szene gerendert.
+					Der Farbwert unter der Maus identifiziert angeklickte Objekt eindeutig.
+				</para>
+			</section>
+			<section>
+				<title>Picking mit Id Stack</title>
+				<para>
+					Auch dieser Ansatz macht sich die Renderingpipeline zunutze.
+					Ähnlich wie bei der letzten Methode werden für alle klickbaren Objekte IDs vergeben. 
+					Allerdings werden diese nicht durch die Farbe codiert, sondern mit dafür vogesehenen Befehlen zusätzlich gesetzt.
+				</para>
+			</section>
+			<para>Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />.</para>
+		</section>	
+		<section id="section_links">
+			<title>Gebogene Links</title>
+			<para>Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.</para>
+			<figure id="fig_linkexample">
+				<title>Ein Link aus der finalen Programmversion</title>
+				<screenshot>
+					<mediaobject>
+						<imageobject>
+							<imagedata align="center" width="350" type="PNG" fileref="screenshot_link.png" />
+						</imageobject>
+					</mediaobject>
+				</screenshot>
+			</figure>
+			<para>
+				Dieses "gebogene Rohr" folgt einer quadratischen Bézierkurve und wurde durch 4 Bézier Flächen dargestellt. 
+				<trademark class="registered">OpenGL</trademark> bietet Evaluatoren an, um Bézier Berechnungen durchzufüheren. 
+				Es werden nur die Kontrollpunkte und die Anzahl der gewünschten interpolierten Punkte angegeben und <trademark class="registered">OpenGL</trademark> Evaluatoren übernehmen den Rest.
+			</para>
+			<para>Im Zuge dieser Bakkarbeit wurde ... implementiert.</para>
+		</section>
+		<section>
+			<title>Linkwölbung für Pakete</title>
+			<para>Ein Link wölbt sich um alle sich darin befindenden Pakete (vgl. <xref linkend="fig_linkpacket" />).</para>
+			<figure id="fig_linkpacket">
+				<title>Ein Link mit 2 Paketen</title>
+				<screenshot>
+					<mediaobject>
+						<imageobject>
+							<imagedata align="center" width="350" type="PNG" fileref="screenshot_link_packets.png" />
+						</imageobject>
+					</mediaobject>
+				</screenshot>
+			</figure>
+			<para>
+				Um dies zu realisieren müssen die Vertexdaten des <link linkend="section_links">gebogenen Links</link> 
+				(vgl. <xref linkend="section_links" />) verändert werden. Da der Link durch die <trademark class="registered">OpenGL</trademark>
+				Evaluatoren erzeugt wird, sind der Anwendung nur die Kontrollpunkte, aber nicht die kompletten Vertexdaten bekannt.
+			</para>
+			<figure id="fig_renderpipeline">
+				<title>Die Reihenfolge der <trademark class="registered">OpenGL</trademark> Operationen (Quelle: <xref linkend="book_redbook" />)</title>
+				<mediaobject>
+					<imageobject>
+						<imagedata align="center" type="GIF" fileref="orderops.gif" />
+					</imageobject>
+				</mediaobject>
+			</figure>
+			<para>
+				Wie in <xref linkend="fig_renderpipeline" /> zu sehen ist, werden nach den Evaluatoren die Vertexoperationen durchgeführt. 
+				Vertexshader<footnote><para>Mehr Information zu Vertexshader sind im Kapitel <xref linkend="section_shader" /> oder 
+				in <xref linkend="book_orangebook" /> zu finden.</para></footnote> kommen genau an dieser Stelle zum Einsatz. 
+				Deshalb wurde ein Vertexshader, mit der Aufgabe den Link um die Pakete zu vergrößern, implementiert.
+				Der Shader nimmt als Parameter die Position von bis zu 9 Paketen und ist immer nur dann aktiv, wenn gerade ein
+				Link gerendert wird. Die Kontrollpunkte werden von den Evaluatoren evaluiert und die berechneten Vertexdaten
+				an den Shader übergeben. Dieser berechnet jetzt aus dem aktuellen Vertex, und alle ihm bekannten Paketpositionen,
+				ob und wieviel sich der Vertex verschiebt. 
+			</para>
+			<para>
+				Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
+			</para>
+		</section>
+	</section>
 </section>

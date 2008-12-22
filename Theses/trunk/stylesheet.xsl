@@ -16,6 +16,10 @@
 <xsl:param name="body.start.indent" select="'0pt'"/>
 <xsl:param name="body.end.indent" select="'0pt'"/>
 <xsl:param name="orderedlist.label.width" select="'1.8em'"/>
+
+<!-- for duplex -->
+<xsl:param name="double.sided" select="1" />
+
 <xsl:template name="header.content">
 </xsl:template>
 

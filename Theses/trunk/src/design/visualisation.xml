@@ -6,7 +6,41 @@
 	
 	<section>
 		<title>Graphische Benutzeroberfläche</title>
-		<para></para>
+		<para>Die Oberfläche muss einfach zu bedienen sein und sich optimal in die 3D Umgebung eingliedern. Existierende APIs wie Java<trademark /> Swing oder Eclipse RCP wurden ausgeschlossen, da ... #FIXME</para>
+		<para>Es wurde eine einfache 3D API entworfen, die genau die benötigten Bedürfnisse erfüllt. Sie besteht prinzipiell aus einem Container und einigen Widgets, um Benutzerineraktion zu ermöglichen.</para>
+		<itemizedlist>
+			<para>Eine kurze Übersicht der GUI API:</para>
+			<listitem>
+				<para>BasicGuiContainer</para>
+				<para></para>
+			</listitem>	
+			<listitem>
+				<para>ScrollContainer</para>
+				<para></para>
+			</listitem>	
+			<listitem>
+				<para>Button</para>
+				<para></para>
+			</listitem>	
+			<listitem>
+				<para>CheckBox</para>
+				<para></para>
+			</listitem>	
+			<listitem>
+				<para>Label</para>
+				<para></para>
+			</listitem>	
+			<listitem>
+				<para>NodeField</para>
+				<para></para>
+			</listitem>
+		</itemizedlist>
+		<figure id="gui_klassendiagramm">
+			<title>Klassendiagramm GUI API</title>
+			<imageobject>
+				<imagedata height="500" width="500" align="center" format="SVG" fileref="gui_klassendiagramm.svg" /> 
+			</imageobject>
+		</figure>
 	</section>	
 	<section>
 		<title>Visualisierung</title>
