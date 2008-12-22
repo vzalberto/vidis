@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section version="5.0" 
-	xmlns="http://docbook.org/ns/docbook">
+<section version="5.0" xmlns="http://docbook.org/ns/docbook"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Module</title>
 	<para>
-	</para>	
+		In diesem Kapitel wird die Funktionalität der Module beschrieben.
+	</para>
+	<section>
+		<title>Beschreibung</title>
+		<para>Ein Modul ist eine Simulationseinheit für den Simulator.
+		Darin werden mehrere, mitunder verschiedene, Implementierungen
+		von Nodes, Packets und Links zusammengefasst und ausgeführt.</para>
+	</section>
+	<section>
+		<title>Funktionsweise</title>
+		<para>
+			Die Grundlage eines Modules bildet eine Datei, welche
+			das Modul beschreibt. Im Folgenden wird diese Datei auch
+			"MSIM-Datei" oder "MSIM-File" genannt.
+		</para>
+		<para>
+			Eine solche Datei beschreibt das Modul indem sie jede einzelne
+			Komponente des Moduls als Instanz aufführt und darin klargestellt
+			wird wie diese Instanzen sich zueinander verhalten.
+		</para>
+		<para>
+			Der Simulator ist dafür zuständig eine solche Datei zu analysieren
+			und entsprechend der Inhalte die Instanzen der Objekte zu erstellen.
+		</para>
+		<para>
+			Anschließend ist der Simulator bereit das Modul auszuführen.
+		</para>
+	</section>
+	<xi:include href="modules/msim.xml" />
 </section>

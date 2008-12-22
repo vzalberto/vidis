@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section version="5.0" xmlns="http://docbook.org/ns/docbook">
+	<title>Variable</title>
+	<para>
+		Dieses Element repräsentiert eine Variable. Dabei ist der Schlüssel
+		der Name der Variable und der Wert der Variable ist ein String.
+	</para>
+</section>
