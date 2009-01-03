@@ -3,7 +3,16 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Variables</title>
 	<para>Dieses optionale Element beinhaltet Variablendefinitionen,
-		welche beim Laden dieses Moduls gesetzt werden sollen.</para>
+		welche beim Laden dieses Moduls gesetzt werden sollen.
+	</para>
+	<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+	<![CDATA[
+		<variables>
+			<variable1>Value of `variable1`</variable1>
+			<variable2>Value of `variable2`</variable2>
+		</variables>
+	]]>
+	</programlisting>
 	<para>
 		<figure>
 			<title>Beispiele für ein Variable Element</title>

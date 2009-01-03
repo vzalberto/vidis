@@ -1,9 +1,247 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section
-	xmlns="http://docbook.org/ns/docbook">
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Modul</title>
 	<para>
-		Ein Modul 
-		Interface defininieren, Klassendiagramm IUserNode, IUserLink, IUserPacket
-	</para>	
+		Ein Modul soll eine konkrete Implementierung eines
+		verteilten
+		Algorithmus sein. Einhergehend mit der
+		Definition geht die Beobachtung,
+		dass alle Verteilten
+		Systemen mit Hilfe
+		von drei Komponenten dargestellt
+		werden können. So gibt
+		es in jedem Verteilten System Peers, welche über
+		Verbindungen
+		untereinander miteinander kommunizieren. Somit bietet
+		sich
+		folgender naiver Ansatz für ein Grundgerüst an um ein Verteiltes
+		System
+		zu simulieren.
+	</para>
+	<para>
+		Man unterscheidet drei Komponenten:
+		<itemizedlist>
+			<listitem>
+				<para>Node</para>
+			</listitem>
+			<listitem>
+				<para>Link</para>
+			</listitem>
+			<listitem>
+				<para>Packet</para>
+			</listitem>
+		</itemizedlist>
+		welche direkt in die Klassenstruktur übernommen werden können.
+	</para>
+	<para>
+		Ein Node (oder auch Knoten) sei eine ausführbare Einheit, auf
+		welchem ein
+		gewisser Algorithmus implementiert wurde und zur Simulation
+		ausgeführt wird. Gewissermaßen ist dies gleichzusetzen mit einem
+		Peer
+		in einem Verteilten System.
+	</para>
+	<para>
+		Ein Packet (oder auch Paket) sei ein Datenträger, welcher zum
+		Datenaustausch zwischen Nodes verwendet wird.
+	</para>
+	<para>
+		Ein Link (oder auch Verbindung) sei eine ausführbare Einheit, auf
+		welcher ein oder mehrere Packet von einem Node zu einem anderen
+		transportiert werden können.
+	</para>
+	<section>
+		<title>Interfaces</title>
+		<para>
+			Im folgenden werden die Interfaces der Komponenten Node,
+			Packet
+			und Link definiert.
+		</para>
+		<section>
+			<title>Node</title>
+			<para>
+				Ein Node definiert die für den implementierenden Anwender relevanten
+				Methoden:
+				<itemizedlist>
+					<listitem>
+					    <para>
+				      	Diese Funktion wird dazu verwendet um eine Verbindung zu einem
+				      	anderen Knoten aufzubauen. Sollte bereits eine Verbindung bestehen
+				      	hat ein Aufruf dieser Funktion keinerlei Effekt.
+				      </para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>connect</methodname>
+							<methodparam>
+								<type>IUserNode</type>
+								<parameter>n</parameter>
+							</methodparam>
+							<methodparam>
+								<type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter>
+							</methodparam>
+				        	<methodparam><type>long</type><parameter>delay</parameter></methodparam>
+				      </methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion wird dazu verwendet um eine bestehende Verbindung
+							zu einem anderen Knoten zu trennen. Sollte keine Verbindung zum
+							anderen Knoten bestehen hat ein Aufruf dieser Funktion keinerlei Effekt.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>disconnect</methodname>
+							<methodparam>
+								<type>IUserNode</type>
+								<parameter>n</parameter>
+							</methodparam>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion wird dazu verwendet um Pakete zu empfangen.
+							Jedes Paket, das diese Node empfängt, wird über diese Funktion
+							an den implementierenden Anwender weitergeleitet damit dieser
+							angemessen darauf reagieren kann. Sie bildet, zusammen mit der Funktion "execute",
+							die Hauptfunktionalität eines Moduls.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>receive</methodname>
+							<methodparam>
+								<type>IUserPacket</type>
+								<parameter>packet</parameter>
+							</methodparam>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion wird beim Start einer Simulation 
+							ausgeführt. In dieser Funktion können Initialisierungen
+							für Variablen und dergleichen implementiert werden.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>init</methodname>
+							<void/>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion wird bei jedem Simulationsschritt
+							einmal ausgeführt. Sie bildet, zusammen mit der Funktion "receive",
+							die Hauptfunktionalität eines Moduls.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>execute</methodname>
+							<void/>
+						</methodsynopsis>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<!--
+			<xi:include href="module/javadocref/vidis-data-mod-IUserNode.xml"/>
+			 -->
+		</section>
+		<section>
+			<title>Link</title>
+			<para>
+				Ein Link definitiert folgende für den implementierenden Anwender
+				wichtigen Methoden:
+			</para>
+			<para>
+				<itemizedlist>
+					<listitem>
+						<para>
+							Diese Funktion wird mit jedem Simulationsschritt
+							ausgeführt.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>execute</methodname>
+							<void/>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Mit Hilfe dieser Funktion kann man ein
+							Paket aus der Liste der zu übertragenden
+							Pakete entfernt werden. So kann man
+							Paketverluste ("Packet loss") simulieren.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<modifier>final</modifier>
+							<type>void</type>
+							<methodname>dropPacketOnLink</methodname>
+							<methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion entfernt alle Pakete,
+							die derzeit übertragen werden, von diesem
+							Link. So kann man Paketverluste ("Packet loss")
+							simulieren.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<modifier>final</modifier>
+							<type>void</type>
+							<methodname>dropPacketsOnLink</methodname>
+							<void/>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion bewirkt, dass diese Verbindung
+							zwischen zwei Knoten gekappt wird.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>disconnect</methodname>
+							<void/>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Mit Hilfe dieser Funktion erhält man
+							die Verzögerung (Delay) dieses Links.
+							Die Verzögerung ist die Länge des Links.
+							Ein Paket braucht zur Übertragung von
+							einem Node zum anderen genau so viele 
+							Simulationsschritte.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>long</type>
+							<methodname>getDelay</methodname>
+							<void/>
+						</methodsynopsis>
+					</listitem>
+					<listitem>
+						<para>
+							Diese Funktion kann dazu verwendet werden, um
+							den Nachbarknoten mit dem man über diesen Link
+							verbunden ist, herauszufinden.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>IUserNode</type>
+							<methodname>getOtherNode</methodname>
+							<methodparam><type>IUserNode</type><parameter>me</parameter></methodparam>
+						</methodsynopsis>
+					</listitem>
+				</itemizedlist>
+			</para>
+		</section>
+	</section>
 </section>
