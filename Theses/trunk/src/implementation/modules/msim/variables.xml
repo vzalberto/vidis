@@ -5,19 +5,17 @@
 	<para>Dieses optionale Element beinhaltet Variablendefinitionen,
 		welche beim Laden dieses Moduls gesetzt werden sollen.</para>
 	<para>
-		Ein Beispiel für zwei Variablen wäre:
-		<literal>&lt;variable \&gt;
-				&lt;variable1 \&gt;Wert1&lt;variable1\&gt;
-				&lt;variable2 \&gt;Wert2&lt;variable2\&gt;
-			&lt;/variable\&gt;</literal>
-		<code>
-			<phrase>
-			test1
-			
-			test2
-			
-			</phrase>
-		</code>
+		<figure>
+			<title>Beispiele für ein Variable Element</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata align="center" width="480" fileref="figures/msim-module-objects-link-variables.png" format="PNG" />
+				</imageobject>
+				<imageobject>
+					<imagedata align="center" width="480" fileref="figures/msim-module-objects-node-variables.png" format="PNG" />
+				</imageobject>
+			</mediaobject>
+		</figure>
 	</para>
 	<xi:include href="variables/variable.xml" />
 </section>

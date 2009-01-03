@@ -1,4 +1,4 @@
-<section version="5.0" xmlns="http://docbook.org/ns/docbook"
+<section xmlns="http://docbook.org/ns/docbook"
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>MSIM-Datei</title>
 	<para>
@@ -12,11 +12,22 @@
 			beschreiben. Man gibt dabei Nodes, Links und die Verbindungen
 			dazwischen an.
 		</para>
+		<figure>
+			<title>Beispiel für eine MSIM-Datei</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata align="center" width="480" fileref="figures/msim-module.png" format="PNG" />
+				</imageobject>
+				<textobject>
+					<phrase>Dies ist ein Beispiel für eine MSIM-Datei.</phrase>
+				</textobject>
+			</mediaobject>
+		</figure>
 	</section>
 	<section>
 		<title>Format</title>
 		<para>
-			Im Folgenden wird die XML-Datei beschrieben.
+			Im Folgenden werden die XML Knoten einer MSIM-Datei beschrieben.
 			<footnote>
 				<para>
 					Alle Schlüssel der XML-Elemente sind nicht case-sensitiv,
@@ -33,6 +44,14 @@
 				<para>
 					Dieses Element beinhaltet einen String, welches dieses
 					Modul beschreibt.
+					<figure>
+						<title>Beispiel für ein Id Element</title>
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="480" fileref="figures/msim-module-id.png" format="PNG" />
+							</imageobject>
+						</mediaobject>
+					</figure>
 					<footnote>
 						<para>z.B. Demo Module 1</para>
 					</footnote>
@@ -43,6 +62,14 @@
 				<para>
 					Dieses Element beinhaltet einen String zum classpath der
 					Modul Klassen.
+					<figure>
+						<title>Beispiel für ein Classpath Element</title>
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="480" fileref="figures/msim-module-classpath.png" format="PNG" />
+							</imageobject>
+						</mediaobject>
+					</figure>
 					<footnote>
 						<para>z.B. my.vidis.modules.mymodule</para>
 					</footnote>
@@ -54,7 +81,16 @@
 					Node-Objektinstanzen.</para>
 				<section>
 					<title>Node</title>
-					<para>Dieses Element beschreibt eine Node-Objektinstanz.</para>
+					<para>Dieses Element beschreibt eine Node-Objektinstanz.
+					<figure>
+						<title>Beispiel für ein Node Element</title>
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="480" fileref="figures/msim-module-objects-node.png" format="PNG" />
+							</imageobject>
+						</mediaobject>
+					</figure>
+					</para>
 					<section>
 						<title>ID</title>
 						<para>Ein String, welcher diese Instanz eindeutig (UNIQUE)
@@ -70,7 +106,15 @@
 				</section>
 				<section>
 					<title>Link</title>
-					<para>Dieses Element beschreibt eine Link-Objektinstanz.</para>
+					<para>Dieses Element beschreibt eine Link-Objektinstanz.
+					<figure>
+						<title>Beispiel für ein Link Element</title>
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="480" fileref="figures/msim-module-objects-link.png" format="PNG" />
+							</imageobject>
+						</mediaobject>
+					</figure></para>
 					<section>
 						<title>ID</title>
 						<para>Ein String, welcher diese Instanz eindeutig (UNIQUE)
@@ -84,7 +128,7 @@
 					</section>
 					<section>
 						<title>DELAY</title>
-						<para>Ein Long, welcher den Delay (die Länge des Links)
+						<para>Eine Zahl im Wertebereich eines Java Long Integers, welcher den Delay (die Länge des Links)
 							beschreibt.</para>
 					</section>
 					<xi:include href="msim/variables.xml" />
@@ -93,7 +137,16 @@
 			<section>
 				<title>Connections</title>
 				<para>Dieses Element beinhaltet alle Verbindungen, welche
-					zwischen Nodes mit Hilfe von Links hergestellt werden sollen.</para>
+					zwischen Nodes mit Hilfe von Links hergestellt werden sollen.
+					<figure>
+						<title>Beispiel für ein Connection Element</title>
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="480" fileref="figures/msim-module-connections.png" format="PNG" />
+							</imageobject>
+						</mediaobject>
+					</figure>
+				</para>
 				<section>
 					<title>Connection</title>
 					<para>Dieses Element beschreibt eine Verbindung zwischen zwei Nodes.</para>
@@ -123,7 +176,15 @@
 					[0..1] mit Nachkommastellen. Er beschreibt wie nahe die Knoten zu
 					einander stehen sollen. 0 ist dabei der Minimalabstand, 1 der
 					Maximalabstand. Dieser Parameter beeinflußt direkt die vorhandenen
-					Layouts.</para>
+					Layouts.
+					<figure>
+						<title>Beispiel für ein NodeDensity Element</title>
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="480" fileref="figures/msim-module-nodeDensity.png" format="PNG" />
+							</imageobject>
+						</mediaobject>
+					</figure></para>
 			</section>
 		</section>
 	</section>
