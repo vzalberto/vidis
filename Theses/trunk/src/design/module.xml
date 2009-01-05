@@ -38,27 +38,56 @@
 		welchem ein
 		gewisser Algorithmus implementiert wurde und zur Simulation
 		ausgeführt wird. Gewissermaßen ist dies gleichzusetzen mit einem
-		Peer
-		in einem Verteilten System.
+		Peer in einem Verteilten System.
 	</para>
+	<section>
+		<title>Voraussetzungen für eine Node</title>
+		<para>
+			Ein Node soll auf die Verbindungen mit anderen Nodes
+			zugreifen können. Seine Funktionalität, das heißt, der Code
+			der bei jedem Simulationsschritt ausgeführt wird, soll
+			frei programmierbar sein. Weiters soll ein Node auf
+			den Erhalt von Paketen reagieren können.
+		</para>
+	</section>
 	<para>
 		Ein Packet (oder auch Paket) sei ein Datenträger, welcher zum
 		Datenaustausch zwischen Nodes verwendet wird.
 	</para>
+	<section>
+		<title>Voraussetzungen für ein Packet</title>
+		<para>
+			Ein Packet soll beliebige Daten abspeichern und transportieren
+			können. Außerdem soll ein Packet den Absender und den Weg den
+			es genommen hat kennen, um die Arbeit damit zu erleichtern.
+		</para>
+	</section>
 	<para>
 		Ein Link (oder auch Verbindung) sei eine ausführbare Einheit, auf
 		welcher ein oder mehrere Packet von einem Node zu einem anderen
 		transportiert werden können.
 	</para>
 	<section>
+		<title>Voraussetzungen für einen Link</title>
+		<para>
+		Ein Link soll zwei Nodes bidirektional verbinden. Dabei
+		soll es möglich sein die Länge des Links anzugeben (Delay).
+		Es soll möglich sein die Paketübertragung zu stören um auch
+		instabile Netzwerke beziehungsweise Netzwerkstörungen simulieren
+		zu können.
+		</para>
+	</section>
+	<section>
 		<title>Interfaces</title>
 		<para>
 			Im folgenden werden die Interfaces der Komponenten Node,
-			Packet
-			und Link definiert.
+			Packet und Link definiert.
 		</para>
 		<section>
 			<title>Node</title>
+			<para>
+				
+			</para>
 			<para>
 				Ein Node definiert die für den implementierenden Anwender relevanten
 				Methoden:
@@ -68,7 +97,7 @@
 				      	Diese Funktion wird dazu verwendet um eine Verbindung zu einem
 				      	anderen Knoten aufzubauen. Sollte bereits eine Verbindung bestehen
 				      	hat ein Aufruf dieser Funktion keinerlei Effekt.
-				      </para>
+						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -152,7 +181,14 @@
 		<section>
 			<title>Link</title>
 			<para>
-				Ein Link definitiert folgende für den implementierenden Anwender
+				Ein Link soll zwei Nodes bidirektional verbinden. Dabei
+				soll es möglich sein die Länge des Links anzugeben (Delay).
+				Es soll möglich sein die Paketübertragung zu stören um auch
+				instabile Netzwerke beziehungsweise Netzwerkstörungen simulieren
+				zu können.
+			</para>
+			<para>
+				Ein Link definitiert folgende, für den implementierenden Anwender,
 				wichtigen Methoden:
 			</para>
 			<para>
@@ -239,6 +275,38 @@
 							<methodname>getOtherNode</methodname>
 							<methodparam><type>IUserNode</type><parameter>me</parameter></methodparam>
 						</methodsynopsis>
+					</listitem>
+				</itemizedlist>
+			</para>
+		</section>
+		<section>
+			<title>Packet</title>
+			<para>Ein Packet wird durch folgende wichtigen Methoden definiert:</para>
+			<para>
+				<itemizedlist>
+					<listitem>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>IUserLink</type>
+							<methodname>getLinkToSource</methodname>
+							<void/>
+						</methodsynopsis>
+						<para>
+							Diese Funktion gibt den Link zum Absender des
+							Pakets zurück.
+						</para>
+					</listitem>
+					<listitem>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>IUserNode</type>
+							<methodname>getSource</methodname>
+							<void/>
+						</methodsynopsis>
+						<para>
+							Diese Funktion gibt den Node des Absenders 
+							zurück.
+						</para>
 					</listitem>
 				</itemizedlist>
 			</para>
