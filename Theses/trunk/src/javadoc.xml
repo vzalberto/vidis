@@ -1,6 +1,741 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <appendix
-	xmlns="http://docbook.org/ns/docbook">
+	xmlns="http://docbook.org/ns/docbook"
+	xmlns:xl="http://www.w3.org/1999/xlink"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Javadoc</title>
-	<para></para>	
+	<section xml:id="PACKAGE-1" xreflabel="vidis.data">
+		<title>Package vidis.­data</title>
+		<xi:include href="appendix/docbook/vidis-data-AUserLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-AUserNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-AUserPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	</section>
+	<section xml:id="PACKAGE-2" xreflabel="vidis.data.annotation">
+		<title>Package vidis.­data.­annotation</title>
+	    <xi:include href="appendix/docbook/vidis-data-annotation-ColorType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-annotation-ComponentColor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-annotation-ComponentInfo.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-annotation-Display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-annotation-DisplayColor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-annotation-DisplayType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    </section>
+    <section xml:id="PACKAGE-3" xreflabel="vidis.data.commonComponents">
+	    <title>Package vidis.­data.­commonComponents</title>
+	    <xi:include href="appendix/docbook/vidis-data-commonComponents-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-4" xreflabel="vidis.data.exceptions">
+	    <title>Package vidis.­data.­exceptions</title>
+	    <xi:include href="appendix/docbook/vidis-data-exceptions-ObstructInitCallException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-5" xreflabel="vidis.data.mod">
+	    <title>Package vidis.­data.­mod</title>
+	    <xi:include href="appendix/docbook/vidis-data-mod-AUserComponent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-mod-IUserComponent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-mod-IUserLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-mod-IUserNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-mod-IUserPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-6" xreflabel="vidis.data.sim">
+	    <title>Package vidis.­data.­sim</title>
+	    <xi:include href="appendix/docbook/vidis-data-sim-AComponent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-IAComponentCon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-IComponent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-ISimLinkCon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-ISimNodeCon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-ISimPacketCon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-SimLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-SimNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-sim-SimPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-7" xreflabel="vidis.data.var">
+	    <title>Package vidis.­data.­var</title>
+	    <xi:include href="appendix/docbook/vidis-data-var-AVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-AVariable-COMMON_IDENTIFIERS.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-AVariable-COMMON_SCOPES.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-IVariableChangeListener.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-IVariableChangeProducer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-IVariableContainer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-8" xreflabel="vidis.data.var.vars">
+	    <title>Package vidis.­data.­var.­vars</title>
+	    <xi:include href="appendix/docbook/vidis-data-var-vars-DefaultVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-vars-FieldVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-data-var-vars-MethodVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-9" xreflabel="vidis.glutils">
+	    <title>Package vidis.­glutils</title>
+	    <xi:include href="appendix/docbook/vidis-glutils-GLOption.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-glutils-GLOption-Blending.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-glutils-GLOption-DepthFunc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-glutils-GLOption-GLConfig.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-glutils-GLOption-ShadeModel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-10" xreflabel="vidis.modules.bullyElectionAlgorithm_v2">
+	    <title>Package vidis.­modules.­bullyElectionAlgorithm_v2</title>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-ABullyPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-BullyElectionAlgorithmNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-ElectionPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-ElectionRestartPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-PingPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-bullyElectionAlgorithm_v2-PongPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-11" xreflabel="vidis.modules.byzantineGenerals">
+	    <title>Package vidis.­modules.­byzantineGenerals</title>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-ANode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-APacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-AttackPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-BadNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-DontKnowNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-GoodNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-byzantineGenerals-RetreatPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-12" xreflabel="vidis.modules.echoAlgorithm">
+	    <title>Package vidis.­modules.­echoAlgorithm</title>
+	    <xi:include href="appendix/docbook/vidis-modules-echoAlgorithm-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-echoAlgorithm-EchoNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-echoAlgorithm-EchoPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-echoAlgorithm-ExplorePacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-13" xreflabel="vidis.modules.flooding">
+	    <title>Package vidis.­modules.­flooding</title>
+	    <xi:include href="appendix/docbook/vidis-modules-flooding-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-flooding-FloodNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-flooding-FloodPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-14" xreflabel="vidis.modules.mstAlgorithm">
+	    <title>Package vidis.­modules.­mstAlgorithm</title>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-AMSTPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-EchoPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-ExplorePacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-MSTNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-MstPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-PingPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-mstAlgorithm-PongPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-15" xreflabel="vidis.modules.vartest">
+	    <title>Package vidis.­modules.­vartest</title>
+	    <xi:include href="appendix/docbook/vidis-modules-vartest-VarTestNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-16" xreflabel="vidis.modules.vectorClockAlgorithm">
+	    <title>Package vidis.­modules.­vectorClockAlgorithm</title>
+	    <xi:include href="appendix/docbook/vidis-modules-vectorClockAlgorithm-DefaultLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-vectorClockAlgorithm-VectorClockAlgorithmNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-vectorClockAlgorithm-VectorClockAlgorithmPacket.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-modules-vectorClockAlgorithm-VectorTime.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-17" xreflabel="vidis.sim">
+	    <title>Package vidis.­sim</title>
+	    <xi:include href="appendix/docbook/vidis-sim-Player.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-Simulator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-18" xreflabel="vidis.sim.classloader">
+	    <title>Package vidis.­sim.­classloader</title>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-VidisClassLoader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-19" xreflabel="vidis.sim.classloader.modules.impl">
+	    <title>Package vidis.­sim.­classloader.­modules.­impl</title>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-impl-AModule.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-impl-AModuleFile.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-20" xreflabel="vidis.sim.classloader.modules.impl.dir">
+	    <title>Package vidis.­sim.­classloader.­modules.­impl.­dir</title>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-impl-dir-DirectoryModule.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-impl-dir-FileModuleFile.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-21" xreflabel="vidis.sim.classloader.modules.impl.jar">
+	    <title>Package vidis.­sim.­classloader.­modules.­impl.­jar</title>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-impl-jar-JarModule.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-impl-jar-JarModuleFile.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-22" xreflabel="vidis.sim.classloader.modules.interfaces">
+	    <title>Package vidis.­sim.­classloader.­modules.­interfaces</title>
+	    <xi:include href="appendix/docbook/vidis-sim-classloader-modules-interfaces-IModuleComponent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-23" xreflabel="vidis.sim.exceptions">
+	    <title>Package vidis.­sim.­exceptions</title>
+	    <xi:include href="appendix/docbook/vidis-sim-exceptions-DocumentMalformedException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-exceptions-ObstructInitRuntimeCallException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-exceptions-SimulatorConfigRuntimeException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-24" xreflabel="vidis.sim.simulatorInternals">
+	    <title>Package vidis.­sim.­simulatorInternals</title>
+	    <xi:include href="appendix/docbook/vidis-sim-simulatorInternals-SimulatorData.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-25" xreflabel="vidis.sim.xml">
+	    <title>Package vidis.­sim.­xml</title>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-CommonDomParser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-CommonDomWriter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-CommonSaxParser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-CommonSaxWriter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-26" xreflabel="vidis.sim.xml.modules">
+	    <title>Package vidis.­sim.­xml.­modules</title>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-modules-XMLModuleReader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-27" xreflabel="vidis.sim.xml.modules.dataStructure">
+	    <title>Package vidis.­sim.­xml.­modules.­dataStructure</title>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-modules-dataStructure-DocumentData.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-modules-dataStructure-DocumentDataConnection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-modules-dataStructure-DocumentDataLink.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-sim-xml-modules-dataStructure-DocumentDataNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-28" xreflabel="vidis.ui">
+	    <title>Package vidis.­ui</title>
+	    <xi:include href="appendix/docbook/vidis-ui-StartUp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-29" xreflabel="vidis.ui.config">
+	    <title>Package vidis.­ui.­config</title>
+	    <xi:include href="appendix/docbook/vidis-ui-config-Configuration.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-30" xreflabel="vidis.ui.events">
+	    <title>Package vidis.­ui.­events</title>
+	    <xi:include href="appendix/docbook/vidis-ui-events-AEventHandler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-AKeyEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-AMouseEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-CameraEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-DummyEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-GuiMouseEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-IEventHandler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-IVidisEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-JobAppend.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-KeyPressedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-KeyReleasedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-KeyTypedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-MouseClickedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-MouseMovedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-MousePressedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-MouseReleasedEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-ObjectEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-StartEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-StopEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-VidisEvent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-31" xreflabel="vidis.ui.events.jobs">
+	    <title>Package vidis.­ui.­events.­jobs</title>
+	    <xi:include href="appendix/docbook/vidis-ui-events-jobs-IJob.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-jobs-ILayoutJob.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-32" xreflabel="vidis.ui.events.jobs.jobs.layouts">
+	    <title>Package vidis.­ui.­events.­jobs.­jobs.­layouts</title>
+	    <xi:include href="appendix/docbook/vidis-ui-events-jobs-jobs-layouts-ALayoutJob.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-jobs-jobs-layouts-ARelayoutJob.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-events-jobs-jobs-layouts-GraphElectricSpringLayoutJob.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-33" xreflabel="vidis.ui.gui">
+	    <title>Package vidis.­ui.­gui</title>
+	    <xi:include href="appendix/docbook/vidis-ui-gui-Gui.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-gui-Menu.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-gui-MenuAction.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-gui-MenuItem.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-34" xreflabel="vidis.ui.input">
+	    <title>Package vidis.­ui.­input</title>
+	    <xi:include href="appendix/docbook/vidis-ui-input-InputListener.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-35" xreflabel="vidis.ui.model.graph.layouts">
+	    <title>Package vidis.­ui.­model.­graph.­layouts</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-AGraphLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-GraphLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-36" xreflabel="vidis.ui.model.graph.layouts.impl">
+	    <title>Package vidis.­ui.­model.­graph.­layouts.­impl</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-impl-GraphCenterLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-impl-GraphElectricSpringLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-impl-GraphGridLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-impl-GraphRandomLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-graph-layouts-impl-GraphSpiralLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-37" xreflabel="vidis.ui.model.impl">
+	    <title>Package vidis.­ui.­model.­impl</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-BasicGuiContainer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-BasicMarginLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-Button.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-CheckBox.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-CheckChangeListener.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-Label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-Link.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-Node.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-NodeField.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-Packet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-PacketField.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-PercentMarginLayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-PropertyPanel.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-TextField.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-TextGuiContainer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-38" xreflabel="vidis.ui.model.impl.guielements">
+	    <title>Package vidis.­ui.­model.­impl.­guielements</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-Label.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-Mode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-ObjectGuiElement.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-PopupWindow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-39" xreflabel="vidis.ui.model.impl.guielements.popupWindows">
+	    <title>Package vidis.­ui.­model.­impl.­guielements.­popupWindows</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-popupWindows-ApplyLayoutPopupWindow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-popupWindows-OpenMSIMFilePopupWindow_tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-40" xreflabel="vidis.ui.model.impl.guielements.scrollpane">
+	    <title>Package vidis.­ui.­model.­impl.­guielements.­scrollpane</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-scrollpane-AScrollpane3D.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-scrollpane-ScrollPane3D.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-41" xreflabel="vidis.ui.model.impl.guielements.slider">
+	    <title>Package vidis.­ui.­model.­impl.­guielements.­slider</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-slider-ASlider3D.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-slider-HorizontalSlider3D.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-slider-VerticalSlider3D.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-42" xreflabel="vidis.ui.model.impl.guielements.tree">
+	    <title>Package vidis.­ui.­model.­impl.­guielements.­tree</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-tree-Tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-tree-TreeElement.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-43" xreflabel="vidis.ui.model.impl.guielements.variableDisplays">
+	    <title>Package vidis.­ui.­model.­impl.­guielements.­variableDisplays</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-CollectionDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-CompositeScrollPane.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-Display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-DisplayRegistry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-GroupDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-MapDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-MethodDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-NumberDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-PrimitiveByteDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-PrimitiveDoubleDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-PrimitiveFloatDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-PrimitiveIntDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-PrimitiveLongDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-StringDisplay.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-Tuple2Display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-impl-guielements-variableDisplays-Tuple3Display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-44" xreflabel="vidis.ui.model.structure">
+	    <title>Package vidis.­ui.­model.­structure</title>
+	    <xi:include href="appendix/docbook/vidis-ui-model-structure-AGuiContainer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-structure-ASimObject.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-structure-IGuiContainer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-structure-ILayout.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-structure-ISimObject.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-model-structure-IVisObject.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-45" xreflabel="vidis.ui.mvc">
+	    <title>Package vidis.­ui.­mvc</title>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-CameraController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-GuiController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-InputController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-JobController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-SceneController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-SimulatorController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-VidisController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-WindowController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-46" xreflabel="vidis.ui.mvc.api">
+	    <title>Package vidis.­ui.­mvc.­api</title>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-api-AController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-api-Dispatcher.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-api-IController.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-mvc-api-Registry.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-47" xreflabel="vidis.ui.vis">
+	    <title>Package vidis.­ui.­vis</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-FrameContainer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-Light.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-VecUtil.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-48" xreflabel="vidis.ui.vis.camera">
+	    <title>Package vidis.­ui.­vis.­camera</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-camera-DefaultCamera.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-camera-FreeLookCamera.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-camera-GuiCamera.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-camera-ICamera.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-49" xreflabel="vidis.ui.vis.multipass">
+	    <title>Package vidis.­ui.­vis.­multipass</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-multipass-IPass.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-multipass-RenderPass.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-50" xreflabel="vidis.ui.vis.objects">
+	    <title>Package vidis.­ui.­vis.­objects</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-objects-Axis.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-objects-Grid.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-objects-LinkTest.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-objects-Selector.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-51" xreflabel="vidis.ui.vis.shader">
+	    <title>Package vidis.­ui.­vis.­shader</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-IProgram.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-IShader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-IShaderVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-ShaderFactory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-ShaderFactory-DummyProgram.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-ShaderFactory-DummyShader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-ShaderFactory-DummyShaderVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-52" xreflabel="vidis.ui.vis.shader.impl">
+	    <title>Package vidis.­ui.­vis.­shader.­impl</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-impl-FragmentShader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-impl-Program.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-impl-Shader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-impl-ShaderException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-impl-VertexShader.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-53" xreflabel="vidis.ui.vis.shader.variable">
+	    <title>Package vidis.­ui.­vis.­shader.­variable</title>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-variable-DataType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-variable-ShaderVariable.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-ui-vis-shader-variable-VariableType.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-54" xreflabel="vidis.util">
+	    <title>Package vidis.­util</title>
+	    <xi:include href="appendix/docbook/vidis-util-ColorGenerator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-Matrix4d.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-ResourceManager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-Rounding.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-55" xreflabel="vidis.util.graphs">
+	    <title>Package vidis.­util.­graphs</title>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-TestDijkstra.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-56" xreflabel="vidis.util.graphs.graph">
+	    <title>Package vidis.­util.­graphs.­graph</title>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-CycleException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-DirectedAcyclicGraph.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-DirectedAcyclicGraphImpl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-DirectedEdge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-DirectedWeightedEdge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-Edge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-EmptyTreeException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-Graph.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-GraphAdMatrix.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-GraphComponent.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-GraphException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-GraphImpl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-IllegalTreeException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-NegativeCapacityException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-Network.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-NetworkException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-NetworkImpl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-NoSuchVertexException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-NullVisitor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-Tree.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-TreeImpl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-Vertex.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-Visitor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-WeightedEdge.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-WeightedGraph.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-WeightedGraphImpl.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-57" xreflabel="vidis.util.graphs.graph.algorithm">
+	    <title>Package vidis.­util.­graphs.­graph.­algorithm</title>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-AugmentNetworkFlow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-BackTrackColoring.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-BreadthFirstGraphTraversal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-Connectivity.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-DepthFirstGraphTraversal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-DepthFirstRecursiveGraphTraversal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-DepthFirstSimpleGraphTraversal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-GraphColoring.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-GraphTraversal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-GreedyColoring.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-MinSpanTreeKruskalAlgorithm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-NetworkFlow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-NotEnoughColorsException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-ShortestPathAlgorithm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-ShortestPathAlgorithmDijkstra.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-ShortestPathAlgorithmMooreFord.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-TopologicalSorting.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-UnitCapacityNetworkFlow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-graph-algorithm-WarshallRoy.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+	  <section xml:id="PACKAGE-58" xreflabel="vidis.util.graphs.util">
+	    <title>Package vidis.­util.­graphs.­util</title>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-util-Collections.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-util-EmptyQueueException.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-util-Heap.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-util-HeapNode.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-util-HeapNodeComparator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	    <xi:include href="appendix/docbook/vidis-util-graphs-util-Queue.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+	  </section>
+    <section>
+    	<title>Constant field values</title>
+	    <section>
+	      <title>Package vidis.ui.config.*</title>
+	      <table frame="all">
+	        <title>Configuration</title>
+	        <tgroup cols="2">
+	          <colspec colname="c1" colwidth="1*"/>
+	          <colspec colname="c2" colwidth="1*"/>
+	          <tbody>
+	            <row>
+	              <entry><para>DATA_PATH</para></entry>
+	              <entry><para>&quot;data&quot;</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>GRID_STEP</para></entry>
+	              <entry><para>2.0</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>JOGL_VERSION</para></entry>
+	              <entry><para>&quot;jogl-1.1.1&quot;</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>LIBRARY_PATH</para></entry>
+	              <entry><para>&quot;lib&quot;</para></entry>
+	            </row>
+	          </tbody>
+	        </tgroup>
+	      </table>
+	    </section>
+    </section>
+    <section>
+    	<title>Statistics</title>
+	    <section>
+	      <title>Totals</title>
+	      <mediaobject>
+	        <imageobject>
+	          <imagedata fileref="appendix/docbook/figures/statistics/Totals.png"/>
+	        </imageobject>
+	      </mediaobject>
+	      <informaltable frame="all" role="parameter">
+	        <tgroup cols="2">
+	          <colspec colname="c1" colwidth="4*"/>
+	          <colspec colname="c2" colwidth="1*"/>
+	          <tbody>
+	            <row>
+	              <entry align="left" nameend="c2" namest="c1" valign="middle"><para>Totals</para>                <?dbfo bgcolor="#eeeeee"?>
+	</entry>
+	            </row>
+	            <row>
+	              <entry><para>Totals Packages</para></entry>
+	              <entry><para>58</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Totals Classes</para></entry>
+	              <entry><para>282</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Totals Fields</para></entry>
+	              <entry><para>792</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Totals Methods</para></entry>
+	              <entry><para>1479</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Public Classes</para></entry>
+	              <entry><para>282</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Public Fields</para></entry>
+	              <entry><para>116</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Public Methods</para></entry>
+	              <entry><para>1177</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Protected Fields</para></entry>
+	              <entry><para>52</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Protected Methods</para></entry>
+	              <entry><para>123</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Package Classes</para></entry>
+	              <entry><para>0</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Package Fields</para></entry>
+	              <entry><para>86</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Package Methods</para></entry>
+	              <entry><para>3</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Private Fields</para></entry>
+	              <entry><para>538</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>Private Methods</para></entry>
+	              <entry><para>176</para></entry>
+	            </row>
+	          </tbody>
+	        </tgroup>
+	      </informaltable>
+	    </section>
+	    <section>
+	      <title>Classes per package</title>
+	      <mediaobject>
+	        <imageobject>
+	          <imagedata fileref="appendix/docbook/figures/statistics/ClassesPerPackage.png"/>
+	        </imageobject>
+	      </mediaobject>
+	      <informaltable frame="all" role="parameter">
+	        <tgroup cols="2">
+	          <colspec colname="c1" colwidth="4*"/>
+	          <colspec colname="c2" colwidth="1*"/>
+	          <tbody>
+	            <row>
+	              <entry align="left" nameend="c2" namest="c1" valign="middle"><para>Classes per package</para>                <?dbfo bgcolor="#eeeeee"?>
+	</entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.util.graphs.graph</para></entry>
+	              <entry><para>26</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.events</para></entry>
+	              <entry><para>20</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.util.graphs.graph.algorithm</para></entry>
+	              <entry><para>19</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.impl.guielements.variableDisplays</para></entry>
+	              <entry><para>16</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.impl</para></entry>
+	              <entry><para>15</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.sim</para></entry>
+	              <entry><para>9</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.modules.byzantineGenerals</para></entry>
+	              <entry><para>8</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.modules.mstAlgorithm</para></entry>
+	              <entry><para>8</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.mvc</para></entry>
+	              <entry><para>8</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.modules.bullyElectionAlgorithm_v2</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.vis.shader</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.annotation</para></entry>
+	              <entry><para>6</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.var</para></entry>
+	              <entry><para>6</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.structure</para></entry>
+	              <entry><para>6</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.util.graphs.util</para></entry>
+	              <entry><para>6</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.mod</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.glutils</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.graph.layouts.impl</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.vis.shader.impl</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.modules.echoAlgorithm</para></entry>
+	              <entry><para>4</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.modules.vectorClockAlgorithm</para></entry>
+	              <entry><para>4</para></entry>
+	            </row>
+	          </tbody>
+	        </tgroup>
+	      </informaltable>
+	    </section>
+	    <section>
+	      <title>Top Ten - Direct known subclasses</title>
+	      <mediaobject>
+	        <imageobject>
+	          <imagedata fileref="appendix/docbook/figures/statistics/DirectKnownSubclasses.png"/>
+	        </imageobject>
+	      </mediaobject>
+	      <informaltable frame="all" role="parameter">
+	        <tgroup cols="2">
+	          <colspec colname="c1" colwidth="4*"/>
+	          <colspec colname="c2" colwidth="1*"/>
+	          <tbody>
+	            <row>
+	              <entry align="left" nameend="c2" namest="c1" valign="middle"><para>Direct known subclasses</para>                <?dbfo bgcolor="#eeeeee"?>
+	</entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.impl.BasicGuiContainer</para></entry>
+	              <entry><para>15</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.impl.guielements.variableDisplays.Display</para></entry>
+	              <entry><para>12</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.mvc.api.AController</para></entry>
+	              <entry><para>8</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.AUserLink</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.AUserNode</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.data.AUserPacket</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.events.AEventHandler</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.util.graphs.graph.GraphException</para></entry>
+	              <entry><para>7</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.modules.mstAlgorithm.AMSTPacket</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.ui.model.graph.layouts.AGraphLayout</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	            <row>
+	              <entry><para>vidis.util.graphs.graph.algorithm.GraphTraversal</para></entry>
+	              <entry><para>5</para></entry>
+	            </row>
+	          </tbody>
+	        </tgroup>
+	      </informaltable>
+	    </section>
+    </section>
 </appendix>

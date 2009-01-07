@@ -50,7 +50,7 @@
 	<xi:include href="design.xml" />
 	<xi:include href="implementation.xml" />
 	<xi:include href="conclusions.xml" />
-
+	
 	<xi:include href="biblio.xml" />
 	
 	<xi:include href="javadoc.xml" />
