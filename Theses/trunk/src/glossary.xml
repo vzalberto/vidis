@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glossary xmlns="http://docbook.org/ns/docbook">
+	<title>Glossar</title>
+	<glossdiv>
+		<title>S</title>
+		<glossentry id="glossary_shader">
+			<glossterm>Shader</glossterm>
+			<glossdef>
+				<para>Programm, dass in der Grafikhardware ausgeführt wird.</para>
+			</glossdef>
+		</glossentry>
+	</glossdiv>
+</glossary>
