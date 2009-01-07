@@ -21,25 +21,54 @@
 	
 	<section>
 		<title>OpenGL</title>
-		<para></para>
+		<para>
+			<trademark class="registered">OpenGL</trademark> steht für <quote>Open Graphics Library</quote> und ist eine öffentlich 
+			spezifizierte<footnote><para>Die Spezifikation ist unter <ulink url="http://www.opengl.org" /> zu finden.</para></footnote> 
+			Software-Schnittstelle für Grafik-Hardware. Die Spezifiezierungskommission besteht aus Firmen wie SGI, IBM, HP, Sun, Intel,
+			Microsoft und weiteren. 
+		</para>
+		<figure>
+			<title>Das <trademark class="registered">OpenGL</trademark> Logo (Quelle: <ulink url="http://www.opengl.org" /> <xref linkend="web_opengl" />)</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata align="center" fileref="opengl_logo.jpg" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para>
+			<trademark class="registered">OpenGL</trademark> 2.1 ist derzeit noch aktuell, die Kommission hat den 3.0 Standard am 11. 
+			August 2008 verabschiedet. Derzeit arbeiten die Grafikkartenhersteller noch an der Anpassung der Treiber an die neue Spezifikation.
+			<trademark class="registered">OpenGL</trademark> 3.0 ist die erste Version, die mit der langen Tradition der Abwärtskompatiblität
+			bricht. Stattdessen wurden Altlasten entfernt. Allerdings wurde von den mit 3.0 vorgestellten und geplanten Änderungen nur gut 1/3
+			wirklich umgesetzt.
+		</para>
 
 		<section>
 			<title>OpenGL Java Bindings</title>
-			<para></para>
-
+			<para>
+				Es existieren einige Projekte, die es ermöglichen den <trademark class="registered">OpenGL</trademark> Standard auch
+				in anderen Sprachen wie zb Java zu verwenden. Einige sind einfache API-Wrapper, die über JNI einach alle Funktionen
+				der API zugänglich machen, andere haben ein komplett eigenes Objektmodell und verstecken die <trademark class="registered">
+				OpenGL</trademark> API vor dem Programmierer.
+			</para>
 			<section>
-				<title>Java3D</title>
-				<para></para>
+				<title><trademark>Java3D</trademark></title>
+				<para>
+					Die <trademark>Java3D</trademark> API ist ein Open Source Projekt. Die API setzt auf ein Objektmodell mit Szenengraph.
+				</para>
 			</section>
 
 			<section>
-				<title>JOGL</title>
-				<para></para>
+				<title>Java OpenGL (JOGL)</title>
+				<para>
+					JOGL<xref linkend="web_jogl" /> steht für Java OpenGL und implementiert den JSR-231<xref linkend="web_jsr231" /> Standard.
+					Dieser gibt genau vor wie die <trademark class="registered">OpenGL</trademark> API Aufrufe in Java auszusehen haben.
+				</para>
 			</section>
 
 			<section>
-				<title>lwjgl</title>
-				<para></para>
+				<title>Lightweight Java Gaming Library (LWJGL)</title>
+				<para>Die Lightweight Java Gaming Library setzt auf </para>
 			</section>
 
 		</section>

@@ -53,4 +53,19 @@
 				</author>
 			</authorgroup>
 		</biblioentry>
+		<biblioentry id="web_opengl">
+			<title>http://www.opengl.org</title>
+		</biblioentry>
+		<biblioentry id="web_java3d">
+			<title>https://java3d.dev.java.net/</title>
+		</biblioentry>
+		<biblioentry id="web_jogl">
+			<title>https://jogl.dev.java.net/</title>
+		</biblioentry>
+		<biblioentry id="web_jsr231">
+			<title>http://jcp.org/en/jsr/detail?id=231</title>
+		</biblioentry>
+		<biblioentry id="web_lwjgl">
+			<title>http://lwjgl.org/</title>
+		</biblioentry>
 	</bibliography>	
