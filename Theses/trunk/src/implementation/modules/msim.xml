@@ -16,7 +16,7 @@
 			<title>Beispiel für eine MSIM-Datei</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata align="center" width="480" fileref="figures/msim-module.png"
+					<imagedata align="center" width="480" fileref="./figures/implementation/modules/msim-module.png"
 						format="PNG" />
 				</imageobject>
 				<textobject>
@@ -54,7 +54,7 @@
 						<mediaobject>
 							<imageobject>
 								<imagedata align="center" width="480"
-									fileref="figures/msim-module-id.png" format="PNG" />
+									fileref="./figures/implementation/modules/msim-module-id.png" format="PNG" />
 							</imageobject>
 						</mediaobject>
 					</figure>
@@ -74,7 +74,7 @@
 						<mediaobject>
 							<imageobject>
 								<imagedata align="center" width="480"
-									fileref="figures/msim-module-classpath.png" format="PNG" />
+									fileref="./figures/implementation/modules/msim-module-classpath.png" format="PNG" />
 							</imageobject>
 						</mediaobject>
 					</figure>
@@ -96,7 +96,7 @@
 							<mediaobject>
 								<imageobject>
 									<imagedata align="center" width="480"
-										fileref="figures/msim-module-objects-node.png" format="PNG" />
+										fileref="./figures/implementation/modules/msim-module-objects-node.png" format="PNG" />
 								</imageobject>
 							</mediaobject>
 						</figure>
@@ -124,7 +124,7 @@
 							<mediaobject>
 								<imageobject>
 									<imagedata align="center" width="480"
-										fileref="figures/msim-module-objects-link.png" format="PNG" />
+										fileref="./figures/implementation/modules/msim-module-objects-link.png" format="PNG" />
 								</imageobject>
 							</mediaobject>
 						</figure>
@@ -161,7 +161,7 @@
 						<mediaobject>
 							<imageobject>
 								<imagedata align="center" width="480"
-									fileref="figures/msim-module-connections.png" format="PNG" />
+									fileref="./figures/implementation/modules/msim-module-connections.png" format="PNG" />
 							</imageobject>
 						</mediaobject>
 					</figure>
@@ -214,7 +214,7 @@
 						<mediaobject>
 							<imageobject>
 								<imagedata align="center" width="480"
-									fileref="figures/msim-module-nodeDensity.png" format="PNG" />
+									fileref="./figures/msim-module-nodeDensity.png" format="PNG" />
 							</imageobject>
 						</mediaobject>
 					</figure>

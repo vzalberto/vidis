@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Modul</title>
 	<para>
-		Ein Modul soll eine konkrete Implementierung eines
+		Ein Modul soll eine Implementierung eines
 		verteilten
 		Algorithmus sein. Einhergehend mit der
 		Definition geht die Beobachtung,
@@ -31,7 +31,7 @@
 				<para>Packet</para>
 			</listitem>
 		</itemizedlist>
-		Diese können in dieser Form direkt in die Klassenstruktur übernommen werden.
+		Diese drei Komponenten können in dieser Form direkt in die Klassenstruktur übernommen werden.
 	</para>
 	<para>
 		Ein Node (oder auch Knoten) sei eine ausführbare Einheit, auf
@@ -90,7 +90,9 @@
 		<section>
 			<title>Node</title>
 			<para>
-				
+				Ein Node ist die Entität eines Peers. Sein Verhalten ist
+				deterministisch vorhersehbar. Dieses Verhalten soll in
+				dieser Klasse kodiert und bei der Simulation ausgeführt werden.
 			</para>
 			<para>
 				Ein Node definiert die für den implementierenden Anwender relevanten

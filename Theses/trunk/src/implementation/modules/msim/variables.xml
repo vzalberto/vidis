@@ -18,10 +18,10 @@
 			<title>Beispiele für ein Variable Element</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata align="center" width="480" fileref="figures/msim-module-objects-link-variables.png" format="PNG" />
+					<imagedata align="center" width="480" fileref="./figures/msim-module-objects-link-variables.png" format="PNG" />
 				</imageobject>
 				<imageobject>
-					<imagedata align="center" width="480" fileref="figures/msim-module-objects-node-variables.png" format="PNG" />
+					<imagedata align="center" width="480" fileref="./figures/msim-module-objects-node-variables.png" format="PNG" />
 				</imageobject>
 			</mediaobject>
 		</figure>

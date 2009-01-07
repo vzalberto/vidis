@@ -7,14 +7,203 @@
 	<section>
 		<title>Funktionsweise</title>
 		<para>
+			Der Simulator ist die ausführende Einheit eines Moduls.
+			Dieser hat folgende Aufgaben:
+			<itemizedlist>
+				<listitem><para>Modul laden</para></listitem>
+				<listitem><para>Objekte instantiieren</para></listitem>
+				<listitem><para>Schrittweise simulieren</para></listitem>
+			</itemizedlist> 
 		</para>
 	</section>
 	<section>
 		<title>Player</title>
-		<para></para>
+		<para>Der Player ist die kontrollierende Einheit für den 
+		Simulator. Er kümmert sich darum, einen Simulationsschritt
+		anzustossen. Somit ist er das Verbindungsstück zwischen 
+		Simulation und Visualisierung.</para>
+		<para>
+			Der Player hat mehrere Zustände.
+			<itemizedlist>
+				<listitem>
+					<para>
+						Ist der Simulator nicht gestoppt, kodiert dieser
+						Zustand ob ein weiterer Simulationsschritt
+						ausgeführt werden soll.
+					</para>
+					<fieldsynopsis>
+						<modifier>public</modifier>
+						<type>boolean</type>
+						<varname>paused</varname>
+					</fieldsynopsis>
+				</listitem>
+				<listitem>
+					<para>
+						In diesem Zustand ist der Simulator gestoppt,
+						das Modul neu geladen, die Objekte richtig
+						instantiiert und der Simulator bereit zu starten.
+					</para>
+					<fieldsynopsis>
+						<modifier>public</modifier>
+						<type>boolean</type>
+						<varname>stopped</varname>
+					</fieldsynopsis>
+				</listitem>
+				<listitem>
+					<para>
+						Kodiert den Zustand des korrekten Beendens
+						des Simulators.
+					</para>
+					<fieldsynopsis>
+						<modifier>public</modifier>
+						<type>boolean</type>
+						<varname>killed</varname>
+					</fieldsynopsis>
+				</listitem>
+			</itemizedlist>
+		</para>
+		<para>
+			Folgendes Zustandübergangsdiagramm veranschaulicht die Zustandsmaschine
+			Player.
+		</para>
+		<para>
+			Er implementiert folgende Funktionalität:
+			<itemizedlist>
+				<listitem>
+					<para>
+						Diese Funktion startet den Simulator falls
+						er noch nicht gestartet wurde. Wurde der Simulator
+						bereits gestartet, hat diese Funktion keinen Effekt.
+					</para>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>play</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<para>
+						Diese Funktion pausiert den Simulator. Wurde der Simulator
+						bereits pausiert, startet diese Funktion den Simulator.
+					</para>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>pause</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<para>
+						Diese Funktion startet bzw stoppt den Simulator.
+						Wurde der Simulator gestoppt, ruft diese Funktion
+						play() auf. Wurde der Simulator hingegen nicht
+						gestoppt, ruft diese Funktion pause() auf.
+					</para>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>playPause</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<para>
+						Diese Funktion stoppt den Simulator. Ist der Simulator
+						bereits gestoppt hat ein Aufruf dieser Funktion keine
+						Auswirkung.
+					</para>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>stop</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<para>
+						Diese Funktion veranlasst den Simulator dazu,
+						alle allokierten Ressourcen freizugeben und
+						erlaubt dem Player-Thread zu sterben.
+					</para>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>kill</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+			</itemizedlist>
+		</para>
 	</section>
 	<section>
 		<title>Datenstruktur (intern)</title>
-		<para>z.B. könnte man hier erwähnen dass die interne Datenklasse Serializable ist</para>
+		<para>
+			<phrase>Die Datenstruktur des Simulators ist ein Tupel
+			(M, t), wobei M die Menge der ausführbaren Komponenten ist
+			und t der aktuelle Simulationsschritt ist.</phrase>
+		</para>
+		<para>
+			Diese Datenstruktur ist in der Klasse SimulatorData implementiert.
+			Die Klasse enthält die Felder:
+			<itemizedlist>
+				<listitem>
+					<fieldsynopsis>
+						<modifier>private</modifier>
+						<type>long</type>
+						<varname>now</varname>
+					</fieldsynopsis>
+				</listitem>
+				<listitem>
+					<fieldsynopsis>
+						<modifier>private</modifier>
+						<type>List&lt;AComponent&gt;</type>
+						<varname>components</varname>
+					</fieldsynopsis>
+				</listitem>
+			</itemizedlist>
+			Die Klasse enthält im Wesentlichen diese Funktionen:
+			<itemizedlist>
+				<listitem>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>long</type>
+						<methodname>getTime</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>registerComponent</methodname>
+						<methodparam>
+							<type>AComponent</type>
+							<parameter>component</parameter>
+						</methodparam>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>unregisterComponent</methodname>
+						<methodparam>
+							<type>AComponent</type>
+							<parameter>component</parameter>
+						</methodparam>
+					</methodsynopsis>
+				</listitem>
+				<listitem>
+					<methodsynopsis>
+						<modifier>public</modifier>
+						<type>void</type>
+						<methodname>executeComponents</methodname>
+						<void/>
+					</methodsynopsis>
+				</listitem>
+			</itemizedlist>
+		</para>
 	</section>
 </section>
