@@ -70,7 +70,7 @@
 				<title>Picking mit Id Stack</title>
 				<para>
 					Auch dieser Ansatz macht sich die Renderingpipeline zunutze.
-					Ähnlich wie bei der letzten Methode werden für alle klickbaren Objekte IDs vergeben. 
+					Ähnlich wie bei der zuvor vorgestllten Methode werden für alle klickbaren Objekte IDs vergeben. 
 					Allerdings werden diese nicht durch die Farbe codiert, sondern mit dafür vogesehenen Befehlen zusätzlich gesetzt.
 				</para>
 			</section>
