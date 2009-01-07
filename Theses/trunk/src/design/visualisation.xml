@@ -44,6 +44,33 @@
 	</section>	
 	<section>
 		<title>Visualisierung</title>
-		<para></para>
+		<para>
+			Das simulierte, verteilte System muss anschaulich dargestellt werden. Prinzipell müssen die folgenden Elemente gezeichnet werden:
+		</para>
+		<itemizedlist>
+			<listitem>
+				<para>Node</para>
+			</listitem>
+			<listitem>
+				<para>Link</para>
+			</listitem>
+			<listitem>
+				<para>Paket</para>
+			</listitem>
+		</itemizedlist>
+		<para>
+			Die einfachste Darstellung wäre eine zweidimensionale Ebene auf der die  Nodes als Punkte gezeichnet werden.
+			Diese werden mit Linien, um die Links darzustellen, verbunden. Außerdem braucht man noch Punkte, um die Pakete darzustellen.
+			Diese Punkte müssen sich natürlich von den Nodepunkten unterscheiden und können sich auf den Links (also den Linien) bewegen.
+		</para>
+		<para>
+			Es sollte aber eine weitaus ansprechendere Darstellung geschaffen werden.
+		</para>
+		<para>
+			Der Überschaubarkeit halber wird diese zweidimensionale Ebene beibehalten, aber nur als Grundfläche in einem dreidimensionalen Raum.
+			Die Nodes werden zu Kugeln, die Links zu transparenten, nach oben gebogenen Rohren, die sich wölben wenn sie ein Paket trasportieren.
+			Die Pakete werden auch zu Kugeln, die im Inneren der Links zu sehen sind. Dadurch wird die ganze Simulation plastischer vermittelt.
+		</para>
+			
 	</section>
 </section>
