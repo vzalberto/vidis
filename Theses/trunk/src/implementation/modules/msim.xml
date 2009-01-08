@@ -12,18 +12,42 @@
 			beschreiben. Man gibt dabei Nodes, Links und die Verbindungen
 			dazwischen an.
 		</para>
-		<figure>
+		<example>
 			<title>Beispiel für eine MSIM-Datei</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata align="center" width="480" fileref="./figures/implementation/modules/msim-module.png"
-						format="PNG" />
-				</imageobject>
-				<textobject>
-					<phrase>Dies ist ein Beispiel für eine MSIM-Datei.</phrase>
-				</textobject>
-			</mediaobject>
-		</figure>
+			<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+				<![CDATA[
+					<module>
+						<id>Module ID</id>
+						<classpath>vidis.modules.someModule</classpath>
+						<nodeDensity>0.5</nodeDensity>
+						<objects>
+							<node>
+								<id>node01</id>
+								<class>SomeNode</class>
+							</node>
+							<node>
+								<id>nodeWithVariables</id>
+								<class>SomeNode</class>
+								<variables>
+									<someVariable>value</someVariable>
+								</variables>
+							</node>
+							<link>
+								<id>link01</id>
+								<class>SomeLink</class>
+								<delay>5</delay>
+							</link>
+						</objects>
+						<connections>
+							<connection>
+								<nodeA>node01</nodeA>
+								<nodeB>nodeWithVariables</nodeB>
+								<link>link01</link>
+						</connections>
+					</module>
+				]]>
+			</programlisting>
+		</example>
 	</section>
 	<section>
 		<title>Format</title>
@@ -49,53 +73,40 @@
 					Dieses Element beinhaltet einen String, welches dieses
 					Modul
 					beschreibt.
-					<example>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							TODO
-						]]>
-						</programlisting>
-					</example>
-					<figure>
-						<title>Beispiel für ein Id Element</title>
-						<mediaobject>
-							<imageobject>
-								<imagedata align="center" width="480"
-									fileref="./figures/implementation/modules/msim-module-id.png" format="PNG" />
-							</imageobject>
-						</mediaobject>
-					</figure>
 					<footnote>
 						<para>z.B. Demo Module 1</para>
 					</footnote>
 				</para>
+				<example>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							<id>someId</id>
+						]]>
+						</programlisting>
+					</example>
 			</section>
 			<section>
 				<title>Classpath</title>
 				<para>
 					Dieses Element beinhaltet einen String zum classpath der
-					Modul
-					Klassen.
-					<example>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							TODO
-						]]>
-						</programlisting>
-					</example>
-					<figure>
-						<title>Beispiel für ein Classpath Element</title>
-						<mediaobject>
-							<imageobject>
-								<imagedata align="center" width="480"
-									fileref="./figures/implementation/modules/msim-module-classpath.png" format="PNG" />
-							</imageobject>
-						</mediaobject>
-					</figure>
-					<footnote>
-						<para>z.B. my.vidis.modules.mymodule</para>
-					</footnote>
+					Modul Klassen.
 				</para>
+				<example>
+					<title>Ein ausführliches Beispiel für ein Classpath Element</title>
+					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+					<![CDATA[
+						<classpath>some.specific.classpath.where.all.module.classes.reside</classpath>
+					]]>
+					</programlisting>
+				</example>
+				<example>
+					<title>Ein Beispiel für einen Classpath</title>
+					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+					<![CDATA[
+						my.vidis.modules.mymodule
+					]]>
+					</programlisting>
+				</example>
 			</section>
 			<section>
 				<title>Objects</title>
@@ -105,23 +116,33 @@
 					<title>Node</title>
 					<para>
 						Dieses Element beschreibt eine Node-Objektinstanz.
-						<example>
-							<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-							<![CDATA[
-								TODO
-							]]>
-							</programlisting>
-						</example>
-						<figure>
-							<title>Beispiel für ein Node Element</title>
-							<mediaobject>
-								<imageobject>
-									<imagedata align="center" width="480"
-										fileref="./figures/implementation/modules/msim-module-objects-node.png" format="PNG" />
-								</imageobject>
-							</mediaobject>
-						</figure>
 					</para>
+					<example>
+						<title>Beispiel für ein Node Element mit Variablen</title>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							<node>
+								<id>uniqueNodeId</id>
+								<class>implementedClassName</class>
+							</node>
+						]]>
+						</programlisting>
+					</example>
+					<example>
+						<title>Beispiel für ein Node Element mit Variablen</title>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							<node>
+								<id>uniqueNodeId</id>
+								<class>implementedClassName</class>
+								<variables>
+									<var1>var1Value</var1>
+									<var2>var2Value</var2>
+								</variables>
+							</node>
+						]]>
+						</programlisting>
+					</example>
 					<section>
 						<title>ID</title>
 						<para>Ein String, welcher diese Instanz eindeutig (UNIQUE)
@@ -140,23 +161,35 @@
 					<title>Link</title>
 					<para>
 						Dieses Element beschreibt eine Link-Objektinstanz.
-						<example>
-							<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-							<![CDATA[
-								TODO
-							]]>
-							</programlisting>
-						</example>
-						<figure>
-							<title>Beispiel für ein Link Element</title>
-							<mediaobject>
-								<imageobject>
-									<imagedata align="center" width="480"
-										fileref="./figures/implementation/modules/msim-module-objects-link.png" format="PNG" />
-								</imageobject>
-							</mediaobject>
-						</figure>
 					</para>
+					<example>
+						<title>Beispiel für ein Link-Element</title>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							 <link>
+							 	<id>uniqueLinkId</id>
+							 	<class>implementingClass</class>
+							 	<delay>5</delay>
+							 </link>
+						]]>
+						</programlisting>
+					</example>
+					<example>
+						<title>Beispiel für ein Link-Element mit Variablen</title>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							 <link>
+							 	<id>uniqueLinkId</id>
+							 	<class>implementingClass</class>
+							 	<delay>5</delay>
+							 	<variables>
+							 		<var1>var1value</var1>
+							 		<var2>var2value</var2>
+							 	</variables>
+							 </link>
+						]]>
+						</programlisting>
+					</example>
 					<section>
 						<title>ID</title>
 						<para>Ein String, welcher diese Instanz eindeutig (UNIQUE)
@@ -184,23 +217,50 @@
 					Dieses Element beinhaltet alle Verbindungen, welche
 					zwischen Nodes
 					mit Hilfe von Links hergestellt werden sollen.
-					<example>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							TODO
-						]]>
-						</programlisting>
-					</example>
-					<figure>
-						<title>Beispiel für ein Connection Element</title>
-						<mediaobject>
-							<imageobject>
-								<imagedata align="center" width="480"
-									fileref="./figures/implementation/modules/msim-module-connections.png" format="PNG" />
-							</imageobject>
-						</mediaobject>
-					</figure>
 				</para>
+				<example>
+					<title>Beispiel für eine einzelne Verbindung zwischen Node A und Node B über Link L.</title>
+					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+					<![CDATA[
+						<connections>
+							<connection>
+								<nodeA>A</nodeA>
+								<nodeB>B</nodeB>
+								<link>L</link>
+							</connection>
+						</connections>
+					]]>
+					</programlisting>
+				</example>
+				<example>
+					<title>Beispiel mit mehreren Verbindung zwischen diversen Nodes in einer Ring Topologie.</title>
+					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+					<![CDATA[
+						<connections>
+							<connection>
+								<nodeA>node0</nodeA>
+								<nodeB>node1</nodeB>
+								<link>link0-1</link>
+							</connection>
+							<connection>
+								<nodeA>node1</nodeA>
+								<nodeB>node2</nodeB>
+								<link>link1-2</link>
+							</connection>
+							<connection>
+								<nodeA>node3</nodeA>
+								<nodeB>node4</nodeB>
+								<link>link3-4</link>
+							</connection>
+							<connection>
+								<nodeA>node4</nodeA>
+								<nodeB>node0</nodeB>
+								<link>link4-0</link>
+							</connection>
+						</connections>
+					]]>
+					</programlisting>
+				</example>
 				<section>
 					<title>Connection</title>
 					<para>Dieses Element beschreibt eine Verbindung zwischen zwei
@@ -244,23 +304,15 @@
 					stehen sollen. 0 ist dabei der Minimalabstand, 1 der
 					Maximalabstand. Dieser Parameter beeinflußt direkt die vorhandenen
 					Layouts.
-					<example>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							TODO
-						]]>
-						</programlisting>
-					</example>
-					<figure>
-						<title>Beispiel für ein NodeDensity Element</title>
-						<mediaobject>
-							<imageobject>
-								<imagedata align="center" width="480"
-									fileref="./figures/msim-module-nodeDensity.png" format="PNG" />
-							</imageobject>
-						</mediaobject>
-					</figure>
 				</para>
+				<example>
+					<title>Beispiel für ein NodeDensity Element.</title>
+					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+					<![CDATA[
+						<nodeDensity>0.5</nodeDensity>
+					]]>
+					</programlisting>
+				</example>
 			</section>
 		</section>
 	</section>
