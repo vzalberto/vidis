@@ -5,4 +5,12 @@
 		Dieses Element repräsentiert eine Variable. Dabei ist der Schlüssel
 		der Name der Variable und der Wert der Variable ist ein String.
 	</para>
+	<example>
+		<title>Beispiel für eine Variable</title>
+		<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+		<![CDATA[
+			<variableName>variableValue</variableName>
+		]]>
+		</programlisting>
+	</example>
 </section>

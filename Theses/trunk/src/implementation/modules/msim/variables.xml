@@ -5,26 +5,30 @@
 	<para>Dieses optionale Element beinhaltet Variablendefinitionen,
 		welche beim Laden dieses Moduls gesetzt werden sollen.
 	</para>
-	<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-	<![CDATA[
-		<variables>
-			<variable1>Value of `variable1`</variable1>
-			<variable2>Value of `variable2`</variable2>
-		</variables>
-	]]>
-	</programlisting>
-	<para>
-		<figure>
-			<title>Beispiele für ein Variable Element</title>
-			<mediaobject>
-				<imageobject>
-					<imagedata align="center" width="480" fileref="./figures/msim-module-objects-link-variables.png" format="PNG" />
-				</imageobject>
-				<imageobject>
-					<imagedata align="center" width="480" fileref="./figures/msim-module-objects-node-variables.png" format="PNG" />
-				</imageobject>
-			</mediaobject>
-		</figure>
-	</para>
 	<xi:include href="variables/variable.xml" />
+	<example>
+		<title>Ein generelles Beispiel</title>
+		<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+		<![CDATA[
+			<variables>
+				<name>some name</name>
+				<var2>I am variable 2</var2>
+			</variables>
+		]]>
+		</programlisting>
+	</example>
+	<example>
+		<title>Ein Beispiel für Variablen auf einer Node</title>
+		<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+		<![CDATA[
+			<node>
+				<id>node01</id>
+				<class>SomeNodeClass</class>
+				<variables>
+					<name>Node 01</name>
+				</variables>
+			</node>
+		]]>
+		</programlisting>
+	</example>
 </section>

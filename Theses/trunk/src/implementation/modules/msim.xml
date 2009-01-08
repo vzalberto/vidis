@@ -49,6 +49,13 @@
 					Dieses Element beinhaltet einen String, welches dieses
 					Modul
 					beschreibt.
+					<example>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							TODO
+						]]>
+						</programlisting>
+					</example>
 					<figure>
 						<title>Beispiel für ein Id Element</title>
 						<mediaobject>
@@ -69,6 +76,13 @@
 					Dieses Element beinhaltet einen String zum classpath der
 					Modul
 					Klassen.
+					<example>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							TODO
+						]]>
+						</programlisting>
+					</example>
 					<figure>
 						<title>Beispiel für ein Classpath Element</title>
 						<mediaobject>
@@ -91,6 +105,13 @@
 					<title>Node</title>
 					<para>
 						Dieses Element beschreibt eine Node-Objektinstanz.
+						<example>
+							<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+							<![CDATA[
+								TODO
+							]]>
+							</programlisting>
+						</example>
 						<figure>
 							<title>Beispiel für ein Node Element</title>
 							<mediaobject>
@@ -119,6 +140,13 @@
 					<title>Link</title>
 					<para>
 						Dieses Element beschreibt eine Link-Objektinstanz.
+						<example>
+							<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+							<![CDATA[
+								TODO
+							]]>
+							</programlisting>
+						</example>
 						<figure>
 							<title>Beispiel für ein Link Element</title>
 							<mediaobject>
@@ -156,6 +184,13 @@
 					Dieses Element beinhaltet alle Verbindungen, welche
 					zwischen Nodes
 					mit Hilfe von Links hergestellt werden sollen.
+					<example>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							TODO
+						]]>
+						</programlisting>
+					</example>
 					<figure>
 						<title>Beispiel für ein Connection Element</title>
 						<mediaobject>
@@ -209,6 +244,13 @@
 					stehen sollen. 0 ist dabei der Minimalabstand, 1 der
 					Maximalabstand. Dieser Parameter beeinflußt direkt die vorhandenen
 					Layouts.
+					<example>
+						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+						<![CDATA[
+							TODO
+						]]>
+						</programlisting>
+					</example>
 					<figure>
 						<title>Beispiel für ein NodeDensity Element</title>
 						<mediaobject>
