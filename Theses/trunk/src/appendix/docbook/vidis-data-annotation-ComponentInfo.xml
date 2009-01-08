@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-6" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.annotation.ComponentInfo">
+  <indexterm><primary>Annotations</primary><secondary>ComponentInfo</secondary></indexterm>
+  <indexterm><primary>ComponentInfo</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.annotation.ComponentInfo</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Annotation Type ComponentInfo</refname>
+    <refpurpose>Die Annotation ComponentInfo kann vor jedem User-Implementertem Link, jeder Node und jedem Packet stehen Damit kann der Name einer Komponente festgelegt werden.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier role="annotation">@Retention(value=java.lang.annotation.RetentionPolicy.RUNTIME)</modifier>
+        <modifier role="annotation">@Target(value=java.lang.annotation.ElementType.TYPE)</modifier>
+        <modifier>public</modifier>
+        <modifier>@interface</modifier>
+        <classname>ComponentInfo</classname>
+      </ooclass>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <varname>name</varname>
+      </fieldsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/annotation/ComponentInfo/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Die Annotation ComponentInfo kann vor jedem User-Implementertem Link, jeder Node und jedem Packet stehen Damit kann der Name einer Komponente festgelegt werden. NOTIZ: der name kann anschliessend auch noch von einer funktion ueberschrieben werden!</para>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <refsect2 xml:id="METHOD-6-1" xreflabel="name">
+      <title>name</title>
+      <indexterm><primary>name</primary></indexterm>
+      <indexterm><primary>Elements</primary><secondary>name</secondary></indexterm>
+      <para>Der Name dieser Komponente</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-166" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.impl.guielements.variableDisplays.CompositeScrollPane">
+  <indexterm><primary>Classes</primary><secondary>CompositeScrollPane</secondary></indexterm>
+  <indexterm><primary>CompositeScrollPane</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.impl.guielements.variableDisplays.CompositeScrollPane</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class CompositeScrollPane</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>CompositeScrollPane</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AScrollpane3D</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IVariableChangeListener</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>CompositeScrollPane</methodname>
+        <methodparam><type>IVariableContainer</type><parameter>vcontainer</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableAdded</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableChanged</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableRemoved</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.ui.model.impl.guielements.scrollpane.AScrollpane3D</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-158"><literal>addChild</literal></link></member><member><link linkend="METHOD-158-1"><literal>countElements</literal></link></member><member><link linkend="CLASS-158"><literal>getPadding</literal></link></member><member><link linkend="CLASS-158"><literal>removeAllChilds</literal></link></member><member><link linkend="CLASS-158"><literal>removeChild</literal></link></member><member><link linkend="CLASS-158"><literal>renderContainer</literal></link></member><member><link linkend="CLASS-158"><literal>setColor1</literal></link></member><member><link linkend="CLASS-158"><literal>setColor2</literal></link></member><member><link linkend="CLASS-158"><literal>setPadding</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.model.impl.BasicGuiContainer</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-137"><literal>isHighlighted</literal></link></member><member><link linkend="CLASS-137"><literal>isOpaque</literal></link></member><member><link linkend="CLASS-137"><literal>kill</literal></link></member><member><link linkend="CLASS-137"><literal>renderText</literal></link></member><member><link linkend="CLASS-137"><literal>setHighlighted</literal></link></member><member><link linkend="CLASS-137"><literal>setName</literal></link></member><member><link linkend="CLASS-137"><literal>setOpaque</literal></link></member><member><link linkend="CLASS-137"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.model.structure.AGuiContainer</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-181"><literal>getAbsoluteX</literal></link></member><member><link linkend="CLASS-181"><literal>getAbsoluteY</literal></link></member><member><link linkend="CLASS-181"><literal>getChilds</literal></link></member><member><link linkend="CLASS-181"><literal>getHeight</literal></link></member><member><link linkend="CLASS-181"><literal>getLayout</literal></link></member><member><link linkend="CLASS-181"><literal>getParent</literal></link></member><member><link linkend="CLASS-181"><literal>getWantedHeight</literal></link></member><member><link linkend="CLASS-181"><literal>getWidth</literal></link></member><member><link linkend="CLASS-181"><literal>getX</literal></link></member><member><link linkend="CLASS-181"><literal>getY</literal></link></member><member><link linkend="CLASS-181"><literal>isPointInContainer</literal></link></member><member><link linkend="METHOD-181-2"><literal>isPointWithinRect</literal></link></member><member><link linkend="CLASS-181"><literal>isTextRenderable</literal></link></member><member><link linkend="CLASS-181"><literal>isUseScissorTest</literal></link></member><member><link linkend="METHOD-181-1"><literal>isUseScissorTestNow</literal></link></member><member><link linkend="CLASS-181"><literal>isVisible</literal></link></member><member><link linkend="CLASS-181"><literal>render</literal></link></member><member><link linkend="CLASS-181"><literal>renderBox</literal></link></member><member><link linkend="CLASS-181"><literal>setBounds</literal></link></member><member><link linkend="CLASS-181"><literal>setHeight</literal></link></member><member><link linkend="CLASS-181"><literal>setLayout</literal></link></member><member><link linkend="CLASS-181"><literal>setParent</literal></link></member><member><link linkend="CLASS-181"><literal>setUseScissorTest</literal></link></member><member><link linkend="CLASS-181"><literal>setVisible</literal></link></member><member><link linkend="CLASS-181"><literal>setWidth</literal></link></member><member><link linkend="CLASS-181"><literal>setX</literal></link></member><member><link linkend="CLASS-181"><literal>setY</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/impl/guielements/variableDisplays/CompositeScrollPane/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="variableAdded(java.lang.String)">
+      <title>variableAdded(String)</title>
+      <indexterm><primary>variableAdded</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableAdded</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableAdded</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-29-2">variableAdded</link> in interface <link linkend="CLASS-29">IVariableChangeListener</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-29-2">variableAdded</link></bridgehead>
+      <para>this function informs the variable change listener about a new variable</para>
+    </refsect2>
+    <refsect2 xreflabel="variableChanged(java.lang.String)">
+      <title>variableChanged(String)</title>
+      <indexterm><primary>variableChanged</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableChanged</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableChanged</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-29-1">variableChanged</link> in interface <link linkend="CLASS-29">IVariableChangeListener</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-29-1">variableChanged</link></bridgehead>
+      <para>this function is the trigger that tells the variable change listener when a variable possibly changed its value</para>
+    </refsect2>
+    <refsect2 xreflabel="variableRemoved(java.lang.String)">
+      <title>variableRemoved(String)</title>
+      <indexterm><primary>variableRemoved</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableRemoved</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableRemoved</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-29-3">variableRemoved</link> in interface <link linkend="CLASS-29">IVariableChangeListener</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-29-3">variableRemoved</link></bridgehead>
+      <para>this function informs the variable change listener about the removal of a variable</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

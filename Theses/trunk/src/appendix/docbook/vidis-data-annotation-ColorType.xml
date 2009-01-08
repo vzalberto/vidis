@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-4" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.annotation.ColorType">
+  <indexterm><primary>Classes</primary><secondary>ColorType</secondary></indexterm>
+  <indexterm><primary>ColorType</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.annotation.ColorType</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ColorType</refname>
+    <refpurpose>these color types are used by the ComponentColor annotation</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <modifier>class</modifier>
+        <classname>ColorType</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Enum&lt;ColorType&gt;</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Comparable&lt;ColorType&gt;</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Static Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>BLACK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>BLUE</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>BLUE_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>BLUE_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>CUSTOM</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>CYAN</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>CYAN_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>CYAN_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>GREEN</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>GREEN_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>GREEN_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>GREY</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>GREY_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>GREY_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>MAGENTA</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>MAGENTA_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>MAGENTA_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>ORANGE</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>ORANGE_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>ORANGE_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>PINK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>PINK_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>PINK_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>RED</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>RED_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>RED_LIGHT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>TRANSPARENT</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>WHITE</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>YELLOW</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>YELLOW_DARK</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>YELLOW_LIGHT</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>ColorType</type>
+        <methodname>valueOf</methodname>
+        <methodparam><type>Color</type><parameter>color</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>ColorType</type>
+        <methodname>valueOf</methodname>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>ColorType[]</type>
+        <methodname>values</methodname>
+        <void/>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Color</type>
+        <methodname>color</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <methodname>setColor</methodname>
+        <methodparam><type>int</type><parameter>r</parameter></methodparam>
+        <methodparam><type>int</type><parameter>g</parameter></methodparam>
+        <methodparam><type>int</type><parameter>b</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <methodname>setColor</methodname>
+        <methodparam><type>int</type><parameter>r</parameter></methodparam>
+        <methodparam><type>int</type><parameter>g</parameter></methodparam>
+        <methodparam><type>int</type><parameter>b</parameter></methodparam>
+        <methodparam><type>int</type><parameter>a</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <methodname>setColor</methodname>
+        <methodparam><type>Color</type><parameter>color</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Enum</emphasis>: <simplelist type="inline"><member><varname>compareTo</varname></member><member><varname>equals</varname></member><member><varname>getDeclaringClass</varname></member><member><varname>hashCode</varname></member><member><varname>name</varname></member><member><varname>ordinal</varname></member><member><varname>toString</varname></member><member><varname>valueOf</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>getClass</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/annotation/ColorType/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>these color types are used by the ComponentColor annotation</para>
+  </refsect1>
+  <refsect1>
+    <title>Fields</title>
+    <refsect2 xreflabel="CUSTOM">
+      <title>CUSTOM</title>
+      <indexterm><primary>CUSTOM</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>CUSTOM</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>ColorType</type>
+        <varname>CUSTOM</varname>
+      </fieldsynopsis>
+      <para>initially: R G B A 0 0 0 0 can be edited by using setColor(r,g,b) or setColor(r,g,b,a) BUT NOTE THIS: only enum constants are allowed for enumerated annotations, therefore you can only set one of the pre-set colors in combination with the annotation!</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

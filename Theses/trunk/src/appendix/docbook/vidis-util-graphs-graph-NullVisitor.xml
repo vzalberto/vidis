@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-250" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.NullVisitor">
+  <indexterm><primary>Classes</primary><secondary>NullVisitor</secondary></indexterm>
+  <indexterm><primary>NullVisitor</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.NullVisitor</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class NullVisitor</refname>
+    <refpurpose>A visitor that always return true when visiting.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>NullVisitor</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Visitor</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>NullVisitor</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>visit</methodname>
+        <methodparam><type>Vertex</type><parameter>vertexToVisit</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/NullVisitor/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A visitor that always return true when visiting.</para>
+  </refsect1>
+</refentry>
+
+

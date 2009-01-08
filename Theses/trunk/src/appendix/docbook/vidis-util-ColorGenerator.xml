@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-227" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.ColorGenerator">
+  <indexterm><primary>Classes</primary><secondary>ColorGenerator</secondary></indexterm>
+  <indexterm><primary>ColorGenerator</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.ColorGenerator</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ColorGenerator</refname>
+    <refpurpose>a static function that may be used to generate nice pairs of color</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>ColorGenerator</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ColorGenerator</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Color</type>
+        <methodname>generateRandomColor</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Color</type>
+        <methodname>nearByColor</methodname>
+        <methodparam><type>Color</type><parameter>color</parameter></methodparam>
+        <methodparam><type>int</type><parameter>rotationFactor</parameter></methodparam>
+        <methodparam><type>int</type><parameter>relativeSaturation</parameter></methodparam>
+        <methodparam><type>int</type><parameter>relativeBrightness</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/ColorGenerator/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>a static function that may be used to generate nice pairs of color</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-227-1" xreflabel="nearByColor(java.awt.Color, int, int, int)">
+      <title>nearByColor(Color, int, int, int)</title>
+      <indexterm><primary>nearByColor</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>nearByColor</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Color</type>
+        <methodname>nearByColor</methodname>
+        <methodparam><type>Color</type><parameter>color</parameter></methodparam>
+        <methodparam><type>int</type><parameter>rotationFactor</parameter></methodparam>
+        <methodparam><type>int</type><parameter>relativeSaturation</parameter></methodparam>
+        <methodparam><type>int</type><parameter>relativeBrightness</parameter></methodparam>
+      </methodsynopsis>
+      <para>generates a nice color in the neighborhood of the provided color by transformation over the HSB color circle; the rotationFactor provided is the amount of degrees that the color is adjusted by and the second parameter defines the relative brightness to the original color</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

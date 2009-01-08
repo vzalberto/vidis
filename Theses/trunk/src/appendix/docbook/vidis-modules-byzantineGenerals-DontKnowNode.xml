@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-52" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.modules.byzantineGenerals.DontKnowNode">
+  <indexterm><primary>Classes</primary><secondary>DontKnowNode</secondary></indexterm>
+  <indexterm><primary>DontKnowNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.modules.byzantineGenerals.DontKnowNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DontKnowNode</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DontKnowNode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>ANode</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DontKnowNode</methodname>
+        <void/>
+      </constructorsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.modules.byzantineGenerals.ANode</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-47"><literal>execute</literal></link></member><member><link linkend="METHOD-47-1"><literal>getAttackIds</literal></link></member><member><link linkend="METHOD-47-3"><literal>getClashingIds</literal></link></member><member><link linkend="CLASS-47"><literal>getColor</literal></link></member><member><link linkend="METHOD-47-2"><literal>getRetreatIds</literal></link></member><member><link linkend="METHOD-47-4"><literal>getYetUnknownIds</literal></link></member><member><link linkend="CLASS-47"><literal>init</literal></link></member><member><link linkend="CLASS-47"><literal>receive</literal></link></member><member><link linkend="CLASS-47"><literal>sendAttack</literal></link></member><member><link linkend="CLASS-47"><literal>sendRetreat</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.data.AUserNode</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-2"><literal>connect</literal></link></member><member><link linkend="CLASS-2"><literal>disconnect</literal></link></member><member><link linkend="CLASS-2"><literal>getVariable</literal></link></member><member><link linkend="CLASS-2"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-2"><literal>interrupt</literal></link></member><member><link linkend="CLASS-2"><literal>sleep</literal></link></member><member><link linkend="CLASS-2"><literal>spawnNewNode</literal></link></member><member><link linkend="CLASS-2"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/modules/byzantineGenerals/DontKnowNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

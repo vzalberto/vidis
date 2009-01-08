@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-10" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.commonComponents.DefaultLink">
+  <indexterm><primary>Classes</primary><secondary>DefaultLink</secondary></indexterm>
+  <indexterm><primary>DefaultLink</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.commonComponents.DefaultLink</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DefaultLink</refname>
+    <refpurpose>This is a standard implementation.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DefaultLink</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserLink</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DefaultLink</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.AUserLink</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-1"><literal>disconnect</literal></link></member><member><link linkend="CLASS-1"><literal>dropPacketOnLink</literal></link></member><member><link linkend="CLASS-1"><literal>dropPacketsOnLink</literal></link></member><member><link linkend="CLASS-1"><literal>getDelay</literal></link></member><member><link linkend="CLASS-1"><literal>getOtherNode</literal></link></member><member><link linkend="CLASS-1"><literal>getPacketsOnLink</literal></link></member><member><link linkend="CLASS-1"><literal>getVariable</literal></link></member><member><link linkend="CLASS-1"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-1"><literal>init</literal></link></member><member><link linkend="CLASS-1"><literal>interrupt</literal></link></member><member><link linkend="CLASS-1"><literal>sleep</literal></link></member><member><link linkend="CLASS-1"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/commonComponents/DefaultLink/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>This is a standard implementation. It provides everything a link must can to connect nodes and deliver packets.</para>
+  </refsect1>
+</refentry>
+
+

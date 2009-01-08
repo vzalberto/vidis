@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-236" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.DirectedWeightedEdge">
+  <indexterm><primary>Classes</primary><secondary>DirectedWeightedEdge</secondary></indexterm>
+  <indexterm><primary>DirectedWeightedEdge</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.DirectedWeightedEdge</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DirectedWeightedEdge</refname>
+    <refpurpose>Represents a directed and weighted edge in a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DirectedWeightedEdge</classname>
+      </ooclass>
+      <ooclass>
+        <classname>DirectedEdge</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DirectedWeightedEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>sourceVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>sinkVertex</parameter></methodparam>
+        <methodparam><type>double</type><parameter>weight</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getWeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setWeight</methodname>
+        <methodparam><type>double</type><parameter>weight</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.DirectedEdge</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-235-2"><literal>getSink</literal></link></member><member><link linkend="METHOD-235-1"><literal>getSource</literal></link></member><member><link linkend="METHOD-235-3"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.Edge</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-237-3"><literal>getOppositeVertex</literal></link></member><member><link linkend="METHOD-237-1"><literal>getVertexA</literal></link></member><member><link linkend="METHOD-237-2"><literal>getVertexB</literal></link></member><member><link linkend="CLASS-237"><literal>setString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/DirectedWeightedEdge/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Represents a directed and weighted edge in a graph.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-236-1" xreflabel="DirectedWeightedEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex, double)">
+      <title>DirectedWeightedEdge(Vertex, Vertex, double)</title>
+      <indexterm><primary>DirectedWeightedEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>DirectedWeightedEdge</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DirectedWeightedEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>sourceVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>sinkVertex</parameter></methodparam>
+        <methodparam><type>double</type><parameter>weight</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates a DirectedWeightedEdge object whose source and sink vertices and weight are specified by the parameters.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-236-2" xreflabel="getWeight()">
+      <title>getWeight()</title>
+      <indexterm><primary>getWeight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getWeight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getWeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the weight of the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-236-3" xreflabel="setWeight(double)">
+      <title>setWeight(double)</title>
+      <indexterm><primary>setWeight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setWeight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setWeight</methodname>
+        <methodparam><type>double</type><parameter>weight</parameter></methodparam>
+      </methodsynopsis>
+      <para>Sets the weight of the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-236-1" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a String representation of the DirectedWeightedEdge.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

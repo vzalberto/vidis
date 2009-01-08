@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-102" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.events.AMouseEvent">
+  <indexterm><primary>Classes</primary><secondary>AMouseEvent</secondary></indexterm>
+  <indexterm><primary>AMouseEvent</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.events.AMouseEvent</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AMouseEvent</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AMouseEvent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IVidisEvent</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <varname>forwardTo3D</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Point2d</type>
+        <varname>guiCoords</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Point2d</type>
+        <varname>guiCoordsRelative</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>MouseEvent</type>
+        <varname>mouseEvent</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vector3d</type>
+        <varname>ray</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <varname>rayCalculated</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Point3d</type>
+        <varname>rayOrigin</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AMouseEvent</methodname>
+        <methodparam><type>MouseEvent</type><parameter>m</parameter></methodparam>
+      </constructorsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-112"><varname>vidis.­ui.­events.­MouseClickedEvent</varname></link></member><member><link linkend="CLASS-113"><varname>vidis.­ui.­events.­MouseMovedEvent</varname></link></member><member><link linkend="CLASS-114"><varname>vidis.­ui.­events.­MousePressedEvent</varname></link></member><member><link linkend="CLASS-115"><varname>vidis.­ui.­events.­MouseReleasedEvent</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/events/AMouseEvent/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

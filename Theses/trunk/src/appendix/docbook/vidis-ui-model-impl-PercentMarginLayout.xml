@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-148" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.impl.PercentMarginLayout">
+  <indexterm><primary>Classes</primary><secondary>PercentMarginLayout</secondary></indexterm>
+  <indexterm><primary>PercentMarginLayout</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.impl.PercentMarginLayout</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class PercentMarginLayout</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>PercentMarginLayout</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>ILayout</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>PercentMarginLayout</methodname>
+        <methodparam><type>double</type><parameter>left</parameter></methodparam>
+        <methodparam><type>double</type><parameter>top</parameter></methodparam>
+        <methodparam><type>double</type><parameter>right</parameter></methodparam>
+        <methodparam><type>double</type><parameter>bottom</parameter></methodparam>
+        <methodparam><type>double</type><parameter>height</parameter></methodparam>
+        <methodparam><type>double</type><parameter>width</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getHeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getWidth</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getX</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getY</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>layout</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setGuiContainer</methodname>
+        <methodparam><type>IGuiContainer</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/impl/PercentMarginLayout/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-148-1" xreflabel="PercentMarginLayout(double, double, double, double, double, double)">
+      <title>PercentMarginLayout(double, double, double, double, double, double)</title>
+      <indexterm><primary>PercentMarginLayout</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>PercentMarginLayout</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>PercentMarginLayout</methodname>
+        <methodparam><type>double</type><parameter>left</parameter></methodparam>
+        <methodparam><type>double</type><parameter>top</parameter></methodparam>
+        <methodparam><type>double</type><parameter>right</parameter></methodparam>
+        <methodparam><type>double</type><parameter>bottom</parameter></methodparam>
+        <methodparam><type>double</type><parameter>height</parameter></methodparam>
+        <methodparam><type>double</type><parameter>width</parameter></methodparam>
+      </constructorsynopsis>
+      <para>values under 0 are treated as autovalue -1 to 0 is treatead as percentage &lt;= -1 100% to 0 0%</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

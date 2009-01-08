@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-84" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.sim.classloader.modules.interfaces.IModuleComponent">
+  <indexterm><primary>Interfaces</primary><secondary>IModuleComponent</secondary></indexterm>
+  <indexterm><primary>IModuleComponent</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.sim.classloader.modules.interfaces.IModuleComponent</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IModuleComponent</refname>
+    <refpurpose>this interface basically does nothing but is used within the gui</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IModuleComponent</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getName</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isModule</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isModuleFile</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/sim/classloader/modules/interfaces/IModuleComponent/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this interface basically does nothing but is used within the gui</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-84-1" xreflabel="getName()">
+      <title>getName()</title>
+      <indexterm><primary>getName</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getName</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getName</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the name of this module</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

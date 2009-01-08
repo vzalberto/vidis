@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-99" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.config.Configuration">
+  <indexterm><primary>Classes</primary><secondary>Configuration</secondary></indexterm>
+  <indexterm><primary>Configuration</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.config.Configuration</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Configuration</refname>
+    <refpurpose>a basic configuration class that holds all information about configurations</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Configuration</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>DATA_PATH</varname>
+        <initializer>&quot;data&quot;</initializer>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>double</type>
+        <varname>DETAIL_LEVEL</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>boolean</type>
+        <varname>DISPLAY_WIREFRAME</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>double</type>
+        <varname>GRID_STEP</varname>
+        <initializer>2.0</initializer>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>JOGL_PATH</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>JOGL_VERSION</varname>
+        <initializer>&quot;jogl-1.1.1&quot;</initializer>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>LIBRARY_PATH</varname>
+        <initializer>&quot;lib&quot;</initializer>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>LOG_PATH</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>double</type>
+        <varname>LOOK_ANGLE_X</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>double</type>
+        <varname>LOOK_ANGLE_Y</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>MODULE_PATH</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>RESOURCE_PATH</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>SHADER_PATH</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Configuration</methodname>
+        <void/>
+      </constructorsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/config/Configuration/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>a basic configuration class that holds all information about configurations</para>
+  </refsect1>
+  <refsect1>
+    <title>Fields</title>
+    <refsect2 xml:id="FIELD-99-3" xreflabel="DATA_PATH">
+      <title>DATA_PATH</title>
+      <indexterm><primary>DATA_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>DATA_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>DATA_PATH</varname>
+        <initializer>&quot;data&quot;</initializer>
+      </fieldsynopsis>
+      <para>data path for vidis</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-10" xreflabel="DETAIL_LEVEL">
+      <title>DETAIL_LEVEL</title>
+      <indexterm><primary>DETAIL_LEVEL</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>DETAIL_LEVEL</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>double</type>
+        <varname>DETAIL_LEVEL</varname>
+      </fieldsynopsis>
+      <para>adjustable detail level within [0 .. 1] (where 0 is poor, 1 is best) NOTE: 1 may give best display, 0 best performance (a HEAVY load of performance), 0.5 is a good half-way FURTHER NOTE: a value 1 possible, but only on high-end personal computers that are REALLY fast; the value of 1.0 was adapted for a Core2 Duo 2.6GHz with nVidia Quadro FX 370, this means that your system should be equal or faster than that to use a detail level&gt;&gt;1</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-9" xreflabel="DISPLAY_WIREFRAME">
+      <title>DISPLAY_WIREFRAME</title>
+      <indexterm><primary>DISPLAY_WIREFRAME</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>DISPLAY_WIREFRAME</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>boolean</type>
+        <varname>DISPLAY_WIREFRAME</varname>
+      </fieldsynopsis>
+      <para>just display wireframe</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-8" xreflabel="JOGL_PATH">
+      <title>JOGL_PATH</title>
+      <indexterm><primary>JOGL_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>JOGL_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>JOGL_PATH</varname>
+      </fieldsynopsis>
+      <para>jogl path for vidis</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-2" xreflabel="JOGL_VERSION">
+      <title>JOGL_VERSION</title>
+      <indexterm><primary>JOGL_VERSION</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>JOGL_VERSION</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>JOGL_VERSION</varname>
+        <initializer>&quot;jogl-1.1.1&quot;</initializer>
+      </fieldsynopsis>
+      <para>jogl version</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-1" xreflabel="LIBRARY_PATH">
+      <title>LIBRARY_PATH</title>
+      <indexterm><primary>LIBRARY_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>LIBRARY_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>LIBRARY_PATH</varname>
+        <initializer>&quot;lib&quot;</initializer>
+      </fieldsynopsis>
+      <para>library path for vidis</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-4" xreflabel="LOG_PATH">
+      <title>LOG_PATH</title>
+      <indexterm><primary>LOG_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>LOG_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>LOG_PATH</varname>
+      </fieldsynopsis>
+      <para>log path for vidis</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-11" xreflabel="LOOK_ANGLE_X">
+      <title>LOOK_ANGLE_X</title>
+      <indexterm><primary>LOOK_ANGLE_X</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>LOOK_ANGLE_X</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>double</type>
+        <varname>LOOK_ANGLE_X</varname>
+      </fieldsynopsis>
+      <para>the angle we look down (x axis)</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-12" xreflabel="LOOK_ANGLE_Y">
+      <title>LOOK_ANGLE_Y</title>
+      <indexterm><primary>LOOK_ANGLE_Y</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>LOOK_ANGLE_Y</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>double</type>
+        <varname>LOOK_ANGLE_Y</varname>
+      </fieldsynopsis>
+      <para>the angle we look down (y axis)</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-5" xreflabel="MODULE_PATH">
+      <title>MODULE_PATH</title>
+      <indexterm><primary>MODULE_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>MODULE_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>MODULE_PATH</varname>
+      </fieldsynopsis>
+      <para>modules path for vidis</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-6" xreflabel="RESOURCE_PATH">
+      <title>RESOURCE_PATH</title>
+      <indexterm><primary>RESOURCE_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>RESOURCE_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>RESOURCE_PATH</varname>
+      </fieldsynopsis>
+      <para>resources path for vidis</para>
+    </refsect2>
+    <refsect2 xml:id="FIELD-99-7" xreflabel="SHADER_PATH">
+      <title>SHADER_PATH</title>
+      <indexterm><primary>SHADER_PATH</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>SHADER_PATH</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>String</type>
+        <varname>SHADER_PATH</varname>
+      </fieldsynopsis>
+      <para>shaders path for vidis</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

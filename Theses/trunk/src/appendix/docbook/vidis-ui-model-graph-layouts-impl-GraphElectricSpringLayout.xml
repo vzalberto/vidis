@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-133" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.graph.layouts.impl.GraphElectricSpringLayout">
+  <indexterm><primary>Classes</primary><secondary>GraphElectricSpringLayout</secondary></indexterm>
+  <indexterm><primary>GraphElectricSpringLayout</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.graph.layouts.impl.GraphElectricSpringLayout</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class GraphElectricSpringLayout</refname>
+    <refpurpose>a very cool layout that uses a slightly modified electric spring algorithm to find nice positions for the nodes</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>GraphElectricSpringLayout</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AGraphLayout</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>GraphLayout</type>
+        <methodname>getInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>apply</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>relayout</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setNodeDensity</methodname>
+        <methodparam><type>double</type><parameter>density</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.ui.model.graph.layouts.AGraphLayout</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-130"><literal>setNodeDensityToAll</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/graph/layouts/impl/GraphElectricSpringLayout/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>a very cool layout that uses a slightly modified electric spring algorithm to find nice positions for the nodes</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-133-1" xreflabel="apply(java.util.Collection&lt;vidis.data.sim.SimNode&gt;)">
+      <title>apply(Collection&lt;SimNode&gt;)</title>
+      <indexterm><primary>apply</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>apply</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>apply</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>apply the graph layout to the nodes; IMPORTANT: FOR THIS ALGORITHM TO WORK CORRECTLY THE CONNECTIONS (LINKS) MUST BE ESTABLISHED PRIOR!</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

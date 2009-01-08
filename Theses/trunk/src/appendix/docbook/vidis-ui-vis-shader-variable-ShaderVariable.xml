@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-225" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.vis.shader.variable.ShaderVariable">
+  <indexterm><primary>Classes</primary><secondary>ShaderVariable</secondary></indexterm>
+  <indexterm><primary>ShaderVariable</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.vis.shader.variable.ShaderVariable</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ShaderVariable</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>ShaderVariable</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IShaderVariable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ShaderVariable</methodname>
+        <methodparam><type>VariableType</type><parameter>variableType</parameter></methodparam>
+        <methodparam><type>DataType</type><parameter>dataType</parameter></methodparam>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getAddress</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>DataType</type>
+        <methodname>getDataType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getName</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>VariableType</type>
+        <methodname>getVariableType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setAddress</methodname>
+        <methodparam><type>int</type><parameter>address</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setValue</methodname>
+        <methodparam><type>Object</type><parameter>value</parameter></methodparam>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+        <exceptionname>MalformedParameterizedTypeException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/vis/shader/variable/ShaderVariable/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-254" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.Visitor">
+  <indexterm><primary>Interfaces</primary><secondary>Visitor</secondary></indexterm>
+  <indexterm><primary>Visitor</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.Visitor</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface Visitor</refname>
+    <refpurpose>A interface for a visitor in the Visitor Pattern.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>Visitor</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Serializable</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>visit</methodname>
+        <methodparam><type>Vertex</type><parameter>vertexToVisit</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/Visitor/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A interface for a visitor in the Visitor Pattern.</para>
+  </refsect1>
+</refentry>
+
+

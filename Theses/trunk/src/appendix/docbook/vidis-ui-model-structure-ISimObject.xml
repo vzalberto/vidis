@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-185" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.structure.ISimObject">
+  <indexterm><primary>Interfaces</primary><secondary>ISimObject</secondary></indexterm>
+  <indexterm><primary>ISimObject</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.structure.ISimObject</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface ISimObject</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>ISimObject</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IVisObject</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IEventHandler</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>render</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/structure/ISimObject/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

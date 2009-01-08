@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-200" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.vis.Light">
+  <indexterm><primary>Classes</primary><secondary>Light</secondary></indexterm>
+  <indexterm><primary>Light</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.vis.Light</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Light</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Light</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Light</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initLinkLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initNodeLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initPacketLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initPosLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/vis/Light/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-200-1" xreflabel="initLinkLight(GL)">
+      <title>initLinkLight(GL)</title>
+      <indexterm><primary>initLinkLight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>initLinkLight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initLinkLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <para>GL_LIGHT0 Links - directional light source - no ambient - blue diffuse</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-200-2" xreflabel="initNodeLight(GL)">
+      <title>initNodeLight(GL)</title>
+      <indexterm><primary>initNodeLight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>initNodeLight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initNodeLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <para>GL_LIGHT1 Node - directional light source - no ambient - white diffuse</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-200-3" xreflabel="initPacketLight(GL)">
+      <title>initPacketLight(GL)</title>
+      <indexterm><primary>initPacketLight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>initPacketLight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initPacketLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <para>GL_LIGHT2 Packet - directional light source - no ambient - blue diffuse</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-200-4" xreflabel="initPosLight(GL)">
+      <title>initPosLight(GL)</title>
+      <indexterm><primary>initPosLight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>initPosLight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>initPosLight</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <para>GL_LIGHT1 - positional light source - yellow ambient - yellow diffuse Rem: To have a &quot;real&quot; effect, set the ambient and diffuse to the same color.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

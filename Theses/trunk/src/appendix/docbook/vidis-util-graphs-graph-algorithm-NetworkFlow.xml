@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-269" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.NetworkFlow">
+  <indexterm><primary>Classes</primary><secondary>NetworkFlow</secondary></indexterm>
+  <indexterm><primary>NetworkFlow</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.NetworkFlow</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class NetworkFlow</refname>
+    <refpurpose>Abstract class for handling a flow on a <literal>Network</literal>.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>NetworkFlow</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>NetworkFlow</methodname>
+        <methodparam><type>Network</type><parameter>network</parameter></methodparam>
+        <exceptionname>NetworkException</exceptionname>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getFlowMap</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getTotalFlow</methodname>
+        <void/>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>initializeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>maximizeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-258"><varname>vidis.­util.­graphs.­graph.­algorithm.­AugmentNetworkFlow</varname></link></member><member><link linkend="CLASS-275"><varname>vidis.­util.­graphs.­graph.­algorithm.­UnitCapacityNetworkFlow</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/NetworkFlow/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Abstract class for handling a flow on a <literal>Network</literal>. Concrete implementations of this class must never modify the Network itself.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-269-1" xreflabel="NetworkFlow(vidis.util.graphs.graph.Network)">
+      <title>NetworkFlow(Network)</title>
+      <indexterm><primary>NetworkFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>NetworkFlow</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>NetworkFlow</methodname>
+        <methodparam><type>Network</type><parameter>network</parameter></methodparam>
+        <exceptionname>NetworkException</exceptionname>
+      </constructorsynopsis>
+      <para>Constructor to be used by subclasses of this abstract class.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-269-1" xreflabel="getFlowMap()">
+      <title>getFlowMap()</title>
+      <indexterm><primary>getFlowMap</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getFlowMap</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getFlowMap</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a HashMap that maps each edge of the network to its flow.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-269-2" xreflabel="getTotalFlow()">
+      <title>getTotalFlow()</title>
+      <indexterm><primary>getTotalFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getTotalFlow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getTotalFlow</methodname>
+        <void/>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Returns the total flow coming from the source and flowing to the sink.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-269-3" xreflabel="initializeFlow()">
+      <title>initializeFlow()</title>
+      <indexterm><primary>initializeFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>initializeFlow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>initializeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Initializes the flow in the network by setting the flow of each edge to 0.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-269-4" xreflabel="maximizeFlow()">
+      <title>maximizeFlow()</title>
+      <indexterm><primary>maximizeFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>maximizeFlow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>maximizeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Method for finding a maximum flow in the network.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

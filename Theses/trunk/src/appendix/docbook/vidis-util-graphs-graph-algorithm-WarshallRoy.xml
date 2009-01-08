@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-276" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.WarshallRoy">
+  <indexterm><primary>Classes</primary><secondary>WarshallRoy</secondary></indexterm>
+  <indexterm><primary>WarshallRoy</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.WarshallRoy</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class WarshallRoy</refname>
+    <refpurpose>An implementation of the transitive closure algorithm of S.A.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>WarshallRoy</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>WarshallRoy</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Graph</type>
+        <methodname>transClosure</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/WarshallRoy/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>An implementation of the transitive closure algorithm of S.A. Warshall and B. Roy</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-276-1" xreflabel="transClosure(vidis.util.graphs.graph.Graph)">
+      <title>transClosure(Graph)</title>
+      <indexterm><primary>transClosure</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>transClosure</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Graph</type>
+        <methodname>transClosure</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </methodsynopsis>
+      <para>Perform the Warshall/Roy algorithm for determining the transitive closure of a graph</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

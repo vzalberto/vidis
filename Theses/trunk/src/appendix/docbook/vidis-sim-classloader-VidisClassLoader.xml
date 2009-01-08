@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-77" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.sim.classloader.VidisClassLoader">
+  <indexterm><primary>Classes</primary><secondary>VidisClassLoader</secondary></indexterm>
+  <indexterm><primary>VidisClassLoader</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.sim.classloader.VidisClassLoader</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class VidisClassLoader</refname>
+    <refpurpose>the vidis class loader basically this class is the concrete implementation of our class loader to load module files, not only from jar archives</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>VidisClassLoader</classname>
+      </ooclass>
+      <ooclass>
+        <classname>URLClassLoader</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>VidisClassLoader</type>
+        <methodname>getInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addFile</methodname>
+        <methodparam><type>JarFile</type><parameter>p</parameter></methodparam>
+        <exceptionname>MalformedURLException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;JarFile&gt;</type>
+        <methodname>getLoadedFiles</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.net.URLClassLoader</emphasis>: <simplelist type="inline"><member><varname>findResource</varname></member><member><varname>findResources</varname></member><member><varname>getURLs</varname></member><member><varname>newInstance</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.ClassLoader</emphasis>: <simplelist type="inline"><member><varname>clearAssertionStatus</varname></member><member><varname>getParent</varname></member><member><varname>getResource</varname></member><member><varname>getResourceAsStream</varname></member><member><varname>getResources</varname></member><member><varname>getSystemClassLoader</varname></member><member><varname>getSystemResource</varname></member><member><varname>getSystemResourceAsStream</varname></member><member><varname>getSystemResources</varname></member><member><varname>loadClass</varname></member><member><varname>setClassAssertionStatus</varname></member><member><varname>setDefaultAssertionStatus</varname></member><member><varname>setPackageAssertionStatus</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/sim/classloader/VidisClassLoader/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>the vidis class loader basically this class is the concrete implementation of our class loader to load module files, not only from jar archives</para>
+  </refsect1>
+</refentry>
+
+

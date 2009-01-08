@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-113" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.events.MouseMovedEvent">
+  <indexterm><primary>Classes</primary><secondary>MouseMovedEvent</secondary></indexterm>
+  <indexterm><primary>MouseMovedEvent</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.events.MouseMovedEvent</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class MouseMovedEvent</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>MouseMovedEvent</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AMouseEvent</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>MouseMovedEvent</methodname>
+        <methodparam><type>MouseEvent</type><parameter>m</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getID</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para><para><emphasis role="bold">Fields inherited from vidis.ui.events.AMouseEvent</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-102"><literal>forwardTo3D</literal></link></member><member><link linkend="CLASS-102"><literal>guiCoords</literal></link></member><member><link linkend="CLASS-102"><literal>guiCoordsRelative</literal></link></member><member><link linkend="CLASS-102"><literal>mouseEvent</literal></link></member><member><link linkend="CLASS-102"><literal>ray</literal></link></member><member><link linkend="CLASS-102"><literal>rayCalculated</literal></link></member><member><link linkend="CLASS-102"><literal>rayOrigin</literal></link></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/events/MouseMovedEvent/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

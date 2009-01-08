@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-100" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.events.AEventHandler">
+  <indexterm><primary>Classes</primary><secondary>AEventHandler</secondary></indexterm>
+  <indexterm><primary>AEventHandler</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.events.AEventHandler</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AEventHandler</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AEventHandler</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IEventHandler</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AEventHandler</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>fireEvent</methodname>
+        <methodparam><type>IVidisEvent</type><parameter>e</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-125"><varname>vidis.­ui.­gui.­Gui</varname></link></member><member><link linkend="CLASS-181"><varname>vidis.­ui.­model.­structure.­AGuiContainer</varname></link></member><member><link linkend="CLASS-182"><varname>vidis.­ui.­model.­structure.­ASimObject</varname></link></member><member><link linkend="CLASS-195"><varname>vidis.­ui.­mvc.­api.­AController</varname></link></member><member><link linkend="CLASS-202"><varname>vidis.­ui.­vis.­camera.­DefaultCamera</varname></link></member><member><link linkend="CLASS-203"><varname>vidis.­ui.­vis.­camera.­FreeLookCamera</varname></link></member><member><link linkend="CLASS-204"><varname>vidis.­ui.­vis.­camera.­GuiCamera</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/events/AEventHandler/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

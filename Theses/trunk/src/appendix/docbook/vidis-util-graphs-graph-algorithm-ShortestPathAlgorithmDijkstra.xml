@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-272" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.ShortestPathAlgorithmDijkstra">
+  <indexterm><primary>Classes</primary><secondary>ShortestPathAlgorithmDijkstra</secondary></indexterm>
+  <indexterm><primary>ShortestPathAlgorithmDijkstra</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.ShortestPathAlgorithmDijkstra</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ShortestPathAlgorithmDijkstra</refname>
+    <refpurpose>A concrete implementation of ShortestPathAlgorithm using Dijkstra&apos;s method.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>ShortestPathAlgorithmDijkstra</classname>
+      </ooclass>
+      <ooclass>
+        <classname>ShortestPathAlgorithm</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ShortestPathAlgorithmDijkstra</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+        <methodparam><type>HeapNodeComparator</type><parameter>comparator</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.algorithm.ShortestPathAlgorithm</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-271-4"><literal>getDistance</literal></link></member><member><link linkend="METHOD-271-5"><literal>getDistanceInTree</literal></link></member><member><link linkend="METHOD-271-6"><literal>getLongestDistance</literal></link></member><member><link linkend="METHOD-271-7"><literal>getLongestDistanceInTree</literal></link></member><member><link linkend="METHOD-271-8"><literal>getRoutingTable</literal></link></member><member><link linkend="METHOD-271-3"><literal>getShortestPath</literal></link></member><member><link linkend="METHOD-271-2"><literal>shortestPath</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/ShortestPathAlgorithmDijkstra/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A concrete implementation of ShortestPathAlgorithm using Dijkstra&apos;s method. Note that the Dijkstra method can only be used for graphs with non-negative edge weights.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-272-1" xreflabel="ShortestPathAlgorithmDijkstra(vidis.util.graphs.graph.WeightedGraph, vidis.util.graphs.util.HeapNodeComparator)">
+      <title>ShortestPathAlgorithmDijkstra(WeightedGraph, HeapNodeComparator)</title>
+      <indexterm><primary>ShortestPathAlgorithmDijkstra</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>ShortestPathAlgorithmDijkstra</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ShortestPathAlgorithmDijkstra</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+        <methodparam><type>HeapNodeComparator</type><parameter>comparator</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an instance of ShortestPathAlgorithmDijkstra.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-272-1" xreflabel="shortestPath()">
+      <title>shortestPath()</title>
+      <indexterm><primary>shortestPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>shortestPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Determines the shortest path from a given vertex to all other vertices that are in the same connected set as the given vertex in the weighted graph using Dijkstra&apos;s algorithm.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

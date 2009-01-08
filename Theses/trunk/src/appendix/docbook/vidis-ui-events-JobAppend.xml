@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-108" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.events.JobAppend">
+  <indexterm><primary>Classes</primary><secondary>JobAppend</secondary></indexterm>
+  <indexterm><primary>JobAppend</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.events.JobAppend</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class JobAppend</refname>
+    <refpurpose>the job append event the job scheduler handles this event by executing the job</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>JobAppend</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IVidisEvent</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>JobAppend</methodname>
+        <methodparam><type>IJob</type><parameter>data</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getID</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IJob</type>
+        <methodname>getJob</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/events/JobAppend/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>the job append event the job scheduler handles this event by executing the job</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-108-1" xreflabel="JobAppend(vidis.ui.events.jobs.IJob)">
+      <title>JobAppend(IJob)</title>
+      <indexterm><primary>JobAppend</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>JobAppend</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>JobAppend</methodname>
+        <methodparam><type>IJob</type><parameter>data</parameter></methodparam>
+      </constructorsynopsis>
+      <para>this is the default constructor taking one argument</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-108-1" xreflabel="getID()">
+      <title>getID()</title>
+      <indexterm><primary>getID</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getID</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getID</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="CLASS-107">getID</link> in interface <link linkend="CLASS-107">IVidisEvent</link></para>
+      <para>the id of this job</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-108-2" xreflabel="getJob()">
+      <title>getJob()</title>
+      <indexterm><primary>getJob</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getJob</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IJob</type>
+        <methodname>getJob</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>the job to be executed by the scheduler</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

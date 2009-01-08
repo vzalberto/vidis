@@ -1,0 +1,335 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-17" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.AComponent">
+  <indexterm><primary>Classes</primary><secondary>AComponent</secondary></indexterm>
+  <indexterm><primary>AComponent</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.AComponent</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AComponent</refname>
+    <refpurpose>this is the abstract component superclass that implements all basic functionality for a simulator component like node, packet and link. the concrete implementations can be found at referenced locations</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AComponent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IComponent</interfacename>
+      </oointerface>
+      <oointerface>
+        <interfacename>IAComponentCon</interfacename>
+      </oointerface>
+      <oointerface>
+        <interfacename>IVariableChangeListener</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AComponent</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addVariableChangeListener</methodname>
+        <methodparam><type>IVariableChangeListener</type><parameter>l</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>AVariable</type>
+        <methodname>getScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getScopedVariableIdentifiers</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getVariableById</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+        <exceptionname>ClassCastException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IVariableChangeListener&gt;</type>
+        <methodname>getVariableChangeListeners</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getVariableIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>hasScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>registerVariable</methodname>
+        <methodparam><type>AVariable</type><parameter>var</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeVariableChangeListener</methodname>
+        <methodparam><type>IVariableChangeListener</type><parameter>l</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableAdded</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableChanged</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableRemoved</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-23"><varname>vidis.­data.­sim.­SimLink</varname></link></member><member><link linkend="CLASS-24"><varname>vidis.­data.­sim.­SimNode</varname></link></member><member><link linkend="CLASS-25"><varname>vidis.­data.­sim.­SimPacket</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/AComponent/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this is the abstract component superclass that implements all basic functionality for a simulator component like node, packet and link. the concrete implementations can be found at referenced locations</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-17-1" xreflabel="AComponent()">
+      <title>AComponent()</title>
+      <indexterm><primary>AComponent</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>AComponent</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AComponent</methodname>
+        <void/>
+      </constructorsynopsis>
+      <para>public constructor; all subclasses should call super() at the beginning of their constructor!</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="execute()">
+      <title>execute()</title>
+      <indexterm><primary>execute</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>execute</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-19-1">execute</link> in interface <link linkend="CLASS-19">IComponent</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-19-1">execute</link></bridgehead>
+      <para>a default component of the simulator implements this function so that the simulator can execute it</para>
+    </refsect2>
+    <refsect2 xreflabel="getScopedVariable(java.lang.String, java.lang.String)">
+      <title>getScopedVariable(String, String)</title>
+      <indexterm><primary>getScopedVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getScopedVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>AVariable</type>
+        <methodname>getScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-18-1">getScopedVariable</link> in interface <link linkend="CLASS-18">IAComponentCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-18-1">getScopedVariable</link></bridgehead>
+      <para>retrieve a scoped variable</para>
+    </refsect2>
+    <refsect2 xreflabel="getScopedVariableIdentifiers(java.lang.String)">
+      <title>getScopedVariableIdentifiers(String)</title>
+      <indexterm><primary>getScopedVariableIdentifiers</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getScopedVariableIdentifiers</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getScopedVariableIdentifiers</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-18-3">getScopedVariableIdentifiers</link> in interface <link linkend="CLASS-18">IAComponentCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-18-3">getScopedVariableIdentifiers</link></bridgehead>
+      <para>retrieve all variable identifiers within a scope</para>
+    </refsect2>
+    <refsect2 xreflabel="hasScopedVariable(java.lang.String, java.lang.String)">
+      <title>hasScopedVariable(String, String)</title>
+      <indexterm><primary>hasScopedVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>hasScopedVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>hasScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-18-2">hasScopedVariable</link> in interface <link linkend="CLASS-18">IAComponentCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-18-2">hasScopedVariable</link></bridgehead>
+      <para>retrieve if a scoped variable is set</para>
+    </refsect2>
+    <refsect2 xreflabel="interrupt()">
+      <title>interrupt()</title>
+      <indexterm><primary>interrupt</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>interrupt</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-18-4">interrupt</link> in interface <link linkend="CLASS-18">IAComponentCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-18-4">interrupt</link></bridgehead>
+      <para>causes the simulator component to wake up from sleep</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-17-1" xreflabel="kill()">
+      <title>kill()</title>
+      <indexterm><primary>kill</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>kill</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-19-2">kill</link> in interface <link linkend="CLASS-19">IComponent</link></para>
+      <para>causes this object to clean all its references to other objects in order that it may be collected by GC</para>
+    </refsect2>
+    <refsect2 xreflabel="sleep(int)">
+      <title>sleep(int)</title>
+      <indexterm><primary>sleep</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>sleep</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-18-5">sleep</link> in interface <link linkend="CLASS-18">IAComponentCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-18-5">sleep</link></bridgehead>
+      <para>causes the simulator component to sleep for a certain amount of steps</para>
+    </refsect2>
+    <refsect2 xreflabel="variableAdded(java.lang.String)">
+      <title>variableAdded(String)</title>
+      <indexterm><primary>variableAdded</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableAdded</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableAdded</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-29-2">variableAdded</link> in interface <link linkend="CLASS-29">IVariableChangeListener</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-29-2">variableAdded</link></bridgehead>
+      <para>this function informs the variable change listener about a new variable</para>
+    </refsect2>
+    <refsect2 xreflabel="variableChanged(java.lang.String)">
+      <title>variableChanged(String)</title>
+      <indexterm><primary>variableChanged</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableChanged</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableChanged</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-29-1">variableChanged</link> in interface <link linkend="CLASS-29">IVariableChangeListener</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-29-1">variableChanged</link></bridgehead>
+      <para>this function is the trigger that tells the variable change listener when a variable possibly changed its value</para>
+    </refsect2>
+    <refsect2 xreflabel="variableRemoved(java.lang.String)">
+      <title>variableRemoved(String)</title>
+      <indexterm><primary>variableRemoved</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableRemoved</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableRemoved</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-29-3">variableRemoved</link> in interface <link linkend="CLASS-29">IVariableChangeListener</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-29-3">variableRemoved</link></bridgehead>
+      <para>this function informs the variable change listener about the removal of a variable</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

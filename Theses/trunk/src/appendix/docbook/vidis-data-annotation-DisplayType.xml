@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-9" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.annotation.DisplayType">
+  <indexterm><primary>Classes</primary><secondary>DisplayType</secondary></indexterm>
+  <indexterm><primary>DisplayType</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.annotation.DisplayType</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DisplayType</refname>
+    <refpurpose>this enumeration determines where a annotated variable should be displayed THIS ENUM IS DEPRECATED, AS IT IS THE DISPLAY ANNOTATION!</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier role="annotation">@Deprecated</modifier>
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <modifier>class</modifier>
+        <classname>DisplayType</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Enum&lt;DisplayType&gt;</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Comparable&lt;DisplayType&gt;</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Static Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>EXECUTEABLE</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>SHOW_3D</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>SHOW_3D_AND_SWING</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>SHOW_SWING</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>DisplayType</type>
+        <methodname>valueOf</methodname>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>DisplayType[]</type>
+        <methodname>values</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Enum</emphasis>: <simplelist type="inline"><member><varname>compareTo</varname></member><member><varname>equals</varname></member><member><varname>getDeclaringClass</varname></member><member><varname>hashCode</varname></member><member><varname>name</varname></member><member><varname>ordinal</varname></member><member><varname>toString</varname></member><member><varname>valueOf</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>getClass</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/annotation/DisplayType/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this enumeration determines where a annotated variable should be displayed THIS ENUM IS DEPRECATED, AS IT IS THE DISPLAY ANNOTATION!</para>
+  </refsect1>
+  <refsect1>
+    <title>Fields</title>
+    <refsect2 xreflabel="EXECUTEABLE">
+      <title>EXECUTEABLE</title>
+      <indexterm><primary>EXECUTEABLE</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>EXECUTEABLE</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>EXECUTEABLE</varname>
+      </fieldsynopsis>
+      <para>determines that this option should be executable</para>
+    </refsect2>
+    <refsect2 xreflabel="SHOW_3D">
+      <title>SHOW_3D</title>
+      <indexterm><primary>SHOW_3D</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>SHOW_3D</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>SHOW_3D</varname>
+      </fieldsynopsis>
+      <para>determines that it should be shown in the 3d world</para>
+    </refsect2>
+    <refsect2 xreflabel="SHOW_3D_AND_SWING">
+      <title>SHOW_3D_AND_SWING</title>
+      <indexterm><primary>SHOW_3D_AND_SWING</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>SHOW_3D_AND_SWING</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>SHOW_3D_AND_SWING</varname>
+      </fieldsynopsis>
+      <para>determines that it should be shown in both, 3d world and gui</para>
+    </refsect2>
+    <refsect2 xreflabel="SHOW_SWING">
+      <title>SHOW_SWING</title>
+      <indexterm><primary>SHOW_SWING</primary></indexterm>
+      <indexterm><primary>Fields</primary><secondary>SHOW_SWING</secondary></indexterm>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>DisplayType</type>
+        <varname>SHOW_SWING</varname>
+      </fieldsynopsis>
+      <para>determines that it should be shown in the gui element</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

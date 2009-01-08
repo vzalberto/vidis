@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-5" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.annotation.ComponentColor">
+  <indexterm><primary>Annotations</primary><secondary>ComponentColor</secondary></indexterm>
+  <indexterm><primary>ComponentColor</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.annotation.ComponentColor</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Annotation Type ComponentColor</refname>
+    <refpurpose>Die Annotation ComponentColor ist optional und beschreibt welchen grundfarbton ein element haben soll.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier role="annotation">@Retention(value=java.lang.annotation.RetentionPolicy.RUNTIME)</modifier>
+        <modifier role="annotation">@Target(value=java.lang.annotation.ElementType.TYPE)</modifier>
+        <modifier>public</modifier>
+        <modifier>@interface</modifier>
+        <classname>ComponentColor</classname>
+      </ooclass>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <varname>color</varname>
+      </fieldsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/annotation/ComponentColor/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Die Annotation ComponentColor ist optional und beschreibt welchen grundfarbton ein element haben soll.</para>
+  </refsect1>
+  <refsect1>
+    <title>Elements</title>
+    <refsect2 xml:id="METHOD-5-1" xreflabel="color">
+      <title>color</title>
+      <indexterm><primary>color</primary></indexterm>
+      <indexterm><primary>Elements</primary><secondary>color</secondary></indexterm>
+      <para>Die farbe dieser Komponente</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

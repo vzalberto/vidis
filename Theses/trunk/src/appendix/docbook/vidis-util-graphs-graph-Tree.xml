@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-251" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.Tree">
+  <indexterm><primary>Interfaces</primary><secondary>Tree</secondary></indexterm>
+  <indexterm><primary>Tree</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.Tree</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface Tree</refname>
+    <refpurpose>The superinterface of all <literal>Tree</literal>s.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>Tree</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Graph</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>addNode</methodname>
+        <methodparam><type>Vertex</type><parameter>parent</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>childNode</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getChildren</methodname>
+        <methodparam><type>Vertex</type><parameter>vertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getDepth</methodname>
+        <methodparam><type>Vertex</type><parameter>node</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getHeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getLeaves</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getParent</methodname>
+        <methodparam><type>Vertex</type><parameter>vertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getRoot</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Tree</type>
+        <methodname>getSubTree</methodname>
+        <methodparam><type>Vertex</type><parameter>subTreeRootVertex</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isLeaf</methodname>
+        <methodparam><type>Vertex</type><parameter>vertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPath</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setRoot</methodname>
+        <methodparam><type>Vertex</type><parameter>rootVertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/Tree/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>The superinterface of all <literal>Tree</literal>s. This interface abstracts a free tree. A free tree is a tree whereby any of the nodes can be a root node.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-251-9" xreflabel="addNode(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>addNode(Vertex, Vertex)</title>
+      <indexterm><primary>addNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addNode</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>addNode</methodname>
+        <methodparam><type>Vertex</type><parameter>parent</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>childNode</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>Adds a node to the <literal>Tree</literal>. The parent node must already be existing in the <literal>Tree</literal> before the child node can be added. To add the root node, specify null as the parent. </para>
+      <para> Note that the parent and child relativity is dependent for whatever is the current root node of the <literal>Tree</literal>. Hence, if childNode later on becomes root via setRoot(), then the parent actually becomes the child of childNode. </para>
+      <para> This method should be used instead of the superclass&apos; add() methods.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-4" xreflabel="getChildren(vidis.util.graphs.graph.Vertex)">
+      <title>getChildren(Vertex)</title>
+      <indexterm><primary>getChildren</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getChildren</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getChildren</methodname>
+        <methodparam><type>Vertex</type><parameter>vertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Returns the child nodes of the node specified by the argument.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-6" xreflabel="getDepth(vidis.util.graphs.graph.Vertex)">
+      <title>getDepth(Vertex)</title>
+      <indexterm><primary>getDepth</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDepth</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getDepth</methodname>
+        <methodparam><type>Vertex</type><parameter>node</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Returns the depth of the node in the <literal>Tree</literal>.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-8" xreflabel="getHeight()">
+      <title>getHeight()</title>
+      <indexterm><primary>getHeight</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getHeight</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getHeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the height of the <literal>Tree</literal>.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-7" xreflabel="getLeaves()">
+      <title>getLeaves()</title>
+      <indexterm><primary>getLeaves</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLeaves</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getLeaves</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a <literal>List</literal> of the leaves of ths <literal>Tree</literal>.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-3" xreflabel="getParent(vidis.util.graphs.graph.Vertex)">
+      <title>getParent(Vertex)</title>
+      <indexterm><primary>getParent</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getParent</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getParent</methodname>
+        <methodparam><type>Vertex</type><parameter>vertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Returns the parent node of the node specified by the argument.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-2" xreflabel="getRoot()">
+      <title>getRoot()</title>
+      <indexterm><primary>getRoot</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getRoot</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getRoot</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the current root of the <literal>Tree</literal>. It is possible that this method will return null if the <literal>Tree</literal> is empty.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-5" xreflabel="getSubTree(vidis.util.graphs.graph.Vertex)">
+      <title>getSubTree(Vertex)</title>
+      <indexterm><primary>getSubTree</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getSubTree</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Tree</type>
+        <methodname>getSubTree</methodname>
+        <methodparam><type>Vertex</type><parameter>subTreeRootVertex</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>Returns a new instance of a <literal>Tree</literal> that is rooted from the specified node. This method does not alter the <literal>Tree</literal> itself. </para>
+      <para> Although a new <literal>Tree</literal> is returned, the nodes and edges within the new <literal>Tree</literal> are the same instances as those of the <literal>Tree</literal> from where it was taken from.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-10" xreflabel="isLeaf(vidis.util.graphs.graph.Vertex)">
+      <title>isLeaf(Vertex)</title>
+      <indexterm><primary>isLeaf</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isLeaf</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isLeaf</methodname>
+        <methodparam><type>Vertex</type><parameter>vertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Returns true if the specified node is a leaf.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-11" xreflabel="isPath(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>isPath(Vertex, Vertex)</title>
+      <indexterm><primary>isPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPath</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-23">isPath</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Determines if there is a path from Vertex fromVertex to Vertex toVertex. </para>
+      <para> Directionality of Edges along the path are ignored. Therefore, <literal>isPath( a, b )</literal> is the same as <literal>isPath( b, a )</literal>. </para>
+      <para> If either one of the vertices are not in the <literal>Tree</literal>, the result will be false.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-251-1" xreflabel="setRoot(vidis.util.graphs.graph.Vertex)">
+      <title>setRoot(Vertex)</title>
+      <indexterm><primary>setRoot</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setRoot</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setRoot</methodname>
+        <methodparam><type>Vertex</type><parameter>rootVertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Sets the root of the <literal>Tree</literal>. The <literal>Vertex</literal> specified must already be in the <literal>Tree</literal>. Otherwise, a <literal>NoSuchVertexException</literal> is returned.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

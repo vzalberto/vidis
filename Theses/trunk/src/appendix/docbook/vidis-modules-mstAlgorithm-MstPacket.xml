@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-67" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.modules.mstAlgorithm.MstPacket">
+  <indexterm><primary>Classes</primary><secondary>MstPacket</secondary></indexterm>
+  <indexterm><primary>MstPacket</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.modules.mstAlgorithm.MstPacket</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class MstPacket</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>MstPacket</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AMSTPacket</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>MstPacket</methodname>
+        <methodparam><type>int</type><parameter>id</parameter></methodparam>
+        <methodparam><type>String</type><parameter>senderId</parameter></methodparam>
+        <methodparam><type>String</type><parameter>targetId</parameter></methodparam>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>MstPacket</methodname>
+        <methodparam><type>MstPacket</type><parameter>p</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getTargetId</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.modules.mstAlgorithm.AMSTPacket</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-62"><literal>generateRandomId</literal></link></member><member><link linkend="CLASS-62"><literal>getColor</literal></link></member><member><link linkend="CLASS-62"><literal>getId</literal></link></member><member><link linkend="CLASS-62"><literal>getQueryierId</literal></link></member><member><link linkend="CLASS-62"><literal>getType</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.data.AUserPacket</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-3"><literal>execute</literal></link></member><member><link linkend="CLASS-3"><literal>getLinkToSource</literal></link></member><member><link linkend="CLASS-3"><literal>getSource</literal></link></member><member><link linkend="CLASS-3"><literal>getVariable</literal></link></member><member><link linkend="CLASS-3"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-3"><literal>init</literal></link></member><member><link linkend="CLASS-3"><literal>interrupt</literal></link></member><member><link linkend="CLASS-3"><literal>sleep</literal></link></member><member><link linkend="CLASS-3"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/modules/mstAlgorithm/MstPacket/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-282" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.util.Queue">
+  <indexterm><primary>Classes</primary><secondary>Queue</secondary></indexterm>
+  <indexterm><primary>Queue</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.util.Queue</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Queue</refname>
+    <refpurpose>A Queue represents a first-in-first-out (FIFO) data structure.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Queue</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Queue</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>get</methodname>
+        <void/>
+        <exceptionname>EmptyQueueException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isEmpty</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isQueued</methodname>
+        <methodparam><type>Object</type><parameter>item</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>put</methodname>
+        <methodparam><type>Object</type><parameter>item</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/util/Queue/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A Queue represents a first-in-first-out (FIFO) data structure. Unlike java.lang.Stack that simply extends java.util.Vector, this class does not extend java.util.LinkedList but delegates its methods to a java.util.LinkedList. Therefore, unlike java.util.Stack, the methods from java.util.LinkedList are not available.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-282-1" xreflabel="Queue()">
+      <title>Queue()</title>
+      <indexterm><primary>Queue</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Queue</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Queue</methodname>
+        <void/>
+      </constructorsynopsis>
+      <para>Creates an empty queue</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-282-2" xreflabel="get()">
+      <title>get()</title>
+      <indexterm><primary>get</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>get</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>get</methodname>
+        <void/>
+        <exceptionname>EmptyQueueException</exceptionname>
+      </methodsynopsis>
+      <para>Gets and removes the item at the beginning of the queue</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-282-3" xreflabel="isEmpty()">
+      <title>isEmpty()</title>
+      <indexterm><primary>isEmpty</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isEmpty</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isEmpty</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Tests if the queue is empty</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-282-4" xreflabel="isQueued(java.lang.Object)">
+      <title>isQueued(Object)</title>
+      <indexterm><primary>isQueued</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isQueued</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isQueued</methodname>
+        <methodparam><type>Object</type><parameter>item</parameter></methodparam>
+      </methodsynopsis>
+      <para>Tests if the item is in the queue. Because the Queue allows duplicate items, isQueued() will return true even if the item was removed from the queue if the item was queued twice before being removed from the queue.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-282-1" xreflabel="put(java.lang.Object)">
+      <title>put(Object)</title>
+      <indexterm><primary>put</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>put</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>put</methodname>
+        <methodparam><type>Object</type><parameter>item</parameter></methodparam>
+      </methodsynopsis>
+      <para>Puts an item at the end of the queue. Note that this will not check of duplicate items in the queue.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-282-5" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a String representation of the queue. This simply calls the toString() method of the delegate, which is an <literal>ArrayList</literal>.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

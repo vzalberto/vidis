@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-72" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.modules.vectorClockAlgorithm.VectorClockAlgorithmNode">
+  <indexterm><primary>Classes</primary><secondary>VectorClockAlgorithmNode</secondary></indexterm>
+  <indexterm><primary>VectorClockAlgorithmNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.modules.vectorClockAlgorithm.VectorClockAlgorithmNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class VectorClockAlgorithmNode</refname>
+    <refpurpose>vector clock algorithm node, even cooler :-)</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>VectorClockAlgorithmNode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserNode</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <varname>autoEvents</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>VectorClockAlgorithmNode</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>erzeugeEvent</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getLocalTime</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>VectorTime</type>
+        <methodname>getTimeVector</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>toggleAutoEvents</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.AUserNode</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-2"><literal>connect</literal></link></member><member><link linkend="CLASS-2"><literal>disconnect</literal></link></member><member><link linkend="CLASS-2"><literal>getVariable</literal></link></member><member><link linkend="CLASS-2"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-2"><literal>init</literal></link></member><member><link linkend="CLASS-2"><literal>interrupt</literal></link></member><member><link linkend="CLASS-2"><literal>sleep</literal></link></member><member><link linkend="CLASS-2"><literal>spawnNewNode</literal></link></member><member><link linkend="CLASS-2"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/modules/vectorClockAlgorithm/VectorClockAlgorithmNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>vector clock algorithm node, even cooler :-)</para>
+  </refsect1>
+</refentry>
+
+

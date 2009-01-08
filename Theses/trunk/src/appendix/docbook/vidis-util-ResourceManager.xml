@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-229" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.ResourceManager">
+  <indexterm><primary>Classes</primary><secondary>ResourceManager</secondary></indexterm>
+  <indexterm><primary>ResourceManager</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.ResourceManager</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ResourceManager</refname>
+    <refpurpose>This class provides the Resources in a static way to all other classes</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>ResourceManager</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_ARIAL</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_ARIAL_BOLD</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_ARIAL_BOLD_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_ARIAL_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_COURIER</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_COURIER_BOLD</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_COURIER_BOLD_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_COURIER_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_TIMESNEWROMAN</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_TIMESNEWROMAN_BOLD</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_TIMESNEWROMAN_BOLD_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_TIMESNEWROMAN_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_VERDANA</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_VERDANA_BOLD</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_VERDANA_BOLD_ITALIC</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <varname>FONT_VERDANA_ITALIC</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Font</type>
+        <methodname>getFont</methodname>
+        <methodparam><type>String</type><parameter>filename</parameter></methodparam>
+        <exceptionname>FontFormatException</exceptionname>
+        <exceptionname>IOException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Font</type>
+        <methodname>getFont</methodname>
+        <methodparam><type>String</type><parameter>filename</parameter></methodparam>
+        <methodparam><type>float</type><parameter>size</parameter></methodparam>
+        <exceptionname>FontFormatException</exceptionname>
+        <exceptionname>IOException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>ImageIcon</type>
+        <methodname>getImageIcon</methodname>
+        <methodparam><type>String</type><parameter>icon</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>long</type>
+        <methodname>getMemoryFree</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>long</type>
+        <methodname>getMemoryMax</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>long</type>
+        <methodname>getMemoryTotal</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>long</type>
+        <methodname>getMemoryTotalUsed</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>File</type>
+        <methodname>getModuleFile</methodname>
+        <methodparam><type>String</type><parameter>module</parameter></methodparam>
+        <methodparam><type>String</type><parameter>moduleFile</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>List&lt;AModule&gt;</type>
+        <methodname>getModules</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <methodname>getShaderCode</methodname>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <methodname>getShaderPath</methodname>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/ResourceManager/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>This class provides the Resources in a static way to all other classes</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-229-2" xreflabel="getFont(java.lang.String)">
+      <title>getFont(String)</title>
+      <indexterm><primary>getFont</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getFont</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Font</type>
+        <methodname>getFont</methodname>
+        <methodparam><type>String</type><parameter>filename</parameter></methodparam>
+        <exceptionname>FontFormatException</exceptionname>
+        <exceptionname>IOException</exceptionname>
+      </methodsynopsis>
+      <para>retrieves a font the font is created and cached by the resource manager</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-229-3" xreflabel="getFont(java.lang.String, float)">
+      <title>getFont(String, float)</title>
+      <indexterm><primary>getFont</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getFont</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Font</type>
+        <methodname>getFont</methodname>
+        <methodparam><type>String</type><parameter>filename</parameter></methodparam>
+        <methodparam><type>float</type><parameter>size</parameter></methodparam>
+        <exceptionname>FontFormatException</exceptionname>
+        <exceptionname>IOException</exceptionname>
+      </methodsynopsis>
+      <para>retrieves a font the font is created and cached by the resource manager, then the size is applied the size is not cached</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-229-1" xreflabel="getShaderPath(java.lang.String)">
+      <title>getShaderPath(String)</title>
+      <indexterm><primary>getShaderPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getShaderPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <methodname>getShaderPath</methodname>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </methodsynopsis>
+      <para>This Function translates the shader name into a valid path</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-21" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.ISimNodeCon">
+  <indexterm><primary>Interfaces</primary><secondary>ISimNodeCon</secondary></indexterm>
+  <indexterm><primary>ISimNodeCon</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.ISimNodeCon</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface ISimNodeCon</refname>
+    <refpurpose>this class provides all functions of a node that a module writer may need.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>ISimNodeCon</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IAComponentCon</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IUserLink&gt;</type>
+        <methodname>getConnectedLinks</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>p</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>p</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+        <methodparam><type>long</type><parameter>wait</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>spawnNewNode</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/ISimNodeCon/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this class provides all functions of a node that a module writer may need.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-21-5" xreflabel="connect(vidis.data.mod.IUserNode, java.lang.Class&lt;? extends vidis.data.mod.IUserLink&gt;, long)">
+      <title>connect(IUserNode, Class&lt;? extends IUserLink&gt;, long)</title>
+      <indexterm><primary>connect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>connect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <para>Connects this node to another node.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-21-1" xreflabel="getConnectedLinks()">
+      <title>getConnectedLinks()</title>
+      <indexterm><primary>getConnectedLinks</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getConnectedLinks</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IUserLink&gt;</type>
+        <methodname>getConnectedLinks</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve all links that this node is connected to</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-21-4" xreflabel="getId()">
+      <title>getId()</title>
+      <indexterm><primary>getId</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getId</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve unique identifier for this node</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-21-2" xreflabel="send(vidis.data.mod.IUserPacket, vidis.data.mod.IUserLink)">
+      <title>send(IUserPacket, IUserLink)</title>
+      <indexterm><primary>send</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>send</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>p</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+      </methodsynopsis>
+      <para>send a packet over a link</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-21-3" xreflabel="send(vidis.data.mod.IUserPacket, vidis.data.mod.IUserLink, long)">
+      <title>send(IUserPacket, IUserLink, long)</title>
+      <indexterm><primary>send</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>send</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>p</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+        <methodparam><type>long</type><parameter>wait</parameter></methodparam>
+      </methodsynopsis>
+      <para>send a packet over a link; the packet send is delayed for some amount of time which may be interpreted as the processing time</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-21-6" xreflabel="spawnNewNode()">
+      <title>spawnNewNode()</title>
+      <indexterm><primary>spawnNewNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>spawnNewNode</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>spawnNewNode</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Spawns a new node.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

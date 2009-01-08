@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-19" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.IComponent">
+  <indexterm><primary>Interfaces</primary><secondary>IComponent</secondary></indexterm>
+  <indexterm><primary>IComponent</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.IComponent</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IComponent</refname>
+    <refpurpose>this is the basic interface for all components that may be executable by the simulator</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IComponent</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IVariableContainer</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/IComponent/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this is the basic interface for all components that may be executable by the simulator</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-19-1" xreflabel="execute()">
+      <title>execute()</title>
+      <indexterm><primary>execute</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>execute</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>a default component of the simulator implements this function so that the simulator can execute it</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-19-2" xreflabel="kill()">
+      <title>kill()</title>
+      <indexterm><primary>kill</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>kill</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>cause this component to destroy itself and all of its component/child classes</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

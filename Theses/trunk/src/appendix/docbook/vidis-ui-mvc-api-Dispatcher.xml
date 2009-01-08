@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-196" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.mvc.api.Dispatcher">
+  <indexterm><primary>Classes</primary><secondary>Dispatcher</secondary></indexterm>
+  <indexterm><primary>Dispatcher</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.mvc.api.Dispatcher</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Dispatcher</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Dispatcher</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Set&lt;IController&gt;</type>
+        <varname>controller</varname>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Dispatcher</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>forwardEvent</methodname>
+        <methodparam><type>int</type><parameter>eventid</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>forwardEvent</methodname>
+        <methodparam><type>IVidisEvent</type><parameter>event</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>registerController</methodname>
+        <methodparam><type>IController</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>registerEvent</methodname>
+        <methodparam><type>IController</type><parameter>c</parameter></methodparam>
+        <methodparam><type>int</type><parameter>eventId</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/mvc/api/Dispatcher/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-196-2" xreflabel="forwardEvent(int)">
+      <title>forwardEvent(int)</title>
+      <indexterm><primary>forwardEvent</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>forwardEvent</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>forwardEvent</methodname>
+        <methodparam><type>int</type><parameter>eventid</parameter></methodparam>
+      </methodsynopsis>
+      <para>wraps an eventid in a <literal>DummyEvent</literal> and calls <literal>forwardEvent( IVidisEvent event )</literal></para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-196-1" xreflabel="forwardEvent(vidis.ui.events.IVidisEvent)">
+      <title>forwardEvent(IVidisEvent)</title>
+      <indexterm><primary>forwardEvent</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>forwardEvent</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>forwardEvent</methodname>
+        <methodparam><type>IVidisEvent</type><parameter>event</parameter></methodparam>
+      </methodsynopsis>
+      <para>forwards an event to all Controllers</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

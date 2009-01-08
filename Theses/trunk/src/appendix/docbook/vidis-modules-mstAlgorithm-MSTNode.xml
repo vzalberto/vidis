@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-66" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.modules.mstAlgorithm.MSTNode">
+  <indexterm><primary>Classes</primary><secondary>MSTNode</secondary></indexterm>
+  <indexterm><primary>MSTNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.modules.mstAlgorithm.MSTNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class MSTNode</refname>
+    <refpurpose>This module node uses the Echo-Algorithm to determine the Minimum-Spanning-Tree (MST) and then You can Ping a Node to trace the path taken.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>MSTNode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserNode</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>MSTNode</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>explore</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <methodname>getColor</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>ping</methodname>
+        <methodparam><type>String</type><parameter>nodeId</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>ping</methodname>
+        <methodparam><type>MSTNode</type><parameter>node</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>AMSTPacket</type><parameter>p</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>resetLinkColors</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>showMST</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>testPing</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.AUserNode</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-2"><literal>connect</literal></link></member><member><link linkend="CLASS-2"><literal>disconnect</literal></link></member><member><link linkend="CLASS-2"><literal>getVariable</literal></link></member><member><link linkend="CLASS-2"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-2"><literal>init</literal></link></member><member><link linkend="CLASS-2"><literal>interrupt</literal></link></member><member><link linkend="CLASS-2"><literal>sleep</literal></link></member><member><link linkend="CLASS-2"><literal>spawnNewNode</literal></link></member><member><link linkend="CLASS-2"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/modules/mstAlgorithm/MSTNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>This module node uses the Echo-Algorithm to determine the Minimum-Spanning-Tree (MST) and then You can Ping a Node to trace the path taken.</para>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-25" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.SimPacket">
+  <indexterm><primary>Classes</primary><secondary>SimPacket</secondary></indexterm>
+  <indexterm><primary>SimPacket</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.SimPacket</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class SimPacket</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>SimPacket</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AComponent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>ISimPacketCon</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>SimPacket</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+        <methodparam><type>SimLink</type><parameter>link</parameter></methodparam>
+        <methodparam><type>SimNode</type><parameter>source</parameter></methodparam>
+        <methodparam><type>SimNode</type><parameter>target</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>createVisObject</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>double</type>
+        <methodname>getAlpha</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>int</type>
+        <methodname>getDirection</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getFrom</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserLink</type>
+        <methodname>getLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>SimLink</type>
+        <methodname>getThrough</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getTo</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>IUserPacket</type>
+        <methodname>getUserLogic</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getVariableById</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+        <exceptionname>ClassCastException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.sim.AComponent</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-17"><literal>addVariableChangeListener</literal></link></member><member><link linkend="CLASS-17"><literal>execute</literal></link></member><member><link linkend="CLASS-17"><literal>getScopedVariable</literal></link></member><member><link linkend="CLASS-17"><literal>getScopedVariableIdentifiers</literal></link></member><member><link linkend="CLASS-17"><literal>getVariableById</literal></link></member><member><link linkend="CLASS-17"><literal>getVariableChangeListeners</literal></link></member><member><link linkend="CLASS-17"><literal>getVariableIds</literal></link></member><member><link linkend="CLASS-17"><literal>hasScopedVariable</literal></link></member><member><link linkend="CLASS-17"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-17"><literal>interrupt</literal></link></member><member><link linkend="METHOD-17-1"><literal>kill</literal></link></member><member><link linkend="CLASS-17"><literal>registerVariable</literal></link></member><member><link linkend="CLASS-17"><literal>removeVariableChangeListener</literal></link></member><member><link linkend="CLASS-17"><literal>sleep</literal></link></member><member><link linkend="CLASS-17"><literal>toString</literal></link></member><member><link linkend="CLASS-17"><literal>variableAdded</literal></link></member><member><link linkend="CLASS-17"><literal>variableChanged</literal></link></member><member><link linkend="CLASS-17"><literal>variableRemoved</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/SimPacket/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="getFrom()">
+      <title>getFrom()</title>
+      <indexterm><primary>getFrom</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getFrom</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getFrom</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-22-1">getFrom</link> in interface <link linkend="CLASS-22">ISimPacketCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-22-1">getFrom</link></bridgehead>
+      <para>retrieve who sent this packet</para>
+    </refsect2>
+    <refsect2 xreflabel="getLink()">
+      <title>getLink()</title>
+      <indexterm><primary>getLink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserLink</type>
+        <methodname>getLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-22-3">getLink</link> in interface <link linkend="CLASS-22">ISimPacketCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-22-3">getLink</link></bridgehead>
+      <para>retrieve the user link this packet is onto</para>
+    </refsect2>
+    <refsect2 xreflabel="getTo()">
+      <title>getTo()</title>
+      <indexterm><primary>getTo</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getTo</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getTo</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-22-2">getTo</link> in interface <link linkend="CLASS-22">ISimPacketCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-22-2">getTo</link></bridgehead>
+      <para>retrieve to who this packet is destined</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-83" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.sim.classloader.modules.impl.jar.JarModuleFile">
+  <indexterm><primary>Classes</primary><secondary>JarModuleFile</secondary></indexterm>
+  <indexterm><primary>JarModuleFile</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.sim.classloader.modules.impl.jar.JarModuleFile</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class JarModuleFile</refname>
+    <refpurpose>a jar module file; thus meaning a module file contained within a jar file</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>JarModuleFile</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AModuleFile</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>JarModuleFile</methodname>
+        <methodparam><type>JarFile</type><parameter>f</parameter></methodparam>
+        <methodparam><type>JarEntry</type><parameter>e</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>InputStream</type>
+        <methodname>getInputStream</methodname>
+        <void/>
+        <exceptionname>IOException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getName</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.sim.classloader.modules.impl.AModuleFile</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-79"><literal>getInputStream</literal></link></member><member><link linkend="CLASS-79"><literal>getName</literal></link></member><member><link linkend="CLASS-79"><literal>isModule</literal></link></member><member><link linkend="CLASS-79"><literal>isModuleFile</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/sim/classloader/modules/impl/jar/JarModuleFile/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>a jar module file; thus meaning a module file contained within a jar file</para>
+  </refsect1>
+</refentry>
+
+

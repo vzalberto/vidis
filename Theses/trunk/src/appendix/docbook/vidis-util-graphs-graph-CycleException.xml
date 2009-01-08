@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-232" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.CycleException">
+  <indexterm><primary>Exceptions</primary><secondary>CycleException</secondary></indexterm>
+  <indexterm><primary>CycleException</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.CycleException</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Exception CycleException</refname>
+    <refpurpose>Thrown when a cycle has occured when it is not desired.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>CycleException</classname>
+      </ooclass>
+      <ooclass>
+        <classname>GraphException</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>CycleException</methodname>
+        <void/>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>CycleException</methodname>
+        <methodparam><type>String</type><parameter>msg</parameter></methodparam>
+      </constructorsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Throwable</emphasis>: <simplelist type="inline"><member><varname>fillInStackTrace</varname></member><member><varname>getCause</varname></member><member><varname>getLocalizedMessage</varname></member><member><varname>getMessage</varname></member><member><varname>getStackTrace</varname></member><member><varname>initCause</varname></member><member><varname>printStackTrace</varname></member><member><varname>setStackTrace</varname></member><member><varname>toString</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/CycleException/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Thrown when a cycle has occured when it is not desired. This is typically thrown by <literal>DirectedAcyclicGraph</literal>s and <literal>Tree</literal>s.</para>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-15" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.mod.IUserNode">
+  <indexterm><primary>Interfaces</primary><secondary>IUserNode</secondary></indexterm>
+  <indexterm><primary>IUserNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.mod.IUserNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IUserNode</refname>
+    <refpurpose>the interface for a module node; please keep in mind that you should use the abstract class AUserNode to implement new modules. there we implemented basic functionality in order to let the simulator work flawlessly together with the module.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IUserNode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IUserComponent</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimNodeCon</type><parameter>simulatorComponent</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/mod/IUserNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>the interface for a module node; please keep in mind that you should use the abstract class AUserNode to implement new modules. there we implemented basic functionality in order to let the simulator work flawlessly together with the module.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-15-4" xreflabel="connect(vidis.data.mod.IUserNode, java.lang.Class&lt;? extends vidis.data.mod.IUserLink&gt;, long)">
+      <title>connect(IUserNode, Class&lt;? extends IUserLink&gt;, long)</title>
+      <indexterm><primary>connect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>connect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <para>Connects this node to the specified node. </para>
+      <para> This function creates a new link instance of the specified class with the specified delay and connects this node with the specified node using the new link instance. </para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-15-5" xreflabel="disconnect(vidis.data.mod.IUserNode)">
+      <title>disconnect(IUserNode)</title>
+      <indexterm><primary>disconnect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>disconnect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+      </methodsynopsis>
+      <para>Disconnects this node from the specified node if a connection exists. </para>
+      <para><emphasis>If no connection exists, this function does nothing.</emphasis></para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-15-3" xreflabel="init()">
+      <title>init()</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Is executed upon the first simulation step. </para>
+      <para>here you can put all possible initialize operations like: </para>
+      <itemizedlist><listitem>
+          <para> send messages</para>
+        </listitem>
+<listitem>
+          <para> check variables from msim file</para>
+        </listitem>
+<listitem>
+          <para> ...</para>
+        </listitem>
+</itemizedlist>
+    </refsect2>
+    <refsect2 xml:id="METHOD-15-1" xreflabel="init(vidis.data.sim.ISimNodeCon)">
+      <title>init(ISimNodeCon)</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimNodeCon</type><parameter>simulatorComponent</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <para>Is the initializing function called by the API. </para>
+      <para><emphasis role="bold">DO NOT CALL THIS FUNCTION ON YOUR OWN!</emphasis></para>
+      <para><emphasis role="bold">DO NOT ANNOTATE THIS METHOD</emphasis></para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-15-2" xreflabel="receive(vidis.data.mod.IUserPacket)">
+      <title>receive(IUserPacket)</title>
+      <indexterm><primary>receive</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>receive</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <para>Is called when a packet arrives. </para>
+      <para>You&apos;ll have to implement this function. </para>
+      <para><emphasis role="bold">DO NO ANNOTATE THIS METHOD</emphasis></para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-235" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.DirectedEdge">
+  <indexterm><primary>Classes</primary><secondary>DirectedEdge</secondary></indexterm>
+  <indexterm><primary>DirectedEdge</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.DirectedEdge</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DirectedEdge</refname>
+    <refpurpose>Represents a directed edge in a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DirectedEdge</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Edge</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DirectedEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>sourceVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>sinkVertex</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-236"><varname>vidis.­util.­graphs.­graph.­DirectedWeightedEdge</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.Edge</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-237-3"><literal>getOppositeVertex</literal></link></member><member><link linkend="METHOD-237-1"><literal>getVertexA</literal></link></member><member><link linkend="METHOD-237-2"><literal>getVertexB</literal></link></member><member><link linkend="CLASS-237"><literal>setString</literal></link></member><member><link linkend="METHOD-237-4"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/DirectedEdge/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Represents a directed edge in a graph.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-235-1" xreflabel="DirectedEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>DirectedEdge(Vertex, Vertex)</title>
+      <indexterm><primary>DirectedEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>DirectedEdge</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DirectedEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>sourceVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>sinkVertex</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an DirectedEdgeImpl object whose origin and destination vertices are specified by the method parameters.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-235-2" xreflabel="getSink()">
+      <title>getSink()</title>
+      <indexterm><primary>getSink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getSink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSink</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the sink Vertex of the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-235-1" xreflabel="getSource()">
+      <title>getSource()</title>
+      <indexterm><primary>getSource</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getSource</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the source Vertex of the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-235-3" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a String representation of the Edge. By default, the format is: fromVertex.toString() + &quot;-&gt;&quot; + toVertex.toString()</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

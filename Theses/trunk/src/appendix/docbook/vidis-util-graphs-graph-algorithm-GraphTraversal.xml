@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-266" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.GraphTraversal">
+  <indexterm><primary>Classes</primary><secondary>GraphTraversal</secondary></indexterm>
+  <indexterm><primary>GraphTraversal</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.GraphTraversal</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class GraphTraversal</refname>
+    <refpurpose>Abstract class for an algorithm implementing graph traversal.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>GraphTraversal</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Static Fields</classsynopsisinfo>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>int</type>
+        <varname>OK</varname>
+        <initializer>1</initializer>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>int</type>
+        <varname>TERMINATEDBYVISITOR</varname>
+        <initializer>-1</initializer>
+      </fieldsynopsis>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>GraphTraversal</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getVisitedMap</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>int</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>List</type><parameter>visited</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-260"><varname>vidis.­util.­graphs.­graph.­algorithm.­BreadthFirstGraphTraversal</varname></link></member><member><link linkend="CLASS-262"><varname>vidis.­util.­graphs.­graph.­algorithm.­DepthFirstGraphTraversal</varname></link></member><member><link linkend="CLASS-263"><varname>vidis.­util.­graphs.­graph.­algorithm.­DepthFirstRecursiveGraphTraversal</varname></link></member><member><link linkend="CLASS-264"><varname>vidis.­util.­graphs.­graph.­algorithm.­DepthFirstSimpleGraphTraversal</varname></link></member><member><link linkend="CLASS-274"><varname>vidis.­util.­graphs.­graph.­algorithm.­TopologicalSorting</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/GraphTraversal/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Abstract class for an algorithm implementing graph traversal. Classes implementing the Graph interface uses the Strategy pattern to allow different implementations of the graph traversal algorithm to be used. Concrete implementations of this class must never modify the Graph itself.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-266-4" xreflabel="getVisitedMap()">
+      <title>getVisitedMap()</title>
+      <indexterm><primary>getVisitedMap</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVisitedMap</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getVisitedMap</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a HashMap that maps each traversed vertex to an Integer object that indicates its position during the traversal.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-266-2" xreflabel="traverse(vidis.util.graphs.graph.Vertex)">
+      <title>traverse(Vertex)</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <para>Abstract traversal method to be implemented by subclasses.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-266-1" xreflabel="traverse(vidis.util.graphs.graph.Vertex, java.util.List, vidis.util.graphs.graph.Visitor)">
+      <title>traverse(Vertex, List, Visitor)</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>int</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>List</type><parameter>visited</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <para>Abstract traversal method to be implemented by subclasses.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-266-3" xreflabel="traverse(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Visitor)">
+      <title>traverse(Vertex, Visitor)</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <para>Abstract traversal method to be implemented by subclasses.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

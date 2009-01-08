@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-137" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.impl.BasicGuiContainer">
+  <indexterm><primary>Classes</primary><secondary>BasicGuiContainer</secondary></indexterm>
+  <indexterm><primary>BasicGuiContainer</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.impl.BasicGuiContainer</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class BasicGuiContainer</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>BasicGuiContainer</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AGuiContainer</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>BasicGuiContainer</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isHighlighted</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isOpaque</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderContainer</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderText</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setColor1</methodname>
+        <methodparam><type>Color</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setColor2</methodname>
+        <methodparam><type>Color</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setHighlighted</methodname>
+        <methodparam><type>boolean</type><parameter>highlighted</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setName</methodname>
+        <methodparam><type>String</type><parameter>name</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setOpaque</methodname>
+        <methodparam><type>boolean</type><parameter>value</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-126"><varname>vidis.­ui.­gui.­Menu</varname></link></member><member><link linkend="CLASS-139"><varname>vidis.­ui.­model.­impl.­Button</varname></link></member><member><link linkend="CLASS-140"><varname>vidis.­ui.­model.­impl.­CheckBox</varname></link></member><member><link linkend="CLASS-142"><varname>vidis.­ui.­model.­impl.­Label</varname></link></member><member><link linkend="CLASS-145"><varname>vidis.­ui.­model.­impl.­NodeField</varname></link></member><member><link linkend="CLASS-147"><varname>vidis.­ui.­model.­impl.­PacketField</varname></link></member><member><link linkend="CLASS-149"><varname>vidis.­ui.­model.­impl.­PropertyPanel</varname></link></member><member><link linkend="CLASS-150"><varname>vidis.­ui.­model.­impl.­TextField</varname></link></member><member><link linkend="CLASS-151"><varname>vidis.­ui.­model.­impl.­TextGuiContainer</varname></link></member><member><link linkend="CLASS-152"><varname>vidis.­ui.­model.­impl.­guielements.­Label</varname></link></member><member><link linkend="CLASS-154"><varname>vidis.­ui.­model.­impl.­guielements.­ObjectGuiElement</varname></link></member><member><link linkend="CLASS-155"><varname>vidis.­ui.­model.­impl.­guielements.­PopupWindow</varname></link></member><member><link linkend="CLASS-158"><varname>vidis.­ui.­model.­impl.­guielements.­scrollpane.­AScrollpane3D</varname></link></member><member><link linkend="CLASS-160"><varname>vidis.­ui.­model.­impl.­guielements.­slider.­ASlider3D</varname></link></member><member><link linkend="CLASS-164"><varname>vidis.­ui.­model.­impl.­guielements.­tree.­TreeElement</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.model.structure.AGuiContainer</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-181"><literal>addChild</literal></link></member><member><link linkend="CLASS-181"><literal>getAbsoluteX</literal></link></member><member><link linkend="CLASS-181"><literal>getAbsoluteY</literal></link></member><member><link linkend="CLASS-181"><literal>getChilds</literal></link></member><member><link linkend="CLASS-181"><literal>getHeight</literal></link></member><member><link linkend="CLASS-181"><literal>getLayout</literal></link></member><member><link linkend="CLASS-181"><literal>getParent</literal></link></member><member><link linkend="CLASS-181"><literal>getWantedHeight</literal></link></member><member><link linkend="CLASS-181"><literal>getWidth</literal></link></member><member><link linkend="CLASS-181"><literal>getX</literal></link></member><member><link linkend="CLASS-181"><literal>getY</literal></link></member><member><link linkend="CLASS-181"><literal>isPointInContainer</literal></link></member><member><link linkend="METHOD-181-2"><literal>isPointWithinRect</literal></link></member><member><link linkend="CLASS-181"><literal>isTextRenderable</literal></link></member><member><link linkend="CLASS-181"><literal>isUseScissorTest</literal></link></member><member><link linkend="METHOD-181-1"><literal>isUseScissorTestNow</literal></link></member><member><link linkend="CLASS-181"><literal>isVisible</literal></link></member><member><link linkend="CLASS-181"><literal>removeAllChilds</literal></link></member><member><link linkend="CLASS-181"><literal>removeChild</literal></link></member><member><link linkend="CLASS-181"><literal>render</literal></link></member><member><link linkend="CLASS-181"><literal>renderBox</literal></link></member><member><link linkend="CLASS-181"><literal>renderContainer</literal></link></member><member><link linkend="CLASS-181"><literal>setBounds</literal></link></member><member><link linkend="CLASS-181"><literal>setHeight</literal></link></member><member><link linkend="CLASS-181"><literal>setLayout</literal></link></member><member><link linkend="CLASS-181"><literal>setParent</literal></link></member><member><link linkend="CLASS-181"><literal>setUseScissorTest</literal></link></member><member><link linkend="CLASS-181"><literal>setVisible</literal></link></member><member><link linkend="CLASS-181"><literal>setWidth</literal></link></member><member><link linkend="CLASS-181"><literal>setX</literal></link></member><member><link linkend="CLASS-181"><literal>setY</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/impl/BasicGuiContainer/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

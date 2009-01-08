@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-181" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.structure.AGuiContainer">
+  <indexterm><primary>Classes</primary><secondary>AGuiContainer</secondary></indexterm>
+  <indexterm><primary>AGuiContainer</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.structure.AGuiContainer</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AGuiContainer</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AGuiContainer</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AEventHandler</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IGuiContainer</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AGuiContainer</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addChild</methodname>
+        <methodparam><type>IGuiContainer</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getAbsoluteX</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getAbsoluteY</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;IGuiContainer&gt;</type>
+        <methodname>getChilds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getHeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ILayout</type>
+        <methodname>getLayout</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IGuiContainer</type>
+        <methodname>getParent</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getWantedHeight</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getWidth</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getX</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getY</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPointInContainer</methodname>
+        <methodparam><type>Point2d</type><parameter>p</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPointWithinRect</methodname>
+        <methodparam><type>Point2d</type><parameter>p</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rX</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rY</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rW</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rH</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isTextRenderable</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isUseScissorTest</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isUseScissorTestNow</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isVisible</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeAllChilds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeChild</methodname>
+        <methodparam><type>IGuiContainer</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>render</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderBox</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+        <methodparam><type>double</type><parameter>z</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>renderContainer</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setBounds</methodname>
+        <methodparam><type>double</type><parameter>x</parameter></methodparam>
+        <methodparam><type>double</type><parameter>y</parameter></methodparam>
+        <methodparam><type>double</type><parameter>height</parameter></methodparam>
+        <methodparam><type>double</type><parameter>width</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setHeight</methodname>
+        <methodparam><type>double</type><parameter>height</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setLayout</methodname>
+        <methodparam><type>ILayout</type><parameter>layout</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setParent</methodname>
+        <methodparam><type>IGuiContainer</type><parameter>c</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setUseScissorTest</methodname>
+        <methodparam><type>boolean</type><parameter>useScissorTest</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setVisible</methodname>
+        <methodparam><type>boolean</type><parameter>visible</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setWidth</methodname>
+        <methodparam><type>double</type><parameter>width</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setX</methodname>
+        <methodparam><type>double</type><parameter>x</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setY</methodname>
+        <methodparam><type>double</type><parameter>y</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-137"><varname>vidis.­ui.­model.­impl.­BasicGuiContainer</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/structure/AGuiContainer/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="getAbsoluteX()">
+      <title>getAbsoluteX()</title>
+      <indexterm><primary>getAbsoluteX</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getAbsoluteX</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getAbsoluteX</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-183-1">getAbsoluteX</link> in interface <link linkend="CLASS-183">IGuiContainer</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-183-1">getAbsoluteX</link></bridgehead>
+      <para>returns x in the roots coordinate system</para>
+    </refsect2>
+    <refsect2 xreflabel="getAbsoluteY()">
+      <title>getAbsoluteY()</title>
+      <indexterm><primary>getAbsoluteY</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getAbsoluteY</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getAbsoluteY</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-183-2">getAbsoluteY</link> in interface <link linkend="CLASS-183">IGuiContainer</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-183-2">getAbsoluteY</link></bridgehead>
+      <para>returns y in the roots coordinate system</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-181-2" xreflabel="isPointWithinRect(Point2d, double, double, double, double)">
+      <title>isPointWithinRect(Point2d, double, double, double, double)</title>
+      <indexterm><primary>isPointWithinRect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isPointWithinRect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPointWithinRect</methodname>
+        <methodparam><type>Point2d</type><parameter>p</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rX</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rY</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rW</parameter></methodparam>
+        <methodparam><type>double</type><parameter>rH</parameter></methodparam>
+      </methodsynopsis>
+      <para>checks whether a given point p is within the specified rect</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-181-1" xreflabel="isUseScissorTestNow()">
+      <title>isUseScissorTestNow()</title>
+      <indexterm><primary>isUseScissorTestNow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isUseScissorTestNow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isUseScissorTestNow</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>is used to determine if this object has gained the scissortest ( also see <literal><link linkend="CLASS-181">vidis.ui.model.structure.AGuiContainer.useScissorTest</link></literal> )</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

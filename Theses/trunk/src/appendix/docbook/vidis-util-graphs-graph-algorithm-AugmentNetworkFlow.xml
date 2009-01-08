@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-258" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.AugmentNetworkFlow">
+  <indexterm><primary>Classes</primary><secondary>AugmentNetworkFlow</secondary></indexterm>
+  <indexterm><primary>AugmentNetworkFlow</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.AugmentNetworkFlow</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AugmentNetworkFlow</refname>
+    <refpurpose>Class that provides a flow on a <literal>Network</literal> and maximizes it by augmentation paths using the algorithm of Edmonds and Karp.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>AugmentNetworkFlow</classname>
+      </ooclass>
+      <ooclass>
+        <classname>NetworkFlow</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AugmentNetworkFlow</methodname>
+        <methodparam><type>Network</type><parameter>network</parameter></methodparam>
+        <exceptionname>NetworkException</exceptionname>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>maximizeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.algorithm.NetworkFlow</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-269-1"><literal>getFlowMap</literal></link></member><member><link linkend="METHOD-269-2"><literal>getTotalFlow</literal></link></member><member><link linkend="METHOD-269-3"><literal>initializeFlow</literal></link></member><member><link linkend="METHOD-269-4"><literal>maximizeFlow</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/AugmentNetworkFlow/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Class that provides a flow on a <literal>Network</literal> and maximizes it by augmentation paths using the algorithm of Edmonds and Karp.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-258-1" xreflabel="AugmentNetworkFlow(vidis.util.graphs.graph.Network)">
+      <title>AugmentNetworkFlow(Network)</title>
+      <indexterm><primary>AugmentNetworkFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>AugmentNetworkFlow</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AugmentNetworkFlow</methodname>
+        <methodparam><type>Network</type><parameter>network</parameter></methodparam>
+        <exceptionname>NetworkException</exceptionname>
+      </constructorsynopsis>
+      <para>Constructor for instances of this class.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-258-1" xreflabel="maximizeFlow()">
+      <title>maximizeFlow()</title>
+      <indexterm><primary>maximizeFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>maximizeFlow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>maximizeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Method for finding a maximum flow in the network. The method uses the algorithm of Edmonds and Karp by iteratively searching augmenting paths.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

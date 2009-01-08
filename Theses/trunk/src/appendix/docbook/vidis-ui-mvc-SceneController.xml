@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-191" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.mvc.SceneController">
+  <indexterm><primary>Classes</primary><secondary>SceneController</secondary></indexterm>
+  <indexterm><primary>SceneController</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.mvc.SceneController</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class SceneController</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>SceneController</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AController</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>SceneController</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>display</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>displayChanged</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+        <methodparam><type>boolean</type><parameter>modeChanged</parameter></methodparam>
+        <methodparam><type>boolean</type><parameter>deviceChanged</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>synchronized</modifier>
+        <type>List&lt;IVisObject&gt;</type>
+        <methodname>getRegisteredObjects</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>handleEvent</methodname>
+        <methodparam><type>IVidisEvent</type><parameter>event</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>reshape</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+        <methodparam><type>int</type><parameter>x</parameter></methodparam>
+        <methodparam><type>int</type><parameter>y</parameter></methodparam>
+        <methodparam><type>int</type><parameter>width</parameter></methodparam>
+        <methodparam><type>int</type><parameter>height</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.ui.mvc.api.AController</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-195"><literal>handleEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/mvc/SceneController/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-191-1" xreflabel="display(GLAutoDrawable)">
+      <title>display(GLAutoDrawable)</title>
+      <indexterm><primary>display</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>display</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>display</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+      </methodsynopsis>
+      <para>display event draws the whole scene</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-191-2" xreflabel="displayChanged(GLAutoDrawable, boolean, boolean)">
+      <title>displayChanged(GLAutoDrawable, boolean, boolean)</title>
+      <indexterm><primary>displayChanged</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>displayChanged</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>displayChanged</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+        <methodparam><type>boolean</type><parameter>modeChanged</parameter></methodparam>
+        <methodparam><type>boolean</type><parameter>deviceChanged</parameter></methodparam>
+      </methodsynopsis>
+      <para>displayChanged event called when displaymode has changed</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-191-3" xreflabel="init(GLAutoDrawable)">
+      <title>init(GLAutoDrawable)</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+      </methodsynopsis>
+      <para>init method called when gl context is created</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-191-4" xreflabel="reshape(GLAutoDrawable, int, int, int, int)">
+      <title>reshape(GLAutoDrawable, int, int, int, int)</title>
+      <indexterm><primary>reshape</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>reshape</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>reshape</methodname>
+        <methodparam><type>GLAutoDrawable</type><parameter>drawable</parameter></methodparam>
+        <methodparam><type>int</type><parameter>x</parameter></methodparam>
+        <methodparam><type>int</type><parameter>y</parameter></methodparam>
+        <methodparam><type>int</type><parameter>width</parameter></methodparam>
+        <methodparam><type>int</type><parameter>height</parameter></methodparam>
+      </methodsynopsis>
+      <para>reshape event</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

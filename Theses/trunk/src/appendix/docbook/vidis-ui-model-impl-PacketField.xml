@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-147" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.impl.PacketField">
+  <indexterm><primary>Classes</primary><secondary>PacketField</secondary></indexterm>
+  <indexterm><primary>PacketField</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.impl.PacketField</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class PacketField</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>PacketField</classname>
+      </ooclass>
+      <ooclass>
+        <classname>BasicGuiContainer</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>PacketField</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Packet</type>
+        <methodname>getPacket</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderContainer</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setPacket</methodname>
+        <methodparam><type>Packet</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>startPacketCapturing</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.ui.model.impl.BasicGuiContainer</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-137"><literal>isHighlighted</literal></link></member><member><link linkend="CLASS-137"><literal>isOpaque</literal></link></member><member><link linkend="CLASS-137"><literal>kill</literal></link></member><member><link linkend="CLASS-137"><literal>renderContainer</literal></link></member><member><link linkend="CLASS-137"><literal>renderText</literal></link></member><member><link linkend="CLASS-137"><literal>setColor1</literal></link></member><member><link linkend="CLASS-137"><literal>setColor2</literal></link></member><member><link linkend="CLASS-137"><literal>setHighlighted</literal></link></member><member><link linkend="CLASS-137"><literal>setName</literal></link></member><member><link linkend="CLASS-137"><literal>setOpaque</literal></link></member><member><link linkend="CLASS-137"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.model.structure.AGuiContainer</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-181"><literal>addChild</literal></link></member><member><link linkend="CLASS-181"><literal>getAbsoluteX</literal></link></member><member><link linkend="CLASS-181"><literal>getAbsoluteY</literal></link></member><member><link linkend="CLASS-181"><literal>getChilds</literal></link></member><member><link linkend="CLASS-181"><literal>getHeight</literal></link></member><member><link linkend="CLASS-181"><literal>getLayout</literal></link></member><member><link linkend="CLASS-181"><literal>getParent</literal></link></member><member><link linkend="CLASS-181"><literal>getWantedHeight</literal></link></member><member><link linkend="CLASS-181"><literal>getWidth</literal></link></member><member><link linkend="CLASS-181"><literal>getX</literal></link></member><member><link linkend="CLASS-181"><literal>getY</literal></link></member><member><link linkend="CLASS-181"><literal>isPointInContainer</literal></link></member><member><link linkend="METHOD-181-2"><literal>isPointWithinRect</literal></link></member><member><link linkend="CLASS-181"><literal>isTextRenderable</literal></link></member><member><link linkend="CLASS-181"><literal>isUseScissorTest</literal></link></member><member><link linkend="METHOD-181-1"><literal>isUseScissorTestNow</literal></link></member><member><link linkend="CLASS-181"><literal>isVisible</literal></link></member><member><link linkend="CLASS-181"><literal>removeAllChilds</literal></link></member><member><link linkend="CLASS-181"><literal>removeChild</literal></link></member><member><link linkend="CLASS-181"><literal>render</literal></link></member><member><link linkend="CLASS-181"><literal>renderBox</literal></link></member><member><link linkend="CLASS-181"><literal>setBounds</literal></link></member><member><link linkend="CLASS-181"><literal>setHeight</literal></link></member><member><link linkend="CLASS-181"><literal>setLayout</literal></link></member><member><link linkend="CLASS-181"><literal>setParent</literal></link></member><member><link linkend="CLASS-181"><literal>setUseScissorTest</literal></link></member><member><link linkend="CLASS-181"><literal>setVisible</literal></link></member><member><link linkend="CLASS-181"><literal>setWidth</literal></link></member><member><link linkend="CLASS-181"><literal>setX</literal></link></member><member><link linkend="CLASS-181"><literal>setY</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/impl/PacketField/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

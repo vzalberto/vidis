@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-47" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.modules.byzantineGenerals.ANode">
+  <indexterm><primary>Classes</primary><secondary>ANode</secondary></indexterm>
+  <indexterm><primary>ANode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.modules.byzantineGenerals.ANode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ANode</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>ANode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserNode</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ANode</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getAttackIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getClashingIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <methodname>getColor</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getRetreatIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getYetUnknownIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sendAttack</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sendRetreat</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-50"><varname>vidis.­modules.­byzantineGenerals.­BadNode</varname></link></member><member><link linkend="CLASS-52"><varname>vidis.­modules.­byzantineGenerals.­DontKnowNode</varname></link></member><member><link linkend="CLASS-53"><varname>vidis.­modules.­byzantineGenerals.­GoodNode</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.data.AUserNode</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-2"><literal>connect</literal></link></member><member><link linkend="CLASS-2"><literal>disconnect</literal></link></member><member><link linkend="CLASS-2"><literal>getVariable</literal></link></member><member><link linkend="CLASS-2"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-2"><literal>init</literal></link></member><member><link linkend="CLASS-2"><literal>interrupt</literal></link></member><member><link linkend="CLASS-2"><literal>sleep</literal></link></member><member><link linkend="CLASS-2"><literal>spawnNewNode</literal></link></member><member><link linkend="CLASS-2"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/modules/byzantineGenerals/ANode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-47-1" xreflabel="getAttackIds()">
+      <title>getAttackIds()</title>
+      <indexterm><primary>getAttackIds</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getAttackIds</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getAttackIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve attacks (where enough votes exist and we decide for attack)</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-47-3" xreflabel="getClashingIds()">
+      <title>getClashingIds()</title>
+      <indexterm><primary>getClashingIds</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getClashingIds</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getClashingIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve clashing ids (where enough votes exist and we CANNOT decide for attack OR retreat)</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-47-2" xreflabel="getRetreatIds()">
+      <title>getRetreatIds()</title>
+      <indexterm><primary>getRetreatIds</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getRetreatIds</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getRetreatIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve retreats (where enough votes exist and we decide for retreat)</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-47-4" xreflabel="getYetUnknownIds()">
+      <title>getYetUnknownIds()</title>
+      <indexterm><primary>getYetUnknownIds</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getYetUnknownIds</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Integer&gt;</type>
+        <methodname>getYetUnknownIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve yet unknown ids (where we have not enough votes to decide something)</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-76" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.sim.Simulator">
+  <indexterm><primary>Classes</primary><secondary>Simulator</secondary></indexterm>
+  <indexterm><primary>Simulator</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.sim.Simulator</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Simulator</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Simulator</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>configDisable3D</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>configEnable3D</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>configIsEnable3D</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>createInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>Simulator</type>
+        <methodname>getInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>isInstantiated</methodname>
+        <void/>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>long</type>
+        <methodname>getLastStepDuration</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>long</type>
+        <methodname>getNow</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Player</type>
+        <methodname>getPlayer</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;AComponent&gt;</type>
+        <methodname>getSimulatorComponents</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>importSimFile</methodname>
+        <methodparam><type>File</type><parameter>file</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>importSimFile</methodname>
+        <methodparam><type>AModuleFile</type><parameter>f</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>registerComponent</methodname>
+        <methodparam><type>AComponent</type><parameter>component</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>reload</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>reset</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>simulateOneStep</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>unregisterObject</methodname>
+        <methodparam><type>AComponent</type><parameter>component</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/sim/Simulator/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-76-2" xreflabel="configDisable3D()">
+      <title>configDisable3D()</title>
+      <indexterm><primary>configDisable3D</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>configDisable3D</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>configDisable3D</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>one of the configuration functions; disable 3d; must be called BEFORE Simulator.createInstance() is called!</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-76-1" xreflabel="configEnable3D()">
+      <title>configEnable3D()</title>
+      <indexterm><primary>configEnable3D</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>configEnable3D</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>configEnable3D</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>one of the configuration functions enable 3d; must be called BEFORE Simulator.createInstance() is called!</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-76-3" xreflabel="createInstance()">
+      <title>createInstance()</title>
+      <indexterm><primary>createInstance</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>createInstance</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>createInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>create the simulator instance; initializes the simulator NOTE: call configuration functions BEFORE this one!</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-76-4" xreflabel="getInstance()">
+      <title>getInstance()</title>
+      <indexterm><primary>getInstance</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getInstance</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <modifier>final</modifier>
+        <type>Simulator</type>
+        <methodname>getInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieves the simulator instance; NOTE: calls Simulator.createInstance() to create the simulator instance</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-261" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.Connectivity">
+  <indexterm><primary>Classes</primary><secondary>Connectivity</secondary></indexterm>
+  <indexterm><primary>Connectivity</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.Connectivity</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Connectivity</refname>
+    <refpurpose>Class that computes the connectivity of a undirected graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Connectivity</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Connectivity</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getConnectivity</methodname>
+        <void/>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/Connectivity/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Class that computes the connectivity of a undirected graph.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-261-1" xreflabel="Connectivity(vidis.util.graphs.graph.Graph)">
+      <title>Connectivity(Graph)</title>
+      <indexterm><primary>Connectivity</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Connectivity</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Connectivity</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Constructor for instances of this class.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-261-1" xreflabel="getConnectivity()">
+      <title>getConnectivity()</title>
+      <indexterm><primary>getConnectivity</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getConnectivity</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getConnectivity</methodname>
+        <void/>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Computes the (node) connectivity number of the considered graph using the Menger algorithm (see Turau, Addison-Wesley 1996).</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

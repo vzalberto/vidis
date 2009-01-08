@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-234" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.DirectedAcyclicGraphImpl">
+  <indexterm><primary>Classes</primary><secondary>DirectedAcyclicGraphImpl</secondary></indexterm>
+  <indexterm><primary>DirectedAcyclicGraphImpl</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.DirectedAcyclicGraphImpl</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DirectedAcyclicGraphImpl</refname>
+    <refpurpose>The DirectedAcyclicGraph class represents a directed acyclic graph (DAG) where there is no cyclic paths for any of its vertices.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DirectedAcyclicGraphImpl</classname>
+      </ooclass>
+      <ooclass>
+        <classname>GraphImpl</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>DirectedAcyclicGraph</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DirectedAcyclicGraphImpl</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Edge</type><parameter>edge</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>fromVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>toVertex</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getRoot</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTopologicalSort</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTopologicalSort</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>topologicalSort</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>topologicalSort</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.GraphImpl</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-243-6"><literal>add</literal></link></member><member><link linkend="METHOD-243-10"><literal>addEdge</literal></link></member><member><link linkend="METHOD-243-3"><literal>cloneVertices</literal></link></member><member><link linkend="METHOD-243-8"><literal>createEdge</literal></link></member><member><link linkend="METHOD-243-20"><literal>getAdjacentVertices</literal></link></member><member><link linkend="METHOD-243-5"><literal>getAllEdges</literal></link></member><member><link linkend="METHOD-243-21"><literal>getDegree</literal></link></member><member><link linkend="METHOD-243-4"><literal>getEdges</literal></link></member><member><link linkend="METHOD-243-17"><literal>getIncomingAdjacentVertices</literal></link></member><member><link linkend="METHOD-243-18"><literal>getOutgoingAdjacentVertices</literal></link></member><member><link linkend="METHOD-243-14"><literal>getVertices</literal></link></member><member><link linkend="METHOD-243-13"><literal>getVerticesCount</literal></link></member><member><link linkend="METHOD-243-2"><literal>getVerticesIterator</literal></link></member><member><link linkend="METHOD-243-7"><literal>haveCommonEdge</literal></link></member><member><link linkend="METHOD-243-1"><literal>isDirected</literal></link></member><member><link linkend="METHOD-243-24"><literal>isPath</literal></link></member><member><link linkend="CLASS-243"><literal>remove</literal></link></member><member><link linkend="METHOD-243-11"><literal>removeEdge</literal></link></member><member><link linkend="METHOD-243-12"><literal>removeEdges</literal></link></member><member><link linkend="METHOD-243-23"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/DirectedAcyclicGraphImpl/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>The DirectedAcyclicGraph class represents a directed acyclic graph (DAG) where there is no cyclic paths for any of its vertices. A cylic path is a path from a vertex back to itself by following the direction of the edges.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-234-1" xreflabel="DirectedAcyclicGraphImpl()">
+      <title>DirectedAcyclicGraphImpl()</title>
+      <indexterm><primary>DirectedAcyclicGraphImpl</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>DirectedAcyclicGraphImpl</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DirectedAcyclicGraphImpl</methodname>
+        <void/>
+      </constructorsynopsis>
+      <para>Creates a DirectedAcyclicGraph object.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-234-2" xreflabel="addEdge(vidis.util.graphs.graph.Edge)">
+      <title>addEdge(Edge)</title>
+      <indexterm><primary>addEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Edge</type><parameter>edge</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>Adds an Edge into the DirectedAcyclicGraph. This will only add the Edge if there is currently no path from the Vertex toVertex to Vertex fromVertex of the edge being added. If there is, there will be a cycle thereby violating the property of a directed acyclic graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-234-1" xreflabel="addEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>addEdge(Vertex, Vertex)</title>
+      <indexterm><primary>addEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>fromVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>toVertex</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>Adds an Edge into the DirectedAcyclicGraph. This will only add the Edge if there is currently no path from the Vertex toVertex to Vertex fromVertex. If there is, there will be a cycle thereby violating the property of a directed acyclic graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-234-3" xreflabel="getRoot()">
+      <title>getRoot()</title>
+      <indexterm><primary>getRoot</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getRoot</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getRoot</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-233-1">getRoot</link> in interface <link linkend="CLASS-233">DirectedAcyclicGraph</link></para>
+      <para>Returns a List of vertices that is not depended on by other vertices. That is, a List of vertices where there are no Edges pointing to it.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-234-5" xreflabel="reverseTopologicalSort()">
+      <title>reverseTopologicalSort()</title>
+      <indexterm><primary>reverseTopologicalSort</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>reverseTopologicalSort</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTopologicalSort</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-233-3">reverseTopologicalSort</link> in interface <link linkend="CLASS-233">DirectedAcyclicGraph</link></para>
+      <para>Perform a reverse topological sort of the entire directed acyclic graph. Note that the sequence of vertices in the return List will not distinguish between connected components of the graph. This method is not part of the GraphTraversal abstract class, but is added here for convenience.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-234-7" xreflabel="reverseTopologicalSort(vidis.util.graphs.graph.Vertex)">
+      <title>reverseTopologicalSort(Vertex)</title>
+      <indexterm><primary>reverseTopologicalSort</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>reverseTopologicalSort</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTopologicalSort</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-233-5">reverseTopologicalSort</link> in interface <link linkend="CLASS-233">DirectedAcyclicGraph</link></para>
+      <para>Perform a reverse topological sort of the connected set of a directed acyclic graph to which Vertex startat belongs, starting at Vertex startat.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-234-4" xreflabel="topologicalSort()">
+      <title>topologicalSort()</title>
+      <indexterm><primary>topologicalSort</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>topologicalSort</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>topologicalSort</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-233-2">topologicalSort</link> in interface <link linkend="CLASS-233">DirectedAcyclicGraph</link></para>
+      <para>Perform a topological sort of the entire directed acyclic graph. Note that the sequence of vertices in the return List will not distinguish between connected components of the graph. This method is not part of the GraphTraversal abstract class, but is added here for convenience.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-234-6" xreflabel="topologicalSort(vidis.util.graphs.graph.Vertex)">
+      <title>topologicalSort(Vertex)</title>
+      <indexterm><primary>topologicalSort</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>topologicalSort</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>topologicalSort</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-233-4">topologicalSort</link> in interface <link linkend="CLASS-233">DirectedAcyclicGraph</link></para>
+      <para>Perform a topological sort of the connected set of a directed acyclic graph to which Vertex startat belongs, starting at Vertex startat.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

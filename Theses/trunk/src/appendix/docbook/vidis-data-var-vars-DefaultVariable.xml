@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-32" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.var.vars.DefaultVariable">
+  <indexterm><primary>Classes</primary><secondary>DefaultVariable</secondary></indexterm>
+  <indexterm><primary>DefaultVariable</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.var.vars.DefaultVariable</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DefaultVariable</refname>
+    <refpurpose>a default variable implementation</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DefaultVariable</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AVariable</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DefaultVariable</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>value</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getData</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Class&lt;?&gt;</type>
+        <methodname>getDataType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Class&lt;? extends AVariable&gt;</type>
+        <methodname>getVariableType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>update</methodname>
+        <methodparam><type>Object</type><parameter>data</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.var.AVariable</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-26"><literal>addVariableChangeListener</literal></link></member><member><link linkend="CLASS-26"><literal>getData</literal></link></member><member><link linkend="CLASS-26"><literal>getDataType</literal></link></member><member><link linkend="METHOD-26-1"><literal>getIdentifier</literal></link></member><member><link linkend="CLASS-26"><literal>getIdentifierWithoutNamespace</literal></link></member><member><link linkend="CLASS-26"><literal>getNameSpace</literal></link></member><member><link linkend="CLASS-26"><literal>getNamespace</literal></link></member><member><link linkend="CLASS-26"><literal>getVariableChangeListeners</literal></link></member><member><link linkend="CLASS-26"><literal>getVariableType</literal></link></member><member><link linkend="CLASS-26"><literal>removeVariableChangeListener</literal></link></member><member><link linkend="METHOD-26-2"><literal>update</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/var/vars/DefaultVariable/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>a default variable implementation</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-32-1" xreflabel="DefaultVariable(java.lang.String, java.lang.Object)">
+      <title>DefaultVariable(String, Object)</title>
+      <indexterm><primary>DefaultVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>DefaultVariable</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DefaultVariable</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>value</parameter></methodparam>
+      </constructorsynopsis>
+      <para>the public constructor of this variable</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-32-2" xreflabel="getData()">
+      <title>getData()</title>
+      <indexterm><primary>getData</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getData</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getData</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the data stored in this variable</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-32-1" xreflabel="getDataType()">
+      <title>getDataType()</title>
+      <indexterm><primary>getDataType</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDataType</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Class&lt;?&gt;</type>
+        <methodname>getDataType</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the class type of the data stored in this variable</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-32-4" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>a common to string method</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-32-3" xreflabel="update(java.lang.Object)">
+      <title>update(Object)</title>
+      <indexterm><primary>update</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>update</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>update</methodname>
+        <methodparam><type>Object</type><parameter>data</parameter></methodparam>
+      </methodsynopsis>
+      <para>update variable data; SHOULD BE DONE ALWAYS IN FAVOR OF CREATING NEW VARIABLE!</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

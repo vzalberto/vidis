@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-268" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.MinSpanTreeKruskalAlgorithm">
+  <indexterm><primary>Classes</primary><secondary>MinSpanTreeKruskalAlgorithm</secondary></indexterm>
+  <indexterm><primary>MinSpanTreeKruskalAlgorithm</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.MinSpanTreeKruskalAlgorithm</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class MinSpanTreeKruskalAlgorithm</refname>
+    <refpurpose>Kruskal&apos;s algorithm for determining a minimum spanning tree of a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>MinSpanTreeKruskalAlgorithm</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>MinSpanTreeKruskalAlgorithm</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>minimumSpanningTree</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/MinSpanTreeKruskalAlgorithm/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Kruskal&apos;s algorithm for determining a minimum spanning tree of a graph.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-268-1" xreflabel="MinSpanTreeKruskalAlgorithm(vidis.util.graphs.graph.WeightedGraph)">
+      <title>MinSpanTreeKruskalAlgorithm(WeightedGraph)</title>
+      <indexterm><primary>MinSpanTreeKruskalAlgorithm</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>MinSpanTreeKruskalAlgorithm</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>MinSpanTreeKruskalAlgorithm</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an instance of MinimumSpanningTreeKruskalAlgorithm</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-268-1" xreflabel="minimumSpanningTree()">
+      <title>minimumSpanningTree()</title>
+      <indexterm><primary>minimumSpanningTree</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>minimumSpanningTree</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>minimumSpanningTree</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Determine the minimum spanning tree of a weighted graph using Kruskal&apos;s method.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

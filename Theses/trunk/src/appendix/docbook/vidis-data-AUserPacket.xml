@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-3" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.AUserPacket">
+  <indexterm><primary>Classes</primary><secondary>AUserPacket</secondary></indexterm>
+  <indexterm><primary>AUserPacket</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.AUserPacket</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AUserPacket</refname>
+    <refpurpose>abstract user packet represents a packet by a user; module writers should use this class to write their own packet</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AUserPacket</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserComponent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IUserPacket</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AUserPacket</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserLink</type>
+        <methodname>getLinkToSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>IUserNode</type>
+        <methodname>getSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>AVariable</type>
+        <methodname>getVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimPacketCon</type><parameter>simulatorComponent</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-40"><varname>vidis.­modules.­bullyElectionAlgorithm_v2.­ABullyPacket</varname></link></member><member><link linkend="CLASS-48"><varname>vidis.­modules.­byzantineGenerals.­APacket</varname></link></member><member><link linkend="CLASS-57"><varname>vidis.­modules.­echoAlgorithm.­EchoPacket</varname></link></member><member><link linkend="CLASS-58"><varname>vidis.­modules.­echoAlgorithm.­ExplorePacket</varname></link></member><member><link linkend="CLASS-61"><varname>vidis.­modules.­flooding.­FloodPacket</varname></link></member><member><link linkend="CLASS-62"><varname>vidis.­modules.­mstAlgorithm.­AMSTPacket</varname></link></member><member><link linkend="CLASS-73"><varname>vidis.­modules.­vectorClockAlgorithm.­VectorClockAlgorithmPacket</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/AUserPacket/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>abstract user packet represents a packet by a user; module writers should use this class to write their own packet</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="getLinkToSource()">
+      <title>getLinkToSource()</title>
+      <indexterm><primary>getLinkToSource</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLinkToSource</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserLink</type>
+        <methodname>getLinkToSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-16-3">getLinkToSource</link> in interface <link linkend="CLASS-16">IUserPacket</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-16-3">getLinkToSource</link></bridgehead>
+      <para>Retrieves the link to the source node of this packet.</para>
+    </refsect2>
+    <refsect2 xreflabel="getSource()">
+      <title>getSource()</title>
+      <indexterm><primary>getSource</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getSource</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>IUserNode</type>
+        <methodname>getSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-16-2">getSource</link> in interface <link linkend="CLASS-16">IUserPacket</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-16-2">getSource</link></bridgehead>
+      <para>Retrieves the source node of this packet.</para>
+    </refsect2>
+    <refsect2 xreflabel="init(vidis.data.sim.ISimPacketCon)">
+      <title>init(ISimPacketCon)</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimPacketCon</type><parameter>simulatorComponent</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-16-1">init</link> in interface <link linkend="CLASS-16">IUserPacket</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-16-1">init</link></bridgehead>
+      <para>Is called by the API during initialization. </para>
+      <para><emphasis role="bold">DO NOT CALL THIS FUNCTION ON YOUR OWN!</emphasis></para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-143" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.impl.Link">
+  <indexterm><primary>Classes</primary><secondary>Link</secondary></indexterm>
+  <indexterm><primary>Link</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.impl.Link</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Link</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Link</classname>
+      </ooclass>
+      <ooclass>
+        <classname>ASimObject</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Link</methodname>
+        <methodparam><type>IVariableContainer</type><parameter>c</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>setupShaderProgram</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>void</type>
+        <methodname>useShaderProgram</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addPacket</methodname>
+        <methodparam><type>Packet</type><parameter>p</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>delPacket</methodname>
+        <methodparam><type>IVisObject</type><parameter>p</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getHitRadius</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>onMouseIn</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>onMouseOut</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>render</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderObject</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderObjectText</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>renderText</methodname>
+        <methodparam><type>GL</type><parameter>gl</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.ui.model.structure.ASimObject</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-182"><literal>getColor1</literal></link></member><member><link linkend="CLASS-182"><literal>getColor2</literal></link></member><member><link linkend="CLASS-182"><literal>getHitRadius</literal></link></member><member><link linkend="CLASS-182"><literal>getOnScreenLabel</literal></link></member><member><link linkend="CLASS-182"><literal>getPosition</literal></link></member><member><link linkend="CLASS-182"><literal>getVariableContainer</literal></link></member><member><link linkend="CLASS-182"><literal>isHighlighted</literal></link></member><member><link linkend="CLASS-182"><literal>isTextRenderable</literal></link></member><member><link linkend="METHOD-182-1"><literal>onClick</literal></link></member><member><link linkend="CLASS-182"><literal>onMouseIn</literal></link></member><member><link linkend="CLASS-182"><literal>onMouseOut</literal></link></member><member><link linkend="CLASS-182"><literal>render</literal></link></member><member><link linkend="CLASS-182"><literal>renderObject</literal></link></member><member><link linkend="CLASS-182"><literal>renderObjectText</literal></link></member><member><link linkend="CLASS-182"><literal>renderText</literal></link></member><member><link linkend="CLASS-182"><literal>setColor1</literal></link></member><member><link linkend="CLASS-182"><literal>setColor2</literal></link></member><member><link linkend="CLASS-182"><literal>setColors</literal></link></member><member><link linkend="CLASS-182"><literal>setHighlighted</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/impl/Link/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-1" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.AUserLink">
+  <indexterm><primary>Classes</primary><secondary>AUserLink</secondary></indexterm>
+  <indexterm><primary>AUserLink</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.AUserLink</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AUserLink</refname>
+    <refpurpose>abstract user link represents a link by a user; module writers should use this class to write their own link</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AUserLink</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserComponent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IUserLink</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AUserLink</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>dropPacketOnLink</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>dropPacketsOnLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>long</type>
+        <methodname>getDelay</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>IUserNode</type>
+        <methodname>getOtherNode</methodname>
+        <methodparam><type>IUserNode</type><parameter>me</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>List&lt;IUserPacket&gt;</type>
+        <methodname>getPacketsOnLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>AVariable</type>
+        <methodname>getVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimLinkCon</type><parameter>c</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-10"><varname>vidis.­data.­commonComponents.­DefaultLink</varname></link></member><member><link linkend="CLASS-42"><varname>vidis.­modules.­bullyElectionAlgorithm_v2.­DefaultLink</varname></link></member><member><link linkend="CLASS-51"><varname>vidis.­modules.­byzantineGenerals.­DefaultLink</varname></link></member><member><link linkend="CLASS-55"><varname>vidis.­modules.­echoAlgorithm.­DefaultLink</varname></link></member><member><link linkend="CLASS-59"><varname>vidis.­modules.­flooding.­DefaultLink</varname></link></member><member><link linkend="CLASS-63"><varname>vidis.­modules.­mstAlgorithm.­DefaultLink</varname></link></member><member><link linkend="CLASS-71"><varname>vidis.­modules.­vectorClockAlgorithm.­DefaultLink</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/AUserLink/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>abstract user link represents a link by a user; module writers should use this class to write their own link</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="disconnect()">
+      <title>disconnect()</title>
+      <indexterm><primary>disconnect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>disconnect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-14-4">disconnect</link> in interface <link linkend="CLASS-14">IUserLink</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-14-4">disconnect</link></bridgehead>
+      <para>Disconnects both nodes attached to this link and destroys this link.</para>
+    </refsect2>
+    <refsect2 xreflabel="getDelay()">
+      <title>getDelay()</title>
+      <indexterm><primary>getDelay</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDelay</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>long</type>
+        <methodname>getDelay</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-14-3">getDelay</link> in interface <link linkend="CLASS-14">IUserLink</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-14-3">getDelay</link></bridgehead>
+      <para>Retrieve delay of this link.</para>
+    </refsect2>
+    <refsect2 xreflabel="getOtherNode(vidis.data.mod.IUserNode)">
+      <title>getOtherNode(IUserNode)</title>
+      <indexterm><primary>getOtherNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getOtherNode</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>IUserNode</type>
+        <methodname>getOtherNode</methodname>
+        <methodparam><type>IUserNode</type><parameter>me</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-14-2">getOtherNode</link> in interface <link linkend="CLASS-14">IUserLink</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-14-2">getOtherNode</link></bridgehead>
+      <para>Retrieve the node connected to this link.</para>
+    </refsect2>
+    <refsect2 xreflabel="init(vidis.data.sim.ISimLinkCon)">
+      <title>init(ISimLinkCon)</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimLinkCon</type><parameter>c</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-14-1">init</link> in interface <link linkend="CLASS-14">IUserLink</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-14-1">init</link></bridgehead>
+      <para>This one is the initializing function called by the API. </para>
+      <para><emphasis role="bold">DO NOT CALL THIS FUNCTION ON YOUR OWN!</emphasis></para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

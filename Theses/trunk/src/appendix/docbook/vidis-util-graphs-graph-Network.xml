@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-246" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.Network">
+  <indexterm><primary>Interfaces</primary><secondary>Network</secondary></indexterm>
+  <indexterm><primary>Network</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.Network</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface Network</refname>
+    <refpurpose>The superinterface of all <literal>Network</literal>s.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>Network</classname>
+      </ooclass>
+      <ooclass>
+        <classname>WeightedGraph</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedEdge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+        <methodparam><type>double</type><parameter>capacity</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setSink</methodname>
+        <methodparam><type>Vertex</type><parameter>sinkVertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setSource</methodname>
+        <methodparam><type>Vertex</type><parameter>sourceVertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/Network/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>The superinterface of all <literal>Network</literal>s. This interface abstracts a network as a directed, weighted graph with a source and a sink vertex.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-246-5" xreflabel="addEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex, double)">
+      <title>addEdge(Vertex, Vertex, double)</title>
+      <indexterm><primary>addEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedEdge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+        <methodparam><type>double</type><parameter>capacity</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-256-1">addEdge</link> in interface <link linkend="CLASS-256">WeightedGraph</link></para>
+      <para>Convenience method to add a WeightedEdge with a specified (non-negative) network capacity into the <literal>WeightedGraph</literal>. The default addEdge( v1, v2 ) will add a WeightedEdge with zero capacity, after which you can call setWeight() to specify the capacity.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-246-4" xreflabel="getSink()">
+      <title>getSink()</title>
+      <indexterm><primary>getSink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getSink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSink</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the current sink of the <literal>Network</literal>. It is possible that this method will return null if the <literal>Network</literal> is empty.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-246-3" xreflabel="getSource()">
+      <title>getSource()</title>
+      <indexterm><primary>getSource</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getSource</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getSource</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the current source of the <literal>Network</literal>. It is possible that this method will return null if the <literal>Network</literal> is empty.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-246-2" xreflabel="setSink(vidis.util.graphs.graph.Vertex)">
+      <title>setSink(Vertex)</title>
+      <indexterm><primary>setSink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setSink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setSink</methodname>
+        <methodparam><type>Vertex</type><parameter>sinkVertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Sets the sink vertex of the <literal>Network</literal>. The <literal>Vertex</literal> specified must already be in the <literal>Network</literal>. Otherwise, a <literal>NoSuchVertexException</literal> is returned.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-246-1" xreflabel="setSource(vidis.util.graphs.graph.Vertex)">
+      <title>setSource(Vertex)</title>
+      <indexterm><primary>setSource</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setSource</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setSource</methodname>
+        <methodparam><type>Vertex</type><parameter>sourceVertex</parameter></methodparam>
+        <exceptionname>GraphException</exceptionname>
+      </methodsynopsis>
+      <para>Sets the source vertex of the <literal>Network</literal>. The <literal>Vertex</literal> specified must already be in the <literal>Network</literal>. Otherwise, a <literal>NoSuchVertexException</literal> is returned.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

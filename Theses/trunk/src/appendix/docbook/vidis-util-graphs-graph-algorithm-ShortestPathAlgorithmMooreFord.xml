@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-273" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.ShortestPathAlgorithmMooreFord">
+  <indexterm><primary>Classes</primary><secondary>ShortestPathAlgorithmMooreFord</secondary></indexterm>
+  <indexterm><primary>ShortestPathAlgorithmMooreFord</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.ShortestPathAlgorithmMooreFord</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ShortestPathAlgorithmMooreFord</refname>
+    <refpurpose>A concrete implementation of ShortestPathAlgorithm using the method of E.F.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>ShortestPathAlgorithmMooreFord</classname>
+      </ooclass>
+      <ooclass>
+        <classname>ShortestPathAlgorithm</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ShortestPathAlgorithmMooreFord</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getLongestDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.algorithm.ShortestPathAlgorithm</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-271-4"><literal>getDistance</literal></link></member><member><link linkend="METHOD-271-5"><literal>getDistanceInTree</literal></link></member><member><link linkend="METHOD-271-6"><literal>getLongestDistance</literal></link></member><member><link linkend="METHOD-271-7"><literal>getLongestDistanceInTree</literal></link></member><member><link linkend="METHOD-271-8"><literal>getRoutingTable</literal></link></member><member><link linkend="METHOD-271-3"><literal>getShortestPath</literal></link></member><member><link linkend="METHOD-271-2"><literal>shortestPath</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/ShortestPathAlgorithmMooreFord/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A concrete implementation of ShortestPathAlgorithm using the method of E.F. Moore and L.R. Ford. Note that the Moore-Ford method can only be applied to graphs without a cycle that has a negative length.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-273-1" xreflabel="ShortestPathAlgorithmMooreFord(vidis.util.graphs.graph.WeightedGraph)">
+      <title>ShortestPathAlgorithmMooreFord(WeightedGraph)</title>
+      <indexterm><primary>ShortestPathAlgorithmMooreFord</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>ShortestPathAlgorithmMooreFord</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ShortestPathAlgorithmMooreFord</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an instance of ShortestPathAlgorithmMooreFord.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-273-2" xreflabel="getDistance(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>getDistance(Vertex, Vertex)</title>
+      <indexterm><primary>getDistance</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDistance</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para>Compute the distance between two vertices in the shortest path spanning tree.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-273-3" xreflabel="getLongestDistance(vidis.util.graphs.graph.Vertex)">
+      <title>getLongestDistance(Vertex)</title>
+      <indexterm><primary>getLongestDistance</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLongestDistance</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getLongestDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+      </methodsynopsis>
+      <para>Method that computes the longest distance of any vertex from the start vertex of the shortest path spanning tree.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-273-1" xreflabel="shortestPath()">
+      <title>shortestPath()</title>
+      <indexterm><primary>shortestPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>shortestPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Determines the shortest path from a given vertex to all other vertices that are in the same connected set as the given vertex in the weighted graph using the algorithm of Moore and Ford.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

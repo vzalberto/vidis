@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-256" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.WeightedGraph">
+  <indexterm><primary>Interfaces</primary><secondary>WeightedGraph</secondary></indexterm>
+  <indexterm><primary>WeightedGraph</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.WeightedGraph</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface WeightedGraph</refname>
+    <refpurpose>A interface for a Graph where all edges have a specified weight.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>WeightedGraph</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Graph</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedEdge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+        <methodparam><type>double</type><parameter>weight</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getClosest</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/WeightedGraph/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A interface for a Graph where all edges have a specified weight.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-256-1" xreflabel="addEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex, double)">
+      <title>addEdge(Vertex, Vertex, double)</title>
+      <indexterm><primary>addEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedEdge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+        <methodparam><type>double</type><parameter>weight</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>Convenience method to add a WeightedEdge with a specified weight into the WeightedGraph. The default addEdge( v1, v2 ) will add a WeightedEdge with zero weight, after which you can call setWeight() to specify the weight.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-256-2" xreflabel="getClosest(vidis.util.graphs.graph.Vertex)">
+      <title>getClosest(Vertex)</title>
+      <indexterm><primary>getClosest</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getClosest</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getClosest</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para>Determines the Vertex that is &apos;closest&apos; to the Vertex specified. The definition of the closest vertex in this context is a vertex that is directly adjacent to Vertex v where the edge has the least weight.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

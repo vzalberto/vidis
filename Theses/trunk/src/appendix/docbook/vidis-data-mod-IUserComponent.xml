@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-13" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.mod.IUserComponent">
+  <indexterm><primary>Interfaces</primary><secondary>IUserComponent</secondary></indexterm>
+  <indexterm><primary>IUserComponent</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.mod.IUserComponent</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IUserComponent</refname>
+    <refpurpose>Basic module component interface that all user implemented modules must implement.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IUserComponent</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+        <exceptionname>NullPointerException</exceptionname>
+        <exceptionname>ClassCastException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/mod/IUserComponent/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Basic module component interface that all user implemented modules must implement. </para>
+    <para> The function <literal><link linkend="METHOD-13-3">vidis.data.mod.IUserComponent.execute</link></literal> is called by the simulator at each simulation step. </para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-13-3" xreflabel="execute()">
+      <title>execute()</title>
+      <indexterm><primary>execute</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>execute</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Is executed on each simulation step. </para>
+      <itemizedlist><listitem>
+          <para> Hint: it is impossible to tell which of the components executes first!</para>
+        </listitem>
+<listitem>
+          <para> Hint: do NOT use Thread.sleep() or something like that - it will only hang the simulator</para>
+        </listitem>
+<listitem>
+          <para> Hint: use built-in sleep() and interrupt() functions!</para>
+        </listitem>
+</itemizedlist>
+    </refsect2>
+    <refsect2 xml:id="METHOD-13-1" xreflabel="getVariable(java.lang.String)">
+      <title>getVariable(String)</title>
+      <indexterm><primary>getVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+        <exceptionname>NullPointerException</exceptionname>
+        <exceptionname>ClassCastException</exceptionname>
+      </methodsynopsis>
+      <para>Retrieves a user-scope set variable from the Simulator. </para>
+      <para><emphasis>Hint: If you specified a variable in the .msim configuration file you will retrieve it here as a String</emphasis></para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-13-2" xreflabel="hasVariable(java.lang.String)">
+      <title>hasVariable(String)</title>
+      <indexterm><primary>hasVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>hasVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <para>Checks if a variable exists in the user-scope.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-13-5" xreflabel="interrupt()">
+      <title>interrupt()</title>
+      <indexterm><primary>interrupt</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>interrupt</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Interrupts a previously called sleep of this component. </para>
+      <para><emphasis> Hint: if this component does not sleep, no action is done. </emphasis></para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-13-4" xreflabel="sleep(int)">
+      <title>sleep(int)</title>
+      <indexterm><primary>sleep</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>sleep</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <para>Causes this user component to sleep for some execution steps.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

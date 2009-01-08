@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-262" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.DepthFirstGraphTraversal">
+  <indexterm><primary>Classes</primary><secondary>DepthFirstGraphTraversal</secondary></indexterm>
+  <indexterm><primary>DepthFirstGraphTraversal</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.DepthFirstGraphTraversal</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class DepthFirstGraphTraversal</refname>
+    <refpurpose>A concrete subclass of GraphTraversal that uses depth-first search in traversing a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>DepthFirstGraphTraversal</classname>
+      </ooclass>
+      <ooclass>
+        <classname>GraphTraversal</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DepthFirstGraphTraversal</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>List</type><parameter>visited</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.algorithm.GraphTraversal</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-266-4"><literal>getVisitedMap</literal></link></member><member><link linkend="METHOD-266-2"><literal>traverse</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para><para><emphasis role="bold">Fields inherited from vidis.util.graphs.graph.algorithm.GraphTraversal</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-266"><literal>OK</literal></link></member><member><link linkend="CLASS-266"><literal>TERMINATEDBYVISITOR</literal></link></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/DepthFirstGraphTraversal/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A concrete subclass of GraphTraversal that uses depth-first search in traversing a graph. Note that the traverse() method will only traverse the connected set to which the Vertex the traversal will start at belongs.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-262-1" xreflabel="DepthFirstGraphTraversal(vidis.util.graphs.graph.Graph)">
+      <title>DepthFirstGraphTraversal(Graph)</title>
+      <indexterm><primary>DepthFirstGraphTraversal</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>DepthFirstGraphTraversal</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>DepthFirstGraphTraversal</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates a DepthFirstGraphTraversal object.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

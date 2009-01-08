@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-7" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.annotation.Display">
+  <indexterm><primary>Annotations</primary><secondary>Display</secondary></indexterm>
+  <indexterm><primary>Display</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.annotation.Display</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Annotation Type Display</refname>
+    <refpurpose>This annotation determines where a variable should be displayed PLEASE NOTE: THIS CLASS IS DEPRECATED AND SHOULD NO MORE USED!</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier role="annotation">@Retention(value=java.lang.annotation.RetentionPolicy.RUNTIME)</modifier>
+        <modifier role="annotation">@Target(value={java.lang.annotation.ElementType.METHOD, java.lang.annotation.ElementType.FIELD})</modifier>
+        <modifier>public</modifier>
+        <modifier>@interface</modifier>
+        <classname>Display</classname>
+      </ooclass>
+      <fieldsynopsis language="java">
+        <modifier role="annotation">@Deprecated</modifier>
+        <modifier>public</modifier>
+        <type>DisplayType</type>
+        <varname>type</varname>
+      </fieldsynopsis>
+      <fieldsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <varname>name</varname>
+      </fieldsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/annotation/Display/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>This annotation determines where a variable should be displayed PLEASE NOTE: THIS CLASS IS DEPRECATED AND SHOULD NO MORE USED! IT WILL BE REMOVED SOON! a so a schas</para>
+  </refsect1>
+</refentry>
+
+

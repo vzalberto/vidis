@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-22" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.ISimPacketCon">
+  <indexterm><primary>Interfaces</primary><secondary>ISimPacketCon</secondary></indexterm>
+  <indexterm><primary>ISimPacketCon</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.ISimPacketCon</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface ISimPacketCon</refname>
+    <refpurpose>this interface defines the functions, that a user module packet should implement</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>ISimPacketCon</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IAComponentCon</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getFrom</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserLink</type>
+        <methodname>getLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getTo</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/ISimPacketCon/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this interface defines the functions, that a user module packet should implement</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-22-1" xreflabel="getFrom()">
+      <title>getFrom()</title>
+      <indexterm><primary>getFrom</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getFrom</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getFrom</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve who sent this packet</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-22-3" xreflabel="getLink()">
+      <title>getLink()</title>
+      <indexterm><primary>getLink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserLink</type>
+        <methodname>getLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the user link this packet is onto</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-22-2" xreflabel="getTo()">
+      <title>getTo()</title>
+      <indexterm><primary>getTo</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getTo</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getTo</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve to who this packet is destined</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

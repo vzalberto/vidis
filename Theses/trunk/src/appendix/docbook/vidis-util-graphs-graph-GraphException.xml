@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-242" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.GraphException">
+  <indexterm><primary>Exceptions</primary><secondary>GraphException</secondary></indexterm>
+  <indexterm><primary>GraphException</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.GraphException</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Exception GraphException</refname>
+    <refpurpose>Exception superclass thrown from methods of graphs.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>GraphException</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Exception</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>GraphException</methodname>
+        <void/>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>GraphException</methodname>
+        <methodparam><type>String</type><parameter>msg</parameter></methodparam>
+      </constructorsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-232"><varname>vidis.­util.­graphs.­graph.­CycleException</varname></link></member><member><link linkend="CLASS-238"><varname>vidis.­util.­graphs.­graph.­EmptyTreeException</varname></link></member><member><link linkend="CLASS-244"><varname>vidis.­util.­graphs.­graph.­IllegalTreeException</varname></link></member><member><link linkend="CLASS-245"><varname>vidis.­util.­graphs.­graph.­NegativeCapacityException</varname></link></member><member><link linkend="CLASS-247"><varname>vidis.­util.­graphs.­graph.­NetworkException</varname></link></member><member><link linkend="CLASS-249"><varname>vidis.­util.­graphs.­graph.­NoSuchVertexException</varname></link></member><member><link linkend="CLASS-270"><varname>vidis.­util.­graphs.­graph.­algorithm.­NotEnoughColorsException</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Throwable</emphasis>: <simplelist type="inline"><member><varname>fillInStackTrace</varname></member><member><varname>getCause</varname></member><member><varname>getLocalizedMessage</varname></member><member><varname>getMessage</varname></member><member><varname>getStackTrace</varname></member><member><varname>initCause</varname></member><member><varname>printStackTrace</varname></member><member><varname>setStackTrace</varname></member><member><varname>toString</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/GraphException/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Exception superclass thrown from methods of graphs.</para>
+  </refsect1>
+</refentry>
+
+

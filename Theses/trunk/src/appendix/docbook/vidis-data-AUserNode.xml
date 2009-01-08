@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-2" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.AUserNode">
+  <indexterm><primary>Classes</primary><secondary>AUserNode</secondary></indexterm>
+  <indexterm><primary>AUserNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.AUserNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AUserNode</refname>
+    <refpurpose>abstract user node represents a node by a user; module writers should use this class to write their own node</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AUserNode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserComponent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IUserNode</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AUserNode</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>AVariable</type>
+        <methodname>getVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimNodeCon</type><parameter>c</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>IUserNode</type>
+        <methodname>spawnNewNode</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-41"><varname>vidis.­modules.­bullyElectionAlgorithm_v2.­BullyElectionAlgorithmNode</varname></link></member><member><link linkend="CLASS-47"><varname>vidis.­modules.­byzantineGenerals.­ANode</varname></link></member><member><link linkend="CLASS-56"><varname>vidis.­modules.­echoAlgorithm.­EchoNode</varname></link></member><member><link linkend="CLASS-60"><varname>vidis.­modules.­flooding.­FloodNode</varname></link></member><member><link linkend="CLASS-66"><varname>vidis.­modules.­mstAlgorithm.­MSTNode</varname></link></member><member><link linkend="CLASS-70"><varname>vidis.­modules.­vartest.­VarTestNode</varname></link></member><member><link linkend="CLASS-72"><varname>vidis.­modules.­vectorClockAlgorithm.­VectorClockAlgorithmNode</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/AUserNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>abstract user node represents a node by a user; module writers should use this class to write their own node</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="connect(vidis.data.mod.IUserNode, java.lang.Class&lt;? extends vidis.data.mod.IUserLink&gt;, long)">
+      <title>connect(IUserNode, Class&lt;? extends IUserLink&gt;, long)</title>
+      <indexterm><primary>connect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>connect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-15-4">connect</link> in interface <link linkend="CLASS-15">IUserNode</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-15-4">connect</link></bridgehead>
+      <para>Connects this node to the specified node. </para>
+      <para> This function creates a new link instance of the specified class with the specified delay and connects this node with the specified node using the new link instance. </para>
+    </refsect2>
+    <refsect2 xreflabel="disconnect(vidis.data.mod.IUserNode)">
+      <title>disconnect(IUserNode)</title>
+      <indexterm><primary>disconnect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>disconnect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-15-5">disconnect</link> in interface <link linkend="CLASS-15">IUserNode</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-15-5">disconnect</link></bridgehead>
+      <para>Disconnects this node from the specified node if a connection exists. </para>
+      <para><emphasis>If no connection exists, this function does nothing.</emphasis></para>
+    </refsect2>
+    <refsect2 xreflabel="init()">
+      <title>init()</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-15-3">init</link> in interface <link linkend="CLASS-15">IUserNode</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-15-3">init</link></bridgehead>
+      <para>Is executed upon the first simulation step. </para>
+      <para>here you can put all possible initialize operations like: </para>
+      <itemizedlist><listitem>
+          <para> send messages</para>
+        </listitem>
+<listitem>
+          <para> check variables from msim file</para>
+        </listitem>
+<listitem>
+          <para> ...</para>
+        </listitem>
+</itemizedlist>
+    </refsect2>
+    <refsect2 xreflabel="init(vidis.data.sim.ISimNodeCon)">
+      <title>init(ISimNodeCon)</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimNodeCon</type><parameter>c</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-15-1">init</link> in interface <link linkend="CLASS-15">IUserNode</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-15-1">init</link></bridgehead>
+      <para>Is the initializing function called by the API. </para>
+      <para><emphasis role="bold">DO NOT CALL THIS FUNCTION ON YOUR OWN!</emphasis></para>
+      <para><emphasis role="bold">DO NOT ANNOTATE THIS METHOD</emphasis></para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

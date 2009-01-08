@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-120" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.events.jobs.IJob">
+  <indexterm><primary>Interfaces</primary><secondary>IJob</secondary></indexterm>
+  <indexterm><primary>IJob</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.events.jobs.IJob</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IJob</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IJob</classname>
+      </ooclass>
+      <ooclass>
+        <classname>Runnable</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>mustExecuteUniquely</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/events/jobs/IJob/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-120-1" xreflabel="mustExecuteUniquely()">
+      <title>mustExecuteUniquely()</title>
+      <indexterm><primary>mustExecuteUniquely</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>mustExecuteUniquely</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>mustExecuteUniquely</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Determines if this job can be run only in a semi-singleton mode. </para>
+      <para> Semi-singleton mode means, that if a job of the same Class is already executing or is planned for execution, this job won&apos;t be submitted. </para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

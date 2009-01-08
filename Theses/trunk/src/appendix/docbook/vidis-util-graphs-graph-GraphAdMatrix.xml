@@ -1,0 +1,532 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-240" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.GraphAdMatrix">
+  <indexterm><primary>Classes</primary><secondary>GraphAdMatrix</secondary></indexterm>
+  <indexterm><primary>GraphAdMatrix</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.GraphAdMatrix</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class GraphAdMatrix</refname>
+    <refpurpose>An implementation of the Graph interface.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>GraphAdMatrix</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Graph</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>GraphAdMatrix</methodname>
+        <methodparam><type>boolean</type><parameter>directed</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>add</methodname>
+        <methodparam><type>Vertex</type><parameter>newvertex</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Edge</type><parameter>edge</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>cloneVertices</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>createEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set</type>
+        <methodname>getAdjacentVertices</methodname>
+        <methodparam><type>List</type><parameter>vertices</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getAdjacentVertices</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set</type>
+        <methodname>getAllEdges</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getDegree</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getDegree</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getEdges</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getIncomingAdjacentVertices</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getOutgoingAdjacentVertices</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getVertices</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set</type>
+        <methodname>getVertices</methodname>
+        <methodparam><type>int</type><parameter>degree</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getVerticesCount</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Iterator</type>
+        <methodname>getVerticesIterator</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>haveCommonEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isDirected</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPath</methodname>
+        <methodparam><type>Vertex</type><parameter>fromVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>toVertex</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>remove</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeEdge</methodname>
+        <methodparam><type>Edge</type><parameter>edge</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeEdges</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/GraphAdMatrix/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>An implementation of the Graph interface. A Graph object represents a graph data structure, which are vertices connected by edges, where the edges are non-directional.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-240-6" xreflabel="add(vidis.util.graphs.graph.Vertex)">
+      <title>add(Vertex)</title>
+      <indexterm><primary>add</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>add</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>add</methodname>
+        <methodparam><type>Vertex</type><parameter>newvertex</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-3">add</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Adds a Vertex into the Graph. This will also create a new entry in the edges List and add the newly added Vertex to its own connected set, thereby adding a new List in the connectedSet List. Finally, all GraphAddVertexListeners are informed of the event that a Vertex has been added to the Graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-10" xreflabel="addEdge(vidis.util.graphs.graph.Edge)">
+      <title>addEdge(Edge)</title>
+      <indexterm><primary>addEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Edge</type><parameter>edge</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-10">addEdge</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Adds an Edge into the Graph. The vertices of the Edge need not be existing in the Graph for this method to work properly. </para>
+      <para> In the event that any one of the vertices are not existing in the Graph, they are added to the Graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-9" xreflabel="addEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>addEdge(Vertex, Vertex)</title>
+      <indexterm><primary>addEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>addEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-9">addEdge</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Adds an Edge into the Graph. The vertices of the Edge need not already be existing in the Graph for this method to work properly. The vertices in both ends of the Edge are merged into one connected set, thereby possibly decreasing the number of Lists in the coonectedSet List. Finally, all GraphAddEdgeListeners are informed of the event that a Edge has been added to the Graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-3" xreflabel="cloneVertices()">
+      <title>cloneVertices()</title>
+      <indexterm><primary>cloneVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>cloneVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>cloneVertices</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-6">cloneVertices</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns a clone of the List of vertices.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-8" xreflabel="createEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>createEdge(Vertex, Vertex)</title>
+      <indexterm><primary>createEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>createEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Edge</type>
+        <methodname>createEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-8">createEdge</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Method to create the proper type of Edge class.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-19" xreflabel="getAdjacentVertices(java.util.List)">
+      <title>getAdjacentVertices(List)</title>
+      <indexterm><primary>getAdjacentVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getAdjacentVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set</type>
+        <methodname>getAdjacentVertices</methodname>
+        <methodparam><type>List</type><parameter>vertices</parameter></methodparam>
+      </methodsynopsis>
+      <para>Returns the vertices adjacent to all the vertices in the given collection.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-16" xreflabel="getAdjacentVertices(vidis.util.graphs.graph.Vertex)">
+      <title>getAdjacentVertices(Vertex)</title>
+      <indexterm><primary>getAdjacentVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getAdjacentVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getAdjacentVertices</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-19">getAdjacentVertices</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns the vertices adjacent to the specified vertex.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-5" xreflabel="getAllEdges()">
+      <title>getAllEdges()</title>
+      <indexterm><primary>getAllEdges</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getAllEdges</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set</type>
+        <methodname>getAllEdges</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-18">getAllEdges</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns a set of all edges in the graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-20" xreflabel="getDegree()">
+      <title>getDegree()</title>
+      <indexterm><primary>getDegree</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDegree</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getDegree</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-13">getDegree</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns the degree of the graph, which is simply the highest degree of all the graph&apos;s vertices.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-21" xreflabel="getDegree(vidis.util.graphs.graph.Vertex)">
+      <title>getDegree(Vertex)</title>
+      <indexterm><primary>getDegree</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDegree</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getDegree</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-14">getDegree</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns the degree of the vertex, which is simply the number of edges of the vertex.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-4" xreflabel="getEdges(vidis.util.graphs.graph.Vertex)">
+      <title>getEdges(Vertex)</title>
+      <indexterm><primary>getEdges</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getEdges</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getEdges</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-17">getEdges</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns a List of edges of the specified vertex.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-17" xreflabel="getIncomingAdjacentVertices(vidis.util.graphs.graph.Vertex)">
+      <title>getIncomingAdjacentVertices(Vertex)</title>
+      <indexterm><primary>getIncomingAdjacentVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getIncomingAdjacentVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getIncomingAdjacentVertices</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-20">getIncomingAdjacentVertices</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns the vertices adjacent to the specified vertex where the connecting edge is directed from the adjacent vertex to the specified vertex. This method is useful only for directed graphs.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-18" xreflabel="getOutgoingAdjacentVertices(vidis.util.graphs.graph.Vertex)">
+      <title>getOutgoingAdjacentVertices(Vertex)</title>
+      <indexterm><primary>getOutgoingAdjacentVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getOutgoingAdjacentVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getOutgoingAdjacentVertices</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-21">getOutgoingAdjacentVertices</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns the vertices adjacent to the specified vertex where the connecting edge is directed from the specified vertex to the adjacent vertex. This method is useful only for directed graphs.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-14" xreflabel="getVertices()">
+      <title>getVertices()</title>
+      <indexterm><primary>getVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>getVertices</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-15">getVertices</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns all vertices.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-15" xreflabel="getVertices(int)">
+      <title>getVertices(int)</title>
+      <indexterm><primary>getVertices</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVertices</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set</type>
+        <methodname>getVertices</methodname>
+        <methodparam><type>int</type><parameter>degree</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-16">getVertices</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns all vertices with the specified degree.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-13" xreflabel="getVerticesCount()">
+      <title>getVerticesCount()</title>
+      <indexterm><primary>getVerticesCount</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVerticesCount</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getVerticesCount</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-2">getVerticesCount</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns the number of vertices in the graph</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-2" xreflabel="getVerticesIterator()">
+      <title>getVerticesIterator()</title>
+      <indexterm><primary>getVerticesIterator</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVerticesIterator</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Iterator</type>
+        <methodname>getVerticesIterator</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-5">getVerticesIterator</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns an iterator that iterates through the graph&apos;s vertices.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-7" xreflabel="haveCommonEdge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>haveCommonEdge(Vertex, Vertex)</title>
+      <indexterm><primary>haveCommonEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>haveCommonEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>haveCommonEdge</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-7">haveCommonEdge</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns <literal>true</literal> if there is an edge from v1 to v2.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-1" xreflabel="isDirected()">
+      <title>isDirected()</title>
+      <indexterm><primary>isDirected</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isDirected</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isDirected</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-1">isDirected</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Returns true if the Graph is directed.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-23" xreflabel="isPath(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>isPath(Vertex, Vertex)</title>
+      <indexterm><primary>isPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isPath</methodname>
+        <methodparam><type>Vertex</type><parameter>fromVertex</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>toVertex</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-23">isPath</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Determines if there is a path from Vertex fromVertex to Vertex toVertex. This will not return true if the only path has at least one Edge pointing in the opposite direction of the path.</para>
+    </refsect2>
+    <refsect2 xreflabel="remove(vidis.util.graphs.graph.Vertex)">
+      <title>remove(Vertex)</title>
+      <indexterm><primary>remove</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>remove</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>remove</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-4">remove</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-239-4">remove</link></bridgehead>
+      <para>Removes the specified Edge from the Graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-11" xreflabel="removeEdge(vidis.util.graphs.graph.Edge)">
+      <title>removeEdge(Edge)</title>
+      <indexterm><primary>removeEdge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>removeEdge</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeEdge</methodname>
+        <methodparam><type>Edge</type><parameter>edge</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-11">removeEdge</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Removes the specified Edge from the Graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-12" xreflabel="removeEdges(vidis.util.graphs.graph.Vertex)">
+      <title>removeEdges(Vertex)</title>
+      <indexterm><primary>removeEdges</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>removeEdges</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeEdges</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-239-12">removeEdges</link> in interface <link linkend="CLASS-239">Graph</link></para>
+      <para>Removes incident Edges of a Vertex. The Edges removed are those whose either endpoints has the specified vertex. This method is usually called just prior to removing a Vertex from a Graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-240-22" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a String representation of the Graph. The string returned in the form: &quot;Vertices: &quot; + this.vertices.toString() + &quot;\n&quot; + &quot;Edges: &quot; + this.edges.toString()</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

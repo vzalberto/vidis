@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-279" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.util.Heap">
+  <indexterm><primary>Classes</primary><secondary>Heap</secondary></indexterm>
+  <indexterm><primary>Heap</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.util.Heap</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Heap</refname>
+    <refpurpose>The Heap class implements a heap data structure, also called a priority queue.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Heap</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Heap</methodname>
+        <void/>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Heap</methodname>
+        <methodparam><type>HeapNodeComparator</type><parameter>comparator</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>clear</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>HeapNode</type>
+        <methodname>contains</methodname>
+        <methodparam><type>Object</type><parameter>object</parameter></methodparam>
+        <methodparam><type>Comparator&lt;HeapNode&gt;</type><parameter>heapnodeobjectcomparator</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>insert</methodname>
+        <methodparam><type>HeapNode</type><parameter>node</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isEmpty</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>HeapNode</type>
+        <methodname>remove</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setPriority</methodname>
+        <methodparam><type>HeapNode</type><parameter>node</parameter></methodparam>
+        <methodparam><type>double</type><parameter>priority</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/util/Heap/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>The Heap class implements a heap data structure, also called a priority queue.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-279-1" xreflabel="Heap()">
+      <title>Heap()</title>
+      <indexterm><primary>Heap</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Heap</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Heap</methodname>
+        <void/>
+      </constructorsynopsis>
+      <para>Creates an instance of a Heap. Using this constructor will make use of the default HeapNodeComparator. The HeapNodeConstructor created will have priorities sorted in such a way that priorities that are numerically higher are at the top of the heap.</para>
+    </refsect2>
+    <refsect2 xml:id="CONSTRUCTOR-279-2" xreflabel="Heap(vidis.util.graphs.util.HeapNodeComparator)">
+      <title>Heap(HeapNodeComparator)</title>
+      <indexterm><primary>Heap</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Heap</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Heap</methodname>
+        <methodparam><type>HeapNodeComparator</type><parameter>comparator</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an instance of a Heap, with a specified HeapNodeComparator. This way, you can control if nodes with numerically higher priorities are at the top or bottom of the heap. To have nodes with numerically lower priorities at the top of the heap, create a HeapNodeComparator with a constructor parameter that is &gt; 0.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-279-4" xreflabel="clear()">
+      <title>clear()</title>
+      <indexterm><primary>clear</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>clear</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>clear</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Clears the heap, removing all nodes in the heap.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-279-6" xreflabel="contains(java.lang.Object, java.util.Comparator&lt;vidis.util.graphs.util.HeapNode&gt;)">
+      <title>contains(Object, Comparator&lt;HeapNode&gt;)</title>
+      <indexterm><primary>contains</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>contains</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>HeapNode</type>
+        <methodname>contains</methodname>
+        <methodparam><type>Object</type><parameter>object</parameter></methodparam>
+        <methodparam><type>Comparator&lt;HeapNode&gt;</type><parameter>heapnodeobjectcomparator</parameter></methodparam>
+      </methodsynopsis>
+      <para>Determines if the given object is encapsulated by one of the nodes in the heap. If it is, then the HeapNode encapsulating the object is returned.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-279-1" xreflabel="insert(vidis.util.graphs.util.HeapNode)">
+      <title>insert(HeapNode)</title>
+      <indexterm><primary>insert</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>insert</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>insert</methodname>
+        <methodparam><type>HeapNode</type><parameter>node</parameter></methodparam>
+      </methodsynopsis>
+      <para>Add a new item into the heap</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-279-5" xreflabel="isEmpty()">
+      <title>isEmpty()</title>
+      <indexterm><primary>isEmpty</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>isEmpty</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isEmpty</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Checks if the heap is empty</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-279-2" xreflabel="remove()">
+      <title>remove()</title>
+      <indexterm><primary>remove</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>remove</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>HeapNode</type>
+        <methodname>remove</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Remove the item with the highest priority from the heap.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-279-3" xreflabel="setPriority(vidis.util.graphs.util.HeapNode, double)">
+      <title>setPriority(HeapNode, double)</title>
+      <indexterm><primary>setPriority</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setPriority</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setPriority</methodname>
+        <methodparam><type>HeapNode</type><parameter>node</parameter></methodparam>
+        <methodparam><type>double</type><parameter>priority</parameter></methodparam>
+      </methodsynopsis>
+      <para>Sets the priority of a specific node in the heap, thereby also forcing to fixup the heap to satisfy the heap condition.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-279-7" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a String representation of the Heap.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

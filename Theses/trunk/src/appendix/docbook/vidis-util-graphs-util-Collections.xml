@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-277" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.util.Collections">
+  <indexterm><primary>Classes</primary><secondary>Collections</secondary></indexterm>
+  <indexterm><primary>Collections</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.util.Collections</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Collections</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Collections</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Collections</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Object</type>
+        <methodname>contains</methodname>
+        <methodparam><type>Collection</type><parameter>c</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>compareTo</parameter></methodparam>
+        <methodparam><type>Comparator</type><parameter>comparator</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Set</type>
+        <methodname>subset</methodname>
+        <methodparam><type>Collection</type><parameter>c</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>compareTo</parameter></methodparam>
+        <methodparam><type>Comparator</type><parameter>comparator</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/util/Collections/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-277-2" xreflabel="contains(java.util.Collection, java.lang.Object, java.util.Comparator)">
+      <title>contains(Collection, Object, Comparator)</title>
+      <indexterm><primary>contains</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>contains</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Object</type>
+        <methodname>contains</methodname>
+        <methodparam><type>Collection</type><parameter>c</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>compareTo</parameter></methodparam>
+        <methodparam><type>Comparator</type><parameter>comparator</parameter></methodparam>
+      </methodsynopsis>
+      <para>Returns true if the specified Collection has an object that matches the argument object compareTo using the given Comparator. This therefore does use obj1.equals( obj2 ) but uses comparator.compare( obj1, obj2 ).</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-277-1" xreflabel="subset(java.util.Collection, java.lang.Object, java.util.Comparator)">
+      <title>subset(Collection, Object, Comparator)</title>
+      <indexterm><primary>subset</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>subset</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>Set</type>
+        <methodname>subset</methodname>
+        <methodparam><type>Collection</type><parameter>c</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>compareTo</parameter></methodparam>
+        <methodparam><type>Comparator</type><parameter>comparator</parameter></methodparam>
+      </methodsynopsis>
+      <para>Returns a subset of the specified collection whose elements match a given object using a specified Comparator. Only elements in the collection that match the given object compareTo using the specified comparator are returned in the subset.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

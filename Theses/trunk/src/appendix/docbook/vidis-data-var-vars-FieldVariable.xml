@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-33" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.var.vars.FieldVariable">
+  <indexterm><primary>Classes</primary><secondary>FieldVariable</secondary></indexterm>
+  <indexterm><primary>FieldVariable</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.var.vars.FieldVariable</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class FieldVariable</refname>
+    <refpurpose>a field variable; this class uses reflection to get the contents of a field variable in a certain object.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>FieldVariable</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AVariable</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>FieldVariable</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+        <methodparam><type>Object</type><parameter>obj</parameter></methodparam>
+        <methodparam><type>Field</type><parameter>field</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>checkChanged</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getData</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Class&lt;?&gt;</type>
+        <methodname>getDataType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Class&lt;? extends AVariable&gt;</type>
+        <methodname>getVariableType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>update</methodname>
+        <methodparam><type>Object</type><parameter>data</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>update</methodname>
+        <methodparam><type>Object</type><parameter>obj</parameter></methodparam>
+        <methodparam><type>Field</type><parameter>field</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.var.AVariable</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-26"><literal>addVariableChangeListener</literal></link></member><member><link linkend="CLASS-26"><literal>getData</literal></link></member><member><link linkend="CLASS-26"><literal>getDataType</literal></link></member><member><link linkend="METHOD-26-1"><literal>getIdentifier</literal></link></member><member><link linkend="CLASS-26"><literal>getIdentifierWithoutNamespace</literal></link></member><member><link linkend="CLASS-26"><literal>getNameSpace</literal></link></member><member><link linkend="CLASS-26"><literal>getNamespace</literal></link></member><member><link linkend="CLASS-26"><literal>getVariableChangeListeners</literal></link></member><member><link linkend="CLASS-26"><literal>getVariableType</literal></link></member><member><link linkend="CLASS-26"><literal>removeVariableChangeListener</literal></link></member><member><link linkend="METHOD-26-2"><literal>update</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/var/vars/FieldVariable/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>a field variable; this class uses reflection to get the contents of a field variable in a certain object.</para>
+  </refsect1>
+</refentry>
+
+

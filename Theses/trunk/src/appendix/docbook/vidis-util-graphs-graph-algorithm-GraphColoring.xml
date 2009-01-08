@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-265" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.GraphColoring">
+  <indexterm><primary>Classes</primary><secondary>GraphColoring</secondary></indexterm>
+  <indexterm><primary>GraphColoring</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.GraphColoring</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class GraphColoring</refname>
+    <refpurpose>Abstract class for an algorithm implementing the coloring of a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>GraphColoring</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>GraphColoring</methodname>
+        <methodparam><type>Graph</type><parameter>graph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>coloring</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>Map</type>
+        <methodname>coloring</methodname>
+        <methodparam><type>int</type><parameter>maxNumOfColors</parameter></methodparam>
+        <exceptionname>NotEnoughColorsException</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getColorMap</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-259"><varname>vidis.­util.­graphs.­graph.­algorithm.­BackTrackColoring</varname></link></member><member><link linkend="CLASS-267"><varname>vidis.­util.­graphs.­graph.­algorithm.­GreedyColoring</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/GraphColoring/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Abstract class for an algorithm implementing the coloring of a graph. Concrete implementations of this class must never modify the Graph itself.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-265-2" xreflabel="coloring()">
+      <title>coloring()</title>
+      <indexterm><primary>coloring</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>coloring</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>coloring</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Coloring method to be implemented by subclasses. The default behaviour is that it simply calls this.coloring(n) where n is the number of vertices of the graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-265-1" xreflabel="coloring(int)">
+      <title>coloring(int)</title>
+      <indexterm><primary>coloring</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>coloring</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>Map</type>
+        <methodname>coloring</methodname>
+        <methodparam><type>int</type><parameter>maxNumOfColors</parameter></methodparam>
+        <exceptionname>NotEnoughColorsException</exceptionname>
+      </methodsynopsis>
+      <para>Abstract coloring method to be implemented by subclasses.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-265-3" xreflabel="getColorMap()">
+      <title>getColorMap()</title>
+      <indexterm><primary>getColorMap</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getColorMap</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getColorMap</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a HashMap that maps each vertex to its color.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

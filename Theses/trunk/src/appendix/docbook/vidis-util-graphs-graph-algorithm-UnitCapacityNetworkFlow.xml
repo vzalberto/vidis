@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-275" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.UnitCapacityNetworkFlow">
+  <indexterm><primary>Classes</primary><secondary>UnitCapacityNetworkFlow</secondary></indexterm>
+  <indexterm><primary>UnitCapacityNetworkFlow</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.UnitCapacityNetworkFlow</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class UnitCapacityNetworkFlow</refname>
+    <refpurpose>Class that provides a flow on a 0-1-<literal>Network</literal>, i.e. a network with each of its edges having a flow of either 0 or 1.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>UnitCapacityNetworkFlow</classname>
+      </ooclass>
+      <ooclass>
+        <classname>NetworkFlow</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>UnitCapacityNetworkFlow</methodname>
+        <methodparam><type>Network</type><parameter>network</parameter></methodparam>
+        <exceptionname>NetworkException</exceptionname>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>blockingFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>maximizeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>residueNetwork</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.algorithm.NetworkFlow</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-269-1"><literal>getFlowMap</literal></link></member><member><link linkend="METHOD-269-2"><literal>getTotalFlow</literal></link></member><member><link linkend="METHOD-269-3"><literal>initializeFlow</literal></link></member><member><link linkend="METHOD-269-4"><literal>maximizeFlow</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/UnitCapacityNetworkFlow/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Class that provides a flow on a 0-1-<literal>Network</literal>, i.e. a network with each of its edges having a flow of either 0 or 1. The capacity (i.e. the weight) of an edge is interpreted as 0 if it is 0 and interpreted as 1 otherwise. Having it this way we need not define a new class for unit capacity networks, but can use the regular <literal>Network</literal> classes here as well. The class provides an efficient algorithm derived from that of Dinic for finding a maximum flow.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-275-1" xreflabel="UnitCapacityNetworkFlow(vidis.util.graphs.graph.Network)">
+      <title>UnitCapacityNetworkFlow(Network)</title>
+      <indexterm><primary>UnitCapacityNetworkFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>UnitCapacityNetworkFlow</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>UnitCapacityNetworkFlow</methodname>
+        <methodparam><type>Network</type><parameter>network</parameter></methodparam>
+        <exceptionname>NetworkException</exceptionname>
+      </constructorsynopsis>
+      <para>Constructor for instances of this class.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-275-3" xreflabel="blockingFlow()">
+      <title>blockingFlow()</title>
+      <indexterm><primary>blockingFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>blockingFlow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>blockingFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Compute a blocking flow by using findFlowPath() iteratively.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-275-1" xreflabel="maximizeFlow()">
+      <title>maximizeFlow()</title>
+      <indexterm><primary>maximizeFlow</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>maximizeFlow</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>maximizeFlow</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Method for finding a maximum flow in the network. The method uses the algorithm of Dinic by iteratively searching blocking flows in breadth-first search-tree residue networks.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-275-2" xreflabel="residueNetwork()">
+      <title>residueNetwork()</title>
+      <indexterm><primary>residueNetwork</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>residueNetwork</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>residueNetwork</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Compute a residue network by a breadth-first search of paths from source to sink.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

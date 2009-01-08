@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-8" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.annotation.DisplayColor">
+  <indexterm><primary>Annotations</primary><secondary>DisplayColor</secondary></indexterm>
+  <indexterm><primary>DisplayColor</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.annotation.DisplayColor</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Annotation Type DisplayColor</refname>
+    <refpurpose>This annotation determines the variable&apos;s color A method MUST return a <literal>vidis.data.annotation.ColorType</literal> instance A field MUST be of the Type <literal>vidis.data.annotation.ColorType</literal></refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier role="annotation">@Retention(value=java.lang.annotation.RetentionPolicy.RUNTIME)</modifier>
+        <modifier role="annotation">@Target(value={java.lang.annotation.ElementType.METHOD, java.lang.annotation.ElementType.FIELD})</modifier>
+        <modifier>public</modifier>
+        <modifier>@interface</modifier>
+        <classname>DisplayColor</classname>
+      </ooclass>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/annotation/DisplayColor/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>This annotation determines the variable&apos;s color A method MUST return a <literal>vidis.data.annotation.ColorType</literal> instance A field MUST be of the Type <literal>vidis.data.annotation.ColorType</literal></para>
+  </refsect1>
+</refentry>
+
+

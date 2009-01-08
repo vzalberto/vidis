@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-244" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.IllegalTreeException">
+  <indexterm><primary>Exceptions</primary><secondary>IllegalTreeException</secondary></indexterm>
+  <indexterm><primary>IllegalTreeException</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.IllegalTreeException</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Exception IllegalTreeException</refname>
+    <refpurpose>Thrown whenever a <literal>Tree</literal> becomes malformed as a result of calling a method that is declared on its superinterface but is not supported.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>IllegalTreeException</classname>
+      </ooclass>
+      <ooclass>
+        <classname>GraphException</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>IllegalTreeException</methodname>
+        <void/>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>IllegalTreeException</methodname>
+        <methodparam><type>String</type><parameter>msg</parameter></methodparam>
+      </constructorsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Throwable</emphasis>: <simplelist type="inline"><member><varname>fillInStackTrace</varname></member><member><varname>getCause</varname></member><member><varname>getLocalizedMessage</varname></member><member><varname>getMessage</varname></member><member><varname>getStackTrace</varname></member><member><varname>initCause</varname></member><member><varname>printStackTrace</varname></member><member><varname>setStackTrace</varname></member><member><varname>toString</varname></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/IllegalTreeException/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Thrown whenever a <literal>Tree</literal> becomes malformed as a result of calling a method that is declared on its superinterface but is not supported.</para>
+  </refsect1>
+</refentry>
+
+

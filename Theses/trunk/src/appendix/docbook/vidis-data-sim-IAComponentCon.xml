@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-18" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.IAComponentCon">
+  <indexterm><primary>Interfaces</primary><secondary>IAComponentCon</secondary></indexterm>
+  <indexterm><primary>IAComponentCon</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.IAComponentCon</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IAComponentCon</refname>
+    <refpurpose>interface for all abstract user components</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IAComponentCon</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getScopedVariableIdentifiers</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>hasScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/IAComponentCon/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>interface for all abstract user components</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-18-1" xreflabel="getScopedVariable(java.lang.String, java.lang.String)">
+      <title>getScopedVariable(String, String)</title>
+      <indexterm><primary>getScopedVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getScopedVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <para>retrieve a scoped variable</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-18-3" xreflabel="getScopedVariableIdentifiers(java.lang.String)">
+      <title>getScopedVariableIdentifiers(String)</title>
+      <indexterm><primary>getScopedVariableIdentifiers</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getScopedVariableIdentifiers</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getScopedVariableIdentifiers</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+      </methodsynopsis>
+      <para>retrieve all variable identifiers within a scope</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-18-2" xreflabel="hasScopedVariable(java.lang.String, java.lang.String)">
+      <title>hasScopedVariable(String, String)</title>
+      <indexterm><primary>hasScopedVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>hasScopedVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>hasScopedVariable</methodname>
+        <methodparam><type>String</type><parameter>scope</parameter></methodparam>
+        <methodparam><type>String</type><parameter>identifier</parameter></methodparam>
+      </methodsynopsis>
+      <para>retrieve if a scoped variable is set</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-18-4" xreflabel="interrupt()">
+      <title>interrupt()</title>
+      <indexterm><primary>interrupt</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>interrupt</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>interrupt</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>causes the simulator component to wake up from sleep</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-18-5" xreflabel="sleep(int)">
+      <title>sleep(int)</title>
+      <indexterm><primary>sleep</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>sleep</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>sleep</methodname>
+        <methodparam><type>int</type><parameter>steps</parameter></methodparam>
+      </methodsynopsis>
+      <para>causes the simulator component to sleep for a certain amount of steps</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

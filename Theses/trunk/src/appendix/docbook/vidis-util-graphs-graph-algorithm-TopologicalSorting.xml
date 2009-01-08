@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-274" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.TopologicalSorting">
+  <indexterm><primary>Classes</primary><secondary>TopologicalSorting</secondary></indexterm>
+  <indexterm><primary>TopologicalSorting</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.TopologicalSorting</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class TopologicalSorting</refname>
+    <refpurpose>A concrete subclass of GraphTraversal that performs a topological sort against a directed acyclic graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>TopologicalSorting</classname>
+      </ooclass>
+      <ooclass>
+        <classname>GraphTraversal</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>TopologicalSorting</methodname>
+        <methodparam><type>DirectedAcyclicGraph</type><parameter>dag</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTraverse</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTraverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>List</type><parameter>visited</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.util.graphs.graph.algorithm.GraphTraversal</emphasis>: <simplelist type="inline"><member><link linkend="METHOD-266-4"><literal>getVisitedMap</literal></link></member><member><link linkend="METHOD-266-2"><literal>traverse</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para><para><emphasis role="bold">Fields inherited from vidis.util.graphs.graph.algorithm.GraphTraversal</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-266"><literal>OK</literal></link></member><member><link linkend="CLASS-266"><literal>TERMINATEDBYVISITOR</literal></link></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/TopologicalSorting/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A concrete subclass of GraphTraversal that performs a topological sort against a directed acyclic graph.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-274-1" xreflabel="TopologicalSorting(vidis.util.graphs.graph.DirectedAcyclicGraph)">
+      <title>TopologicalSorting(DirectedAcyclicGraph)</title>
+      <indexterm><primary>TopologicalSorting</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>TopologicalSorting</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>TopologicalSorting</methodname>
+        <methodparam><type>DirectedAcyclicGraph</type><parameter>dag</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an instance of TopologicalSorting that will perform a topological sort against a directed acyclic graph.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-274-6" xreflabel="reverseTraverse()">
+      <title>reverseTraverse()</title>
+      <indexterm><primary>reverseTraverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>reverseTraverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTraverse</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Perform a reverse topological sort of the entire directed acyclic graph. Note that the sequence of vertices in the return List will not distinguish between connected components of the graph. This method is not part of the GraphTraversal abstract class, but is added here for convenience.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-274-4" xreflabel="reverseTraverse(vidis.util.graphs.graph.Vertex)">
+      <title>reverseTraverse(Vertex)</title>
+      <indexterm><primary>reverseTraverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>reverseTraverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>reverseTraverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <para>Perform a reverse topological sort of the connected set of a directed acyclic graph to which Vertex startat belongs, starting at Vertex startat. This method is not part of the GraphTraversal abstract class, but is added here for convenience.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-274-5" xreflabel="traverse()">
+      <title>traverse()</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Perform a topological sort of the entire directed acyclic graph. Note that the sequence of vertices in the return List will not distinguish between connected components of the graph. This method is not part of the GraphTraversal abstract class, but is added here for convenience.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-274-3" xreflabel="traverse(vidis.util.graphs.graph.Vertex)">
+      <title>traverse(Vertex)</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+      </methodsynopsis>
+      <para>Perform a topological sort of the connected set of a directed acyclic graph to which Vertex startat belongs, starting at Vertex startat.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-274-1" xreflabel="traverse(vidis.util.graphs.graph.Vertex, java.util.List, vidis.util.graphs.graph.Visitor)">
+      <title>traverse(Vertex, List, Visitor)</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>List</type><parameter>visited</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <para>Perform a topological sort of the connected set of a directed acyclic graph to which Vertex startat belongs, starting at Vertex startat.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-274-2" xreflabel="traverse(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Visitor)">
+      <title>traverse(Vertex, Visitor)</title>
+      <indexterm><primary>traverse</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>traverse</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List</type>
+        <methodname>traverse</methodname>
+        <methodparam><type>Vertex</type><parameter>startat</parameter></methodparam>
+        <methodparam><type>Visitor</type><parameter>visitor</parameter></methodparam>
+      </methodsynopsis>
+      <para>Perform a topological sort of the connected set of a directed acyclic graph to which Vertex startat belongs, starting at Vertex startat.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

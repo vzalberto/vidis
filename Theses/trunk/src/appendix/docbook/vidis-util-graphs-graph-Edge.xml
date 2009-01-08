@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-237" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.Edge">
+  <indexterm><primary>Classes</primary><secondary>Edge</secondary></indexterm>
+  <indexterm><primary>Edge</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.Edge</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Edge</refname>
+    <refpurpose>Represents an undirected edge in a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Edge</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>GraphComponent</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Edge</methodname>
+        <methodparam><type>Vertex</type><parameter>a</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>b</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getOppositeVertex</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getVertexA</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getVertexB</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setString</methodname>
+        <methodparam><type>String</type><parameter>text</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-235"><varname>vidis.­util.­graphs.­graph.­DirectedEdge</varname></link></member><member><link linkend="CLASS-255"><varname>vidis.­util.­graphs.­graph.­WeightedEdge</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/Edge/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Represents an undirected edge in a graph.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-237-1" xreflabel="Edge(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>Edge(Vertex, Vertex)</title>
+      <indexterm><primary>Edge</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Edge</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Edge</methodname>
+        <methodparam><type>Vertex</type><parameter>a</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>b</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates an UndirectedEdge object.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-237-3" xreflabel="getOppositeVertex(vidis.util.graphs.graph.Vertex)">
+      <title>getOppositeVertex(Vertex)</title>
+      <indexterm><primary>getOppositeVertex</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getOppositeVertex</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getOppositeVertex</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para>Returns the Vertex opposite to the specified Vertex in the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-237-1" xreflabel="getVertexA()">
+      <title>getVertexA()</title>
+      <indexterm><primary>getVertexA</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVertexA</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getVertexA</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the endpoint A of the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-237-2" xreflabel="getVertexB()">
+      <title>getVertexB()</title>
+      <indexterm><primary>getVertexB</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVertexB</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Vertex</type>
+        <methodname>getVertexB</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the endpoint B of the edge.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-237-4" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="CLASS-241">toString</link> in interface <link linkend="CLASS-241">GraphComponent</link></para>
+      <para>Returns a String representation of the Edge. By default, the format is: fromVertex.toString() + &quot;-&gt;&quot; + toVertex.toString()</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

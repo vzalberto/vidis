@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-20" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.ISimLinkCon">
+  <indexterm><primary>Interfaces</primary><secondary>ISimLinkCon</secondary></indexterm>
+  <indexterm><primary>ISimLinkCon</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.ISimLinkCon</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface ISimLinkCon</refname>
+    <refpurpose>this class provides all necessary functions for the user to implement a nice module</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>ISimLinkCon</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IAComponentCon</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>dropPacketOnLink</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>dropPacketsOnLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>long</type>
+        <methodname>getDelay</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getNodeA</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getNodeB</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IUserPacket&gt;</type>
+        <methodname>getPacketsOnLink</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/ISimLinkCon/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this class provides all necessary functions for the user to implement a nice module</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-20-8" xreflabel="disconnect()">
+      <title>disconnect()</title>
+      <indexterm><primary>disconnect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>disconnect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Disconnects this link.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-5" xreflabel="dropPacketOnLink(vidis.data.mod.IUserPacket)">
+      <title>dropPacketOnLink(IUserPacket)</title>
+      <indexterm><primary>dropPacketOnLink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>dropPacketOnLink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>dropPacketOnLink</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <para>drops a packet the link</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-6" xreflabel="dropPacketsOnLink()">
+      <title>dropPacketsOnLink()</title>
+      <indexterm><primary>dropPacketsOnLink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>dropPacketsOnLink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>dropPacketsOnLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>drops all packets on the link</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-3" xreflabel="getDelay()">
+      <title>getDelay()</title>
+      <indexterm><primary>getDelay</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDelay</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>long</type>
+        <methodname>getDelay</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>get delay of this link</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-7" xreflabel="getId()">
+      <title>getId()</title>
+      <indexterm><primary>getId</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getId</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the id of this thingy</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-1" xreflabel="getNodeA()">
+      <title>getNodeA()</title>
+      <indexterm><primary>getNodeA</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getNodeA</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getNodeA</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the node A connected at one side of the link</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-2" xreflabel="getNodeB()">
+      <title>getNodeB()</title>
+      <indexterm><primary>getNodeB</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getNodeB</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getNodeB</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the node B connected at the other side of the link</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-20-4" xreflabel="getPacketsOnLink()">
+      <title>getPacketsOnLink()</title>
+      <indexterm><primary>getPacketsOnLink</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getPacketsOnLink</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IUserPacket&gt;</type>
+        <methodname>getPacketsOnLink</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve all packets on this link</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

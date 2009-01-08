@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-131" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.graph.layouts.GraphLayout">
+  <indexterm><primary>Interfaces</primary><secondary>GraphLayout</secondary></indexterm>
+  <indexterm><primary>GraphLayout</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.graph.layouts.GraphLayout</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface GraphLayout</refname>
+    <refpurpose>this interface is implemented by all layouts for nodes layouts are used to manipulate the position of the nodes</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>GraphLayout</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>apply</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>relayout</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setNodeDensity</methodname>
+        <methodparam><type>double</type><parameter>density</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/graph/layouts/GraphLayout/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this interface is implemented by all layouts for nodes layouts are used to manipulate the position of the nodes</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-131-1" xreflabel="apply(java.util.Collection&lt;vidis.data.sim.SimNode&gt;)">
+      <title>apply(Collection&lt;SimNode&gt;)</title>
+      <indexterm><primary>apply</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>apply</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>apply</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>apply the graph layout to the nodes</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-131-2" xreflabel="relayout(java.util.Collection&lt;vidis.data.sim.SimNode&gt;)">
+      <title>relayout(Collection&lt;SimNode&gt;)</title>
+      <indexterm><primary>relayout</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>relayout</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>relayout</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <para>should be called if some nodes were removed or added</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-131-3" xreflabel="setNodeDensity(double)">
+      <title>setNodeDensity(double)</title>
+      <indexterm><primary>setNodeDensity</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setNodeDensity</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setNodeDensity</methodname>
+        <methodparam><type>double</type><parameter>density</parameter></methodparam>
+      </methodsynopsis>
+      <para>the smaller the value, the more &quot;dense&quot; all points will be</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

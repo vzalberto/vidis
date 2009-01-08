@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-24" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.sim.SimNode">
+  <indexterm><primary>Classes</primary><secondary>SimNode</secondary></indexterm>
+  <indexterm><primary>SimNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.sim.SimNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class SimNode</refname>
+    <refpurpose>simulator node</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>SimNode</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AComponent</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>ISimNodeCon</interfacename>
+      </oointerface>
+      <oointerface>
+        <interfacename>Comparable&lt;SimNode&gt;</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>SimNode</methodname>
+        <methodparam><type>IUserNode</type><parameter>node</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addConnection</methodname>
+        <methodparam><type>SimLink</type><parameter>link</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>compareTo</methodname>
+        <methodparam><type>SimNode</type><parameter>o</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>equals</methodname>
+        <methodparam><type>Object</type><parameter>obj</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>execute</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IUserLink&gt;</type>
+        <methodname>getConnectedLinks</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;SimLink&gt;</type>
+        <methodname>getConnectedLinksSim</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getUserLogic</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>hashCode</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>isConnectedTo</methodname>
+        <methodparam><type>SimNode</type><parameter>b</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>kill</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>SimPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeConnection</methodname>
+        <methodparam><type>SimLink</type><parameter>simLink</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>p</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+        <methodparam><type>long</type><parameter>wait</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>spawnNewNode</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.data.sim.AComponent</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-17"><literal>addVariableChangeListener</literal></link></member><member><link linkend="CLASS-17"><literal>execute</literal></link></member><member><link linkend="CLASS-17"><literal>getScopedVariable</literal></link></member><member><link linkend="CLASS-17"><literal>getScopedVariableIdentifiers</literal></link></member><member><link linkend="CLASS-17"><literal>getVariableById</literal></link></member><member><link linkend="CLASS-17"><literal>getVariableChangeListeners</literal></link></member><member><link linkend="CLASS-17"><literal>getVariableIds</literal></link></member><member><link linkend="CLASS-17"><literal>hasScopedVariable</literal></link></member><member><link linkend="CLASS-17"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-17"><literal>interrupt</literal></link></member><member><link linkend="METHOD-17-1"><literal>kill</literal></link></member><member><link linkend="CLASS-17"><literal>registerVariable</literal></link></member><member><link linkend="CLASS-17"><literal>removeVariableChangeListener</literal></link></member><member><link linkend="CLASS-17"><literal>sleep</literal></link></member><member><link linkend="CLASS-17"><literal>toString</literal></link></member><member><link linkend="CLASS-17"><literal>variableAdded</literal></link></member><member><link linkend="CLASS-17"><literal>variableChanged</literal></link></member><member><link linkend="CLASS-17"><literal>variableRemoved</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/sim/SimNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>simulator node</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-24-1" xreflabel="SimNode(vidis.data.mod.IUserNode)">
+      <title>SimNode(IUserNode)</title>
+      <indexterm><primary>SimNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>SimNode</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>SimNode</methodname>
+        <methodparam><type>IUserNode</type><parameter>node</parameter></methodparam>
+      </constructorsynopsis>
+      <para>public constructor</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="connect(vidis.data.mod.IUserNode, java.lang.Class&lt;? extends vidis.data.mod.IUserLink&gt;, long)">
+      <title>connect(IUserNode, Class&lt;? extends IUserLink&gt;, long)</title>
+      <indexterm><primary>connect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>connect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>connect</methodname>
+        <methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+        <methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
+        <methodparam><type>long</type><parameter>delay</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-21-5">connect</link> in interface <link linkend="CLASS-21">ISimNodeCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-21-5">connect</link></bridgehead>
+      <para>Connects this node to another node.</para>
+    </refsect2>
+    <refsect2 xreflabel="getConnectedLinks()">
+      <title>getConnectedLinks()</title>
+      <indexterm><primary>getConnectedLinks</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getConnectedLinks</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IUserLink&gt;</type>
+        <methodname>getConnectedLinks</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-21-1">getConnectedLinks</link> in interface <link linkend="CLASS-21">ISimNodeCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-21-1">getConnectedLinks</link></bridgehead>
+      <para>retrieve all links that this node is connected to</para>
+    </refsect2>
+    <refsect2 xreflabel="getId()">
+      <title>getId()</title>
+      <indexterm><primary>getId</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getId</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-21-4">getId</link> in interface <link linkend="CLASS-21">ISimNodeCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-21-4">getId</link></bridgehead>
+      <para>retrieve unique identifier for this node</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-24-1" xreflabel="getUserLogic()">
+      <title>getUserLogic()</title>
+      <indexterm><primary>getUserLogic</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getUserLogic</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getUserLogic</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the user node associated with this object</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-24-2" xreflabel="receive(vidis.data.sim.SimPacket)">
+      <title>receive(SimPacket)</title>
+      <indexterm><primary>receive</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>receive</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>final</modifier>
+        <type>void</type>
+        <methodname>receive</methodname>
+        <methodparam><type>SimPacket</type><parameter>packet</parameter></methodparam>
+      </methodsynopsis>
+      <para>cause this node to receive a packet</para>
+    </refsect2>
+    <refsect2 xreflabel="send(vidis.data.mod.IUserPacket, vidis.data.mod.IUserLink)">
+      <title>send(IUserPacket, IUserLink)</title>
+      <indexterm><primary>send</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>send</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>p</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-21-2">send</link> in interface <link linkend="CLASS-21">ISimNodeCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-21-2">send</link></bridgehead>
+      <para>send a packet over a link</para>
+    </refsect2>
+    <refsect2 xreflabel="send(vidis.data.mod.IUserPacket, vidis.data.mod.IUserLink, long)">
+      <title>send(IUserPacket, IUserLink, long)</title>
+      <indexterm><primary>send</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>send</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>send</methodname>
+        <methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+        <methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+        <methodparam><type>long</type><parameter>wait</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-21-3">send</link> in interface <link linkend="CLASS-21">ISimNodeCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-21-3">send</link></bridgehead>
+      <para>send a packet over a link; the packet send is delayed for some amount of time which may be interpreted as the processing time</para>
+    </refsect2>
+    <refsect2 xreflabel="spawnNewNode()">
+      <title>spawnNewNode()</title>
+      <indexterm><primary>spawnNewNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>spawnNewNode</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>spawnNewNode</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-21-6">spawnNewNode</link> in interface <link linkend="CLASS-21">ISimNodeCon</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-21-6">spawnNewNode</link></bridgehead>
+      <para>Spawns a new node.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

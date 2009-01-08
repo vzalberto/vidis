@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-195" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.mvc.api.AController">
+  <indexterm><primary>Classes</primary><secondary>AController</secondary></indexterm>
+  <indexterm><primary>AController</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.mvc.api.AController</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AController</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AController</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AEventHandler</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IController</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AController</methodname>
+        <void/>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>handleEvent</methodname>
+        <methodparam><type>IVidisEvent</type><parameter>event</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-187"><varname>vidis.­ui.­mvc.­CameraController</varname></link></member><member><link linkend="CLASS-188"><varname>vidis.­ui.­mvc.­GuiController</varname></link></member><member><link linkend="CLASS-189"><varname>vidis.­ui.­mvc.­InputController</varname></link></member><member><link linkend="CLASS-190"><varname>vidis.­ui.­mvc.­JobController</varname></link></member><member><link linkend="CLASS-191"><varname>vidis.­ui.­mvc.­SceneController</varname></link></member><member><link linkend="CLASS-192"><varname>vidis.­ui.­mvc.­SimulatorController</varname></link></member><member><link linkend="CLASS-193"><varname>vidis.­ui.­mvc.­VidisController</varname></link></member><member><link linkend="CLASS-194"><varname>vidis.­ui.­mvc.­WindowController</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.ui.events.AEventHandler</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-100"><literal>fireEvent</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/mvc/api/AController/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

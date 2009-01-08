@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-14" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.mod.IUserLink">
+  <indexterm><primary>Interfaces</primary><secondary>IUserLink</secondary></indexterm>
+  <indexterm><primary>IUserLink</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.mod.IUserLink</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IUserLink</refname>
+    <refpurpose>this interface defines a basic functionality for all user module links; anyway for implementation of a new link in a ne module, the class AUserLink should be used instead.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IUserLink</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IUserComponent</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>long</type>
+        <methodname>getDelay</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getOtherNode</methodname>
+        <methodparam><type>IUserNode</type><parameter>me</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimLinkCon</type><parameter>simulatorComponent</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/mod/IUserLink/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>this interface defines a basic functionality for all user module links; anyway for implementation of a new link in a ne module, the class AUserLink should be used instead. we implemented there the basic functionality so that simulator and module can flawlessly work together</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-14-4" xreflabel="disconnect()">
+      <title>disconnect()</title>
+      <indexterm><primary>disconnect</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>disconnect</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>disconnect</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Disconnects both nodes attached to this link and destroys this link.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-14-3" xreflabel="getDelay()">
+      <title>getDelay()</title>
+      <indexterm><primary>getDelay</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDelay</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>long</type>
+        <methodname>getDelay</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Retrieve delay of this link.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-14-2" xreflabel="getOtherNode(vidis.data.mod.IUserNode)">
+      <title>getOtherNode(IUserNode)</title>
+      <indexterm><primary>getOtherNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getOtherNode</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>IUserNode</type>
+        <methodname>getOtherNode</methodname>
+        <methodparam><type>IUserNode</type><parameter>me</parameter></methodparam>
+      </methodsynopsis>
+      <para>Retrieve the node connected to this link.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-14-1" xreflabel="init(vidis.data.sim.ISimLinkCon)">
+      <title>init(ISimLinkCon)</title>
+      <indexterm><primary>init</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>init</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>init</methodname>
+        <methodparam><type>ISimLinkCon</type><parameter>simulatorComponent</parameter></methodparam>
+        <exceptionname>ObstructInitCallException</exceptionname>
+      </methodsynopsis>
+      <para>This one is the initializing function called by the API. </para>
+      <para><emphasis role="bold">DO NOT CALL THIS FUNCTION ON YOUR OWN!</emphasis></para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

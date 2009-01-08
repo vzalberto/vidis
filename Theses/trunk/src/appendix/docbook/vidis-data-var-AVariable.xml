@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-26" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.var.AVariable">
+  <indexterm><primary>Classes</primary><secondary>AVariable</secondary></indexterm>
+  <indexterm><primary>AVariable</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.var.AVariable</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AVariable</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AVariable</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>IVariableChangeProducer</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AVariable</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <methodname>getIdentifierWithoutNamespace</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>String</type>
+        <methodname>getNamespace</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addVariableChangeListener</methodname>
+        <methodparam><type>IVariableChangeListener</type><parameter>l</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>Object</type>
+        <methodname>getData</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>Class&lt;?&gt;</type>
+        <methodname>getDataType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getIdentifier</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getNameSpace</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IVariableChangeListener&gt;</type>
+        <methodname>getVariableChangeListeners</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>Class&lt;? extends AVariable&gt;</type>
+        <methodname>getVariableType</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeVariableChangeListener</methodname>
+        <methodparam><type>IVariableChangeListener</type><parameter>l</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>update</methodname>
+        <methodparam><type>Object</type><parameter>data</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-32"><varname>vidis.­data.­var.­vars.­DefaultVariable</varname></link></member><member><link linkend="CLASS-33"><varname>vidis.­data.­var.­vars.­FieldVariable</varname></link></member><member><link linkend="CLASS-34"><varname>vidis.­data.­var.­vars.­MethodVariable</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/var/AVariable/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xreflabel="addVariableChangeListener(vidis.data.var.IVariableChangeListener)">
+      <title>addVariableChangeListener(IVariableChangeListener)</title>
+      <indexterm><primary>addVariableChangeListener</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>addVariableChangeListener</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>addVariableChangeListener</methodname>
+        <methodparam><type>IVariableChangeListener</type><parameter>l</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-30-1">addVariableChangeListener</link> in interface <link linkend="CLASS-30">IVariableChangeProducer</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-30-1">addVariableChangeListener</link></bridgehead>
+      <para>add a new variable change listener</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-26-1" xreflabel="getIdentifier()">
+      <title>getIdentifier()</title>
+      <indexterm><primary>getIdentifier</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getIdentifier</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getIdentifier</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the identifier of this variable</para>
+    </refsect2>
+    <refsect2 xreflabel="getVariableChangeListeners()">
+      <title>getVariableChangeListeners()</title>
+      <indexterm><primary>getVariableChangeListeners</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVariableChangeListeners</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;IVariableChangeListener&gt;</type>
+        <methodname>getVariableChangeListeners</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-30-3">getVariableChangeListeners</link> in interface <link linkend="CLASS-30">IVariableChangeProducer</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-30-3">getVariableChangeListeners</link></bridgehead>
+      <para>get all variable change listeners</para>
+    </refsect2>
+    <refsect2 xreflabel="removeVariableChangeListener(vidis.data.var.IVariableChangeListener)">
+      <title>removeVariableChangeListener(IVariableChangeListener)</title>
+      <indexterm><primary>removeVariableChangeListener</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>removeVariableChangeListener</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>removeVariableChangeListener</methodname>
+        <methodparam><type>IVariableChangeListener</type><parameter>l</parameter></methodparam>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="METHOD-30-2">removeVariableChangeListener</link> in interface <link linkend="CLASS-30">IVariableChangeProducer</link></para>
+      <bridgehead renderas="sect5">Description copied from interface: <link linkend="METHOD-30-2">removeVariableChangeListener</link></bridgehead>
+      <para>remove a variable change listener</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-26-2" xreflabel="update(java.lang.Object)">
+      <title>update(Object)</title>
+      <indexterm><primary>update</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>update</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>void</type>
+        <methodname>update</methodname>
+        <methodparam><type>Object</type><parameter>data</parameter></methodparam>
+      </methodsynopsis>
+      <para>updates the variable content</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

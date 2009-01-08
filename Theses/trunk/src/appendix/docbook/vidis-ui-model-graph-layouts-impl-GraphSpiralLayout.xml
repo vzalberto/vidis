@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-136" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.ui.model.graph.layouts.impl.GraphSpiralLayout">
+  <indexterm><primary>Classes</primary><secondary>GraphSpiralLayout</secondary></indexterm>
+  <indexterm><primary>GraphSpiralLayout</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.ui.model.graph.layouts.impl.GraphSpiralLayout</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class GraphSpiralLayout</refname>
+    <refpurpose>spiral layout for nodes very nice output and low processing time</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>GraphSpiralLayout</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AGraphLayout</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>GraphLayout</type>
+        <methodname>getInstance</methodname>
+        <void/>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>apply</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Point3d</type>
+        <methodname>nextNodePoint3d</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>relayout</methodname>
+        <methodparam><type>Collection&lt;SimNode&gt;</type><parameter>nodes</parameter></methodparam>
+        <exceptionname>Exception</exceptionname>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setNodeDensity</methodname>
+        <methodparam><type>double</type><parameter>density</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from vidis.ui.model.graph.layouts.AGraphLayout</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-130"><literal>setNodeDensityToAll</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/ui/model/graph/layouts/impl/GraphSpiralLayout/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>spiral layout for nodes very nice output and low processing time</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-136-1" xreflabel="nextNodePoint3d()">
+      <title>nextNodePoint3d()</title>
+      <indexterm><primary>nextNodePoint3d</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>nextNodePoint3d</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Point3d</type>
+        <methodname>nextNodePoint3d</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>retrieve the next point for a node</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

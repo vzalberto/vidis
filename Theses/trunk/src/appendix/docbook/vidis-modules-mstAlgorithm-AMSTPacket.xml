@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-62" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.modules.mstAlgorithm.AMSTPacket">
+  <indexterm><primary>Classes</primary><secondary>AMSTPacket</secondary></indexterm>
+  <indexterm><primary>AMSTPacket</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.modules.mstAlgorithm.AMSTPacket</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class AMSTPacket</refname>
+    <refpurpose/>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>AMSTPacket</classname>
+      </ooclass>
+      <ooclass>
+        <classname>AUserPacket</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AMSTPacket</methodname>
+        <methodparam><type>AMSTPacket</type><parameter>p</parameter></methodparam>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>AMSTPacket</methodname>
+        <methodparam><type>Type</type><parameter>t</parameter></methodparam>
+        <methodparam><type>int</type><parameter>id</parameter></methodparam>
+        <methodparam><type>String</type><parameter>senderId</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Static Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>static</modifier>
+        <type>int</type>
+        <methodname>generateRandomId</methodname>
+        <void/>
+      </methodsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>ColorType</type>
+        <methodname>getColor</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>int</type>
+        <methodname>getId</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>getQueryierId</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Type</type>
+        <methodname>getType</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-64"><varname>vidis.­modules.­mstAlgorithm.­EchoPacket</varname></link></member><member><link linkend="CLASS-65"><varname>vidis.­modules.­mstAlgorithm.­ExplorePacket</varname></link></member><member><link linkend="CLASS-67"><varname>vidis.­modules.­mstAlgorithm.­MstPacket</varname></link></member><member><link linkend="CLASS-68"><varname>vidis.­modules.­mstAlgorithm.­PingPacket</varname></link></member><member><link linkend="CLASS-69"><varname>vidis.­modules.­mstAlgorithm.­PongPacket</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from vidis.data.AUserPacket</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-3"><literal>execute</literal></link></member><member><link linkend="CLASS-3"><literal>getLinkToSource</literal></link></member><member><link linkend="CLASS-3"><literal>getSource</literal></link></member><member><link linkend="CLASS-3"><literal>getVariable</literal></link></member><member><link linkend="CLASS-3"><literal>hasVariable</literal></link></member><member><link linkend="CLASS-3"><literal>init</literal></link></member><member><link linkend="CLASS-3"><literal>interrupt</literal></link></member><member><link linkend="CLASS-3"><literal>sleep</literal></link></member><member><link linkend="CLASS-3"><literal>toString</literal></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/modules/mstAlgorithm/AMSTPacket/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+</refentry>
+
+

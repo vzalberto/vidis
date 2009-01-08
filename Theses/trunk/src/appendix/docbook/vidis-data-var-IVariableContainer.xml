@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-31" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.var.IVariableContainer">
+  <indexterm><primary>Interfaces</primary><secondary>IVariableContainer</secondary></indexterm>
+  <indexterm><primary>IVariableContainer</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.var.IVariableContainer</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IVariableContainer</refname>
+    <refpurpose>This interface defines all methods used for handling our variable system</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IVariableContainer</classname>
+      </ooclass>
+      <ooclass>
+        <classname>IVariableChangeProducer</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getVariableById</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getVariableIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>registerVariable</methodname>
+        <methodparam><type>AVariable</type><parameter>var</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/var/IVariableContainer/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>This interface defines all methods used for handling our variable system</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-31-1" xreflabel="getVariableById(java.lang.String)">
+      <title>getVariableById(String)</title>
+      <indexterm><primary>getVariableById</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVariableById</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>AVariable</type>
+        <methodname>getVariableById</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para>get a variable usind its unique string identifier</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-31-2" xreflabel="getVariableIds()">
+      <title>getVariableIds()</title>
+      <indexterm><primary>getVariableIds</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getVariableIds</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Set&lt;String&gt;</type>
+        <methodname>getVariableIds</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>get all variable ids defined in this variable container</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-31-4" xreflabel="hasVariable(java.lang.String)">
+      <title>hasVariable(String)</title>
+      <indexterm><primary>hasVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>hasVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>boolean</type>
+        <methodname>hasVariable</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para>check if this variable container has defined a variable with the requested id</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-31-3" xreflabel="registerVariable(vidis.data.var.AVariable)">
+      <title>registerVariable(AVariable)</title>
+      <indexterm><primary>registerVariable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>registerVariable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>registerVariable</methodname>
+        <methodparam><type>AVariable</type><parameter>var</parameter></methodparam>
+      </methodsynopsis>
+      <para>register a new variable</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

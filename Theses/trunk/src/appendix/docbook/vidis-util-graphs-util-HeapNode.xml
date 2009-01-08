@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-280" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.util.HeapNode">
+  <indexterm><primary>Classes</primary><secondary>HeapNode</secondary></indexterm>
+  <indexterm><primary>HeapNode</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.util.HeapNode</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class HeapNode</refname>
+    <refpurpose>A node in a <literal>Heap</literal>, encapsulating the actual object represented by the noode plus the priority of the node in the heap.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>HeapNode</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>HeapNode</methodname>
+        <methodparam><type>Object</type><parameter>node</parameter></methodparam>
+        <methodparam><type>double</type><parameter>priority</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getObject</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getPriority</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setPriority</methodname>
+        <methodparam><type>double</type><parameter>priority</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/util/HeapNode/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A node in a <literal>Heap</literal>, encapsulating the actual object represented by the noode plus the priority of the node in the heap.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-280-1" xreflabel="HeapNode(java.lang.Object, double)">
+      <title>HeapNode(Object, double)</title>
+      <indexterm><primary>HeapNode</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>HeapNode</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>HeapNode</methodname>
+        <methodparam><type>Object</type><parameter>node</parameter></methodparam>
+        <methodparam><type>double</type><parameter>priority</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates a <literal>HeapNode</literal> with a specified priority and encapsulating an object.</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-280-1" xreflabel="getObject()">
+      <title>getObject()</title>
+      <indexterm><primary>getObject</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getObject</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getObject</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the object encapsultaed by this <literal>HeapNode</literal>.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-280-2" xreflabel="getPriority()">
+      <title>getPriority()</title>
+      <indexterm><primary>getPriority</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getPriority</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getPriority</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns the priority of the <literal>HeapNode</literal> within the <literal>Heap</literal>.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-280-3" xreflabel="setPriority(double)">
+      <title>setPriority(double)</title>
+      <indexterm><primary>setPriority</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setPriority</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setPriority</methodname>
+        <methodparam><type>double</type><parameter>priority</parameter></methodparam>
+      </methodsynopsis>
+      <para>Modifies the priority of the <literal>HeapNode</literal> within the <literal>Heap</literal>. </para>
+      <para> This method simply sets the <literal>priority</literal> attribute of the node. This will not necessarily fixup the <literal>Heap</literal> such that this <literal>HeapNode</literal> will be in its new position. To achieve that effect, call <literal>Heap.setPriority( HeapNode )</literal>.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-280-4" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Returns a <literal>String</literal> representation of this <literal>HeapNode</literal>.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-29" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.data.var.IVariableChangeListener">
+  <indexterm><primary>Interfaces</primary><secondary>IVariableChangeListener</secondary></indexterm>
+  <indexterm><primary>IVariableChangeListener</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.data.var.IVariableChangeListener</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Interface IVariableChangeListener</refname>
+    <refpurpose>the Variable Change Listener Interface</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="interface" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>interface</modifier>
+        <classname>IVariableChangeListener</classname>
+      </ooclass>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableAdded</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableChanged</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableRemoved</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+</refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/data/var/IVariableChangeListener/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>the Variable Change Listener Interface</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-29-2" xreflabel="variableAdded(java.lang.String)">
+      <title>variableAdded(String)</title>
+      <indexterm><primary>variableAdded</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableAdded</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableAdded</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para>this function informs the variable change listener about a new variable</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-29-1" xreflabel="variableChanged(java.lang.String)">
+      <title>variableChanged(String)</title>
+      <indexterm><primary>variableChanged</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableChanged</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableChanged</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para>this function is the trigger that tells the variable change listener when a variable possibly changed its value</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-29-3" xreflabel="variableRemoved(java.lang.String)">
+      <title>variableRemoved(String)</title>
+      <indexterm><primary>variableRemoved</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>variableRemoved</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>variableRemoved</methodname>
+        <methodparam><type>String</type><parameter>id</parameter></methodparam>
+      </methodsynopsis>
+      <para>this function informs the variable change listener about the removal of a variable</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

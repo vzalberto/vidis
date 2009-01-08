@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-271" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.algorithm.ShortestPathAlgorithm">
+  <indexterm><primary>Classes</primary><secondary>ShortestPathAlgorithm</secondary></indexterm>
+  <indexterm><primary>ShortestPathAlgorithm</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.algorithm.ShortestPathAlgorithm</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class ShortestPathAlgorithm</refname>
+    <refpurpose>Abstract class for implementing the shortest path algorithm.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <modifier>class</modifier>
+        <classname>ShortestPathAlgorithm</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>Serializable</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>ShortestPathAlgorithm</methodname>
+        <methodparam><type>WeightedGraph</type><parameter>wgraph</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getDistanceInTree</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getLongestDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getLongestDistanceInTree</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getRoutingTable</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Vertex&gt;</type>
+        <methodname>getShortestPath</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <methodparam><type>Vertex</type><parameter>from</parameter></methodparam>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Direct known subclasses</emphasis>: <simplelist type="inline"><member><link linkend="CLASS-272"><varname>vidis.­util.­graphs.­graph.­algorithm.­ShortestPathAlgorithmDijkstra</varname></link></member><member><link linkend="CLASS-273"><varname>vidis.­util.­graphs.­graph.­algorithm.­ShortestPathAlgorithmMooreFord</varname></link></member></simplelist></para><para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/algorithm/ShortestPathAlgorithm/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>Abstract class for implementing the shortest path algorithm. A shortest path spanning tree is a subgraph of the original weighted graph showing how to reach all other vertices from a given vertex in the same connected set in the shortest possible way. The shortest path between two vertices should be such that the sum of the weights of all the edges between the two vertices be at a minimum. Note that, like minimum spanning trees, there may be more than one shortest spanning tree for a single weighted graph. Concrete subclasses must never modify the weighted graph where it is computing the shortest path.</para>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-271-4" xreflabel="getDistance(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>getDistance(Vertex, Vertex)</title>
+      <indexterm><primary>getDistance</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDistance</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para>Compute the distance between two vertices in the shortest path spanning tree.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-5" xreflabel="getDistanceInTree(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>getDistanceInTree(Vertex, Vertex)</title>
+      <indexterm><primary>getDistanceInTree</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getDistanceInTree</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getDistanceInTree</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para>Recursive method used by getDistance(v1,v2) for finding partial distances of two vertices in the shortest path spanning tree.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-6" xreflabel="getLongestDistance(vidis.util.graphs.graph.Vertex)">
+      <title>getLongestDistance(Vertex)</title>
+      <indexterm><primary>getLongestDistance</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLongestDistance</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getLongestDistance</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+      </methodsynopsis>
+      <para>Method that computes the longest distance of any vertex from the start vertex of the shortest path spanning tree.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-7" xreflabel="getLongestDistanceInTree(vidis.util.graphs.graph.Vertex)">
+      <title>getLongestDistanceInTree(Vertex)</title>
+      <indexterm><primary>getLongestDistanceInTree</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getLongestDistanceInTree</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>double</type>
+        <methodname>getLongestDistanceInTree</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+      </methodsynopsis>
+      <para>Recursive method used by getLongestDistance(v1) for finding the longest distance of the subtree starting at vertex v1</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-8" xreflabel="getRoutingTable(vidis.util.graphs.graph.Vertex)">
+      <title>getRoutingTable(Vertex)</title>
+      <indexterm><primary>getRoutingTable</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getRoutingTable</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Map</type>
+        <methodname>getRoutingTable</methodname>
+        <methodparam><type>Vertex</type><parameter>v</parameter></methodparam>
+      </methodsynopsis>
+      <para>Method that computes the routing table corresponding to a shortest path spanning tree as a map of target vertices to neighbor vertices.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-3" xreflabel="getShortestPath(vidis.util.graphs.graph.Vertex, vidis.util.graphs.graph.Vertex)">
+      <title>getShortestPath(Vertex, Vertex)</title>
+      <indexterm><primary>getShortestPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getShortestPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>List&lt;Vertex&gt;</type>
+        <methodname>getShortestPath</methodname>
+        <methodparam><type>Vertex</type><parameter>v1</parameter></methodparam>
+        <methodparam><type>Vertex</type><parameter>v2</parameter></methodparam>
+      </methodsynopsis>
+      <para>This method returns the shortest path between two vertices as a list of the vertices the path consists of.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-2" xreflabel="shortestPath()">
+      <title>shortestPath()</title>
+      <indexterm><primary>shortestPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>shortestPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <modifier>abstract</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Abstract method to be implemented by subclasses to determine a shortest path spanning tree from a given vertex in the form of a graph.</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-271-1" xreflabel="shortestPath(vidis.util.graphs.graph.Vertex)">
+      <title>shortestPath(Vertex)</title>
+      <indexterm><primary>shortestPath</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>shortestPath</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>WeightedGraph</type>
+        <methodname>shortestPath</methodname>
+        <methodparam><type>Vertex</type><parameter>from</parameter></methodparam>
+      </methodsynopsis>
+      <para>Wrapper method that sets the start vertex and calls shortestPath() for computing the shortest path spanning tree.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+

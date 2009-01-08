@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<refentry version="1.0" xml:id="CLASS-253" xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" xreflabel="vidis.util.graphs.graph.Vertex">
+  <indexterm><primary>Classes</primary><secondary>Vertex</secondary></indexterm>
+  <indexterm><primary>Vertex</primary></indexterm>
+  <refentryinfo>
+    <date>2008-12-16</date>
+  </refentryinfo>
+  <refmeta>
+    <manvolnum>3</manvolnum>
+    <refmiscinfo class="source">vidis.util.graphs.graph.Vertex</refmiscinfo>
+    <refmiscinfo class="version">1.0</refmiscinfo>
+    <refmiscinfo class="manual">dbdoclet reference handbook</refmiscinfo>
+  </refmeta>
+  <refnamediv>
+    <refname>Class Vertex</refname>
+    <refpurpose>A vertex in a graph.</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv><classsynopsis class="class" language="java">
+      <ooclass>
+        <modifier>public</modifier>
+        <modifier>class</modifier>
+        <classname>Vertex</classname>
+      </ooclass>
+      <oointerface>
+        <interfacename>GraphComponent</interfacename>
+      </oointerface>
+      <classsynopsisinfo role="comment">// Public Constructors</classsynopsisinfo>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Vertex</methodname>
+        <void/>
+      </constructorsynopsis>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Vertex</methodname>
+        <methodparam><type>Object</type><parameter>newobject</parameter></methodparam>
+      </constructorsynopsis>
+      <classsynopsisinfo role="comment">// Public Methods</classsynopsisinfo>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getObject</methodname>
+        <void/>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setObject</methodname>
+        <methodparam><type>Object</type><parameter>newobject</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setString</methodname>
+        <methodparam><type>String</type><parameter>string</parameter></methodparam>
+      </methodsynopsis>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+    </classsynopsis>
+<para><emphasis role="bold">Methods inherited from java.lang.Object</emphasis>: <simplelist type="inline"><member><varname>equals</varname></member><member><varname>getClass</varname></member><member><varname>hashCode</varname></member><member><varname>notify</varname></member><member><varname>notifyAll</varname></member><member><varname>toString</varname></member><member><varname>wait</varname></member></simplelist></para></refsynopsisdiv>
+  <refsect1>
+    <title>Inheritance Path</title>
+    <informalfigure>
+      <mediaobject>
+        <imageobject>
+          <imagedata align="center" fileref="figures/vidis/util/graphs/graph/Vertex/ClassDiagram.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </informalfigure>
+  </refsect1>
+  <refsect1>
+    <title>Description</title>
+    <para>A vertex in a graph. This class encapsulates an object that the vertex will represent. Hence, a Vertex can represent any object that extends java.lang.Object by simply calling setObject() or specifying the objet on the constructor.</para>
+  </refsect1>
+  <refsect1>
+    <title>Constructors</title>
+    <refsect2 xml:id="CONSTRUCTOR-253-1" xreflabel="Vertex()">
+      <title>Vertex()</title>
+      <indexterm><primary>Vertex</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Vertex</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Vertex</methodname>
+        <void/>
+      </constructorsynopsis>
+      <para>Constructor that initializes this.object to null</para>
+    </refsect2>
+    <refsect2 xml:id="CONSTRUCTOR-253-2" xreflabel="Vertex(java.lang.Object)">
+      <title>Vertex(Object)</title>
+      <indexterm><primary>Vertex</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>Vertex</secondary></indexterm>
+      <constructorsynopsis language="java">
+        <modifier>public</modifier>
+        <methodname>Vertex</methodname>
+        <methodparam><type>Object</type><parameter>newobject</parameter></methodparam>
+      </constructorsynopsis>
+      <para>Creates a new Vertex object that initializes this.object to newobject</para>
+    </refsect2>
+  </refsect1>
+  <refsect1>
+    <title>Methods</title>
+    <refsect2 xml:id="METHOD-253-1" xreflabel="getObject()">
+      <title>getObject()</title>
+      <indexterm><primary>getObject</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>getObject</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>Object</type>
+        <methodname>getObject</methodname>
+        <void/>
+      </methodsynopsis>
+      <para>Getter method that returns the object that the Vertex represents</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-253-2" xreflabel="setObject(java.lang.Object)">
+      <title>setObject(Object)</title>
+      <indexterm><primary>setObject</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>setObject</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>void</type>
+        <methodname>setObject</methodname>
+        <methodparam><type>Object</type><parameter>newobject</parameter></methodparam>
+      </methodsynopsis>
+      <para>Setter method sets this.object to newobject</para>
+    </refsect2>
+    <refsect2 xml:id="METHOD-253-3" xreflabel="toString()">
+      <title>toString()</title>
+      <indexterm><primary>toString</primary></indexterm>
+      <indexterm><primary>Methods</primary><secondary>toString</secondary></indexterm>
+      <methodsynopsis language="java">
+        <modifier>public</modifier>
+        <type>String</type>
+        <methodname>toString</methodname>
+        <void/>
+      </methodsynopsis>
+      <para><emphasis role="bold">Specified by: </emphasis>Method <link linkend="CLASS-241">toString</link> in interface <link linkend="CLASS-241">GraphComponent</link></para>
+      <para>If <literal>setString()</literal> has never been called, this method then simply calls <literal>this.object.toString()</literal>. Otherwise, it returns the string that was set during the call to <literal>setString()</literal>.</para>
+    </refsect2>
+  </refsect1>
+</refentry>
+
+
