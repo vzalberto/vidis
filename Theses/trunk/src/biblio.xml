@@ -87,7 +87,12 @@
 		</biblioentry>
 		<biblioentry id="web_catalyst">
 			<bibliosource class="uri">
-				<linke xlink:href="http://www2.ati.com/relnotes/catalyst_89_release_notes.html" />
+				<link xlink:href="http://www2.ati.com/relnotes/catalyst_89_release_notes.html" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_heiseopengl">
+			<bibliosource class="uri">
+				<link xlink:href="http://www.heise.de/kiosk/archiv/ix/2008/10/106_kiosk" />
 			</bibliosource>
 		</biblioentry>
 
