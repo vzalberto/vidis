@@ -2,8 +2,6 @@
 <section
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Simulator</title>
-	<para>Hier gehts um den Simulator.</para>
-	
 	<section>
 		<title>Funktionsweise</title>
 		<para>
@@ -13,7 +11,12 @@
 				<listitem><para>Modul laden</para></listitem>
 				<listitem><para>Objekte instantiieren</para></listitem>
 				<listitem><para>Schrittweise simulieren</para></listitem>
-			</itemizedlist> 
+			</itemizedlist>
+		</para>
+		<para>
+			Nach jedem Simulationsschritt werden alle Veränderungen an
+			den Objektinstanzen des geladenen Moduls auf der Benutzeroberfläche
+			dargestellt.
 		</para>
 	</section>
 	<section>
@@ -66,6 +69,15 @@
 			Folgendes Zustandübergangsdiagramm veranschaulicht die Zustandsmaschine
 			Player.
 		</para>
+		<figure>
+			<title>Zustandsübergangsdiagramm des Players</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="figures/zustandsübergangsdiagramm-player.png" width="400" align="center">
+					</imagedata>
+				</imageobject>
+			</mediaobject>
+		</figure>
 		<para>
 			Er implementiert folgende Funktionalität:
 			<itemizedlist>
