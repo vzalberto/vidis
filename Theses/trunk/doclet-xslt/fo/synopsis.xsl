@@ -248,7 +248,11 @@
 
   <xsl:template match="modifier" mode="java">
     <xsl:choose>
-      <xsl:when test="@role = 'annotation'"><fo:inline xsl:use-attribute-sets="synopsis.annotation"><xsl:apply-templates mode="java"/></fo:inline></xsl:when>
+      <xsl:when test="@role = 'annotation'">
+        <fo:inline xsl:use-attribute-sets="synopsis.annotation">
+          <xsl:apply-templates mode="java"/>
+        </fo:inline>
+      </xsl:when>
       <xsl:otherwise>
         <fo:inline xsl:use-attribute-sets="synopsis.keyword">
           <xsl:apply-templates mode="java"/>

@@ -17,10 +17,10 @@
   <!-- SECTION Parameter -->
   <xsl:param name="admon.graphics">1</xsl:param>
   <xsl:param name="admon.graphics.extension">.gif</xsl:param>
-  <xsl:param name="admon.graphics.path">@dbdoclet_home@/docbook/xsl/images/</xsl:param>
+  <xsl:param name="admon.graphics.path">doclet/docbook/xsl/images/</xsl:param>
   <xsl:param name="callout.graphics">1</xsl:param>
   <xsl:param name="callout.graphics.extension">.gif</xsl:param>
-  <xsl:param name="callout.graphics.path">@dbdoclet_home@/docbook/xsl/images/callouts/</xsl:param>
+  <xsl:param name="callout.graphics.path">doclet/docbook/xsl/images/callouts/</xsl:param>
   <xsl:param name="alignment">left</xsl:param>
   <xsl:param name="autotoc.label.separator"> </xsl:param>
   <xsl:param name="body.font.family">sans-serif</xsl:param>
@@ -32,8 +32,9 @@
   <xsl:param name="column.count.front">1</xsl:param>
   <xsl:param name="column.count.index">1</xsl:param>
   <xsl:param name="double.sided">0</xsl:param>
-  <xsl:param name="draft.mode">no</xsl:param>
-  <xsl:param name="draft.watermark.image">@dbdoclet_home@/docbook/xsl/images/draft.png</xsl:param>
+  <xsl:param name="draft.mode">yes</xsl:param>
+  <xsl:param name="draft.watermark.image">doclet/docbook/xsl/images/draft.png</xsl:param>
+
   <xsl:param name="fop.extensions">0</xsl:param>
   <xsl:param name="fop1.extensions">1</xsl:param>
   <xsl:param name="generate.index">1</xsl:param>
@@ -46,7 +47,9 @@
   <xsl:param name="tablecolumns.extension">1</xsl:param>
   <xsl:param name="title.margin.left">0in</xsl:param>
   <xsl:param name="toc.section.depth">1</xsl:param>
-  <xsl:param name="use.extensions">1</xsl:param>
+<!-- produces an error
+ <xsl:param name="use.extensions">1</xsl:param>
+-->
 <!-- eof dbdoclet stuff -->
 
 <xsl:variable name="body.font.master">11</xsl:variable>

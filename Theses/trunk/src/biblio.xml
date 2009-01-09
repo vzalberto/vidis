@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<bibliography xmlns="http://docbook.org/ns/docbook">
+	<bibliography xmlns="http://docbook.org/ns/docbook"
+		 xmlns:xlink="http://www.w3.org/1999/xlink">
 		<biblioentry id="book_redbook">
 			<title>OpenGL<trademark class="registered" /> Programming Guide</title>
 			<subtitle>The Official Guide to Learning OpenGL<trademark class="registered" />, Version 2</subtitle>
@@ -54,18 +55,40 @@
 			</authorgroup>
 		</biblioentry>
 		<biblioentry id="web_opengl">
-			<title>http://www.opengl.org</title>
+			<bibliosource class="uri">
+				<link xlink:href="http://www.opengl.org" />
+			</bibliosource>
 		</biblioentry>
 		<biblioentry id="web_java3d">
-			<title>https://java3d.dev.java.net/</title>
+			<bibliosource class="uri">
+				<link xlink:href="https://java3d.dev.java.net/" />
+			</bibliosource>
 		</biblioentry>
 		<biblioentry id="web_jogl">
-			<title>https://jogl.dev.java.net/</title>
+			<bibliosource class="uri">
+				<link xlink:href="https://jogl.dev.java.net/" />
+			</bibliosource>
 		</biblioentry>
 		<biblioentry id="web_jsr231">
-			<title>http://jcp.org/en/jsr/detail?id=231</title>
+			<bibliosource class="uri">
+				<link xlink:href="http://jcp.org/en/jsr/detail?id=231" />
+			</bibliosource>
 		</biblioentry>
 		<biblioentry id="web_lwjgl">
-			<title>http://lwjgl.org/</title>
+			<bibliosource class="uri">
+				<link xlink:href="http://lwjgl.org/" />
+			</bibliosource>
 		</biblioentry>
+		<biblioentry id="web_siggraph">
+			<title><quote>Birds of Feather</quote> Presentation SIGGRAPH 2007</title>
+			<bibliosource class="uri">
+				<link xlink:href="http://www.khronos.org/developers/library/2007_08_siggraph/siggraph%202007%20bof.pdf" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_catalyst">
+			<bibliosource class="uri">
+				<linke xlink:href="http://www2.ati.com/relnotes/catalyst_89_release_notes.html" />
+			</bibliosource>
+		</biblioentry>
+
 	</bibliography>	

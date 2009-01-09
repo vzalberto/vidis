@@ -149,10 +149,16 @@
       <xsl:value-of select="$body.font.master * 0.9"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>  
-    <!--
+
+  <xsl:attribute name="border">0.5pt solid blue</xsl:attribute>
+  <xsl:attribute name="background-color">#E0E0E0</xsl:attribute>
+  <xsl:attribute name="padding">0.1in</xsl:attribute>
+
+
+<!--    
     <xsl:attribute name="border-style">solid</xsl:attribute>
     <xsl:attribute name="border-width">1mm</xsl:attribute>
-    -->
+-->    
     <xsl:attribute name="space-before.minimum">0.33em</xsl:attribute>
     <xsl:attribute name="space-before.optimum">0.33em</xsl:attribute>
     <xsl:attribute name="space-before.maximum">0.33em</xsl:attribute>
