@@ -2,7 +2,26 @@
 <section
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Vision</title>
-	<para>In diesem Abschnitt wird das Ziel dieser Bakkalaureatsarbeit beschrieben.</para>
+	<para>
+		In diesem Abschnitt wird das Ziel dieser Bakkalaureatsarbeit
+		beschrieben.
+	</para>
+	<para>
+		Zunächst werden die Anwendungsmöglichkeiten im Bereich der
+		Visualisierung aufgezeigt. Anschließend werden die
+		Anwendungsbereiche von VIDIS abgesteckt.
+	</para>
+	<para>
+		Der Name VIDIS wurde abgeleitet aus der englischen
+		Betitelung des Projektnamens unter der üblichen Konvention
+		von Open Source Projekten. VIDIS steht für
+		<quote>Visualisation Framework of Distributed Systems</quote>.
+		Diese Bakkalaureatsarbeit steht für ein einfach zu verwendendes,
+		anschauliches und didaktisch hochwertiges Framework
+		zur Simulation und Visualisierung für Verteilte Systeme. Entsprechend
+		gliedern sich die Hauptanwendungsbereiche in <quote>Visualisierung von Verteilten Systemen</quote>
+		und <quote>Entwickeln und Testen von Algorithmen Verteilter Systeme</quote>.
+	</para>
 	<section>
 		<title>VIDIS für Visualisierungen</title>
 		<para>
@@ -14,7 +33,13 @@
 	<section>
 		<title>VIDIS für Entwickler</title>
 		<para>
-			VIDIS kann dazu verwendet werden um verschiedene Implementierungen und Arten von Algorithmen auf diversen Netzwerkstrukturen zu testen.
+			VIDIS kann dazu verwendet werden um verschiedene
+			Implementierungen und Arten von Algorithmen auf
+			diversen Netzwerkstrukturen zu testen und zu entwickeln.
+			Es eignet sich zur Analyse von bestehenden Algorithmen indem
+			ihre Funktionsweise veranschaulicht wird und gegebenenfalls
+			Fehler eines Algorithmus oder der Implementierung leichter
+			gefunden werden können.
 		</para>
 	</section>
 </section>
