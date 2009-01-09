@@ -12,8 +12,11 @@
 			beschreiben. Man gibt dabei Nodes, Links und die Verbindungen
 			dazwischen an.
 		</para>
+		<para>
+			Das folgende Beispiel soll die Struktur einer MSIM-Datei veranschaulichen.
+		</para>
 		<example>
-			<title>Beispiel für eine MSIM-Datei</title>
+			<title>Beispiel für eine vollständige MSIM-Datei</title>
 			<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 				<![CDATA[
 					<module>
@@ -48,272 +51,301 @@
 				]]>
 			</programlisting>
 		</example>
-	</section>
-	<section>
-		<title>Format</title>
 		<para>
-			Im Folgenden werden die XML Knoten einer MSIM-Datei beschrieben.
-			<footnote>
-				<para>
-					Alle Schlüssel der XML-Elemente sind nicht case-sensitiv,
-					d.h.
-					es macht z.B. keinen Unterschied wenn der Wurzelschlüssel
-					"module"
-					oder "Module" oder "MoDuLe" benannt wird.
-				</para>
-			</footnote>
+			Im Folgenden werden alle XML Elemente einer MSIM-Datei
+			beschrieben und mit Beispielen veranschaulicht.
 		</para>
-		<section>
-			<title>Module</title>
-			<para>Dies ist das Wurzelelement. Es beinhaltet 5 Kindelemente.
-				Es folgt eine Auflistung dieser Elemente.</para>
-			<section>
-				<title>ID</title>
-				<para>
-					Dieses Element beinhaltet einen String, welches dieses
-					Modul
-					beschreibt.
-					<footnote>
-						<para>z.B. Demo Module 1</para>
-					</footnote>
-				</para>
-				<example>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							<id>someId</id>
-						]]>
-						</programlisting>
-					</example>
-			</section>
-			<section>
-				<title>Classpath</title>
-				<para>
-					Dieses Element beinhaltet einen String zum classpath der
-					Modul Klassen.
-				</para>
-				<example>
-					<title>Ein ausführliches Beispiel für ein Classpath Element</title>
-					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-					<![CDATA[
-						<classpath>some.specific.classpath.where.all.module.classes.reside</classpath>
-					]]>
-					</programlisting>
-				</example>
-				<example>
-					<title>Ein Beispiel für einen Classpath</title>
-					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-					<![CDATA[
-						my.vidis.modules.mymodule
-					]]>
-					</programlisting>
-				</example>
-			</section>
-			<section>
-				<title>Objects</title>
-				<para>Dieses Element beinhaltet alle zu ladenden Link- und
-					Node-Objektinstanzen.</para>
-				<section>
-					<title>Node</title>
+		<remark>
+			Alle Schlüssel der XML-Elemente sind nicht case-sensitiv,
+				d.h.
+				es macht z.B. keinen Unterschied wenn der Wurzelschlüssel
+				"module"
+				oder "Module" oder "MoDuLe" benannt wird. Aus Konvention
+				der Namensgebung von Variablen werden diese im folgenden
+				Bereich immer kleingeschrieben.
+		</remark>
+		<variablelist>
+			<title>Format (Struktur) des MSIM XML Dokuments</title>
+			<varlistentry>
+				<term>module</term>
+				<listitem>
 					<para>
-						Dieses Element beschreibt eine Node-Objektinstanz.
+						Dieses XML Element ist das Wurzelelement
+						für dieses Dokument. Es beinhaltet folgende
+						Kinder:
+						<variablelist>
+							<varlistentry>
+								<term>id</term>
+								<listitem>
+									<para>
+										Dieses Element repräsentiert den
+										Bezeichner für dieses Modul. Es beinhaltet
+										einen String, welcher dieses Modul beschreibt.
+									</para>
+									<example>
+										<title>Beispiel 1 für ein Modul-ID Element</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+											<![CDATA[<id>someId</id>]]>
+										</programlisting>
+									</example>
+									<example>
+										<title>Beispiel 2 für ein Modul-ID Element</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+											<![CDATA[<id>Das ist das Modul X</id>]]>
+										</programlisting>
+									</example>
+								</listitem>
+							</varlistentry>
+							<varlistentry>
+								<term>classpath</term>
+								<listitem>
+									<para>
+										Dieses Element steht für den Classpath für das Paket, in
+										welchem alle Klassen des Moduls liegen.
+										Es beinhaltet einen String zum Classpath der Modulklassen.
+									</para>
+									<example>
+										<title>Beispiel 1 für ein Modul-Classpath Element</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+											<![CDATA[<classpath>vidis.modules.moduleName</classpath>]]>
+										</programlisting>
+									</example>
+									<example>
+										<title>Beispiel 2 für einen Classpath</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+										<![CDATA[
+											my.vidis.modules.mymodule
+										]]>
+										</programlisting>
+									</example>
+								</listitem>
+							</varlistentry>
+							<varlistentry>
+								<term>nodeDensity</term>
+								<listitem>
+									<note>
+										<para>
+											Dieses Element ist optional.
+										</para>
+									</note>
+									<para>
+										Dieses Element beinhaltet einen Zahlwert im Wertebereich
+										[0..1] mit
+										Nachkommastellen. Er beschreibt wie nahe die Knoten zu
+										einander
+										stehen sollen. 0 ist dabei der Minimalabstand, 1 der
+										Maximalabstand. Dieser Parameter beeinflußt direkt die vorhandenen
+										Layouts.
+									</para>
+									<example>
+										<title>Beispiel für ein NodeDensity Element.</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+										<![CDATA[
+											<nodeDensity>0.5</nodeDensity>
+										]]>
+										</programlisting>
+									</example>
+								</listitem>
+							</varlistentry>
+							<varlistentry>
+								<term>objects</term>
+								<listitem>
+									<para>
+										Dieses Element beinhaltet alle beteiligten Link- und
+										Node-Objektinstanzen.
+									</para>
+									<variablelist>
+										<varlistentry>
+											<term>node</term>
+											<listitem>
+												<para>
+													Dieses Element beschreibt eine Node-Objektinstanz.
+												</para>
+												<example>
+													<title>Beispiel für ein Node Element mit Variablen</title>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+													<![CDATA[
+														<node>
+															<id>uniqueNodeId</id>
+															<class>implementedClassName</class>
+														</node>
+													]]>
+													</programlisting>
+												</example>
+												<example>
+													<title>Beispiel für ein Node Element mit Variablen</title>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+													<![CDATA[
+														<node>
+															<id>uniqueNodeId</id>
+															<class>implementedClassName</class>
+															<variables>
+																<var1>var1Value</var1>
+																<var2>var2Value</var2>
+															</variables>
+														</node>
+													]]>
+													</programlisting>
+												</example>
+												<note>
+													<para>
+														Das Element class beinhaltet einen String,
+														welcher die Klasse dieser Instanz beschreibt.
+														Zusammen mit dem Classpath-Element ist dies
+														der Classpath der zu ladenden Klasse.
+													</para>
+												</note>
+												<warning>
+													<para>
+														Die id eines Nodes muss zwingend eindeutig
+														sein. Sollten zwei Nodes mit derselben id
+														vorhanden sein, wird der zweitvorkommende
+														Node beim Instantiieren der Instanzen während des
+														Ladevorgang nicht
+														beachtet. Dies kann zu unerwünschten Ergebnissen
+														führen!
+													</para>
+												</warning>
+												<xi:include href="msim/variables.xml" />
+											</listitem>
+										</varlistentry>
+										<varlistentry>
+											<term>link</term>
+											<listitem>
+												<para>
+													Dieses Element beschreibt eine Link-Objektinstanz.
+												</para>
+												<example>
+													<title>Beispiel für ein Link-Element</title>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+													<![CDATA[
+														 <link>
+														 	<id>uniqueLinkId</id>
+														 	<class>implementingClass</class>
+														 	<delay>5</delay>
+														 </link>
+													]]>
+													</programlisting>
+												</example>
+												<example>
+													<title>Beispiel für ein Link-Element mit Variablen</title>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+													<![CDATA[
+														 <link>
+														 	<id>uniqueLinkId</id>
+														 	<class>implementingClass</class>
+														 	<delay>5</delay>
+														 	<variables>
+														 		<var1>var1value</var1>
+														 		<var2>var2value</var2>
+														 	</variables>
+														 </link>
+													]]>
+													</programlisting>
+												</example>
+												<note>
+													<para>
+														Das Element class beinhaltet einen String,
+														welcher die Klasse dieser Instanz beschreibt.
+														Zusammen mit dem Classpath-Element ist dies
+														der Classpath der zu ladenden Klasse.
+													</para>
+												</note>
+												<note>
+													<para>
+														Eine Zahl im Wertebereich eines Java Long Integers,
+														welcher den Delay (die Länge des Links)
+														beschreibt.
+													</para>
+												</note>
+												<warning>
+													<para>
+														Die id eines Links muss zwingend eindeutig
+														sein. Sollten zwei Links mit derselben id
+														vorhanden sein, wird der zweitvorkommende
+														Link beim Instantiieren der Instanzen während
+														des Ladevorgangs nicht
+														beachtet. Dies kann zu unerwünschten Ergebnissen
+														führen!
+													</para>
+												</warning>
+												<xi:include href="msim/variables.xml" />
+											</listitem>
+										</varlistentry>
+									</variablelist>
+								</listitem>
+							</varlistentry>
+							<varlistentry>
+								<term>connections</term>
+								<listitem>
+									<para>
+										Dieses Element beinhaltet alle Verbindungen, welche
+										zwischen Nodes
+										mit Hilfe von Links hergestellt werden sollen.
+									</para>
+									<example id="example_connection_simple">
+										<title>Beispiel für eine einzelne Verbindung zwischen Node A und Node B über Link L.</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+										<![CDATA[
+											<connections>
+												<connection>
+													<nodeA>A</nodeA>
+													<nodeB>B</nodeB>
+													<link>L</link>
+												</connection>
+											</connections>
+										]]>
+										</programlisting>
+									</example>
+									<example>
+										<title>Beispiel mit mehreren Verbindung zwischen diversen Nodes in einer Ring Topologie.</title>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
+										<![CDATA[
+											<connections>
+												<connection>
+													<nodeA>node0</nodeA>
+													<nodeB>node1</nodeB>
+													<link>link0-1</link>
+												</connection>
+												<connection>
+													<nodeA>node1</nodeA>
+													<nodeB>node2</nodeB>
+													<link>link1-2</link>
+												</connection>
+												<connection>
+													<nodeA>node3</nodeA>
+													<nodeB>node4</nodeB>
+													<link>link3-4</link>
+												</connection>
+												<connection>
+													<nodeA>node4</nodeA>
+													<nodeB>node0</nodeB>
+													<link>link4-0</link>
+												</connection>
+											</connections>
+										]]>
+										</programlisting>
+									</example>
+									<variablelist>
+										<varlistentry>
+											<term>connection</term>
+											<listitem>
+												<para>
+													Dieses Element beschreibt eine Verbindung zwischen zwei Nodes.
+													Die Elemente nodeA, nodeB und link beinhalten ids von Nodes
+													beziehungsweise Links. <xref linkend="example_connection_simple" />
+													stellt intuitiverweise eine Verbindung zwischen Node <quote>A</quote> und node <quote>B</quote> mittels
+													dem Link <quote>L</quote> her.
+												</para>
+											</listitem>
+										</varlistentry>
+									</variablelist>
+								</listitem>
+							</varlistentry>
+						</variablelist>
 					</para>
-					<example>
-						<title>Beispiel für ein Node Element mit Variablen</title>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							<node>
-								<id>uniqueNodeId</id>
-								<class>implementedClassName</class>
-							</node>
-						]]>
-						</programlisting>
-					</example>
-					<example>
-						<title>Beispiel für ein Node Element mit Variablen</title>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							<node>
-								<id>uniqueNodeId</id>
-								<class>implementedClassName</class>
-								<variables>
-									<var1>var1Value</var1>
-									<var2>var2Value</var2>
-								</variables>
-							</node>
-						]]>
-						</programlisting>
-					</example>
-					<section>
-						<title>ID</title>
-						<para>Ein String, welcher diese Instanz eindeutig (UNIQUE)
-							beschreibt.</para>
-					</section>
-					<section>
-						<title>CLASS</title>
-						<para>Ein String, welche die Klasse dieser Instanz beschreibt.
-							Zusammen mit dem Classpath-Element ist dies der Classpath der
-							zu
-							ladenden Klasse.</para>
-					</section>
-					<xi:include href="msim/variables.xml" />
-				</section>
-				<section>
-					<title>Link</title>
-					<para>
-						Dieses Element beschreibt eine Link-Objektinstanz.
-					</para>
-					<example>
-						<title>Beispiel für ein Link-Element</title>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							 <link>
-							 	<id>uniqueLinkId</id>
-							 	<class>implementingClass</class>
-							 	<delay>5</delay>
-							 </link>
-						]]>
-						</programlisting>
-					</example>
-					<example>
-						<title>Beispiel für ein Link-Element mit Variablen</title>
-						<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-						<![CDATA[
-							 <link>
-							 	<id>uniqueLinkId</id>
-							 	<class>implementingClass</class>
-							 	<delay>5</delay>
-							 	<variables>
-							 		<var1>var1value</var1>
-							 		<var2>var2value</var2>
-							 	</variables>
-							 </link>
-						]]>
-						</programlisting>
-					</example>
-					<section>
-						<title>ID</title>
-						<para>Ein String, welcher diese Instanz eindeutig (UNIQUE)
-							beschreibt.</para>
-					</section>
-					<section>
-						<title>CLASS</title>
-						<para>Ein String, welche die Klasse dieser Instanz beschreibt.
-							Zusammen mit dem Classpath-Element ist dies der Classpath der
-							zu
-							ladenden Klasse.</para>
-					</section>
-					<section>
-						<title>DELAY</title>
-						<para>Eine Zahl im Wertebereich eines Java Long Integers,
-							welcher den Delay (die Länge des Links)
-							beschreibt.</para>
-					</section>
-					<xi:include href="msim/variables.xml" />
-				</section>
-			</section>
-			<section>
-				<title>Connections</title>
-				<para>
-					Dieses Element beinhaltet alle Verbindungen, welche
-					zwischen Nodes
-					mit Hilfe von Links hergestellt werden sollen.
-				</para>
-				<example>
-					<title>Beispiel für eine einzelne Verbindung zwischen Node A und Node B über Link L.</title>
-					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-					<![CDATA[
-						<connections>
-							<connection>
-								<nodeA>A</nodeA>
-								<nodeB>B</nodeB>
-								<link>L</link>
-							</connection>
-						</connections>
-					]]>
-					</programlisting>
-				</example>
-				<example>
-					<title>Beispiel mit mehreren Verbindung zwischen diversen Nodes in einer Ring Topologie.</title>
-					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-					<![CDATA[
-						<connections>
-							<connection>
-								<nodeA>node0</nodeA>
-								<nodeB>node1</nodeB>
-								<link>link0-1</link>
-							</connection>
-							<connection>
-								<nodeA>node1</nodeA>
-								<nodeB>node2</nodeB>
-								<link>link1-2</link>
-							</connection>
-							<connection>
-								<nodeA>node3</nodeA>
-								<nodeB>node4</nodeB>
-								<link>link3-4</link>
-							</connection>
-							<connection>
-								<nodeA>node4</nodeA>
-								<nodeB>node0</nodeB>
-								<link>link4-0</link>
-							</connection>
-						</connections>
-					]]>
-					</programlisting>
-				</example>
-				<section>
-					<title>Connection</title>
-					<para>Dieses Element beschreibt eine Verbindung zwischen zwei
-						Nodes.</para>
-					<section>
-						<title>NodeA</title>
-						<para>
-							Die id der ersten Node.
-							<footnote>
-								<para>z.B. node01</para>
-							</footnote>
-						</para>
-					</section>
-					<section>
-						<title>NodeB</title>
-						<para>
-							Die id der zweiten Node.
-							<footnote>
-								<para>z.B. node02</para>
-							</footnote>
-						</para>
-					</section>
-					<section>
-						<title>Link</title>
-						<para>
-							Die id des zu verwenden Links.
-							<footnote>
-								<para>z.B. link_node01_node02</para>
-							</footnote>
-						</para>
-					</section>
-				</section>
-			</section>
-			<section>
-				<title>NodeDensity</title>
-				<para>
-					Dieses Element beinhaltet einen Zahlwert im Wertebereich
-					[0..1] mit
-					Nachkommastellen. Er beschreibt wie nahe die Knoten zu
-					einander
-					stehen sollen. 0 ist dabei der Minimalabstand, 1 der
-					Maximalabstand. Dieser Parameter beeinflußt direkt die vorhandenen
-					Layouts.
-				</para>
-				<example>
-					<title>Beispiel für ein NodeDensity Element.</title>
-					<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-					<![CDATA[
-						<nodeDensity>0.5</nodeDensity>
-					]]>
-					</programlisting>
-				</example>
-			</section>
-		</section>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 	</section>
 </section>
