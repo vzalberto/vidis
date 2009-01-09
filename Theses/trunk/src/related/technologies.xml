@@ -56,39 +56,66 @@
 			</itemizedlist>
 		</para>
 		<section>
-			<title>OpenGL Java Bindings</title>
+			<title><trademark class="registered">OpenGL</trademark> Java Bindings</title>
 			<para>
 				Es existieren einige Projekte, die es ermöglichen den <trademark class="registered">OpenGL</trademark> Standard auch
 				in anderen Sprachen wie zb Java zu verwenden. Einige sind einfache API-Wrapper, die über JNI einach alle Funktionen
 				der API zugänglich machen, andere haben ein komplett eigenes Objektmodell und verstecken die <trademark class="registered">
 				OpenGL</trademark> API vor dem Programmierer.
 			</para>
-			<section>
-				<title><trademark>Java3D</trademark></title>
+		<variablelist>
+			<title>Untersuchte Java Bindings</title>
+			<varlistentry>
+				
+				<term><trademark>Java3D</trademark></term>
+				
+				<listitem>
 				<para>
-					Die <trademark>Java3D</trademark> API ist ein Open Source Projekt. Die API setzt auf ein objektorientiertes Modell und
-					einen Szenengraphen. Ein Szenengraph ist eine Datenstruktur in der die zu rendernden Objekte abgelegt werden. Es gibt 
-					beispielsweise Szenengraphen 
-				</para>
-			</section>
+					Die <trademark>Java3D</trademark> API ist ein Open Source Projekt. Die API setzt auf ein objektorientiertes Modell mit
+					einem Szenengraph. Ein Szenengraph kann eine Szene mit all ihren Objekten, Kameraeinstellugen und Animationen beschreiben.
+					Es gibt keine genaue Vorgabe wie ein Szenengraph auszusehen hat.
+					Jede 3D Engine implementiert ihr eigenes Modell um bestimmte Vorgänge zu erleichtern oder zu beschleunigen. Typischerweise
+					hat ein Szenengraph Transformationsknoten und Objektknoten. Ein Transformationsknoten beinhaltet eine Translations-, eine
+					Rotations- oder eine Skalierungsmatrix und ein Objektknoten Vertexdaten, die das Objekt beschreiben. 
+				</para><para>	
+					Ein einfacher 
+					Szenengraph könnte, wie <xref linkend="example_scenegraph" /> zeigt, aussehen. Der Pfad vom Rootknoten zum Objektknoten gibt
+					die Reihenfolge an, in der die Matrizen verwendet werden müssen. Die Engine parst diesen Graphen und erzeugt daraus direkt 
+					<trademark class="registered">OpenGL</trademark> Kommandos.
 
-			<section>
-				<title>Java OpenGL (JOGL)</title>
-				<para>
+					<example id="example_scenegraph">
+						<title>Auszug aus einem einfachem Szenengraph</title>
+						<programlisting>
+							+ Root-Knoten
+							|-+ Translations-Knoten
+							| |-+ Rotations-Knoten
+							| | |-+ Objekt-Knoten
+						</programlisting>
+					</example> 
+					
+					Der Entwickler muss sich nicht mehr direkt mit der <trademark class="registered">OpenGL</trademark> API auseinander setzen,
+					sondern bearbeitet die Struktur des Szenengraphen.
+				</para></listitem>
+			</varlistentry>
+
+			<varlistentry>
+				<term>Java OpenGL (JOGL)</term>
+				<listitem><para>
 					JOGL<xref linkend="web_jogl" /> steht für Java OpenGL und implementiert den JSR-231<xref linkend="web_jsr231" /> Standard.
 					Dieser gibt genau vor wie die <trademark class="registered">OpenGL</trademark> API Aufrufe in Java auszusehen haben.
-				</para>
-			</section>
+				</para></listitem>
+			</varlistentry>
 
-			<section>
-				<title>Lightweight Java Gaming Library (LWJGL)</title>
-				<para>
+			<varlistentry>
+				<term>Lightweight Java Gaming Library (LWJGL)</term>
+				<listitem><para>
 					Diese Library implementiert nicht alle Funktionen der <trademark class="registered">OpenGL</trademark> API. Die Entwickler
 					haben bewusst auf veraltete und imperformate Operatinen verzichtet. Dadurch hat die Bibliothek eine geringe Größe, und
 					eignet sich unter anderem besonders für embedded Devices.
-				</para>
-			</section>
+				</para></listitem>
+			</varlistentry>>
 
+		</variablelist>
 		</section>
 	</section>
 
