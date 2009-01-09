@@ -62,7 +62,7 @@ Of these three, the last was probably the most important.
 	
 	<xi:include href="biblio.xml" />
 	
-	<xi:include href="javadoc.xml" />
+	<!-- <xi:include href="javadoc.xml" />  -->
 
 	<xi:include href="glossary.xml" />	
 </book>
