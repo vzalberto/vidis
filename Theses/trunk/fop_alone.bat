@@ -1,1 +1,1 @@
- fop -xml src/vidis_theses.xml -xsl stylesheet.xsl -pdf bin/vidis_theses.pdf
+ fop -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf
