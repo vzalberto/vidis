@@ -64,6 +64,93 @@
 		</section>
 	</section>
 	<section>
+		<title>Modul einlesen</title>
+		<para>
+			In diesem Kapitel wird die Implementierung der
+			Funktionalität des Modul laden beschrieben.
+		</para>
+		<para>
+			Der Simulator versucht beim Laden einer MSIM-Datei,
+			einen InputStream zu dieser Datei zu öffnen und übergibt
+			diesen der Klasse <classname>XMLModuleReader</classname>.
+		</para>
+		<para>
+			Die Klasse <classname>XMLModuleReader</classname> implementiert
+			das Interface <interfacename>CommonDomParser</interfacename>.
+			Entsprechend kommt in VIDIS ein DOM XML-Parser zum Einsatz.
+			Nachdem die Klasse <classname>XMLModuleReader</classname> das 
+			XML Dokument analysiert hat, werden die gewonnenen Daten als
+			<classname>DocumentData</classname> an den Simulator zurückgegeben.
+		</para>
+		<para>
+			Der Simulator übernimmt anschließend die gewonnenen Daten
+			aus der <classname>DocumentData</classname> Klasse in die
+			interne Klassenstruktur. An dieser Stelle werden alle relevanten
+			Instanzen der Modul Objekte erzeugt und anschließend
+			initialisiert. Folgende Arbeitsschritte werden durchlaufen:
+			<variablelist>
+				<varlistentry>
+					<term>Player stoppen</term>
+					<listitem>
+						<para>
+							Sollte vorher ein anderes Modul geladen worden sein,
+							was in der Regel der Fall ist, muss der Player
+							gestoppt werden. Dies verhindert unvorhersehbares Verhalten
+							beim nächsten Schritt.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Alte Modul Objekt Instanzen löschen</term>
+					<listitem>
+						<para>
+							In diesem Schritt werden nun nicht mehr benötigte
+							Objekt Instanzen gelöscht. Dazu wird die Funktion
+							<methodsynopsis>
+								<modifier>public</modifier>
+								<type>void</type>
+								<methodname>kill</methodname>
+								<void/>
+							</methodsynopsis>
+							definiert durch das Interface <interfacename>IComponent</interfacename>
+							aufgerufen.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Nodes initialisieren</term>
+					<listitem>
+						<para>
+							Alle Node Instanzen werden in diesem Schritt initialisiert,
+							Variablen geladen und anschließend als Simulatorkomponente
+							beim Simulator registriert.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Links initialisieren</term>
+					<listitem>
+						<para>
+							Alle Link Instanzen werden in diesem Schritt initialisiert,
+							Variablen geladen.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Nodes über Links verbinden</term>
+					<listitem>
+						<para>
+							Im letzten Schritt werden die Nodes über
+							die Links miteinander verbunden. Anschließend
+							wird der Link als Simulatorkomponente beim Simulator 
+							registriert.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+	</section>
+	<section>
 		<title>Arbeitsweise</title>
 		<para>
 			Der Simulator arbeitet abschnittsweise. Ein Abschnitt stellt einen vollständigen Simulationsschritt dar.

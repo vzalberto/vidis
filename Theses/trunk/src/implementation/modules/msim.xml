@@ -51,19 +51,24 @@
 				]]>
 			</programlisting>
 		</example>
+	</section>
+	<section>
+		<title>Definition</title>
 		<para>
 			Im Folgenden werden alle XML Elemente einer MSIM-Datei
 			beschrieben und mit Beispielen veranschaulicht.
 		</para>
-		<remark>
+		<note>
+			<para>
 			Alle Schlüssel der XML-Elemente sind nicht case-sensitiv,
 				d.h.
 				es macht z.B. keinen Unterschied wenn der Wurzelschlüssel
 				"module"
-				oder "Module" oder "MoDuLe" benannt wird. Aus Konvention
-				der Namensgebung von Variablen werden diese im folgenden
+				oder "Module" oder "MoDuLe" benannt wird. Als Konvention
+				der Namensgebung werden diese im folgenden
 				Bereich immer kleingeschrieben.
-		</remark>
+			</para>
+		</note>
 		<variablelist>
 			<title>Format (Struktur) des MSIM XML Dokuments</title>
 			<varlistentry>
@@ -121,7 +126,7 @@
 								</listitem>
 							</varlistentry>
 							<varlistentry>
-								<term>nodeDensity</term>
+								<term>nodedensity</term>
 								<listitem>
 									<note>
 										<para>

@@ -122,11 +122,17 @@
 
 	<section>
 		<title>XML</title>
-		<para></para>
+		<para>
+			Im folgenden behandeln wir die Vor- und Nachteile der
+			<quote>Extensible Markup Language</quote>.
+		</para>
 		
-		<section>
-			<title>Sax</title>
-			<para></para>
+		<section id="compare_xml_sax_dom">
+			<title>Vergleich XML Parser: DOM vs. SAX</title>
+			<para>
+				DOM ist cool. SAX ist cooler.
+			</para>
+			<para>TODO</para>
 		</section>
 		
 		<section>
