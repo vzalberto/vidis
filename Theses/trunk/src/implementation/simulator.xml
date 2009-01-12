@@ -6,64 +6,6 @@
 		Im folgenden Abschnitt definieren und beschreiben wir den Simulator.
 	</para>
 	<section>
-		<title>Definitionen</title>
-		<para>
-			Folgende Definitionen werden im Simulator verwendet.
-		</para>
-		<section>
-			<title>Komponente</title>
-			<para>
-				Wir bezeichnen eine Komponente als eine ausführbare, vom Benutzer implementierte Klasse.
-			</para>
-			<para>
-				Es wird unter folgenden Komponententypen unterschieden:
-			</para>
-			<section>
-				<title>Node</title>
-				<para>
-					Ein Node, oder auch "Knoten", ist in der Terminologie gleichzusetzen mit einem Peer aus einem Verteilten Systemen.
-				</para>
-				<para>
-					In einem Netzwerk aus Computern wäre ein Knoten einer dieser Rechner.
-				</para>
-				<para>
-					Ein Knoten kann sich über Links mit anderen Knoten verbinden und so mit diesen über Pakete kommunizieren.
-				</para>
-				<para>
-					Mehr Informationen zur Funktionalität eines Knoten findet man im Abschnitt <!-- xlink:to-->"Implementation > Modul > Node"<!-- /xlink:to -->.
-				</para>
-			</section>
-			<section>
-				<title>Link</title>
-				<para>
-					Ein Link, oder auch "Verbindung", ist in der Terminologie gleichzusetzen mit einer aktiven Verbindung zwischen zwei Peers aus einem Verteilten System.
-				</para>
-				<para>
-					Mehr Informationen zur Funktionalität eines Knoten findet man im Abschnitt <!-- xlink:to-->"Implementation > Modul > Link"<!-- /xlink:to -->.
-				</para>
-			</section>
-			<section>
-				<title>Packet</title>
-				<para>
-					Ein Packet, oder auch "Paket", ist in der Terminologie gleichzusetzen mit einem Datenpaket das über eine aktive Verbindung zwischen zwei Peers geschickt wird.
-				</para>
-				<para>
-					Mehr Informationen zur Funktionalität eines Knoten findet man im Abschnitt <!-- xlink:to-->"Implementation > Modul > Paket"<!-- /xlink:to -->.
-				</para>
-			</section>
-		</section>
-		<section>
-			<title>Modul</title>
-			<para>Ein Modul ist eine Menge aus Komponenten</para>
-		</section>
-		<section>
-			<title>Steps</title>
-			<para>
-				Ein "Step", oder auch "Schritt" ist die kleinste Zeiteinheit im Simulator.
-			</para>
-		</section>
-	</section>
-	<section>
 		<title>Modul einlesen</title>
 		<para>
 			In diesem Kapitel wird die Implementierung der
@@ -189,6 +131,12 @@
 		</para>
 		<para>
 			Diese Funktion gibt den aktuellen Zeitpunkt (Simulationsschritt) zurück.
+			<methodsynopsis>
+				<modifier>public</modifier>
+				<type>long</type>
+				<methodname>getTime</methodname>
+				<void/>
+			</methodsynopsis>
 			<note>
 				<para>
 					Jede Simulation startet beim Zeitpunkt <quote>0</quote>
@@ -196,15 +144,12 @@
 					erhöht.
 				</para>
 			</note>
-			<methodsynopsis>
-				<modifier>public</modifier>
-				<type>long</type>
-				<methodname>getTime</methodname>
-				<void/>
-			</methodsynopsis>
 		</para>
 		<para>
 			Diese Funktion setzt die aktuellen Simulationsschritte zurück.
+			Unmittelbar nach einem Aufruf dieser Funktion, wird ein Aufruf
+			von <methodname>getTime</methodname> das Ergebnis <quote>0</quote>
+			liefern.
 			<methodsynopsis>
 				<modifier>public</modifier>
 				<type>void</type>
@@ -257,57 +202,169 @@
 		<section>
 			<title>Detaillierte Beschreibung der Ablaufreihenfolge</title>
 			<para>
-				TODO: umbauen in varlist
-				<itemizedlist>
-				<listitem>
-					<para>
-						Node:
-						<itemizedlist>
-							<listitem>
-								<para>Wenn Simulationsschritt #1: module.init();</para>
-							</listitem>
-							<listitem>
-								<para>processPacketQueue();</para>
-							</listitem>
-							<listitem>
-								<para>propagateVariableChanges();</para>
-							</listitem>
-							<listitem>
-								<para>Wenn nicht schlafend: module.execute();</para>
-							</listitem>
-						</itemizedlist>
-					</para>
-				</listitem>
-				<listitem>
-					<para>
-						Link:
-						<itemizedlist>
-							<listitem>
-								<para>processQueue();</para>
-							</listitem>
-							<listitem>
-								<para>propagateVariableChanges();</para>
-							</listitem>
-							<listitem>
-								<para>Wenn nicht schlafend: module.execute();</para>
-							</listitem>
-						</itemizedlist>
-					</para>
-				</listitem>
-				<listitem>
-					<para>
-						Paket:
-						<itemizedlist>
-							<listitem>
-								<para>propagateVariableChanges();</para>
-							</listitem>
-							<listitem>
-								<para>execute(); (leere final Methode)</para>
-							</listitem>
-						</itemizedlist>
-					</para>
-				</listitem>
-			</itemizedlist>
+				<variablelist>
+					<varlistentry id="implementation.module.node">
+						<term>Node</term>
+						<listitem>
+							<itemizedlist>
+								<listitem>
+									<para>
+										Sollte dies der erste Simulationsschritt sein,
+										so muss die initialisierende Funktion der Modulkomponente
+										aufgerufen werden. Folgender Pseudocode veranschaulicht diesen
+										Prozess:
+									</para>
+									<programlisting format="linespecific">
+										if simulationStep=1 then
+											moduleComponent.init()
+										fi
+									</programlisting>
+								</listitem>
+								<listitem>
+									<para>
+										Es ist möglich Pakete zeitversetzt abzuschicken
+										um so eine Bearbeitungszeit zu simulieren. Für
+										diese Funktionalität müssen die in Bearbeitung 
+										befindliche Pakete verarbeitet werden. Folgender
+										Pseudocode veranschaulicht diesen Prozess:
+									</para>
+									<programlisting format="linespecific">
+										<![CDATA[
+										packetQueue := { p | p is a queued packet }
+										for i in [0 .. #packetQueue] do
+										    if packetQueue[i].timeout < 0 then
+										    	// send it
+										    	doSendOperation packetQueue[i]
+												// remove it from the queue
+												doRemoveOperation packetQueue[i]
+												// decrease running variable
+												i -= 1;
+										    else
+												// decrease queue
+												packetQueue[i].timeout -= 1
+										    fi
+										done
+										]]>
+									</programlisting>
+								</listitem>
+								<listitem>
+									<para>
+										Anschließend wird die vom Benutzer implementierte
+										Funktion ausgeführt, falls diese Komponente nicht
+										durch einen Aufruf von <methodsynopsis>
+											<modifier>public</modifier>
+											<type>void</type>
+											<methodname>sleep</methodname>
+											<methodparam>
+												<type>long</type>
+												<funcparams>steps</funcparams>
+											</methodparam>
+										</methodsynopsis> in den Zustand <varname>schlafend</varname>
+										versetzt wurde.
+									</para>
+									<programlisting format="linespecific">
+										<![CDATA[
+											if !sleeping then
+												moduleComponent.execute()
+											fi
+										]]>
+									</programlisting>
+								</listitem>
+								<listitem>
+									<para>
+										Schlussendlich werden alle Änderungen an
+										den Variablen durch
+										Events an die Visualisierung weitergegeben.
+									</para>
+								</listitem>
+							</itemizedlist>
+						</listitem>
+					</varlistentry>
+					<varlistentry id="implementation.module.link">
+						<term>Link</term>
+						<listitem>
+							<itemizedlist>
+								<listitem>
+									<para>
+										Zunächst werden alle Pakete, welche gerade über diesen
+										Link transportiert werden, verarbeitet. Folgender
+										Pseudocode veranschaulicht diesen Vorgang:
+									</para>
+									<programlisting format="linespecific">
+										<![CDATA[
+										queue := { p | p is a packet that is being transported }
+										delay := this is the predefined delay of this link
+										for i in [0 .. #queue] do
+										    if queue[i].timeout > delay then
+												// remove it from the queue
+												// and let receiver receive it
+												doReceiveOperation queue[i]
+										    else
+												// push this packet further on
+												queue[i].timeout += 1
+										    fi
+										done
+										]]>
+									</programlisting>
+								</listitem>
+								<listitem>
+									<para>
+										Anschließend wird die vom Benutzer implementierte
+										Funktion ausgeführt, falls diese Komponente nicht
+										durch einen Aufruf von <methodsynopsis>
+											<modifier>public</modifier>
+											<type>void</type>
+											<methodname>sleep</methodname>
+											<methodparam>
+												<type>long</type>
+												<funcparams>steps</funcparams>
+											</methodparam>
+										</methodsynopsis> in den Zustand <quote>schlafend</quote>
+										versetzt wurde.
+									</para>
+									<programlisting format="linespecific">
+										<![CDATA[
+											if !sleeping then
+												moduleComponent.execute()
+											fi
+										]]>
+									</programlisting>
+								</listitem>
+								<listitem>
+									<para>
+										Schlussendlich werden alle Änderungen an
+										den Variablen durch
+										Events an die Visualisierung weitergegeben.
+									</para>
+								</listitem>
+							</itemizedlist>
+						</listitem>
+					</varlistentry>
+					<varlistentry id="implementation.module.packet">
+						<term>Packet</term>
+						<listitem>
+							<itemizedlist>
+								<listitem>
+									<para>
+										Da ein Paket keine ausführbare Einheit darstellt
+										und nur Daten transportiert, ist es nicht
+										sinnvoll auf einem Paket Operationen auszuführen.
+										Aus diesem Grund wurde die Methode <methodname>execute</methodname>
+										durch die <modifier>final</modifier> (nicht überschreib- oder überladbare)
+										leere Methode implementiert. 
+									</para>
+								</listitem>
+								<listitem>
+									<para>
+										Schlussendlich werden alle Änderungen an
+										den Variablen durch
+										Events an die Visualisierung weitergegeben.
+									</para>
+								</listitem>
+							</itemizedlist>
+						</listitem>
+					</varlistentry>
+				</variablelist>
 			</para>
 		</section>
 	</section>

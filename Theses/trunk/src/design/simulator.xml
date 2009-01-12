@@ -3,6 +3,79 @@
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Simulator</title>
 	<section>
+		<title>Definitionen</title>
+		<para>
+			Folgende Definitionen werden im Simulator verwendet.
+		</para>
+		<section>
+			<title>Komponente</title>
+			<para>
+				Wir bezeichnen eine Komponente als eine ausführbare, vom Benutzer implementierte Klasse.
+			</para>
+			<para>
+				Es wird unter folgenden Komponententypen unterschieden:
+			</para>
+			<section>
+				<title>Node</title>
+				<para>
+					Ein Node, oder auch <quote>Knoten</quote>, ist in der Terminologie gleichzusetzen mit einem Peer aus einem Verteilten Systemen.
+				</para>
+				<para>
+					In einem Netzwerk aus Computern wäre ein Knoten einer dieser Rechner.
+				</para>
+				<para>
+					Ein Knoten kann sich über Links mit anderen Knoten verbinden und so mit diesen über Pakete kommunizieren.
+				</para>
+				<para>
+					Mehr Informationen zum Interface eines
+					Modul Nodes findet man im Abschnitt
+					<xref linkend="design.module.node" />.
+				</para>
+				<para>
+					Mehr Informationen zur implementierten Funktionalität eines Knoten findet man im Abschnitt <xref linkend="implementation.module.node" /><!-- xlink:to "Implementation > Modul > Node"/xlink:to -->.
+				</para>
+			</section>
+			<section>
+				<title>Link</title>
+				<para>
+					Ein Link, oder auch <quote>Verbindung</quote>, ist in der Terminologie gleichzusetzen mit einer aktiven Verbindung zwischen zwei Peers aus einem Verteilten System.
+				</para>
+				<para>
+					Mehr Informationen zum Interface eines
+					Modul Links findet man im Abschnitt
+					<xref linkend="design.module.link" />.
+				</para>
+				<para>
+					Mehr Informationen zur implementierten Funktionalität eines Links findet man im Abschnitt <xref linkend="implementation.module.link" /><!-- xlink:to"Implementation > Modul > Link" /xlink:to -->.
+				</para>
+			</section>
+			<section>
+				<title>Packet</title>
+				<para>
+					Ein Packet, oder auch <quote>Paket</quote> ist in der Terminologie gleichzusetzen mit einem Datenpaket das über eine aktive Verbindung zwischen zwei Peers geschickt wird.
+				</para>
+				<para>
+					Mehr Informationen zum Interface eines
+					Modul Pakets findet man im Abschnitt
+					<xref linkend="design.module.packet" />.
+				</para>
+				<para>
+					Mehr Informationen zur implementierten Funktionalität eines Pakets findet man im Abschnitt <xref linkend="implementation.module.packet" /><!-- xlink:to"Implementation > Modul > Paket" -->.
+				</para>
+			</section>
+		</section>
+		<section>
+			<title>Modul</title>
+			<para>Ein Modul ist eine Menge aus Komponenten</para>
+		</section>
+		<section>
+			<title>Steps</title>
+			<para>
+				Ein <quote>Step</quote>, oder auch <quote>Schritt</quote> ist die kleinste Zeiteinheit im Simulator.
+			</para>
+		</section>
+	</section>
+	<section>
 		<title>Funktionsweise</title>
 		<para>
 			Der Simulator ist die ausführende Einheit eines Moduls.
@@ -15,8 +88,8 @@
 		</para>
 		<para>
 			Nach jedem Simulationsschritt werden alle Veränderungen an
-			den Objektinstanzen des geladenen Moduls auf der Benutzeroberfläche
-			dargestellt.
+			den Objektinstanzen des geladenen Moduls an die Visualisierung
+			weitergegeben.
 		</para>
 		<section>
 			<title>Modul laden</title>
@@ -114,7 +187,8 @@
 		anzustossen. Somit ist er das Verbindungsstück zwischen 
 		Simulation und Visualisierung.</para>
 		<para>
-			Der Player hat mehrere Zustände.
+			Der Player hat mehrere Zustände. Im folgenden
+			werden diese Zustände erläutert.
 			<itemizedlist>
 				<listitem>
 					<para>

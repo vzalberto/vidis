@@ -8,9 +8,9 @@
 	<title>Design</title>
 	<para></para>	
 
+	<xi:include href="design/simulator.xml" />
 	<xi:include href="design/structure.xml" />
 	<xi:include href="design/module.xml" />
-	<xi:include href="design/simulator.xml" />
 	<xi:include href="design/visualisation.xml" />
 	<xi:include href="design/deadends.xml" />
 	

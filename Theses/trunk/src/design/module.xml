@@ -87,7 +87,7 @@
 			Im folgenden werden die Interfaces der Komponenten Node,
 			Packet und Link definiert.
 		</para>
-		<section>
+		<section id="design.module.node">
 			<title>Node</title>
 			<para>
 				Ein Node ist die Entität eines Peers. Sein Verhalten ist
@@ -98,6 +98,57 @@
 				Ein Node definiert die für den implementierenden Anwender relevanten
 				Methoden:
 				<itemizedlist>
+					<listitem>
+					    <para>
+				      	Diese Funktion wird dazu verwendet um ein Paket an einen 
+				      	benachbarten Knoten mit einer bestimmten Verzögerung (Simulationsschritte)
+				      	zu senden.
+						</para>
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>send</methodname>
+							<methodparam>
+								<type>IUserPacket</type><parameter>packet</parameter>
+							</methodparam>
+							<methodparam>
+								<type>IUserLink</type>
+								<parameter>link</parameter>
+							</methodparam>
+							<methodparam>
+								<type>long</type>
+								<parameter>processingDelay</parameter>
+							</methodparam>
+				        	<methodparam><type>long</type><parameter>delay</parameter></methodparam>
+				      </methodsynopsis>
+				      <note>
+				      	<para>
+				      		Von dieser Funktion gibt es zwei Abwandlungen:
+				      		<itemizedlist>
+				      			<listitem>
+				      				<para>
+				      					Ohne dem Parameter <parameter>processingDelay</parameter> wird
+				      					die triviale Bearbeitungszeit von <quote>0</quote> Simulationsschritte
+				      					angenommen.
+				      				</para>
+				      			</listitem>
+				      			<listitem>
+				      				<para>
+				      					Ohne dem Parameter <parameter>processingDelay</parameter> und
+				      					ohne dem Parameter <parameter>link</parameter> wird
+				      					die triviale Bearbeitungszeit von <quote>0</quote> Simulationsschritte
+				      					angenommen und das Paket über alle verbundenen Links zu allen Nachbarknoten
+				      					geschickt.
+				      				</para>
+				      			</listitem>
+				      		</itemizedlist>
+				      	</para>
+				      	<para>
+				      		Diese Funktionen wurden als Hilfsfunktionen eingebaut und erleichtern die Implementierung
+				      		von manchen Algorithmen.
+				      	</para>
+				      </note>
+					</listitem>
 					<listitem>
 					    <para>
 				      	Diese Funktion wird dazu verwendet um eine Verbindung zu einem
@@ -184,7 +235,7 @@
 			<xi:include href="module/javadocref/vidis-data-mod-IUserNode.xml"/>
 			 -->
 		</section>
-		<section>
+		<section id="design.module.link">
 			<title>Link</title>
 			<para>
 				Ein Link soll zwei Nodes bidirektional verbinden. Dabei
@@ -285,7 +336,7 @@
 				</itemizedlist>
 			</para>
 		</section>
-		<section>
+		<section id="design.module.packet">
 			<title>Packet</title>
 			<para>Ein Packet wird durch folgende wichtigen Methoden definiert:</para>
 			<para>
