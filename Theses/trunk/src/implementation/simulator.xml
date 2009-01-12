@@ -85,9 +85,9 @@
 		<para>
 			Der Simulator übernimmt anschließend die gewonnenen Daten
 			aus der <classname>DocumentData</classname> Klasse in die
-			interne Klassenstruktur. An dieser Stelle werden alle relevanten
+			interne Datenstruktur. Dazu werden alle relevanten
 			Instanzen der Modul Objekte erzeugt und anschließend
-			initialisiert. Folgende Arbeitsschritte werden durchlaufen:
+			initialisiert. Folgende Arbeitsschritte werden dafür durchlaufen:
 			<variablelist>
 				<varlistentry>
 					<term>Player stoppen</term>
@@ -149,11 +149,86 @@
 				</varlistentry>
 			</variablelist>
 		</para>
+		<para>
+			Der Simulator wurde konzipiert, damit die interne Datenstruktur
+			austauschbar und exportierbar ist. Dazu werden alle für die
+			Simulation relevanten Informationen in die interne Klasse
+			<classname>SimulatorData</classname> gespeichert. Diese implementiert
+			das Interface <interfacename>Serializable</interfacename> und
+			ist exportierbar. Leider war es nicht im zeitlichen Rahmen alle
+			notwendigen Funktionalitäten zu implementieren um dies möglich
+			zu machen. <classname>SimulatorData</classname> implementiert das
+			Interface <interfacename>ISimulatorData</interfacename> und bildet
+			die Kerndatenstruktur im Simulator. Im folgenden
+			Abschnitt wird das Interface <interfacename>ISimulatorData</interfacename> erläutert.
+		</para>
+		<para>
+			<classsynopsis>
+				<ooclass>
+					<package>vidis.sim.simulatorInternals</package>
+					<modifier>public</modifier>
+					<classname>SimulatorData</classname>
+				</ooclass>
+				<oointerface>
+					<package>vidis.sim.simulatorInternals</package>
+					<modifier>public</modifier>
+					<interfacename>ISimulatorData</interfacename>
+				</oointerface>
+			</classsynopsis>
+		</para>
+		<para>
+			Diese Funktion wird vom Simulator zu jedem Simulationsschritt
+			aufgerufen und führt alle Komponenten des Moduls zu einem
+			Simulationsschritt aus.
+			<methodsynopsis>
+				<modifier>public</modifier>
+				<type>void</type>
+				<methodname>executeComponents</methodname>
+				<void/>
+			</methodsynopsis>
+		</para>
+		<para>
+			Diese Funktion gibt den aktuellen Zeitpunkt (Simulationsschritt) zurück.
+			<note>
+				<para>
+					Jede Simulation startet beim Zeitpunkt <quote>0</quote>
+					und mit jedem Simulationsschritt wird dieser Wert um 1
+					erhöht.
+				</para>
+			</note>
+			<methodsynopsis>
+				<modifier>public</modifier>
+				<type>long</type>
+				<methodname>getTime</methodname>
+				<void/>
+			</methodsynopsis>
+		</para>
+		<para>
+			Diese Funktion setzt die aktuellen Simulationsschritte zurück.
+			<methodsynopsis>
+				<modifier>public</modifier>
+				<type>void</type>
+				<methodname>reset</methodname>
+				<void/>
+			</methodsynopsis>
+		</para>
+		<para>
+			Diese Funktion ruft auf allen Komponenten die Funktion <methodname>kill</methodname> auf.
+			<methodsynopsis>
+				<modifier>public</modifier>
+				<type>void</type>
+				<methodname>killComponents</methodname>
+				<void/>
+			</methodsynopsis>
+		</para>
 	</section>
 	<section>
 		<title>Arbeitsweise</title>
 		<para>
-			Der Simulator arbeitet abschnittsweise. Ein Abschnitt stellt einen vollständigen Simulationsschritt dar.
+			Der Simulator arbeitet schrittweise. Ein Arbeitsschritt
+			stellt einen vollständigen Simulationsschritt dar. In 
+			diesem Simulationsschritt werden alle Komponenten einmal
+			ausgeführt und bereits vorhandene Aktionen weitergeführt.
 		</para>
 		<section>
 			<title>Grundlegende Arbeitsweise</title>
@@ -165,6 +240,15 @@
 				Im Falle eines Links wäre dies der Transport eines Paketes.
 			</para>
 			<para>
+				Anschließend werden alle Komponenten seriell ausgeführt.
+				Dazu wird <methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>execute</methodname>
+					<void/>
+				</methodsynopsis> aufgerufen.
+			</para>
+			<para>
 				Am Schluss werden nochmals alle Variablen auf Änderungen
 				überprüft. Gegebenenfalls wird die Visualisierungskomponente
 				über die Änderungen informiert.
@@ -173,6 +257,7 @@
 		<section>
 			<title>Detaillierte Beschreibung der Ablaufreihenfolge</title>
 			<para>
+				TODO: umbauen in varlist
 				<itemizedlist>
 				<listitem>
 					<para>
