@@ -2,7 +2,7 @@
 <section
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Dead Ends</title>
-	<para>Hier werden verfolgte, aber dann doch aufgegebene Ansätze vorgestellt.</para>
+	<para>Im folgenden werden verfolgte, aber dann doch aufgegebene Ansätze vorgestellt.</para>
 	
 	<section>
 		<title><trademark>Java3D</trademark></title>
@@ -17,6 +17,28 @@
 			
 			Wie in <xref linkend="fig_profiling_charts" /> zu sehen ist, verbraucht <trademark>Java3D</trademark> nach kürzester Zeit den gesamten Heap
 			Space mit Instanzen von <classname>Vector3d</classname>. 
+		</para>
+	</section>
+	<section>
+		<title><trademark>Java</trademark> Swing</title>
+		<para>
+			Derselbe Prototyp basierte auf einem Swing GUI, mit einem <trademark class="registered">OpenGL</trademark> Panel. Die Steuerelemente waren um
+			das 3D Panel angeordnet.
+		</para>
+		
+		<figure id="fig_swingscreenshot">
+			<title>Screenshot vom Swing Prototyp</title>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata />
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+		</figure>
+
+		<para>
+			#FIXME Warum aufgegeben?!
 		</para>
 	</section>	
 </section>
