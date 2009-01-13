@@ -26,7 +26,7 @@
 			spezifizierte<footnote><para>Die Spezifikation ist unter <xref linkend="web_opengl" /> zu finden.</para></footnote> 
 			Software-Schnittstelle für Grafik-Hardware. Die Spezifiezierungskommission besteht aus Firmen wie SGI, IBM, HP, Sun, Intel
 			und Microsoft.
-		
+		</para>
 		<figure>
 			<title>Das <trademark class="registered">OpenGL</trademark> Logo (Quelle: <xref linkend="web_opengl" />)</title>
 			<mediaobject>
