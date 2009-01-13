@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section
+	xmlns="http://docbook.org/ns/docbook">
+	<title>Event System</title>
+	<para>
+		Ein einfaches Event System wurde entworfen, um eine saubere Model-View-Control Architektur zu ermöglichen. Im folgenden wird das
+		Design des Event Systems beschrieben. Außerdem wird auf die MVC Realisierung eingegangen.
+	</para>
+	<para>
+		Das Event System besteht aus folgenden Klassen:
+	</para>
+	<variablelist>
+		<varlistentry>
+			<term>Dispatcher</term>
+			<listitem><para>
+				Der Dispatcher ist das Herzstück des Event Systems. Jedes Event passiert in seinem Lebenszyklus den
+				Dispatcher und wird von dort aus an den richtigen Controller gebracht.
+			</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>IEventHandler</term>
+			<listitem>
+				<para>Das EventHandler Interface. Es stellt die nötige Methode zur Verfügung, um Events zu übergeben</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>AEventHandler</term>
+			<listitem><para>
+			Der abstrakte EventHandler. Er implementiert das EventHandler Interface und definiert eine abstrakte,
+			geschützte Methode, welche von konkreten EventHandlern implementiert werden muss um die Events zu verarbeiten.
+			</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>IController</term>
+			<listitem>
+				<para>Das Controller Interface.</para>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>AController</term>
+			<listitem>
+				<para>Der abstrakte Controller erbt von AEventHandler und kann somit Events verarbeiten. Außerdem bietet er
+				einige Methoden um den Controllercode zu vereinfachen (zB um Events beim Dispatcher zu registrieren oder um
+				Events zu werfen).</para>
+			</listitem>
+		</varlistentry>
+	</variablelist>
+	<para>
+		Der Dispatcher ist für die Verteilung der Events zuständig. Controller müssen sich beim Dispatcher anmelden und jedes Event,
+		welches sie auswerten können registrieren. Wird ein Event erzeugt, gibt der Dispatcher dieses sofort an die verantwortlichen 
+		Controller weiter.
+	</para>
+	<para>
+		Es gibt Controller für
+		<itemizedlist>
+			<listitem>Cameras</listitem>
+			<listitem>Input</listitem>
+			<listitem>Jobs</listitem>
+			<listitem>Simulator</listitem>
+			<listitem>Fenster</listitem>
+			<listitem>GUI</listitem>
+			<listitem>Scene</listitem>
+		</itemizedlist>
+		wobei es sich beim GUI, Scene und Fenster Controller richtigerweise Views handelt, da diese außschließlich die Darstellung übernehmen.
+		Der Einfachheit halber wurde keine View Klasse eingeführt, da diese genau die gleiche Funktionalität hätte wie die Controllerklasse,
+		und sich nur der Name ändern würde.
+	</para>
+</section>
+

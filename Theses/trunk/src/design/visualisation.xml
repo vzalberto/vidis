@@ -3,7 +3,6 @@
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Darstellung</title>
 	<para></para>
-	
 	<section>
 		<title>Graphische Benutzeroberfläche</title>
 		<para>	
@@ -42,11 +41,15 @@
 			</listitem>
 		</itemizedlist>
 		<figure id="gui_klassendiagramm">
-			<title>Klassendiagramm GUI API</title>
+			<title>Vereinfachtes Klassendiagramm GUI API</title>
 			<imageobject>
-				<imagedata align="center" width="center" format="PNG" fileref="figures/gui_klassendiagramm.png" /> 
+				<imagedata align="center" format="PNG" fileref="figures/gui_klassendiagramm.png" /> 
 			</imageobject>
 		</figure>
+		<para>
+			Der BasicGuiContainer ist die wichtigste Klasse. Durch ein Composite Pattern kann er beliebig viele weitere GuiContainer enthalten. Diese
+			werden durch das assozierte Layout ausgerichtet. Außerdem reicht er Mausevents an die betroffenen, darunterliegenden Container weiter.
+		</para>
 	</section>	
 	<section>
 		<title>Visualisierung</title>
