@@ -6,7 +6,13 @@
 	
 	<section>
 		<title>Graphische Benutzeroberfläche</title>
-		<para>Die Oberfläche muss einfach zu bedienen sein und sich optimal in die 3D Umgebung eingliedern. Existierende APIs wie Java<trademark /> Swing oder Eclipse RCP wurden ausgeschlossen, da ... #FIXME</para>
+		<para>	
+			Die Oberfläche muss einfach zu bedienen sein und sich optimal in die 3D Umgebung eingliedern. 
+			Existierende APIs wie <trademark>Java</trademark> Swing oder Eclipse RCP wurden ausgeschlossen. Diese gliedern sich nicht in den OpenGL Kontext
+			ein, sondern umschließen ihn. Es gibt inzwischen einige Projekte, die es ermöglichen Swing Fenster innerhalb des 3D Kontextes als Texturen zu
+			verwenden. Diese Funktionalität benötigt die Verbesserungen der Image I/O von <trademark>Java</trademark> 6, die Ziel Plattform ist aber 
+			<trademark>Java</trademark> 5 <xref linkend="web_blogmustangimageio" />.  
+		</para>
 		<para>Es wurde eine einfache 3D API entworfen, die genau die benötigten Bedürfnisse erfüllt. Sie besteht prinzipiell aus einem Container und einigen Widgets, um Benutzerineraktion zu ermöglichen.</para>
 		<itemizedlist>
 			<para>Eine kurze Übersicht der GUI API:</para>
@@ -68,7 +74,7 @@
 		</para>
 		<para>
 			Der Überschaubarkeit halber wird diese zweidimensionale Ebene beibehalten, aber nur als Grundfläche in einem dreidimensionalen Raum.
-			Die Nodes werden zu Kugeln, die Links zu transparenten, nach oben gebogenen Rohren, die sich wölben wenn sie ein Paket trasportieren.
+			Die Nodes werden zu Kugeln, die Links zu transparenten, nach oben gebogenen Rohren, die sich wölben wenn sie ein Paket transportieren.
 			Die Pakete werden auch zu Kugeln, die im Inneren der Links zu sehen sind. Dadurch wird die ganze Simulation plastischer vermittelt.
 		</para>
 			

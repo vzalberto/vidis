@@ -95,5 +95,9 @@
 				<link xlink:href="http://www.heise.de/kiosk/archiv/ix/2008/10/106_kiosk" />
 			</bibliosource>
 		</biblioentry>
-
+		<biblioentry id="web_blogmustangimageio">
+			<bibliosource class="uri">
+				<link xlink:href="http://weblogs.java.net/blog/campbell/archive/2005/09/java2djogl_inte_1.html" />
+			</bibliosource>
+		</biblioentry>
 	</bibliography>	
