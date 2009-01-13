@@ -26,7 +26,7 @@
 			spezifizierte<footnote><para>Die Spezifikation ist unter <xref linkend="web_opengl" /> zu finden.</para></footnote> 
 			Software-Schnittstelle für Grafik-Hardware. Die Spezifiezierungskommission besteht aus Firmen wie SGI, IBM, HP, Sun, Intel
 			und Microsoft.
-		</para>
+		
 		<figure>
 			<title>Das <trademark class="registered">OpenGL</trademark> Logo (Quelle: <xref linkend="web_opengl" />)</title>
 			<mediaobject>
@@ -130,29 +130,100 @@
 	</section>
 
 
-	<section>
+	<section id="related.technologies.xml">
 		<title>XML</title>
 		<para>
-			Im folgenden behandeln wir die Vor- und Nachteile der
-			<quote>Extensible Markup Language</quote>.
+			XML wird dazu verwendet, um hierarchisch strukturierte Daten
+			in Form von Textdaten abzuspeichern. Ein XML Dokument kann unterschiedliche
+			Daten wie Bilder, Text oder abstraktes Wissen enthalten.
+			(Quelle: <xref linkend="web_related.technologies.xml"/>)
 		</para>
 		
 		<section id="compare_xml_sax_dom">
 			<title>Vergleich XML Parser: DOM vs. SAX</title>
 			<para>
-				DOM ist cool. SAX ist cooler.
+				Im folgenden werden die Vor- und Nachteile der
+				<quote>Extensible Markup Language</quote> behandelt.
 			</para>
-			<para>TODO</para>
+			<variablelist>
+				<title>Vergleich DOM/SAX Parser</title>
+				<varlistentry>
+					<term>DOM</term>
+					<listitem>
+						<para>
+							Ein DOM Parser erstellt einen Baum des XML-Dokumentes
+							um auf die Daten darin zuzugreifen. Ein großer Vorteil
+							dabei ist, dass der Zugriff sehr einfach ist. Jedoch
+							muss das gesamte Dokument zuvor eingelesen werden. Dies
+							kann bei sehr großen Dokumenten zu Speicherproblemen oder
+							sogar Systeminstabilität führen.
+						</para>
+						<para>
+							Die Komplexität und der zeitliche Aufwand
+							der Implementierung eines DOM Parsers ist sehr viel
+							geringer als die eines SAX Parsers. Jedoch ist ein
+							DOM Parser nicht für große Dokumente, sequentielle Daten und
+							große Datenmengen geeignet, da das gesamte Dokument geladen
+							werden muss. Auch bei Dokumenten, welche in sich sehr verschachtelt
+							und verlinkt sind, ist ein DOM Parser zu bevorzugen.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>SAX</term>
+					<listitem>
+						<para>
+							Ein SAX Parser liest das XML Dokument als sequentiellen
+							Datenstrom ein und verarbeitet XML Knoten dynamisch. Dies
+							birgt den Vorteil, dass sequentielle Daten schnell eingelesen
+							und verarbeitet werden können und anschließend nicht benötigter
+							Speicher wieder freigegeben werden kann. In diesen Fällen können
+							durch große Dokumente bedingte Ressourcenprobleme vermieden werden. 
+						</para>
+						<para>
+							Ein SAX Parser ist für große Dokumente, sequentielle Daten
+							und große Datenmengen zu bevorzugen. Nicht geeignet ist 
+							ein SAX Parser für in sich stark verschachtelte Datenstrukturen.
+							So z.B. wenn einzelne Elemente mehrfach quer durch das ganze
+							Dokument verlinkt werden. In diesen Fällen kann der
+							Vorteil durch das sequentielle Parsen zum Parsen in einem 
+							DOM Baum degenieren. 
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
 		</section>
 		
-		<section>
+		<section id="related.technologies.docbook">
 			<title>DocBook</title>
-			<para></para>
+			<para>
+				DocBook eignet sich zum Schreiben von Büchern, Artikeln
+				und Dokumentationen im Informatikbereich. Die Technik
+				basiert auf XSL Transformationen eines DocBook-DTD
+				konformen Dokumentes. Damit ist DocBook sehr vielseitig
+				einsetzbar und erleichtert das Schreiben von technischen
+				Texten. Diese Bakkalaureatsarbeit wurde in DocBook
+				verfasst. DocBook ist aber auch in OpenSource Projekten
+				weit verbreitet.
+				(Quelle: <xref linkend="web_related.technologies.docbook"/>)
+			</para>
 		</section>
 
-		<section>
+		<section id="related.technologies.fop">
 			<title>FOP</title>
-			<para></para>
+			<para>
+				FOP, oder auch Formatting Objects Processor ist ein Programm
+				zur Verarbeitung von XSL-FO Dokumenten. Wie in <xref endpoint="related.technologies.docbook"/>
+				beschrieben, haben wir DocBook zum Schreiben dieser
+				Bakkalaureatsarbeit verwendet. Mit Hilfe von FOP wurde
+				diese Arbeit im DocBook Format mittels XSL-Transformationen
+				in das vorliegende Format umgewandelt. FOP unterstützt aber
+				Formate wie PDF, Java2D/AWT, AFP, PCL, MIF, PS, RTF, TIFF,
+				PNG, SVG und TXT. Es ist auch möglich das Dokument direkt an einen
+				angeschlossenen Drucker zu senden oder die Ausgabe des 
+				internen Strukturbaums im XML Format.
+				(Quelle: <xref linkend="web_related.technologies.fop"/>)
+			</para>
 		</section>
 		
 	</section>
