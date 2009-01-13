@@ -81,9 +81,9 @@
 			Der Simulator ist die ausführende Einheit eines Moduls.
 			Dieser hat folgende wesentlichen Aufgaben:
 			<itemizedlist>
-				<listitem><para>Modul laden</para></listitem>
-				<listitem><para>Objekte instantiieren</para></listitem>
-				<listitem><para>Schrittweise simulieren</para></listitem>
+				<listitem>Modul laden</listitem>
+				<listitem>Objekte instantiieren</listitem>
+				<listitem>Schrittweise simulieren</listitem>
 			</itemizedlist>
 		</para>
 		<para>
@@ -120,10 +120,8 @@
 				beschreibt eine MSIM-Datei und definiert folgende Funktionen:
 				<itemizedlist>
 					<listitem>
-						<para>
 							Diese Funktion öffnet einen InputStream zur MSIM-Datei
 							welche diese Klasse repräsentiert.
-						</para>
 						<methodsynopsis>
 							<modifier>public</modifier>
 							<type>InputStream</type>
@@ -133,11 +131,9 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion gibt den Namen dieser MSIM-Datei zurück.
 							Dies kann der Dateiname, aber auch ein Bezeichner aus einer
 							Meta-Information eines Jar-Archivs sein.
-						</para>
 						<methodsynopsis>
 							<modifier>public</modifier>
 							<type>String</type>
@@ -154,8 +150,8 @@
 				die Datei analysiert und alle wichtigen Informationen extrahiert.
 				Für XML	gibt es zwei Möglichkeiten eine Datei zu parsen:
 				<itemizedlist>
-					<listitem><para>DOM</para></listitem>
-					<listitem><para>SAX</para></listitem>
+					<listitem>DOM</listitem>
+					<listitem>SAX</listitem>
 				</itemizedlist>
 			</para>
 			<para>
@@ -191,11 +187,9 @@
 			werden diese Zustände erläutert.
 			<itemizedlist>
 				<listitem>
-					<para>
 						Ist der Simulator nicht gestoppt, kodiert dieser
 						Zustand ob ein weiterer Simulationsschritt
 						ausgeführt werden soll.
-					</para>
 					<fieldsynopsis>
 						<modifier>public</modifier>
 						<type>boolean</type>
@@ -203,11 +197,9 @@
 					</fieldsynopsis>
 				</listitem>
 				<listitem>
-					<para>
 						In diesem Zustand ist der Simulator gestoppt,
 						das Modul neu geladen, die Objekte richtig
 						instantiiert und der Simulator bereit zu starten.
-					</para>
 					<fieldsynopsis>
 						<modifier>public</modifier>
 						<type>boolean</type>
@@ -215,10 +207,8 @@
 					</fieldsynopsis>
 				</listitem>
 				<listitem>
-					<para>
 						Kodiert den Zustand des korrekten Beendens
 						des Simulators.
-					</para>
 					<fieldsynopsis>
 						<modifier>public</modifier>
 						<type>boolean</type>
@@ -244,11 +234,9 @@
 			Er implementiert folgende Funktionalität:
 			<itemizedlist>
 				<listitem>
-					<para>
 						Diese Funktion startet den Simulator falls
 						er noch nicht gestartet wurde. Wurde der Simulator
 						bereits gestartet, hat diese Funktion keinen Effekt.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
@@ -257,10 +245,8 @@
 					</methodsynopsis>
 				</listitem>
 				<listitem>
-					<para>
 						Diese Funktion pausiert den Simulator. Wurde der Simulator
 						bereits pausiert, startet diese Funktion den Simulator.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
@@ -269,12 +255,10 @@
 					</methodsynopsis>
 				</listitem>
 				<listitem>
-					<para>
 						Diese Funktion startet bzw stoppt den Simulator.
 						Wurde der Simulator gestoppt, ruft diese Funktion
 						play() auf. Wurde der Simulator hingegen nicht
 						gestoppt, ruft diese Funktion pause() auf.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
@@ -283,11 +267,9 @@
 					</methodsynopsis>
 				</listitem>
 				<listitem>
-					<para>
 						Diese Funktion stoppt den Simulator. Ist der Simulator
 						bereits gestoppt hat ein Aufruf dieser Funktion keine
 						Auswirkung.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>

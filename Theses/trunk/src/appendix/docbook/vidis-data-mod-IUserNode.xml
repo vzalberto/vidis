@@ -118,13 +118,13 @@
       <para>Is executed upon the first simulation step. </para>
       <para>here you can put all possible initialize operations like: </para>
       <itemizedlist><listitem>
-          <para> send messages</para>
+          send messages
         </listitem>
 <listitem>
-          <para> check variables from msim file</para>
+          check variables from msim file
         </listitem>
 <listitem>
-          <para> ...</para>
+          ...
         </listitem>
 </itemizedlist>
     </refsect2>

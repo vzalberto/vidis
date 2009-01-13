@@ -86,13 +86,13 @@
       </methodsynopsis>
       <para>Is executed on each simulation step. </para>
       <itemizedlist><listitem>
-          <para> Hint: it is impossible to tell which of the components executes first!</para>
+         Hint: it is impossible to tell which of the components executes first!
         </listitem>
 <listitem>
-          <para> Hint: do NOT use Thread.sleep() or something like that - it will only hang the simulator</para>
+          Hint: do NOT use Thread.sleep() or something like that - it will only hang the simulator
         </listitem>
 <listitem>
-          <para> Hint: use built-in sleep() and interrupt() functions!</para>
+          Hint: use built-in sleep() and interrupt() functions!
         </listitem>
 </itemizedlist>
     </refsect2>

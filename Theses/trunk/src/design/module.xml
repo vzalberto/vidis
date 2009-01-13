@@ -22,13 +22,13 @@
 		Man unterscheidet drei Komponenten:
 		<itemizedlist>
 			<listitem>
-				<para>Node</para>
+				Node
 			</listitem>
 			<listitem>
-				<para>Link</para>
+				Link
 			</listitem>
 			<listitem>
-				<para>Packet</para>
+				Packet
 			</listitem>
 		</itemizedlist>
 		Diese drei Komponenten können in dieser Form direkt in die Klassenstruktur übernommen werden.
@@ -99,11 +99,9 @@
 				Methoden:
 				<itemizedlist>
 					<listitem>
-					    <para>
 				      	Diese Funktion wird dazu verwendet um ein Paket an einen 
 				      	benachbarten Knoten mit einer bestimmten Verzögerung (Simulationsschritte)
 				      	zu senden.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -150,11 +148,9 @@
 				      </note>
 					</listitem>
 					<listitem>
-					    <para>
 				      	Diese Funktion wird dazu verwendet um eine Verbindung zu einem
 				      	anderen Knoten aufzubauen. Sollte bereits eine Verbindung bestehen
 				      	hat ein Aufruf dieser Funktion keinerlei Effekt.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -167,14 +163,12 @@
 								<type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter>
 							</methodparam>
 				        	<methodparam><type>long</type><parameter>delay</parameter></methodparam>
-				      </methodsynopsis>
+						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion wird dazu verwendet um eine bestehende Verbindung
 							zu einem anderen Knoten zu trennen. Sollte keine Verbindung zum
 							anderen Knoten bestehen hat ein Aufruf dieser Funktion keinerlei Effekt.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -186,13 +180,11 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion wird dazu verwendet um Pakete zu empfangen.
 							Jedes Paket, das diese Node empfängt, wird über diese Funktion
 							an den implementierenden Anwender weitergeleitet damit dieser
 							angemessen darauf reagieren kann. Sie bildet, zusammen mit der Funktion "execute",
 							die Hauptfunktionalität eines Moduls.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -204,11 +196,9 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion wird beim Start einer Simulation 
 							ausgeführt. In dieser Funktion können Initialisierungen
 							für Variablen und dergleichen implementiert werden.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -217,11 +207,9 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion wird bei jedem Simulationsschritt
 							einmal ausgeführt. Sie bildet, zusammen mit der Funktion "receive",
 							die Hauptfunktionalität eines Moduls.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -251,10 +239,8 @@
 			<para>
 				<itemizedlist>
 					<listitem>
-						<para>
 							Diese Funktion wird mit jedem Simulationsschritt
 							ausgeführt.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -263,12 +249,10 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Mit Hilfe dieser Funktion kann man ein
 							Paket aus der Liste der zu übertragenden
 							Pakete entfernt werden. So kann man
 							Paketverluste ("Packet loss") simulieren.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<modifier>final</modifier>
@@ -278,12 +262,10 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion entfernt alle Pakete,
 							die derzeit übertragen werden, von diesem
 							Link. So kann man Paketverluste ("Packet loss")
 							simulieren.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<modifier>final</modifier>
@@ -293,10 +275,8 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion bewirkt, dass diese Verbindung
 							zwischen zwei Knoten gekappt wird.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>void</type>
@@ -305,14 +285,12 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Mit Hilfe dieser Funktion erhält man
 							die Verzögerung (Delay) dieses Links.
 							Die Verzögerung ist die Länge des Links.
 							Ein Paket braucht zur Übertragung von
 							einem Node zum anderen genau so viele 
 							Simulationsschritte.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>long</type>
@@ -321,11 +299,9 @@
 						</methodsynopsis>
 					</listitem>
 					<listitem>
-						<para>
 							Diese Funktion kann dazu verwendet werden, um
 							den Nachbarknoten mit dem man über diesen Link
 							verbunden ist, herauszufinden.
-						</para>
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>IUserNode</type>
@@ -342,28 +318,24 @@
 			<para>
 				<itemizedlist>
 					<listitem>
+						Diese Funktion gibt den Link zum Absender des
+							Pakets zurück.
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>IUserLink</type>
 							<methodname>getLinkToSource</methodname>
 							<void/>
 						</methodsynopsis>
-						<para>
-							Diese Funktion gibt den Link zum Absender des
-							Pakets zurück.
-						</para>
-					</listitem>
+						</listitem>
 					<listitem>
+						Diese Funktion gibt den Node des Absenders 
+							zurück.
 						<methodsynopsis language="java">
 							<modifier>public</modifier>
 							<type>IUserNode</type>
 							<methodname>getSource</methodname>
 							<void/>
 						</methodsynopsis>
-						<para>
-							Diese Funktion gibt den Node des Absenders 
-							zurück.
-						</para>
 					</listitem>
 				</itemizedlist>
 			</para>
