@@ -212,7 +212,7 @@
 			<title>FOP</title>
 			<para>
 				FOP, oder auch Formatting Objects Processor ist ein Programm
-				zur Verarbeitung von XSL-FO Dokumenten. Wie in <xref endpoint="related.technologies.docbook"/>
+				zur Verarbeitung von XSL-FO Dokumenten. Wie in <xref linkend="related.technologies.docbook"/>
 				beschrieben, haben wir DocBook zum Schreiben dieser
 				Bakkalaureatsarbeit verwendet. Mit Hilfe von FOP wurde
 				diese Arbeit im DocBook Format mittels XSL-Transformationen
