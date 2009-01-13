@@ -113,4 +113,22 @@
 			</bibliosource>
 			<!-- Zugriff: 13.01.2009 15:32 -->
 		</biblioentry>
+		<biblioentry id="web_related.technologies.xml">
+			<!-- Zugriff: 2009-01-13 14:02 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://de.wikipedia.org/wiki/Extensible_Markup_Language" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_related.technologies.docbook">
+			<!-- Zugriff: 2009-01-13 15:23 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://de.wikipedia.org/wiki/DocBook" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_related.technologies.fop">
+			<!-- Zugriff: 2009-01-13 15:30 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://de.wikipedia.org/wiki/Apache_Formatting_Objects_Processor" />
+			</bibliosource>
+		</biblioentry>
 	</bibliography>	
