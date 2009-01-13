@@ -6,7 +6,10 @@
 
 	<section>
 		<title>GUI Elemente</title>
-		<para>Im folgenden wird auf die sichtbaren Benutzeroberflächen-Elemente näher eingegangen.</para>
+		<para>
+			Im folgenden wird auf die sichtbaren Benutzeroberflächen-Elemente näher eingegangen. Diese sind im Grunde das in der linken unteren Ecke
+			positionierte Menu und das auf der rechten Seite positionierte Eigenschaftenpanel.
+		</para>
 		
 		<section>
 			<title>Menu</title>
@@ -22,9 +25,10 @@
 				Auf der Hauptebene dieser Struktur befinden sich 3 dauerhaft sichtbare Elemente:
 				Im folgenden werden diese Element (von unten nach oben) erklärt:
 			</para>
-
-		<section>
-			<title>Die Player Kontrollen</title>
+		<variablelist>
+		<varlistentry>
+			<term>Die Player Kontrollen</term>
+			<listitem>
 			<para>
 				Die Player Kontrollen befinden sich ganz unten am Bildschirmrand. 
 				Sie sind immer sichtbar und werden nicht durch das Menu verschoben. 
@@ -35,14 +39,16 @@
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="150" format="PNG" fileref="screenshot_playercontrol.png" />
+							<imagedata align="center" width="150" format="PNG" fileref="image/screenshot_playercontrol.png" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
 			</figure>
-		</section>
-		<section>
-			<title>Das Systemmenu</title>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>Das Systemmenu</term>
+			<listitem>
 			<para>
 				Im Systemmenu können Module geladen und Einstellungen vorgenommen werden (vgl. <xref linkend="fig_sysmenu" />).
 			</para>
@@ -51,7 +57,7 @@
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="150" format="PNG" fileref="screenshot_sysmenu.png" />
+							<imagedata align="center" width="150" format="PNG" fileref="image/screenshot_sysmenu.png" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
@@ -70,15 +76,17 @@
 					<para>Dieses Untermenu stellt alle verfügbaren Module dar.</para>
 				</listitem>
 			</itemizedlist>
-		</section>
-		<section>
-			<title>Das Aktionsmenu</title>
+			</listitem>
+		</varlistentry>
+		<varlistentry>
+			<term>Das Aktionsmenu</term>
+			<listitem>
 			<figure id="fig_aktionsmenu">
 				<title>Bildschirmfoto vom Aktionsmenu</title>
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="150" format="PNG" fileref="screenshot_aktionmenu.png" />
+							<imagedata align="center" width="150" format="PNG" fileref="image/screenshot_aktionmenu.png" />
 						</imageobject>
 					</mediaobject>	
 				</screenshot>
@@ -112,7 +120,9 @@ public void toggleAutoEvents {
 					<para>Diese Methode kann ohne vorherige Eingabe der Parameter nicht ausgeführt werden. Darum werden durch einen Klick auf diesen Button Felder für alle benötigten Parametern, sowie eine "ausführen" Button dargestellt.</para>
 				</listitem>
 			</itemizedlist>
-		</section>
+			</listitem>
+		</varlistentry>
+		</variablelist>
 
 		</section>
 

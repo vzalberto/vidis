@@ -99,5 +99,18 @@
 			<bibliosource class="uri">
 				<link xlink:href="http://weblogs.java.net/blog/campbell/archive/2005/09/java2djogl_inte_1.html" />
 			</bibliosource>
+			<!-- Zugriff: 13.01.2009 14:00 -->
+		</biblioentry>
+		<biblioentry id="web_nehe">
+			<bibliosource class="uri">
+				<link xlink:href="http://nehe.gamedev.net/" />
+			</bibliosource>
+			<!-- Zugriff: 13.01.2009 15:26 -->
+		</biblioentry>
+		<biblioentry id="web_bsd">
+			<bibliosource class="uri">
+				<link xlink:href="http://www.opensource.org/licenses/bsd-license.php" />
+			</bibliosource>
+			<!-- Zugriff: 13.01.2009 15:32 -->
 		</biblioentry>
 	</bibliography>	

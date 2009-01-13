@@ -44,7 +44,7 @@
 		<figure id="gui_klassendiagramm">
 			<title>Klassendiagramm GUI API</title>
 			<imageobject>
-				<imagedata height="500" width="500" align="center" format="SVG" fileref="gui_klassendiagramm.svg" /> 
+				<imagedata align="center" width="center" format="PNG" fileref="figures/gui_klassendiagramm.png" /> 
 			</imageobject>
 		</figure>
 	</section>	

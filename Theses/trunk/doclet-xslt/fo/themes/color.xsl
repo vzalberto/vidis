@@ -149,11 +149,12 @@
       <xsl:value-of select="$body.font.master * 0.9"/>
       <xsl:text>pt</xsl:text>
     </xsl:attribute>  
-
+<!-- BLOCK -->
+<!--
   <xsl:attribute name="border">0.5pt solid blue</xsl:attribute>
   <xsl:attribute name="background-color">#E0E0E0</xsl:attribute>
   <xsl:attribute name="padding">0.1in</xsl:attribute>
-
+-->
 
 <!--    
     <xsl:attribute name="border-style">solid</xsl:attribute>

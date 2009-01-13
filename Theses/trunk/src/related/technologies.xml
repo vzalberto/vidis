@@ -26,7 +26,7 @@
 			spezifizierte<footnote><para>Die Spezifikation ist unter <xref linkend="web_opengl" /> zu finden.</para></footnote> 
 			Software-Schnittstelle für Grafik-Hardware. Die Spezifiezierungskommission besteht aus Firmen wie SGI, IBM, HP, Sun, Intel
 			und Microsoft.
-		</para>
+		
 		<figure>
 			<title>Das <trademark class="registered">OpenGL</trademark> Logo (Quelle: <xref linkend="web_opengl" />)</title>
 			<mediaobject>
@@ -43,18 +43,16 @@
 			bricht, werden sollen. Die Idee dahinter war es die Altlasten der vergangen Versionen zu entfernen. Allerdings wurden von den für die
 			Version 3.0 vorgestellten und geplanten Änderungen viele nicht umgesetzt. Damit ist <trademark class="registered">OpenGL</trademark> 
 			nach wie vor voll abwärtskompatibel <xref linkend="web_heiseopengl" />.
-		</para>
-		<para>
 			Außerdem sind noch 2 weitere Versionen in Planung<xref linkend="web_siggraph" />:
-			<itemizedlist>
-				<listitem>
-					<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Longs Peak Reloaded</quote></para>
-				</listitem>
-				<listitem>
-					<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Mount Evans</quote></para>
-				</listitem>
-			</itemizedlist>
 		</para>
+		<itemizedlist>
+			<listitem>
+				<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Longs Peak Reloaded</quote></para>
+			</listitem>
+			<listitem>
+				<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Mount Evans</quote></para>
+			</listitem>
+		</itemizedlist>
 		<section>
 			<title><trademark class="registered">OpenGL</trademark> Java Bindings</title>
 			<para>
@@ -101,9 +99,21 @@
 			<varlistentry>
 				<term>Java OpenGL (JOGL)</term>
 				<listitem><para>
-					JOGL<xref linkend="web_jogl" /> steht für Java OpenGL und implementiert den JSR-231<xref linkend="web_jsr231" /> Standard.
-					Dieser gibt genau vor wie die <trademark class="registered">OpenGL</trademark> API Aufrufe in Java auszusehen haben.
-				</para></listitem>
+					JOGL<xref linkend="web_jogl" /> steht für Java OpenGL und ist die Referenzimplementation des JSR-231<xref linkend="web_jsr231" /> 
+					Standards. Dieser gibt genau vor wie die <trademark class="registered">OpenGL</trademark> API Aufrufe in Java auszusehen haben.
+					Prinzipiell sind alle <trademark class="registered">OpenGL</trademark> Aufrufe gleich wie in C. In Java wird jedoch eine Klasse
+					verwendet, die alle Methoden und Konstanten der <trademark class="registered">OpenGL</trademark> API zur Verfügung stellt.
+				</para>
+				<para>
+					Durch die starke Ähnlichkeit zur C Implementierung bietet JOGL einen leichten Einstieg sowohl für erfahrene als auch für 
+					unerfahrene <trademark class="registered">OpenGL</trademark> Programmierer, da es reichhaltig Tutorials für OpenGL in C gibt
+					<xref linkend="web_nehe" />.
+				</para>
+				<para>
+					JOGL steht unter der BSD<footnote><para>Berkeley Software Distribution License<xref linkend="web_bsd" /></para></footnote> 
+					Linzenz. 
+				</para>
+				</listitem>
 			</varlistentry>
 
 			<varlistentry>

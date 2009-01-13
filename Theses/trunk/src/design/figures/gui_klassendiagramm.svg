@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="633.30664"
+   height="207.43941"
+   id="svg2">
+  <defs
+     id="defs4" />
+  <g
+     transform="translate(-26.696446,-53.269612)"
+     id="layer1"
+     style="display:inline">
+    <g
+       transform="translate(-1.3957058,9.7699407)"
+       id="g3198">
+      <a
+         id="a3159">
+        <rect
+           width="241.59422"
+           height="37.821182"
+           x="147.87627"
+           y="45.385445"
+           id="rect2383"
+           style="fill:#ffffb1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8628726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      </a>
+      <text
+         x="172.10703"
+         y="72.360031"
+         id="text3155"
+         xml:space="preserve"
+         style="font-size:21.34459686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"><tspan
+           x="172.10703"
+           y="72.360031"
+           id="tspan3157">BasicGuiContainer</tspan></text>
+    </g>
+    <g
+       transform="translate(32.320308,41.027008)"
+       id="g3192">
+      <a
+         transform="matrix(0.4473754,0,0,1,79.388074,136.08131)"
+         id="a3162">
+        <rect
+           width="241.59422"
+           height="37.821182"
+           x="147.87627"
+           y="45.385445"
+           id="rect3164"
+           style="fill:#ffffb1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8628726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      </a>
+      <text
+         x="165.67847"
+         y="207.54326"
+         id="text3166"
+         xml:space="preserve"
+         style="font-size:21.34459686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline;font-family:Bitstream Vera Sans"><tspan
+           x="165.67847"
+           y="207.54326"
+           id="tspan3168">Button</tspan></text>
+    </g>
+    <g
+       transform="translate(25.589162,-55.890402)"
+       id="g3204">
+      <a
+         transform="matrix(0.4186435,0,0,1,207.83612,232.9893)"
+         id="a3170"
+         style="display:inline">
+        <rect
+           width="241.59422"
+           height="37.821182"
+           x="147.87627"
+           y="45.385445"
+           id="rect3172"
+           style="fill:#ffffb1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8628726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      </a>
+      <text
+         x="289.89627"
+         y="304.45126"
+         id="text3174"
+         xml:space="preserve"
+         style="font-size:21.34459686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline;font-family:Bitstream Vera Sans"><tspan
+           x="289.89627"
+           y="304.45126"
+           id="tspan3176">Label</tspan></text>
+    </g>
+    <g
+       transform="translate(-117.21102,-113.06343)"
+       id="g3186">
+      <a
+         transform="matrix(0.5852886,0,0,1,57.68724,290.21324)"
+         id="a3178"
+         style="display:inline">
+        <rect
+           width="241.59422"
+           height="37.821182"
+           x="147.87627"
+           y="45.385445"
+           id="rect3180"
+           style="fill:#ffffb1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8628726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      </a>
+      <text
+         x="164.28276"
+         y="361.6752"
+         id="text3182"
+         xml:space="preserve"
+         style="font-size:21.34459686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline;font-family:Bitstream Vera Sans"><tspan
+           x="164.28276"
+           y="361.6752"
+           id="tspan3184">CheckBox</tspan></text>
+    </g>
+    <g
+       transform="translate(307.75312,8.2806607)"
+       id="g3230">
+      <g
+         id="g3224">
+        <a
+           transform="matrix(0.8445743,0,0,1,22.916712,0)"
+           id="a3212">
+          <rect
+             width="241.59422"
+             height="37.821182"
+             x="147.87627"
+             y="45.385445"
+             id="rect3214"
+             style="fill:#ffffb1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8628726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </a>
+        <text
+           x="172.10703"
+           y="72.360031"
+           id="text3216"
+           xml:space="preserve"
+           style="font-size:21.34459686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"><tspan
+             x="172.10703"
+             y="72.360031"
+             id="tspan3218">ScrollContainer</tspan></text>
+      </g>
+    </g>
+    <g
+       transform="translate(258.2056,177.16107)"
+       id="g3237"
+       style="display:inline">
+      <g
+         id="g3239">
+        <g
+           id="g3249">
+          <a
+             transform="matrix(0.6258956,0,0,1,55.151434,0)"
+             id="a3241">
+            <rect
+               width="241.59422"
+               height="37.821182"
+               x="147.87627"
+               y="45.385445"
+               id="rect3243"
+               style="fill:#ffffb1;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.8628726px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+          </a>
+          <text
+             x="172.10703"
+             y="72.360031"
+             id="text3245"
+             xml:space="preserve"
+             style="font-size:21.34459686px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Bitstream Vera Sans"><tspan
+               x="172.10703"
+               y="72.360031"
+               id="tspan3247">NodeField</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       transform="translate(5.5828232,-468.95715)"
+       id="g3307">
+      <g
+         id="g3316">
+        <path
+           d="M 251.22704,572.23938 L 251.22704,636.44186 L 94.907994,636.44186 L 94.907994,685.29156"
+           id="path3274"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           d="M 251.22704,636.44186 L 473.14427,636.44186 L 473.14427,683.89585"
+           id="path3276"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           d="M 213.54299,636.57793 L 213.54299,686.66177"
+           id="path3278"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.98480672px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           d="M 337.7608,636.5385 L 337.7608,688.09691"
+           id="path3280"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.98596388px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           d="M 250.62483,571.58524 L 242.76235,585.642 L 259.61053,585.642 L 250.62483,571.58524 z"
+           id="path3305"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.90028471px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      </g>
+      <path
+         d="M 386.56066,540.69976 L 400.61742,548.56224 L 400.61742,531.71406 L 386.56066,540.69976 z"
+         id="path3314"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.90028471px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;display:inline" />
+      <path
+         d="M 400.56757,71.180996 L 448.02157,71.180996"
+         transform="translate(-5.5828232,468.95715)"
+         id="path3323"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
