@@ -2,5 +2,30 @@
 <section
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Aufbau</title>
-	<para>Komponentendiagramm</para>	
+	<para>
+		Im folgenden wird der Aufbau des Systems vorgestellt. Dazu werden die einzelnen Komponenten und die Art und Weise, wie sie miteinander in 
+		Beziehung stehen kurz erklärt.
+	</para>
+	<para>
+		Das Framework besteht aus den folgenden Komponenten:
+		<itemizedlist>
+			<listitem>Simulator</listitem>
+			<listitem>Player</listitem>
+			<listitem>Visualisierung</listitem>
+			<listitem>GUI</listitem>
+		</itemizedlist>
+	</para>
+	<figure id="fig_komponentendiagram">
+		<title>Komponentendiagramm</title>
+		<mediaobject>
+			<imageobject>
+				<imagedata width="450pt" fileref="figures/komponentendiagram2.svg" />
+			</imageobject>
+		</mediaobject>
+	</figure>
+	<para>
+		Der Simulator ist, wie der Name schon impliziert, für die Simulation des Verteilten Systems zuständig. Dieser wird durch den Player kontrolliert.
+		Visualisierung und GUI sind dafür verantwortlich, dass der Benutzer den aktuellen Status der Simulation sieht. Der Benutzer kann durch die GUI den
+		Status des Players ändern und so die Simulation beeinflussen. (vgl. <xref linkend="fig_komponentendiagram" />)
+	</para>
 </section>
