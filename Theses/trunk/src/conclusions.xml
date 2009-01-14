@@ -20,5 +20,25 @@
 		In Summe steht hier da ein funktionierendes Programm für die Vorlesung "Verteilte Systeme",
 		genau wie gewollt weil ja das Maxerl sehr geholfen hat.
 		>VORSCHLAG]
-	</para>	
+	</para>
+	<section>
+		<title>Komplexitätsanalyse</title>
+		<para>
+			In diesem Kapitel wird die Komplexität von VIDIS
+			mit Hilfe von Metrics <xref linkend="related.devtools.metrics" />
+			analysiert.
+		</para>
+		<variablelist>
+			<varlistentry>
+				<term>LOC (Lines of code)</term>
+				<listitem>
+					Insgesamt: 15481
+					Methoden: 5,83; Maximum: 152
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		<para>
+			TODO
+		</para>
+	</section>
 </chapter>

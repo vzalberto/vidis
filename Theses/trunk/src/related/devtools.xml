@@ -64,7 +64,7 @@
 		
 	</section>
 
-	<section>
+	<section id="related.devtools.metrics">
 		<title>Metrics</title>
 		<para>
 			Metrics ist ein weiteres Eclipse Plugin und Sourceforge
