@@ -35,15 +35,11 @@
 				<para>Label</para>
 				<para></para>
 			</listitem>	
-			<listitem>
-				<para>NodeField</para>
-				<para></para>
-			</listitem>
 		</itemizedlist>
 		<figure id="gui_klassendiagramm">
 			<title>Vereinfachtes Klassendiagramm GUI API</title>
 			<imageobject>
-				<imagedata align="center" format="PNG" fileref="figures/gui_klassendiagramm.png" /> 
+				<imagedata width="350pt" align="center" fileref="figures/gui_klassendiagramm2.svg" /> 
 			</imageobject>
 		</figure>
 		<para>
