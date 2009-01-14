@@ -52,7 +52,7 @@
 					<title>Ray Picking</title>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" height="300" width="400" fileref="sample.jpg" />
+							<imagedata align="center" width="450pt" fileref="sample.jpg" />
 						</imageobject>
 					</mediaobject>
 				</figure>
@@ -84,7 +84,7 @@
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="350" type="PNG" fileref="image/screenshot_link.png" />
+							<imagedata width="350pt" type="PNG" fileref="image/screenshot_link.png" />
 						</imageobject>
 					</mediaobject>
 				</screenshot>
@@ -135,6 +135,45 @@
 			<para>
 				Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
 			</para>
+		</section>
+	</section>
+	<section id="section_shader">
+		<title>Shader</title>
+		<para>
+			Zunächst werden Shader im Allgemeinen kurz erklärt. Danach werden die zum Einsatz gekommenen Shader beschrieben.
+		</para>
+		<para>
+			Shader sind Programme, die in der Grafikhardware ausgeführt werden. ...
+			Es gibt 3 Arten von Shadern:
+			<variablelist>
+				<varlistentry>
+					<term>Pixel Shader</term>
+					<listitem><para>
+						Die Pixel Shader waren die ersten. In <trademark class="registered">OpenGL</trademark> werden sie als <quote>Fragment
+						Shader</quote> bezeichnet. Ein Pixelshader wird für jedes Pixel, wenn es in den Framebuffer geschrieben wird, ausgeführt.
+						Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet.
+					</para></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Vertex Shader</term>
+					<listitem><para>
+						Vertex Shader werden per Vertex ausgeführt. Das bedeutet für jeden Vertex, der in die Grafikpipline kommt, läuft das
+						Shaderprogramm einmal durch. Es kann die Position und andere Daten, die mit dem Vertex assoziert werden verändern.
+					</para></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Geometry Shader</term>
+					<listitem><para>
+						Geometry Shader sind die neueste Generation. Sie haben die Möglichkeit Vertices zu erzeugen und zu löschen (Ein
+						Vertexshader kann das nicht, er kann nur existierende Vertices verändern). 
+					</para></listitem>
+				</varlistentry>
+			</variablelist>
+		</para>
+
+		<section>
+			<title>Link Shader</title>
+			<para></para>
 		</section>
 	</section>
 </section>

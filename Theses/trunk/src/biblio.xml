@@ -58,107 +58,116 @@
 			<bibliosource class="uri">
 				<link xlink:href="http://www.opengl.org" />
 			</bibliosource>
+			<date>Zugriff: 25.12.2008 12:05</date>
 		</biblioentry>
 		<biblioentry id="web_java3d">
 			<bibliosource class="uri">
 				<link xlink:href="https://java3d.dev.java.net/" />
 			</bibliosource>
+			<date>Zugriff: 25.12.2008 12:05</date>
 		</biblioentry>
 		<biblioentry id="web_jogl">
+			<title>JOGL Projektseite</title>
 			<bibliosource class="uri">
 				<link xlink:href="https://jogl.dev.java.net/" />
 			</bibliosource>
+			<date>Zugriff: 25.12.2008 12:23</date>
 		</biblioentry>
 		<biblioentry id="web_jsr231">
 			<bibliosource class="uri">
 				<link xlink:href="http://jcp.org/en/jsr/detail?id=231" />
 			</bibliosource>
+			<date>Zugriff: 25.12.2008 12:57</date>
 		</biblioentry>
 		<biblioentry id="web_lwjgl">
 			<bibliosource class="uri">
 				<link xlink:href="http://lwjgl.org/" />
 			</bibliosource>
+			<date>Zugriff: 25.12.2008 13:30</date>
 		</biblioentry>
 		<biblioentry id="web_siggraph">
 			<title><quote>Birds of Feather</quote> Presentation SIGGRAPH 2007</title>
 			<bibliosource class="uri">
 				<link xlink:href="http://www.khronos.org/developers/library/2007_08_siggraph/siggraph%202007%20bof.pdf" />
 			</bibliosource>
+			<date>Zugriff: 27.12.2008 11:30</date>
 		</biblioentry>
 		<biblioentry id="web_catalyst">
 			<bibliosource class="uri">
 				<link xlink:href="http://www2.ati.com/relnotes/catalyst_89_release_notes.html" />
 			</bibliosource>
+			<date>Zugriff: 5.1.2009 15:00</date>
 		</biblioentry>
 		<biblioentry id="web_heiseopengl">
 			<bibliosource class="uri">
 				<link xlink:href="http://www.heise.de/kiosk/archiv/ix/2008/10/106_kiosk" />
 			</bibliosource>
+			<date>Zugriff: 5.1.2009 15:20</date>
 		</biblioentry>
 		<biblioentry id="web_blogmustangimageio">
 			<bibliosource class="uri">
 				<link xlink:href="http://weblogs.java.net/blog/campbell/archive/2005/09/java2djogl_inte_1.html" />
 			</bibliosource>
-			<!-- Zugriff: 13.01.2009 14:00 -->
+			<date>Zugriff: 13.01.2009 14:00</date>
 		</biblioentry>
 		<biblioentry id="web_nehe">
 			<bibliosource class="uri">
 				<link xlink:href="http://nehe.gamedev.net/" />
 			</bibliosource>
-			<!-- Zugriff: 13.01.2009 15:26 -->
+			<date>Zugriff: 13.01.2009 15:26</date>
 		</biblioentry>
 		<biblioentry id="web_bsd">
 			<bibliosource class="uri">
 				<link xlink:href="http://www.opensource.org/licenses/bsd-license.php" />
 			</bibliosource>
-			<!-- Zugriff: 13.01.2009 15:32 -->
+			<date>Zugriff: 13.01.2009 15:32</date>
 		</biblioentry>
 		<biblioentry id="web_related.technologies.xml">
-			<!-- Zugriff: 2009-01-13 14:02 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://www.w3.org/XML/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-13 14:02</date>
 		</biblioentry>
 		<biblioentry id="web_related.technologies.docbook">
-			<!-- Zugriff: 2009-01-13 15:23 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://www.docbook.org/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-13 15:23</date>
 		</biblioentry>
 		<biblioentry id="web_related.technologies.fop">
-			<!-- Zugriff: 2009-01-13 15:30 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://xmlgraphics.apache.org/fop/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-13 15:30</date>
 		</biblioentry>
 		<biblioentry id="web_related.devtools.eclipse">
-			<!-- Zugriff: 2009-01-14 12:04 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://www.eclipse.org/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-14 12:04</date>
 		</biblioentry>
 		<biblioentry id="web_related.devtools.netbeans">
-			<!-- Zugriff: 2009-01-14 12:32 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://www.netbeans.org/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-14 12:32</date>
 		</biblioentry>
 		<biblioentry id="web_related.devtools.subversion">
-			<!-- Zugriff: 2009-01-14 12:45 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://subversion.tigris.org/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-14 12:45</date>
 		</biblioentry>
 		<biblioentry id="web_related.devtools.tptp">
-			<!-- Zugriff: 2009-01-14 12:49 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://www.eclipse.org/tptp/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-14 12:49</date>
 		</biblioentry>
 		<biblioentry id="web_related.devtools.metrics">
-			<!-- Zugriff: 2009-01-14 12:56 -->
 			<bibliosource class="uri">
 				<link xlink:href="http://metrics.sourceforge.net/" />
 			</bibliosource>
+			<date>Zugriff: 2009-01-14 12:56</date>
 		</biblioentry>
 	</bibliography>	
