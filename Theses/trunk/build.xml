@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="compile" name="Vidis">
+	<target name="compile">
+		<echo message="${os.name}" />
+		<mkdir dir="bin"/>
+		<exec dir="." executable="cmd" os="Windows NT,Windows XP,Windows 2000">
+		  <arg line="/c fop_alone.bat"/>
+		</exec>
+	</target>
+</project>
