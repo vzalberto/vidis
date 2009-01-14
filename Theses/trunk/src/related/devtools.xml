@@ -1,35 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns="http://docbook.org/ns/docbook">
 	<title>Entwicklungswerkzeuge</title>
-	<para></para>
+	<para>
+		Im folgenden werden die für diese Bakkalaureatsarbeit
+		relevanten Entwicklungswerkzeuge beschrieben.
+	</para>
 
 	<section>
 		<title>Eclipse</title>
-		<para></para>
-		
-	</section>
-	
-	<section>
-		<title>Netbeans</title>
-		<para></para>
+		<para>
+			Eclipse (richtigerweise Eclipse SDK) ist ein OpenSource Projekt
+			der Eclipse Community mit dem Ziel, eine OpenSource Entwicklungsplattform.
+			Sie vereint in sich viele erweiterbare Frameworks für verschiedene
+			Aufgaben in der Softwareentwicklung. Eclipse ist nicht auf die
+			Softwareentwicklung mit Java begrenzt und bietet umfangreiche
+			Hilfsmittel welche die Softwareentwicklung erleichtern.
+			<xref linkend="web_related.devtools.eclipse" />
+		</para>
 		
 	</section>
 	
 	<section>
 		<title>Subversion</title>
-		<para></para>
+		<para>
+			Subversion ist ein weiteres OpenSource Projekt, welches sich selbst
+			als Konkurrenz und Nachfolger zu CVS bezeichnet. Es ist ein
+			Versionsmanagementsystem und wird hauptsächlich dazu verwendet,
+			Projekte in Teams zu bearbeiten. Dazu werden die Projektdaten auf
+			einen zentralen Server <quote>commited</quote> und dieser kümmert sich
+			um die sichere Datensicherung und erkennt Kollisionen bei simultanen
+			Veränderungen. Die Änderungen werden als <quote>Revision</quote> des
+			Vorgängers abgespeichert und es ist möglich auf jede Revision der Vergangenheit
+			zuzugreifen. Damit ist es sehr einfach möglich die Entwicklung
+			eines Projekts zu beobachten und gegebenenfalls bei Problemen
+			gezielt nach den Ursachen für diese Probleme in den Veränderungen
+			zu suchen.
+			<xref linkend="web_related.devtools.subversion"/>
+		</para>
+		
+	</section>
+	
+	<section>
+		<title>Netbeans</title>
+		<para>
+			Netbeans ist eine umfangreiche Entwicklungsumgebung für Java.
+			Diese Entwicklungsumgebung ist ein von Sun Microsystems gesponsortes
+			OpenSource Projekt zur Java Softwareentwicklung. Im Gegensatz zur
+			Eclipse IDE ist die Netbeans IDE auf Java beschränkt. Im Rahmen
+			dieser Bakkalaureatsarbeit wurde diese Entwicklungsumgebung dazu
+			verwendet um Profilings durchzuführen.
+			<xref linkend="web_related.devtools.netbeans" />
+		</para>
 		
 	</section>
 	
 	<section>
 		<title>Testing and Performance Tools Platform</title>
-		<para></para>
+		<para>
+			TPTP ist ein Eclipse Projekt, mit dessen Hilfe
+			man eine Software testen und auf Performanz optimieren kann.
+			<xref linkend="web_related.devtools.tptp" />
+		</para>
 		
 	</section>
 
 	<section>
 		<title>Metrics</title>
-		<para></para>
+		<para>
+			Metrics ist ein weiteres Eclipse Plugin und Sourceforge
+			Projekt, mit dessen Hilfe
+			man Eckdaten zur Komplexität einer Software in
+			Hinsicht auf Codezeilen, Abhängigkeiten, Unterklassen,
+			Anzahl an Interfaces, Zahl der überschriebenen Methoden,
+			Anzahl an Methoden, <quote>McCabe Cyclomatic Complexity</quote>
+			und viele weitere hilfreiche Statistiken erstellen kann.
+			Dieses Hilfsmittel ermöglicht es, mögliche Probleme
+			in der Implementierung oder im Design frühzeitig zu erkennen.
+			
+			<xref linkend="web_related.devtools.metrics" />
+		</para>
 		
 	</section>
 </section>

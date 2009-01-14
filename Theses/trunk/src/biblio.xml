@@ -131,4 +131,34 @@
 				<link xlink:href="http://xmlgraphics.apache.org/fop/" />
 			</bibliosource>
 		</biblioentry>
+		<biblioentry id="web_related.devtools.eclipse">
+			<!-- Zugriff: 2009-01-14 12:04 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://www.eclipse.org/" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_related.devtools.netbeans">
+			<!-- Zugriff: 2009-01-14 12:32 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://www.netbeans.org/" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_related.devtools.subversion">
+			<!-- Zugriff: 2009-01-14 12:45 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://subversion.tigris.org/" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_related.devtools.tptp">
+			<!-- Zugriff: 2009-01-14 12:49 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://www.eclipse.org/tptp/" />
+			</bibliosource>
+		</biblioentry>
+		<biblioentry id="web_related.devtools.metrics">
+			<!-- Zugriff: 2009-01-14 12:56 -->
+			<bibliosource class="uri">
+				<link xlink:href="http://metrics.sourceforge.net/" />
+			</bibliosource>
+		</biblioentry>
 	</bibliography>	
