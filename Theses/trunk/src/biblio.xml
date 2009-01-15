@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	<bibliography xmlns="http://docbook.org/ns/docbook"
+		xmlns:xml="http://www.w3.org/TR/xml-id/"
 		 xmlns:xlink="http://www.w3.org/1999/xlink">
 		<biblioentry id="book_redbook">
 			<title>OpenGL<trademark class="registered" /> Programming Guide</title>
@@ -69,6 +70,29 @@
 			</authorgroup>
 		</biblioentry>
 		<biblioentry id="book_related.distributed.lamport">
+			<title>Distributed Systems</title>
+			<subtitle>Principles and Paradigms</subtitle>
+			<edition>Second Edition</edition>
+			<biblioid class="isbn">0-13-613553-6</biblioid>
+			<pagenums>264-265</pagenums>
+			<authorgroup>
+				<author>
+					<personname>
+						<firstname>Andrew</firstname>
+						<othername>S.</othername>
+						<surname>Tanenbaum</surname>
+					</personname>
+				</author>
+				<author>
+					<personname>
+						<firstname>Maarten</firstname>
+						<othername>Van</othername>
+						<surname>Steen</surname>
+					</personname>
+				</author>
+			</authorgroup>
+		</biblioentry>
+		<biblioentry id="book_related.distributed.bullyelection">
 			<title>Distributed Systems</title>
 			<subtitle>Principles and Paradigms</subtitle>
 			<edition>Second Edition</edition>
