@@ -4,7 +4,7 @@
 	<title>Dead Ends</title>
 	<para>Im folgenden werden verfolgte, aber dann doch aufgegebene Ansätze vorgestellt.</para>
 	
-	<section>
+	<section id="section_deadends_java3d">
 		<title><trademark>Java3D</trademark></title>
 		<para>
 			Ein Prototyp wurde in <trademark>Java3D</trademark> entworfen. Nach mehreren Tests mit Profiling Tools wie eclipse TPTP oder dem 

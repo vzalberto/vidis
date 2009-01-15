@@ -57,9 +57,10 @@
 	<section>
 		<title>Testing and Performance Tools Platform</title>
 		<para>
-			TPTP ist ein Eclipse Projekt, mit dessen Hilfe
-			man eine Software testen und auf Performanz optimieren kann.
-			<xref linkend="web_related.devtools.tptp" />
+			Die Testing and Performance Tools Platform (kurz TPTP) erlaubt es, Anwendungen zu überwachen und Schwachstellen zu finden, um 
+			Optimierungen durchzuführen. Dazu überwacht TPTP die Anwendung während der Laufzeit und liefert in Echtzeit Statistiken über
+			Methodenaufrufe, verbrauchte CPU-Zeit wäherend eines Methodenaufrufs und den Arbeitspeicherverbrauch einzelner Objekte.
+			TPTP ist ein Eclipse Projekt <xref linkend="web_related.devtools.tptp" />.
 		</para>
 		
 	</section>

@@ -53,7 +53,7 @@
 				<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Mount Evans</quote></para>
 			</listitem>
 		</itemizedlist>
-		<section>
+		<section id="section_opengl_bindings">
 			<title><trademark class="registered">OpenGL</trademark> Java Bindings</title>
 			<para>
 				Es existieren einige Projekte, die es ermöglichen den <trademark class="registered">OpenGL</trademark> Standard auch

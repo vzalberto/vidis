@@ -5,35 +5,42 @@
 	<para></para>	
 	<?dbfo keep-with-next="auto" ?>	
 	<section>
-		<title><trademark class="registered">OpenGL</trademark> Bindings</title>
-		<para></para>	
-		
-		<section>
-			<title>Java3D</title>
-			<para></para>	
-		
-		</section>	
-		
-		<section>
-			<title>JOGL</title>
-			<para></para>	
-		
-		
-		</section>	
-		
-		<section>
-			<title>LWJGL</title>
-			<para></para>	
-		
-		
-		</section>	
-		
-		<section>
-			<title>Fazit</title>
-			<para>und deshalb hama JOGL gnommen</para>	
-		
-		
-		</section>
+		<title>Auswahl eines <trademark class="registered">OpenGL</trademark> Bindings</title>
+		<para>
+			Im Folgenden wird erklärt, wie die Wahl getroffen wurde. Die Bindings werden in <xref linkend="section_opengl_bindings" /> vorgestellt.
+		</para>	
+		<variablelist>
+			<varlistentry>
+				<term>Java3D</term>
+				<listitem>
+					<para>
+						Der objektorientierte Ansatz von Java3D sah sehr vielversprechend aus, und deshalb war Java3D auch die erste Wahl.
+						Erst nachdem der Java3D Prototyp lauffähig war, kamen die durch Java3D entstandenen Performance Einbußen ans Licht.
+						Nähere Informationen dazu sind unter <xref linkend="section_deadends_java3d" /> zu finden. 
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>JOGL</term>
+				<listitem>
+					<para>
+						Nach dem Java3D Fehlschlag waren alle objektorientierten Kanditaten aufgebraucht, und die Wahl fiel auf JOGL. 
+						Nach ersten Experimenten war sicher, dass es mit JOGL weitaus
+						weniger Performance Probleme geben würde. Das Unangenehme an API Wrappern wie JOGL und LWJGL ist jedoch, dass man kein
+						Objektmodell hat, sondern die <trademark class="registered">OpenGL</trademark> Aufrufe alle selbst tätigen, bzw zuerst
+						in eine eigene Objektstruktur packen muss. 
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>LWJGL</term>
+				<listitem>
+					<para>
+						Da es mit JOGL performancetechnisch keine Probleme gab, wurde auf einen Prototypen für LWJGL verzichtet.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 	</section>
 	
 	<section>
