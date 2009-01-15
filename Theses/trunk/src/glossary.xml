@@ -3,7 +3,7 @@
 	<title>Glossar</title>
 	<glossdiv>
 		<title>S</title>
-		<glossentry id="glossary_shader">
+		<glossentry xml:id="glossary_shader">
 			<glossterm>Shader</glossterm>
 			<glossdef>
 				<para>Programm, dass in der Grafikhardware ausgeführt wird.</para>

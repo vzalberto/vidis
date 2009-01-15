@@ -55,7 +55,7 @@
 					Beim Ray Picking werden die 2D Koordinaten des Klicks zu einer Geraden im 3D Raum umgerechnet (vgl. <xref linkend="fig_raypicking" /> ray).
 					Dieser <quote>Strahl</quote> schneidet alle Objekte, die sich unter der Maus befinden.
 				</para>
-				<figure id="fig_raypicking">
+				<figure xml:id="fig_raypicking">
 					<title>Ray Picking</title>
 					<mediaobject>
 						<imageobject>
@@ -83,10 +83,10 @@
 			</section>
 			<para>Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />.</para>
 		</section>	
-		<section id="section_links">
+		<section xml:id="section_links">
 			<title>Gebogene Links</title>
 			<para>Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.</para>
-			<figure id="fig_linkexample">
+			<figure xml:id="fig_linkexample">
 				<title>Ein Link aus der finalen Programmversion</title>
 				<screenshot>
 					<mediaobject>
@@ -106,7 +106,7 @@
 		<section>
 			<title>Linkwölbung für Pakete</title>
 			<para>Ein Link wölbt sich um alle sich darin befindenden Pakete (vgl. <xref linkend="fig_linkpacket" />).</para>
-			<figure id="fig_linkpacket">
+			<figure xml:id="fig_linkpacket">
 				<title>Ein Link mit 2 Paketen</title>
 				<screenshot>
 					<mediaobject>
@@ -121,7 +121,7 @@
 				(vgl. <xref linkend="section_links" />) verändert werden. Da der Link durch die <trademark class="registered">OpenGL</trademark>
 				Evaluatoren erzeugt wird, sind der Anwendung nur die Kontrollpunkte, aber nicht die kompletten Vertexdaten bekannt.
 			</para>
-			<figure id="fig_renderpipeline">
+			<figure xml:id="fig_renderpipeline">
 				<title>Die Reihenfolge der <trademark class="registered">OpenGL</trademark> Operationen (Quelle: <xref linkend="book_redbook" />)</title>
 				<mediaobject>
 					<imageobject>
@@ -144,7 +144,7 @@
 			</para>
 		</section>
 	</section>
-	<section id="section_shader">
+	<section xml:id="section_shader">
 		<title>Shader</title>
 		<para>
 			Zunächst werden Shader im Allgemeinen kurz erklärt. Danach werden die zum Einsatz gekommenen Shader beschrieben.

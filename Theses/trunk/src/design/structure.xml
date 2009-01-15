@@ -15,7 +15,7 @@
 			<listitem>GUI</listitem>
 		</itemizedlist>
 	</para>
-	<figure id="fig_komponentendiagram">
+	<figure xml:id="fig_komponentendiagram">
 		<title>Komponentendiagramm</title>
 		<mediaobject>
 			<imageobject>

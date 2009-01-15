@@ -1,234 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	<bibliography xmlns="http://docbook.org/ns/docbook"
-		xmlns:xml="http://www.w3.org/TR/xml-id/"
-		 xmlns:xlink="http://www.w3.org/1999/xlink">
-		<biblioentry id="book_redbook">
-			<title>OpenGL<trademark class="registered" /> Programming Guide</title>
-			<subtitle>The Official Guide to Learning OpenGL<trademark class="registered" />, Version 2</subtitle>
-			<edition>Fifth Edition</edition>
-			<biblioid class="isbn">0-321-33573-2</biblioid>
-			<authorgroup>
-				<author>
-					<personname>
-						<firstname>Dave</firstname>
-						<surname>Shreiner</surname>
-					</personname>
-				</author>
-				<author>
-					<personname>
-						<firstname>Mason</firstname>
-						<surname>Woo</surname>
-					</personname>
-				</author>
-				<author>
-					<personname>
-						<firstname>Jackie</firstname>
-						<surname>Neider</surname>
-					</personname>
-				</author>
-				<author>
-					<personname>
-						<firstname>Tom</firstname>
-						<surname>Davis</surname>
-					</personname>
-				</author>
-			</authorgroup>
-		</biblioentry>
-		<biblioentry id="book_orangebook">
-			<title>OpenGL<trademark class="registered" /> Shading Language</title>
-			<edition>Second Edition</edition>
-			<biblioid class="isbn">0321-33489-2</biblioid>
-			<biblioid class="isbn">978-321-33489-3</biblioid>
+<bibliography xmlns="http://docbook.org/ns/docbook"
+	 xmlns:xlink="http://www.w3.org/1999/xlink">
+	<biblioentry xml:id="book_redbook">
+		<title>OpenGL<trademark class="registered" /> Programming Guide</title>
+		<subtitle>The Official Guide to Learning OpenGL<trademark class="registered" />, Version 2</subtitle>
+		<edition>Fifth Edition</edition>
+		<biblioid class="isbn">0-321-33573-2</biblioid>
+		<authorgroup>
 			<author>
 				<personname>
-					<firstname>Randy</firstname>
-					<othername>J.</othername>
-					<surname>Rost</surname>
+					<firstname>Dave</firstname>
+					<surname>Shreiner</surname>
 				</personname>
 			</author>
-		</biblioentry>
-		<biblioentry>
-			<title>Distributed Systems</title>
-			<subtitle>Principles and Paradigms</subtitle>
-			<edition>Second Edition</edition>
-			<biblioid class="isbn">0-13-613553-6</biblioid>
-			<authorgroup>
-				<author>
-					<personname>
-						<firstname>Andrew</firstname>
-						<othername>S.</othername>
-						<surname>Tanenbaum</surname>
-					</personname>
-				</author>
-				<author>
-					<personname>
-						<firstname>Maarten</firstname>
-						<othername>Van</othername>
-						<surname>Steen</surname>
-					</personname>
-				</author>
-			</authorgroup>
-		</biblioentry>
-		<biblioentry id="book_related.distributed.lamport">
-			<title>Distributed Systems</title>
-			<subtitle>Principles and Paradigms</subtitle>
-			<edition>Second Edition</edition>
-			<biblioid class="isbn">0-13-613553-6</biblioid>
-			<pagenums>264-265</pagenums>
-			<authorgroup>
-				<author>
-					<personname>
-						<firstname>Andrew</firstname>
-						<othername>S.</othername>
-						<surname>Tanenbaum</surname>
-					</personname>
-				</author>
-				<author>
-					<personname>
-						<firstname>Maarten</firstname>
-						<othername>Van</othername>
-						<surname>Steen</surname>
-					</personname>
-				</author>
-			</authorgroup>
-		</biblioentry>
-		<biblioentry id="book_related.distributed.bullyelection">
-			<title>Distributed Systems</title>
-			<subtitle>Principles and Paradigms</subtitle>
-			<edition>Second Edition</edition>
-			<biblioid class="isbn">0-13-613553-6</biblioid>
-			<pagenums>244-248</pagenums>
-			<authorgroup>
-				<author>
-					<personname>
-						<firstname>Andrew</firstname>
-						<othername>S.</othername>
-						<surname>Tanenbaum</surname>
-					</personname>
-				</author>
-				<author>
-					<personname>
-						<firstname>Maarten</firstname>
-						<othername>Van</othername>
-						<surname>Steen</surname>
-					</personname>
-				</author>
-			</authorgroup>
-		</biblioentry>
-		<biblioentry id="web_opengl">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.opengl.org" />
-			</bibliosource>
-			<date>Zugriff: 25.12.2008 12:05</date>
-		</biblioentry>
-		<biblioentry id="web_java3d">
-			<bibliosource class="uri">
-				<link xlink:href="https://java3d.dev.java.net/" />
-			</bibliosource>
-			<date>Zugriff: 25.12.2008 12:05</date>
-		</biblioentry>
-		<biblioentry id="web_jogl">
-			<title>JOGL Projektseite</title>
-			<bibliosource class="uri">
-				<link xlink:href="https://jogl.dev.java.net/" />
-			</bibliosource>
-			<date>Zugriff: 25.12.2008 12:23</date>
-		</biblioentry>
-		<biblioentry id="web_jsr231">
-			<bibliosource class="uri">
-				<link xlink:href="http://jcp.org/en/jsr/detail?id=231" />
-			</bibliosource>
-			<date>Zugriff: 25.12.2008 12:57</date>
-		</biblioentry>
-		<biblioentry id="web_lwjgl">
-			<bibliosource class="uri">
-				<link xlink:href="http://lwjgl.org/" />
-			</bibliosource>
-			<date>Zugriff: 25.12.2008 13:30</date>
-		</biblioentry>
-		<biblioentry id="web_siggraph">
-			<title><quote>Birds of Feather</quote> Presentation SIGGRAPH 2007</title>
-			<bibliosource class="uri">
-				<link xlink:href="http://www.khronos.org/developers/library/2007_08_siggraph/siggraph%202007%20bof.pdf" />
-			</bibliosource>
-			<date>Zugriff: 27.12.2008 11:30</date>
-		</biblioentry>
-		<biblioentry id="web_catalyst">
-			<bibliosource class="uri">
-				<link xlink:href="http://www2.ati.com/relnotes/catalyst_89_release_notes.html" />
-			</bibliosource>
-			<date>Zugriff: 5.1.2009 15:00</date>
-		</biblioentry>
-		<biblioentry id="web_heiseopengl">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.heise.de/kiosk/archiv/ix/2008/10/106_kiosk" />
-			</bibliosource>
-			<date>Zugriff: 5.1.2009 15:20</date>
-		</biblioentry>
-		<biblioentry id="web_blogmustangimageio">
-			<bibliosource class="uri">
-				<link xlink:href="http://weblogs.java.net/blog/campbell/archive/2005/09/java2djogl_inte_1.html" />
-			</bibliosource>
-			<date>Zugriff: 13.01.2009 14:00</date>
-		</biblioentry>
-		<biblioentry id="web_nehe">
-			<bibliosource class="uri">
-				<link xlink:href="http://nehe.gamedev.net/" />
-			</bibliosource>
-			<date>Zugriff: 13.01.2009 15:26</date>
-		</biblioentry>
-		<biblioentry id="web_bsd">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.opensource.org/licenses/bsd-license.php" />
-			</bibliosource>
-			<date>Zugriff: 13.01.2009 15:32</date>
-		</biblioentry>
-		<biblioentry id="web_related.technologies.xml">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.w3.org/XML/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-13 14:02</date>
-		</biblioentry>
-		<biblioentry id="web_related.technologies.docbook">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.docbook.org/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-13 15:23</date>
-		</biblioentry>
-		<biblioentry id="web_related.technologies.fop">
-			<bibliosource class="uri">
-				<link xlink:href="http://xmlgraphics.apache.org/fop/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-13 15:30</date>
-		</biblioentry>
-		<biblioentry id="web_related.devtools.eclipse">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.eclipse.org/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-14 12:04</date>
-		</biblioentry>
-		<biblioentry id="web_related.devtools.netbeans">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.netbeans.org/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-14 12:32</date>
-		</biblioentry>
-		<biblioentry id="web_related.devtools.subversion">
-			<bibliosource class="uri">
-				<link xlink:href="http://subversion.tigris.org/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-14 12:45</date>
-		</biblioentry>
-		<biblioentry id="web_related.devtools.tptp">
-			<bibliosource class="uri">
-				<link xlink:href="http://www.eclipse.org/tptp/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-14 12:49</date>
-		</biblioentry>
-		<biblioentry id="web_related.devtools.metrics">
-			<bibliosource class="uri">
-				<link xlink:href="http://metrics.sourceforge.net/" />
-			</bibliosource>
-			<date>Zugriff: 2009-01-14 12:56</date>
-		</biblioentry>
-	</bibliography>	
+			<author>
+				<personname>
+					<firstname>Mason</firstname>
+					<surname>Woo</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>Jackie</firstname>
+					<surname>Neider</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>Tom</firstname>
+					<surname>Davis</surname>
+				</personname>
+			</author>
+		</authorgroup>
+	</biblioentry>
+	<biblioentry xml:id="book_orangebook">
+		<title>OpenGL<trademark class="registered" /> Shading Language</title>
+		<edition>Second Edition</edition>
+		<biblioid class="isbn">0321-33489-2</biblioid>
+		<biblioid class="isbn">978-321-33489-3</biblioid>
+		<author>
+			<personname>
+				<firstname>Randy</firstname>
+				<othername>J.</othername>
+				<surname>Rost</surname>
+			</personname>
+		</author>
+	</biblioentry>
+	<biblioentry>
+		<title>Distributed Systems</title>
+		<subtitle>Principles and Paradigms</subtitle>
+		<edition>Second Edition</edition>
+		<biblioid class="isbn">0-13-613553-6</biblioid>
+		<authorgroup>
+			<author>
+				<personname>
+					<firstname>Andrew</firstname>
+					<othername>S.</othername>
+					<surname>Tanenbaum</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>Maarten</firstname>
+					<othername>Van</othername>
+					<surname>Steen</surname>
+				</personname>
+			</author>
+		</authorgroup>
+	</biblioentry>
+	<biblioentry xml:id="book_related.distributed.lamport">
+		<title>Distributed Systems</title>
+		<subtitle>Principles and Paradigms</subtitle>
+		<edition>Second Edition</edition>
+		<biblioid class="isbn">0-13-613553-6</biblioid>
+		<pagenums>264-265</pagenums>
+		<authorgroup>
+			<author>
+				<personname>
+					<firstname>Andrew</firstname>
+					<othername>S.</othername>
+					<surname>Tanenbaum</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>Maarten</firstname>
+					<othername>Van</othername>
+					<surname>Steen</surname>
+				</personname>
+			</author>
+		</authorgroup>
+	</biblioentry>
+	<biblioentry xml:id="book_related.distributed.bullyelection">
+		<title>Distributed Systems</title>
+		<subtitle>Principles and Paradigms</subtitle>
+		<edition>Second Edition</edition>
+		<biblioid class="isbn">0-13-613553-6</biblioid>
+		<pagenums>244-248</pagenums>
+		<authorgroup>
+			<author>
+				<personname>
+					<firstname>Andrew</firstname>
+					<othername>S.</othername>
+					<surname>Tanenbaum</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>Maarten</firstname>
+					<othername>Van</othername>
+					<surname>Steen</surname>
+				</personname>
+			</author>
+		</authorgroup>
+	</biblioentry>
+	<biblioentry xml:id="web_opengl">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.opengl.org" />
+		</bibliosource>
+		<date>Zugriff: 25.12.2008 12:05</date>
+	</biblioentry>
+	<biblioentry xml:id="web_java3d">
+		<bibliosource class="uri">
+			<link xlink:href="https://java3d.dev.java.net/" />
+		</bibliosource>
+		<date>Zugriff: 25.12.2008 12:05</date>
+	</biblioentry>
+	<biblioentry xml:id="web_jogl">
+		<title>JOGL Projektseite</title>
+		<bibliosource class="uri">
+			<link xlink:href="https://jogl.dev.java.net/" />
+		</bibliosource>
+		<date>Zugriff: 25.12.2008 12:23</date>
+	</biblioentry>
+	<biblioentry xml:id="web_jsr231">
+		<bibliosource class="uri">
+			<link xlink:href="http://jcp.org/en/jsr/detail?id=231" />
+		</bibliosource>
+		<date>Zugriff: 25.12.2008 12:57</date>
+	</biblioentry>
+	<biblioentry xml:id="web_lwjgl">
+		<bibliosource class="uri">
+			<link xlink:href="http://lwjgl.org/" />
+		</bibliosource>
+		<date>Zugriff: 25.12.2008 13:30</date>
+	</biblioentry>
+	<biblioentry xml:id="web_siggraph">
+		<title><quote>Birds of Feather</quote> Presentation SIGGRAPH 2007</title>
+		<bibliosource class="uri">
+			<link xlink:href="http://www.khronos.org/developers/library/2007_08_siggraph/siggraph%202007%20bof.pdf" />
+		</bibliosource>
+		<date>Zugriff: 27.12.2008 11:30</date>
+	</biblioentry>
+	<biblioentry xml:id="web_catalyst">
+		<bibliosource class="uri">
+			<link xlink:href="http://www2.ati.com/relnotes/catalyst_89_release_notes.html" />
+		</bibliosource>
+		<date>Zugriff: 5.1.2009 15:00</date>
+	</biblioentry>
+	<biblioentry xml:id="web_heiseopengl">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.heise.de/kiosk/archiv/ix/2008/10/106_kiosk" />
+		</bibliosource>
+		<date>Zugriff: 5.1.2009 15:20</date>
+	</biblioentry>
+	<biblioentry xml:id="web_blogmustangimageio">
+		<bibliosource class="uri">
+			<link xlink:href="http://weblogs.java.net/blog/campbell/archive/2005/09/java2djogl_inte_1.html" />
+		</bibliosource>
+		<date>Zugriff: 13.01.2009 14:00</date>
+	</biblioentry>
+	<biblioentry xml:id="web_nehe">
+		<bibliosource class="uri">
+			<link xlink:href="http://nehe.gamedev.net/" />
+		</bibliosource>
+		<date>Zugriff: 13.01.2009 15:26</date>
+	</biblioentry>
+	<biblioentry xml:id="web_bsd">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.opensource.org/licenses/bsd-license.php" />
+		</bibliosource>
+		<date>Zugriff: 13.01.2009 15:32</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.technologies.xml">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.w3.org/XML/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-13 14:02</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.technologies.docbook">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.docbook.org/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-13 15:23</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.technologies.fop">
+		<bibliosource class="uri">
+			<link xlink:href="http://xmlgraphics.apache.org/fop/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-13 15:30</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.devtools.eclipse">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.eclipse.org/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-14 12:04</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.devtools.netbeans">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.netbeans.org/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-14 12:32</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.devtools.subversion">
+		<bibliosource class="uri">
+			<link xlink:href="http://subversion.tigris.org/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-14 12:45</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.devtools.tptp">
+		<bibliosource class="uri">
+			<link xlink:href="http://www.eclipse.org/tptp/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-14 12:49</date>
+	</biblioentry>
+	<biblioentry xml:id="web_related.devtools.metrics">
+		<bibliosource class="uri">
+			<link xlink:href="http://metrics.sourceforge.net/" />
+		</bibliosource>
+		<date>Zugriff: 2009-01-14 12:56</date>
+	</biblioentry>
+	
+</bibliography>	

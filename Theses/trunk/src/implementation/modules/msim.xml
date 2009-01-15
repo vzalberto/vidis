@@ -288,7 +288,7 @@
 										zwischen Nodes
 										mit Hilfe von Links hergestellt werden sollen.
 									</para>
-									<example id="example_connection_simple">
+									<example xml:id="example_connection_simple">
 										<title>Beispiel für eine einzelne Verbindung zwischen Node A und Node B über Link L.</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 										<![CDATA[

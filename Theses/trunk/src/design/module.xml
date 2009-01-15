@@ -87,7 +87,7 @@
 			Im folgenden werden die Interfaces der Komponenten Node,
 			Packet und Link definiert.
 		</para>
-		<section id="design.module.node">
+		<section xml:id="design.module.node">
 			<title>Node</title>
 			<para>
 				Ein Node ist die Entität eines Peers. Sein Verhalten ist
@@ -223,7 +223,7 @@
 			<xi:include href="module/javadocref/vidis-data-mod-IUserNode.xml"/>
 			 -->
 		</section>
-		<section id="design.module.link">
+		<section xml:id="design.module.link">
 			<title>Link</title>
 			<para>
 				Ein Link soll zwei Nodes bidirektional verbinden. Dabei
@@ -312,7 +312,7 @@
 				</itemizedlist>
 			</para>
 		</section>
-		<section id="design.module.packet">
+		<section xml:id="design.module.packet">
 			<title>Packet</title>
 			<para>Ein Packet wird durch folgende wichtigen Methoden definiert:</para>
 			<para>

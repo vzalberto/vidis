@@ -53,7 +53,7 @@
 				<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Mount Evans</quote></para>
 			</listitem>
 		</itemizedlist>
-		<section id="section_opengl_bindings">
+		<section xml:id="section_opengl_bindings">
 			<title><trademark class="registered">OpenGL</trademark> Java Bindings</title>
 			<para>
 				Es existieren einige Projekte, die es ermöglichen den <trademark class="registered">OpenGL</trademark> Standard auch
@@ -81,7 +81,7 @@
 					die Reihenfolge an, in der die Matrizen verwendet werden müssen. Die Engine parst diesen Graphen und erzeugt daraus direkt 
 					<trademark class="registered">OpenGL</trademark> Kommandos.
 
-					<example id="example_scenegraph">
+					<example xml:id="example_scenegraph">
 						<title>Auszug aus einem einfachem Szenengraph</title>
 						<programlisting>
 							+ Root-Knoten
@@ -130,7 +130,7 @@
 	</section>
 
 
-	<section id="related.technologies.xml">
+	<section xml:id="related.technologies.xml">
 		<title>XML</title>
 		<para>
 			XML wird dazu verwendet, um hierarchisch strukturierte Daten
@@ -139,7 +139,7 @@
 			<xref linkend="web_related.technologies.xml"/>
 		</para>
 		
-		<section id="compare_xml_sax_dom">
+		<section xml:id="compare_xml_sax_dom">
 			<title>Vergleich XML Parser: DOM vs. SAX</title>
 			<para>
 				Im folgenden werden die Vor- und Nachteile der
@@ -193,7 +193,7 @@
 			</variablelist>
 		</section>
 		
-		<section id="related.technologies.docbook">
+		<section xml:id="related.technologies.docbook">
 			<title>DocBook</title>
 			<para>
 				DocBook eignet sich zum Schreiben von Büchern, Artikeln
@@ -208,7 +208,7 @@
 			</para>
 		</section>
 
-		<section id="related.technologies.fop">
+		<section xml:id="related.technologies.fop">
 			<title>FOP</title>
 			<para>
 				FOP, oder auch Formatting Objects Processor ist ein Programm

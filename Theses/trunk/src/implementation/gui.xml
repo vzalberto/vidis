@@ -34,7 +34,7 @@
 				Sie sind immer sichtbar und werden nicht durch das Menu verschoben. 
 				Sie bestehen aus den 3 Buttons Play, Pause und Reset (vgl. <xref linkend="fig_playbuttons" />).
 			</para>
-			<figure id="fig_playbuttons">
+			<figure xml:id="fig_playbuttons">
 				<title>Bildschirmfoto von den Playerkontrollen</title>
 				<screenshot>
 					<mediaobject>
@@ -52,7 +52,7 @@
 			<para>
 				Im Systemmenu können Module geladen und Einstellungen vorgenommen werden (vgl. <xref linkend="fig_sysmenu" />).
 			</para>
-			<figure id="fig_sysmenu">
+			<figure xml:id="fig_sysmenu">
 				<title>Bildschirmfoto vom Systemmenu</title>
 				<screenshot>
 					<mediaobject>
@@ -81,7 +81,7 @@
 		<varlistentry>
 			<term>Das Aktionsmenu</term>
 			<listitem>
-			<figure id="fig_aktionsmenu">
+			<figure xml:id="fig_aktionsmenu">
 				<title>Bildschirmfoto vom Aktionsmenu</title>
 				<screenshot>
 					<mediaobject>
@@ -95,7 +95,7 @@
 				Für die aktuell selektierte Node werden hier Aktionen zur Verfügung gestellt. Dies äußert sich durch einen Button pro möglicher Aktion.
 				Voraussetzung dafür ist das der Modul-Entwickler in der Node Implementation Methoden vom Typ <type>void</type> mit @Display annotiert hat (vgl. <xref linkend="example_useraction" />).
 			</para>
-			<example id="example_useraction">
+			<example xml:id="example_useraction">
 				<title>Auszug aus einer Modul-Node-Implementation</title>
 				<programlisting linenumbering="numbered">
 @Display( name="Erzeuge Event" )

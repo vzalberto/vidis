@@ -203,7 +203,7 @@
 			<title>Detaillierte Beschreibung der Ablaufreihenfolge</title>
 			<para>
 				<variablelist>
-					<varlistentry id="implementation.module.node">
+					<varlistentry xml:id="implementation.module.node">
 						<term>Node</term>
 						<listitem>
 							<itemizedlist>
@@ -280,7 +280,7 @@
 							</itemizedlist>
 						</listitem>
 					</varlistentry>
-					<varlistentry id="implementation.module.link">
+					<varlistentry xml:id="implementation.module.link">
 						<term>Link</term>
 						<listitem>
 							<itemizedlist>
@@ -340,7 +340,7 @@
 							</itemizedlist>
 						</listitem>
 					</varlistentry>
-					<varlistentry id="implementation.module.packet">
+					<varlistentry xml:id="implementation.module.packet">
 						<term>Packet</term>
 						<listitem>
 							<itemizedlist>

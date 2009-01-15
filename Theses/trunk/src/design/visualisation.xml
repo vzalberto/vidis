@@ -36,7 +36,7 @@
 				<para></para>
 			</listitem>	
 		</itemizedlist>
-		<figure id="gui_klassendiagramm">
+		<figure xml:id="gui_klassendiagramm">
 			<title>Vereinfachtes Klassendiagramm GUI API</title>
 			<imageobject>
 				<imagedata width="350pt" align="center" fileref="figures/gui_klassendiagramm2.svg" /> 
