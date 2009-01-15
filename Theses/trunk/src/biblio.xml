@@ -8,20 +8,28 @@
 			<biblioid class="isbn">0-321-33573-2</biblioid>
 			<authorgroup>
 				<author>
-					<firstname>Dave</firstname>
-					<surname>Shreiner</surname>
+					<personname>
+						<firstname>Dave</firstname>
+						<surname>Shreiner</surname>
+					</personname>
 				</author>
 				<author>
-					<firstname>Mason</firstname>
-					<surname>Woo</surname>
+					<personname>
+						<firstname>Mason</firstname>
+						<surname>Woo</surname>
+					</personname>
 				</author>
 				<author>
-					<firstname>Jackie</firstname>
-					<surname>Neider</surname>
+					<personname>
+						<firstname>Jackie</firstname>
+						<surname>Neider</surname>
+					</personname>
 				</author>
 				<author>
-					<firstname>Tom</firstname>
-					<surname>Davis</surname>
+					<personname>
+						<firstname>Tom</firstname>
+						<surname>Davis</surname>
+					</personname>
 				</author>
 			</authorgroup>
 		</biblioentry>
@@ -31,9 +39,11 @@
 			<biblioid class="isbn">0321-33489-2</biblioid>
 			<biblioid class="isbn">978-321-33489-3</biblioid>
 			<author>
-				<firstname>Randy</firstname>
-				<othername>J.</othername>
-				<surname>Rost</surname>
+				<personname>
+					<firstname>Randy</firstname>
+					<othername>J.</othername>
+					<surname>Rost</surname>
+				</personname>
 			</author>
 		</biblioentry>
 		<biblioentry>
@@ -43,14 +53,41 @@
 			<biblioid class="isbn">0-13-613553-6</biblioid>
 			<authorgroup>
 				<author>
-					<firstname>Andrew</firstname>
-					<othername>S.</othername>
-					<surname>Tanenbaum</surname>
+					<personname>
+						<firstname>Andrew</firstname>
+						<othername>S.</othername>
+						<surname>Tanenbaum</surname>
+					</personname>
 				</author>
 				<author>
-					<firstname>Maarten</firstname>
-					<othername>Van</othername>
-					<surname>Steen</surname>
+					<personname>
+						<firstname>Maarten</firstname>
+						<othername>Van</othername>
+						<surname>Steen</surname>
+					</personname>
+				</author>
+			</authorgroup>
+		</biblioentry>
+		<biblioentry id="book_related.distributed.lamport">
+			<title>Distributed Systems</title>
+			<subtitle>Principles and Paradigms</subtitle>
+			<edition>Second Edition</edition>
+			<biblioid class="isbn">0-13-613553-6</biblioid>
+			<pagenums>244-248</pagenums>
+			<authorgroup>
+				<author>
+					<personname>
+						<firstname>Andrew</firstname>
+						<othername>S.</othername>
+						<surname>Tanenbaum</surname>
+					</personname>
+				</author>
+				<author>
+					<personname>
+						<firstname>Maarten</firstname>
+						<othername>Van</othername>
+						<surname>Steen</surname>
+					</personname>
 				</author>
 			</authorgroup>
 		</biblioentry>

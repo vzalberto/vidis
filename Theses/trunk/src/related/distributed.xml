@@ -6,32 +6,264 @@
 	
 	<section>
 		<title>Vector Clock Algorithmus</title>
-		<para></para>
-		
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						In verteilten Systemen treten üblicherweise parallel
+						verschiedenste Events auf, welche jedoch nicht für
+						jeden betroffenen Node bekannt sind. In diesen Fällen
+						müssen diese Events koordiniert werden, da es ansonsten
+						zu Inkonsistenzen oder fehlerhaftem Verhalten kommen kann.
+					</para>
+					<para>
+						Der Vector Clock Algorithmus kann dazu verwendet werden um
+						eine partiale Ordnung auf nebenläufigen, gleichläufigen und
+						nicht global bekannte Events zu erstellen. Damit ist es 
+						möglich zu entscheiden welcher der neuere, gültige Zustand
+						in einem verteilten System ist.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Beispiel</term>
+				<listitem>
+					<para>
+						Die Mengen der Nodes (Peers):
+						<programlisting>
+							P = { P<subscript>i</subscript> | P<subscript>i</subscript> ist ein Peer, 0 &lt; i &lt; 4 }
+						</programlisting>
+						Die Menge der Verbindungen:
+						<programlisting>
+							C = {
+								( P<subscript>1</subscript>, P<subscript>2</subscript> ),
+								( P<subscript>2</subscript>, P<subscript>3</subscript> )
+							}
+						</programlisting>
+						Die Menge der logischen Uhren gespeichert in P<subscript>i</subscript>:
+						<programlisting>
+							V<subscript>P<subscript>i</subscript></subscript> = { x | x = P<subscript>j</subscript>, die logische Uhr von P<subscript>j</subscript> gespeichert in P<subscript>i</subscript> }
+						</programlisting>
+						Und folgende Funktion:
+						<programlisting>
+							time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = der Wert der logischen Uhr von P<subscript>j</subscript> in Peer P<subscript>i</subscript>
+						</programlisting>
+						Grafisch:
+						<figure>
+							<mediaobject>
+								<textobject>
+									<para>TODO</para>
+								</textobject>
+							</mediaobject>
+						</figure>
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						Der Algorithmus basiert auf <quote>Lamport's logical clock</quote>
+						Dieser Algorithmus produziert eine totale Ordnung, erfasst
+						aber keine Kausalitäten (<xref linkend="book_related.distributed.lamport" />)
+						zwischen den Ereignissen.
+					</para>
+					<para>
+						Um dieses Problem einzugrenzen, geht der Vector Clock Algorithmus einen anderen
+						Weg. Jeder Peer speichert seine eigene und die logischen Uhren von erreichbaren
+						Knoten. Bei einem Ereignis wird die interne logische Uhr
+						erhöht und an die benachbarten Knoten zusammen mit allen bekannten logischen
+						Uhren anderer Peers geschickt.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<para>
+						Bevor ein Ereignis von P<subscript>i</subscript> ausgeführt wird:
+						<programlisting>
+							time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = V<subscript>(P<subscript>i</subscript>, P<subscript>i</subscript></subscript>)+1
+						</programlisting>
+						Wenn P<subscript>i</subscript> eine Nachricht an P<subscript>j</subscript> sendet:
+						<programlisting>
+							M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript> = ( M, V<subscript>P<subscript>i</subscript></subscript> )
+							send M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript>
+						</programlisting>
+						Wenn P<subscript>i</subscript> eine Nachricht M empfängt:
+						<programlisting>
+							for j in 1..n do
+								time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V(<subscript>P<subscript>i</subscript></subscript>), P<subscript>j</subscript>) }
+							done
+						</programlisting>
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 	</section>
 	
 	<section>
 		<title>Bully Election Algorithmus</title>
-		<para></para>
-		
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						Oft ist es in verteilten Systemen notwendig eine 
+						Entscheidung mit globaler Auswirkung zentralisiert
+						zu treffen. In diesen Fällen muss ein Koordinator
+						gewählt werden, der diese Entscheidung übernimmt.
+					</para>
+					<para>
+						Der Bully Election Algorithmus kann dazu verwendet werden
+						um in einem Netzwerk mit gleichberechtigten Nodes einen
+						Koordinator zu finden.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Beispiel</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 	</section>
 	
 	<section>
 		<title>Byzantinische Generäle</title>
-		<para></para>
 		
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						todo
+					</para><para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Beispiel</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>		
 	</section>
 	
 	<section>
 		<title>Echo Algorithmus</title>
-		<para></para>
-		
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Beispiel</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 	</section>
 	
 	<section>
 		<title>Flooding Algorithmus</title>
-		<para></para>
-		
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Beispiel</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<para>
+						todo
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>		
 	</section>
 	
 </section>

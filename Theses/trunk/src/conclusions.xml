@@ -25,15 +25,21 @@
 		<title>Komplexitätsanalyse</title>
 		<para>
 			In diesem Kapitel wird die Komplexität von VIDIS
-			mit Hilfe von Metrics <xref linkend="related.devtools.metrics" />
+			mit Hilfe von Metrics (Siehe: <xref linkend="related.devtools.metrics" />)
 			analysiert.
 		</para>
 		<variablelist>
 			<varlistentry>
 				<term>LOC (Lines of code)</term>
 				<listitem>
-					Insgesamt: 15481
-					Methoden: 5,83; Maximum: 152
+					VIDIS beinhaltet insgesamt 15481 Zeilen Programmcode.
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>LOC in Methoden</term>
+				<listitem>
+					Eine Methode ist durchschnittlich 5,83 Zeilen Programmiercode lang.
+					Die längste Methode ist 152 Zeilen lang.
 				</listitem>
 			</varlistentry>
 		</variablelist>
