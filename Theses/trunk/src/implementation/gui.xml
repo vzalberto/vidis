@@ -135,12 +135,22 @@ public void toggleAutoEvents {
 
 	<section>
 		<title>Maus Interaktion</title>
-		<para></para>
+		<para>
+			Mit einfachen Mausklicks können alle Steuerelemente in der Benutzeroberflächer bedient werden und die 3 dimensionalen Nodes sind auswählbar (siehe 
+			<xref linkend="section_picking" />).
+		</para>
+		<para>
+			Bei gedrückter rechter Maustaste wird ein aus Spielen bekannter <quote>Free Look</quote> Modus aktiviert. Dabei kann man durch Bewegen der Maus
+			in jede beliebige Richtung schauen.
+		</para>
 	</section>
 
 	<section>
 		<title>Tastatur Interaktion</title>
-		<para></para>
+		<para>
+			Mit den Tasten W, A, S und D lässt sich die Kamera bewegen. Dabei bewegt sich mit A und S die Kamera in Blickrichtung vor bzw zurück und mit
+			A und D seitwärts nach links oder rechts.
+		</para>
 	</section>
 
 </section>

@@ -46,14 +46,17 @@
 	<section>
 		<title>Problemstellungen</title>
 		<para></para>
-		<section>
+		<section xml:id="section_picking">
 			<title>Picking</title>
-			<para>Unter Picking versteht man den Prozess, herauszufinden auf welches 3D Objekt ein Benutzer geklickt hat. Man unterscheidet zwischen verschiedenen Varianten wie ein solcher Agorithmus arbeitet:</para>
+			<para>
+				Unter Picking versteht man den Prozess, herauszufinden auf welches 3D Objekt ein Benutzer geklickt hat. Man unterscheidet zwischen 
+				verschiedenen Varianten wie ein solcher Agorithmus arbeitet:
+			</para>
 			<section>
 				<title>Ray Picking</title>
 				<para>
-					Beim Ray Picking werden die 2D Koordinaten des Klicks zu einer Geraden im 3D Raum umgerechnet (vgl. <xref linkend="fig_raypicking" /> ray).
-					Dieser <quote>Strahl</quote> schneidet alle Objekte, die sich unter der Maus befinden.
+					Beim Ray Picking werden die 2D Koordinaten des Klicks zu einer Geraden im 3D Raum umgerechnet (vgl. 
+					<xref linkend="fig_raypicking" /> ray).	Dieser <quote>Strahl</quote> schneidet alle Objekte, die sich unter der Maus befinden.
 				</para>
 				<figure xml:id="fig_raypicking">
 					<title>Ray Picking</title>
@@ -63,6 +66,45 @@
 						</imageobject>
 					</mediaobject>
 				</figure>
+				<para>
+					Dazu benötigt man zuerst die Transformationsmatrizen, durch die das 2 dimensionale Bild zu stande kommt. Diese lassen sich mit
+					dem entsprechenden <trademark class="registered">OpenGL</trademark> Kommando auslesen. Aus den Inversen dieser Matrizen und den
+					Mauskoordinaten kann man die Gerade, die alle Objekte unter der Maus schneidet berechnen. Die GLU Bibliothek bietet dazu 
+					eine Hilfsroutine, welche genau diese Berechnung durchführt. 
+						<methodsynopsis language="java">
+							<modifier>public</modifier>
+							<type>boolean</type>
+							<methodname>gluUnProject</methodname>
+							<methodparam>
+								<type>double</type>
+								<parameter>winX</parameter>
+							</methodparam>
+							<methodparam>
+								<type>double</type>
+								<parameter>winY</parameter>
+							</methodparam>
+							<methodparam>
+								<type>double</type>
+								<parameter>winZ</parameter>
+							</methodparam>
+							<methodparam>
+								<type>DoubleBuffer</type>
+								<parameter>model</parameter>
+							</methodparam>
+							<methodparam>
+								<type>DoubleBuffer</type>
+								<parameter>proj</parameter>
+							</methodparam>
+							<methodparam>
+								<type>IntBuffer</type>
+								<parameter>view</parameter>
+							</methodparam>
+							<methodparam>
+								<type>DoubleBuffer</type>
+								<parameter>objPos</parameter>
+							</methodparam>
+						</methodsynopsis>
+				</para>
 			</section>
 			<section>
 				<title>Farb Picking mit Back Buffer</title>
@@ -91,7 +133,7 @@
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata width="350pt" type="PNG" fileref="image/screenshot_link.png" />
+							<imagedata width="450pt" type="PNG" fileref="image/screenshot_link.png" />
 						</imageobject>
 					</mediaobject>
 				</screenshot>
@@ -111,7 +153,7 @@
 				<screenshot>
 					<mediaobject>
 						<imageobject>
-							<imagedata align="center" width="350" type="PNG" fileref="image/screenshot_link_packets.png" />
+							<imagedata align="center" width="450pt" type="PNG" fileref="image/screenshot_link_packets.png" />
 						</imageobject>
 					</mediaobject>
 				</screenshot>
