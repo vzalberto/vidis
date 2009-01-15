@@ -32,14 +32,18 @@
 			<varlistentry>
 				<term>LOC (Lines of code)</term>
 				<listitem>
+					<para>
 					VIDIS beinhaltet insgesamt 15481 Zeilen Programmcode.
+					</para>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
 				<term>LOC in Methoden</term>
 				<listitem>
+					<para>
 					Eine Methode ist durchschnittlich 5,83 Zeilen Programmiercode lang.
 					Die längste Methode ist 152 Zeilen lang.
+					</para>
 				</listitem>
 			</varlistentry>
 		</variablelist>

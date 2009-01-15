@@ -38,9 +38,11 @@
 		</itemizedlist>
 		<figure xml:id="gui_klassendiagramm">
 			<title>Vereinfachtes Klassendiagramm GUI API</title>
-			<imageobject>
-				<imagedata width="350pt" align="center" fileref="figures/gui_klassendiagramm2.svg" /> 
-			</imageobject>
+			<mediaobject>
+				<imageobject>
+					<imagedata width="350pt" align="center" fileref="figures/gui_klassendiagramm2.svg" /> 
+				</imageobject>
+			</mediaobject>
 		</figure>
 		<para>
 			Der BasicGuiContainer ist die wichtigste Klasse. Durch ein Composite Pattern kann er beliebig viele weitere GuiContainer enthalten. Diese

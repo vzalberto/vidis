@@ -9,10 +9,10 @@
 	<para>
 		Das Framework besteht aus den folgenden Komponenten:
 		<itemizedlist>
-			<listitem>Simulator</listitem>
-			<listitem>Player</listitem>
-			<listitem>Visualisierung</listitem>
-			<listitem>GUI</listitem>
+			<listitem><para>Simulator</para></listitem>
+			<listitem><para>Player</para></listitem>
+			<listitem><para>Visualisierung</para></listitem>
+			<listitem><para>GUI</para></listitem>
 		</itemizedlist>
 	</para>
 	<figure xml:id="fig_komponentendiagram">

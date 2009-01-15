@@ -9,5 +9,4 @@
 	<xi:include href="implementation/visualisation.xml" />
 	<xi:include href="implementation/modules.xml" />
 	<xi:include href="implementation/gui.xml" />
-	
 </chapter>
