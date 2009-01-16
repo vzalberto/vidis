@@ -6,5 +6,9 @@
 			<arg value="/c" />
 			<arg value="fop -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf" />
 		</exec>
+		<exec dir="." executable="sh" os="Linux">
+			<arg value="-c" />
+			<arg value="fop -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf" />
+		</exec>
 	</target>
 </project>
