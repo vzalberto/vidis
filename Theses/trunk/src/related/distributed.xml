@@ -12,10 +12,14 @@
 				<listitem>
 					<para>
 						In verteilten Systemen treten üblicherweise parallel
-						verschiedenste Events auf, welche jedoch nicht für
-						jeden betroffenen Node bekannt sind. In diesen Fällen
-						müssen diese Events koordiniert werden, da es ansonsten
-						zu Inkonsistenzen oder fehlerhaftem Verhalten kommen kann.
+						verschiedene Ereignisse auf, welche jedoch nicht global,
+						also jedem Node, bekannt sind. Sollten diese Ereignisse 
+						koordiniert werden müssen kann es zu inkonsistentem oder
+						fehlerhaften Verhalten kommen weil es in einem Netzwerk
+						keine globale Zeit gibt. Egal wie genau die Knoten zeitlich
+						synchronisiert werden, es wird immer möglicherweise sehr kleine
+						Verzögerungen geben. Es reicht somit nicht aus Ereignisse mittels
+						Timestamps zu synchronisieren. Es wird ein
 					</para>
 					<para>
 						Der Vector Clock Algorithmus kann dazu verwendet werden um
@@ -178,9 +182,13 @@
 				<term>Problemstellung</term>
 				<listitem>
 					<para>
-						todo
-					</para><para>
-						todo
+						Die dahinterliegende Idee ist auch bekannt als byzantinisches
+						Zustimmungsproblem. Es ist nicht notwendigerweise impliziert,
+						dass in einem Netzwerk ausschließlich vertrauenswürdige Peers
+						vorkommen. Manchmal gibt es fehlerhafte oder bösartige Knoten.
+						Diesen kann nicht vertraut werden. Es muss deshalb eine
+						Möglichkeit gefunden werden weiterhin einen <quote>richtigen</quote>
+						Zustand des Systems zu wahren.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -196,15 +204,17 @@
 				<term>Lösungsansatz</term>
 				<listitem>
 					<para>
-						todo
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
-				<term>Pseudocode</term>
-				<listitem>
-					<para>
-						todo
+						Als Lösung bietet sich ein Mehrheitsentscheid an. Es werden dafür
+						die Aussagen mehrerer bzw aller Nachbarknoten abgewartet, bevor
+						sich ein Peer für eine Option entscheidet. Trivialerweise funktioniert
+						dies nur, so lange mehr Nachbarknoten die Wahrheit sagen. Ansonsten
+						wird ein korrekter Knoten komprommitiert. Lamport
+						bewies 1982, dass in einem System in dem alle Knoten miteinander in
+						Verbindung stehen und mit <literal>k</literal> fehlerhaften
+						Einheiten mindestens <literal>2k + 1</literal> korrekt funktionierende
+						Einheiten vorhanden sein müssen. Die Komplexität dieses Problems
+						erhöht sich jedoch für den Fall, dass nicht alle Knoten mit jedem anderen
+						Knoten verbunden sind.
 					</para>
 				</listitem>
 			</varlistentry>
