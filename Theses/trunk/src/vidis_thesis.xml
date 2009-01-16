@@ -36,9 +36,25 @@
 				und dem Benutzer eine Möglichkeit bieten, das simulierte System zu beeinflussen.
 				Außerdem sollen bereits einige verteilte Algorithmen implementiert werden.
 			</para><para>
-				Die Arbeit verschafft einen Überblick über das Design und die Implemntation dieses Frameworks.
+				Im Zuge dieser Arbeit wurde dieses Framework und ausgewählte verteilte Algorithmen implementiert. Dabei kamen Entwicklungswerkzeuge wie
+				Eclipse zum Einsatz und es wurden Technologien wie Jave, OpenGL, JOGL, Java Webstart und programmierbare Grafikhardware (Shader)  eingesetzt.
+				Die Arbeit verschafft einen Überblick über das Design und die Implementation dieses Frameworks.
 				Das Framework ist jetzt voll funktionsfähig und wird für Lehrveranstaltung der verteilten Systeme verwendet.
 			</para>
+			<keywordset>
+				<keyword>Java</keyword>
+				<keyword>Ant</keyword>
+				<keyword>Java Web Start</keyword>
+				<keyword>OpenGL</keyword>
+				<keyword>Java3D</keyword>
+				<keyword>JOGL</keyword>
+				<keyword>LWJGL</keyword>
+				<keyword>Eclipse</keyword>
+				<keyword>Echo Algorithmus</keyword>
+				<keyword>Byzantinische Generäle</keyword>
+				<keyword>Bully Election Algorithmus</keyword>
+				<keyword>Vector Clock Algorithmus</keyword>
+			</keywordset>
 		</abstract>
 	</bookinfo>
 	<preface>
