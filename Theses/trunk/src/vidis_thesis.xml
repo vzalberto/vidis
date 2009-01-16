@@ -32,7 +32,8 @@
 			</para><para>
 				Ziel dieser Arbeit ist es ein Framework zu konzeptionieren, welches diese Darstellung ermöglicht.
 				Es muss eine API entworfen werden, die es ermöglicht, Verteilte Algorithmen zu implementieren.
-				Das Framework muss diese Verteilten Algorithmen auf einem Rechner simulieren können, optisch ansprechend darstellen und dem Benutzer eine Möglichkeit bieten, das simulierte System zu beeinflussen.
+				Das Framework muss diese Verteilten Algorithmen auf einem Rechner simulieren können, optisch ansprechend darstellen 
+				und dem Benutzer eine Möglichkeit bieten, das simulierte System zu beeinflussen.
 				Außerdem sollen bereits einige verteilte Algorithmen implementiert werden.
 			</para><para>
 				Die Arbeit verschafft einen Überblick über das Design und die Implemntation dieses Frameworks.
