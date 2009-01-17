@@ -4,6 +4,7 @@
 	<title>Visualisierung</title>
 	<para></para>	
 	<?dbfo keep-with-next="auto" ?>	
+	 
 	<section>
 		<title>Auswahl eines <trademark class="registered">OpenGL</trademark> Bindings</title>
 		<para>
@@ -32,6 +33,7 @@
 					</para>
 				</listitem>
 			</varlistentry>
+			
 			<varlistentry>
 				<term>LWJGL</term>
 				<listitem>
@@ -163,14 +165,6 @@
 				(vgl. <xref linkend="section_links" />) verändert werden. Da der Link durch die <trademark class="registered">OpenGL</trademark>
 				Evaluatoren erzeugt wird, sind der Anwendung nur die Kontrollpunkte, aber nicht die kompletten Vertexdaten bekannt.
 			</para>
-			<figure xml:id="fig_renderpipeline">
-				<title>Die Reihenfolge der <trademark class="registered">OpenGL</trademark> Operationen (Quelle: <xref linkend="book_redbook" />)</title>
-				<mediaobject>
-					<imageobject>
-						<imagedata align="center" type="GIF" fileref="orderops.gif" />
-					</imageobject>
-				</mediaobject>
-			</figure>
 			<para>
 				Wie in <xref linkend="fig_renderpipeline" /> zu sehen ist, werden nach den Evaluatoren die Vertexoperationen durchgeführt. 
 				Vertexshader<footnote><para>Mehr Information zu Vertexshader sind im Kapitel <xref linkend="section_shader" /> oder 

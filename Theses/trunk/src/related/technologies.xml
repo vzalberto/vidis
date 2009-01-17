@@ -2,7 +2,6 @@
 <section xmlns="http://docbook.org/ns/docbook">
 	<title>Technologien und Bibliotheken</title>
 	<para></para>
-
 	<section>
 		<title>Java</title>
 		<para></para>
@@ -24,8 +23,10 @@
 		<para>
 			<trademark class="registered">OpenGL</trademark> steht für <quote>Open Graphics Library</quote> und ist eine öffentlich 
 			spezifizierte<footnote><para>Die Spezifikation ist unter <xref linkend="web_opengl" /> zu finden.</para></footnote> 
-			Software-Schnittstelle für Grafik-Hardware. Die Spezifiezierungskommission besteht aus Firmen wie SGI, IBM, HP, Sun, Intel
-			und Microsoft.
+			Software-Schnittstelle für Grafik-Hardware. Damit ist es möglich 3 dimensionale Szenen am Computerbildschirm in Echtzeit
+			darzustellen. Der <trademark class="registered">OpenGL</trademark> Standard wird von einer Kommision weiterentwickelt. 
+			Diese Spezifiezierungskommission heisst ARB <quote>Architecture Review Board</quote> und besteht aus Firmen wie SGI, 
+			IBM, HP, Sun, Intel und ehemals Microsoft.
 		</para>
 		<figure>
 			<title>Das <trademark class="registered">OpenGL</trademark> Logo (Quelle: <xref linkend="web_opengl" />)</title>
@@ -36,8 +37,10 @@
 			</mediaobject>
 		</figure>
 		<para>
-			<trademark class="registered">OpenGL</trademark> 2.1 ist derzeit noch aktuell, die Kommission hat den 3.0 Standard am 11. 
-			August 2008 verabschiedet. Derzeit arbeiten die Grafikkartenhersteller noch an der Anpassung der Treiber an die neue Spezifikation
+			Die Biblothek entwickelte sich aus dem IRIS GL Projekt von SGI. 1992 wurde das ARB gegründet und <trademark class="registered">
+			OpenGL</trademark> 1.0 veröffentlicht. Seitdem wurden ca. 8 Version herausgebracht. 2003 verließ Microsoft das ARB. Derzeit
+			ist <trademark class="registered">OpenGL</trademark> 2.1  noch aktuell, die Kommission hat aber schon den 3.0 Standard (am 11. 
+			August 2008) verabschiedet. Die Grafikkartenhersteller arbeiten noch an der stufenweisen Anpassung der Treiber an die neue Spezifikation
 			<xref linkend="web_catalyst" />.
 			<trademark class="registered">OpenGL</trademark> 3.0 hätte die erste Version, die mit der langen Tradition der Abwärtskompatiblität
 			bricht, werden sollen. Die Idee dahinter war es die Altlasten der vergangen Versionen zu entfernen. Allerdings wurden von den für die
@@ -53,11 +56,75 @@
 				<para><trademark class="registered">OpenGL</trademark> 3.x <quote>Mount Evans</quote></para>
 			</listitem>
 		</itemizedlist>
+		<para>
+			<trademark class="registered">OpenGL</trademark> basiert auf einem Client/Server Modell. Es wurde so konzeptioniert, dass der Server die Renderarbeit übernimmt,
+			und der Client die dazu benötigten Kommandos übermittelt. Damit muss der Client nicht zwingend am selben Rechner laufen wie der Server.
+		</para>
+		<para>
+			Direct3D und <trademark class="registered">OpenGL</trademark> sind momentan die einzigen von den Grafikkartenherstellern
+			unterstützten Bibliotheken. Wobei Microsoft's Direct3D nur auf der eigenen Windowsplattform funktioniert. <trademark class="registered">OpenGL</trademark>
+			hingegen unterstützt fast alle gängigen Betriebssysteme. Da VIDIS ein plattformübergreifendes Framework ist, wurde
+			<trademark class="registered">OpenGL</trademark> als Grafikbibliothek ausgewählt.
+		</para>
+		<figure xml:id="fig_renderpipeline">
+			<title>Die <trademark class="registered">OpenGL</trademark> Fixed Function Pipeline (Quelle: <xref linkend="book_redbook" />)</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata align="center" type="GIF" fileref="orderops.gif" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para>
+			<trademark class="registered">OpenGL</trademark> hat eine fixe Funktionspipeline (<xref linkend="fig_renderpipeline"/>). Diese gibt an, wann, welche Operation 
+			ausgeführt wird. Als Input erwartet sie die Vertex- bzw. Pixeldaten und am Ende der Operationen wird eine Bild in den Framebuffer geschrieben.
+		</para>
+		<section>
+			<title>Shader</title>
+			<para>
+				Mit der <trademark class="registered">OpenGL</trademark> Version 2.0 wurde die <trademark class="registered">OpenGL</trademark> Shading Language 
+				(kurz GLSL) eingeführt. Die Sprache besitzt eine <literal>C</literal> ähnliche Syntax sowie einige, für Vektorrechung optimierte Datentypen. 
+				Shader sind vom Grafikchip ausführbare Programme, die sich in die <trademark class="registered">OpenGL</trademark> Pipeline eingliedern.
+			</para>
+			<para>
+				Um Shader zu verwenden benötigt man eine Grafikkarte, die Shadersupport bietet. Der Hersteller gibt dies bei den Spezifikationen als Shadermodel an. 
+				Es gibt inzwischen verschiedene Versionen, aktuell ist ShaderModel 4.0. Es existieren 3 Arten von Shadern:
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Pixel Shader / Fragment Shader</term>
+					<listitem><para>
+						In <trademark class="registered">OpenGL</trademark> werden sie als <quote>Fragment Shader</quote> bezeichnet, während der Begriff
+						<quote>Pixel Shader</quote> aus dem Hause Microsoft kommt. Ein Pixelshader wird für jedes Pixel, wenn es in den Framebuffer 
+						geschrieben wird, ausgeführt. Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet. In der fixen Funktionspipeline ersetzten 
+						Pixelshader die Fragmentoperationen (siehe <xref linkend="fig_renderpipeline" /> <quote>Per-Fragment Operations</quote>).
+					</para></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Vertex Shader</term>
+					<listitem><para>
+						Vertex Shader werden per Vertex ausgeführt. Das bedeutet für jeden Vertex, der in die Grafikpipline kommt, läuft das
+						Shaderprogramm einmal durch. Es kann die Position und andere Daten, die mit dem Vertex assoziert werden verändern.
+						Auch Vertex Shader ersetzen einen Teil der fixen Funktionspipeline von <trademark class="registered">OpenGL</trademark>
+						und zwar die Per-Fragment Operationen (<xref linkend="fig_renderpipeline" /> <quote>Per-Vertex Operations</quote>).
+					</para></listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Geometry Shader</term>
+					<listitem><para>
+						Geometry Shader sind die neueste Generation. Sie haben die Möglichkeit Vertices zu erzeugen und zu löschen (Ein
+						Vertexshader kann das nicht, er kann nur existierende Vertices verändern). 
+						Um diese Art von Shadern nutzen zu können benötigt man aktuelle Grafikhardware. Geometry Shader werden nach den 
+						Vertexshadern ausgeführt (<xref linkend="fig_renderpipeline" /> <quote>Per-Vertex Operations</quote>).
+					</para></listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+
 		<section xml:id="section_opengl_bindings">
 			<title><trademark class="registered">OpenGL</trademark> Java Bindings</title>
 			<para>
 				Es existieren einige Projekte, die es ermöglichen den <trademark class="registered">OpenGL</trademark> Standard auch
-				in anderen Sprachen wie zb Java zu verwenden. Einige sind einfache API-Wrapper, die über JNI einach alle Funktionen
+				in anderen Sprachen wie Java zu verwenden. Einige sind einfache API-Wrapper, die über JNI einfach alle Funktionen
 				der API zugänglich machen, andere haben ein komplett eigenes Objektmodell und verstecken die <trademark class="registered">
 				OpenGL</trademark> API vor dem Programmierer.
 			</para>
@@ -77,20 +144,17 @@
 					Rotations- oder eine Skalierungsmatrix und ein Objektknoten Vertexdaten, die das Objekt beschreiben. 
 				</para><para>	
 					Ein einfacher 
-					Szenengraph könnte, wie <xref linkend="example_scenegraph" /> zeigt, aussehen. Der Pfad vom Rootknoten zum Objektknoten gibt
+					Szenengraph könnte, wie <xref linkend="example_scenegraph" /> zeigt, aussehen. Der Pfad zum Objektknoten gibt
 					die Reihenfolge an, in der die Matrizen verwendet werden müssen. Die Engine parst diesen Graphen und erzeugt daraus direkt 
 					<trademark class="registered">OpenGL</trademark> Kommandos.
-
 					<example xml:id="example_scenegraph">
 						<title>Auszug aus einem einfachem Szenengraph</title>
-						<programlisting>
-							+ Root-Knoten
-							|-+ Translations-Knoten
-							| |-+ Rotations-Knoten
-							| | |-+ Objekt-Knoten
-						</programlisting>
-					</example> 
-					
+						<mediaobject>
+							<imageobject>
+								<imagedata align="center" width="250pt" fileref="scenegraph_parts.svg" />
+							</imageobject>
+						</mediaobject>
+					</example>	
 					Der Entwickler muss sich nicht mehr direkt mit der <trademark class="registered">OpenGL</trademark> API auseinander setzen,
 					sondern bearbeitet die Struktur des Szenengraphen.
 				</para></listitem>

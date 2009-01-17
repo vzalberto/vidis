@@ -37,7 +37,7 @@
 				Außerdem sollen bereits einige verteilte Algorithmen implementiert werden.
 			</para><para>
 				Im Zuge dieser Arbeit wurde dieses Framework und ausgewählte verteilte Algorithmen implementiert. Dabei kamen Entwicklungswerkzeuge wie
-				Eclipse zum Einsatz und es wurden Technologien wie Jave, OpenGL, JOGL, Java Webstart und programmierbare Grafikhardware (Shader)  eingesetzt.
+				Eclipse und Netbeans zum Einsatz und es wurden Technologien wie Java, OpenGL, JOGL, Java Webstart und programmierbare Grafikhardware (Shader) eingesetzt.
 				Die Arbeit verschafft einen Überblick über das Design und die Implementation dieses Frameworks.
 				Das Framework ist jetzt voll funktionsfähig und wird für Lehrveranstaltung der verteilten Systeme verwendet.
 			</para>
@@ -50,6 +50,7 @@
 				<keyword>JOGL</keyword>
 				<keyword>LWJGL</keyword>
 				<keyword>Eclipse</keyword>
+				<keyword>Netbeans</keyword>
 				<keyword>Echo Algorithmus</keyword>
 				<keyword>Byzantinische Generäle</keyword>
 				<keyword>Bully Election Algorithmus</keyword>
