@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns="http://docbook.org/ns/docbook">
 	<title>Technologien und Bibliotheken</title>
-	<para></para>
+	<para>
+		Im folgenden werden verwendete und untersuchte Technologien und Bibliotheken vorgestellt. Es wird kurz auf die Funktionalität eingegangen und erklärt warum eine Bibliothek/Technologie 
+		verwendent bzw. nicht verwendet wurde.
+	</para>
 	<section>
 		<title>Java</title>
 		<para></para>
@@ -94,8 +97,8 @@
 					<term>Pixel Shader / Fragment Shader</term>
 					<listitem><para>
 						In <trademark class="registered">OpenGL</trademark> werden sie als <quote>Fragment Shader</quote> bezeichnet, während der Begriff
-						<quote>Pixel Shader</quote> aus dem Hause Microsoft kommt. Ein Pixelshader wird für jedes Pixel, wenn es in den Framebuffer 
-						geschrieben wird, ausgeführt. Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet. In der fixen Funktionspipeline ersetzten 
+						<quote>Pixel Shader</quote> aus dem Hause Microsoft kommt. Ein Pixelshader wird für jedes Pixel, bevor es in den Framebuffer 
+						geschrieben wird, ausgeführt. Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet. In der fixen Funktionspipeline ersetzen 
 						Pixelshader die Fragmentoperationen (siehe <xref linkend="fig_renderpipeline" /> <quote>Per-Fragment Operations</quote>).
 					</para></listitem>
 				</varlistentry>
@@ -157,7 +160,8 @@
 					</example>	
 					Der Entwickler muss sich nicht mehr direkt mit der <trademark class="registered">OpenGL</trademark> API auseinander setzen,
 					sondern bearbeitet die Struktur des Szenengraphen.
-				</para></listitem>
+				</para>
+				</listitem>
 			</varlistentry>
 
 			<varlistentry>
@@ -190,6 +194,41 @@
 			</varlistentry>>
 
 		</variablelist>
+		
+		<variablelist>
+			<title>Auswahl eines der vorgestellten Bindings</title>
+			<varlistentry>
+				<term>Java3D</term>
+				<listitem>
+					<para>
+						Der objektorientierte Ansatz von Java3D sah sehr vielversprechend aus, und deshalb war Java3D auch die erste Wahl.
+						Erst nachdem der Java3D Prototyp lauffähig war, kamen die durch Java3D entstandenen Performance Einbußen ans Licht.
+						Nähere Informationen dazu sind unter <xref linkend="section_deadends_java3d" /> zu finden. 
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>JOGL</term>
+				<listitem>
+					<para>
+						Nach dem Java3D Fehlschlag waren alle objektorientierten Kanditaten aufgebraucht, und die Wahl fiel auf JOGL. 
+						Nach ersten Experimenten war sicher, dass es mit JOGL weitaus
+						weniger Performance Probleme geben würde. Das Unangenehme an API Wrappern wie JOGL und LWJGL ist jedoch, dass man kein
+						Objektmodell hat, sondern die <trademark class="registered">OpenGL</trademark> Aufrufe alle selbst tätigen, bzw zuerst
+						in eine eigene Objektstruktur packen muss. 
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>LWJGL</term>
+				<listitem>
+					<para>
+						Da es mit JOGL performancetechnisch keine Probleme gab, wurde auf einen Prototypen für LWJGL verzichtet.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	
 		</section>
 	</section>
 
