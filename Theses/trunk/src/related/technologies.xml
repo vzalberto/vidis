@@ -2,8 +2,8 @@
 <section xmlns="http://docbook.org/ns/docbook">
 	<title>Technologien und Bibliotheken</title>
 	<para>
-		Im folgenden werden verwendete und untersuchte Technologien und Bibliotheken vorgestellt. Es wird kurz auf die Funktionalität eingegangen und erklärt warum eine Bibliothek/Technologie 
-		verwendent bzw. nicht verwendet wurde.
+		Im folgenden werden verwendete und untersuchte Technologien und Bibliotheken vorgestellt. Es wird kurz auf die Funktionalität eingegangen und erklärt warum die Bibliothek/Technologie 
+		verwendet bzw. nicht verwendet wurde.
 	</para>
 	<section>
 		<title>Java</title>
@@ -81,7 +81,7 @@
 			<trademark class="registered">OpenGL</trademark> hat eine fixe Funktionspipeline (<xref linkend="fig_renderpipeline"/>). Diese gibt an, wann, welche Operation 
 			ausgeführt wird. Als Input erwartet sie die Vertex- bzw. Pixeldaten und am Ende der Operationen wird eine Bild in den Framebuffer geschrieben.
 		</para>
-		<section>
+		<section xml:id="section_shader">
 			<title>Shader</title>
 			<para>
 				Mit der <trademark class="registered">OpenGL</trademark> Version 2.0 wurde die <trademark class="registered">OpenGL</trademark> Shading Language 

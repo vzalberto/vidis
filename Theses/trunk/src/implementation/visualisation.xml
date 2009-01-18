@@ -1,222 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section version="5.0" 
-	xmlns="http://docbook.org/ns/docbook">
+<section version="5.0" xmlns="http://docbook.org/ns/docbook"> 
 	<title>Visualisierung</title>
-	<para></para>	
+	<para>
+		Im folgenden wird auf die Implementierung der Visualisierung eingegangen. Es werden insbesondere aufgetretene Probleme, sowie deren Lösungsansätze beschrieben.
+	</para>	
 	<?dbfo keep-with-next="auto" ?>	
 	 
 	<section>
-		<title>Auswahl eines <trademark class="registered">OpenGL</trademark> Bindings</title>
+		<title><trademark class="registered">OpenGL</trademark> Binding</title>
 		<para>
-			Im Folgenden wird erklärt, wie die Wahl getroffen wurde. Die Bindings werden in <xref linkend="section_opengl_bindings" /> vorgestellt.
+			Die Bindings werden in <xref linkend="section_opengl_bindings" /> vorgestellt und es wird erklärt, warum JOGL gewählt wurde.
 		</para>	
-		<variablelist>
-			<varlistentry>
-				<term>Java3D</term>
-				<listitem>
-					<para>
-						Der objektorientierte Ansatz von Java3D sah sehr vielversprechend aus, und deshalb war Java3D auch die erste Wahl.
-						Erst nachdem der Java3D Prototyp lauffähig war, kamen die durch Java3D entstandenen Performance Einbußen ans Licht.
-						Nähere Informationen dazu sind unter <xref linkend="section_deadends_java3d" /> zu finden. 
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
-				<term>JOGL</term>
-				<listitem>
-					<para>
-						Nach dem Java3D Fehlschlag waren alle objektorientierten Kanditaten aufgebraucht, und die Wahl fiel auf JOGL. 
-						Nach ersten Experimenten war sicher, dass es mit JOGL weitaus
-						weniger Performance Probleme geben würde. Das Unangenehme an API Wrappern wie JOGL und LWJGL ist jedoch, dass man kein
-						Objektmodell hat, sondern die <trademark class="registered">OpenGL</trademark> Aufrufe alle selbst tätigen, bzw zuerst
-						in eine eigene Objektstruktur packen muss. 
-					</para>
-				</listitem>
-			</varlistentry>
-			
-			<varlistentry>
-				<term>LWJGL</term>
-				<listitem>
-					<para>
-						Da es mit JOGL performancetechnisch keine Probleme gab, wurde auf einen Prototypen für LWJGL verzichtet.
-					</para>
-				</listitem>
-			</varlistentry>
-		</variablelist>
 	</section>
 	
-	<section>
-		<title>Problemstellungen</title>
-		<para></para>
-		<section xml:id="section_picking">
-			<title>Picking</title>
+	<section xml:id="section_picking">
+		<title>Picking</title>
+		<para>
+			Unter Picking versteht man den Prozess, herauszufinden auf welches 3D Objekt ein Benutzer geklickt hat. Man unterscheidet zwischen 
+			verschiedenen Varianten wie ein solcher Agorithmus arbeitet:
+		</para>
+		<section>
+			<title>Ray Picking</title>
 			<para>
-				Unter Picking versteht man den Prozess, herauszufinden auf welches 3D Objekt ein Benutzer geklickt hat. Man unterscheidet zwischen 
-				verschiedenen Varianten wie ein solcher Agorithmus arbeitet:
+				Beim Ray Picking werden die 2D Koordinaten des Klicks zu einer Geraden im 3D Raum umgerechnet (vgl. 
+				<xref linkend="fig_raypicking" /> ray).	Dieser <quote>Strahl</quote> schneidet alle Objekte, die sich unter der Maus befinden.
 			</para>
-			<section>
+			<figure xml:id="fig_raypicking">
 				<title>Ray Picking</title>
-				<para>
-					Beim Ray Picking werden die 2D Koordinaten des Klicks zu einer Geraden im 3D Raum umgerechnet (vgl. 
-					<xref linkend="fig_raypicking" /> ray).	Dieser <quote>Strahl</quote> schneidet alle Objekte, die sich unter der Maus befinden.
-				</para>
-				<figure xml:id="fig_raypicking">
-					<title>Ray Picking</title>
-					<mediaobject>
-						<imageobject>
-							<imagedata align="center" width="450pt" fileref="sample.jpg" />
-						</imageobject>
-					</mediaobject>
-				</figure>
-				<para>
-					Dazu benötigt man zuerst die Transformationsmatrizen, durch die das 2 dimensionale Bild zu stande kommt. Diese lassen sich mit
-					dem entsprechenden <trademark class="registered">OpenGL</trademark> Kommando auslesen. Aus den Inversen dieser Matrizen und den
-					Mauskoordinaten kann man die Gerade, die alle Objekte unter der Maus schneidet berechnen. Die GLU Bibliothek bietet dazu 
-					eine Hilfsroutine, welche genau diese Berechnung durchführt. 
-						<methodsynopsis language="java">
-							<modifier>public</modifier>
-							<type>boolean</type>
-							<methodname>gluUnProject</methodname>
-							<methodparam>
-								<type>double</type>
-								<parameter>winX</parameter>
-							</methodparam>
-							<methodparam>
-								<type>double</type>
-								<parameter>winY</parameter>
-							</methodparam>
-							<methodparam>
-								<type>double</type>
-								<parameter>winZ</parameter>
-							</methodparam>
-							<methodparam>
-								<type>DoubleBuffer</type>
-								<parameter>model</parameter>
-							</methodparam>
-							<methodparam>
-								<type>DoubleBuffer</type>
-								<parameter>proj</parameter>
-							</methodparam>
-							<methodparam>
-								<type>IntBuffer</type>
-								<parameter>view</parameter>
-							</methodparam>
-							<methodparam>
-								<type>DoubleBuffer</type>
-								<parameter>objPos</parameter>
-							</methodparam>
-						</methodsynopsis>
-				</para>
-			</section>
-			<section>
-				<title>Farb Picking mit Back Buffer</title>
-				<para>
-					Die Idee hinter dieser Technik ist es, sich die Renderingpipeline der Grafikhardware zunutze zu machen. 
-					Jedes klickbare Objekt wird mit einer eindeutigen Id, in Form einer Farbe, versehen. 
-					Erfolgt nun ein Klick, wird in einen kleinen Viewport, der die Mausposition als Zentrum hat, die Szene gerendert.
-					Der Farbwert unter der Maus identifiziert angeklickte Objekt eindeutig.
-				</para>
-			</section>
-			<section>
-				<title>Picking mit Id Stack</title>
-				<para>
-					Auch dieser Ansatz macht sich die Renderingpipeline zunutze.
-					Ähnlich wie bei der zuvor vorgestllten Methode werden für alle klickbaren Objekte IDs vergeben. 
-					Allerdings werden diese nicht durch die Farbe codiert, sondern mit dafür vogesehenen Befehlen zusätzlich gesetzt.
-				</para>
-			</section>
-			<para>Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />.</para>
-		</section>	
-		<section xml:id="section_links">
-			<title>Gebogene Links</title>
-			<para>Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.</para>
-			<figure xml:id="fig_linkexample">
-				<title>Ein Link aus der finalen Programmversion</title>
-				<screenshot>
-					<mediaobject>
-						<imageobject>
-							<imagedata width="450pt" type="PNG" fileref="image/screenshot_link.png" />
-						</imageobject>
-					</mediaobject>
-				</screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata align="center" width="450pt" fileref="sample.jpg" />
+					</imageobject>
+				</mediaobject>
 			</figure>
 			<para>
-				Dieses "gebogene Rohr" folgt einer quadratischen Bézierkurve und wurde durch 4 Bézier Flächen dargestellt. 
-				<trademark class="registered">OpenGL</trademark> bietet Evaluatoren an, um Bézier Berechnungen durchzufüheren. 
-				Es werden nur die Kontrollpunkte und die Anzahl der gewünschten interpolierten Punkte angegeben und <trademark class="registered">OpenGL</trademark> Evaluatoren übernehmen den Rest.
+				Dazu benötigt man zuerst die Transformationsmatrizen, durch die das 2 dimensionale Bild zu stande kommt. Diese lassen sich mit
+				dem entsprechenden <trademark class="registered">OpenGL</trademark> Kommando auslesen. Aus den Inversen dieser Matrizen und den
+				Mauskoordinaten kann man die Gerade, die alle Objekte unter der Maus schneidet berechnen. Die GLU Bibliothek bietet dazu 
+				eine Hilfsroutine, welche genau diese Berechnung durchführt. 
+					<methodsynopsis language="java">
+						<modifier>public</modifier>
+						<type>boolean</type>
+						<methodname>gluUnProject</methodname>
+						<methodparam>
+							<type>double</type>
+							<parameter>winX</parameter>
+						</methodparam>
+						<methodparam>
+							<type>double</type>
+							<parameter>winY</parameter>
+						</methodparam>
+						<methodparam>
+							<type>double</type>
+							<parameter>winZ</parameter>
+						</methodparam>
+						<methodparam>
+							<type>DoubleBuffer</type>
+							<parameter>model</parameter>
+						</methodparam>
+						<methodparam>
+							<type>DoubleBuffer</type>
+							<parameter>proj</parameter>
+						</methodparam>
+						<methodparam>
+							<type>IntBuffer</type>
+							<parameter>view</parameter>
+						</methodparam>
+						<methodparam>
+							<type>DoubleBuffer</type>
+							<parameter>objPos</parameter>
+						</methodparam>
+					</methodsynopsis>
 			</para>
-			<para>Im Zuge dieser Bakkarbeit wurde ... implementiert.</para>
 		</section>
 		<section>
-			<title>Linkwölbung für Pakete</title>
-			<para>Ein Link wölbt sich um alle sich darin befindenden Pakete (vgl. <xref linkend="fig_linkpacket" />).</para>
-			<figure xml:id="fig_linkpacket">
-				<title>Ein Link mit 2 Paketen</title>
-				<screenshot>
-					<mediaobject>
-						<imageobject>
-							<imagedata align="center" width="450pt" type="PNG" fileref="image/screenshot_link_packets.png" />
-						</imageobject>
-					</mediaobject>
-				</screenshot>
-			</figure>
+			<title>Farb Picking mit Back Buffer</title>
 			<para>
-				Um dies zu realisieren müssen die Vertexdaten des <link linkend="section_links">gebogenen Links</link> 
-				(vgl. <xref linkend="section_links" />) verändert werden. Da der Link durch die <trademark class="registered">OpenGL</trademark>
-				Evaluatoren erzeugt wird, sind der Anwendung nur die Kontrollpunkte, aber nicht die kompletten Vertexdaten bekannt.
-			</para>
-			<para>
-				Wie in <xref linkend="fig_renderpipeline" /> zu sehen ist, werden nach den Evaluatoren die Vertexoperationen durchgeführt. 
-				Vertexshader<footnote><para>Mehr Information zu Vertexshader sind im Kapitel <xref linkend="section_shader" /> oder 
-				in <xref linkend="book_orangebook" /> zu finden.</para></footnote> kommen genau an dieser Stelle zum Einsatz. 
-				Deshalb wurde ein Vertexshader, mit der Aufgabe den Link um die Pakete zu vergrößern, implementiert.
-				Der Shader nimmt als Parameter die Position von bis zu 9 Paketen und ist immer nur dann aktiv, wenn gerade ein
-				Link gerendert wird. Die Kontrollpunkte werden von den Evaluatoren evaluiert und die berechneten Vertexdaten
-				an den Shader übergeben. Dieser berechnet jetzt aus dem aktuellen Vertex, und alle ihm bekannten Paketpositionen,
-				ob und wieviel sich der Vertex verschiebt. 
-			</para>
-			<para>
-				Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
+				Die Idee hinter dieser Technik ist es, sich die Renderingpipeline der Grafikhardware zunutze zu machen. 
+				Jedes klickbare Objekt wird mit einer eindeutigen Id, in Form einer Farbe, versehen. 
+				Erfolgt nun ein Klick, wird in einen kleinen Viewport, der die Mausposition als Zentrum hat, die Szene gerendert.
+				Der Farbwert unter der Maus identifiziert angeklickte Objekt eindeutig.
 			</para>
 		</section>
+		<section>
+			<title>Picking mit Id Stack</title>
+			<para>
+				Auch dieser Ansatz macht sich die Renderingpipeline zunutze.
+				Ähnlich wie bei der zuvor vorgestllten Methode werden für alle klickbaren Objekte IDs vergeben. 
+				Allerdings werden diese nicht durch die Farbe codiert, sondern mit dafür vogesehenen Befehlen zusätzlich gesetzt.
+			</para>
+		</section>
+		<para>Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />.</para>
+	</section>	
+	<section xml:id="section_links">
+		<title>Gebogene Links</title>
+		<para>Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.</para>
+		<figure xml:id="fig_linkexample">
+			<title>Ein Link aus der finalen Programmversion</title>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata width="450pt" type="PNG" fileref="image/screenshot_link.png" />
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+		</figure>
+		<para>
+			Dieses "gebogene Rohr" folgt einer quadratischen Bézierkurve und wurde durch 4 Bézier Flächen dargestellt. 
+			<trademark class="registered">OpenGL</trademark> bietet Evaluatoren an, um Bézier Berechnungen durchzufüheren. 
+			Es werden nur die Kontrollpunkte und die Anzahl der gewünschten interpolierten Punkte angegeben und <trademark class="registered">OpenGL</trademark> Evaluatoren übernehmen den Rest.
+		</para>
+		<para>Im Zuge dieser Bakkarbeit wurde ... implementiert.</para>
 	</section>
-	<section xml:id="section_shader">
-		<title>Shader</title>
+	<section>
+		<title>Linkwölbung für Pakete</title>
+		<para>Ein Link wölbt sich um alle sich darin befindenden Pakete (vgl. <xref linkend="fig_linkpacket" />).</para>
+		<figure xml:id="fig_linkpacket">
+			<title>Ein Link mit 2 Paketen</title>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata align="center" width="450pt" type="PNG" fileref="image/screenshot_link_packets.png" />
+					</imageobject>
+				</mediaobject>
+			</screenshot>
+		</figure>
 		<para>
-			Zunächst werden Shader im Allgemeinen kurz erklärt. Danach werden die zum Einsatz gekommenen Shader beschrieben.
+			Um dies zu realisieren müssen die Vertexdaten des <link linkend="section_links">gebogenen Links</link> 
+			(vgl. <xref linkend="section_links" />) verändert werden. Da der Link durch die <trademark class="registered">OpenGL</trademark>
+			Evaluatoren erzeugt wird, sind der Anwendung nur die Kontrollpunkte, aber nicht die kompletten Vertexdaten bekannt.
 		</para>
 		<para>
-			Shader sind Programme, die in der Grafikhardware ausgeführt werden. ...
-			Es gibt 3 Arten von Shadern:
-			<variablelist>
-				<varlistentry>
-					<term>Pixel Shader</term>
-					<listitem><para>
-						Die Pixel Shader waren die ersten. In <trademark class="registered">OpenGL</trademark> werden sie als <quote>Fragment
-						Shader</quote> bezeichnet. Ein Pixelshader wird für jedes Pixel, wenn es in den Framebuffer geschrieben wird, ausgeführt.
-						Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet.
-					</para></listitem>
-				</varlistentry>
-				<varlistentry>
-					<term>Vertex Shader</term>
-					<listitem><para>
-						Vertex Shader werden per Vertex ausgeführt. Das bedeutet für jeden Vertex, der in die Grafikpipline kommt, läuft das
-						Shaderprogramm einmal durch. Es kann die Position und andere Daten, die mit dem Vertex assoziert werden verändern.
-					</para></listitem>
-				</varlistentry>
-				<varlistentry>
-					<term>Geometry Shader</term>
-					<listitem><para>
-						Geometry Shader sind die neueste Generation. Sie haben die Möglichkeit Vertices zu erzeugen und zu löschen (Ein
-						Vertexshader kann das nicht, er kann nur existierende Vertices verändern). 
-					</para></listitem>
-				</varlistentry>
-			</variablelist>
+			Wie in <xref linkend="fig_renderpipeline" /> zu sehen ist, werden nach den Evaluatoren die Vertexoperationen durchgeführt. 
+			Vertexshader<footnote><para>Mehr Information zu Vertexshader sind im Kapitel <xref linkend="section_shader" /> oder 
+			in <xref linkend="book_orangebook" /> zu finden.</para></footnote> kommen genau an dieser Stelle zum Einsatz. 
+			Deshalb wurde ein Vertexshader, mit der Aufgabe den Link um die Pakete zu vergrößern, implementiert.
+			Der Shader nimmt als Parameter die Position von bis zu 9 Paketen und ist immer nur dann aktiv, wenn gerade ein
+			Link gerendert wird. Die Kontrollpunkte werden von den Evaluatoren evaluiert und die berechneten Vertexdaten
+			an den Shader übergeben. Dieser berechnet jetzt aus dem aktuellen Vertex, und alle ihm bekannten Paketpositionen,
+			ob und wieviel sich der Vertex verschiebt. 
 		</para>
-
-		<section>
-			<title>Link Shader</title>
-			<para></para>
-		</section>
+		<para>
+			Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
+		</para>
+	</section>
+	<section>
+		<title>Link Shader</title>
+		<para></para>
 	</section>
 </section>

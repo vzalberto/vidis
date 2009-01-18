@@ -33,7 +33,7 @@
 		<varlistentry>
 			<term>IController</term>
 			<listitem>
-				<para>Das Controller Interface.</para>
+				<para>Das Controller Interface ist ein Markerinterface, welches einen Controller als solchen identifiziert.</para>
 			</listitem>
 		</varlistentry>
 		<varlistentry>
@@ -58,12 +58,12 @@
 		<listitem><para>Input</para></listitem>
 		<listitem><para>Jobs</para></listitem>
 		<listitem><para>Simulator</para></listitem>
-		<listitem><para>Fenster</para></listitem>
+		<listitem><para>Window</para></listitem>
 		<listitem><para>GUI</para></listitem>
 		<listitem><para>Scene</para></listitem>
 	</itemizedlist>
 	<para>
-		wobei es sich beim GUI, Scene und Fenster Controller richtigerweise Views handelt, da diese außschließlich die Darstellung übernehmen.
+		wobei es sich beim GUI, Scene und Fenster Controller richtigerweise um Views handelt, da diese außschließlich die Darstellung übernehmen.
 		Der Einfachheit halber wurde keine View Klasse eingeführt, da diese genau die gleiche Funktionalität hätte wie die Controllerklasse,
 		und sich nur der Name ändern würde.
 	</para>

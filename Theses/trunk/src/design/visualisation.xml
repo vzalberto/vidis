@@ -14,7 +14,7 @@
 		</para>
 		<para>Es wurde eine einfache 3D API entworfen, die genau die benötigten Bedürfnisse erfüllt. Sie besteht prinzipiell aus einem Container und einigen Widgets, um Benutzerineraktion zu ermöglichen.</para>
 		<itemizedlist>
-			<para>Eine kurze Übersicht der GUI API:</para>
+			<para>Die GUI API besteht aus folgenden Komponenten:</para>
 			<listitem>
 				<para>BasicGuiContainer</para>
 				<para></para>
@@ -45,8 +45,9 @@
 			</mediaobject>
 		</figure>
 		<para>
-			Der BasicGuiContainer ist die wichtigste Klasse. Durch ein Composite Pattern kann er beliebig viele weitere GuiContainer enthalten. Diese
-			werden durch das assozierte Layout ausgerichtet. Außerdem reicht er Mausevents an die betroffenen, darunterliegenden Container weiter.
+			Der BasicGuiContainer ist die Stadard GUI Klasse. Alle anderen GUI Komponenten erben vom ihm. Durch ein Composite Pattern kann er 
+			beliebig viele weitere GuiContainer enthalten. Diese werden durch das assozierte Layout ausgerichtet. 
+			Außerdem reicht er Mausevents an die betroffenen, darunterliegenden Container weiter.
 		</para>
 	</section>	
 	<section>
