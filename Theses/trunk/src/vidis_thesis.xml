@@ -30,7 +30,7 @@
 				Diese werden meist als Pseudo-Code dargestellt und Studenten haben oft Probleme sich darunter etwas vorszustellen. 
 				Es soll eine Möglichkeit geschaffen werden diese Algorithmen anschaulich, optisch ansprechend und interaktiv aufzubereiten.
 			</para><para>
-				Ziel dieser Arbeit ist es ein Framework zu konzeptionieren, welches diese Darstellung ermöglicht.
+				Ziel dieser Arbeit ist es ein Framework zu konzipieren, welches diese Darstellung ermöglicht.
 				Es muss eine API entworfen werden, die es ermöglicht, Verteilte Algorithmen zu implementieren.
 				Das Framework muss diese Verteilten Algorithmen auf einem Rechner simulieren können, optisch ansprechend darstellen 
 				und dem Benutzer eine Möglichkeit bieten, das simulierte System zu beeinflussen.

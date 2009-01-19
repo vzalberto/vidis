@@ -126,7 +126,7 @@
 				<varlistentry>
 					<term>Implementierung eines Module Node</term>
 					<listitem>
-						<programlisting>
+						<programlisting language="java">
 							<![CDATA[
 								package vidis.modules.test;
 								
@@ -157,7 +157,7 @@
 				<varlistentry>
 					<term>Implementierung eines Module Link</term>
 					<listitem>
-						<programlisting>
+						<programlisting language="java">
 							<![CDATA[
 								package vidis.modules.test;
 								
@@ -176,7 +176,7 @@
 				<varlistentry>
 					<term>Implementierung eines Module Packet</term>
 					<listitem>
-						<programlisting>
+						<programlisting language="java">
 							<![CDATA[
 								package vidis.modules.test;
 								
@@ -193,13 +193,224 @@
 		<section xml:id="design.modules.variableannotations">
 			<title>Variablen mittels Annotations</title>
 			<para>
-				TODO
+				In den meisten Algorithmen werden viele
+				verschiedene Datensätze auf Knoten oder auch
+				in Paketen gespeichert beziehungsweise transportiert.
+				VIDIS bietet eine einfache Möglichkeit damit diese 
+				als Variablen im Simulator angezeigt werden. Außerdem
+				ist es möglich die Farbe einer Komponente mittels
+				Annotation zu verändern. Im
+				folgenden werden diese Prozesse beschrieben.
 			</para>
-			<para>
-				Hier wird beschrieben wie die Annotations
-				auszuschauen haben damit der Simulator
-				sie als Variablen erkennt und behandelt.
-			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Felder als Variablen</term>
+					<listitem>
+						<para>
+							Ein Feld aus einer Komponente kann
+							jederzeit vom Simulator als Variable
+							ausgelesen werden. Die einzige Voraussetzung
+							dafür ist, dass das Feld öffentlich ist (<quote>public</quote>).
+							Im Quellcode schaut dies folgendermaßen aus.
+						</para>
+						<example>
+							<title>Ein Feld als Variable</title>
+							<programlisting language="java">
+								<![CDATA[
+									@Display(name="A test variable")
+									public int testVariable;
+								]]>
+							</programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Methoden als Variablen</term>
+					<listitem>
+						<para>
+							Auch beliebige Methoden können jederzeit
+							vom Simulator als Variable ausgelesen werden.
+							Dabei gelten dieselben Voraussetzungen wie für Felder.
+							Die Methode muss öffentlich zugänglich (<quote>public</quote>) sein.
+							Eine Methode mit einem Rückgabewert von <quote>void</quote>
+							wird als ausführbare Methode angezeigt. Alle anderen Methoden
+							werden als Variablen mit einem Wert dargestellt.
+							Folgendes Beispiel veranschaulicht dies.
+						</para>
+						<example>
+							<title>Eine ausführbare Methode ohne Parameter</title>
+							<programlisting language="java">
+								<![CDATA[
+									@Display(name="A runnable test method")
+									public void testMethod1() {
+										...
+									}
+								]]>
+							</programlisting>
+						</example>
+						<example>
+							<title>Eine ausführbare Methode mit Parameter</title>
+							<programlisting language="java">
+								<![CDATA[
+									@Display(name="A runnable test method with parameters")
+									public void testMethod2(IUserNode node) {
+										...
+									}
+								]]>
+							</programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Komponentenfarbe für eine Klasse</term>
+					<listitem>
+						<para>
+							Eine Komponentenfarbe kann einer Klasse zugeordnet
+							werden damit diese Farbe anfangs übernommen wird.
+							Im weiteren Verlauf der Simulation kann diese Farbe
+							jederzeit durch eine dynamische Komponentenfarbe
+							überschrieben werden.
+							Folgendes Beispiel setzt die Komponentenfarbe
+							der Klasse <classname>TestNode</classname> auf blau.
+						</para>
+						<example>
+							<title>Eine Komponentenklasse mit blauer Farbe</title>
+							<programlisting language="java">
+								<![CDATA[
+									@ComponentColor(color=ColorType.BLUE)
+									public class TestNode extends AUserNode {
+										...
+									}
+								]]>
+							</programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Komponentenfarbe mittels Feld</term>
+					<listitem>
+						<para>
+							Die Farbe einer Komponente kann auch mittels
+							Felder verändert werden. Dazu wird ein Feld
+							wie im folgenden Beispiel mit einer Java
+							Annotation versehen. Wichtig ist dabei
+							weiterhin, dass das Feld öffentlich (<quote>public</quote>)
+							sichtbar ist.
+						</para>
+						<example>
+							<title>Eine Komponente mit dynamischer Farbe mittels Feld</title>
+							<programlisting language="java">
+								<![CDATA[
+									@DisplayColor
+    								public ColorType color = ColorType.BLACK;
+								]]>
+							</programlisting>
+						</example>
+						<para>
+							Der Wert des Felds kann natürlich jederzeit
+							verändert werden, was die Änderung der Komponentenfarbe
+							mit sich bringt. Folgendes Beispiel veranschaulicht dies.
+						</para>
+						<example>
+							<title>Eine Komponentenfarbe mittels Feld ändern</title>
+							<programlisting language="java">
+								<![CDATA[
+									@DisplayColor
+    								public ColorType color = ColorType.BLACK;
+    								
+    								public void execute() {
+    									if(state == 0) {
+    										color = ColorType.GREEN;
+    									} else {
+    										color = ColorType.BLACK;
+    									}
+    								}
+								]]>
+							</programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Komponentenfarbe mittels Methode</term>
+					<listitem>
+						<para>
+							Wie bereits für Felder beschrieben, kann
+							die Komponentenfarbe auch mittels einer Methode
+							bestimmt werden. Folgendes Beispiel veranschaulicht
+							diesen Prozess. 
+						</para>
+						<example>
+							<title>Eine Komponentenfarbe mit Hilfe einer Methode verändern</title>
+							<programlisting language="java">
+								<![CDATA[
+									private ColorType color = ColorType.BLACK;
+									
+									@DisplayColor()
+									public ColorType getColor() {
+										return color;
+									}
+								]]>
+							</programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Reservierte Variablenbezeichner: header1, header2</term>
+					<listitem>
+						<para>
+							Es ist oftmals hilfreich wichtige Informationen
+							direkt sichtbar über einem Knoten, einem Paket oder einer
+							Verbindung zu platzieren. Zu diesem Zweck gibt es die
+							reservierten Bezeichner <quote>header1</quote> und <quote>header2</quote>.
+							Sollten diese Variablen gesetzt sein, wird der Inhalt
+							der annotierten Variable über der Komponente angezeigt.
+							Natürlich ist dies auch mit Feldern möglich.
+						</para>
+						<example>
+							<title>Eine header1 Variable</title>
+							<programlisting language="java">
+								<![CDATA[
+									@Display(name="header1")
+									public String getHeader1() {
+										return "test";
+									}
+								]]>
+							</programlisting>
+						</example>
+						<example>
+							<title>Eine header1 Variable im Simulator</title>
+							<mediaobject>
+								<textobject>
+									<para>
+										TODO (screenshot)
+									</para>
+								</textobject>
+							</mediaobject>
+						</example>
+						<example>
+							<title>Eine header2 Variable</title>
+							<programlisting language="java">
+								<![CDATA[
+									@Display(name="header2")
+									public String getHeader2() {
+										return "test";
+									}
+								]]>
+							</programlisting>
+						</example>
+						<example>
+							<title>Eine header2 Variable im Simulator</title>
+							<mediaobject>
+								<textobject>
+									<para>
+										TODO (screenshot)
+									</para>
+								</textobject>
+							</mediaobject>
+						</example>
+					</listitem>
+				</varlistentry>
+			</variablelist>
 		</section>
 	</section>
 </section>

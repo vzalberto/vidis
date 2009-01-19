@@ -17,9 +17,13 @@
 						koordiniert werden müssen kann es zu inkonsistentem oder
 						fehlerhaften Verhalten kommen weil es in einem Netzwerk
 						keine globale Zeit gibt. Egal wie genau die Knoten zeitlich
-						synchronisiert werden, es wird immer möglicherweise sehr kleine
-						Verzögerungen geben. Es reicht somit nicht aus Ereignisse mittels
-						Timestamps zu synchronisieren. Es wird ein
+						synchronisiert werden, es gibt immer - wenn auch manchmal nur sehr kleine -
+						Verzögerungen. Es reicht somit nicht aus Ereignisse mittels
+						Timestamps zu synchronisieren, da ein Ereignis das auf einer
+						Node global gesehen zwar vor dem Ereignis auf einer anderen Node aufgetreten ist.
+						Die Uhren der verschiedenen Nodes jedoch derart verfälschte
+						Timestamps produzieren könnten, dass ein Vergleich dieser Timestamps
+						zum gegenteiligen Ergebnis führt.
 					</para>
 					<para>
 						Der Vector Clock Algorithmus kann dazu verwendet werden um
