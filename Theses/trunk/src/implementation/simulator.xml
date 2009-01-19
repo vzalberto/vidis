@@ -171,6 +171,22 @@
 		</para>
 	</section>
 	<section>
+		<title>Variablen</title>
+		<para>
+			Im Simulator ist eine selbstautarke Variablenstruktur
+			integriert. Diese übernimmt die Aufgabe den Status
+			einer Modulkomponente zu überwachen indem Methoden
+			und Felder mittels Java Reflection beobachtet werden.
+			Es werden nur Methoden und Variablen überwacht, welche
+			mittels Java Annotations (vgl. <xref linkend="implementation.modules.variableannotations" />) gekennzeichnet wurden. Im
+			folgenden Kapitel wird die implementierte Funktionalität
+			dieser Variablen beschrieben.
+		</para>
+		<para>
+			TODO
+		</para>
+	</section>
+	<section>
 		<title>Arbeitsweise</title>
 		<para>
 			Der Simulator arbeitet schrittweise. Ein Arbeitsschritt
@@ -337,8 +353,8 @@
 								<listitem>
 									<para>
 										Schlussendlich werden alle Änderungen an
-										den Variablen durch
-										Events an die Visualisierung weitergegeben.
+										den Variablen auf der grafischen Benutzeroberfläche
+										visualisiert.
 									</para>
 								</listitem>
 							</itemizedlist>

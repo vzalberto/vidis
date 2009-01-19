@@ -32,4 +32,19 @@
 		</para>
 	</section>
 	<xi:include href="modules/msim.xml" />
+	<section>
+		<title>Implementierung eines Moduls</title>
+		<para>
+			TODO für ein <quote>kleines</quote> HOWTO wie ein Modul implementiert wird.
+		</para>
+		<section xml:id="implementation.modules.variableannotations">
+		<title>Variablen mittels Annotations</title>
+		<para>
+			TODO
+		</para>
+		<para>
+			Hier wird beschrieben wie die Variablen auszuschauen haben.
+		</para>
+	</section>
+	</section>
 </section>
