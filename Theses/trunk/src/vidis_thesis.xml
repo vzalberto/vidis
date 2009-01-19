@@ -9,7 +9,7 @@
 	<title>Visualisierungsframework für Konzepte
 		der Verteilten Systeme</title>
 
-	<bookinfo>
+	<info>
 		<authorgroup>
 			<author>
 				<personname>
@@ -41,6 +41,7 @@
 				Die Arbeit verschafft einen Überblick über das Design und die Implementation dieses Frameworks.
 				Das Framework ist jetzt voll funktionsfähig und wird für Lehrveranstaltung der verteilten Systeme verwendet.
 			</para>
+		</abstract>
 			<keywordset>
 				<keyword>Java</keyword>
 				<keyword>Ant</keyword>
@@ -56,8 +57,7 @@
 				<keyword>Bully Election Algorithmus</keyword>
 				<keyword>Vector Clock Algorithmus</keyword>
 			</keywordset>
-		</abstract>
-	</bookinfo>
+	</info>
 	<preface>
 		<title>Danksagung</title>
 		<para>
