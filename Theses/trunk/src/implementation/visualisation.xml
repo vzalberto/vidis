@@ -29,7 +29,7 @@
 				<title>Ray Picking</title>
 				<mediaobject>
 					<imageobject>
-						<imagedata align="center" width="450pt" fileref="sample.jpg" />
+						<imagedata align="center" width="450pt" fileref="image/raypicking.svg" />
 					</imageobject>
 				</mediaobject>
 			</figure>
@@ -157,17 +157,6 @@
 		<para>
 			Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
 			Siehe <xref linkend="section_shader" />.
-		</para>
-	</section>
-	<section>
-		<title>Link Shader</title>
-		<para>
-			Der Shader, der für die <quote>Blasen</quote> auf den Links verantwortlich ist wurde in GLSL geschrieben und kann bis zu
-			neun Blasen pro Link erzeugen. Der Shader wird für jeden Vertex eines Links ausgeführt und hat als zusätzlichen Input
-			die Positionen der Pakete auf dem Link.
-		</para>
-		<para>
-			FIXME some formula
 		</para>
 	</section>
 </section>
