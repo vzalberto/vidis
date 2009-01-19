@@ -118,9 +118,13 @@
 		<para>
 			Dieses "gebogene Rohr" folgt einer quadratischen Bézierkurve und wurde durch 4 Bézier Flächen dargestellt. 
 			<trademark class="registered">OpenGL</trademark> bietet Evaluatoren an, um Bézier Berechnungen durchzufüheren. 
-			Es werden nur die Kontrollpunkte und die Anzahl der gewünschten interpolierten Punkte angegeben und <trademark class="registered">OpenGL</trademark> Evaluatoren übernehmen den Rest.
+			Es werden nur die Kontrollpunkte und die Anzahl der gewünschten interpolierten Punkte angegeben und die <trademark class="registered">OpenGL</trademark> Evaluatoren interpolieren
+			die zusätzlichen Punkte, bevor die restlichen Operationen auf die Vertexdaten angewendet werden. <xref linkend="fig_renderpipeline" /> zeigt an welcher Steller der Renderingpipeline
+			die Evaluatoren ausgeführt werden.
 		</para>
-		<para>Im Zuge dieser Bakkarbeit wurde ... implementiert.</para>
+		<para>
+			Im Zuge dieser Bakkarbeit wurde für den Java3D Prototypen der DeCasteljau Subdivision Algorithmus implementiert, da Java3D die OpenGL Evaluatoren nicht unterstützt. 
+			Für die JOGL Version wurden die OpenGL Evaluatoren verwendet.</para>
 	</section>
 	<section>
 		<title>Linkwölbung für Pakete</title>
@@ -157,6 +161,13 @@
 	</section>
 	<section>
 		<title>Link Shader</title>
-		<para></para>
+		<para>
+			Der Shader, der für die <quote>Blasen</quote> auf den Links verantwortlich ist wurde in GLSL geschrieben und kann bis zu
+			neun Blasen pro Link erzeugen. Der Shader wird für jeden Vertex eines Links ausgeführt und hat als zusätzlichen Input
+			die Positionen der Pakete auf dem Link.
+		</para>
+		<para>
+			FIXME some formula
+		</para>
 	</section>
 </section>
