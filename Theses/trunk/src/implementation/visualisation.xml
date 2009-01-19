@@ -71,6 +71,9 @@
 							<parameter>objPos</parameter>
 						</methodparam>
 					</methodsynopsis>
+				Der Programmier muss zum Zeitpunkt des Mausklicks die entsprechenden Matrizen auslesen, zwei mal gluUnProject aufrufen (einmal für den
+				Punkt auf der Near-Plane und ein zweites mal für den Punkt auf der Far-Plane) und kann dann die durch diese beiden Punkte definierte
+				Gerade mit den 3D Objekten schneiden.
 			</para>
 		</section>
 		<section>
@@ -90,11 +93,18 @@
 				Allerdings werden diese nicht durch die Farbe codiert, sondern mit dafür vogesehenen Befehlen zusätzlich gesetzt.
 			</para>
 		</section>
-		<para>Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />.</para>
+		<para>
+			Vidis verwendet das oben vorgestellte Ray Picking, da sich dieses System gut mit dem Eventsystem integriert und keinen zusätzlichen Rederdurchgang benötigt.
+			Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />. 
+		</para>
 	</section>	
 	<section xml:id="section_links">
 		<title>Gebogene Links</title>
-		<para>Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.</para>
+		<para>
+			Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). 
+			Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. 
+			Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.
+		</para>
 		<figure xml:id="fig_linkexample">
 			<title>Ein Link aus der finalen Programmversion</title>
 			<screenshot>
@@ -142,6 +152,7 @@
 		</para>
 		<para>
 			Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
+			Siehe <xref linkend="section_shader" />.
 		</para>
 	</section>
 	<section>

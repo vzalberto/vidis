@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter version="5.0" 
-	xmlns="http://docbook.org/ns/docbook">
+	xmlns="http://docbook.org/ns/docbook"
+	xmlns:math="http://www.w3.org/1998/Math/MathML">
 	<title>Conclusions</title>
 	<para>
 		Dominik stellt sich folgendes vor:
@@ -95,7 +96,22 @@
 						einer Bandbreite. Es ist jedoch möglich diese Funktionalität
 						zu simulieren indem ein
 						Paket selbst seine Größe kennt und ein Link nur eine
-						gewisse Bandbreite <literal><superscript>Paketgröße</superscript>/<subscript>Simulationsschritte</subscript></literal>
+						gewisse Bandbreite 
+						<!--<inlinemediaobject>
+							<imageobject>
+								<imagedata format="mathml">
+									<math:math>
+										<math:semantics>
+											<math:mfrac>
+												<math:mi math:fontstyle="italic">Paketgröße</math:mi>
+												<math:mi math:fontstyle="italic">Simulationsschritte</math:mi>
+											</math:mfrac>
+										</math:semantics>
+									</math:math>
+								</imagedata>
+							</imageobject>
+						</inlinemediaobject>-->
+<literal><superscript>Paketgröße</superscript>/<subscript>Simulationsschritte</subscript></literal>
 						überträgt. Da ein Simulator Link die Funktionalität der 
 						Übertragung von Paketen implementiert, muss die Integration 
 						einer Bandbreite in die Simulatorklasse <classname>SimLink</classname>

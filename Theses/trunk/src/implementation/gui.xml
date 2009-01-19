@@ -33,6 +33,7 @@
 				Die Player Kontrollen befinden sich ganz unten am Bildschirmrand. 
 				Sie sind immer sichtbar und werden nicht durch das Menu verschoben. 
 				Sie bestehen aus den 3 Buttons Play, Pause und Reset (vgl. <xref linkend="fig_playbuttons" />).
+				Diese werden dazu verwendet, die Simulation zu starten, zu pausieren oder zum Startzustand zurückzusetzen.
 			</para>
 			<figure xml:id="fig_playbuttons">
 				<title>Bildschirmfoto von den Playerkontrollen</title>
@@ -65,15 +66,26 @@
 			<itemizedlist>
 				<listitem>
 					<para>Optionen</para>
-					<para>Hier kann unter anderem in den Wireframe Modus gewechselt werden.</para>
+					<para>
+						Hier kann unter anderem in den Wireframe Modus gewechselt werden. Im Wireframe Modus werden die Polygone nicht
+						mehr ausgefüllt, sondern nur deren Kanten gezeichnet. 
+					</para>
 				</listitem>
 				<listitem>
 					<para>Layout</para>
-					<para>In diesem Untermenu kann man zwischen den vordefinierten Layouts wählen.</para>
+					<para>
+						In diesem Untermenu kann man zwischen den vordefinierten Layouts wählen. Zur Auswahl stehen ein Random Layout, welches
+						die Nodes zufällig platziert, ein Spiral Layout, welches die Nodes spiralförmig platziert, ein Grid Layout, welches die
+						Nodes auf einem Raster anordnet und ein Electric Spring Layout, welches durch Gewichtung der Links den Abstand zwischen den
+						Nodes solange verändert bis ein Gleichgewicht herrscht <!-- FIXME link to section_layouts if there is one -->.
+					</para>
 				</listitem>
 				<listitem>
 					<para>Laden</para>
-					<para>Dieses Untermenu stellt alle verfügbaren Module dar.</para>
+					<para>
+						Dieses Untermenu stellt alle verfügbaren Module dar. Ein Modul ist verfügbar, wenn es im DropIn Folder abgelegt wurde. Für nähere Informationen
+						zum DropIn Folder siehe <xref linkend="implementation.modules.dropinfolder" />.
+					</para>
 				</listitem>
 			</itemizedlist>
 			</listitem>
