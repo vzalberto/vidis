@@ -34,7 +34,7 @@
 		als Modul Komponenten übernommen werden. Jede dieser
 		Komponenten besitzt dabei eine simulatorinterne Repräsentation.
 	</para>
-	<section>
+	<section xml:id="design.module.modulkomponenten">
 		<title>Modul Komponenten</title>
 		<variablelist>
 			<varlistentry>

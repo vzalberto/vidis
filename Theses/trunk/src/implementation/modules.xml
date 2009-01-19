@@ -4,13 +4,10 @@
 	<title>Module</title>
 	<para>
 		In diesem Kapitel wird die Funktionalität der Module beschrieben.
+		Zunächst wird hierzu der Weg beschrieben wie man ein Modul
+		mittels eines MSIM-Files beschreibt. Anschließend wird auf
+		verschiedene Aspekte zur Implementierung eines Moduls eingegangen.
 	</para>
-	<section>
-		<title>Beschreibung</title>
-		<para>Ein Modul ist eine Simulationseinheit für den Simulator.
-		Darin werden mehrere, mitunder verschiedene, Implementierungen
-		von Nodes, Packets und Links zusammengefasst und ausgeführt.</para>
-	</section>
 	<section>
 		<title>Funktionsweise</title>
 		<para>
@@ -35,22 +32,173 @@
 	<section>
 		<title>Implementierung eines Moduls</title>
 		<para>
-			TODO für ein <quote>kleines</quote> HOWTO wie ein Modul
-			implementiert wird.
+			In diesem Abschnitt wird beschrieben wie ein Modul
+			implementiert werden kann. Dabei werden zunächst
+			die Grundlagen erläutert, wie zum Beispiel ein Modul
+			in VIDIS geladen werden kann. Anschließend wird darauf
+			eingegangen welche Java Archive benötigt werden.
+			Schlussendlich wird beschrieben, wie eine Funktionalität implementiert
+			werden sollte und wie man mittels Java Annotations
+			erreicht, dass der Simulator Felder beziehungsweise Methoden
+			überwacht.
 		</para>
 		<section xml:id="implementation.modules.dropinfolder">
 			<title>DropIn Folder</title>
 			<para>
-				hier wird erklärt wie das drop in folder funktioniert
+				Das DropIn Folder kann dazu verwendet werden, fertig
+				implementierte und in ein Java Archiv (JAR) gepackte
+				Module in den Simulator zu laden. Dazu wird
+				der Ordner <quote>data/dropIn</quote> überwacht. Jedes
+				Archiv, das dort abgelegt wird, wird vom Simulator
+				im <quote>Laden</quote>-Menü angezeigt.
 			</para>
+			<warning>
+				<para>
+					Es ist nicht möglich einen Ordner abzulegen.
+					Ausschließlich JAR Archive werden durchsucht und
+					mittels dem VidisClassLoader geladen.
+				</para>
+			</warning>
 		</section>
-		<section xml:id="implementation.modules.variableannotations">
+		<section>
+			<title>Implementieren eines Moduls</title>
+			<para>
+				Zum Implementieren eines Moduls wird die Bibliothek 
+				<quote>mod_api.jar</quote> in Form eines JAR Archivs
+				benötigt.
+			</para>
+			<note>
+				<para>
+					Es wird empfohlen in Eclipse auch den Quellcode
+					(<quote>mod_api-src.jar</quote>) in den Classpath
+					zu integrieren, da dadurch die Javadoc Dokumentation
+					zu jeder Klasse und Funktion angezeigt wird. Dies 
+					erleichtert die Implementierung erheblich.
+				</para>
+			</note>
+			<para>
+				Wie bereits in Abschnitt <xref linkend="design.module.modulkomponenten" />
+				beschrieben, gibt es die Komponenten Module Node,
+				Module Link und Module Packet. Jede dieser Komponenten
+				besitzt eine abstrakte Klasse, welche als Grundlage
+				zur Implementierung dient. Im Folgenden werden die 
+				abstrakten Klassen aufgelistet.
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Module Node</term>
+					<listitem>
+						<para>
+							Diese Komponente wurde in der abstrakten
+							Klasse <classname>AUserNode</classname>
+							realisiert.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Module Link</term>
+					<listitem>
+						<para>
+							Die abstrakte Klasse <classname>AUserLink</classname>
+							implementiert die von <quote>Module Link</quote> 
+							definierte Funktionalität.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Module Packet</term>
+					<listitem>
+						<para>
+							Die Funktionalität der letzten Komponente, namentlich Module Packet, wurde
+							in der abstrakten Klasse <classname>AUserPacket</classname>
+							implementiert.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+			<para>
+				Will man eine entsprechende Komponente implementieren,
+				muss man eine Klasse erstellen und diese von der
+				gewünschten abstrakten Klasse ableiten. Im folgenden wird
+				dieser Vorgang beschrieben.
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Implementierung eines Module Node</term>
+					<listitem>
+						<programlisting>
+							<![CDATA[
+								package vidis.modules.test;
+								
+								import vidis.data.AUserNode;
+								import vidis.data.mod.IUserPacket;
+								
+								public class TestNode extends AUserNode {
+									@Override
+									public void init() {
+										// TODO Auto-generated method stub
+										
+									}
+									@Override
+									public void receive(IUserPacket arg0) {
+										// TODO Auto-generated method stub
+										
+									}
+									@Override
+									public void execute() {
+										// TODO Auto-generated method stub
+										
+									}
+								}
+							]]>
+						</programlisting>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Implementierung eines Module Link</term>
+					<listitem>
+						<programlisting>
+							<![CDATA[
+								package vidis.modules.test;
+								
+								import vidis.data.AUserLink;
+								
+								public class TestLink extends AUserLink {
+									@Override
+									public void execute() {
+										// TODO Auto-generated method stub
+									}
+								}
+							]]>
+						</programlisting>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Implementierung eines Module Packet</term>
+					<listitem>
+						<programlisting>
+							<![CDATA[
+								package vidis.modules.test;
+								
+								import vidis.data.AUserPacket;
+								
+								public class TestPacket extends AUserPacket {
+								}
+							]]>
+						</programlisting>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+		<section xml:id="design.modules.variableannotations">
 			<title>Variablen mittels Annotations</title>
 			<para>
 				TODO
 			</para>
 			<para>
-				Hier wird beschrieben wie die Variablen auszuschauen haben.
+				Hier wird beschrieben wie die Annotations
+				auszuschauen haben damit der Simulator
+				sie als Variablen erkennt und behandelt.
 			</para>
 		</section>
 	</section>
