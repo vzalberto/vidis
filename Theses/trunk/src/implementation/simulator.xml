@@ -173,7 +173,7 @@
 	<section>
 		<title>Variablen</title>
 		<para>
-			Im Simulator ist eine selbstautarke Variablenstruktur
+			Im Simulator ist eine autarke Variablenstruktur
 			integriert. Diese übernimmt die Aufgabe den Status
 			einer Modulkomponente zu überwachen indem Methoden
 			und Felder mittels Java Reflection beobachtet werden.
@@ -183,8 +183,201 @@
 			dieser Variablen beschrieben.
 		</para>
 		<para>
-			TODO
+			Eine Variable bildet die Grundlage des automatisierten
+			Überwachens eines Moduls. Eine Variable wird durch einen
+			Identifier identifiziert. Außerdem können sich bei einer
+			Variable Klassen registrieren, welche dann über Änderungen
+			am Wert der Variable informiert werden. Eine Variable implementiert
+			das Interface <interfacename>IVariable</interfacename> welches
+			im Folgenden beschrieben wird.
 		</para>
+		<itemizedlist>
+			<title>Durch das Interface IVariable definierte Methoden</title>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>String</type>
+					<methodname>getIdentifier</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Diese Methode liefert den Identifier der Variable zurück.
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>String</type>
+					<methodname>getNameSpace</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Diese Methode liefert den Namespace (Scope oder Gültigkeitsbereich)
+					dieser Variable zurück.
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>Class&lt;?&gt;</type>
+					<methodname>getDataType</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Diese Methode gibt den Datentyp dieser Variable zurück.
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>Object</type>
+					<methodname>getData</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Mit Hilfe dieser Methode kann auf die Daten
+					dieser Variable zugegriffen werden.
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>Object</type>
+					<methodname>getData</methodname>
+					<methodparam>
+						<type>Object...</type>
+						<parameter>args</parameter>
+					</methodparam>
+				</methodsynopsis>
+				<para>
+					Mit Hilfe dieser Methode kann auf die Daten
+					dieser Variable zugegriffen werden, falls
+					die Variable dazu Parameter benötigt.
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>update</methodname>
+					<methodparam>
+						<type>Object</type>
+						<parameter>data</parameter>
+					</methodparam>
+				</methodsynopsis>
+				<para>
+					Mit Hilfe dieser Methode können die Daten dieses
+					Objekts bearbeitet werden.
+				</para>
+			</listitem>
+		</itemizedlist>
+		<para>
+			Es gibt 3 verschiedene Arten von Variablen basierend
+			auf der Zugriffsart. So wird mittels Reflection ein
+			Feld auf eine andere Art angesprochen wie eine Methode.
+			Die verschiedenen Implementierungen 
+			<classname>MethodVariable</classname>, <classname>FieldVariable</classname>
+			und <classname>DefaultVariable</classname> werden hinter dem Interface
+			<interfacename>IVariable</interfacename> versteckt.
+			Im Folgenden werden diese Implementierungen näher beschrieben.
+		</para>
+		<variablelist>
+			<title>Implementierungen des Interface <interfacename>IVariable</interfacename></title>
+			<varlistentry>
+				<term>DefaultVariable</term>
+				<listitem>
+					<para>
+						Diese Implementierung wird für alle statischen
+						Variablen verwendet. Unter statisch versteht
+						man hierbei die Zugriffsart auf die Daten.
+						Eine statische Datenart ist ein Wert der sich
+						nur mittels einem Aufruf von <methodname>update</methodname>
+						ändern kann, da keine dynamische Datenquelle
+						sich hinter dieser Variablen verbirgt.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>FieldVariable</term>
+				<listitem>
+					<para>
+						Eine FieldVariable kommt zum Einsatz wenn ein
+						Feld einer Klasse als Datenquelle in Frage kommt.
+						Dies wurde folgendermaßen realisiert.
+					</para>
+					<programlisting>
+						<![CDATA[
+							private Object invoke() throws IllegalArgumentException, IllegalAccessException {
+								Object tmp = field.get(object);
+								if (tmp.equals(last_value)) {
+								} else {
+									changed = true;
+									last_value = tmp;
+								}
+								return tmp;
+							}
+							public Object getData() {
+								try {
+									return invoke();
+								} catch (IllegalArgumentException e) {
+									logger.error(e);
+								} catch (IllegalAccessException e) {
+									logger.error(e);
+								}
+								return null;
+							}
+							public Class<?> getDataType() {
+								return field.getType();
+							}
+						]]>
+					</programlisting>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>MethodVariable</term>
+				<listitem>
+					<para>
+						Dies ist wohl komplexeste Implementierung,
+						da diese den dynamischen Zugriff auf Methoden
+						mit oder ohne Parameter realisiert. Die
+						eigentliche Komplexität in Verwendung mit
+						Parametern liegt im Aufruf von <methodname>getData</methodname>.
+						Die Funktionalität wurde folgendermaßen implementiert.
+					</para>
+					<programlisting>
+						<![CDATA[
+						public Class<?> getDataType() {
+							return method.getReturnType();
+						}
+						public Object getData() {
+					    	try {
+								return method.invoke(object);
+							} catch (IllegalArgumentException e) {
+								logger.error(e);
+							} catch (IllegalAccessException e) {
+								logger.error(e);
+							} catch (InvocationTargetException e) {
+								logger.error(e);
+							}
+							return null;
+					    }
+					    public Object getData(Object... args) {
+					    	try {
+								return method.invoke(object, args);
+							} catch (IllegalArgumentException e) {
+								logger.error(e);
+							} catch (IllegalAccessException e) {
+								logger.error(e);
+							} catch (InvocationTargetException e) {
+								logger.error(e);
+							}
+							return null;
+	  					}
+						]]>
+					</programlisting>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 	</section>
 	<section>
 		<title>Arbeitsweise</title>
