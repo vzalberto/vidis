@@ -114,6 +114,19 @@
 			</author>
 		</authorgroup>
 	</biblioentry>
+	<biblioentry xml:id="paper_echoalgorithm">
+		<title>Echo Algorithms: Depth Parallel Operations on General Graphs</title>
+		<subtitle>IEEE Transactions on Software Engineering</subtitle>
+		<edition>Vol. 8</edition>
+		<author>
+			<personname>
+				<firstname>Ernest</firstname>
+				<othername>J.H.</othername>
+				<surname>Chang</surname>
+			</personname>
+		</author>
+		<date>July 1982</date>
+	</biblioentry>
 	<biblioentry xml:id="web_opengl">
 		<bibliosource class="uri">
 			<link xlink:href="http://www.opengl.org" />
