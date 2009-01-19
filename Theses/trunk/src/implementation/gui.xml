@@ -134,22 +134,49 @@ public void toggleAutoEvents {
 	</section>
 
 	<section>
-		<title>Maus Interaktion</title>
+		<title>Benutzer Interaktion</title>
 		<para>
-			Mit einfachen Mausklicks können alle Steuerelemente in der Benutzeroberflächer bedient werden und die 3 dimensionalen Nodes sind auswählbar (siehe 
-			<xref linkend="section_picking" />).
+			Damit der Benutzer das Vidis System bedienen kann, müssen Maus und Tastaturevents ausgewertet werden. Im folgenden wird erklärt, wie das System bedient werden kann, und es wird auf 
+			die dahinter stehende Implementierung eingegangen.
 		</para>
-		<para>
-			Bei gedrückter rechter Maustaste wird ein aus Spielen bekannter <quote>Free Look</quote> Modus aktiviert. Dabei kann man durch Bewegen der Maus
-			in jede beliebige Richtung schauen.
-		</para>
-	</section>
 
-	<section>
-		<title>Tastatur Interaktion</title>
+		<variablelist>
+			<varlistentry>
+				<term>Maus Interaktion</term>
+				<listitem>
+					<para>
+						Mit einfachen Mausklicks können alle Steuerelemente in der Benutzeroberflächer bedient werden und die 3 dimensionalen Nodes sind auswählbar (siehe 
+						<xref linkend="section_picking" />).
+					</para>
+					<para>
+						Bei gedrückter rechter Maustaste wird ein aus Spielen bekannter <quote>Free Look</quote> Modus aktiviert. Dabei kann man durch Bewegen der Maus
+						in jede beliebige Richtung schauen.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Tastatur Interaktion</term>
+				<listitem>
+					<para>
+						Mit den Tasten W, A, S und D lässt sich die Kamera bewegen. Dabei bewegt sich mit A und S die Kamera in Blickrichtung vor bzw zurück und mit
+						A und D seitwärts nach links oder rechts.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
 		<para>
-			Mit den Tasten W, A, S und D lässt sich die Kamera bewegen. Dabei bewegt sich mit A und S die Kamera in Blickrichtung vor bzw zurück und mit
-			A und D seitwärts nach links oder rechts.
+			Das Kernstück der Maus und Tastaturimplementierung ist der Inputcontroller. Er bekommt jedes Maus und Tastaturevent und entscheidet, wie es verarbeitet wird.
+		</para>
+		<para>
+			Mausevents werden zunächst an den GUI Controller weitergeleitet. Dieser berechnet die Mauskoordinaten für die GUI und reicht den Event and den äußersten GuiContainer
+			weiter. Dieser reicht den Event an den betroffenen Subcontainer weiter. Existiert kein Subcontainer unter der Maus, dann war der Klick für die 3D Welt bestimmt.  Der 
+			Event wieder zurück in das Event System geworfen und landet beim Scenecontroller. Dieser berechnet nun mittels Picking (siehe <xref linkend="section_picking" />) 
+			welche 3D Objekte angeklickt wurden. Schlussendlich bekommt entweder ein GUI Element, oder ein 3D Objekt das Klick Event.
+		</para>
+		<para>
+			Tastaturevents werden direkt vom Imputkontoller über eine Mapping Tabelle zu VidisEvents umgewandelt. Das heisst wird zum Beispiel 'A' gedrückt, so wirft der Inputkontroller
+			ein Event, dass die Kamera sich ab jetzt nach links bewegen soll. Wird 'A' wieder losgelassen so wird ein Event geworfen, welches die Kamera anweist, sich jetzt nicht mehr
+			nach Links zu bewegen.
 		</para>
 	</section>
 
