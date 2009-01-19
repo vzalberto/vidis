@@ -180,8 +180,8 @@ public void toggleAutoEvents {
 			Das Kernstück der Maus und Tastaturimplementierung ist der Inputcontroller. Er bekommt jedes Maus und Tastaturevent und entscheidet, wie es verarbeitet wird.
 		</para>
 		<para>
-			Mausevents werden zunächst an den GUI Controller weitergeleitet. Dieser berechnet die Mauskoordinaten für die GUI und reicht den Event and den äußersten GuiContainer
-			weiter. Dieser reicht den Event an den betroffenen Subcontainer weiter. Existiert kein Subcontainer unter der Maus, dann war der Klick für die 3D Welt bestimmt.  Der 
+			Mausevents werden zunächst an den GUI Controller weitergeleitet. Dieser berechnet die Mauskoordinaten für die GUI und reicht das Event an den äußersten GuiContainer
+			weiter. Dieser reicht das Event an den betroffenen Subcontainer weiter. Existiert kein Subcontainer unter der Maus, dann war der Klick für die 3D Welt bestimmt.  Das 
 			Event wieder zurück in das Event System geworfen und landet beim Scenecontroller. Dieser berechnet nun mittels Picking (siehe <xref linkend="section_picking" />) 
 			welche 3D Objekte angeklickt wurden. Schlussendlich bekommt entweder ein GUI Element, oder ein 3D Objekt das Klick Event.
 		</para>

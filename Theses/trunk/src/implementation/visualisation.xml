@@ -34,7 +34,7 @@
 				</mediaobject>
 			</figure>
 			<para>
-				Dazu benötigt man zuerst die Transformationsmatrizen, durch die das 2 dimensionale Bild zu stande kommt. Diese lassen sich mit
+				Dazu benötigt man zuerst die Transformationsmatrizen, durch die das 2 dimensionale Bild zu Stande kommt. Diese lassen sich mit
 				dem entsprechenden <trademark class="registered">OpenGL</trademark> Kommando auslesen. Aus den Inversen dieser Matrizen und den
 				Mauskoordinaten kann man die Gerade, die alle Objekte unter der Maus schneidet berechnen. Die GLU Bibliothek bietet dazu 
 				eine Hilfsroutine, welche genau diese Berechnung durchführt. 
