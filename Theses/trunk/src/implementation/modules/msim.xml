@@ -16,12 +16,12 @@
 			Das folgende Beispiel soll die Struktur einer MSIM-Datei veranschaulichen.
 		</para>
 		<example>
-			<title>Beispiel für eine vollständige MSIM-Datei</title>
+			<title>Eine vollständige MSIM-Datei</title>
 			<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 				<![CDATA[
 					<module>
-						<id>Module ID</id>
-						<classpath>vidis.modules.someModule</classpath>
+						<description>Module</description>
+						<package>vidis.modules.someModule</package>
 						<nodeDensity>0.5</nodeDensity>
 						<objects>
 							<node>
@@ -60,7 +60,8 @@
 		</para>
 		<note>
 			<para>
-			Alle Schlüssel der XML-Elemente sind nicht case-sensitiv,
+			Alle Schlüssel der XML-Elemente sind entgegen dem
+			XML-Standard nicht case-sensitiv,
 				d.h.
 				es macht z.B. keinen Unterschied wenn der Wurzelschlüssel
 				"module"
@@ -80,43 +81,72 @@
 						Kinder:
 						<variablelist>
 							<varlistentry>
-								<term>id</term>
+								<term>description</term>
 								<listitem>
 									<para>
-										Dieses Element repräsentiert den
-										Bezeichner für dieses Modul. Es beinhaltet
-										einen String, welcher dieses Modul beschreibt.
+										Dieses Element repräsentiert eine
+										Beschreibung für dieses Modul. Es beinhaltet
+										einen String mit möglichst aussagekräftigem
+										Inhalt.
+										 Dieses Element
+										besitzt verschiedene Aliase. Es ist jedoch dringend empfohlen
+										den Standardbezeichner <quote>description</quote> zu verwenden, da die Aliase nur aus Kompatibilitätsgründen
+										vom System unterstützt werden. Dieser Support wird in der nächsten
+										Generation von VIDIS entfernt!
 									</para>
+									<itemizedlist>
+										<title>Eine komplette Liste aller Aliase für dieses Element</title>
+										<listitem>
+											<para>id</para>
+										</listitem>
+										<listitem>
+											<para>description</para>
+										</listitem>
+									</itemizedlist>
 									<example>
-										<title>Beispiel 1 für ein Modul-ID Element</title>
+										<title>Ein MSIM <quote>description</quote> Element</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-											<![CDATA[<id>someId</id>]]>
+											<![CDATA[<description>someId</description>]]>
 										</programlisting>
 									</example>
 									<example>
-										<title>Beispiel 2 für ein Modul-ID Element</title>
+										<title>Ein MSIM <quote>description</quote> Element</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-											<![CDATA[<id>Das ist das Modul X</id>]]>
+											<![CDATA[<description>Das ist das Modul X</description>]]>
 										</programlisting>
 									</example>
 								</listitem>
 							</varlistentry>
-							<varlistentry>
-								<term>classpath</term>
+							<varlistentry xml:id="implementation.modules.msim.package">
+								<term>package</term>
 								<listitem>
 									<para>
-										Dieses Element steht für den Classpath für das Paket, in
+										Dieses Element steht für das Java Package, in
 										welchem alle Klassen des Moduls liegen.
-										Es beinhaltet einen String zum Classpath der Modulklassen.
+										Es beinhaltet einen String im Format eines Java Classpath
+										zum Klassenpfad der Modul Komponenten. Dieses Element
+										besitzt verschiedene Aliase. Es ist jedoch dringend empfohlen
+										den Standardbezeichner <quote>package</quote> zu verwenden, da die Aliase nur aus Kompatibilitätsgründen
+										vom System unterstützt werden. Dieser Support wird in der nächsten
+										Generation von VIDIS entfernt!
 									</para>
+									<itemizedlist>
+										<title>Eine komplette Liste aller Aliase für dieses Element</title>
+										<listitem>
+											<para>classpath</para>
+										</listitem>
+										<listitem>
+											<para>package</para>
+										</listitem>
+									</itemizedlist>
 									<example>
-										<title>Beispiel 1 für ein Modul-Classpath Element</title>
+										<title>Ein Modul-Package Element</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-											<![CDATA[<classpath>vidis.modules.moduleName</classpath>]]>
+											<![CDATA[<package>vidis.modules.moduleName</package>]]>
 										</programlisting>
 									</example>
 									<example>
-										<title>Beispiel 2 für einen Classpath</title>
+										<title>Inhalt eines Modul-Package Elements</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 										<![CDATA[
 											my.vidis.modules.mymodule
@@ -143,7 +173,7 @@
 										Layouts.
 									</para>
 									<example>
-										<title>Beispiel für ein NodeDensity Element.</title>
+										<title>Ein NodeDensity Element</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 										<![CDATA[
 											<nodeDensity>0.5</nodeDensity>
@@ -167,22 +197,22 @@
 													Dieses Element beschreibt eine Node-Objektinstanz.
 												</para>
 												<example>
-													<title>Beispiel für ein Node Element mit Variablen</title>
+													<title>Ein Node Element ohne Variablen</title>
 													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 													<![CDATA[
 														<node>
-															<id>uniqueNodeId</id>
+															<id>uniqueNodeId1</id>
 															<class>implementedClassName</class>
 														</node>
 													]]>
 													</programlisting>
 												</example>
 												<example>
-													<title>Beispiel für ein Node Element mit Variablen</title>
+													<title>Ein Node Element mit Variablen</title>
 													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 													<![CDATA[
 														<node>
-															<id>uniqueNodeId</id>
+															<id>uniqueNodeId2</id>
 															<class>implementedClassName</class>
 															<variables>
 																<var1>var1Value</var1>
@@ -196,8 +226,8 @@
 													<para>
 														Das Element class beinhaltet einen String,
 														welcher die Klasse dieser Instanz beschreibt.
-														Zusammen mit dem Classpath-Element ist dies
-														der Classpath der zu ladenden Klasse.
+														Zusammen mit dem Package-Element (vgl. <xref linkend="implementation.modules.msim.package" />) ist dies
+														der volle Name der zu ladenden Klasse.
 													</para>
 												</note>
 												<warning>
@@ -221,11 +251,11 @@
 													Dieses Element beschreibt eine Link-Objektinstanz.
 												</para>
 												<example>
-													<title>Beispiel für ein Link-Element</title>
+													<title>Ein Link-Element</title>
 													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 													<![CDATA[
 														 <link>
-														 	<id>uniqueLinkId</id>
+														 	<id>uniqueLinkId1</id>
 														 	<class>implementingClass</class>
 														 	<delay>5</delay>
 														 </link>
@@ -233,11 +263,11 @@
 													</programlisting>
 												</example>
 												<example>
-													<title>Beispiel für ein Link-Element mit Variablen</title>
+													<title>Ein Link-Element mit Variablen</title>
 													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 													<![CDATA[
 														 <link>
-														 	<id>uniqueLinkId</id>
+														 	<id>uniqueLinkId2</id>
 														 	<class>implementingClass</class>
 														 	<delay>5</delay>
 														 	<variables>
@@ -289,7 +319,7 @@
 										mit Hilfe von Links hergestellt werden sollen.
 									</para>
 									<example xml:id="example_connection_simple">
-										<title>Beispiel für eine einzelne Verbindung zwischen Node A und Node B über Link L.</title>
+										<title>Eine einzelne Verbindung zwischen Node A und Node B über Link L</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 										<![CDATA[
 											<connections>
@@ -303,7 +333,7 @@
 										</programlisting>
 									</example>
 									<example>
-										<title>Beispiel mit mehreren Verbindung zwischen diversen Nodes in einer Ring Topologie.</title>
+										<title>Mehrere Verbindungen in einer Ring Topologie</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 										<![CDATA[
 											<connections>

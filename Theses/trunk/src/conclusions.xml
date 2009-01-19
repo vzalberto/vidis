@@ -51,4 +51,58 @@
 			TODO
 		</para>
 	</section>
+	<section>
+		<title>Future Work</title>
+		<para>
+			Im Konzept VIDIS wurden einige wichtige und interessante
+			Punkte berücksichtigt, konnten jedoch nicht im Rahmen
+			eine Bakkalaureatsarbeit umgesetzt werdne.
+			Deshalb werden diese im Folgenden als Ausblick auf zukünftige
+			Versionen von VIDIS präsentiert.
+		</para>
+		<variablelist>
+			<varlistentry>
+				<term>Serialisierung von <classname>SimulatorData</classname></term>
+				<listitem>
+					<para>
+						Die interne Datenstruktur des Simulators implementiert
+						das Interface <interfacename>Serializable</interfacename> und
+						sollte somit serialisierbar sein. Damit wäre es möglich den
+						Status des Simulators an einem interessanten Simulationszeitpunkt
+						abzuspeichern und auf entfernten Rechnern zu starten. Auch
+						zum Zwecke von Präsentationen wäre dies sehr sinnvoll.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Aufnehmen und Abspielen einer Simulation</term>
+				<listitem>
+					<para>
+						Eine der ersten Ideen war, dass eine Simulation
+						beständig beobachtet und jeder Simulationsschritt
+						protokolliert und exportierbar sein sollte. Somit
+						könnte man eine Simulation starten, den Verlauf der 
+						Simulation aufnehmen und zu Präsentationszwecken
+						abspielen.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry xml:id="conclusions.futurework.linkbandwidth">
+				<term>Bandbreite für Links</term>
+				<listitem>
+					<para>
+						In VIDIS gibt es keine native Unterstützung zur Simulation
+						einer Bandbreite. Es ist jedoch möglich diese Funktionalität
+						zu simulieren indem ein
+						Paket selbst seine Größe kennt und ein Link nur eine
+						gewisse Bandbreite <literal><superscript>Paketgröße</superscript>/<subscript>Simulationsschritte</subscript></literal>
+						überträgt. Da ein Simulator Link die Funktionalität der 
+						Übertragung von Paketen implementiert, muss die Integration 
+						einer Bandbreite in die Simulatorklasse <classname>SimLink</classname>
+						implementiert werden.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</section>
 </chapter>

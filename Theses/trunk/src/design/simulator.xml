@@ -1,77 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section
-	xmlns="http://docbook.org/ns/docbook">
-	<title>Simulator</title>
+	xmlns="http://docbook.org/ns/docbook"
+	xml:id="design.simulator">
+	<title>Simulatordesign</title>
+	<para>
+		Im folgenden Kapitel wird die Idee und das Design
+		des Simulators besprochen. Dazu wird zunächst der
+		Grundgedanke erörtert, wie ein Verteiltes System
+		simuliert werden kann. Anschließend werden die 
+		für VIDIS wichtigen Komponenten bestimmt und 
+		analysiert wie diese umgesetzt werden können.
+		Schlussendlich wird die Umsetzungsidee mittels
+		Interfaces und Methodenköpfe dargelegt.
+	</para>
 	<section>
-		<title>Definitionen</title>
+		<title>Simulation von verteilten Systemen</title>
 		<para>
-			Folgende Definitionen werden im Simulator verwendet.
+			In diesem Kapitel werden die Eigenschaften von den
+			am häufigsten vorkommenden verteilten Systemen
+			analysiert. Diese Grundlage wird daraufhin
+			verwendet um einen groben Grundriss über die
+			Idee hinter VIDIS zu skizzieren.
+		</para>
+		<para>
+			Verteilte Systeme bestehen sehr häufig aus einer
+			Menge von Rechnern welche auch Peers genannt werden.
+			Diese können miteinander über ein Netzwerk
+			kommunizieren. Dabei kann es vorkommen, dass Peers
+			durch Subnetze getrennt nicht direkt miteinander kommunizieren
+			können. Es kann aber durchaus sein, dass dies durch die 
+			Hilfe eines Peers der mit den zwei anderen kommunizieren kann,
+			möglich ist. In diesen Fällen spricht man von <quote>Message Forwarding</quote>.
+			Die Kommunikation zwischen einzelnen Peers erfolgt 
+			großteils über Datenpakete, welche über eine Netzwerkleitung
+			übertragen werden.
+		</para>
+		<para>
+			Bei der Übertragung kommt es immer
+			zu Verzögerungen, welche auch als <literal>Latenz</literal>
+			bezeichnet werden. Grund dafür ist die Verzögerung von Schaltungen
+			, die Länge des Leiters und die Einschränkung
+			der Bandbreite einer Leitung. Es gibt zwar verschiedenste Arten von Leitungen.
+			Die bekanntesten darunter sind elektrische Leitungen. Weitere
+			Arten sind funkgetriebene oder auch optische Leiter. Für VIDIS spielen
+			diese aber keine Rolle.
+		</para>
+		<para>
+			Ausgehend von diesen Beobachtungen wurden folgende
+			drei Basiskomponenten identifiziert, welche für eine 
+			für VIDIS möglichst optimale Simulation erforderlich sind.
+		</para>
+		<variablelist xml:id="design.simulator.simulatorkomponenten">
+			<title>Simulator Komponenten</title>
+			<varlistentry xml:id="design.simulator.knoten">
+				<term>Knoten</term>
+				<listitem>
+					<para>
+						Dieser repräsentiert einen Rechner in
+						einem verteilten System und soll die
+						Fähigkeit besitzen mit anderen Knoten zu
+						kommunizieren. Die Kommunikation erfolgt
+						mittels Pakete, welche über eine Verbindung
+						von einem zum anderen Knoten übertragen wird
+						und dann vom Empfänger verarbeitet werden kann.
+						Weiters soll ein Knoten eine proprietäre Funktionalität
+						implementieren können, welche unabhängig vom
+						Nachrichtensystem iterativ ausgeführt wird.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry xml:id="design.simulator.paket">
+				<term>Paket</term>
+				<listitem>
+					<para>
+						Mit Hilfe eines Pakets soll es möglich 
+						sein Daten von einem Knoten zu einem anderen
+						Knoten zu übertragen. Das Paket soll beliebige
+						Daten enthalten können.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry xml:id="design.simulator.verbindung">
+				<term>Verbindung</term>
+				<listitem>
+					<para>
+						Um ein Netzwerk aus Knoten realisieren zu
+						können wird eine Komponente benötigt, welche
+						die Verbindung zwischen zwei Knoten repräsentiert.
+						Diese Komponente muss auch den Transport
+						von Paketen von einem Knoten zu einem anderen
+						simulieren können.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		<para>
+			Da das primäre Einsatzgebiet von VIDIS nicht eine
+			genaue Widergabe der Realität erfordert, wurden
+			folgende Aspekte nicht in Betracht bezogen.
+		</para>
+		<variablelist>
+			<varlistentry>
+				<term>Knoten</term>
+				<listitem>
+					<para>
+						TODO: gibts hier was das man erwähnen könnte?
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Paket</term>
+				<listitem>
+					<para>
+						TODO: gibts hier was das man erwähnen könnte?
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Verbindung</term>
+				<listitem>
+					<para>
+						Eine Verbindung soll zwar die Latenz simulieren,
+						jedoch nicht eine Bandbreitenlimitierung. Da 
+						VIDIS kein Netzwerksimulator wie <quote>NAM</quote>
+						der <quote>Network Animator</quote> und dieser Aspekt
+						für die Visualisierung der Funktionsweise von den
+						meisten Algorithmen irrelevant ist, wurde die Bandbreitenlimitierung
+						nicht in den Simulator eingeplant.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+		<para>
+			Durch den modularen und sehr flexiblen Aufbau
+			der Klassenstrukturen ist es dennoch möglich
+			diese Aspekte im Rahmen eines Moduls zu implementieren
+			(vgl. <xref linkend="conclusions.futurework.linkbandwidth" />).
+		</para>
+	</section>
+	<section>
+		<title>Umsetzung</title>
+		<para>
+			Im vorhergehenden Kapitel wurde die Grundidee
+			des Simulators beschrieben und skizziert. In
+			diesem Kapitel wird die Umsetzung dieser Idee
+			skizziert. Dieses Kapitel soll eine Übersicht
+			über die Komponenten des Simulators, die 
+			Komponenten eines Moduls und deren Funktionsweise
+			bieten.
 		</para>
 		<section>
-			<title>Komponente</title>
+			<title>Simulator Komponenten</title>
 			<para>
-				Wir bezeichnen eine Komponente als eine ausführbare, vom Benutzer implementierte Klasse.
+				Als eine Simulator Komponente wird eine
+				für den Benutzer nicht sichtbare Repräsentation
+				einer ausführbaren Einheit bezeichnet. Diese
+				kann verschiedene Rollen übernehmen. Es wurde
+				eingehend erörtert welche Komponenten die
+				Simulation eines Großteils von verteilten Systemen
+				ermöglichen. Folgende Basiskomponenten werden
+				in dieser Arbeit unterschieden und sind für VIDIS
+				von Relevanz:
 			</para>
-			<para>
-				Es wird unter folgenden Komponententypen unterschieden:
-			</para>
-			<section>
-				<title>Node</title>
-				<para>
-					Ein Node, oder auch <quote>Knoten</quote>, ist in der Terminologie gleichzusetzen mit einem Peer aus einem Verteilten Systemen.
-				</para>
-				<para>
-					In einem Netzwerk aus Computern wäre ein Knoten einer dieser Rechner.
-				</para>
-				<para>
-					Ein Knoten kann sich über Links mit anderen Knoten verbinden und so mit diesen über Pakete kommunizieren.
-				</para>
-				<para>
-					Mehr Informationen zum Interface eines
-					Modul Nodes findet man im Abschnitt
-					<xref linkend="design.module.node" />.
-				</para>
-				<para>
-					Mehr Informationen zur implementierten Funktionalität eines Knoten findet man im Abschnitt <xref linkend="implementation.module.node" /><!-- xlink:to "Implementation > Modul > Node"/xlink:to -->.
-				</para>
-			</section>
-			<section>
-				<title>Link</title>
-				<para>
-					Ein Link, oder auch <quote>Verbindung</quote>, ist in der Terminologie gleichzusetzen mit einer aktiven Verbindung zwischen zwei Peers aus einem Verteilten System.
-				</para>
-				<para>
-					Mehr Informationen zum Interface eines
-					Modul Links findet man im Abschnitt
-					<xref linkend="design.module.link" />.
-				</para>
-				<para>
-					Mehr Informationen zur implementierten Funktionalität eines Links findet man im Abschnitt <xref linkend="implementation.module.link" /><!-- xlink:to"Implementation > Modul > Link" /xlink:to -->.
-				</para>
-			</section>
-			<section>
-				<title>Packet</title>
-				<para>
-					Ein Packet, oder auch <quote>Paket</quote> ist in der Terminologie gleichzusetzen mit einem Datenpaket das über eine aktive Verbindung zwischen zwei Peers geschickt wird.
-				</para>
-				<para>
-					Mehr Informationen zum Interface eines
-					Modul Pakets findet man im Abschnitt
-					<xref linkend="design.module.packet" />.
-				</para>
-				<para>
-					Mehr Informationen zur implementierten Funktionalität eines Pakets findet man im Abschnitt <xref linkend="implementation.module.packet" /><!-- xlink:to"Implementation > Modul > Paket" -->.
-				</para>
-			</section>
+			<variablelist>
+				<varlistentry xml:id="design.simulator.simulatornode">
+					<term>Simulator Node</term>
+					<listitem>
+						<para>
+							Dies ist die simulatorinterne Repräsentation
+							eines in Knotens (vgl. <xref linkend="design.simulator.knoten" />)
+							und implementiert die nötige Funktionalität (vgl. <xref linkend="implementation.module.node" />) um
+							einen Modul Node (vgl. <xref linkend="design.module.node" />) in sich zu integrieren.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry xml:id="design.simulator.simulatorlink">
+					<term>Simulator Link</term>
+					<listitem>
+						<para>
+							Ein Link, oder auch <quote>Verbindung</quote>,
+							ist die simulatorinterne Darstellung einer
+							Verbindung (vgl. <xref linkend="design.simulator.verbindung" />).
+							Informationen über die implementierte Funktionalität
+							befinden sich in <xref linkend="implementation.module.link" />.
+							Diese Komponente kann einen Modul Link <xref linkend="design.module.link" />
+							in sich integrieren.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry xml:id="design.simulator.simulatorpacket">
+					<term>Simulator Packet</term>
+					<listitem>
+						<para>
+							Mit einem Simulator Packet bezeichnen wir in dieser Arbeit
+							die simulatorinterne Repräsentation für ein Paket (vgl. <xref linkend="design.simulator.paket" />).
+							Sinngemäß entspricht es in der Terminologie verteilter
+							Systeme einem Datenpaket das über eine aktive Verbindung
+							zwischen zwei Peers übertragen wird. Ein solches Paket 
+							hat in der Regel eine kurze Lebensdauer und kann nicht
+							wiederverwendet werden.
+						</para>
+						<para>
+							Dieses Simulator Packet ist in keinster Weise mit einem 
+							Modul Packet gleichzusetzen oder zu verwechseln. Informationen
+							zum Interface eines Modul Packets 
+							befinden sich im Abschnitt
+							<xref linkend="design.module.packet" />.
+						</para>
+						<para>
+							In Abschnitt 
+							<xref linkend="implementation.module.packet" />
+							wird auf die Details der Implementierung dieses
+							Interface
+							eingegangen.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
 		</section>
 		<section>
 			<title>Modul</title>
-			<para>Ein Modul ist eine Menge aus Komponenten</para>
+			<para>
+				Ein Modul besteht aus einer Menge von Komponenten, welche
+				vom Simulator ausgeführt werden. Die Komponenten übernehmen
+				dabei selbst ihre Aufgabe und implementieren alle nötigen
+				Funktionalitäten.
+			</para>
 		</section>
 		<section>
 			<title>Steps</title>
 			<para>
-				Ein <quote>Step</quote>, oder auch <quote>Schritt</quote> ist die kleinste Zeiteinheit im Simulator.
+				Ein <quote>Step</quote>, oder auch <quote>Schritt</quote>
+				ist die kleinste Zeiteinheit im Simulator. Innerhalb einem
+				Schritt werden alle Komponenten einmal ausgeführt.
 			</para>
 		</section>
 	</section>
@@ -79,26 +240,33 @@
 		<title>Funktionsweise</title>
 		<para>
 			Der Simulator ist die ausführende Einheit eines Moduls.
-			Dieser hat folgende wesentlichen Aufgaben:
+			Dieser hat dabei folgende wesentlichen Aufgaben zu bewältigen:
 			<itemizedlist>
 				<listitem><para>Modul laden</para></listitem>
-				<listitem><para>Objekte instantiieren</para></listitem>
+				<listitem><para>Objekte instanzieren</para></listitem>
 				<listitem><para>Schrittweise simulieren</para></listitem>
 			</itemizedlist>
 		</para>
 		<para>
 			Nach jedem Simulationsschritt werden alle Veränderungen an
 			den Objektinstanzen des geladenen Moduls an die Visualisierung
-			weitergegeben.
+			weitergegeben. Die Informationen sind dem Simulator als
+			<quote>Variablen</quote> bekannt. Der Simulator soll
+			die Objektinstanzen eines Moduls überwachen und Änderungen
+			am Status eines Objekts in diesen Variablen abspeichern.
+			Variablen enthalten somit alle nötigen Informationen zum
+			Status eines Objekts. Weiters soll es möglich sein in einem 
+			Modul mittels Java Annotations zu entscheiden welche
+			Instanzen beobachtet werden sollen.
 		</para>
 		<section>
 			<title>Modul laden</title>
 			<para>
 				In diesem Kapitel wird die Funktionalität <quote>Modul laden</quote>
-				definiert.
+				definiert und beschrieben.
 			</para>
 			<para>
-				Der Simulator soll die Funktion
+				Der Simulator implementiert die Funktion
 				<methodsynopsis>
 					<methodname>importSimFile</methodname>
 					<methodparam>
@@ -169,62 +337,66 @@
 			</para>
 			<note>
 				<para>
-					Ein Vergleich der Technologien befindet sich hier:
+					Ein tiefgründigerer Vergleich der Technologien
+					befindet sich hier:
 					<xref linkend="compare_xml_sax_dom" />
 				</para>
 			</note>
 			<para>
-				Da die Vorteile eines DOM Parsers für unsere Anwendung
-				überwiegen, haben wir uns dafür entschieden diesen zu
-				verwenden.
+				Da sich ein DOM Parser für diese Anwendung
+				besser eignet, haben wir uns entschieden
+				diesen zu verwenden.
 			</para>
 		</section>
 	</section>
 	<section>
 		<title>Player</title>
-		<para>Der Player ist die kontrollierende Einheit für den 
-		Simulator. Er kümmert sich darum, einen Simulationsschritt
-		anzustossen. Somit ist er das Verbindungsstück zwischen 
-		Simulation und Visualisierung.</para>
+		<para>
+			Eng verbunden mit dem Simulator steht der Player.
+			Der Player ist die kontrollierende Einheit für den 
+			Simulator. Er kümmert sich darum, einen Simulationsschritt
+			anzustossen. Somit ist er das kontrollierende
+			Verbindungsstück zwischen Simulation und Visualisierung.
+		</para>
 		<para>
 			Der Player hat mehrere Zustände. Im folgenden
 			werden diese Zustände erläutert.
 		</para>
 		<itemizedlist>
 			<listitem>
-				<para>
-					Ist der Simulator nicht gestoppt, kodiert dieser
-					Zustand ob ein weiterer Simulationsschritt
-					ausgeführt werden soll.
-				</para>
 				<fieldsynopsis>
 					<modifier>public</modifier>
 					<type>boolean</type>
 					<varname>paused</varname>
 				</fieldsynopsis>
+				<para>
+					Ist der Simulator nicht gestoppt, kodiert dieser
+					Zustand ob ein weiterer Simulationsschritt
+					ausgeführt werden soll.
+				</para>
 			</listitem>
 			<listitem>
-				<para>
-					In diesem Zustand ist der Simulator gestoppt,
-					das Modul neu geladen, die Objekte richtig
-					instantiiert und der Simulator bereit zu starten.
-				</para>
 				<fieldsynopsis>
 					<modifier>public</modifier>
 					<type>boolean</type>
 					<varname>stopped</varname>
 				</fieldsynopsis>
+				<para>
+					In diesem Zustand ist der Simulator gestoppt,
+					das Modul neu geladen, die Objekte richtig
+					instantiiert und der Simulator bereit zu starten.
+				</para>
 			</listitem>
 			<listitem>
-				<para>
-					Kodiert den Zustand des korrekten Beendens
-					des Simulators.
-				</para>
 				<fieldsynopsis>
 					<modifier>public</modifier>
 					<type>boolean</type>
 					<varname>killed</varname>
 				</fieldsynopsis>
+				<para>
+					Kodiert den Zustand des korrekten Beendens
+					des Simulators.
+				</para>
 			</listitem>
 		</itemizedlist>
 		<para>
@@ -244,75 +416,82 @@
 			Er implementiert folgende Funktionalität:
 			<itemizedlist>
 				<listitem>
-					<para>
-						Diese Funktion startet den Simulator falls
-						er noch nicht gestartet wurde. Wurde der Simulator
-						bereits gestartet, hat diese Funktion keinen Effekt.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>play</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion startet den Simulator falls
+						er noch nicht gestartet wurde. Wurde der Simulator
+						bereits gestartet, hat diese Funktion keinen Effekt.
+					</para>
 				</listitem>
 				<listitem>
-					<para>
-						Diese Funktion pausiert den Simulator. Wurde der Simulator
-						bereits pausiert, startet diese Funktion den Simulator.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>pause</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion pausiert den Simulator. Wurde der Simulator
+						bereits pausiert, startet diese Funktion den Simulator.
+					</para>
 				</listitem>
 				<listitem>
-					<para>
-						Diese Funktion startet bzw stoppt den Simulator.
-						Wurde der Simulator gestoppt, ruft diese Funktion
-						play() auf. Wurde der Simulator hingegen nicht
-						gestoppt, ruft diese Funktion pause() auf.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>playPause</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion startet bzw stoppt den Simulator.
+						Wurde der Simulator gestoppt, ruft diese Funktion
+						play() auf. Wurde der Simulator hingegen nicht
+						gestoppt, ruft diese Funktion pause() auf.
+					</para>
 				</listitem>
 				<listitem>
-					<para>
-						Diese Funktion stoppt den Simulator. Ist der Simulator
-						bereits gestoppt hat ein Aufruf dieser Funktion keine
-						Auswirkung.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>stop</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion stoppt den Simulator. Ist der Simulator
+						bereits gestoppt hat ein Aufruf dieser Funktion keine
+						Auswirkung.
+					</para>
 				</listitem>
 				<listitem>
-					<para>
-						Diese Funktion veranlasst den Simulator dazu,
-						alle allokierten Ressourcen freizugeben und
-						erlaubt dem Player-Thread zu sterben.
-					</para>
 					<methodsynopsis>
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>kill</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion veranlasst den Simulator dazu,
+						alle allokierten Ressourcen freizugeben und
+						erlaubt dem Player-Thread zu sterben.
+					</para>
 				</listitem>
 			</itemizedlist>
 		</para>
 	</section>
 	<section>
 		<title>Datenstruktur (intern)</title>
+		<para>
+			Ein wesentlicher Teil des Designs des Simulators war
+			die Datenstruktur, in welcher sowohl die zu simulierenden
+			Komponenten, als auch der Zustand des Simulators abgespeichert
+			werden muss. Im folgenden wird diese Datenstruktur zunächst
+			formal und anschließend mittels Methodenrümpfe beschrieben.
+		</para>
 		<para>
 			<phrase>Die Datenstruktur des Simulators ist ein Tupel
 			(M, t), wobei M die Menge der ausführbaren Komponenten ist
@@ -346,6 +525,10 @@
 						<methodname>getTime</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion gibt den aktuellen Simulationsschritt
+						zurück.
+					</para>
 				</listitem>
 				<listitem>
 					<methodsynopsis>
@@ -357,6 +540,11 @@
 							<parameter>component</parameter>
 						</methodparam>
 					</methodsynopsis>
+					<para>
+						Diese Funktion registriert eine Komponente in der internen
+						Datenstruktur. Nach Aufruf dieser Funktion wird 
+						die Komponente vom Simulator simuliert. 
+					</para>
 				</listitem>
 				<listitem>
 					<methodsynopsis>
@@ -368,6 +556,12 @@
 							<parameter>component</parameter>
 						</methodparam>
 					</methodsynopsis>
+					<para>
+						Diese Funktion löscht eine Komponente aus der
+						internen Datenstruktur. Nach Aufruf dieser Funktion
+						wird diese Komponente nicht mehr vom Simulator
+						simuliert.
+					</para>
 				</listitem>
 				<listitem>
 					<methodsynopsis>
@@ -376,6 +570,16 @@
 						<methodname>executeComponents</methodname>
 						<void/>
 					</methodsynopsis>
+					<para>
+						Diese Funktion ruft auf allen registrierten Komponenten
+						die Funktion <methodsynopsis>
+							<modifier>public</modifier>
+							<type>void</type>
+							<methodname>execute</methodname>
+							<void/>
+						</methodsynopsis> auf. Dies wird vom Simulator
+						zu jedem Simulationsschritt ausgeführt.
+					</para>
 				</listitem>
 			</itemizedlist>
 		</para>

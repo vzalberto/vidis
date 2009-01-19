@@ -13,7 +13,7 @@
 				als Stringvariablen angelegt.
 			</para>
 			<example>
-				<title>Ein generelles Beispiel für Variablen</title>
+				<title>Zwei Variablen</title>
 				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 				<![CDATA[
 					<variables>
@@ -24,7 +24,7 @@
 				</programlisting>
 			</example>
 			<example>
-				<title>Ein Beispiel für Variablen auf einer Node</title>
+				<title>Eine Variable auf einer Node</title>
 				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 				<![CDATA[
 					<node>
@@ -38,7 +38,7 @@
 				</programlisting>
 			</example>
 			<example>
-				<title>Ein Beispiel für Variablen auf einem Link</title>
+				<title>Eine Variable auf einem Link</title>
 				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
 				<![CDATA[
 					<link>

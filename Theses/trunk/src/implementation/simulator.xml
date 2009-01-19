@@ -3,7 +3,12 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink">
 	<title>Simulator</title>
 	<para>
-		Im folgenden Abschnitt definieren und beschreiben wir den Simulator.
+		Im folgenden Abschnitt wird die Implementierung des in
+		<xref linkend="design.simulator" /> definierten Simulators
+		für VIDIS beschrieben. Dazu werden die im Wesentlichen implementierten
+		Aufgaben des Simulators und deren Umsetzung beschrieben und die 
+		Funktionsweise der Simulationsschleife mittels Analyse der 
+		dazu notwendigen Schritte erörtert.
 	</para>
 	<section>
 		<title>Modul einlesen</title>
@@ -54,8 +59,8 @@
 								<methodname>kill</methodname>
 								<void/>
 							</methodsynopsis>
-							definiert durch das Interface <interfacename>IComponent</interfacename>
-							aufgerufen.
+							, welche im Interface <interfacename>IComponent</interfacename>
+							definiert ist, aufgerufen.
 						</para>
 					</listitem>
 				</varlistentry>
@@ -97,9 +102,7 @@
 			Simulation relevanten Informationen in die interne Klasse
 			<classname>SimulatorData</classname> gespeichert. Diese implementiert
 			das Interface <interfacename>Serializable</interfacename> und
-			ist exportierbar. Leider war es nicht im zeitlichen Rahmen alle
-			notwendigen Funktionalitäten zu implementieren um dies möglich
-			zu machen. <classname>SimulatorData</classname> implementiert das
+			ist exportierbar. <classname>SimulatorData</classname> implementiert das
 			Interface <interfacename>ISimulatorData</interfacename> und bildet
 			die Kerndatenstruktur im Simulator. Im folgenden
 			Abschnitt wird das Interface <interfacename>ISimulatorData</interfacename> erläutert.
@@ -225,7 +228,8 @@
 										Es ist möglich Pakete zeitversetzt abzuschicken
 										um so eine Bearbeitungszeit zu simulieren. Für
 										diese Funktionalität müssen die in Bearbeitung 
-										befindliche Pakete verarbeitet werden. Folgender
+										befindliche Pakete vom Simulator in einem Simulator Node 
+										verarbeitet werden. Folgender
 										Pseudocode veranschaulicht diesen Prozess:
 									</para>
 									<programlisting format="linespecific">
@@ -350,8 +354,12 @@
 										und nur Daten transportiert, ist es nicht
 										sinnvoll auf einem Paket Operationen auszuführen.
 										Aus diesem Grund wurde die Methode <methodname>execute</methodname>
-										durch die <modifier>final</modifier> (nicht überschreib- oder überladbare)
-										leere Methode implementiert. 
+										durch einer nicht überschreib- oder überladbaren aber leeren Methode implementiert.
+										<programlisting>
+											public final void execute() {
+												// this component does not execute
+											}
+										</programlisting>
 									</para>
 								</listitem>
 								<listitem>

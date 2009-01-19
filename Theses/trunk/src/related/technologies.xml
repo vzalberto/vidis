@@ -246,7 +246,8 @@
 			<title>Vergleich XML Parser: DOM vs. SAX</title>
 			<para>
 				Im folgenden werden die Vor- und Nachteile der
-				<quote>Extensible Markup Language</quote> behandelt.
+				zwei gebräuchlichsten <quote>Extensible Markup Language</quote>
+				Parser behandelt.
 			</para>
 			<variablelist>
 				<varlistentry>

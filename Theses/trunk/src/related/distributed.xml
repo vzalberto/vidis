@@ -40,10 +40,7 @@
 						</programlisting>
 						Die Menge der Verbindungen:
 						<programlisting>
-							C = {
-								( P<subscript>1</subscript>, P<subscript>2</subscript> ),
-								( P<subscript>2</subscript>, P<subscript>3</subscript> )
-							}
+							C = { ( P<subscript>1</subscript>, P<subscript>2</subscript> ), ( P<subscript>2</subscript>, P<subscript>3</subscript> )	}
 						</programlisting>
 						Die Menge der logischen Uhren gespeichert in P<subscript>i</subscript>:
 						<programlisting>
@@ -88,7 +85,7 @@
 					<para>
 						Bevor ein Ereignis von P<subscript>i</subscript> ausgeführt wird:
 						<programlisting>
-							time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = V<subscript>(P<subscript>i</subscript>, P<subscript>i</subscript></subscript>)+1
+							time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = V<subscript>(P<subscript>i</subscript>, P<subscript>i</subscript>)</subscript>+1
 						</programlisting>
 						Wenn P<subscript>i</subscript> eine Nachricht an P<subscript>j</subscript> sendet:
 						<programlisting>
@@ -98,7 +95,7 @@
 						Wenn P<subscript>i</subscript> eine Nachricht M empfängt:
 						<programlisting>
 							for j in 1..n do
-								time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V(<subscript>P<subscript>i</subscript></subscript>), P<subscript>j</subscript>) }
+								time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) }
 							done
 						</programlisting>
 					</para>
