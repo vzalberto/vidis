@@ -343,9 +343,12 @@
 				</para>
 			</note>
 			<para>
-				Da sich ein DOM Parser für diese Anwendung
-				besser eignet, haben wir uns entschieden
-				diesen zu verwenden.
+				Die MSIM-Dateien sind relativ kleine Dokumente, welche
+				in sich auf Elemente verweisen. Auch die Struktur
+				von MSIM-Dateien bleibt dabei immer die selbe. Aus diesen
+				Gründen eignet
+				sich ein DOM Parser besser für die Anwendung in VIDIS und
+				wurde so implementiert.
 			</para>
 		</section>
 	</section>

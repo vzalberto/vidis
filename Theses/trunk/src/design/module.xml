@@ -143,8 +143,8 @@
 				dieser Klasse kodiert und bei der Simulation ausgeführt werden.
 			</para>
 			<para>
-				Ein Node definiert die für den implementierenden Anwender relevanten
-				Methoden.
+				Ein Node bietet die folgenden für den implementierenden Anwender relevanten
+				Methoden an.
 			</para>
 			<itemizedlist>
 				<title>Module Node Methoden</title>
@@ -295,8 +295,8 @@
 				zu können.
 			</para>
 			<para>
-				Er definitiert folgende, für den implementierenden Anwender,
-				wichtigen Methoden.
+				Er bietet folgende, für den implementierenden Anwender,
+				wichtigen Methoden an.
 			</para>
 			<itemizedlist>
 				<title>Module Link Methoden</title>

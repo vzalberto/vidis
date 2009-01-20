@@ -18,12 +18,11 @@
 						fehlerhaften Verhalten kommen weil es in einem Netzwerk
 						keine globale Zeit gibt. Egal wie genau die Knoten zeitlich
 						synchronisiert werden, es gibt immer - wenn auch manchmal nur sehr kleine -
-						Verzögerungen. Es reicht somit nicht aus Ereignisse mittels
-						Timestamps zu synchronisieren, da ein Ereignis das auf einer
-						Node global gesehen zwar vor dem Ereignis auf einer anderen Node aufgetreten ist.
-						Die Uhren der verschiedenen Nodes jedoch derart verfälschte
-						Timestamps produzieren könnten, dass ein Vergleich dieser Timestamps
-						zum gegenteiligen Ergebnis führt.
+						Verzögerungen. Angenommen beide Prozesse markieren
+						die Ereignisse mit Zeitstempeln. So reicht es nicht aus,
+						diese Zeitstempel zu vergleichen, da die Uhren der Knoten
+						schlecht synchronisiert sein könnten und somit ein Vergleich
+						der Zeitstempel nicht aussagekräftig ist.
 					</para>
 					<para>
 						Der Vector Clock Algorithmus kann dazu verwendet werden um
@@ -71,7 +70,7 @@
 					<para>
 						Der Algorithmus basiert auf <quote>Lamport's logical clock</quote>
 						Dieser Algorithmus produziert eine totale Ordnung, erfasst
-						aber keine Kausalitäten (<xref linkend="book_related.distributed.lamport" />)
+						aber keine Kausalitäten <xref linkend="book_related.distributed.lamport" />
 						zwischen den Ereignissen.
 					</para>
 					<para>
@@ -84,7 +83,7 @@
 				</listitem>
 			</varlistentry>
 			<varlistentry>
-				<term>Pseudocode</term>
+				<term>Umsetzung in Pseudocode</term>
 				<listitem>
 					<para>
 						Bevor ein Ereignis von P<subscript>i</subscript> ausgeführt wird:
@@ -102,6 +101,21 @@
 								time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) }
 							done
 						</programlisting>
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Fazit</term>
+				<listitem>
+					<para>
+						Mit diesem Algorithmus ist es nun möglich,
+						die Kausalitäten zwischen Ereignissen zu erkennen
+						und diese so zeitlich zu ordnen. Jeder Prozess
+						kann damit beim Erhalt eines jeden Ereignisses
+						entscheiden ob das soeben erhaltene Ereignis vor,
+						nach oder gleichzeitig zu dem zuletzt erhaltenen Ereignis war.
+						Dies ermöglicht eine Kollisionserkennung und je nach
+						Anwendungsbereich kann fehlerhaftes Verhalten vermieden werden.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -190,14 +204,6 @@
 						Diesen kann nicht vertraut werden. Es muss deshalb eine
 						Möglichkeit gefunden werden weiterhin einen <quote>richtigen</quote>
 						Zustand des Systems zu wahren.
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
-				<term>Beispiel</term>
-				<listitem>
-					<para>
-						todo
 					</para>
 				</listitem>
 			</varlistentry>
@@ -325,6 +331,20 @@
 							immer und ist Total da die Befragung aller Knoten aus einem verteilten System
 							für die Terminierung benötigt wird. 
 						</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Einfache und effiziente Verbesserung</term>
+				<listitem>
+					<para>
+						Wenn jedes Flooding eine eindeutige ID bekommt,
+						kann ein Knoten entscheiden ob er eine Flooding-Nachricht
+						vom selben Durchlauf bereits erhalten hat. Dadurch
+						wird vermieden, dass ein Knoten eine Flooding-Nachricht
+						mehrfach bearbeitet. Dieser Algorithmus terminiert ohne
+						diese Adaptierung nicht für Netzwerktopologien mit 
+						Verbindungsschleifen.
+					</para>
 				</listitem>
 			</varlistentry>
 		</variablelist>

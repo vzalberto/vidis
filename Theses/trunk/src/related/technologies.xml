@@ -215,7 +215,7 @@
 
 
 	<section xml:id="related.technologies.xml">
-		<title>XML</title>
+		<title>Extensible Markup Language (XML)</title>
 		<para>
 			XML wird dazu verwendet, um hierarchisch strukturierte Daten
 			in Form von Textdaten abzuspeichern. Ein XML Dokument kann unterschiedliche
@@ -227,7 +227,7 @@
 			<title>Vergleich XML Parser: DOM vs. SAX</title>
 			<para>
 				Im folgenden werden die Vor- und Nachteile der
-				zwei gebräuchlichsten <quote>Extensible Markup Language</quote>
+				zwei gebräuchlichsten XML
 				Parser behandelt.
 			</para>
 			<variablelist>
