@@ -97,20 +97,18 @@
 						zu simulieren indem ein
 						Paket selbst seine Größe kennt und ein Link nur eine
 						gewisse Bandbreite 
-						<!--<inlinemediaobject>
+						<inlinemediaobject>
 							<imageobject>
 								<imagedata format="mathml">
 									<math:math>
-										<math:semantics>
-											<math:mfrac>
-												<math:mi math:fontstyle="italic">Paketgröße</math:mi>
-												<math:mi math:fontstyle="italic">Simulationsschritte</math:mi>
-											</math:mfrac>
-										</math:semantics>
+										<math:mfrac>
+											<math:mi math:fontstyle="italic">Paketgröße</math:mi>
+											<math:mi math:fontstyle="italic">Simulationsschritte</math:mi>
+										</math:mfrac>
 									</math:math>
 								</imagedata>
 							</imageobject>
-						</inlinemediaobject>-->
+						</inlinemediaobject>
 <literal><superscript>Paketgröße</superscript>/<subscript>Simulationsschritte</subscript></literal>
 						überträgt. Da ein Simulator Link die Funktionalität der 
 						Übertragung von Paketen implementiert, muss die Integration 
