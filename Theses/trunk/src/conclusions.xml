@@ -4,6 +4,7 @@
 	xmlns:math="http://www.w3.org/1998/Math/MathML">
 	<title>Conclusions</title>
 	<para>
+	<programlisting>
 		Dominik stellt sich folgendes vor:
 		[VORSCHLAG (BLENDTEXT)>
 		VIDIS ist ein einfaches und tolles Werkzeug für didaktische Lehrzwecke und erfüllt somit unsere Erwartungen.
@@ -21,6 +22,7 @@
 		In Summe steht hier da ein funktionierendes Programm für die Vorlesung "Verteilte Systeme",
 		genau wie gewollt weil ja das Maxerl sehr geholfen hat.
 		>VORSCHLAG]
+	</programlisting>
 	</para>
 	<section>
 		<title>Komplexitätsanalyse</title>
@@ -99,17 +101,20 @@
 						gewisse Bandbreite 
 						<inlinemediaobject>
 							<imageobject>
-								<imagedata format="mathml">
-									<math:math>
+								<imagedata format="mathml" fileref="pak.mml" />
+					<!--				<math:math>
 										<math:mfrac>
 											<math:mi math:fontstyle="italic">Paketgröße</math:mi>
 											<math:mi math:fontstyle="italic">Simulationsschritte</math:mi>
 										</math:mfrac>
 									</math:math>
-								</imagedata>
+								</imagedata> -->
 							</imageobject>
 						</inlinemediaobject>
+
+<!--
 <literal><superscript>Paketgröße</superscript>/<subscript>Simulationsschritte</subscript></literal>
+-->
 						überträgt. Da ein Simulator Link die Funktionalität der 
 						Übertragung von Paketen implementiert, muss die Integration 
 						einer Bandbreite in die Simulatorklasse <classname>SimLink</classname>
