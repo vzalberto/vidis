@@ -4,11 +4,11 @@
 		<echo message="${os.name}" />
 		<exec dir="." executable="cmd" os="Windows XP, Windows Vista">
 			<arg value="/c" />
-			<arg value="fop -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf" />
+			<arg value="fop -c fop.xconf -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf" />
 		</exec>
 		<exec dir="." executable="sh" os="Linux">
 			<arg value="-c" />
-			<arg value="fop -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf" />
+			<arg value="fop -c fop.xconf -xml src/vidis_thesis.xml -xsl stylesheet.xsl -pdf bin/vidis_thesis.pdf" />
 		</exec>
 	</target>
 </project>

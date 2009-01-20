@@ -23,7 +23,7 @@
   <xsl:param name="callout.graphics.path">doclet/docbook/xsl/images/callouts/</xsl:param>
   <xsl:param name="alignment">left</xsl:param>
   <xsl:param name="autotoc.label.separator"> </xsl:param>
-  <xsl:param name="body.font.family">serif</xsl:param>
+  <xsl:param name="body.font.family">CMU Serif</xsl:param>
   <xsl:param name="body.font.master">10</xsl:param>
   <xsl:param name="body.start.indent">2pt</xsl:param>
   <xsl:param name="chapter.autolabel">1</xsl:param>
