@@ -248,6 +248,21 @@
 							<term>Schritt 1</term>
 							<listitem>
 								<para>
+									Alle Knoten <literal>P</literal> werden mit folgendem
+									Pseudo-Code initialisiert.
+								</para>
+								<programlisting>
+									<![CDATA[
+										P.initiator=FALSE
+										P.state=WHITE
+									]]>
+								</programlisting>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Schritt 2</term>
+							<listitem>
+								<para>
 									Ein Knoten <literal>P</literal> startet den Algorithmus indem
 									er folgenden Pseudo-Code ausführt.
 								</para>
@@ -262,7 +277,7 @@
 							</listitem>
 						</varlistentry>
 						<varlistentry>
-							<term>Schritt 2</term>
+							<term>Schritt 3</term>
 							<listitem>
 								<para>
 									Folgender Pseudo-Code wird ausgeführt, wenn
@@ -291,12 +306,6 @@
 												send P.parent ECHO
 											fi
 										fi
-										wenn Anzahl == AnzahlNachbarn oder Nachricht == <echo>
-											K wird grün;
-											wenn K der Initiator ist
-												EXIT;
-											sonst
-												sende <echo> an ErsterNachbar
 									]]>
 								</programlisting>
 							</listitem>
@@ -307,7 +316,6 @@
 			<varlistentry>
 				<term>Anwendungsbeispiele</term>
 				<listitem>
-					<example>
 						<para>
 							Dieser Algorithmus kann sehr vielseitig eingesetzt werden.
 							Zum einen kann damit ein Spannbaum eines verteilten Systems
@@ -317,7 +325,6 @@
 							immer und ist Total da die Befragung aller Knoten aus einem verteilten System
 							für die Terminierung benötigt wird. 
 						</para>
-					</example>
 				</listitem>
 			</varlistentry>
 		</variablelist>
@@ -327,26 +334,21 @@
 		<title>Flooding Algorithmus</title>
 		<variablelist>
 			<varlistentry>
-				<term>Problemstellung</term>
-				<listitem>
-					<para>
-						todo
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
-				<term>Beispiel</term>
-				<listitem>
-					<para>
-						todo
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
 				<term>Lösungsansatz</term>
 				<listitem>
 					<para>
-						todo
+						Der Flooding Algorithmus kann dazu verwendet werden
+						um Nachrichten oder Daten in einem Verteilten System
+						zu verbreiten. Im wesentlichen sendet ein Knoten an
+						alle Nachbarknoten die zu verbreitende Nachricht und
+						diese senden sie wiederum an alle Nachbarknoten weiter.
+						Der große Nachteil dieses Algorithmus ist, dass eine Nachricht
+						mehrfach dupliziert wird und so, falls sie nur für einen
+						Empfänger bestimmt war, erheblich viele unnötige Nachrichten
+						produziert. Andererseits ist der Algorithmus sehr restistent
+						gegen Ausfälle einzelner Knoten. Sollte eine Verbindung
+						ausfallen, erreicht eine Nachricht trotz allem den Empfänger
+						über eine andere, eventuell längere, Verbindung.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -354,8 +356,46 @@
 				<term>Pseudocode</term>
 				<listitem>
 					<para>
-						todo
+						Obgleich es sehr viele Abwandlungen und Anpassungen dieses
+						Algorithmus gibt funktionieren diese im wesentlichen folgendermaßen.
 					</para>
+					<variablelist>
+						<varlistentry>
+							<term>Schritt 1</term>
+							<listitem>
+								<para>
+									Ein Knoten <literal>P</literal> startet den Algorithmus indem
+									er Nachricht <literal>M</literal> an
+									alle Nachbarknoten schickt.
+								</para>
+								<programlisting>
+									M.sender=P
+									for each i from Neighbours do
+										send i M
+									done
+								</programlisting>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Schritt 2</term> 
+							<listitem>
+								<para>
+									Jeder Knoten <literal>P</literal> der die Nachricht M erhält,
+									verarbeitet diese und schickt sie an alle
+									Nachbarknoten weiter. Die einzige Ausnahme
+									ist dabei der Ursprungsknoten.
+								</para>
+								<programlisting>
+									for each i from Neighbours do
+										if i!=M.sender do
+											M.sender=P
+											send i M
+										done
+									done
+								</programlisting>
+							</listitem>
+						</varlistentry>
+					</variablelist>
 				</listitem>
 			</varlistentry>
 		</variablelist>		
