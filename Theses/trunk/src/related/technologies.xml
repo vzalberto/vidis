@@ -2,7 +2,7 @@
 <section xmlns="http://docbook.org/ns/docbook">
 	<title>Technologien und Bibliotheken</title>
 	<para>
-		Im folgenden werden verwendete und untersuchte Technologien und Bibliotheken vorgestellt. Es wird kurz auf die Funktionalität eingegangen und erklärt warum die Bibliothek/Technologie 
+		Im folgenden werden verwendete und untersuchte Technologien und Bibliotheken vorgestellt. Es wird kurz auf deren Funktionalität eingegangen und erklärt warum die Bibliothek/Technologie 
 		verwendet bzw. nicht verwendet wurde.
 	</para>
 	<section>
@@ -25,8 +25,8 @@
 		<title>OpenGL</title>
 		<para>
 			<trademark class="registered">OpenGL</trademark> steht für <quote>Open Graphics Library</quote> und ist eine öffentlich 
-			spezifizierte<footnote><para>Die Spezifikation ist unter <xref linkend="web_opengl" /> zu finden.</para></footnote> 
-			Software-Schnittstelle für Grafik-Hardware. Damit ist es möglich 3 dimensionale Szenen am Computerbildschirm in Echtzeit
+			spezifizierte Software-Schnittstelle für Grafik-Hardware <xref linkend="web_opengl" />. Damit ist es möglich 3-dimensionale 
+			Szenen am Computerbildschirm in Echtzeit
 			darzustellen. Der <trademark class="registered">OpenGL</trademark> Standard wird von einer Kommision weiterentwickelt. 
 			Diese Spezifiezierungskommission heisst ARB <quote>Architecture Review Board</quote> und besteht aus Firmen wie SGI, 
 			IBM, HP, Sun, Intel und ehemals Microsoft.
@@ -45,8 +45,8 @@
 			ist <trademark class="registered">OpenGL</trademark> 2.1  noch aktuell, die Kommission hat aber schon den 3.0 Standard (am 11. 
 			August 2008) verabschiedet. Die Grafikkartenhersteller arbeiten noch an der stufenweisen Anpassung der Treiber an die neue Spezifikation
 			<xref linkend="web_catalyst" />.
-			<trademark class="registered">OpenGL</trademark> 3.0 hätte die erste Version, die mit der langen Tradition der Abwärtskompatiblität
-			bricht, werden sollen. Die Idee dahinter war es die Altlasten der vergangen Versionen zu entfernen. Allerdings wurden von den für die
+			<trademark class="registered">OpenGL</trademark> 3.0 hätte die erste Version werden sollen, die mit der langen Tradition der Abwärtskompatiblität
+			bricht. Die Idee dahinter war es die Altlasten der vergangen Versionen zu entfernen. Allerdings wurden von den für die
 			Version 3.0 vorgestellten und geplanten Änderungen viele nicht umgesetzt. Damit ist <trademark class="registered">OpenGL</trademark> 
 			nach wie vor voll abwärtskompatibel <xref linkend="web_heiseopengl" />.
 			Außerdem sind noch 2 weitere Versionen in Planung<xref linkend="web_siggraph" />:
@@ -65,7 +65,7 @@
 		</para>
 		<para>
 			Direct3D und <trademark class="registered">OpenGL</trademark> sind momentan die einzigen von den Grafikkartenherstellern
-			unterstützten Bibliotheken. Wobei Microsoft's Direct3D nur auf der eigenen Windowsplattform funktioniert. <trademark class="registered">OpenGL</trademark>
+			unterstützten Bibliotheken. Direct3D, aus dem Hause Microsoft, unterstützt aber nur die Windowsplattform. <trademark class="registered">OpenGL</trademark>
 			hingegen unterstützt fast alle gängigen Betriebssysteme. Da VIDIS ein plattformübergreifendes Framework ist, wurde
 			<trademark class="registered">OpenGL</trademark> als Grafikbibliothek ausgewählt.
 		</para>
@@ -84,9 +84,9 @@
 		<section xml:id="section_shader">
 			<title>Shader</title>
 			<para>
+				Shader sind vom Grafikchip ausführbare Programme, die sich in die <trademark class="registered">OpenGL</trademark> Pipeline eingliedern.	
 				Mit der <trademark class="registered">OpenGL</trademark> Version 2.0 wurde die <trademark class="registered">OpenGL</trademark> Shading Language 
-				(kurz GLSL) eingeführt. Die Sprache besitzt eine <literal>C</literal> ähnliche Syntax sowie einige, für Vektorrechung optimierte Datentypen. 
-				Shader sind vom Grafikchip ausführbare Programme, die sich in die <trademark class="registered">OpenGL</trademark> Pipeline eingliedern.
+				(kurz GLSL) als Shadersprache eingeführt. Die Sprache besitzt eine C ähnliche Syntax sowie einige, für Vektorrechung optimierte Datentypen. 
 			</para>
 			<para>
 				Um Shader zu verwenden benötigt man eine Grafikkarte, die Shadersupport bietet. Der Hersteller gibt dies bei den Spezifikationen als Shadermodel an. 
@@ -108,7 +108,7 @@
 						Vertex Shader werden per Vertex ausgeführt. Das bedeutet für jeden Vertex, der in die Grafikpipline kommt, läuft das
 						Shaderprogramm einmal durch. Es kann die Position und andere Daten, die mit dem Vertex assoziert werden verändern.
 						Auch Vertex Shader ersetzen einen Teil der fixen Funktionspipeline von <trademark class="registered">OpenGL</trademark>
-						und zwar die Per-Fragment Operationen (<xref linkend="fig_renderpipeline" /> <quote>Per-Vertex Operations</quote>).
+						und zwar die Per-Vertex Operationen (<xref linkend="fig_renderpipeline" /> <quote>Per-Vertex Operations</quote>).
 					</para></listitem>
 				</varlistentry>
 				<varlistentry>
@@ -161,6 +161,11 @@
 					Der Entwickler muss sich nicht mehr direkt mit der <trademark class="registered">OpenGL</trademark> API auseinander setzen,
 					sondern bearbeitet die Struktur des Szenengraphen.
 				</para>
+					<para>
+						Der objektorientierte Ansatz von Java3D sah sehr vielversprechend aus, und deshalb war Java3D auch die erste Wahl.
+						Erst nachdem der Java3D Prototyp lauffähig war, kamen die durch Java3D entstandenen Performance Einbußen ans Licht.
+						Nähere Informationen dazu sind unter <xref linkend="section_deadends_java3d" /> zu finden. 
+					</para>
 				</listitem>
 			</varlistentry>
 
@@ -178,38 +183,8 @@
 					<xref linkend="web_nehe" />.
 				</para>
 				<para>
-					JOGL steht unter der BSD<footnote><para>Berkeley Software Distribution License<xref linkend="web_bsd" /></para></footnote> 
-					Linzenz. 
+					JOGL steht unter der Berkeley Software Distribution (BSD) Lizenz <xref linkend="web_bsd" />.
 				</para>
-				</listitem>
-			</varlistentry>
-
-			<varlistentry>
-				<term>Lightweight Java Gaming Library (LWJGL)</term>
-				<listitem><para>
-					Diese Library implementiert nicht alle Funktionen der <trademark class="registered">OpenGL</trademark> API. Die Entwickler
-					haben bewusst auf veraltete und imperformate Operatinen verzichtet. Dadurch hat die Bibliothek eine geringe Größe, und
-					eignet sich unter anderem besonders für embedded Devices.
-				</para></listitem>
-			</varlistentry>>
-
-		</variablelist>
-		
-		<variablelist>
-			<title>Auswahl eines der vorgestellten Bindings</title>
-			<varlistentry>
-				<term>Java3D</term>
-				<listitem>
-					<para>
-						Der objektorientierte Ansatz von Java3D sah sehr vielversprechend aus, und deshalb war Java3D auch die erste Wahl.
-						Erst nachdem der Java3D Prototyp lauffähig war, kamen die durch Java3D entstandenen Performance Einbußen ans Licht.
-						Nähere Informationen dazu sind unter <xref linkend="section_deadends_java3d" /> zu finden. 
-					</para>
-				</listitem>
-			</varlistentry>
-			<varlistentry>
-				<term>JOGL</term>
-				<listitem>
 					<para>
 						Nach dem Java3D Fehlschlag waren alle objektorientierten Kanditaten aufgebraucht, und die Wahl fiel auf JOGL. 
 						Nach ersten Experimenten war sicher, dass es mit JOGL weitaus
@@ -219,16 +194,22 @@
 					</para>
 				</listitem>
 			</varlistentry>
+
 			<varlistentry>
-				<term>LWJGL</term>
-				<listitem>
+				<term>Lightweight Java Gaming Library (LWJGL)</term>
+				<listitem><para>
+					Diese Library implementiert nicht alle Funktionen der <trademark class="registered">OpenGL</trademark> API. Die Entwickler
+					haben bewusst auf veraltete und imperformate Operationen verzichtet. Dadurch hat die Bibliothek eine geringe Größe, und
+					eignet sich unter anderem besonders für embedded Devices.
+				</para>
 					<para>
 						Da es mit JOGL performancetechnisch keine Probleme gab, wurde auf einen Prototypen für LWJGL verzichtet.
 					</para>
 				</listitem>
-			</varlistentry>
+			</varlistentry>>
+
 		</variablelist>
-	
+		
 		</section>
 	</section>
 
