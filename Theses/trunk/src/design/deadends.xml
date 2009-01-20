@@ -38,7 +38,17 @@
 		</figure>
 
 		<para>
-			#FIXME Warum aufgegeben?!
+			Allerdings gab es Kompatibilitätsprobleme zwischen SWING und
+			OpenGL, sodass das 3D Panel immer im Vordergrund stand. Außerdem
+			war es nicht möglich dies durch Transparenzeffekte auszugleichen.
+			Weiters passte die Swing Oberfläche auch optisch und stilistisch
+			nicht zur 3D Umgebung von VIDIS. Den wichtigsten Grund
+			diesen Prototyp zu verwerfen gaben uns schlussendlich unkontrollierte
+			Verhaltensweisen. VIDIS stürzte gelegentlich aus nicht nachvollziehbaren
+			Gründen ab. Nach einiger Zeit, in der wir versucht haben das Problem mit Hilfe von
+			Stacktraces und Debugtraces zu lokalisieren und dies keine Früchte trug,
+			haben wir beschlossen VIDIS neu zu schreiben und die grafische Benutzeroberfläche
+			nicht mit Swing zu realisieren.
 		</para>
 	</section>	
 </section>
