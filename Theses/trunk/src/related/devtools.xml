@@ -10,7 +10,7 @@
 		<title>Eclipse</title>
 		<para>
 			Eclipse (richtigerweise Eclipse SDK) ist ein OpenSource Projekt
-			der Eclipse Community mit dem Ziel, eine OpenSource Entwicklungsplattform.
+			der Eclipse Community mit dem Ziel, eine OpenSource Entwicklungsplattform zu entwickeln.
 			Sie vereint in sich viele erweiterbare Frameworks für verschiedene
 			Aufgaben in der Softwareentwicklung. Eclipse ist nicht auf die
 			Softwareentwicklung mit Java begrenzt und bietet umfangreiche
@@ -46,10 +46,11 @@
 			Netbeans ist eine umfangreiche Entwicklungsumgebung für Java.
 			Diese Entwicklungsumgebung ist ein von Sun Microsystems gesponsortes
 			OpenSource Projekt zur Java Softwareentwicklung. Im Gegensatz zur
-			Eclipse IDE ist die Netbeans IDE auf Java beschränkt. Im Rahmen
-			dieser Bakkalaureatsarbeit wurde diese Entwicklungsumgebung dazu
-			verwendet um Profilings durchzuführen.
-			<xref linkend="web_related.devtools.netbeans" />
+			Eclipse IDE ist die Netbeans IDE auf Java beschränkt. Netbeans kommt
+			mit einem Profiler, der es ermöglicht die Ressourcen, die ein Programm
+			verbraucht, genau zu überwachen. Dieser wurde im Zuge dieser Arbeit
+			verwendet, um Leistungsprobleme des Java3D Prototyps zu identifizieren
+			<xref linkend="web_related.devtools.netbeans" />.
 		</para>
 		
 	</section>
@@ -59,7 +60,7 @@
 		<para>
 			Die Testing and Performance Tools Platform (kurz TPTP) erlaubt es, Anwendungen zu überwachen und Schwachstellen zu finden, um 
 			Optimierungen durchzuführen. Dazu überwacht TPTP die Anwendung während der Laufzeit und liefert in Echtzeit Statistiken über
-			Methodenaufrufe, verbrauchte CPU-Zeit wäherend eines Methodenaufrufs und den Arbeitspeicherverbrauch einzelner Objekte.
+			Methodenaufrufe, verbrauchte CPU-Zeit während eines Methodenaufrufs und den Arbeitspeicherverbrauch einzelner Objekte.
 			TPTP ist ein Eclipse Projekt <xref linkend="web_related.devtools.tptp" />.
 		</para>
 		

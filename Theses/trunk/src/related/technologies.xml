@@ -164,7 +164,7 @@
 					<para>
 						Der objektorientierte Ansatz von Java3D sah sehr vielversprechend aus, und deshalb war Java3D auch die erste Wahl.
 						Erst nachdem der Java3D Prototyp lauffähig war, kamen die durch Java3D entstandenen Performance Einbußen ans Licht.
-						Nähere Informationen dazu sind unter <xref linkend="section_deadends_java3d" /> zu finden. 
+						Nähere Informationen dazu sind in <xref linkend="section_deadends_java3d" /> zu finden. 
 					</para>
 				</listitem>
 			</varlistentry>
@@ -268,10 +268,10 @@
 							Ein SAX Parser ist für große Dokumente, sequentielle Daten
 							und große Datenmengen zu bevorzugen. Nicht geeignet ist 
 							ein SAX Parser für in sich stark verschachtelte Datenstrukturen.
-							So z.B. wenn einzelne Elemente mehrfach quer durch das ganze
+							Zum Beispiel wenn einzelne Elemente mehrfach quer durch das ganze
 							Dokument verlinkt werden. In diesen Fällen kann der
 							Vorteil durch das sequentielle Parsen zum Parsen in einem 
-							DOM Baum degenieren. 
+							DOM Baum degenerieren. 
 						</para>
 					</listitem>
 				</varlistentry>
@@ -301,7 +301,7 @@
 				beschrieben, haben wir DocBook zum Schreiben dieser
 				Bakkalaureatsarbeit verwendet. Mit Hilfe von FOP wurde
 				diese Arbeit im DocBook Format mittels XSL-Transformationen
-				in das vorliegende Format umgewandelt. FOP unterstützt aber
+				in das vorliegende Format umgewandelt. FOP unterstützt auch
 				Formate wie PDF, Java2D/AWT, AFP, PCL, MIF, PS, RTF, TIFF,
 				PNG, SVG und TXT. Es ist auch möglich das Dokument direkt an einen
 				angeschlossenen Drucker zu senden oder die Ausgabe des 
