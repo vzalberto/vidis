@@ -203,8 +203,7 @@ public class TestPacket extends AUserPacket {
 						</para>
 						<example>
 							<title>Ein Feld als Variable</title>
-							<programlisting language="java"><![CDATA[
-@Display(name="A test variable")
+							<programlisting language="java"><![CDATA[@Display(name="A test variable")
 public int testVariable;]]></programlisting>
 						</example>
 					</listitem>

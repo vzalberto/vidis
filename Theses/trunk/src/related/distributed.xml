@@ -251,8 +251,7 @@ P.state=WHITE]]></programlisting>
 									Ein Knoten <literal>P</literal> startet den Algorithmus indem
 									er folgenden Pseudo-Code ausführt.
 								</para>
-								<programlisting><![CDATA[
-P.initiator=TRUE
+								<programlisting><![CDATA[P.initiator=TRUE
 for each i from Neighbours do
 	send i EXLORE
 done 
