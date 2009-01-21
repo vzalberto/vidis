@@ -44,7 +44,8 @@
   <xsl:param name="paper.type">A4</xsl:param>
   <xsl:param name="section.autolabel">1</xsl:param>
   <xsl:param name="section.label.includes.component.label">0</xsl:param>
-  <xsl:param name="shade.verbatim">0</xsl:param>
+  <xsl:param name="shade.verbatim">1</xsl:param>
+  <xsl:param name="shade.verbatim">1</xsl:param>
   <xsl:param name="tablecolumns.extension">1</xsl:param>
   <xsl:param name="title.margin.left">0in</xsl:param>
   <xsl:param name="toc.section.depth">1</xsl:param>
@@ -69,6 +70,12 @@
 <xsl:param name="orderedlist.label.width" select="'1.8em'"/>
 <xsl:param name="header.rule" select="0"/>
 <xsl:param name="footer.rule" select="0"/>
+
+<xsl:attribute-set name="shade.verbatim.style">
+  <xsl:attribute name="background-color">#F0F0F0</xsl:attribute>
+  <xsl:attribute name="border">thin #E0E0E0 solid</xsl:attribute>
+</xsl:attribute-set>
+
 
 <!-- for duplex -->
 <xsl:param name="double.sided" select="1" />
