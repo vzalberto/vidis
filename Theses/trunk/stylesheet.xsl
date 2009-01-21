@@ -24,6 +24,8 @@
   <xsl:param name="alignment">left</xsl:param>
   <xsl:param name="autotoc.label.separator"> </xsl:param>
   <xsl:param name="body.font.family">CMU Serif, serif, Symbol, ZapfDingbats</xsl:param>
+  <xsl:param name="title.font.family">CMU Sans Serif, sanf-serif, Symbol, ZapfDingbats</xsl:param>
+  <xsl:param name="monospace.font.family">CMU Typewriter Text, monospace, Symbol, ZapfDingbats</xsl:param>
   <xsl:param name="body.start.indent">2pt</xsl:param>
   <xsl:param name="chapter.autolabel">1</xsl:param>
   <xsl:param name="column.count.back">1</xsl:param>
