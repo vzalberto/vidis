@@ -29,7 +29,7 @@
 				<title>Ray Picking</title>
 				<mediaobject>
 					<imageobject>
-						<imagedata align="center" width="450pt" fileref="image/raypicking.svg" />
+						<imagedata align="center" width="100%" fileref="image/raypicking.svg" />
 					</imageobject>
 				</mediaobject>
 			</figure>
@@ -89,7 +89,7 @@
 			<screenshot>
 				<mediaobject>
 					<imageobject>
-						<imagedata width="450pt" type="PNG" fileref="image/screenshot_link.png" />
+						<imagedata align="center" width="100%" type="PNG" fileref="image/screenshot_link.png" />
 					</imageobject>
 				</mediaobject>
 			</screenshot>
@@ -113,7 +113,7 @@
 			<screenshot>
 				<mediaobject>
 					<imageobject>
-						<imagedata align="center" width="450pt" type="PNG" fileref="image/screenshot_link_packets.png" />
+						<imagedata align="center" width="100%" type="PNG" fileref="image/screenshot_link_packets.png" />
 					</imageobject>
 				</mediaobject>
 			</screenshot>

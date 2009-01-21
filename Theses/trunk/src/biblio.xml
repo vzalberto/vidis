@@ -159,7 +159,8 @@
 		<date>Zugriff: 25.12.2008 13:30</date>
 	</biblioentry>
 	<biblioentry xml:id="web_siggraph">
-		<title><quote>Birds of Feather</quote> Presentation SIGGRAPH 2007</title>
+		<title>Birds of Feather</title>
+		<subtitle>Presentation SIGGRAPH 2007</subtitle>
 		<bibliosource class="uri">
 			<link xlink:href="http://www.khronos.org/developers/library/2007_08_siggraph/siggraph%202007%20bof.pdf" />
 		</bibliosource>

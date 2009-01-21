@@ -73,7 +73,7 @@
 			<title>Die <trademark class="registered">OpenGL</trademark> Fixed Function Pipeline (Quelle: <xref linkend="book_redbook" />)</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata align="center" type="GIF" fileref="orderops.gif" />
+					<imagedata align="center" width="100%" fileref="orderops.png" />
 				</imageobject>
 			</mediaobject>
 		</figure>
