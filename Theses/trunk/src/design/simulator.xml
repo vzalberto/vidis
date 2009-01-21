@@ -269,10 +269,7 @@
 				Der Simulator implementiert die Funktion
 				<methodsynopsis>
 					<methodname>importSimFile</methodname>
-					<methodparam>
-						<type>IModuleFileComponent</type>
-						<parameter>simFile</parameter>
-					</methodparam>
+					<methodparam><type>IModuleFileComponent</type><parameter>simFile</parameter></methodparam>
 				</methodsynopsis> implementieren um eine MSIM-Datei
 				zu importieren.
 			</para>
@@ -367,11 +364,7 @@
 		</para>
 		<itemizedlist>
 			<listitem>
-				<fieldsynopsis>
-					<modifier>public</modifier>
-					<type>boolean</type>
-					<varname>paused</varname>
-				</fieldsynopsis>
+				<fieldsynopsis><modifier>public</modifier><type>boolean</type><varname>paused</varname></fieldsynopsis>
 				<para>
 					Ist der Simulator nicht gestoppt, kodiert dieser
 					Zustand ob ein weiterer Simulationsschritt
@@ -379,11 +372,7 @@
 				</para>
 			</listitem>
 			<listitem>
-				<fieldsynopsis>
-					<modifier>public</modifier>
-					<type>boolean</type>
-					<varname>stopped</varname>
-				</fieldsynopsis>
+				<fieldsynopsis><modifier>public</modifier><type>boolean</type><varname>stopped</varname></fieldsynopsis>
 				<para>
 					In diesem Zustand ist der Simulator gestoppt,
 					das Modul neu geladen, die Objekte richtig
@@ -391,11 +380,7 @@
 				</para>
 			</listitem>
 			<listitem>
-				<fieldsynopsis>
-					<modifier>public</modifier>
-					<type>boolean</type>
-					<varname>killed</varname>
-				</fieldsynopsis>
+				<fieldsynopsis><modifier>public</modifier><type>boolean</type><varname>killed</varname></fieldsynopsis>
 				<para>
 					Kodiert den Zustand des korrekten Beendens
 					des Simulators.
@@ -505,18 +490,10 @@
 			Die Klasse enthält die Felder:
 			<itemizedlist>
 				<listitem>
-					<fieldsynopsis>
-						<modifier>private</modifier>
-						<type>long</type>
-						<varname>now</varname>
-					</fieldsynopsis>
+					<fieldsynopsis><modifier>private</modifier><type>long</type><varname>now</varname></fieldsynopsis>
 				</listitem>
 				<listitem>
-					<fieldsynopsis>
-						<modifier>private</modifier>
-						<type>List&lt;AComponent&gt;</type>
-						<varname>components</varname>
-					</fieldsynopsis>
+					<fieldsynopsis><modifier>private</modifier><type>List&lt;AComponent&gt;</type><varname>components</varname></fieldsynopsis>
 				</listitem>
 			</itemizedlist>
 			Die Klasse enthält im Wesentlichen diese Funktionen:
@@ -538,10 +515,7 @@
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>registerComponent</methodname>
-						<methodparam>
-							<type>AComponent</type>
-							<parameter>component</parameter>
-						</methodparam>
+						<methodparam><type>AComponent</type><parameter>component</parameter></methodparam>
 					</methodsynopsis>
 					<para>
 						Diese Funktion registriert eine Komponente in der internen
@@ -554,10 +528,7 @@
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>unregisterComponent</methodname>
-						<methodparam>
-							<type>AComponent</type>
-							<parameter>component</parameter>
-						</methodparam>
+						<methodparam><type>AComponent</type><parameter>component</parameter></methodparam>
 					</methodsynopsis>
 					<para>
 						Diese Funktion löscht eine Komponente aus der

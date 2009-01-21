@@ -244,10 +244,7 @@
 					<modifier>public</modifier>
 					<type>Object</type>
 					<methodname>getData</methodname>
-					<methodparam>
-						<type>Object...</type>
-						<parameter>args</parameter>
-					</methodparam>
+					<methodparam><type>Object...</type><parameter>args</parameter></methodparam>
 				</methodsynopsis>
 				<para>
 					Mit Hilfe dieser Methode kann auf die Daten
@@ -260,10 +257,7 @@
 					<modifier>public</modifier>
 					<type>void</type>
 					<methodname>update</methodname>
-					<methodparam>
-						<type>Object</type>
-						<parameter>data</parameter>
-					</methodparam>
+					<methodparam><type>Object</type><parameter>data</parameter></methodparam>
 				</methodsynopsis>
 				<para>
 					Mit Hilfe dieser Methode können die Daten dieses
@@ -468,10 +462,7 @@
 											<modifier>public</modifier>
 											<type>void</type>
 											<methodname>sleep</methodname>
-											<methodparam>
-												<type>long</type>
-												<funcparams>steps</funcparams>
-											</methodparam>
+											<methodparam><type>long</type><parameter>steps</parameter></methodparam>
 										</methodsynopsis> in den Zustand <varname>schlafend</varname>
 										versetzt wurde.
 									</para>
@@ -528,10 +519,7 @@
 											<modifier>public</modifier>
 											<type>void</type>
 											<methodname>sleep</methodname>
-											<methodparam>
-												<type>long</type>
-												<funcparams>steps</funcparams>
-											</methodparam>
+											<methodparam><type>long</type><parameter>steps</parameter></methodparam>
 										</methodsynopsis> in den Zustand <quote>schlafend</quote>
 										versetzt wurde.
 									</para>

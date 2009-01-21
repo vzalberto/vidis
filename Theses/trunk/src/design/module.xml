@@ -153,17 +153,9 @@
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>send</methodname>
-						<methodparam>
-							<type>IUserPacket</type><parameter>packet</parameter>
-						</methodparam>
-						<methodparam>
-							<type>IUserLink</type>
-							<parameter>link</parameter>
-						</methodparam>
-						<methodparam>
-							<type>long</type>
-							<parameter>processingDelay</parameter>
-						</methodparam>
+						<methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
+						<methodparam><type>IUserLink</type><parameter>link</parameter></methodparam>
+						<methodparam><type>long</type><parameter>processingDelay</parameter></methodparam>
 						<methodparam><type>long</type><parameter>delay</parameter></methodparam>
 					</methodsynopsis>
 					<para>
@@ -205,13 +197,8 @@
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>connect</methodname>
-						<methodparam>
-							<type>IUserNode</type>
-							<parameter>n</parameter>
-						</methodparam>
-						<methodparam>
-							<type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter>
-						</methodparam>
+						<methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
+						<methodparam><type>Class&lt;? extends IUserLink&gt;</type><parameter>lclazz</parameter></methodparam>
 			        	<methodparam><type>long</type><parameter>delay</parameter></methodparam>
 					</methodsynopsis>
 					<para>
@@ -225,10 +212,7 @@
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>disconnect</methodname>
-						<methodparam>
-							<type>IUserNode</type>
-							<parameter>n</parameter>
-						</methodparam>
+						<methodparam><type>IUserNode</type><parameter>n</parameter></methodparam>
 					</methodsynopsis>
 					<para>
 						Diese Funktion wird dazu verwendet um eine bestehende Verbindung
@@ -241,10 +225,7 @@
 						<modifier>public</modifier>
 						<type>void</type>
 						<methodname>receive</methodname>
-						<methodparam>
-							<type>IUserPacket</type>
-							<parameter>packet</parameter>
-						</methodparam>
+						<methodparam><type>IUserPacket</type><parameter>packet</parameter></methodparam>
 					</methodsynopsis>
 					<para>
 						Diese Funktion wird dazu verwendet um Pakete zu empfangen.
