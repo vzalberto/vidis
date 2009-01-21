@@ -126,66 +126,54 @@
 				<varlistentry>
 					<term>Implementierung eines Module Node</term>
 					<listitem>
-						<programlisting language="java">
-							<![CDATA[
-								package vidis.modules.test;
-								
-								import vidis.data.AUserNode;
-								import vidis.data.mod.IUserPacket;
-								
-								public class TestNode extends AUserNode {
-									@Override
-									public void init() {
-										// TODO Auto-generated method stub
-										
-									}
-									@Override
-									public void receive(IUserPacket arg0) {
-										// TODO Auto-generated method stub
-										
-									}
-									@Override
-									public void execute() {
-										// TODO Auto-generated method stub
-										
-									}
-								}
-							]]>
-						</programlisting>
+						<programlisting language="java"><![CDATA[package vidis.modules.test;
+
+import vidis.data.AUserNode;
+import vidis.data.mod.IUserPacket;
+
+public class TestNode extends AUserNode {
+	@Override
+	public void init() {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void receive(IUserPacket arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+}]]></programlisting>
 					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<term>Implementierung eines Module Link</term>
 					<listitem>
-						<programlisting language="java">
-							<![CDATA[
-								package vidis.modules.test;
-								
-								import vidis.data.AUserLink;
-								
-								public class TestLink extends AUserLink {
-									@Override
-									public void execute() {
-										// TODO Auto-generated method stub
-									}
-								}
-							]]>
-						</programlisting>
+						<programlisting language="java"><![CDATA[package vidis.modules.test;
+
+import vidis.data.AUserLink;
+
+public class TestLink extends AUserLink {
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+	}
+}]]></programlisting>
 					</listitem>
 				</varlistentry>
 				<varlistentry>
 					<term>Implementierung eines Module Packet</term>
 					<listitem>
-						<programlisting language="java">
-							<![CDATA[
-								package vidis.modules.test;
-								
-								import vidis.data.AUserPacket;
-								
-								public class TestPacket extends AUserPacket {
-								}
-							]]>
-						</programlisting>
+						<programlisting language="java"><![CDATA[package vidis.modules.test;
+
+import vidis.data.AUserPacket;
+
+public class TestPacket extends AUserPacket {
+}]]></programlisting>
 					</listitem>
 				</varlistentry>
 			</variablelist>
@@ -215,12 +203,9 @@
 						</para>
 						<example>
 							<title>Ein Feld als Variable</title>
-							<programlisting language="java">
-								<![CDATA[
-									@Display(name="A test variable")
-									public int testVariable;
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[
+@Display(name="A test variable")
+public int testVariable;]]></programlisting>
 						</example>
 					</listitem>
 				</varlistentry>
@@ -239,25 +224,18 @@
 						</para>
 						<example>
 							<title>Eine ausführbare Methode ohne Parameter</title>
-							<programlisting language="java">
-								<![CDATA[
-									@Display(name="A runnable test method")
-									public void testMethod1() {
-										...
-									}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@Display(name="A runnable test method")
+public void testMethod1() {
+	...
+}
+]]></programlisting>
 						</example>
 						<example>
 							<title>Eine ausführbare Methode mit Parameter</title>
-							<programlisting language="java">
-								<![CDATA[
-									@Display(name="A runnable test method with parameters")
-									public void testMethod2(IUserNode node) {
-										...
-									}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@Display(name="A runnable test method with parameters")
+public void testMethod2(IUserNode node) {
+	...
+}]]></programlisting>
 						</example>
 					</listitem>
 				</varlistentry>
@@ -275,14 +253,10 @@
 						</para>
 						<example>
 							<title>Eine Komponentenklasse mit blauer Farbe</title>
-							<programlisting language="java">
-								<![CDATA[
-									@ComponentColor(color=ColorType.BLUE)
-									public class TestNode extends AUserNode {
-										...
-									}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
+public class TestNode extends AUserNode {
+	...
+}]]></programlisting>
 						</example>
 					</listitem>
 				</varlistentry>
@@ -299,12 +273,9 @@
 						</para>
 						<example>
 							<title>Eine Komponente mit dynamischer Farbe mittels Feld</title>
-							<programlisting language="java">
-								<![CDATA[
-									@DisplayColor
-    								public ColorType color = ColorType.BLACK;
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@DisplayColor
+public ColorType color = ColorType.BLACK;
+]]></programlisting>
 						</example>
 						<para>
 							Der Wert des Felds kann natürlich jederzeit
@@ -313,20 +284,16 @@
 						</para>
 						<example>
 							<title>Eine Komponentenfarbe mittels Feld ändern</title>
-							<programlisting language="java">
-								<![CDATA[
-									@DisplayColor
-    								public ColorType color = ColorType.BLACK;
-    								
-    								public void execute() {
-    									if(state == 0) {
-    										color = ColorType.GREEN;
-    									} else {
-    										color = ColorType.BLACK;
-    									}
-    								}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@DisplayColor
+public ColorType color = ColorType.BLACK;
+
+public void execute() {
+	if(state == 0) {
+		color = ColorType.GREEN;
+	} else {
+		color = ColorType.BLACK;
+	}
+}]]></programlisting>
 						</example>
 					</listitem>
 				</varlistentry>
@@ -341,16 +308,13 @@
 						</para>
 						<example>
 							<title>Eine Komponentenfarbe mit Hilfe einer Methode verändern</title>
-							<programlisting language="java">
-								<![CDATA[
-									private ColorType color = ColorType.BLACK;
-									
-									@DisplayColor()
-									public ColorType getColor() {
-										return color;
-									}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[private ColorType color = ColorType.BLACK;
+
+@DisplayColor()
+public ColorType getColor() {
+	return color;
+}
+]]></programlisting>
 						</example>
 					</listitem>
 				</varlistentry>
@@ -368,14 +332,11 @@
 						</para>
 						<example>
 							<title>Eine header1 Variable</title>
-							<programlisting language="java">
-								<![CDATA[
-									@Display(name="header1")
-									public String getHeader1() {
-										return "test";
-									}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@Display(name="header1")
+public String getHeader1() {
+	return "test";
+}
+]]></programlisting>
 						</example>
 						<example>
 							<title>Eine header1 Variable im Simulator</title>
@@ -389,14 +350,11 @@
 						</example>
 						<example>
 							<title>Eine header2 Variable</title>
-							<programlisting language="java">
-								<![CDATA[
-									@Display(name="header2")
-									public String getHeader2() {
-										return "test";
-									}
-								]]>
-							</programlisting>
+							<programlisting language="java"><![CDATA[@Display(name="header2")
+	public String getHeader2() {
+		return "test";
+	}
+]]></programlisting>
 						</example>
 						<example>
 							<title>Eine header2 Variable im Simulator</title>

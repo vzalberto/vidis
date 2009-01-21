@@ -38,21 +38,13 @@
 				<listitem>
 					<para>
 						Die Mengen der Nodes (Peers):
-						<programlisting>
-							P = { P<subscript>i</subscript> | P<subscript>i</subscript> ist ein Peer, 0 &lt; i &lt; 4 }
-						</programlisting>
+						<programlisting>P = { P<subscript>i</subscript> | P<subscript>i</subscript> ist ein Peer, 0 &lt; i &lt; 4 }</programlisting>
 						Die Menge der Verbindungen:
-						<programlisting>
-							C = { ( P<subscript>1</subscript>, P<subscript>2</subscript> ), ( P<subscript>2</subscript>, P<subscript>3</subscript> )	}
-						</programlisting>
+						<programlisting>C = { ( P<subscript>1</subscript>, P<subscript>2</subscript> ), ( P<subscript>2</subscript>, P<subscript>3</subscript> )	}</programlisting>
 						Die Menge der logischen Uhren gespeichert in P<subscript>i</subscript>:
-						<programlisting>
-							V<subscript>P<subscript>i</subscript></subscript> = { x | x = P<subscript>j</subscript>, die logische Uhr von P<subscript>j</subscript> gespeichert in P<subscript>i</subscript> }
-						</programlisting>
+						<programlisting>V<subscript>P<subscript>i</subscript></subscript> = { x | x = P<subscript>j</subscript>, die logische Uhr von P<subscript>j</subscript> gespeichert in P<subscript>i</subscript> }</programlisting>
 						Und folgende Funktion:
-						<programlisting>
-							time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = der Wert der logischen Uhr von P<subscript>j</subscript> in Peer P<subscript>i</subscript>
-						</programlisting>
+						<programlisting>time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = der Wert der logischen Uhr von P<subscript>j</subscript> in Peer P<subscript>i</subscript></programlisting>
 						Grafisch:
 						<figure>
 							<mediaobject>
@@ -87,20 +79,14 @@
 				<listitem>
 					<para>
 						Bevor ein Ereignis von P<subscript>i</subscript> ausgeführt wird:
-						<programlisting>
-							time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = V<subscript>(P<subscript>i</subscript>, P<subscript>i</subscript>)</subscript>+1
-						</programlisting>
-						Wenn P<subscript>i</subscript> eine Nachricht an P<subscript>j</subscript> sendet:
-						<programlisting>
-							M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript> = ( M, V<subscript>P<subscript>i</subscript></subscript> )
-							send M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript>
-						</programlisting>
-						Wenn P<subscript>i</subscript> eine Nachricht M empfängt:
-						<programlisting>
-							for j in 1..n do
-								time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) }
-							done
-						</programlisting>
+						<programlisting>time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = V<subscript>(P<subscript>i</subscript>, P<subscript>i</subscript>)</subscript>+1</programlisting>
+Wenn P<subscript>i</subscript> eine Nachricht an P<subscript>j</subscript> sendet:
+						<programlisting>M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript> = ( M, V<subscript>P<subscript>i</subscript></subscript> )							send M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript></programlisting>
+Wenn P<subscript>i</subscript> eine Nachricht M empfängt:
+						<programlisting>for j in 1..n do
+	time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) }
+done
+</programlisting>
 					</para>
 				</listitem>
 			</varlistentry>
@@ -151,19 +137,16 @@
 						Der Algorithmus besteht aus 3 Phasen. Zunächst muss
 						erkannt werden, ob ein Koordinator vorhanden ist beziehungsweise
 						der Koordinator noch reagiert.
-						<programlisting>
-							P := der aktuelle Knoten
-							connected_nodes := { x | x ist verbunden mit P }
-							for i in connected_nodes do
-								if i.ID > P.ID do
-									send ELECTION
-								done
-							done
-						</programlisting>
+						<programlisting>P := der aktuelle Knoten
+connected_nodes := { x | x ist verbunden mit P }
+for i in connected_nodes do
+	if i.ID > P.ID do
+		send ELECTION
+	done
+done
+</programlisting>
 						Sollte kein Knoten antworten:
-						<programlisting>
-							P.coordinator = true
-						</programlisting>
+						<programlisting>P.coordinator = true</programlisting>
 						Sollte ein Knoten mit höherer ID antworten, übernimmt dieser die weitere Wahl
 						und P hat seine Aufgabe erfüllt.
 						
@@ -257,12 +240,8 @@
 									Alle Knoten <literal>P</literal> werden mit folgendem
 									Pseudo-Code initialisiert.
 								</para>
-								<programlisting>
-									<![CDATA[
-										P.initiator=FALSE
-										P.state=WHITE
-									]]>
-								</programlisting>
+								<programlisting><![CDATA[P.initiator=FALSE
+P.state=WHITE]]></programlisting>
 							</listitem>
 						</varlistentry>
 						<varlistentry>
@@ -272,14 +251,12 @@
 									Ein Knoten <literal>P</literal> startet den Algorithmus indem
 									er folgenden Pseudo-Code ausführt.
 								</para>
-								<programlisting>
-									<![CDATA[
-										P.initiator=TRUE
-										for each i from Neighbours do
-											send i EXLORE
-										done 
-									]]>
-								</programlisting>
+								<programlisting><![CDATA[
+P.initiator=TRUE
+for each i from Neighbours do
+	send i EXLORE
+done 
+]]></programlisting>
 							</listitem>
 						</varlistentry>
 						<varlistentry>
@@ -289,31 +266,27 @@
 									Folgender Pseudo-Code wird ausgeführt, wenn
 									ein Knoten <literal>P</literal> die Nachricht <literal>M</literal> vom Nachbar <literal>N</literal> empfängt.
 								</para>
-								<programlisting>
-									<![CDATA[
-										function send N M :=
-											send message M to neighbour M
-										
-										if P.state=WHITE ist AND M=EXPLORE then   
-											P.state=RED
-											for each i from Neighbours do
-												if i!=N do
-													send i EXLORE
-												done
-											done 
-											P.parent = N
-											P.received += 1
-										fi
-										if P.received=#(Neighbours) OR M=ECHO then
-											P.state=GREEN
-											if P.initiator=TRUE then
-												// done
-											else
-												send P.parent ECHO
-											fi
-										fi
-									]]>
-								</programlisting>
+								<programlisting><![CDATA[function send N M :=
+	send message M to neighbour M
+
+if P.state=WHITE ist AND M=EXPLORE then   
+	P.state=RED
+	for each i from Neighbours do
+		if i!=N do
+			send i EXLORE
+		done
+	done 
+	P.parent = N
+	P.received += 1
+fi
+if P.received=#(Neighbours) OR M=ECHO then
+	P.state=GREEN
+	if P.initiator=TRUE then
+		// done
+	else
+		send P.parent ECHO
+	fi
+fi]]></programlisting>
 							</listitem>
 						</varlistentry>
 					</variablelist>
@@ -388,12 +361,11 @@
 									er Nachricht <literal>M</literal> an
 									alle Nachbarknoten schickt.
 								</para>
-								<programlisting>
-									M.sender=P
-									for each i from Neighbours do
-										send i M
-									done
-								</programlisting>
+								<programlisting>M.sender=P
+for each i from Neighbours do
+	send i M
+done
+</programlisting>
 							</listitem>
 						</varlistentry>
 						<varlistentry>
@@ -405,14 +377,13 @@
 									Nachbarknoten weiter. Die einzige Ausnahme
 									ist dabei der Ursprungsknoten.
 								</para>
-								<programlisting>
-									for each i from Neighbours do
-										if i!=M.sender do
-											M.sender=P
-											send i M
-										done
-									done
-								</programlisting>
+								<programlisting>for each i from Neighbours do
+	if i!=M.sender do
+		M.sender=P
+		send i M
+	done
+done
+</programlisting>
 							</listitem>
 						</varlistentry>
 					</variablelist>

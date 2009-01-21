@@ -17,39 +17,35 @@
 		</para>
 		<example>
 			<title>Eine vollständige MSIM-Datei</title>
-			<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-				<![CDATA[
-					<module>
-						<description>Module</description>
-						<package>vidis.modules.someModule</package>
-						<nodeDensity>0.5</nodeDensity>
-						<objects>
-							<node>
-								<id>node01</id>
-								<class>SomeNode</class>
-							</node>
-							<node>
-								<id>nodeWithVariables</id>
-								<class>SomeNode</class>
-								<variables>
-									<someVariable>value</someVariable>
-								</variables>
-							</node>
-							<link>
-								<id>link01</id>
-								<class>SomeLink</class>
-								<delay>5</delay>
-							</link>
-						</objects>
-						<connections>
-							<connection>
-								<nodeA>node01</nodeA>
-								<nodeB>nodeWithVariables</nodeB>
-								<link>link01</link>
-						</connections>
-					</module>
-				]]>
-			</programlisting>
+			<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<module>
+	<description>Module</description>
+	<package>vidis.modules.someModule</package>
+	<nodeDensity>0.5</nodeDensity>
+	<objects>
+		<node>
+			<id>node01</id>
+			<class>SomeNode</class>
+		</node>
+		<node>
+			<id>nodeWithVariables</id>
+			<class>SomeNode</class>
+			<variables>
+				<someVariable>value</someVariable>
+			</variables>
+		</node>
+		<link>
+			<id>link01</id>
+			<class>SomeLink</class>
+			<delay>5</delay>
+		</link>
+	</objects>
+	<connections>
+		<connection>
+			<nodeA>node01</nodeA>
+			<nodeB>nodeWithVariables</nodeB>
+			<link>link01</link>
+	</connections>
+</module>]]></programlisting>
 		</example>
 	</section>
 	<section>
@@ -105,15 +101,11 @@
 									</itemizedlist>
 									<example>
 										<title>Ein MSIM <quote>description</quote> Element</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-											<![CDATA[<description>someId</description>]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<description>someId</description>]]></programlisting>
 									</example>
 									<example>
 										<title>Ein MSIM <quote>description</quote> Element</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-											<![CDATA[<description>Das ist das Modul X</description>]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<description>Das ist das Modul X</description>]]></programlisting>
 									</example>
 								</listitem>
 							</varlistentry>
@@ -141,17 +133,11 @@
 									</itemizedlist>
 									<example>
 										<title>Ein Modul-Package Element</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-											<![CDATA[<package>vidis.modules.moduleName</package>]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<package>vidis.modules.moduleName</package>]]></programlisting>
 									</example>
 									<example>
 										<title>Inhalt eines Modul-Package Elements</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-										<![CDATA[
-											my.vidis.modules.mymodule
-										]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[my.vidis.modules.mymodule]]></programlisting>
 									</example>
 								</listitem>
 							</varlistentry>
@@ -174,11 +160,7 @@
 									</para>
 									<example>
 										<title>Ein NodeDensity Element</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-										<![CDATA[
-											<nodeDensity>0.5</nodeDensity>
-										]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<nodeDensity>0.5</nodeDensity>]]></programlisting>
 									</example>
 								</listitem>
 							</varlistentry>
@@ -198,29 +180,21 @@
 												</para>
 												<example>
 													<title>Ein Node Element ohne Variablen</title>
-													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-													<![CDATA[
-														<node>
-															<id>uniqueNodeId1</id>
-															<class>implementedClassName</class>
-														</node>
-													]]>
-													</programlisting>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<node>
+	<id>uniqueNodeId1</id>
+	<class>implementedClassName</class>
+</node>]]></programlisting>
 												</example>
 												<example>
 													<title>Ein Node Element mit Variablen</title>
-													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-													<![CDATA[
-														<node>
-															<id>uniqueNodeId2</id>
-															<class>implementedClassName</class>
-															<variables>
-																<var1>var1Value</var1>
-																<var2>var2Value</var2>
-															</variables>
-														</node>
-													]]>
-													</programlisting>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<node>
+	<id>uniqueNodeId2</id>
+	<class>implementedClassName</class>
+	<variables>
+		<var1>var1Value</var1>
+		<var2>var2Value</var2>
+	</variables>
+</node>]]></programlisting>
 												</example>
 												<note>
 													<para>
@@ -252,31 +226,25 @@
 												</para>
 												<example>
 													<title>Ein Link-Element</title>
-													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-													<![CDATA[
-														 <link>
-														 	<id>uniqueLinkId1</id>
-														 	<class>implementingClass</class>
-														 	<delay>5</delay>
-														 </link>
-													]]>
-													</programlisting>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[
+ <link>
+ 	<id>uniqueLinkId1</id>
+ 	<class>implementingClass</class>
+ 	<delay>5</delay>
+ </link>
+]]></programlisting>
 												</example>
 												<example>
 													<title>Ein Link-Element mit Variablen</title>
-													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-													<![CDATA[
-														 <link>
-														 	<id>uniqueLinkId2</id>
-														 	<class>implementingClass</class>
-														 	<delay>5</delay>
-														 	<variables>
-														 		<var1>var1value</var1>
-														 		<var2>var2value</var2>
-														 	</variables>
-														 </link>
-													]]>
-													</programlisting>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<link>
+	<id>uniqueLinkId2</id>
+	<class>implementingClass</class>
+	<delay>5</delay>
+	<variables>
+		<var1>var1value</var1>
+		<var2>var2value</var2>
+	</variables>
+</link>]]></programlisting>
 												</example>
 												<note>
 													<para>
@@ -320,46 +288,38 @@
 									</para>
 									<example xml:id="example_connection_simple">
 										<title>Eine einzelne Verbindung zwischen Node A und Node B über Link L</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-										<![CDATA[
-											<connections>
-												<connection>
-													<nodeA>A</nodeA>
-													<nodeB>B</nodeB>
-													<link>L</link>
-												</connection>
-											</connections>
-										]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<connections>
+	<connection>
+		<nodeA>A</nodeA>
+		<nodeB>B</nodeB>
+		<link>L</link>
+	</connection>
+</connections>]]></programlisting>
 									</example>
 									<example>
 										<title>Mehrere Verbindungen in einer Ring Topologie</title>
-										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-										<![CDATA[
-											<connections>
-												<connection>
-													<nodeA>node0</nodeA>
-													<nodeB>node1</nodeB>
-													<link>link0-1</link>
-												</connection>
-												<connection>
-													<nodeA>node1</nodeA>
-													<nodeB>node2</nodeB>
-													<link>link1-2</link>
-												</connection>
-												<connection>
-													<nodeA>node3</nodeA>
-													<nodeB>node4</nodeB>
-													<link>link3-4</link>
-												</connection>
-												<connection>
-													<nodeA>node4</nodeA>
-													<nodeB>node0</nodeB>
-													<link>link4-0</link>
-												</connection>
-											</connections>
-										]]>
-										</programlisting>
+										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<connections>
+	<connection>
+		<nodeA>node0</nodeA>
+		<nodeB>node1</nodeB>
+		<link>link0-1</link>
+	</connection>
+	<connection>
+		<nodeA>node1</nodeA>
+		<nodeB>node2</nodeB>
+		<link>link1-2</link>
+	</connection>
+	<connection>
+		<nodeA>node3</nodeA>
+		<nodeB>node4</nodeB>
+		<link>link3-4</link>
+	</connection>
+	<connection>
+		<nodeA>node4</nodeA>
+		<nodeB>node0</nodeB>
+		<link>link4-0</link>
+	</connection>
+</connections>]]></programlisting>
 									</example>
 									<variablelist>
 										<varlistentry>

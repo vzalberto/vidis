@@ -14,42 +14,31 @@
 			</para>
 			<example>
 				<title>Zwei Variablen</title>
-				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-				<![CDATA[
-					<variables>
-						<name>some name</name>
-						<var2>I am variable 2</var2>
-					</variables>
-				]]>
-				</programlisting>
+				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<variables>
+	<name>some name</name>
+	<var2>I am variable 2</var2>
+</variables>
+]]></programlisting>
 			</example>
 			<example>
 				<title>Eine Variable auf einer Node</title>
-				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-				<![CDATA[
-					<node>
-						<id>node01</id>
-						<class>SomeNodeClass</class>
-						<variables>
-							<name>Node 01</name>
-						</variables>
-					</node>
-				]]>
-				</programlisting>
+				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<node>
+	<id>node01</id>
+	<class>SomeNodeClass</class>
+	<variables>
+		<name>Node 01</name>
+	</variables>
+</node>]]></programlisting>
 			</example>
 			<example>
 				<title>Eine Variable auf einem Link</title>
-				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0">
-				<![CDATA[
-					<link>
-						<id>link</id>
-						<class>DefaultLinkImplementation</class>
-						<variables>
-							<name>Default Link</name>
-						</variables>
-					</link>
-				]]>
-				</programlisting>
+				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<link>
+	<id>link</id>
+	<class>DefaultLinkImplementation</class>
+	<variables>
+		<name>Default Link</name>
+	</variables>
+</link>]]></programlisting>
 			</example>
 		</listitem>
 	</varlistentry>

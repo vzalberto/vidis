@@ -109,17 +109,15 @@
 			</para>
 			<example xml:id="example_useraction">
 				<title>Auszug aus einer Modul-Node-Implementation</title>
-				<programlisting linenumbering="numbered">
-@Display( name="Erzeuge Event" )
-public void erzeugeEvent() {
+				<programlisting linenumbering="numbered"><![CDATA[@Display( name="Erzeuge Event" )
+				public void erzeugeEvent() {
 	createSomeEvent();
 }
 
 @Display( name="Autom.Events" ) 
 public void toggleAutoEvents {
 	autoEvents = !autoEvents;
-}
-				</programlisting>
+}]]></programlisting>
 			</example>
 			<para>Es wird zwischen 2 Arten von Methoden unterschieden:</para>
 			<itemizedlist>

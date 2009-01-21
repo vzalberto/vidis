@@ -299,32 +299,28 @@
 						Feld einer Klasse als Datenquelle in Frage kommt.
 						Dies wurde folgendermaßen realisiert.
 					</para>
-					<programlisting>
-						<![CDATA[
-							private Object invoke() throws IllegalArgumentException, IllegalAccessException {
-								Object tmp = field.get(object);
-								if (tmp.equals(last_value)) {
-								} else {
-									changed = true;
-									last_value = tmp;
-								}
-								return tmp;
-							}
-							public Object getData() {
-								try {
-									return invoke();
-								} catch (IllegalArgumentException e) {
-									logger.error(e);
-								} catch (IllegalAccessException e) {
-									logger.error(e);
-								}
-								return null;
-							}
-							public Class<?> getDataType() {
-								return field.getType();
-							}
-						]]>
-					</programlisting>
+					<programlisting><![CDATA[private Object invoke() throws IllegalArgumentException, IllegalAccessException {
+	Object tmp = field.get(object);
+	if (tmp.equals(last_value)) {
+	} else {
+		changed = true;
+		last_value = tmp;
+	}
+	return tmp;
+}
+public Object getData() {
+	try {
+		return invoke();
+	} catch (IllegalArgumentException e) {
+		logger.error(e);
+	} catch (IllegalAccessException e) {
+		logger.error(e);
+	}
+	return null;
+}
+public Class<?> getDataType() {
+	return field.getType();
+}]]></programlisting>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
@@ -338,37 +334,33 @@
 						Parametern liegt im Aufruf von <methodname>getData</methodname>.
 						Die Funktionalität wurde folgendermaßen implementiert.
 					</para>
-					<programlisting>
-						<![CDATA[
-						public Class<?> getDataType() {
-							return method.getReturnType();
-						}
-						public Object getData() {
-					    	try {
-								return method.invoke(object);
-							} catch (IllegalArgumentException e) {
-								logger.error(e);
-							} catch (IllegalAccessException e) {
-								logger.error(e);
-							} catch (InvocationTargetException e) {
-								logger.error(e);
-							}
-							return null;
-					    }
-					    public Object getData(Object... args) {
-					    	try {
-								return method.invoke(object, args);
-							} catch (IllegalArgumentException e) {
-								logger.error(e);
-							} catch (IllegalAccessException e) {
-								logger.error(e);
-							} catch (InvocationTargetException e) {
-								logger.error(e);
-							}
-							return null;
-	  					}
-						]]>
-					</programlisting>
+					<programlisting><![CDATA[public Class<?> getDataType() {
+	return method.getReturnType();
+}
+public Object getData() {
+	try {
+		return method.invoke(object);
+	} catch (IllegalArgumentException e) {
+		logger.error(e);
+	} catch (IllegalAccessException e) {
+		logger.error(e);
+	} catch (InvocationTargetException e) {
+		logger.error(e);
+	}
+	return null;
+}
+public Object getData(Object... args) {
+	try {
+		return method.invoke(object, args);
+	} catch (IllegalArgumentException e) {
+		logger.error(e);
+	} catch (IllegalAccessException e) {
+		logger.error(e);
+	} catch (InvocationTargetException e) {
+		logger.error(e);
+	}
+	return null;
+}]]></programlisting>
 				</listitem>
 			</varlistentry>
 		</variablelist>
@@ -420,11 +412,9 @@
 										aufgerufen werden. Folgender Pseudocode veranschaulicht diesen
 										Prozess:
 									</para>
-									<programlisting format="linespecific">
-										if simulationStep=1 then
-											moduleComponent.init()
-										fi
-									</programlisting>
+									<programlisting format="linespecific">if simulationStep=1 then
+	moduleComponent.init()
+fi</programlisting>
 								</listitem>
 								<listitem>
 									<para>
@@ -435,24 +425,20 @@
 										verarbeitet werden. Folgender
 										Pseudocode veranschaulicht diesen Prozess:
 									</para>
-									<programlisting format="linespecific">
-										<![CDATA[
-										packetQueue := { p | p is a queued packet }
-										for i in [0 .. #packetQueue] do
-										    if packetQueue[i].timeout < 0 then
-										    	// send it
-										    	doSendOperation packetQueue[i]
-												// remove it from the queue
-												doRemoveOperation packetQueue[i]
-												// decrease running variable
-												i -= 1;
-										    else
-												// decrease queue
-												packetQueue[i].timeout -= 1
-										    fi
-										done
-										]]>
-									</programlisting>
+									<programlisting format="linespecific"><![CDATA[packetQueue := { p | p is a queued packet }
+for i in [0 .. #packetQueue] do
+    if packetQueue[i].timeout < 0 then
+    	// send it
+    	doSendOperation packetQueue[i]
+		// remove it from the queue
+		doRemoveOperation packetQueue[i]
+		// decrease running variable
+		i -= 1;
+    else
+		// decrease queue
+		packetQueue[i].timeout -= 1
+    fi
+done]]></programlisting>
 								</listitem>
 								<listitem>
 									<para>
@@ -466,13 +452,9 @@
 										</methodsynopsis> in den Zustand <varname>schlafend</varname>
 										versetzt wurde.
 									</para>
-									<programlisting format="linespecific">
-										<![CDATA[
-											if !sleeping then
-												moduleComponent.execute()
-											fi
-										]]>
-									</programlisting>
+									<programlisting format="linespecific"><![CDATA[if !sleeping then
+	moduleComponent.execute()
+fi]]></programlisting>
 								</listitem>
 								<listitem>
 									<para>
@@ -494,22 +476,18 @@
 										Link transportiert werden, verarbeitet. Folgender
 										Pseudocode veranschaulicht diesen Vorgang:
 									</para>
-									<programlisting format="linespecific">
-										<![CDATA[
-										queue := { p | p is a packet that is being transported }
-										delay := this is the predefined delay of this link
-										for i in [0 .. #queue] do
-										    if queue[i].timeout > delay then
-												// remove it from the queue
-												// and let receiver receive it
-												doReceiveOperation queue[i]
-										    else
-												// push this packet further on
-												queue[i].timeout += 1
-										    fi
-										done
-										]]>
-									</programlisting>
+									<programlisting format="linespecific"><![CDATA[queue := { p | p is a packet that is being transported }
+delay := this is the predefined delay of this link
+for i in [0 .. #queue] do
+    if queue[i].timeout > delay then
+		// remove it from the queue
+		// and let receiver receive it
+		doReceiveOperation queue[i]
+    else
+		// push this packet further on
+		queue[i].timeout += 1
+    fi
+done]]></programlisting>
 								</listitem>
 								<listitem>
 									<para>
@@ -523,13 +501,10 @@
 										</methodsynopsis> in den Zustand <quote>schlafend</quote>
 										versetzt wurde.
 									</para>
-									<programlisting format="linespecific">
-										<![CDATA[
-											if !sleeping then
-												moduleComponent.execute()
-											fi
-										]]>
-									</programlisting>
+									<programlisting format="linespecific"><![CDATA[if !sleeping then
+	moduleComponent.execute()
+fi
+]]></programlisting>
 								</listitem>
 								<listitem>
 									<para>
@@ -552,11 +527,10 @@
 										sinnvoll auf einem Paket Operationen auszuführen.
 										Aus diesem Grund wurde die Methode <methodname>execute</methodname>
 										durch einer nicht überschreib- oder überladbaren aber leeren Methode implementiert.
-										<programlisting>
-											public final void execute() {
-												// this component does not execute
-											}
-										</programlisting>
+<programlisting>public final void execute() {
+	// this component does not execute
+}
+</programlisting>
 									</para>
 								</listitem>
 								<listitem>
