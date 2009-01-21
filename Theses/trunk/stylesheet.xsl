@@ -113,22 +113,27 @@ task after
 
 
 <xsl:attribute-set name="formal.object.properties">
-  <xsl:attribute name="space-before.minimum">0em</xsl:attribute>
-  <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">0em</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">0em</xsl:attribute>
-  <xsl:attribute name="space-after.optimum">0em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">0em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.5em</xsl:attribute>
   <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="verbatim.properties">
-  <xsl:attribute name="space-before.minimum">0em</xsl:attribute>
-  <xsl:attribute name="space-before.optimum">0em</xsl:attribute>
-  <xsl:attribute name="space-before.maximum">0em</xsl:attribute>
-  <xsl:attribute name="space-after.minimum">0em</xsl:attribute>
-  <xsl:attribute name="space-after.optimum">0em</xsl:attribute>
-  <xsl:attribute name="space-after.maximum">0em</xsl:attribute>
+  <xsl:attribute name="space-before.minimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-before.optimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-before.maximum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-after.minimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-after.optimum">0.5em</xsl:attribute>
+  <xsl:attribute name="space-after.maximum">0.5em</xsl:attribute>
+  <xsl:attribute name="padding-left">0.5em</xsl:attribute>
+  <xsl:attribute name="padding-right">0.5em</xsl:attribute>
+  <xsl:attribute name="padding-top">0.5em</xsl:attribute>
+  <xsl:attribute name="padding-bottom">0.4em</xsl:attribute>
+  <xsl:attribute name="keep-together.within-column">always</xsl:attribute>
 </xsl:attribute-set>
 
 <xsl:attribute-set name="normal.para.spacing"><xsl:attribute name="orphans">3</xsl:attribute><xsl:attribute name="widows">3</xsl:attribute><xsl:attribute name="space-before.optimum">0.0cm</xsl:attribute><xsl:attribute name="space-before.minimum">0.0cm</xsl:attribute><xsl:attribute name="space-before.maximum">0.0cm</xsl:attribute></xsl:attribute-set>
