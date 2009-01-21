@@ -42,34 +42,13 @@
 						<modifier>public</modifier>
 						<type>boolean</type>
 						<methodname>gluUnProject</methodname>
-						<methodparam>
-							<type>double</type>
-							<parameter>winX</parameter>
-						</methodparam>
-						<methodparam>
-							<type>double</type>
-							<parameter>winY</parameter>
-						</methodparam>
-						<methodparam>
-							<type>double</type>
-							<parameter>winZ</parameter>
-						</methodparam>
-						<methodparam>
-							<type>DoubleBuffer</type>
-							<parameter>model</parameter>
-						</methodparam>
-						<methodparam>
-							<type>DoubleBuffer</type>
-							<parameter>proj</parameter>
-						</methodparam>
-						<methodparam>
-							<type>IntBuffer</type>
-							<parameter>view</parameter>
-						</methodparam>
-						<methodparam>
-							<type>DoubleBuffer</type>
-							<parameter>objPos</parameter>
-						</methodparam>
+						<methodparam><type>double</type><parameter>winX</parameter></methodparam>
+						<methodparam><type>double</type><parameter>winY</parameter></methodparam>
+						<methodparam><type>double</type><parameter>winZ</parameter></methodparam>
+						<methodparam><type>DoubleBuffer</type><parameter>model</parameter></methodparam>
+						<methodparam><type>DoubleBuffer</type><parameter>proj</parameter></methodparam>
+						<methodparam><type>IntBuffer</type><parameter>view</parameter></methodparam>
+						<methodparam><type>DoubleBuffer</type><parameter>objPos</parameter></methodparam>
 					</methodsynopsis>
 				Der Programmier muss zum Zeitpunkt des Mausklicks die entsprechenden Matrizen auslesen, zwei mal gluUnProject aufrufen (einmal für den
 				Punkt auf der Near-Plane und ein zweites mal für den Punkt auf der Far-Plane) und kann dann die durch diese beiden Punkte definierte
