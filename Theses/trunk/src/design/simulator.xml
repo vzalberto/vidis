@@ -270,18 +270,14 @@
 				<methodsynopsis>
 					<methodname>importSimFile</methodname>
 					<methodparam><type>IModuleFileComponent</type><parameter>simFile</parameter></methodparam>
-				</methodsynopsis> implementieren um eine MSIM-Datei
-				zu importieren.
+				</methodsynopsis>. Damit kann man eine MSIM-Datei
+				importieren.
 			</para>
 			<para>
 				Das Interface 
-				<classsynopsis>
-					<oointerface>
-						<package>vidis.sim.classloader.modules.interfaces</package>
-						<modifier>public</modifier>
-						<interfacename>IModuleFileComponent</interfacename>
-					</oointerface>
-				</classsynopsis>
+				<classsynopsis class="interface" language="java">
+<ooclass><package>vidis.sim.classloader.modules.interfaces</package>
+<classname>IModuleFileComponent</classname></ooclass></classsynopsis>
 				beschreibt eine MSIM-Datei und definiert folgende Funktionen:
 				<itemizedlist>
 					<listitem>
