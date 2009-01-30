@@ -7,8 +7,9 @@
 	<section>
 		<title>GUI Elemente</title>
 		<para>
-			Im folgenden wird auf die sichtbaren Benutzeroberflächen-Elemente näher eingegangen. Diese sind im Grunde das in der linken unteren Ecke
-			positionierte Menu und das auf der rechten Seite positionierte Eigenschaftenpanel.
+			Im folgenden wird auf die sichtbaren Benutzeroberflächen-Elemente näher eingegangen. Diese sind die 3D Szene, das in der linken unteren Ecke
+			positionierte Menu und das auf der rechten Seite positionierte Eigenschaftenpanel. Die 2D Gui Elemente werden in diesem Abschnitt beschrieben.
+			Nähere Informationen zur 3D Szene sind im Abschnitt <xref linkend="section_3dscene" /> zu finden.
 		</para>
 		
 		<section>
@@ -110,7 +111,7 @@
 			<example xml:id="example_useraction">
 				<title>Auszug aus einer Modul-Node-Implementation</title>
 				<programlisting linenumbering="numbered"><![CDATA[@Display( name="Erzeuge Event" )
-				public void erzeugeEvent() {
+public void erzeugeEvent() {
 	createSomeEvent();
 }
 
@@ -139,7 +140,57 @@ public void toggleAutoEvents {
 		<section>
 			<title>Informations Panel</title>
 			<para>Das Informationspanel befindet sich auf der rechten Seite. Es zeigt den aktuellen Status von den ausgewählten Objekten an. Für jede Methode (mit Rückgabewert), die vom Modul-Entwickler mit @Display annotiert wurde, ist hier eine Zeile mit Namen und Wert zu sehen.</para>
+			<figure xml:id="figure_infopanel">
+				<title>Das Informationspanel</title>
+				<mediaobject>
+					<imageobject>
+						<imagedata />
+					</imageobject>
+				</mediaobject>
+			</figure>
+			<para>
+				Wie in <xref linkend="figure_infopanel" /> zu sehen ist, stellt das Informationspanel für jedes ausgeählte Objekt einen Container dar. Dieser Container kann 4 verschiedene Zustände annehmen:
+			</para>
+			<variablelist>
+				<varlistentry>
+				<term>minimized</term>
+				<listitem>
+					<para>
+						Im minimized Zustand nimmt ein Container den minimalen Platz ein. Er besteht nur aus einer Zeile, welche die variable <literal>user.header1</literal> darstellt.
+					</para>
+				</listitem>
+				</varlistentry><varlistentry>
+				<term>normal</term>
+				<listitem>
+					<para>
+						Im normal Zustand ist der Container 2 Zeilen hoch. Es werden die Variablen <literal>user.header1</literal> und <literal>user.header2</literal> dargestellt.
+					</para>
+				</listitem>
+				</varlistentry><varlistentry>
+				<term>maximized</term>
+				<listitem>
+					<para>
+						Der Container im maximized Zustand besteht aus 2 Teilen. Zum einen den Kopf, welcher exakt wie der normal Container aussieht und zum Anderen den Körper, welcher eine
+						scrollbare Liste von allen Variablen und deren Werten beinhaltet. Dies sind außerdem noch in Namespaces zusammengefasst um die Naviagtion zu erleichtern.
+					</para>
+				</listitem>
+				</varlistentry><varlistentry>
+				<term>maximized2</term>
+				<listitem>
+					<para>
+						Der maximized2 Zustand basiert auf dem maximized Zustand und vergrößert dabei den Körper, um mehr Variablen auf einmal sehen zu können.
+					</para>
+				</listitem>
+				</varlistentry>
+			</variablelist>
+			<para>
+				
+			</para>
 		</section>
+
+		<para>
+			In diesem Kapitel wurden die GUI Elemente beschrieben. Als nächstes wird die Benztzerinteraktion mit Maus und Tastatur erklärt.
+		</para>
 
 	</section>
 

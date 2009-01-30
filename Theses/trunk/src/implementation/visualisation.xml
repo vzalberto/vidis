@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section version="5.0" xmlns="http://docbook.org/ns/docbook"> 
+<section version="5.0" xmlns="http://docbook.org/ns/docbook"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Visualisierung</title>
 	<para>
 		Im folgenden wird auf die Implementierung der Visualisierung eingegangen. Es werden insbesondere aufgetretene Probleme, sowie deren Lösungsansätze beschrieben.
@@ -7,10 +8,42 @@
 	<?dbfo keep-with-next="auto" ?>	
 	 
 	<section>
-		<title><trademark class="registered">OpenGL</trademark> Binding</title>
+		<title>3D Szene</title>
 		<para>
-			Die Bindings werden in <xref linkend="section_opengl_bindings" /> vorgestellt und es wird erklärt, warum JOGL gewählt wurde.
+			Um 3D Content am Computerbildschirm darzustellen wurde <trademark class="registered">OpenGL</trademark> verwendet. 
+			Wie bereits im Kapitel <xref linkend="section_opengl_bindings" /> erklärt, wurde JOGL als Java-Binding gewählt.
 		</para>	
+		<para>
+			Die 3D Szene wird vom <literal>Scenecontroller</literal> verkörpert. Dieser führt auch den Rendervorgang durch.
+			Über das Eventsystem werden bei ihm die zu rendernden Objekte registriert oder, wenn sie nicht mehr benötigt werden, wieder gelöscht. 
+			In jedem Renderdurchgang iteriert der <literal>Scenecontroller</literal> über alle Objekte und ruft deren
+			<literal>render()</literal> Methoden auf. Diese enthalten die <trademark class="registered">OpenGL</trademark> Befehle, die nötig sind um das Objekt zu zeichnen und an die richtige 
+			Position zu bewegen.
+		</para>
+	</section>
+
+	<section>
+		<title>Die Objektpositionierung</title>
+		<para>
+			Die Positionen der Objekte werden im Variablensystem abgelegt <xref linkend="section_variablensystem" />. Jedes positionierbare Objekt hat die Variable <literal>system.position</literal> vom
+			Typ <literal>Point3d</literal>. Die abstrakte Objektimplementiering verwendet diese Information um eine Translation durchzuführen, bevor die konkrete Implementierung das
+			Objekt zeichnet. Komplexere Objekte, wie der Link, überschreiben diese abstrakte Implementierung, da ihre Position und Form von den verbundenen
+			Nodes abhängt und nicht durch einen Punkt definiert werden kann.
+		</para>
+	</section>
+
+	<section>
+		<title>Displaylisten</title>
+		<para>
+			Displaylisten ermöglichen es viele <trademark class="registered">OpenGL</trademark> Befehle zusammenzufassen und im Grafikspeicher abzulegen. Eine solche Liste kann dann später
+			mit nur einem Befehl ausgeführt werden. Displaylisten bringen extra Performance, da oft verwendete Befehle nicht extra an den Grafikprozessor geschickt werden müssen.
+			VIDIS bedient sich dieser Technik und erzeugt beim ersten Rendervorgang eines Objekts eine Displayliste, welche dann in jedem weiteren Rendervorgang aufgerufen wird.
+			Dadurch werden nur beim Generieren der Displaylisten CPU und GPU belastet und bei jedem weiteren Aufruf ausschlißlich die GPU.
+		</para>
+		<para>
+			Verändert sich ein Objekt, so muss eine neue Displayliste generiert werden. Beispielsweise löst eine Objektpositionierung oder eine Änderung der Objektfarbe eine Neuberechnung 
+			der Displayliste aus.
+		</para>
 	</section>
 	
 	<section xml:id="section_picking">
@@ -29,7 +62,7 @@
 				<title>Ray Picking</title>
 				<mediaobject>
 					<imageobject>
-						<imagedata align="center" width="100%" fileref="image/raypicking.svg" />
+						<imagedata align="center" width="80%" fileref="image/raypicking.svg" />
 					</imageobject>
 				</mediaobject>
 			</figure>
@@ -72,6 +105,8 @@
 				Allerdings werden diese nicht durch die Farbe codiert, sondern mit dafür vogesehenen Befehlen zusätzlich gesetzt.
 			</para>
 		</section>
+		<para>
+		</para>
 		<para>
 			Vidis verwendet das oben vorgestellte Ray Picking, da sich dieses System gut mit dem Eventsystem integriert und keinen zusätzlichen Rederdurchgang benötigt.
 			Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />. 
@@ -126,7 +161,7 @@
 		<para>
 			Wie in <xref linkend="fig_renderpipeline" /> zu sehen ist, werden nach den Evaluatoren die Vertexoperationen durchgeführt. 
 			Vertexshader<footnote><para>Mehr Information zu Vertexshader sind im Kapitel <xref linkend="section_shader" /> oder 
-			in <xref linkend="book_orangebook" /> zu finden.</para></footnote> kommen genau an dieser Stelle zum Einsatz. 
+			in <xref linkend="book_orangebook" /> zu finden.</para></footnote> kommen an dieser Stelle zum Einsatz. 
 			Deshalb wurde ein Vertexshader, mit der Aufgabe den Link um die Pakete zu vergrößern, implementiert.
 			Der Shader nimmt als Parameter die Position von bis zu 9 Paketen und ist immer nur dann aktiv, wenn gerade ein
 			Link gerendert wird. Die Kontrollpunkte werden von den Evaluatoren evaluiert und die berechneten Vertexdaten
@@ -135,7 +170,9 @@
 		</para>
 		<para>
 			Diese Lösung hat den Nachteil dass Systeme, die keinen Shadersupport bieten, auf diese Animation verzichten müssen.
-			Siehe <xref linkend="section_shader" />.
+			Siehe Kapitel <xref linkend="section_shader" />.
 		</para>
 	</section>
+	
+	<xi:include href="gui.xml" />
 </section>
