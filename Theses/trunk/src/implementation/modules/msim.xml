@@ -115,8 +115,7 @@
 									<para>
 										Dieses Element steht für das Java Package, in
 										welchem alle Klassen des Moduls liegen.
-										Es beinhaltet einen String im Format eines Java Classpath
-										zum Klassenpfad der Modul Komponenten. Dieses Element
+										Es beinhaltet einen String im Format eines Java Paketnamens zu den Klassen der Modul Komponenten. Dieses Element
 										besitzt verschiedene Aliase. Es ist jedoch dringend empfohlen
 										den Standardbezeichner <quote>package</quote> zu verwenden, da die Aliase nur aus Kompatibilitätsgründen
 										vom System unterstützt werden. Dieser Support wird in der nächsten
@@ -250,7 +249,7 @@
 													<para>
 														Das Element class beinhaltet einen String,
 														welcher die Klasse dieser Instanz beschreibt.
-														Zusammen mit dem Classpath-Element ist dies
+														Zusammen mit dem Package-Element ist dies
 														der Classpath der zu ladenden Klasse.
 													</para>
 												</note>
@@ -286,6 +285,20 @@
 										zwischen Nodes
 										mit Hilfe von Links hergestellt werden sollen.
 									</para>
+									<variablelist>
+										<varlistentry>
+											<term>connection</term>
+											<listitem>
+												<para>
+													Dieses Element beschreibt eine Verbindung zwischen zwei Nodes.
+													Die Elemente nodeA, nodeB und link beinhalten ids von Nodes
+													beziehungsweise Links. <xref linkend="example_connection_simple" />
+													stellt eine Verbindung zwischen Node <quote>A</quote> und node <quote>B</quote> mittels
+													dem Link <quote>L</quote> her.
+												</para>
+											</listitem>
+										</varlistentry>
+									</variablelist>
 									<example xml:id="example_connection_simple">
 										<title>Eine einzelne Verbindung zwischen Node A und Node B über Link L</title>
 										<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<connections>
@@ -321,20 +334,6 @@
 	</connection>
 </connections>]]></programlisting>
 									</example>
-									<variablelist>
-										<varlistentry>
-											<term>connection</term>
-											<listitem>
-												<para>
-													Dieses Element beschreibt eine Verbindung zwischen zwei Nodes.
-													Die Elemente nodeA, nodeB und link beinhalten ids von Nodes
-													beziehungsweise Links. <xref linkend="example_connection_simple" />
-													stellt intuitiverweise eine Verbindung zwischen Node <quote>A</quote> und node <quote>B</quote> mittels
-													dem Link <quote>L</quote> her.
-												</para>
-											</listitem>
-										</varlistentry>
-									</variablelist>
 								</listitem>
 							</varlistentry>
 						</variablelist>

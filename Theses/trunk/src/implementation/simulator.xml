@@ -5,8 +5,9 @@
 	<para>
 		Im folgenden Abschnitt wird die Implementierung des in
 		<xref linkend="design.simulator" /> definierten Simulators
-		für VIDIS beschrieben. Dazu werden die im Wesentlichen implementierten
-		Aufgaben des Simulators und deren Umsetzung beschrieben und die 
+		für VIDIS beschrieben. Dazu werden die
+		Aufgaben des Simulators und deren Umsetzung beschrieben. Weiters
+		wird im Detail die 
 		Funktionsweise der Simulationsschleife mittels Analyse der 
 		dazu notwendigen Schritte erörtert.
 	</para>
@@ -108,17 +109,40 @@
 			Abschnitt wird das Interface <interfacename>ISimulatorData</interfacename> erläutert.
 		</para>
 		<para>
+			Die Datenstruktur des Simulators wird durch die Klasse
+			<classname>SimulatorData</classname> welche das Interface
+			<interfacename>ISimulatorData</interfacename> implementiert.
+			Dieses Interface ist folgendermaßen definiert.
 			<classsynopsis>
 				<ooclass>
 					<package>vidis.sim.simulatorInternals</package>
 					<modifier>public</modifier>
-					<classname>SimulatorData</classname>
+					<classname>ISimulatorData</classname>
 				</ooclass>
-				<oointerface>
-					<package>vidis.sim.simulatorInternals</package>
+				<methodsynopsis>
 					<modifier>public</modifier>
-					<interfacename>ISimulatorData</interfacename>
-				</oointerface>
+					<type>void</type>
+					<methodname>executeComponents</methodname>
+					<void/>
+				</methodsynopsis>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>long</type>
+					<methodname>getTime</methodname>
+					<void/>
+				</methodsynopsis>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>reset</methodname>
+					<void/>
+				</methodsynopsis>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>killComponents</methodname>
+					<void/>
+				</methodsynopsis>
 			</classsynopsis>
 		</para>
 		<para>
@@ -134,12 +158,6 @@
 		</para>
 		<para>
 			Diese Funktion gibt den aktuellen Zeitpunkt (Simulationsschritt) zurück.
-			<methodsynopsis>
-				<modifier>public</modifier>
-				<type>long</type>
-				<methodname>getTime</methodname>
-				<void/>
-			</methodsynopsis>
 			<note>
 				<para>
 					Jede Simulation startet beim Zeitpunkt <quote>0</quote>
@@ -147,6 +165,12 @@
 					erhöht.
 				</para>
 			</note>
+			<methodsynopsis>
+				<modifier>public</modifier>
+				<type>long</type>
+				<methodname>getTime</methodname>
+				<void/>
+			</methodsynopsis>
 		</para>
 		<para>
 			Diese Funktion setzt die aktuellen Simulationsschritte zurück.
@@ -173,9 +197,9 @@
 	<section>
 		<title>Variablen</title>
 		<para>
-			Im Simulator ist eine autarke Variablenstruktur
+			Im Simulator ist eine Variablenstruktur
 			integriert. Diese übernimmt die Aufgabe den Status
-			einer Modulkomponente zu überwachen indem Methoden
+			einer Modulkomponente zu überwachen, indem Methoden
 			und Felder mittels Java Reflection beobachtet werden.
 			Es werden nur Methoden und Variablen überwacht, welche
 			mittels Java Annotations (vgl. <xref linkend="implementation.modules.variableannotations" />) gekennzeichnet wurden. Im
@@ -185,10 +209,10 @@
 		<para>
 			Eine Variable bildet die Grundlage des automatisierten
 			Überwachens eines Moduls. Eine Variable wird durch einen
-			Identifier identifiziert. Außerdem können sich bei einer
+			Bezeichner identifiziert. Außerdem können sich bei einer
 			Variable Klassen registrieren, welche dann über Änderungen
 			am Wert der Variable informiert werden. Eine Variable implementiert
-			das Interface <interfacename>IVariable</interfacename> welches
+			das Interface <interfacename>IVariable</interfacename> deren Methoden
 			im Folgenden beschrieben wird.
 		</para>
 		<itemizedlist>
@@ -266,13 +290,15 @@
 			</listitem>
 		</itemizedlist>
 		<para>
-			Es gibt 3 verschiedene Arten von Variablen basierend
-			auf der Zugriffsart. So wird mittels Reflection ein
+			Es gibt 3 Arten von Variablen die das Interface
+			implementieren. Deren Implementierungen realisieren auf
+			dem Umstand, dass eine Variable einerseits nur Daten speichern kann,
+			aber auch selbst ein Feld oder eine Methode sein kann. So wird mittels Reflection ein
 			Feld auf eine andere Art angesprochen wie eine Methode.
-			Die verschiedenen Implementierungen 
+			Die Klassen 
 			<classname>MethodVariable</classname>, <classname>FieldVariable</classname>
-			und <classname>DefaultVariable</classname> werden hinter dem Interface
-			<interfacename>IVariable</interfacename> versteckt.
+			und <classname>DefaultVariable</classname> implementieren das Interface
+			<interfacename>IVariable</interfacename>.
 			Im Folgenden werden diese Implementierungen näher beschrieben.
 		</para>
 		<variablelist>
@@ -297,9 +323,19 @@
 					<para>
 						Eine FieldVariable kommt zum Einsatz wenn ein
 						Feld einer Klasse als Datenquelle in Frage kommt.
-						Dies wurde folgendermaßen realisiert.
+						Dies wurde realisiert indem die Implementierung
+						das Feld und die Instanz des Objekts abspeichert.
+						Sobald die Daten der Variable durch den Aufruf
+						von <methodname>getData</methodname> abgefragt werden,
+						greift diese Implementierung auf das Feld zu und
+						liest die Daten aus dem Feld. Dieser Aufruf wird
+						in der Methode <methodname>invoke</methodname> realisiert.
+						Folgender Java Code erläutert diese Implementierung.
 					</para>
-					<programlisting><![CDATA[private Object invoke() throws IllegalArgumentException, IllegalAccessException {
+					<programlisting><![CDATA[private Object object;
+private Field field;
+private Object invoke() throws IllegalArgumentException,
+					IllegalAccessException {
 	Object tmp = field.get(object);
 	if (tmp.equals(last_value)) {
 	} else {
@@ -334,9 +370,10 @@ public Class<?> getDataType() {
 						Parametern liegt im Aufruf von <methodname>getData</methodname>.
 						Die Funktionalität wurde folgendermaßen implementiert.
 					</para>
-					<programlisting><![CDATA[public Class<?> getDataType() {
-	return method.getReturnType();
-}
+					<programlisting><![CDATA[private Object object;
+private Method method;/*
+	Dieser Fall tritt ein, wenn eine Methode keine Parameter benötigt.
+*/
 public Object getData() {
 	try {
 		return method.invoke(object);
@@ -349,6 +386,10 @@ public Object getData() {
 	}
 	return null;
 }
+/*
+	Sollte eine Methode für ihren Aufruf Parameter erwarten,
+	wird diese Methode aufgerufen.
+*/
 public Object getData(Object... args) {
 	try {
 		return method.invoke(object, args);
@@ -360,6 +401,9 @@ public Object getData(Object... args) {
 		logger.error(e);
 	}
 	return null;
+}
+public Class<?> getDataType() {
+	return method.getReturnType();
 }]]></programlisting>
 				</listitem>
 			</varlistentry>
@@ -370,7 +414,7 @@ public Object getData(Object... args) {
 		<para>
 			Der Simulator arbeitet schrittweise. Ein Arbeitsschritt
 			stellt einen vollständigen Simulationsschritt dar. In 
-			diesem Simulationsschritt werden alle Komponenten einmal
+			diesem Simulationsschritt werden alle Komponenten genau einmal
 			ausgeführt und bereits vorhandene Aktionen weitergeführt.
 		</para>
 		<section>
@@ -380,7 +424,7 @@ public Object getData(Object... args) {
 			</para>
 			<para>
 				Anschließend werden simulatorinterne Operationen ausgeführt.
-				Im Falle eines Links wäre dies der Transport eines Paketes.
+				Im Falle eines Links wäre dies zum Beispiel der Transport eines Paketes.
 			</para>
 			<para>
 				Anschließend werden alle Komponenten seriell ausgeführt.
@@ -400,9 +444,13 @@ public Object getData(Object... args) {
 		<section>
 			<title>Detaillierte Beschreibung der Ablaufreihenfolge</title>
 			<para>
+				Im folgenden wird der Simulationsablauf für jede der Komponenten
+				Knoten, Paket und Verbindung im Detail analysiert.
+			</para>
+			<para>
 				<variablelist>
 					<varlistentry xml:id="implementation.module.node">
-						<term>Node</term>
+						<term>Knoten</term>
 						<listitem>
 							<itemizedlist>
 								<listitem>
@@ -443,7 +491,7 @@ done]]></programlisting>
 								<listitem>
 									<para>
 										Anschließend wird die vom Benutzer implementierte
-										Funktion ausgeführt, falls diese Komponente nicht
+										Funktion <methodname>execute</methodname> ausgeführt, falls diese Komponente nicht
 										durch einen Aufruf von <methodsynopsis>
 											<modifier>public</modifier>
 											<type>void</type>
@@ -467,7 +515,7 @@ fi]]></programlisting>
 						</listitem>
 					</varlistentry>
 					<varlistentry xml:id="implementation.module.link">
-						<term>Link</term>
+						<term>Verbindung</term>
 						<listitem>
 							<itemizedlist>
 								<listitem>
@@ -492,14 +540,14 @@ done]]></programlisting>
 								<listitem>
 									<para>
 										Anschließend wird die vom Benutzer implementierte
-										Funktion ausgeführt, falls diese Komponente nicht
-										durch einen Aufruf von <methodsynopsis>
+										Funktion <methodname>execute</methodname> ausgeführt, falls diese Komponente sich nicht
+										im Zustand "schlafend" befindet. Die Komponente kann durch einen Aufruf <methodsynopsis>
 											<modifier>public</modifier>
 											<type>void</type>
 											<methodname>sleep</methodname>
 											<methodparam><type>long</type><parameter>steps</parameter></methodparam>
 										</methodsynopsis> in den Zustand <quote>schlafend</quote>
-										versetzt wurde.
+										versetzt werden.
 									</para>
 									<programlisting format="linespecific"><![CDATA[if !sleeping then
 	moduleComponent.execute()
@@ -517,7 +565,7 @@ fi
 						</listitem>
 					</varlistentry>
 					<varlistentry xml:id="implementation.module.packet">
-						<term>Packet</term>
+						<term>Paket</term>
 						<listitem>
 							<itemizedlist>
 								<listitem>

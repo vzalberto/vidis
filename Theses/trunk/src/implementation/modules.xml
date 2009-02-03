@@ -5,15 +5,15 @@
 	<para>
 		In diesem Kapitel wird die Funktionalität der Module beschrieben.
 		Zunächst wird hierzu der Weg beschrieben wie man ein Modul
-		mittels eines MSIM-Files beschreibt. Anschließend wird auf
+		mittels eines sogenannten <quote>MSIM-Datei</quote> beschreibt. Anschließend wird auf
 		verschiedene Aspekte zur Implementierung eines Moduls eingegangen.
 	</para>
 	<section>
 		<title>Funktionsweise</title>
 		<para>
 			Die Grundlage eines Modules bildet eine Datei, welche
-			das Modul beschreibt. Im Folgenden wird diese Datei auch
-			"MSIM-Datei" oder "MSIM-File" genannt.
+			das Modul beschreibt. Diese Datei wird auch
+			<quote>MSIM-Datei</quote> genannt.
 		</para>
 		<para>
 			Eine solche Datei beschreibt das Modul indem sie jede einzelne
@@ -45,7 +45,7 @@
 		<section xml:id="implementation.modules.dropinfolder">
 			<title>DropIn Folder</title>
 			<para>
-				Das DropIn Folder kann dazu verwendet werden, fertig
+				Das DropIn Verzeichnis kann dazu verwendet werden, fertig
 				implementierte und in ein Java Archiv (JAR) gepackte
 				Module in den Simulator zu laden. Dazu wird
 				der Ordner <quote>data/dropIn</quote> überwacht. Jedes
@@ -59,6 +59,28 @@
 					mittels dem VidisClassLoader geladen.
 				</para>
 			</warning>
+			<para>
+				Ein solches Java Archiv beinhaltet die Klassen des Moduls
+				und die MSIM-Dateien um ein Modul zu initialisieren. Weiters
+				kann das Archiv eine MANIFEST Datei beinhalten. Diese kann
+				optional Informationen zu den Klassen, Paketen und auch anderen
+				Dateien beinhalten. Außerdem ist es möglich einen Namen beziehungsweise
+				eine Beschreibung des Moduls im MANIFEST zu speichern. Außerdem
+				können zu jedem MSIM-File ein Titel oder Name gespeichert werden.
+				Diese Informationen werden im Simulator GUI angezeigt.
+				<example>
+					<title>Eine einfache MANIFEST Datei</title>
+					<programlisting>Manifest-Version: 1.0
+
+Name: Module
+Module-Name: Simple Demo Module
+
+Name: demo.msim
+MSIM-Name: TWo Nodes Demo
+
+</programlisting>
+				</example>
+			</para>
 		</section>
 		<section>
 			<title>Implementieren eines Moduls</title>
@@ -178,7 +200,7 @@ public class TestPacket extends AUserPacket {
 				</varlistentry>
 			</variablelist>
 		</section>
-		<section xml:id="design.modules.variableannotations">
+		<section xml:id="implementation.modules.variableannotations">
 			<title>Variablen mittels Annotations</title>
 			<para>
 				In den meisten Algorithmen werden viele
@@ -197,8 +219,10 @@ public class TestPacket extends AUserPacket {
 						<para>
 							Ein Feld aus einer Komponente kann
 							jederzeit vom Simulator als Variable
-							ausgelesen werden. Die einzige Voraussetzung
-							dafür ist, dass das Feld öffentlich ist (<quote>public</quote>).
+							ausgelesen werden. Die Voraussetzungen
+							dafür sind, dass das Feld öffentlich (<quote>public</quote>)
+							und mit der Annotation <literal>Display</literal> versehen
+							ist.
 							Im Quellcode schaut dies folgendermaßen aus.
 						</para>
 						<example>
@@ -215,10 +239,15 @@ public int testVariable;]]></programlisting>
 							Auch beliebige Methoden können jederzeit
 							vom Simulator als Variable ausgelesen werden.
 							Dabei gelten dieselben Voraussetzungen wie für Felder.
-							Die Methode muss öffentlich zugänglich (<quote>public</quote>) sein.
-							Eine Methode mit einem Rückgabewert von <quote>void</quote>
-							wird als ausführbare Methode angezeigt. Alle anderen Methoden
+							Die Methode muss öffentlich zugänglich (<quote>public</quote>) 
+							und mit der Annotation <literal>Display</literal> versehen sein.
+							Der Simulator unterscheidet dabei eine zur Laufzeit ausführbare Methode
+							von einer Variabel Methode indem er den Rückgabewert der Methode
+							analysiert. Eine Methode mit Rückgabewert <quote>void</quote>
+							würde als Variable keinen Sinn machen und wird somit als ausführbare Methode angezeigt.
+							Alle anderen Methoden
 							werden als Variablen mit einem Wert dargestellt.
+							Wo und wie die Darstellung erfolgt wird im Kapitel [[TODO: LINKME]] beschrieben.
 							Folgendes Beispiel veranschaulicht dies.
 						</para>
 						<example>
@@ -242,18 +271,27 @@ public void testMethod2(IUserNode node) {
 					<term>Komponentenfarbe für eine Klasse</term>
 					<listitem>
 						<para>
-							Eine Komponentenfarbe kann einer Klasse zugeordnet
+							Eine Komponentenfarbe kann einer beliebigen Komponenten Klasse zugeordnet
 							werden damit diese Farbe anfangs übernommen wird.
 							Im weiteren Verlauf der Simulation kann diese Farbe
 							jederzeit durch eine dynamische Komponentenfarbe
 							überschrieben werden.
 							Folgendes Beispiel setzt die Komponentenfarbe
-							der Klasse <classname>TestNode</classname> auf blau.
+							der Klassen <classname>TestNode</classname>, <classname>TestLink</classname>
+							und <classname>TestPacket</classname> auf blau.
 						</para>
 						<example>
-							<title>Eine Komponentenklasse mit blauer Farbe</title>
+							<title>Verschiedene Komponentenklassen mit blauer Farbe</title>
 							<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
 public class TestNode extends AUserNode {
+	...
+}]]></programlisting>
+<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
+public class TestLink extends AUserLink {
+	...
+}]]></programlisting>
+<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
+public class TestNode extends AUserPacket {
 	...
 }]]></programlisting>
 						</example>
@@ -268,7 +306,11 @@ public class TestNode extends AUserNode {
 							wie im folgenden Beispiel mit einer Java
 							Annotation versehen. Wichtig ist dabei
 							weiterhin, dass das Feld öffentlich (<quote>public</quote>)
-							sichtbar ist.
+							sichtbar ist. Die verwendete Annotation ist
+							<literal>DisplayColor</literal>. Der Typ des Felds
+							muss die Klasse <classname>ColorType</classname> sein.
+							Diese Klasse ist im Package <package>vidis.data.annotation</package>
+							zu finden.
 						</para>
 						<example>
 							<title>Eine Komponente mit dynamischer Farbe mittels Feld</title>
@@ -302,8 +344,11 @@ public void execute() {
 						<para>
 							Wie bereits für Felder beschrieben, kann
 							die Komponentenfarbe auch mittels einer Methode
-							bestimmt werden. Folgendes Beispiel veranschaulicht
-							diesen Prozess. 
+							bestimmt werden. Auch hier wird die bereits für 
+							Felder verwendete Annotation <literal>DisplayColor</literal>
+							verwendet. Der Rückgabewert der Methode muss dabei
+							<classname>ColorType</classname> sein. Folgendes Beispiel veranschaulicht
+							diesen Prozess.
 						</para>
 						<example>
 							<title>Eine Komponentenfarbe mit Hilfe einer Methode verändern</title>

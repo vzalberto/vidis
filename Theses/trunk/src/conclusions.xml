@@ -45,23 +45,29 @@
 				<listitem>
 					<para>
 					Eine Methode ist durchschnittlich 5,83 Zeilen Programmiercode lang.
-					Die längste Methode ist 152 Zeilen lang.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Klassen</term>
+				<listitem>
+					<para>
+					VIDIS umfasst insgesamt mehr als 200 Klassen in mehr als 50 Paketen
+					und rund 1400 Methoden. Von diesen Methoden
+					sind rund 100 statisch. Weiters gibt es rund 170 Konstanten.
 					</para>
 				</listitem>
 			</varlistentry>
 		</variablelist>
-		<para>
-			TODO
-		</para>
 	</section>
 	<section>
 		<title>Future Work</title>
 		<para>
 			Im Konzept VIDIS wurden einige wichtige und interessante
-			Punkte berücksichtigt, konnten jedoch nicht im Rahmen
-			eine Bakkalaureatsarbeit umgesetzt werdne.
-			Deshalb werden diese im Folgenden als Ausblick auf zukünftige
-			Versionen von VIDIS präsentiert.
+			Punkte berücksichtigt, jedoch konnten nicht alle im Rahmen
+			einer Bakkalaureatsarbeit umgesetzt werden.
+			Deshalb werden diese im Folgenden als Ausblick auf mögliche Erweiterungen
+			von VIDIS präsentiert.
 		</para>
 		<variablelist>
 			<varlistentry>
