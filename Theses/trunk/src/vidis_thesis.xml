@@ -58,13 +58,6 @@
 				<keyword>Vector Clock Algorithmus</keyword>
 			</keywordset>
 	</info>
-	<preface>
-		<title>Danksagung</title>
-		<para>
-			#FIXME or #REMOVEME
-		</para>
-
-	</preface>
 
 	<xi:include href="preface.xml" />
 	<xi:include href="related.xml" />

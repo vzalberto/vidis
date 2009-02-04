@@ -60,7 +60,7 @@
 								<methodname>kill</methodname>
 								<void/>
 							</methodsynopsis>
-							, welche im Interface <interfacename>IComponent</interfacename>
+							welche im Interface <interfacename>IComponent</interfacename>
 							definiert ist, aufgerufen.
 						</para>
 					</listitem>
@@ -145,54 +145,64 @@
 				</methodsynopsis>
 			</classsynopsis>
 		</para>
-		<para>
-			Diese Funktion wird vom Simulator zu jedem Simulationsschritt
-			aufgerufen und führt alle Komponenten des Moduls zu einem
-			Simulationsschritt aus.
-			<methodsynopsis>
-				<modifier>public</modifier>
-				<type>void</type>
-				<methodname>executeComponents</methodname>
-				<void/>
-			</methodsynopsis>
-		</para>
-		<para>
-			Diese Funktion gibt den aktuellen Zeitpunkt (Simulationsschritt) zurück.
-			<note>
+		<itemizedlist>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>executeComponents</methodname>
+					<void/>
+				</methodsynopsis>
 				<para>
-					Jede Simulation startet beim Zeitpunkt <quote>0</quote>
-					und mit jedem Simulationsschritt wird dieser Wert um 1
-					erhöht.
+					Diese Funktion wird vom Simulator zu jedem Simulationsschritt
+					aufgerufen und führt alle Komponenten des Moduls zu einem
+					Simulationsschritt aus.
 				</para>
-			</note>
-			<methodsynopsis>
-				<modifier>public</modifier>
-				<type>long</type>
-				<methodname>getTime</methodname>
-				<void/>
-			</methodsynopsis>
-		</para>
-		<para>
-			Diese Funktion setzt die aktuellen Simulationsschritte zurück.
-			Unmittelbar nach einem Aufruf dieser Funktion, wird ein Aufruf
-			von <methodname>getTime</methodname> das Ergebnis <quote>0</quote>
-			liefern.
-			<methodsynopsis>
-				<modifier>public</modifier>
-				<type>void</type>
-				<methodname>reset</methodname>
-				<void/>
-			</methodsynopsis>
-		</para>
-		<para>
-			Diese Funktion ruft auf allen Komponenten die Funktion <methodname>kill</methodname> auf.
-			<methodsynopsis>
-				<modifier>public</modifier>
-				<type>void</type>
-				<methodname>killComponents</methodname>
-				<void/>
-			</methodsynopsis>
-		</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>long</type>
+					<methodname>getTime</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Diese Funktion gibt den aktuellen Zeitpunkt (Simulationsschritt) zurück.
+					<note>
+						<para>
+							Jede Simulation startet beim Zeitpunkt <quote>0</quote>
+							und mit jedem Simulationsschritt wird dieser Wert um 1
+							erhöht.
+						</para>
+					</note>
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>reset</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Diese Funktion setzt die aktuellen Simulationsschritte zurück.
+					Unmittelbar nach einem Aufruf dieser Funktion, wird ein Aufruf
+					von <methodname>getTime</methodname> das Ergebnis <quote>0</quote>
+					liefern.
+				</para>
+			</listitem>
+			<listitem>
+				<methodsynopsis>
+					<modifier>public</modifier>
+					<type>void</type>
+					<methodname>killComponents</methodname>
+					<void/>
+				</methodsynopsis>
+				<para>
+					Diese Funktion ruft auf allen Komponenten die Funktion <methodname>kill</methodname> auf.
+				</para>
+			</listitem>
+		</itemizedlist>
 	</section>
 	<section>
 		<title>Variablen</title>
@@ -293,7 +303,8 @@
 			Es gibt 3 Arten von Variablen die das Interface
 			implementieren. Deren Implementierungen realisieren auf
 			dem Umstand, dass eine Variable einerseits nur Daten speichern kann,
-			aber auch selbst ein Feld oder eine Methode sein kann. So wird mittels Reflection ein
+			aber auch selbst ein Proxy zum Zugriff auf ein Feld oder eine Methode sein kann.
+			So wird mittels Reflection ein
 			Feld auf eine andere Art angesprochen wie eine Methode.
 			Die Klassen 
 			<classname>MethodVariable</classname>, <classname>FieldVariable</classname>
@@ -307,13 +318,13 @@
 				<term>DefaultVariable</term>
 				<listitem>
 					<para>
-						Diese Implementierung wird für alle statischen
-						Variablen verwendet. Unter statisch versteht
-						man hierbei die Zugriffsart auf die Daten.
-						Eine statische Datenart ist ein Wert der sich
-						nur mittels einem Aufruf von <methodname>update</methodname>
-						ändern kann, da keine dynamische Datenquelle
-						sich hinter dieser Variablen verbirgt.
+						Diese Implementierung wird für alle 
+						Variablen verwendet, welche den Wert beziehungsweise
+						das Objekt der Variable selbst speichern.
+						Der Inhalt der Variable kann durch den Aufruf von
+						<methodname>update</methodname> geändert werden, da
+						sich keine dynamische Datenquelle
+						hinter dieser Variablen verbirgt.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -322,89 +333,31 @@
 				<listitem>
 					<para>
 						Eine FieldVariable kommt zum Einsatz wenn ein
-						Feld einer Klasse als Datenquelle in Frage kommt.
-						Dies wurde realisiert indem die Implementierung
-						das Feld und die Instanz des Objekts abspeichert.
+						Feld einer Klasse als Datenquelle angesprochen wird.
+						Diese Funktionalität wurde mittels Java Reflection
+						realisiert. Dabei wird
+						das Feld und die Instanz des Objekts abgespeichert.
 						Sobald die Daten der Variable durch den Aufruf
 						von <methodname>getData</methodname> abgefragt werden,
-						greift diese Implementierung auf das Feld zu und
-						liest die Daten aus dem Feld. Dieser Aufruf wird
-						in der Methode <methodname>invoke</methodname> realisiert.
-						Folgender Java Code erläutert diese Implementierung.
+						greift die Implementierung auf das Feld zu und
+						liest die Daten aus der Objektinstanz.
 					</para>
-					<programlisting><![CDATA[private Object object;
-private Field field;
-private Object invoke() throws IllegalArgumentException,
-					IllegalAccessException {
-	Object tmp = field.get(object);
-	if (tmp.equals(last_value)) {
-	} else {
-		changed = true;
-		last_value = tmp;
-	}
-	return tmp;
-}
-public Object getData() {
-	try {
-		return invoke();
-	} catch (IllegalArgumentException e) {
-		logger.error(e);
-	} catch (IllegalAccessException e) {
-		logger.error(e);
-	}
-	return null;
-}
-public Class<?> getDataType() {
-	return field.getType();
-}]]></programlisting>
 				</listitem>
 			</varlistentry>
 			<varlistentry>
 				<term>MethodVariable</term>
 				<listitem>
 					<para>
-						Dies ist wohl komplexeste Implementierung,
+						Dies ist wohl komplexeste der drei Implementierung,
 						da diese den dynamischen Zugriff auf Methoden
-						mit oder ohne Parameter realisiert. Die
-						eigentliche Komplexität in Verwendung mit
-						Parametern liegt im Aufruf von <methodname>getData</methodname>.
-						Die Funktionalität wurde folgendermaßen implementiert.
+						mit oder ohne Parameter realisiert. Realisiert wurde
+						diese Funktionalität wiederum mittels Java Reflection.
+						Die MethodVariable speichert sich die Objektinstanz zuzsammen
+						mit der Methode ab und greift auf dieser beim Aufruf
+						von <methodname>getData</methodname> zu. Die
+						eigentliche Komplexität liegt im Aufruf von <methodname>getData</methodname>.
+						Diese muss alle nötigen Parameter zur Verfügung stellen.
 					</para>
-					<programlisting><![CDATA[private Object object;
-private Method method;/*
-	Dieser Fall tritt ein, wenn eine Methode keine Parameter benötigt.
-*/
-public Object getData() {
-	try {
-		return method.invoke(object);
-	} catch (IllegalArgumentException e) {
-		logger.error(e);
-	} catch (IllegalAccessException e) {
-		logger.error(e);
-	} catch (InvocationTargetException e) {
-		logger.error(e);
-	}
-	return null;
-}
-/*
-	Sollte eine Methode für ihren Aufruf Parameter erwarten,
-	wird diese Methode aufgerufen.
-*/
-public Object getData(Object... args) {
-	try {
-		return method.invoke(object, args);
-	} catch (IllegalArgumentException e) {
-		logger.error(e);
-	} catch (IllegalAccessException e) {
-		logger.error(e);
-	} catch (InvocationTargetException e) {
-		logger.error(e);
-	}
-	return null;
-}
-public Class<?> getDataType() {
-	return method.getReturnType();
-}]]></programlisting>
 				</listitem>
 			</varlistentry>
 		</variablelist>
@@ -575,10 +528,9 @@ fi
 										sinnvoll auf einem Paket Operationen auszuführen.
 										Aus diesem Grund wurde die Methode <methodname>execute</methodname>
 										durch einer nicht überschreib- oder überladbaren aber leeren Methode implementiert.
-<programlisting>public final void execute() {
+<programlisting><![CDATA[public final void execute() {
 	// this component does not execute
-}
-</programlisting>
+}]]></programlisting>
 									</para>
 								</listitem>
 								<listitem>

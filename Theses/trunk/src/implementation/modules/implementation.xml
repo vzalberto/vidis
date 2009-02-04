@@ -1,0 +1,354 @@
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+		<title>Implementierung eines Moduls</title>
+		<para>
+			In diesem Abschnitt wird beschrieben wie ein Modul
+			implementiert werden kann. Dabei werden zunächst
+			die Grundlagen erläutert, wie zum Beispiel ein Modul
+			in VIDIS geladen werden kann. Anschließend wird darauf
+			eingegangen welche Java Archive benötigt werden.
+			Schlussendlich wird beschrieben, wie eine Funktionalität implementiert
+			werden sollte und wie man mittels Java Annotations
+			erreicht, dass der Simulator Felder beziehungsweise Methoden
+			überwacht.
+		</para>
+		<section xml:id="implementation.modules.dropinfolder">
+			<title>DropIn Folder</title>
+			<para>
+				Das DropIn Verzeichnis kann dazu verwendet werden, fertig
+				implementierte und in ein Java Archiv (JAR) gepackte
+				Module in den Simulator zu laden. Dazu wird
+				der Ordner <quote>data/dropIn</quote> überwacht. Jedes
+				Archiv, das dort abgelegt wird, wird vom Simulator
+				im <quote>Laden</quote>-Menü angezeigt.
+			</para>
+			<warning>
+				<para>
+					Es ist nicht möglich einen Ordner abzulegen.
+					Ausschließlich JAR Archive werden durchsucht und
+					mittels dem VidisClassLoader geladen.
+				</para>
+			</warning>
+			<para>
+				Ein solches Java Archiv beinhaltet die Klassen des Moduls
+				und die MSIM-Dateien um ein Modul zu initialisieren. Weiters
+				kann das Archiv eine MANIFEST Datei beinhalten. Diese kann
+				optional Informationen zu den Klassen, Paketen und auch anderen
+				Dateien beinhalten. Außerdem ist es möglich einen Namen beziehungsweise
+				eine Beschreibung des Moduls im MANIFEST zu speichern. Außerdem
+				können zu jedem MSIM-File ein Titel oder Name gespeichert werden.
+				Diese Informationen werden im Simulator GUI angezeigt.
+				<example>
+					<title>Eine einfache MANIFEST Datei</title>
+					<programlisting>Manifest-Version: 1.0
+
+Name: Module
+Module-Name: Simple Demo Module
+
+Name: demo.msim
+MSIM-Name: TWo Nodes Demo
+
+</programlisting>
+				</example>
+			</para>
+			<para>
+				VIDIS ist nicht sehr anspruchsvoll in Bezug auf die Ordnerstruktur
+				innerhalb des JAR Archivs. Die MSIM-Files werden ausgelesen, egal wo sie im Archiv
+				liegen. Selbiges gilt für die Klassen des Moduls. Das MANIFEST muss
+				dem Java Standard entsprechend im Unterordner META-INF im
+				des Archivs liegen.
+				<example>
+					<title>Eine Ordnerstruktur in einem Modul JAR-Archiv</title>
+					<programlisting>
++ modules
+	* demo
+		* DemoNode.class
+		* DemoLink.class
+		* DemoPacket.class
++ msims
+	* demo1.msim
+	* demo2.msim
++ META-INF
+	* MANIFEST.MF
+* someother.msim</programlisting>
+				</example>
+			</para>
+		</section>
+		<section>
+			<title>Implementieren eines Moduls</title>
+			<para>
+				Zum Implementieren eines Moduls wird die Bibliothek 
+				<quote>mod_api.jar</quote> in Form eines JAR Archivs
+				benötigt.
+			</para>
+			<note>
+				<para>
+					Es wird empfohlen in Eclipse auch den Quellcode
+					(<quote>mod_api-src.jar</quote>) in den Classpath
+					zu integrieren, da dadurch die Javadoc Dokumentation
+					zu jeder Klasse und Funktion angezeigt wird. Dies 
+					erleichtert die Implementierung erheblich.
+				</para>
+			</note>
+			<para>
+				Wie bereits in Abschnitt <xref linkend="design.module.modulkomponenten" />
+				beschrieben, gibt es die Komponenten Module Node,
+				Module Link und Module Packet. Jede dieser Komponenten
+				besitzt eine abstrakte Klasse, welche als Grundlage
+				zur Implementierung dient. Im Folgenden werden die 
+				abstrakten Klassen aufgelistet.
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Module Node</term>
+					<listitem>
+						<para>
+							Diese Komponente wurde in der abstrakten
+							Klasse <classname>AUserNode</classname>
+							realisiert.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Module Link</term>
+					<listitem>
+						<para>
+							Die abstrakte Klasse <classname>AUserLink</classname>
+							implementiert die von <quote>Module Link</quote> 
+							definierte Funktionalität.
+						</para>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Module Packet</term>
+					<listitem>
+						<para>
+							Die Funktionalität der letzten Komponente, namentlich Module Packet, wurde
+							in der abstrakten Klasse <classname>AUserPacket</classname>
+							implementiert.
+						</para>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+			<para>
+				Will man eine entsprechende Komponente implementieren,
+				muss man eine Klasse erstellen und diese von der
+				gewünschten abstrakten Klasse ableiten. Je nach Klasse
+				muss man verschiedene Funktionen implementieren.
+			</para>
+		</section>
+		<section xml:id="implementation.modules.variableannotations">
+			<title>Variablen mittels Annotations</title>
+			<para>
+				In den meisten Algorithmen werden viele
+				verschiedene Datensätze auf Knoten oder auch
+				in Paketen gespeichert beziehungsweise transportiert.
+				VIDIS bietet eine einfache Möglichkeit damit diese 
+				als Variablen im Simulator angezeigt werden. Außerdem
+				ist es möglich die Farbe einer Komponente mittels
+				Annotation zu verändern. Im
+				folgenden werden diese Prozesse beschrieben.
+			</para>
+			<variablelist>
+				<varlistentry>
+					<term>Felder als Variablen</term>
+					<listitem>
+						<para>
+							Ein Feld aus einer Komponente kann
+							jederzeit vom Simulator als Variable
+							ausgelesen werden. Die Voraussetzungen
+							dafür sind, dass das Feld öffentlich (<quote>public</quote>)
+							und mit der Annotation <literal>Display</literal> versehen
+							ist.
+							Im Quellcode schaut dies folgendermaßen aus.
+						</para>
+						<example>
+							<title>Ein Feld als Variable</title>
+							<programlisting language="java"><![CDATA[@Display(name="A test variable")
+public int testVariable;]]></programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Methoden als Variablen</term>
+					<listitem>
+						<para>
+							Auch beliebige Methoden können jederzeit
+							vom Simulator als Variable ausgelesen werden.
+							Dabei gelten dieselben Voraussetzungen wie für Felder.
+							Die Methode muss öffentlich zugänglich (<quote>public</quote>) 
+							und mit der Annotation <literal>Display</literal> versehen sein.
+							Der Simulator unterscheidet dabei eine zur Laufzeit ausführbare Methode
+							von einer Variabel Methode indem er den Rückgabewert der Methode
+							analysiert. Eine Methode mit Rückgabewert <quote>void</quote>
+							würde als Variable keinen Sinn machen und wird somit als ausführbare Methode angezeigt.
+							Alle anderen Methoden
+							werden als Variablen mit einem Wert dargestellt.
+							Wo und wie die Darstellung erfolgt wird im Kapitel [[TODO: LINKME]] beschrieben.
+							Folgendes Beispiel veranschaulicht dies.
+						</para>
+						<example>
+							<title>Eine ausführbare Methode ohne Parameter</title>
+							<programlisting language="java"><![CDATA[@Display(name="A runnable test method")
+public void testMethod1() {
+	...
+}
+]]></programlisting>
+						</example>
+						<example>
+							<title>Eine ausführbare Methode mit Parameter</title>
+							<programlisting language="java"><![CDATA[@Display(name="A runnable test method with parameters")
+public void testMethod2(IUserNode node) {
+	...
+}]]></programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Komponentenfarbe für eine Klasse</term>
+					<listitem>
+						<para>
+							Eine Komponentenfarbe kann einer beliebigen Komponenten Klasse zugeordnet
+							werden damit diese Farbe anfangs übernommen wird.
+							Im weiteren Verlauf der Simulation kann diese Farbe
+							jederzeit durch eine dynamische Komponentenfarbe
+							überschrieben werden.
+							Folgendes Beispiel setzt die Komponentenfarbe
+							der Klassen <classname>TestNode</classname>, <classname>TestLink</classname>
+							und <classname>TestPacket</classname> auf blau.
+						</para>
+						<example>
+							<title>Verschiedene Komponentenklassen mit blauer Farbe</title>
+							<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
+public class TestNode extends AUserNode {
+	...
+}]]></programlisting>
+<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
+public class TestLink extends AUserLink {
+	...
+}]]></programlisting>
+<programlisting language="java"><![CDATA[@ComponentColor(color=ColorType.BLUE)
+public class TestNode extends AUserPacket {
+	...
+}]]></programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Komponentenfarbe mittels Feld</term>
+					<listitem>
+						<para>
+							Die Farbe einer Komponente kann auch mittels
+							Felder verändert werden. Dazu wird ein Feld
+							wie im folgenden Beispiel mit einer Java
+							Annotation versehen. Wichtig ist dabei
+							weiterhin, dass das Feld öffentlich (<quote>public</quote>)
+							sichtbar ist. Die verwendete Annotation ist
+							<literal>DisplayColor</literal>. Der Typ des Felds
+							muss die Klasse <classname>ColorType</classname> sein.
+							Diese Klasse ist im Package <package>vidis.data.annotation</package>
+							zu finden.
+						</para>
+						<example>
+							<title>Eine Komponente mit dynamischer Farbe mittels Feld</title>
+							<programlisting language="java"><![CDATA[@DisplayColor
+public ColorType color = ColorType.BLACK;
+]]></programlisting>
+						</example>
+						<para>
+							Der Wert des Felds kann natürlich jederzeit
+							verändert werden, was die Änderung der Komponentenfarbe
+							mit sich bringt. Folgendes Beispiel veranschaulicht dies.
+						</para>
+						<example>
+							<title>Eine Komponentenfarbe mittels Feld ändern</title>
+							<programlisting language="java"><![CDATA[@DisplayColor
+public ColorType color = ColorType.BLACK;
+
+public void execute() {
+	if(state == 0) {
+		color = ColorType.GREEN;
+	} else {
+		color = ColorType.BLACK;
+	}
+}]]></programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Komponentenfarbe mittels Methode</term>
+					<listitem>
+						<para>
+							Wie bereits für Felder beschrieben, kann
+							die Komponentenfarbe auch mittels einer Methode
+							bestimmt werden. Auch hier wird die bereits für 
+							Felder verwendete Annotation <literal>DisplayColor</literal>
+							verwendet. Der Rückgabewert der Methode muss dabei
+							<classname>ColorType</classname> sein. Folgendes Beispiel veranschaulicht
+							diesen Prozess.
+						</para>
+						<example>
+							<title>Eine Komponentenfarbe mit Hilfe einer Methode verändern</title>
+							<programlisting language="java"><![CDATA[private ColorType color = ColorType.BLACK;
+
+@DisplayColor()
+public ColorType getColor() {
+	return color;
+}
+]]></programlisting>
+						</example>
+					</listitem>
+				</varlistentry>
+				<varlistentry>
+					<term>Reservierte Variablenbezeichner: header1, header2</term>
+					<listitem>
+						<para>
+							Es ist oftmals hilfreich wichtige Informationen
+							direkt sichtbar über einem Knoten, einem Paket oder einer
+							Verbindung zu platzieren. Zu diesem Zweck gibt es die
+							reservierten Bezeichner <quote>header1</quote> und <quote>header2</quote>.
+							Sollten diese Variablen gesetzt sein, wird der Inhalt
+							der annotierten Variable über der Komponente angezeigt.
+							Natürlich ist dies auch mit Feldern möglich.
+						</para>
+						<example>
+							<title>Eine header1 Variable</title>
+							<programlisting language="java"><![CDATA[@Display(name="header1")
+public String getHeader1() {
+	return "test";
+}
+]]></programlisting>
+						</example>
+						<example>
+							<title>Eine header1 Variable im Simulator</title>
+							<mediaobject>
+								<textobject>
+									<para>
+										TODO (screenshot)
+									</para>
+								</textobject>
+							</mediaobject>
+						</example>
+						<example>
+							<title>Eine header2 Variable</title>
+							<programlisting language="java"><![CDATA[@Display(name="header2")
+	public String getHeader2() {
+		return "test";
+	}
+]]></programlisting>
+						</example>
+						<example>
+							<title>Eine header2 Variable im Simulator</title>
+							<mediaobject>
+								<textobject>
+									<para>
+										TODO (screenshot)
+									</para>
+								</textobject>
+							</mediaobject>
+						</example>
+					</listitem>
+				</varlistentry>
+			</variablelist>
+		</section>
+	</section>
