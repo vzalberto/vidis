@@ -26,7 +26,7 @@
 	<section>
 		<title><trademark>Java</trademark> Swing</title>
 		<para>
-			Derselbe Prototyp basierte auf einem Swing GUI, mit einem <trademark class="registered">OpenGL</trademark> Panel. Die Steuerelemente waren um
+			Derselbe Prototyp basierte auf einem Swing GUI, mit einem 3D Panel. Die Steuerelemente waren um
 			das 3D Panel angeordnet.
 		</para>
 		
@@ -40,8 +40,10 @@
 				</mediaobject>
 			</screenshot>
 		</figure>
-
+<!--  Dominik's Text
 		<para>
+			
+		
 			Allerdings gab es Kompatibilitätsprobleme zwischen SWING und
 			OpenGL, sodass das 3D Panel immer im Vordergrund stand. Außerdem
 			war es nicht möglich dies durch Transparenzeffekte auszugleichen.
@@ -53,6 +55,11 @@
 			Stacktraces und Debugtraces zu lokalisieren und dies keine Früchte trug,
 			haben wir beschlossen VIDIS neu zu schreiben und die grafische Benutzeroberfläche
 			nicht mit Swing zu realisieren.
+
+		</para>
+-->
+		<para>
+			Mit der Entscheidung Java 3D auf Eis zu legen wurde auch die Swing Oberfläche verworfen.
 		</para>
 	</section>	
 </section>
