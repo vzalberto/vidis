@@ -45,8 +45,11 @@
 Name: Module
 Module-Name: Simple Demo Module
 
-Name: demo.msim
-MSIM-Name: TWo Nodes Demo
+Name: msims/demo1.msim
+MSIM-Name: Simple Demo 1
+
+Name: msims/demo2.msim
+MSIM-Name: Simple Demo 2
 
 </programlisting>
 				</example>
