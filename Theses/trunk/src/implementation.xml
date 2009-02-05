@@ -8,4 +8,10 @@
 	<xi:include href="implementation/simulator.xml" />
 	<xi:include href="implementation/visualisation.xml" />
 	<xi:include href="implementation/modules.xml" />
+	
+	<para>
+	</para>
+	<para>
+		Damit wären alle Implementationsdetails geklärt. Es folgt noch eine Ausblick über die Zukunft von Vidis, sowie einige Technische Statistiken.
+	</para>
 </chapter>
