@@ -181,7 +181,7 @@
 						<title>Auszug aus einem einfachem Szenengraph</title>
 						<mediaobject>
 							<imageobject>
-								<imagedata align="center" width="250pt" fileref="scenegraph_parts.svg" />
+								<imagedata align="center" width="100%" fileref="scenegraph_parts2.svg" />
 							</imageobject>
 						</mediaobject>
 					</example>	
