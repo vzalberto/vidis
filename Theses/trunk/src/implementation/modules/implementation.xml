@@ -83,8 +83,9 @@ MSIM-Name: TWo Nodes Demo
 			</para>
 			<note>
 				<para>
-					Es wird empfohlen in Eclipse auch den Quellcode
-					(<quote>mod_api-src.jar</quote>) in den Classpath
+					Sollte Ihre Entwicklungsumgebung dies unterstützen,
+					wird es empfohlen den Quellcode zur Bibliothek <quote>mod_api.jar</quote>
+					(<quote>mod_api-src.jar</quote>)
 					zu integrieren, da dadurch die Javadoc Dokumentation
 					zu jeder Klasse und Funktion angezeigt wird. Dies 
 					erleichtert die Implementierung erheblich.

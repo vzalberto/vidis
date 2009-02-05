@@ -225,12 +225,11 @@
 												</para>
 												<example>
 													<title>Ein Link-Element</title>
-													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[
- <link>
- 	<id>uniqueLinkId1</id>
- 	<class>implementingClass</class>
- 	<delay>5</delay>
- </link>
+													<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<link>
+	<id>uniqueLinkId1</id>
+	<class>implementingClass</class>
+	<delay>5</delay>
+</link>
 ]]></programlisting>
 												</example>
 												<example>
