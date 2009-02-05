@@ -16,7 +16,7 @@
 
   <!-- SECTION Parameter -->
   <xsl:param name="admon.graphics">1</xsl:param>
-  <xsl:param name="admon.graphics.extension">.gif</xsl:param>
+  <xsl:param name="admon.graphics.extension">.svg</xsl:param>
   <xsl:param name="admon.graphics.path">doclet/docbook/xsl/images/</xsl:param>
   <xsl:param name="callout.graphics">1</xsl:param>
   <xsl:param name="callout.graphics.extension">.gif</xsl:param>
