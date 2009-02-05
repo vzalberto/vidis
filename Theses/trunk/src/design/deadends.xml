@@ -35,7 +35,7 @@
 			<screenshot>
 				<mediaobject>
 					<imageobject>
-						<imagedata fileref="screenshot of swing prototype.needed"/>
+						<imagedata width="80%" align="center" fileref="figures/v3_screenshot.jpg"/>
 					</imageobject>
 				</mediaobject>
 			</screenshot>
