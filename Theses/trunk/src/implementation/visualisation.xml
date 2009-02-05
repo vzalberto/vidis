@@ -110,7 +110,7 @@
 		</para>
 		<para>
 			Vidis verwendet das oben vorgestellte Ray Picking, da sich dieses System gut mit dem Eventsystem integriert und keinen zusätzlichen Rederdurchgang benötigt.
-			Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen <xref linkend="book_redbook" />. 
+			Für nähere Informationen und Implementierungsbeispiele aller drei Methoden wird auf das Redbook verwiesen&#x00A0;<xref linkend="book_redbook" />. 
 		</para>
 	</section>	
 	<section xml:id="section_links">
