@@ -11,7 +11,7 @@
 			<title>Das offizielle Java Logo</title>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="100px-Java-Logo.svg.png" />
+					<imagedata align="center" width="60px" fileref="100px-Java-Logo.svg.png" />
 				</imageobject>
 			</mediaobject>
 		</figure>
@@ -19,7 +19,7 @@
 			Java ist eine objektorientierte Programmiersprache, die von Sun Microsystems entwickelt wurde. Um Java Programme zu verwenden ist eine Java-VM (Virtuelle Maschine) notwendig. Diese
 			kann beispielsweise von der Sun Hompage bezogen werden. Java Programme werden in Bytecode übersetzt, welcher von dieser VM interpretiert wird. Damit benötigt man nur eine an das
 			Betriebssystem bzw. an die Rechnerarchitektur angepasste VM und kann das gleiche Programm, ohne es extra übersetzten zu müssen, laufen lassen. Weitere Informationen rund um JAVA sind
-			unter <xef linkend="web_java" /> zu finden.
+			unter <xref linkend="web_java" /> zu finden.
 		</para>
 
 		<section>
@@ -28,7 +28,7 @@
 			<title>Das Apache Ant Logo</title>
 				<mediaobject>
 					<imageobject>
-						<imagedata fileref="Ant_logo_large.gif" />
+						<imagedata align="center" width="100px" fileref="Ant_logo_large.gif" />
 					</imageobject>
 				</mediaobject>
 			</figure>
