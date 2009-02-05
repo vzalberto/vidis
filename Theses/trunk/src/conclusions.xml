@@ -4,6 +4,8 @@
 	xmlns:math="http://www.w3.org/1998/Math/MathML">
 	<title>Conclusions</title>
 	<para>
+		Dieses Kapitel enthält eine kurze Komplexitätsanlyse des Programmcodes, den Ausblick auf weitere Versionen und das Schlusswort.
+<!-- 
 	<programlisting>
 		Dominik stellt sich folgendes vor:
 		[VORSCHLAG (BLENDTEXT)>
@@ -23,6 +25,7 @@
 		genau wie gewollt weil ja das Maxerl sehr geholfen hat.
 		>VORSCHLAG]
 	</programlisting>
+-->
 	</para>
 	<section>
 		<title>Komplexitätsanalyse</title>
@@ -129,5 +132,12 @@
 				</listitem>
 			</varlistentry>
 		</variablelist>
+	</section>
+	<section>
+		<title>Final Words</title>
+		<para>
+			Das Projekt war deutlich zeitintensiver als angenommen. Das 3D Framework nachträglich austauschen war eine zeitlich teuer, aber notwendig.
+			Es ist schwer Eventualitäten, wie den Austausch einens Frameworks im Vorfeld abzuschätzen. 
+		</para>
 	</section>
 </chapter>

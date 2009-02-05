@@ -86,7 +86,8 @@
 					</methodsynopsis>
 				Der Programmier muss zum Zeitpunkt des Mausklicks die entsprechenden Matrizen auslesen, zwei mal gluUnProject aufrufen (einmal für den
 				Punkt auf der Near-Plane und ein zweites mal für den Punkt auf der Far-Plane) und kann dann die durch diese beiden Punkte definierte
-				Gerade mit den 3D Objekten schneiden.
+				Gerade mit den 3D Objekten schneiden. Die Near-Plane ist die Ebene, die den 3D Raum zur Kamera hin begrenzt (in <xref linkend="fig_raypicking" /> wäre das die <quote>Projektion auf Monitor</quote> Ebene)
+				und die Far-Plane ist eine Ebene paralell zur Near-Plane, die den 3D Raum in der Tiefe begrenzt. 
 			</para>
 		</section>
 		<section>
