@@ -15,4 +15,10 @@
 	<xi:include href="design/eventsystem.xml" />
 	<xi:include href="design/deadends.xml" />
 	
+	<para>
+	</para>
+	<para>
+		Damit wäre alles zum Design von VIDIS gesagt. Im nächsten Kapitel werden die Implementationsdetails geklärt.
+	</para>
+	
 </chapter>
