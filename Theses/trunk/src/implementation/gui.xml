@@ -184,12 +184,18 @@ public void toggleAutoEvents {
 				</varlistentry>
 			</variablelist>
 			<para>
-				
+				Die Zustände maximized und maximized2 zeigen die Variablen an. Diese werden in der Form <literal>NAME: VALUE</literal> dargestellt. Dabei wird für <literal>VALUE</literal> je nach 
+				Typ eine andere Klasse zum rendern verwendet. Beispielsweise werden Vektoren in der Form <literal>( 5.00, 1.23, -0.23 )</literal> angezeigt. Der Default-Renderer interpretiert
+				<literal>VALUE</literal> als String. Dazu wird die toString() Methode verwendet. 
+			</para>
+			<para>
+				In einer Map werden die Beziehungen Klasse auf Renderer abgebildet. Wird eine Variable registriert entscheidet die GUI anhand dieser Map welcher Renderer eingesetzt wird. Ist kein 
+				Eintrag für den Datentyp vorhanden, wird der Default-Renderer eingesetzt.
 			</para>
 		</section>
-
+		<para></para>
 		<para>
-			In diesem Kapitel wurden die GUI Elemente beschrieben. Als nächstes wird die Benztzerinteraktion mit Maus und Tastatur erklärt.
+			In diesem Abschnitt wurden die GUI Elemente beschrieben. Als nächstes wird die Benztzerinteraktion mit Maus und Tastatur erklärt.
 		</para>
 
 	</section>
@@ -240,5 +246,6 @@ public void toggleAutoEvents {
 			nach Links zu bewegen.
 		</para>
 	</section>
-
+	<para></para>
+	<para>Damit wäre die grafische Benutzeroberfläche erklärt. Auf den folgenden Seiten werden Module vorgestellt, und es wird auf deren Implemntierung näher eingegangen.</para>
 </section>
