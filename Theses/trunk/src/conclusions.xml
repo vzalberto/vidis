@@ -139,7 +139,7 @@
 			Das Projekt war deutlich zeitintensiver als angenommen. Das 3D Framework nachträglich austauschen war zeitlich teuer, aber notwendig.
 			Es ist schwer Eventualitäten, wie den Austausch einens Frameworks im Vorfeld abzuschätzen.
 			Wir haben im Laufe des Projekts sehr viel Code geschrieben und 
-			haben so viel Erfahrung mit den Umgebenden Entwicklungsumgebungen und
+			haben so viel Erfahrung mit den verwendeten Entwicklungsumgebungen und
 			Frameworks gesammelt. Dabei haben wir unter anderem auch Probleme
 			in Implementierungen von Java, JOGL, Java3D, Eclipse, FOP und vielen
 			mehr entdeckt. Es war ein arbeitsintensives, aber lehrreiches Projekt und
