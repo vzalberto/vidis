@@ -61,15 +61,15 @@ MSIM-Name: TWo Nodes Demo
 					<title>Eine Ordnerstruktur in einem Modul JAR-Archiv</title>
 					<programlisting>
 + modules
-	* demo
-		* DemoNode.class
-		* DemoLink.class
-		* DemoPacket.class
+		+ demo
+			* DemoNode.class
+			* DemoLink.class
+			* DemoPacket.class
 + msims
-	* demo1.msim
-	* demo2.msim
+		* demo1.msim
+		* demo2.msim
 + META-INF
-	* MANIFEST.MF
+		* MANIFEST.MF
 * someother.msim</programlisting>
 				</example>
 			</para>
