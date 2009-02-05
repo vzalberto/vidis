@@ -204,7 +204,7 @@
 			</listitem>
 		</itemizedlist>
 	</section>
-	<section>
+	<section xml:id="section_variablensystem">
 		<title>Variablen</title>
 		<para>
 			Im Simulator ist eine Variablenstruktur

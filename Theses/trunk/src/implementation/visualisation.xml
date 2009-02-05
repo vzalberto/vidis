@@ -7,7 +7,7 @@
 	</para>	
 	<?dbfo keep-with-next="auto" ?>	
 	 
-	<section>
+	<section xml:id="section_3dscene">
 		<title>3D Szene</title>
 		<para>
 			Um 3D Content am Computerbildschirm darzustellen wurde <trademark class="registered">OpenGL</trademark> verwendet. 
@@ -25,7 +25,8 @@
 	<section>
 		<title>Die Objektpositionierung</title>
 		<para>
-			Die Positionen der Objekte werden im Variablensystem abgelegt <xref linkend="section_variablensystem" />. Jedes positionierbare Objekt hat die Variable <literal>system.position</literal> vom
+			Die Positionen der Objekte werden im Variablensystem abgelegt. Nähere Informationen rund um das Variablensystem sind im Kapitel <xref linkend="section_variablensystem" /> zu finden. 
+			Jedes positionierbare Objekt hat die Variable <literal>system.position</literal> vom
 			Typ <literal>Point3d</literal>. Die abstrakte Objektimplementiering verwendet diese Information um eine Translation durchzuführen, bevor die konkrete Implementierung das
 			Objekt zeichnet. Komplexere Objekte, wie der Link, überschreiben diese abstrakte Implementierung, da ihre Position und Form von den verbundenen
 			Nodes abhängt und nicht durch einen Punkt definiert werden kann.
@@ -36,9 +37,9 @@
 		<title>Displaylisten</title>
 		<para>
 			Displaylisten ermöglichen es viele <trademark class="registered">OpenGL</trademark> Befehle zusammenzufassen und im Grafikspeicher abzulegen. Eine solche Liste kann dann später
-			mit nur einem Befehl ausgeführt werden. Displaylisten bringen extra Performance, da oft verwendete Befehle nicht extra an den Grafikprozessor geschickt werden müssen.
+			mit nur einem Befehl ausgeführt werden. Displaylisten bringen extra Performance, da oft verwendete Befehle nicht extra an den Grafikprozessor (GPU) geschickt werden müssen.
 			VIDIS bedient sich dieser Technik und erzeugt beim ersten Rendervorgang eines Objekts eine Displayliste, welche dann in jedem weiteren Rendervorgang aufgerufen wird.
-			Dadurch werden nur beim Generieren der Displaylisten CPU und GPU belastet und bei jedem weiteren Aufruf ausschlißlich die GPU.
+			Dadurch werden nur beim Generieren der Displaylisten Hautpprozessor (CPU) und GPU belastet und bei jedem weiteren Aufruf ausschlißlich die GPU.
 		</para>
 		<para>
 			Verändert sich ein Objekt, so muss eine neue Displayliste generiert werden. Beispielsweise löst eine Objektpositionierung oder eine Änderung der Objektfarbe eine Neuberechnung 
@@ -115,9 +116,9 @@
 	<section xml:id="section_links">
 		<title>Gebogene Links</title>
 		<para>
-			Die Links werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). 
+			Links zwischen Nodes werden als gewölbte Rohre dargestellt (vgl. <xref linkend="fig_linkexample" />). 
 			Da die Positionen der Nodes variabel sind kann kein fixes 3D Modell für den Link verwendet werden. 
-			Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node, müssen immer alle damit verbundenen Links neu berechnet werden.
+			Bei der Erstpositionierung und jeder weiteren Neupositionierung einer Node müssen immer alle damit verbundenen Links neu berechnet werden.
 		</para>
 		<figure xml:id="fig_linkexample">
 			<title>Ein Link aus der finalen Programmversion</title>
