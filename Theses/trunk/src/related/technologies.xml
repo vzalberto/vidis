@@ -7,16 +7,43 @@
 	</para>
 	<section>
 		<title>Java</title>
-		<para></para>
+		<figure>
+			<title>Das offizielle Java Logo</title>
+			<mediaobject>
+				<imageobject>
+					<imagedata fileref="100px-Java-Logo.svg.png" />
+				</imageobject>
+			</mediaobject>
+		</figure>
+		<para>
+			Java ist eine objektorientierte Programmiersprache, die von Sun Microsystems entwickelt wurde. Um Java Programme zu verwenden ist eine Java-VM (Virtuelle Maschine) notwendig. Diese
+			kann beispielsweise von der Sun Hompage bezogen werden. Java Programme werden in Bytecode übersetzt, welcher von dieser VM interpretiert wird. Damit benötigt man nur eine an das
+			Betriebssystem bzw. an die Rechnerarchitektur angepasste VM und kann das gleiche Programm, ohne es extra übersetzten zu müssen, laufen lassen. Weitere Informationen rund um JAVA sind
+			unter <xef linkend="web_java" /> zu finden.
+		</para>
 
 		<section>
-			<title>Ant</title>
-			<para></para>
+			<title>Apache Ant</title>
+			<figure>
+			<title>Das offizielle Java Logo</title>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="Ant_logo_large.gif" />
+					</imageobject>
+				</mediaobject>
+			</figure>
+			<para>
+				Ant ist eine Werkzeug zur automatisierten Übersetzung von Java Quellcode in Bytecode. Änhlich wie bei make wird dazu ein Buildfile benötigt. Dieses ist ein XML File in dem
+				einzelne Build-Targets definiert werden können. Weiterführede Informationen über Apache Ant sind auf der Website zu finden <xref linkend="web_ant" />
+			</para>
 		</section>
 
 		<section>
-			<title>Java WebStart</title>
-			<para></para>
+			<title>Java Web Start</title>
+			<para>
+				Java Web Start ermöglicht es Java Programme direkt mit nur einem Klick aus dem Browser zu starten. Dazu wird eine Java Network Launching Protocol (JNLP) Datei verlinkt.
+				Die VM interpretiert diese Datei und ladet alle benötigten Daten herunter. Danach wird das Programm am lokalen Rechner ausgeführt <xref linkend="web_java" />.
+			</para>
 		</section>
 		
 	</section>

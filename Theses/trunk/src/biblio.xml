@@ -244,5 +244,16 @@
 		</bibliosource>
 		<date>Zugriff: 2009-01-14 12:56</date>
 	</biblioentry>
-	
+	<biblioentry xml:id="web_java">
+		<bibliosource class="uri">
+			<link xlink:href="http://java.sun.com" />
+		</bibliosource>
+		<date>Zugriff: 5.2.2009 5:20</date>
+	</biblioentry>
+	<biblioentry xml:id="web_ant">
+		<bibliosource class="uri">
+			<link xlink:href="http://ant.apache.org" />
+		</bibliosource>
+		<date>Zugriff: 5.2.2009 5:23</date>
+	</biblioentry>
 </bibliography>	
