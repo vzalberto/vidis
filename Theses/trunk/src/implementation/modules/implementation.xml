@@ -55,12 +55,11 @@ MSIM-Name: TWo Nodes Demo
 				VIDIS ist nicht sehr anspruchsvoll in Bezug auf die Ordnerstruktur
 				innerhalb des JAR Archivs. Die MSIM-Files werden ausgelesen, egal wo sie im Archiv
 				liegen. Selbiges gilt für die Klassen des Moduls. Das MANIFEST muss
-				dem Java Standard entsprechend im Unterordner META-INF im
+				dem Standard entsprechend im Unterordner META-INF 
 				des Archivs liegen.
 				<example>
 					<title>Eine Ordnerstruktur in einem Modul JAR-Archiv</title>
-					<programlisting>
-+ modules
+					<programlisting><![CDATA[+ modules
 		+ demo
 			* DemoNode.class
 			* DemoLink.class
@@ -70,7 +69,7 @@ MSIM-Name: TWo Nodes Demo
 		* demo2.msim
 + META-INF
 		* MANIFEST.MF
-* someother.msim</programlisting>
+* someother.msim]]></programlisting>
 				</example>
 			</para>
 		</section>
