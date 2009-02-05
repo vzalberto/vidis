@@ -10,10 +10,13 @@
 		<para>
 			<itemizedlist>
 				<listitem>
-					<para>Simulator</para>
+					<para>Design Datenstruktur</para>
 				</listitem>
 				<listitem>
-					<para>TODO</para>
+					<para>Design Simulator</para>
+				</listitem>
+				<listitem>
+					<para>Implementierung Simulator</para>
 				</listitem>
 			</itemizedlist>
 		</para>
@@ -23,10 +26,13 @@
 		<para>
 			<itemizedlist>
 				<listitem>
-					<para>Visualisierung</para>
+					<para>Design Datenstruktur</para>
 				</listitem>
 				<listitem>
-					<para>TODO</para>
+					<para>Design Visualisierung</para>
+				</listitem>
+				<listitem>
+					<para>Implementierung Visualisierung</para>
 				</listitem>
 			</itemizedlist>
 		</para>
