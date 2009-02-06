@@ -47,11 +47,11 @@
 						<programlisting>time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = der Wert der logischen Uhr von P<subscript>j</subscript> in Peer P<subscript>i</subscript></programlisting>
 						Grafisch:
 						<figure>
-							<title>TODO Vector Clock Algorithmus</title>
+							<title>Vector Clock Algorithmus</title>
 							<mediaobject>
-								<textobject>
-									<para>TODO</para>
-								</textobject>
+								<imageobject>
+									<imagedata fileref="vectorClockAlgorithm.png" format="PNG" />
+								</imageobject>
 							</mediaobject>
 						</figure>
 					</para>
