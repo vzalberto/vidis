@@ -50,7 +50,7 @@
 							<title>Vector Clock Algorithmus</title>
 							<mediaobject>
 								<imageobject>
-									<imagedata fileref="vectorClockAlgorithm.png" format="PNG" />
+									<imagedata scale="50" fileref="vectorClockAlgorithm.png" format="PNG" />
 								</imageobject>
 							</mediaobject>
 						</figure>
