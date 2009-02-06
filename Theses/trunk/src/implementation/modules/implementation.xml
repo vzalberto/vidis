@@ -325,11 +325,9 @@ public String getHeader1() {
 						<example>
 							<title>Eine header1 Variable im Simulator</title>
 							<mediaobject>
-								<textobject>
-									<para>
-										TODO (screenshot)
-									</para>
-								</textobject>
+								<imageobject>
+									<imagedata fileref="header1Variable.png" format="PNG" />
+								</imageobject>
 							</mediaobject>
 						</example>
 						<example>
@@ -343,11 +341,17 @@ public String getHeader1() {
 						<example>
 							<title>Eine header2 Variable im Simulator</title>
 							<mediaobject>
-								<textobject>
-									<para>
-										TODO (screenshot)
-									</para>
-								</textobject>
+								<imageobject>
+									<imagedata fileref="header2Variable.png" format="PNG" />
+								</imageobject>
+							</mediaobject>
+						</example>
+						<example>
+							<title>Anwendung von Header Variablen</title>
+							<mediaobject>
+								<imageobject>
+									<imagedata fileref="headerVariablesExample.png" format="PNG" />
+								</imageobject>
 							</mediaobject>
 						</example>
 					</listitem>
