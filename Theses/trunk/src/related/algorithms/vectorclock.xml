@@ -56,10 +56,9 @@
 				<term>Lösungsansatz</term>
 				<listitem>
 					<para>
-						Der Algorithmus basiert auf <quote>Lamport's logical clock</quote>
-						Dieser Algorithmus produziert eine totale Ordnung, erfasst
-						aber keine Kausalitäten <xref linkend="book_related.distributed.lamport" />
-						zwischen den Ereignissen.
+						Der Algorithmus basiert auf <quote>Lamport's logical clock</quote> (Siehe: <xref linkend="book_related.distributed.lamport" />).
+						Lamport's Algorithmus produziert zwar eine totale Ordnung auf Ereignisse, erfasst
+						aber keine Kausalitäten zwischen diesen.
 					</para>
 					<para>
 						Um dieses Problem einzugrenzen, geht der Vector Clock Algorithmus einen anderen
