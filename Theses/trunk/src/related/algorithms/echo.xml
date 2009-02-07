@@ -7,14 +7,14 @@
 				<term>Idee</term>
 				<listitem>
 					<para>
-						Der Echo Algorithmus bildet die Grundlage für
+						Der Echo Algorithmus <xref linkend="paper_echoalgorithm" /> bildet die Grundlage für
 						eine Vielzahl an mögliche Anwendungen. Dazu wird
 						eine Nachricht an alle Nachbarknoten geschickt, 
 						welche bei Erhalt sich den Absender merken und
 						die Nachricht weiterschicken. Wenn der Nachbarknoten
 						schlussendlich eine Antwort von allen seinen Nachbarknoten
 						erhalten hat, schickt dieser seinem <quote>Vaterknoten</quote>
-						eine Antwort. <xref linkend="paper_echoalgorithm" />
+						eine Antwort.
 					</para>
 				</listitem>
 			</varlistentry>
