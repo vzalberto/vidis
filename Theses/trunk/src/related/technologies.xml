@@ -33,7 +33,7 @@
 				</mediaobject>
 			</figure>
 			<para>
-				Ant ist eine Werkzeug zur automatisierten Übersetzung von Java Quellcode in Bytecode. Änhlich wie bei make wird dazu ein Buildfile benötigt. Dieses ist ein XML File in dem
+				Ant ist eine Werkzeug zur automatisierten Übersetzung von Java Quellcode in Bytecode. Ähnlich wie beim traditionellen Unix make wird dazu ein Buildfile benötigt. Dieses ist ein XML File in dem
 				einzelne Build-Targets definiert werden können. Weiterführede Informationen über Apache Ant sind auf der Website zu finden <xref linkend="web_ant" />
 			</para>
 		</section>
