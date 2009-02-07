@@ -344,11 +344,12 @@
 					</methodsynopsis>
 					<para>
 						Mit Hilfe dieser Funktion erhält man
-						die Verzögerung (Delay) dieses Links.
+						die Verzögerung (Delay) dieses Links als Ganzzahl.
 						Die Verzögerung ist die Länge des Links.
 						Ein Paket braucht zur Übertragung von
 						einem Node zum anderen genau so viele 
-						Simulationsschritte.
+						Simulationsschritte wie die Verzögerung
+						angibt.
 					</para>
 				</listitem>
 				<listitem>
