@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section version="5.0" 
-	xmlns="http://docbook.org/ns/docbook">
+	xmlns="http://docbook.org/ns/docbook"
+	xml:id="section_gui">
 	<title>Grafische Benutzeroberfläche</title>
 	<para>Um dem Benutzer die Möglichkeit zu geben, mit der Simulation zu interagieren, wurde eine grafische Benutzeroberfläche entworfen und umgesetzt. Diese wird in den folgenden Kapiteln kurz vorgestellt und erklärt.</para>
 

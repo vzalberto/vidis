@@ -187,7 +187,7 @@ public int testVariable;]]></programlisting>
 							würde als Variable keinen Sinn machen und wird somit als ausführbare Methode angezeigt.
 							Alle anderen Methoden
 							werden als Variablen mit einem Wert dargestellt.
-							Wo und wie die Darstellung erfolgt wird im Kapitel [[TODO: LINKME]] beschrieben.
+							Wo und wie die Darstellung erfolgt wird im Kapitel <xref linkend="section_gui" /> beschrieben.
 							Folgendes Beispiel veranschaulicht dies.
 						</para>
 						<example>
