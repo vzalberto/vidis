@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <section
 	xmlns="http://docbook.org/ns/docbook">
 		<title>Vector Clock Algorithmus</title>
@@ -82,6 +83,18 @@ Wenn P<subscript>i</subscript> eine Nachricht M empfängt:
 	time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) }
 done
 </programlisting>
+					</para>
+					<para>
+						Um herauszufinden ob ein Ereignis ausgehend von P<subscript>i</subscript> vor, zeitgleich oder nach
+						einem anderen Ereignis aufgetreten ist, muss der Vector Clock
+						des Absenders P<subscript>i</subscript> mit dem lokalen Vector Clock auf P<subscript>j</subscript> verglichen werden.
+						<programlisting>if time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = time(V<subscript>P<subscript>j</subscript></subscript>, P<subscript>i</subscript>) then
+	# Kollision, auf den Kontext bezogene Fehlerbehandlung notwendig
+else if time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) &gt; time(V<subscript>P<subscript>j</subscript></subscript>, P<subscript>i</subscript>) then
+	# Ereignis ist neuer
+else if time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) &lt; time(V<subscript>P<subscript>j</subscript></subscript>, P<subscript>i</subscript>) then
+	# Ereignis ist älter
+fi</programlisting>
 					</para>
 				</listitem>
 			</varlistentry>

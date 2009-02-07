@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns="http://docbook.org/ns/docbook"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:xi="http://www.w3.org/2001/XInclude"
-	xmlns:svg="http://www.w3.org/2000/svg"
-	xmlns:mml="http://www.w3.org/1998/Math/MathML"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+	xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Verwendete verteilte Algorithmen</title>
 	<para>
 		Im folgenden werden die bereits implementierten
@@ -13,7 +9,6 @@
 		in die Welt der verteilten Systeme bieten und dienten
 		als Grundlage zur Implementierung von VIDIS.
 	</para>
-	
 	<xi:include href="algorithms/flooding.xml" />
 	<xi:include href="algorithms/echo.xml" />
 	<xi:include href="algorithms/bully.xml" />
