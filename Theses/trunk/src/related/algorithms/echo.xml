@@ -8,7 +8,8 @@
 				<listitem>
 					<para>
 						Der Echo Algorithmus <xref linkend="paper_echoalgorithm" /> bildet die Grundlage für
-						eine Vielzahl an mögliche Anwendungen. Dazu wird
+						eine Vielzahl an mögliche Anwendungen und basiert auf
+						dem Flooding Algorithmus. Dazu wird
 						eine Nachricht an alle Nachbarknoten geschickt, 
 						welche bei Erhalt sich den Absender merken und
 						die Nachricht weiterschicken. Wenn der Nachbarknoten
