@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section
 	xmlns="http://docbook.org/ns/docbook">
-	<title>Event System</title>
+	<title>Ereignisbehandlung</title>
 	<para>
 		Ein einfaches Event System wurde entworfen, um eine saubere Model-View-Control Architektur zu ermöglichen. Im folgenden wird das
 		Design des Event Systems beschrieben. Außerdem wird auf die MVC Realisierung eingegangen.

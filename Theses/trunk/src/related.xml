@@ -2,7 +2,7 @@
 <chapter version="5.0" 
 	xmlns="http://docbook.org/ns/docbook"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-	<title>Related Work</title>
+	<title>Hintergrund</title>
 	<para></para>	
 	
 	<xi:include href="related/technologies.xml" />
