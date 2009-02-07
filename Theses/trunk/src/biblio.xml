@@ -127,6 +127,19 @@
 		</author>
 		<date>July 1982</date>
 	</biblioentry>
+	<biblioentry xml:id="book_elections">
+		<title>Elections in Distributed Computing System</title>
+		<subtitle>IEEE Transaction Computers</subtitle>
+		<edition>Vol. C-31</edition>
+		<pagenums>48-59</pagenums>
+		<author>
+			<personname>
+				<firstname>H.</firstname>
+				<surname>Garcia-Molina</surname>
+			</personname>
+		</author>
+		<date>January 1982</date>
+	</biblioentry>
 	<biblioentry xml:id="web_opengl">
 		<bibliosource class="uri">
 			<link xlink:href="http://www.opengl.org" />

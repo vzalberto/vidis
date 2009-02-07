@@ -9,7 +9,7 @@
 					<para>
 						Oft ist es in verteilten Systemen notwendig eine 
 						Entscheidung mit globaler Auswirkung zentralisiert
-						zu treffen. In diesen Fällen muss ein Koordinator
+						zu treffen. In diesen Fällen kann ein Koordinator
 						gewählt werden, der diese Entscheidung übernimmt.
 					</para>
 					<para>
@@ -19,6 +19,7 @@
 					</para>
 					<para>
 						Dieser Algorithmus wurde von Garcia-Molina (1982) entwickelt.
+						(Siehe: <xref linkend="book_elections" />)
 					</para>
 				</listitem>
 			</varlistentry>
