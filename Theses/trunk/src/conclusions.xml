@@ -2,7 +2,7 @@
 <chapter version="5.0" 
 	xmlns="http://docbook.org/ns/docbook"
 	xmlns:math="http://www.w3.org/1998/Math/MathML">
-	<title>Conclusions</title>
+	<title>Zusammenfassung & Ausblick</title>
 	<para>
 		Dieses Kapitel enthält eine kurze Komplexitätsanlyse des Programmcodes, den Ausblick auf weitere Versionen und das Schlusswort.
 <!-- 
@@ -28,10 +28,10 @@
 -->
 	</para>
 	<section>
-		<title>Komplexitätsanalyse</title>
+		<title>Quellcode Metriken</title>
 		<para>
-			In diesem Kapitel wird die Komplexität von VIDIS
-			mit Hilfe von Metrics (Siehe: <xref linkend="related.devtools.metrics" />)
+			In diesem Kapitel wird der Umfang von VIDIS
+			mit Hilfe von Metriken (Siehe: <xref linkend="related.devtools.metrics" />)
 			analysiert.
 		</para>
 		<variablelist>
