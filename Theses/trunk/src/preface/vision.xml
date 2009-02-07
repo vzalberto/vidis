@@ -3,17 +3,24 @@
 	xmlns="http://docbook.org/ns/docbook">
 	<title>Vision</title>
 	<para>
-		In diesem Abschnitt wird das Ziel dieser Bakkalaureatsarbeit
-		beschrieben.
+		Die Vision hinter diesem Projekt ist es ein einfaches,
+		flexibles und doch umfangreiches Framework zur Simulation
+		und Visualisierung von Algorithmen der Verteilten Systeme.
+		Dabei sollen die Algorithmen in Modulen implementiert, vom
+		Simulator geladen und ausgeführt und von der Visualisierung
+		grafisch ansprechend in einem OpenGL 3D-Kontext dargestellt werden.
+		Dazu sollen unter anderem moderne Technologien wie Shader zum
+		Einsatz kommen.
 	</para>
 	<para>
-		Zunächst werden die Anwendungsmöglichkeiten im Bereich der
+		In diesem ersten Abschnitt wird das Ziel dieser Bakkalaureatsarbeit
+		beschrieben. Dazu werden zunächst die Anwendungsmöglichkeiten im Bereich der
 		Visualisierung aufgezeigt. Anschließend werden die
 		Anwendungsbereiche von VIDIS abgesteckt.
 	</para>
 	<para>
-		Der Name VIDIS wurde abgeleitet aus einer für Open Source Projekte
-		üblichen Konvention. VIDIS steht für
+		Der Name VIDIS wurde abgeleitet aus einer für Open Source
+		üblichen Konvention zur Namensgebung von Projekten. VIDIS steht für
 		<quote>Visualisation Framework of Distributed Systems</quote>.
 		Diese Bakkalaureatsarbeit steht für ein einfach zu verwendendes,
 		anschauliches und didaktisch hochwertiges Framework
