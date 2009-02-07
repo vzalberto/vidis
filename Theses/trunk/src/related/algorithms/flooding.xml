@@ -1,0 +1,69 @@
+<section
+	xmlns="http://docbook.org/ns/docbook">
+		<title>Flooding Algorithmus</title>
+		<variablelist>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						Der Flooding Algorithmus kann dazu verwendet werden
+						um Nachrichten oder Daten in einem Verteilten System
+						zu verbreiten. Im wesentlichen sendet ein Knoten an
+						alle Nachbarknoten die zu verbreitende Nachricht und
+						diese senden sie wiederum an alle Nachbarknoten weiter.
+						Der große Nachteil dieses Algorithmus ist, dass eine Nachricht
+						mehrfach dupliziert wird und so, falls sie nur für einen
+						Empfänger bestimmt war, erheblich viele unnötige Nachrichten
+						produziert. Andererseits ist der Algorithmus sehr restistent
+						gegen Ausfälle einzelner Knoten. Sollte eine Verbindung
+						ausfallen, erreicht eine Nachricht trotz allem den Empfänger
+						über eine andere, eventuell längere, Verbindung.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<para>
+						Obgleich es sehr viele Abwandlungen und Anpassungen dieses
+						Algorithmus gibt funktionieren diese im wesentlichen folgendermaßen.
+					</para>
+					<variablelist>
+						<varlistentry>
+							<term>Schritt 1</term>
+							<listitem>
+								<para>
+									Ein Knoten <literal>P</literal> startet den Algorithmus indem
+									er Nachricht <literal>M</literal> an
+									alle Nachbarknoten schickt.
+								</para>
+								<programlisting>M.sender=P
+for each i from Neighbours do
+	send i M
+done
+</programlisting>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Schritt 2</term> 
+							<listitem>
+								<para>
+									Jeder Knoten <literal>P</literal> der die Nachricht M erhält,
+									verarbeitet diese und schickt sie an alle
+									Nachbarknoten weiter. Die einzige Ausnahme
+									ist dabei der Ursprungsknoten.
+								</para>
+								<programlisting>for each i from Neighbours do
+	if i!=M.sender do
+		M.sender=P
+		send i M
+	done
+done
+</programlisting>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</listitem>
+			</varlistentry>
+		</variablelist>		
+	</section>

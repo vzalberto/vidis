@@ -1,0 +1,105 @@
+<section
+	xmlns="http://docbook.org/ns/docbook">
+		<title>Vector Clock Algorithmus</title>
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						In verteilten Systemen treten üblicherweise parallel
+						verschiedene Ereignisse auf, welche jedoch nicht global,
+						also jedem Node, bekannt sind. Sollten diese Ereignisse 
+						koordiniert werden müssen kann es zu inkonsistentem oder
+						fehlerhaften Verhalten kommen weil es in einem Netzwerk
+						keine globale Zeit gibt. Egal wie genau die Knoten zeitlich
+						synchronisiert werden, es gibt immer - wenn auch manchmal nur sehr kleine -
+						Verzögerungen. Angenommen beide Prozesse markieren
+						die Ereignisse mit Zeitstempeln. So reicht es nicht aus,
+						diese Zeitstempel zu vergleichen, da die Uhren der Knoten
+						schlecht synchronisiert sein könnten und somit ein Vergleich
+						der Zeitstempel nicht aussagekräftig ist.
+					</para>
+					<para>
+						Der Vector Clock Algorithmus kann dazu verwendet werden um
+						eine partiale Ordnung auf nebenläufigen, gleichläufigen und
+						nicht global bekannte Events zu erstellen. Damit ist es 
+						möglich zu entscheiden welcher der neuere, gültige Zustand
+						in einem verteilten System ist.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Beispiel</term>
+				<listitem>
+					<para>
+						Die Mengen der Nodes (Peers):
+						<programlisting>P = { P<subscript>i</subscript> | P<subscript>i</subscript> ist ein Peer, 0 &lt; i &lt; 4 }</programlisting>
+						Die Menge der Verbindungen:
+						<programlisting>C = { ( P<subscript>1</subscript>, P<subscript>2</subscript> ), ( P<subscript>2</subscript>, P<subscript>3</subscript> )	}</programlisting>
+						Die Menge der logischen Uhren gespeichert in P<subscript>i</subscript>:
+						<programlisting>V<subscript>P<subscript>i</subscript></subscript> = { x | x = P<subscript>j</subscript>, die logische Uhr von P<subscript>j</subscript> gespeichert in P<subscript>i</subscript> }</programlisting>
+						Und folgende Funktion:
+						<programlisting>time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = der Wert der logischen Uhr von P<subscript>j</subscript> in Peer P<subscript>i</subscript></programlisting>
+						Grafisch:
+						<figure>
+							<title>Vector Clock Algorithmus</title>
+							<mediaobject>
+								<imageobject>
+									<imagedata scale="50" fileref="vectorClockAlgorithm.png" format="PNG" />
+								</imageobject>
+							</mediaobject>
+						</figure>
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösungsansatz</term>
+				<listitem>
+					<para>
+						Der Algorithmus basiert auf <quote>Lamport's logical clock</quote>
+						Dieser Algorithmus produziert eine totale Ordnung, erfasst
+						aber keine Kausalitäten <xref linkend="book_related.distributed.lamport" />
+						zwischen den Ereignissen.
+					</para>
+					<para>
+						Um dieses Problem einzugrenzen, geht der Vector Clock Algorithmus einen anderen
+						Weg. Jeder Peer speichert seine eigene und die logischen Uhren von erreichbaren
+						Knoten. Bei einem Ereignis wird die interne logische Uhr
+						erhöht und an die benachbarten Knoten zusammen mit allen bekannten logischen
+						Uhren anderer Peers geschickt.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Umsetzung in Pseudocode</term>
+				<listitem>
+					<para>
+						Bevor ein Ereignis von P<subscript>i</subscript> ausgeführt wird:
+						<programlisting>time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>i</subscript>) = V<subscript>(P<subscript>i</subscript>, P<subscript>i</subscript>)</subscript>+1</programlisting>
+Wenn P<subscript>i</subscript> eine Nachricht an P<subscript>j</subscript> sendet:
+						<programlisting>M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript> = ( M, V<subscript>P<subscript>i</subscript></subscript> )							send M<subscript>(P<subscript>i</subscript>, P<subscript>j</subscript>)</subscript></programlisting>
+Wenn P<subscript>i</subscript> eine Nachricht M empfängt:
+						<programlisting>for j in 1..n do
+	time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) = max { time(V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>), time(M.V<subscript>P<subscript>i</subscript></subscript>, P<subscript>j</subscript>) }
+done
+</programlisting>
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Fazit</term>
+				<listitem>
+					<para>
+						Mit diesem Algorithmus ist es nun möglich,
+						die Kausalitäten zwischen Ereignissen zu erkennen
+						und diese so zeitlich zu ordnen. Jeder Prozess
+						kann damit beim Erhalt eines jeden Ereignisses
+						entscheiden ob das soeben erhaltene Ereignis vor,
+						nach oder gleichzeitig zu dem zuletzt erhaltenen Ereignis war.
+						Dies ermöglicht eine Kollisionserkennung und je nach
+						Anwendungsbereich kann fehlerhaftes Verhalten vermieden werden.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</section>

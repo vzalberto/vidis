@@ -1,0 +1,64 @@
+<section
+	xmlns="http://docbook.org/ns/docbook">
+		<title>Bully Election Algorithmus</title>
+		<variablelist>
+			<varlistentry>
+				<term>Problemstellung</term>
+				<listitem>
+					<para>
+						Oft ist es in verteilten Systemen notwendig eine 
+						Entscheidung mit globaler Auswirkung zentralisiert
+						zu treffen. In diesen Fällen muss ein Koordinator
+						gewählt werden, der diese Entscheidung übernimmt.
+					</para>
+					<para>
+						Der Bully Election Algorithmus kann dazu verwendet werden
+						um in einem Netzwerk mit gleichberechtigten Nodes einen
+						Koordinator zu finden.
+					</para>
+					<para>
+						Dieser Algorithmus wurde von Garcia-Molina (1982) entwickelt.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Lösung und Pseudocode</term>
+				<listitem>
+					<para>
+						Der Algorithmus besteht aus 3 Phasen. Zunächst muss
+						erkannt werden, ob ein Koordinator vorhanden ist beziehungsweise
+						der Koordinator noch reagiert.
+						<programlisting>P := der aktuelle Knoten
+connected_nodes := { x | x ist verbunden mit P }
+for i in connected_nodes do
+	if i.ID > P.ID do
+		send ELECTION
+	done
+done
+</programlisting>
+						Sollte kein Knoten antworten:
+						<programlisting>P.coordinator = true</programlisting>
+						Sollte ein Knoten mit höherer ID antworten, übernimmt dieser die weitere Wahl
+						und P hat seine Aufgabe erfüllt.
+						
+						<xref linkend="book_related.distributed.bullyelection" />
+					</para>
+					<note>
+						<para>
+							Für ein verteiltes System kann es aufwendig sein
+							herauszufinden ob eine Knoten-ID größer ist bevor
+							eine Nachricht jemals ausgetauscht wurde. Deshalb
+							bietet sich für diesen Algorithmus folgende Anpassung.
+						</para>
+						<para>
+							Eine Nachricht wird an alle Nachbarknoten geschickt.
+							Die Nachricht enthält die Absenderknoten ID.
+							Der Nachbarknoten kann damit entscheiden wie er 
+							auf das Paket reagiert indem er seine eigene ID mit
+							der ID des Pakets überprüft.
+						</para>
+					</note>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</section>

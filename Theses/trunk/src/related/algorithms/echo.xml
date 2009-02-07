@@ -1,0 +1,111 @@
+<section
+	xmlns="http://docbook.org/ns/docbook">
+		<title>Echo Algorithmus</title>
+		<variablelist>
+			<varlistentry>
+				<term>Idee</term>
+				<listitem>
+					<para>
+						Der Echo Algorithmus bildet die Grundlage für
+						eine Vielzahl an mögliche Anwendungen. Dazu wird
+						eine Nachricht an alle Nachbarknoten geschickt, 
+						welche bei Erhalt sich den Absender merken und
+						die Nachricht weiterschicken. Wenn der Nachbarknoten
+						schlussendlich eine Antwort von allen seinen Nachbarknoten
+						erhalten hat, schickt dieser seinem <quote>Vaterknoten</quote>
+						eine Antwort. <xref linkend="paper_echoalgorithm" />
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Pseudocode</term>
+				<listitem>
+					<variablelist>
+						<varlistentry>
+							<term>Schritt 1</term>
+							<listitem>
+								<para>
+									Alle Knoten <literal>P</literal> werden mit folgendem
+									Pseudo-Code initialisiert.
+								</para>
+								<programlisting><![CDATA[P.initiator=FALSE
+P.state=WHITE]]></programlisting>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Schritt 2</term>
+							<listitem>
+								<para>
+									Ein Knoten <literal>P</literal> startet den Algorithmus indem
+									er folgenden Pseudo-Code ausführt.
+								</para>
+								<programlisting><![CDATA[P.initiator=TRUE
+for each i from Neighbours do
+	send i EXLORE
+done 
+]]></programlisting>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Schritt 3</term>
+							<listitem>
+								<para>
+									Folgender Pseudo-Code wird ausgeführt, wenn
+									ein Knoten <literal>P</literal> die Nachricht <literal>M</literal> vom Nachbar <literal>N</literal> empfängt.
+								</para>
+								<programlisting><![CDATA[function send N M :=
+	send message M to neighbour M
+
+if P.state=WHITE ist AND M=EXPLORE then   
+	P.state=RED
+	for each i from Neighbours do
+		if i!=N do
+			send i EXLORE
+		done
+	done 
+	P.parent = N
+	P.received += 1
+fi
+if P.received=#(Neighbours) OR M=ECHO then
+	P.state=GREEN
+	if P.initiator=TRUE then
+		// done
+	else
+		send P.parent ECHO
+	fi
+fi]]></programlisting>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Anwendungsbeispiele</term>
+				<listitem>
+						<para>
+							Dieser Algorithmus kann sehr vielseitig eingesetzt werden.
+							Zum einen kann damit ein Spannbaum eines verteilten Systems
+							aufgebaut werden (siehe vorimplementiertes Demo Modul <quote>mstAlgorithm</quote>).
+							Andererseits können damit auch Daten oder Anfragen in ein 
+							verteiltes System realisiert werden. Der Algorithmus terminiert
+							immer und ist Total da die Befragung aller Knoten aus einem verteilten System
+							für die Terminierung benötigt wird. 
+						</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Einfache und effiziente Verbesserung</term>
+				<listitem>
+					<para>
+						Wenn jedes Flooding eine eindeutige ID bekommt,
+						kann ein Knoten entscheiden ob er eine Flooding-Nachricht
+						vom selben Durchlauf bereits erhalten hat. Dadurch
+						wird vermieden, dass ein Knoten eine Flooding-Nachricht
+						mehrfach bearbeitet. Dieser Algorithmus terminiert ohne
+						diese Adaptierung nicht für Netzwerktopologien mit 
+						Verbindungsschleifen.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</section>
