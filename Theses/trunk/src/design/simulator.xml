@@ -23,7 +23,7 @@
 			Idee hinter VIDIS zu skizzieren.
 		</para>
 		<para>
-			Verteilte Systeme bestehen sehr häufig aus einer
+			Verteilte Systeme bestehen aus einer
 			Menge von Rechnern welche auch Peers genannt werden.
 			Diese können miteinander über ein Netzwerk
 			kommunizieren. Dabei kann es vorkommen, dass Peers
@@ -32,14 +32,14 @@
 			Hilfe eines Peers der mit den zwei anderen kommunizieren kann,
 			möglich ist. In diesen Fällen spricht man von <quote>Message Forwarding</quote>.
 			Die Kommunikation zwischen einzelnen Peers erfolgt 
-			großteils über Datenpakete, welche über eine Netzwerkleitung
+			über Datenpakete, welche über eine Netzwerkleitung
 			übertragen werden.
 		</para>
 		<para>
 			Bei der Übertragung kommt es immer
-			zu Verzögerungen, welche auch als <literal>Latenz</literal>
-			bezeichnet werden. Grund dafür ist die Verzögerung von Schaltungen
-			, die Länge des Leiters und die Einschränkung
+			zu Verzögerungen, welche als <literal>Latenz</literal>
+			bezeichnet werden. Grund dafür ist die Verzögerung von Schaltungen,
+			die Länge des Leiters und die Einschränkung
 			der Bandbreite einer Leitung. Es gibt zwar verschiedenste Arten von Leitungen.
 			Die bekanntesten darunter sind elektrische Leitungen. Weitere
 			Arten sind funkgetriebene oder auch optische Leiter. Für VIDIS spielen
@@ -104,7 +104,12 @@
 				<term>Knoten</term>
 				<listitem>
 					<para>
-						TODO: gibts hier was das man erwähnen könnte?
+						Knoten werden in VIDIS als logische Knoten aufgefasst.
+						Ein logischer Knoten kann durchaus aus mehreren, einem
+						oder auch keinem physisch vorhandenen Knoten bestehen.
+						So zum Beispiel werden HUBs, Switches oder andere zur
+						Übertragung von Paketen benötigte Pakete nicht als logische
+						Knoten verwendet.
 					</para>
 				</listitem>
 			</varlistentry>
@@ -112,7 +117,13 @@
 				<term>Paket</term>
 				<listitem>
 					<para>
-						TODO: gibts hier was das man erwähnen könnte?
+						Ein Paket ist in VIDIS eine abstrakte Datenmenge, welche
+						in keiner Weise Kodierungen oder andere zur Datenübertragung
+						benötigte Datenstrukturen implementiert. So zum Beispiel
+						müssen die Daten in einem Paket nicht wie bei Webservices üblich
+						mittels eines XML Dokumentes kodiert und übertragen werden.
+						Entsprechend spielt auch die Größe eines Pakets für den Simulator
+						keine Rolle.
 					</para>
 				</listitem>
 			</varlistentry>
