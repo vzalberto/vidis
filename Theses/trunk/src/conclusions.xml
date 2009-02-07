@@ -61,6 +61,14 @@
 					</para>
 				</listitem>
 			</varlistentry>
+			<varlistentry>
+				<term>NCSS</term>
+				<listitem>
+					Insgesamt besteht VIDIS aus rund 12000 nicht kommentierten
+					Zeilen Code. Quelle dieser Daten ist das Metrik Programm
+					JavaNCSS (<xref linkend="web_javancss" />).
+				</listitem>
+			</varlistentry>
 		</variablelist>
 	</section>
 	<section>
