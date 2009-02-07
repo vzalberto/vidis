@@ -30,7 +30,8 @@
 						bewies 1982, dass in einem System in dem alle Knoten miteinander in
 						Verbindung stehen und mit <literal>k</literal> fehlerhaften
 						Einheiten mindestens <literal>2k + 1</literal> korrekt funktionierende
-						Einheiten vorhanden sein müssen. Die Komplexität dieses Problems
+						Einheiten vorhanden sein müssen (Siehe: <xref linkend="book_byzantine" />).
+						Die Komplexität dieses Problems
 						erhöht sich jedoch für den Fall, dass nicht alle Knoten mit jedem anderen
 						Knoten verbunden sind.
 					</para>

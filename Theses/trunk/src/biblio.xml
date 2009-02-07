@@ -140,6 +140,33 @@
 		</author>
 		<date>January 1982</date>
 	</biblioentry>
+	<biblioentry xml:id="book_byzantine">
+		<title>The Byzantine Generals Problem</title>
+		<subtitle>ACM Trans. Programming Languages and Systems 4</subtitle>
+		<edition>3</edition>
+		<pagenums>382–401</pagenums>
+		<authorgroup>
+			<author>
+				<personname>
+					<firstname>L.</firstname>
+					<surname>Lamport</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>R.</firstname>
+					<surname>Shostak</surname>
+				</personname>
+			</author>
+			<author>
+				<personname>
+					<firstname>M.</firstname>
+					<surname>Pease</surname>
+				</personname>
+			</author>
+		</authorgroup>
+		<date>July 1982</date>
+	</biblioentry>
 	<biblioentry xml:id="web_opengl">
 		<bibliosource class="uri">
 			<link xlink:href="http://www.opengl.org" />
