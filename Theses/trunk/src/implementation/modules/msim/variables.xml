@@ -15,8 +15,14 @@
 			<example>
 				<title>Zwei Variablen</title>
 				<programlisting format="linespecific" linenumbering="numbered" startinglinenumber="0"><![CDATA[<variables>
-	<name>some name</name>
-	<var2>I am variable 2</var2>
+	<variable>
+		<id>name</id>
+		<value>some name</value>
+	</variable>
+	<variable>
+		<id>var2</id>
+		<value>I am variable 2</value>
+	</variable>
 </variables>
 ]]></programlisting>
 			</example>
@@ -26,7 +32,10 @@
 	<id>node01</id>
 	<class>SomeNodeClass</class>
 	<variables>
-		<name>Node 01</name>
+		<variable>
+			<id>name</id>
+			<value>Node 01</value>
+		</variable>
 	</variables>
 </node>]]></programlisting>
 			</example>
@@ -36,7 +45,10 @@
 	<id>link</id>
 	<class>DefaultLinkImplementation</class>
 	<variables>
-		<name>Default Link</name>
+		<variable>
+			<id>name</id>
+			<value>Link 01</value>
+		</variable>
 	</variables>
 </link>]]></programlisting>
 			</example>

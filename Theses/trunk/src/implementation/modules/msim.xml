@@ -10,10 +10,11 @@
 			Eine MSIM-Datei wird eine Datei mit der Endung .msim genannt.
 			Diese kann dazu verwendet werden um eine Struktur eines Modules zu
 			beschreiben. Man gibt dabei Nodes, Links und die Verbindungen
-			dazwischen an.
+			dazwischen in einer XML schreibweise an.
 		</para>
 		<para>
 			Das folgende Beispiel soll die Struktur einer MSIM-Datei veranschaulichen.
+			Eine DTD Definition finden Sie im <xref linkend="appendix_msimdtd" />.
 		</para>
 		<example>
 			<title>Eine vollständige MSIM-Datei</title>

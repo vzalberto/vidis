@@ -65,6 +65,42 @@
 	<xi:include href="implementation.xml" />
 	<xi:include href="conclusions.xml" />
 	<xi:include href="biblio.xml" />
+	<appendix xml:id="appendix_msimdtd">
+		<title>MSIM DTD Definition</title>
+		<programlisting><![CDATA[<!ELEMENT class ( #PCDATA ) >
+
+<!ELEMENT connection ( nodeA, nodeB, link ) >
+
+<!ELEMENT connections ( connection* ) >
+
+<!ELEMENT delay ( #PCDATA ) >
+
+<!ELEMENT description ( #PCDATA ) >
+
+<!ELEMENT id ( #PCDATA ) >
+
+<!ELEMENT link ( id, class, delay, variables* )* >
+
+<!ELEMENT module ( description?, package, nodeDensity?, objects?, connections? ) >
+
+<!ELEMENT node ( id, class, variables? ) >
+
+<!ELEMENT nodeA ( #PCDATA ) >
+
+<!ELEMENT nodeB ( #PCDATA ) >
+
+<!ELEMENT nodeDensity ( #PCDATA ) >
+
+<!ELEMENT objects ( node*, link* ) >
+
+<!ELEMENT package ( #PCDATA ) >
+
+<!ELEMENT variables ( variable* ) >
+
+<!ELEMENT variable (id, value) >
+
+<!ELEMENT value ( #PCDATA ) >]]></programlisting>
+	</appendix>
 	<!-- <xi:include href="javadoc.xml" />  -->
 <!--
 	<xi:include href="glossary.xml" />	
