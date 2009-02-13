@@ -219,7 +219,7 @@ public void toggleAutoEvents {
 				<term>Maus Interaktion</term>
 				<listitem>
 					<para>
-						Mit einfachen Mausklicks können alle Steuerelemente in der Benutzeroberflächer bedient werden und die 3 dimensionalen Nodes sind auswählbar (siehe 
+						Mit einfachen Mausklicks können alle Steuerelemente in der Benutzeroberflächer bedient werden und die 3-dimensionalen Nodes sind auswählbar (siehe 
 						<xref linkend="section_picking" />).
 					</para>
 					<para>

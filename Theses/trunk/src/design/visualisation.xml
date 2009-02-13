@@ -12,7 +12,7 @@
 			verwenden. Diese Funktionalität benötigt die Verbesserungen der Image I/O von <trademark>Java</trademark> 6, die Ziel Plattform ist aber 
 			<trademark>Java</trademark> 5 <xref linkend="web_blogmustangimageio" />.  
 		</para>
-		<para>Es wurde eine einfache 3D API entworfen, die genau die benötigten Bedürfnisse erfüllt. Sie besteht prinzipiell aus einem Container und einigen Widgets, um Benutzerineraktion zu ermöglichen.</para>
+		<para>Es wurde eine einfache 3D API entworfen, die genau die benötigten Bedürfnisse erfüllt. Sie besteht aus einem Container und einigen Widgets, um Benutzerineraktion zu ermöglichen.</para>
 		<itemizedlist>
 			<para>Die GUI API besteht aus folgenden Komponenten:</para>
 			<listitem>
@@ -45,7 +45,7 @@
 			</mediaobject>
 		</figure>
 		<para>
-			Der BasicGuiContainer ist die Stadard GUI Klasse. Alle anderen GUI Komponenten erben vom ihm. Durch ein Composite Pattern kann er 
+			Der BasicGuiContainer ist die wichtigste GUI Klasse. Alle anderen GUI Komponenten erben davon. Durch das Composite Pattern kann dieser Kontainer 
 			beliebig viele weitere GuiContainer enthalten. Diese werden durch das assozierte Layout ausgerichtet. 
 			Außerdem reicht er Mausevents an die betroffenen, darunterliegenden Container weiter.
 		</para>

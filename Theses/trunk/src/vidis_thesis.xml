@@ -101,7 +101,7 @@
 
 <!ELEMENT value ( #PCDATA ) >]]></programlisting>
 	</appendix>
-	<!-- <xi:include href="javadoc.xml" />  -->
+<!-- <xi:include href="javadoc.xml" /> -->
 <!--
 	<xi:include href="glossary.xml" />	
 -->

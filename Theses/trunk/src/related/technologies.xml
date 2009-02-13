@@ -33,7 +33,7 @@
 				</mediaobject>
 			</figure>
 			<para>
-				Ant ist eine Werkzeug zur automatisierten Übersetzung von Java Quellcode in Bytecode. Ähnlich wie beim traditionellen Unix make wird dazu ein Buildfile benötigt. Dieses ist ein XML File in dem
+				Ant ist eine Werkzeug zur automatisierten Übersetzung von Java Quellcode in Bytecode. Ähnlich wie beim traditionellen UNIX-Make wird dazu ein Buildfile benötigt. Dieses ist ein XML File in dem
 				einzelne Build-Targets definiert werden können. Weiterführede Informationen über Apache Ant sind auf der Website zu finden <xref linkend="web_ant" />
 			</para>
 		</section>
@@ -121,12 +121,12 @@
 			</para>
 			<variablelist>
 				<varlistentry>
-					<term>Pixel Shader / Fragment Shader</term>
+					<term>Fragment Shader</term>
 					<listitem><para>
-						In <trademark class="registered">OpenGL</trademark> werden sie als <quote>Fragment Shader</quote> bezeichnet, während der Begriff
-						<quote>Pixel Shader</quote> aus dem Hause Microsoft kommt. Ein Pixelshader wird für jedes Pixel, bevor es in den Framebuffer 
-						geschrieben wird, ausgeführt. Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet. In der fixen Funktionspipeline ersetzen 
-						Pixelshader die Fragmentoperationen (siehe <xref linkend="fig_renderpipeline" /> <quote>Per-Fragment Operations</quote>).
+						In <trademark class="registered">OpenGL</trademark> werden sie als <quote>Fragment Shader</quote> bezeichnet. Microsoft verwendet hier 
+						den Begriff <quote>Pixel Shader</quote>. Ein Fragmentshader wird für jedes Pixel ausgeführt, bevor es in den Framebuffer 
+						geschrieben wird. Dabei wird die Farbe des Pixels anhand von diversen Faktoren berechnet. In der fixen Funktionspipeline ersetzen 
+						Fragmentshader die Fragmentoperationen (siehe <quote>Per-Fragment Operations</quote> in <xref linkend="fig_renderpipeline" /> ).
 					</para></listitem>
 				</varlistentry>
 				<varlistentry>
@@ -141,7 +141,7 @@
 				<varlistentry>
 					<term>Geometry Shader</term>
 					<listitem><para>
-						Geometry Shader sind die neueste Generation. Sie haben die Möglichkeit Vertices zu erzeugen und zu löschen (Ein
+						Geometry Shader sind die neueste Generation der Shader. Sie haben die Möglichkeit Vertices zu erzeugen und zu löschen (Ein
 						Vertexshader kann das nicht, er kann nur existierende Vertices verändern). 
 						Um diese Art von Shadern nutzen zu können benötigt man aktuelle Grafikhardware. Geometry Shader werden nach den 
 						Vertexshadern ausgeführt (<xref linkend="fig_renderpipeline" /> <quote>Per-Vertex Operations</quote>).
@@ -159,7 +159,6 @@
 				OpenGL</trademark> API vor dem Programmierer.
 			</para>
 		<variablelist>
-			<title>Untersuchte Java Bindings</title>
 			<varlistentry>
 				
 				<term><trademark>Java3D</trademark></term>
