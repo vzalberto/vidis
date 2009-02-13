@@ -14,13 +14,25 @@
 				<title>Profiling Screenshots</title>
 				<mediaobject>
 					<imageobject>
-						<imagedata fileref="screenshot of profiling results.needed" />
+						<imagedata fileref="figures/profiling_screenshot.PNG" />
 					</imageobject>
 				</mediaobject>
 			</figure>
 			
-			Wie in <xref linkend="fig_profiling_charts" /> zu sehen ist, verbraucht <trademark>Java3D</trademark> nach kürzester Zeit den gesamten Heap
-			Space mit Instanzen von <classname>Vector3d</classname>. 
+			Wie in <xref linkend="fig_profiling_charts" /> zu sehen ist, 
+			verbraucht der Funktionsaufruf <methodname>updateGraphics</methodname> und 
+			<methodname>buildBranchGroup</methodname> von <trademark>Java3D</trademark> 
+			sehr viel Prozessorleistung. Diese Leistungseinbußen waren mit steigender Paketanzahl
+			so groß, dass das Programm nicht mehr reagierte. Weiters wurde
+			nach kürzester Zeit der gesamten Heap
+			Space mit Instanzen von <classname>Vector3d</classname> verbraucht. Erst
+			nachdem der Heap Space mittels Java Virtual Machine Argumente erhöht wurde,
+			war das Programm für kurze Zeit lauffähig. Dies war jedoch auch nicht von Dauer,
+			da ab einer bestimmten Anzahl von Knoten und Paketen der Garbagecollector nicht mehr
+			in der Lage war rechtzeitig genügend Speicher zu räumen.
+			Als Fazit kann man nennen, dass <trademark>Java3D</trademark> für unsere Zwecke sowohl zu
+			prozessorlastig als auch zu speicherlastig war und somit nicht die abgesteckten
+			Performanceziele erreichte.
 		</para>
 	</section>
 	<section>
