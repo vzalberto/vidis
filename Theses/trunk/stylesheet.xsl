@@ -30,7 +30,7 @@
   <xsl:param name="column.count.body">1</xsl:param>
   <xsl:param name="column.count.front">1</xsl:param>
   <xsl:param name="column.count.index">1</xsl:param>
-  <xsl:param name="draft.mode">yes</xsl:param>
+  <xsl:param name="draft.mode">no</xsl:param>
   <xsl:param name="draft.watermark.image">doclet/docbook/xsl/images/draft.png</xsl:param>
 
   <xsl:param name="fop.extensions">0</xsl:param>
